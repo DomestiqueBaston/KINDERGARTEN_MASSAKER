@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Kindergarten Massaker_v06_test.png-809f70e62833bb0bffbd8d2344d3580e.stex"
+path="res://.import/Kindergarten Massaker_TITRE+CHARACTER_DESIGNS.png-c7979bc029debe4f1168b9be53f87cb7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/Kindergarten Massaker_v06_test.png"
-dest_files=[ "res://.import/Kindergarten Massaker_v06_test.png-809f70e62833bb0bffbd8d2344d3580e.stex" ]
+source_file="res://ASSETS/GRAPHICS/TMP/Kindergarten Massaker_TITRE+CHARACTER_DESIGNS.png"
+dest_files=[ "res://.import/Kindergarten Massaker_TITRE+CHARACTER_DESIGNS.png-c7979bc029debe4f1168b9be53f87cb7.stex" ]
 
 [params]
 
