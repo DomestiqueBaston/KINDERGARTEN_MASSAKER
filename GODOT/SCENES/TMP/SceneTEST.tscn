@@ -81,12 +81,12 @@ margin_right = 480.0
 margin_bottom = 270.0
 
 [node name="ColorRect3_MAGIC!" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 3 )
 margin_right = 480.0
 margin_bottom = 270.0
 
 [node name="ColorRect4_MAGIC!" type="ColorRect" parent="."]
-visible = false
 material = SubResource( 4 )
 margin_right = 480.0
 margin_bottom = 270.0
