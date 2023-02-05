@@ -21,7 +21,7 @@ uniform bool overlay = true;
 uniform float scanlines_opacity : hint_range(0.0, 1.0) = 0.1;
 uniform float scanlines_width : hint_range(0.0, 0.5) = 0.1;
 uniform float grille_opacity : hint_range(0.0, 1.0) = 0.1;
-uniform vec2 resolution = vec2(640.0, 480.0); // Set the number of rows and columns the texture will be divided in. Scanlines and grille will make a square based on these values
+uniform vec2 resolution = vec2(480.0, 270.0); // Set the number of rows and columns the texture will be divided in. Scanlines and grille will make a square based on these values
 
 uniform bool pixelate = false; // Fill each square ("pixel") with a sampled color, creating a pixel look and a more accurate representation of how a CRT monitor would work.
 

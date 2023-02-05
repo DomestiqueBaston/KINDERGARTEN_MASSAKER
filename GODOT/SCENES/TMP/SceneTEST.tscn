@@ -9,24 +9,24 @@
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
 shader_param/crt_curve = 0.0
-shader_param/crt_scan_line_color = 0.347
-shader_param/aperture_grille_rate = 0.4
-shader_param/rf_switch_esque_blur = 0.5
-shader_param/white_noise_rate = 0.075
+shader_param/crt_scan_line_color = 0.058
+shader_param/aperture_grille_rate = 0.516
+shader_param/rf_switch_esque_blur = 0.25
+shader_param/white_noise_rate = 0.05
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
-shader_param/res = Vector2( 640, 480 )
+shader_param/res = Vector2( 480, 270 )
 shader_param/mask_type = 0
 shader_param/bloom_type = 0
-shader_param/hardScan = -8.0
-shader_param/hardPix = -2.0
-shader_param/hardBloomScan = -2.0
-shader_param/hardBloomPix = -1.5
-shader_param/bloomAmount = 16.0
-shader_param/warp = Vector2( 64, 24 )
-shader_param/maskDark = 0.5
-shader_param/maskLight = 1.5
+shader_param/hardScan = -1.0
+shader_param/hardPix = -4.0
+shader_param/hardBloomScan = -4.0
+shader_param/hardBloomPix = -2.0
+shader_param/bloomAmount = 1.107
+shader_param/warp = Vector2( 1024, 1024 )
+shader_param/maskDark = 0.438
+shader_param/maskLight = 1.558
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 3 )
@@ -34,7 +34,7 @@ shader_param/overlay = true
 shader_param/scanlines_opacity = 0.1
 shader_param/scanlines_width = 0.1
 shader_param/grille_opacity = 0.1
-shader_param/resolution = Vector2( 640, 480 )
+shader_param/resolution = Vector2( 480, 270 )
 shader_param/pixelate = false
 shader_param/roll = true
 shader_param/roll_speed = 1.0
@@ -68,25 +68,25 @@ shader_param/shake_color_rate = 0.005
 position = Vector2( 240, 135 )
 texture = ExtResource( 1 )
 
-[node name="ColorRect1" type="ColorRect" parent="."]
+[node name="ColorRect1_pas_magic" type="ColorRect" parent="."]
 visible = false
 material = SubResource( 1 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2_pas_magic" type="ColorRect" parent="."]
 visible = false
 material = SubResource( 2 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="ColorRect3" type="ColorRect" parent="."]
-visible = false
+[node name="ColorRect3_MAGIC!" type="ColorRect" parent="."]
 material = SubResource( 3 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="ColorRect4" type="ColorRect" parent="."]
+[node name="ColorRect4_MAGIC!" type="ColorRect" parent="."]
+visible = false
 material = SubResource( 4 )
 margin_right = 480.0
 margin_bottom = 270.0
