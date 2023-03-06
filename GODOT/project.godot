@@ -14,10 +14,6 @@ config/name="KINDERGARTEN MASSAKER"
 run/main_scene="res://SCENES/TMP/SceneTEST.tscn"
 config/icon="res://KM_LOGO.png"
 
-[autoload]
-
-SingletonExample="*res://SCRIPTS/SingletonExample.gd"
-
 [display]
 
 window/size/width=480
