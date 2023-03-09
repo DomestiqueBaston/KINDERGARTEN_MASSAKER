@@ -26,10 +26,10 @@
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 7 )
 shader_param/range = 0.03
-shader_param/noiseQuality = 47.591
-shader_param/noiseIntensity = 0.033
-shader_param/offsetIntensity = 5.0
-shader_param/colorOffsetIntensity = 0.697
+shader_param/noiseQuality = 250.0
+shader_param/noiseIntensity = 0.005
+shader_param/offsetIntensity = 0.01
+shader_param/colorOffsetIntensity = 0.3
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 3 )
@@ -40,22 +40,22 @@ shader_param/grille_opacity = 0.1
 shader_param/resolution = Vector2( 480, 270 )
 shader_param/pixelate = false
 shader_param/roll = true
-shader_param/roll_speed = 6.058
-shader_param/roll_size = 12.322
-shader_param/roll_variation = 1.374
-shader_param/distort_intensity = 0.023
-shader_param/noise_opacity = 0.474
+shader_param/roll_speed = 1.0
+shader_param/roll_size = 3.0
+shader_param/roll_variation = 5.0
+shader_param/distort_intensity = 0.008
+shader_param/noise_opacity = 0.55
 shader_param/noise_speed = 5.0
-shader_param/static_noise_intensity = 0.215
-shader_param/aberration = -0.026
-shader_param/brightness = 2.795
+shader_param/static_noise_intensity = 0.07
+shader_param/aberration = -0.01
+shader_param/brightness = 1.1
 shader_param/discolor = true
-shader_param/saturation = -0.322
-shader_param/contrast = 0.785
+shader_param/saturation = 0.0
+shader_param/contrast = 1.0
 shader_param/warp_amount = 0.0
 shader_param/clip_warp = false
-shader_param/vignette_intensity = 0.915
-shader_param/vignette_opacity = 0.347
+shader_param/vignette_intensity = 0.2
+shader_param/vignette_opacity = 0.25
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 5 )
@@ -68,10 +68,10 @@ shader_param/shake_color_rate = 0.005
 [sub_resource type="ShaderMaterial" id=8]
 shader = ExtResource( 9 )
 shader_param/colored = true
-shader_param/color_amount = 0.634
-shader_param/grain_amount = 0.054
-shader_param/grain_size = 1.186
-shader_param/lum_amount = 1.537
+shader_param/color_amount = 1.0
+shader_param/grain_amount = 0.07
+shader_param/grain_size = 1.25
+shader_param/lum_amount = 1.715
 
 [sub_resource type="ShaderMaterial" id=17]
 shader = ExtResource( 18 )
@@ -89,16 +89,16 @@ shader_param/amount = 0.492
 
 [sub_resource type="ShaderMaterial" id=7]
 shader = ExtResource( 8 )
-shader_param/tape_wave_amount = 0.019
-shader_param/tape_crease_amount = 7.754
-shader_param/color_displacement = 1.483
-shader_param/lines_velocity = 4.153
+shader_param/tape_wave_amount = 0.003
+shader_param/tape_crease_amount = 2.5
+shader_param/color_displacement = 1.0
+shader_param/lines_velocity = 0.1
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 11 )
-shader_param/blur_amount = 4.86
-shader_param/signal_quality = 0.361
-shader_param/bottom_strenth = 6.0
+shader_param/blur_amount = 0.0
+shader_param/signal_quality = 0.0
+shader_param/bottom_strenth = 0.0
 shader_param/grain_tex = ExtResource( 22 )
 
 [sub_resource type="ShaderMaterial" id=10]
@@ -147,24 +147,24 @@ shader_param/sharpen_amount = 1.613
 
 [sub_resource type="ShaderMaterial" id=19]
 shader = ExtResource( 20 )
-shader_param/_ScanLineJitter = 0.386
-shader_param/_VerticalJump = 0.227
-shader_param/_HorizontalShake = 0.178
-shader_param/_ColorDrift = 0.168
+shader_param/_ScanLineJitter = 0.25
+shader_param/_VerticalJump = 0.01
+shader_param/_HorizontalShake = 0.0
+shader_param/_ColorDrift = 0.02
 
 [sub_resource type="ShaderMaterial" id=20]
 shader = ExtResource( 21 )
 shader_param/res = Vector2( 480, 270 )
 shader_param/mask_type = 0
 shader_param/bloom_type = 0
-shader_param/hardScan = -4.522
-shader_param/hardPix = -1.525
-shader_param/hardBloomScan = -0.836
-shader_param/hardBloomPix = -0.515
-shader_param/bloomAmount = 3.077
+shader_param/hardScan = -8.0
+shader_param/hardPix = -2.0
+shader_param/hardBloomScan = -2.0
+shader_param/hardBloomPix = -0.949
+shader_param/bloomAmount = 16.0
 shader_param/warp = Vector2( 480, 270 )
-shader_param/maskDark = 0.163
-shader_param/maskLight = 1.016
+shader_param/maskDark = 0.0
+shader_param/maskLight = 1.219
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
@@ -195,6 +195,7 @@ position = Vector2( 240, 135 )
 texture = ExtResource( 1 )
 
 [node name="BackBuffer_SimpleGlitch" type="BackBufferCopy" parent="."]
+visible = false
 copy_mode = 2
 
 [node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_SimpleGlitch"]
@@ -203,6 +204,7 @@ margin_right = 480.0
 margin_bottom = 270.0
 
 [node name="BackBuffer_Glitch_Effect_A" type="BackBufferCopy" parent="."]
+visible = false
 position = Vector2( 240, 135 )
 copy_mode = 2
 
@@ -214,7 +216,6 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="BackBuffer_Glitch_Effect_B" type="BackBufferCopy" parent="."]
-visible = false
 position = Vector2( 240, 135 )
 copy_mode = 2
 

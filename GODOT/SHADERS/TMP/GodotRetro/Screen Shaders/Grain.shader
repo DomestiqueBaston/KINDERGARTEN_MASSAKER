@@ -8,9 +8,9 @@
 shader_type canvas_item;
 
 uniform bool colored = false; //colored noise?
-uniform float color_amount :hint_range(0, 1.3) = 0.6;
+uniform float color_amount :hint_range(0, 1.3) = 1.0;
 uniform float grain_amount :hint_range(0, 0.07) = 0.025; //grain amount
-uniform float grain_size :hint_range(1, 3) = 1.6; //grain particle size (1.5 - 2.5)
+uniform float grain_size :hint_range(1, 3) = 1.25; //grain particle size (1.5 - 2.5)
 uniform float lum_amount :hint_range(0, 2) = 1.3;
 
 varying float time;
