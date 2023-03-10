@@ -10,8 +10,8 @@ const float PI = 3.14159265359;
 
 uniform float _bleeding :hint_range(0, 1) = 0.5;
 uniform float _fringing :hint_range(0, 1) = 0.5;
-uniform float _scanline :hint_range(0, 1) = 0.5;
-uniform bool linearColorSpace = true;
+uniform float _scanline :hint_range(0, 1) = 0.0;
+uniform bool linearColorSpace = false;
 
 vec3 LinearToGammaSpace (vec3 linRGB){
 	linRGB = max(linRGB, vec3(0, 0, 0));

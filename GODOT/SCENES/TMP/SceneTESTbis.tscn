@@ -68,16 +68,16 @@ shader_param/shake_color_rate = 0.005
 [sub_resource type="ShaderMaterial" id=8]
 shader = ExtResource( 9 )
 shader_param/colored = true
-shader_param/color_amount = 1.0
+shader_param/color_amount = 1.3
 shader_param/grain_amount = 0.07
 shader_param/grain_size = 1.25
-shader_param/lum_amount = 1.715
+shader_param/lum_amount = 2.0
 
 [sub_resource type="ShaderMaterial" id=17]
 shader = ExtResource( 18 )
 shader_param/SCREEN_WIDTH = 480.0
-shader_param/COLOR_FACTOR = 4.0
-shader_param/DITHERING_STRENTH = 0.044
+shader_param/COLOR_FACTOR = 6.263
+shader_param/DITHERING_STRENTH = 0.043
 
 [sub_resource type="ShaderMaterial" id=11]
 shader = ExtResource( 12 )
@@ -85,43 +85,33 @@ shader_param/amount = 0.168
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 6 )
-shader_param/amount = 0.492
+shader_param/amount = 1.0
 
 [sub_resource type="ShaderMaterial" id=7]
 shader = ExtResource( 8 )
-shader_param/tape_wave_amount = 0.003
-shader_param/tape_crease_amount = 2.5
-shader_param/color_displacement = 1.0
-shader_param/lines_velocity = 0.1
+shader_param/tape_wave_amount = 0.04
+shader_param/tape_crease_amount = 15.0
+shader_param/color_displacement = 5.0
+shader_param/lines_velocity = 5.0
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 11 )
-shader_param/blur_amount = 0.0
-shader_param/signal_quality = 0.0
-shader_param/bottom_strenth = 0.0
+shader_param/blur_amount = 8.0
+shader_param/signal_quality = 0.5
+shader_param/bottom_strenth = 6.0
 shader_param/grain_tex = ExtResource( 22 )
 
 [sub_resource type="ShaderMaterial" id=10]
 shader = ExtResource( 10 )
-shader_param/_bleeding = 0.053
-shader_param/_fringing = 0.308
-shader_param/_scanline = 0.185
-shader_param/linearColorSpace = true
-
-[sub_resource type="ShaderMaterial" id=12]
-shader = ExtResource( 13 )
-shader_param/vertJerkOpt = 0.682
-shader_param/vertMovementOpt = 0.588
-shader_param/bottomStaticOpt = 5.0
-shader_param/bottomStaticStrenth = 1.5
-shader_param/scalinesOpt = 1.136
-shader_param/rgbOffsetOpt = 0.399
-shader_param/horzFuzzOpt = 1.855
+shader_param/_bleeding = 0.449
+shader_param/_fringing = 0.211
+shader_param/_scanline = 0.0
+shader_param/linearColorSpace = false
 
 [sub_resource type="ShaderMaterial" id=13]
 shader = ExtResource( 14 )
-shader_param/shake_amount_x = 348.218
-shader_param/shake_amount_y = 15.0
+shader_param/shake_amount_x = 34.831
+shader_param/shake_amount_y = 89.805
 shader_param/white_hlines = 50.0
 shader_param/white_vlines = 80.0
 
@@ -143,7 +133,17 @@ shader_param/COLOR_FACTOR = 4.09
 
 [sub_resource type="ShaderMaterial" id=18]
 shader = ExtResource( 19 )
-shader_param/sharpen_amount = 1.613
+shader_param/sharpen_amount = 4.0
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 13 )
+shader_param/vertJerkOpt = 0.28
+shader_param/vertMovementOpt = 0.415
+shader_param/bottomStaticOpt = 1.144
+shader_param/bottomStaticStrenth = 0.676
+shader_param/scalinesOpt = 0.4
+shader_param/rgbOffsetOpt = 0.508
+shader_param/horzFuzzOpt = 1.822
 
 [sub_resource type="ShaderMaterial" id=19]
 shader = ExtResource( 20 )
@@ -177,16 +177,16 @@ shader_param/white_noise_rate = 0.422
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 2 )
 shader_param/res = Vector2( 480, 270 )
-shader_param/mask_type = 0
+shader_param/mask_type = 2
 shader_param/bloom_type = 0
-shader_param/hardScan = -8.0
-shader_param/hardPix = -2.0
+shader_param/hardScan = -7.965
+shader_param/hardPix = 0.0
 shader_param/hardBloomScan = -2.0
 shader_param/hardBloomPix = -1.5
-shader_param/bloomAmount = 16.0
+shader_param/bloomAmount = 11.678
 shader_param/warp = Vector2( 1024, 1024 )
-shader_param/maskDark = 0.835
-shader_param/maskLight = 1.732
+shader_param/maskDark = 0.25
+shader_param/maskLight = 1.0
 
 [node name="Node2D" type="Node2D"]
 
@@ -216,6 +216,7 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="BackBuffer_Glitch_Effect_B" type="BackBufferCopy" parent="."]
+visible = false
 position = Vector2( 240, 135 )
 copy_mode = 2
 
@@ -289,15 +290,6 @@ material = SubResource( 10 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_TV" type="BackBufferCopy" parent="."]
-visible = false
-copy_mode = 2
-
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_TV"]
-material = SubResource( 12 )
-margin_right = 480.0
-margin_bottom = 270.0
-
 [node name="BackBuffer_VHSPause" type="BackBufferCopy" parent="."]
 visible = false
 copy_mode = 2
@@ -340,6 +332,15 @@ copy_mode = 2
 
 [node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_Sharpness"]
 material = SubResource( 18 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_TV" type="BackBufferCopy" parent="."]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_TV"]
+material = SubResource( 12 )
 margin_right = 480.0
 margin_bottom = 270.0
 

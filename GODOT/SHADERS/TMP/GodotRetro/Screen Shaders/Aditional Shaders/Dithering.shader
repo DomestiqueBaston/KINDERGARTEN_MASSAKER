@@ -6,7 +6,7 @@
 
 shader_type canvas_item;
 
-uniform float SCREEN_WIDTH = 320.; // Lower num - bigger pixels (this will be the screen width)
+uniform float SCREEN_WIDTH = 480.; // Lower num - bigger pixels (this will be the screen width)
 uniform float COLOR_FACTOR :hint_range(0., 10.) = 4.;   // Higher num - higher colors quality
 uniform float DITHERING_STRENTH :hint_range(0., .07) = 0.005; // Be carefull with this one, dithering can get messy really easily
 
