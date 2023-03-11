@@ -96,9 +96,9 @@ shader_param/lines_velocity = 5.0
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 11 )
-shader_param/blur_amount = 8.0
-shader_param/signal_quality = 0.5
-shader_param/bottom_strenth = 6.0
+shader_param/blur_amount = 4.275
+shader_param/signal_quality = 0.364
+shader_param/bottom_strenth = 3.254
 shader_param/grain_tex = ExtResource( 22 )
 
 [sub_resource type="ShaderMaterial" id=10]
@@ -147,10 +147,10 @@ shader_param/horzFuzzOpt = 1.822
 
 [sub_resource type="ShaderMaterial" id=19]
 shader = ExtResource( 20 )
-shader_param/_ScanLineJitter = 0.25
-shader_param/_VerticalJump = 0.01
-shader_param/_HorizontalShake = 0.0
-shader_param/_ColorDrift = 0.02
+shader_param/_ScanLineJitter = 0.718
+shader_param/_VerticalJump = 0.595
+shader_param/_HorizontalShake = 0.653
+shader_param/_ColorDrift = 0.334
 
 [sub_resource type="ShaderMaterial" id=20]
 shader = ExtResource( 21 )
@@ -160,11 +160,11 @@ shader_param/bloom_type = 0
 shader_param/hardScan = -8.0
 shader_param/hardPix = -2.0
 shader_param/hardBloomScan = -2.0
-shader_param/hardBloomPix = -0.949
+shader_param/hardBloomPix = -1.5
 shader_param/bloomAmount = 16.0
 shader_param/warp = Vector2( 480, 270 )
-shader_param/maskDark = 0.0
-shader_param/maskLight = 1.219
+shader_param/maskDark = 0.5
+shader_param/maskLight = 1.5
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
@@ -194,194 +194,477 @@ shader_param/maskLight = 1.0
 position = Vector2( 240, 135 )
 texture = ExtResource( 1 )
 
-[node name="BackBuffer_SimpleGlitch" type="BackBufferCopy" parent="."]
+[node name="Shaders alone" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_SimpleGlitch" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_SimpleGlitch"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_SimpleGlitch"]
 material = SubResource( 6 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_Glitch_Effect_A" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_Glitch_Effect_A" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 position = Vector2( 240, 135 )
 copy_mode = 2
 
-[node name="ColorRect3_MAGIC!" type="ColorRect" parent="BackBuffer_Glitch_Effect_A"]
+[node name="ColorRect3_MAGIC!" type="ColorRect" parent="Shaders alone/BackBuffer_Glitch_Effect_A"]
 material = SubResource( 3 )
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
 margin_bottom = 135.0
 
-[node name="BackBuffer_Glitch_Effect_B" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_Glitch_Effect_B" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 position = Vector2( 240, 135 )
 copy_mode = 2
 
-[node name="ColorRect4_MAGIC!" type="ColorRect" parent="BackBuffer_Glitch_Effect_B"]
+[node name="ColorRect4_MAGIC!" type="ColorRect" parent="Shaders alone/BackBuffer_Glitch_Effect_B"]
 material = SubResource( 4 )
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
 margin_bottom = 135.0
 
-[node name="BackBuffer_Grain" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_Grain" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_Grain"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_Grain"]
 material = SubResource( 8 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_Dithering" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_Dithering" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_Dithering"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_Dithering"]
 material = SubResource( 17 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_SimpleGrain" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_SimpleGrain" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_SimpleGrain"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_SimpleGrain"]
 material = SubResource( 11 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_Blur" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_Blur" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_Blur"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_Blur"]
 material = SubResource( 5 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_VHS" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_VHS" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_VHS"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_VHS"]
 material = SubResource( 7 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_NTSC" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_NTSC" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_NTSC"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_NTSC"]
 material = SubResource( 9 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_NTSCBasic" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_NTSCBasic" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_NTSCBasic"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_NTSCBasic"]
 material = SubResource( 10 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_VHSPause" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_VHSPause" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_VHSPause"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_VHSPause"]
 material = SubResource( 13 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_B&W" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_B&W" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_B&W"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_B&W"]
 material = SubResource( 14 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_BetterCC" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_BetterCC" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_BetterCC"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_BetterCC"]
 material = SubResource( 15 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_ColorPrecision" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_ColorPrecision" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_ColorPrecision"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_ColorPrecision"]
 material = SubResource( 16 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_Sharpness" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_Sharpness" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_Sharpness"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_Sharpness"]
 material = SubResource( 18 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_TV" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_TV" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_TV"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_TV"]
 material = SubResource( 12 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_Glitch" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_Glitch" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_Glitch"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_Glitch"]
 material = SubResource( 19 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_AccurateCRT" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_AccurateCRT" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_AccurateCRT"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="Shaders alone/BackBuffer_AccurateCRT"]
 material = SubResource( 20 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_CRT1" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_CRT1" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 position = Vector2( 240, 135 )
 copy_mode = 2
 
-[node name="ColorRect1_pas_magic" type="ColorRect" parent="BackBuffer_CRT1"]
+[node name="ColorRect1_pas_magic" type="ColorRect" parent="Shaders alone/BackBuffer_CRT1"]
 material = SubResource( 1 )
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
 margin_bottom = 135.0
 
-[node name="BackBuffer_CRT2" type="BackBufferCopy" parent="."]
+[node name="BackBuffer_CRT2" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
 position = Vector2( 240, 135 )
 copy_mode = 2
 
-[node name="ColorRect2_pas_magic" type="ColorRect" parent="BackBuffer_CRT2"]
+[node name="ColorRect2_pas_magic" type="ColorRect" parent="Shaders alone/BackBuffer_CRT2"]
 material = SubResource( 2 )
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
 margin_bottom = 135.0
+
+[node name="10th Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_Glitch_Effect_A_10th Set" type="BackBufferCopy" parent="10th Set"]
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect3_MAGIC!" type="ColorRect" parent="10th Set/BackBuffer_Glitch_Effect_A_10th Set"]
+material = SubResource( 3 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="BackBuffer_Glitch_Effect_B_10th Set" type="BackBufferCopy" parent="10th Set"]
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect4_MAGIC!" type="ColorRect" parent="10th Set/BackBuffer_Glitch_Effect_B_10th Set"]
+material = SubResource( 4 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="BackBuffer_Grain_10th Set" type="BackBufferCopy" parent="10th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="10th Set/BackBuffer_Grain_10th Set"]
+material = SubResource( 8 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_NTSC_10th Set" type="BackBufferCopy" parent="10th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="10th Set/BackBuffer_NTSC_10th Set"]
+material = SubResource( 9 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_TV_10th Set" type="BackBufferCopy" parent="10th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="10th Set/BackBuffer_TV_10th Set"]
+material = SubResource( 12 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="9th Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_VHSPause_9th Set" type="BackBufferCopy" parent="9th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="9th Set/BackBuffer_VHSPause_9th Set"]
+material = SubResource( 13 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Glitch_Effect_B_9th Set" type="BackBufferCopy" parent="9th Set"]
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect4_MAGIC!" type="ColorRect" parent="9th Set/BackBuffer_Glitch_Effect_B_9th Set"]
+material = SubResource( 4 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="8th Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_VHS_8th Set" type="BackBufferCopy" parent="8th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="8th Set/BackBuffer_VHS_8th Set"]
+material = SubResource( 7 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Dithering_8th Set" type="BackBufferCopy" parent="8th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="8th Set/BackBuffer_Dithering_8th Set"]
+material = SubResource( 17 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Grain_8th Set" type="BackBufferCopy" parent="8th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="8th Set/BackBuffer_Grain_8th Set"]
+material = SubResource( 8 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="7th Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_TV_7th Set" type="BackBufferCopy" parent="7th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="7th Set/BackBuffer_TV_7th Set"]
+material = SubResource( 12 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Sharpness_7th Set" type="BackBufferCopy" parent="7th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="7th Set/BackBuffer_Sharpness_7th Set"]
+material = SubResource( 18 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Blur_7th Set" type="BackBufferCopy" parent="7th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="7th Set/BackBuffer_Blur_7th Set"]
+material = SubResource( 5 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="6th Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_NTSC_6th Set" type="BackBufferCopy" parent="6th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="6th Set/BackBuffer_NTSC_6th Set"]
+material = SubResource( 9 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Sharpness_6th Set" type="BackBufferCopy" parent="6th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="6th Set/BackBuffer_Sharpness_6th Set"]
+material = SubResource( 18 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Dithering_6th Set" type="BackBufferCopy" parent="6th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="6th Set/BackBuffer_Dithering_6th Set"]
+material = SubResource( 17 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="5th Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_NTSCBasic_5th Set" type="BackBufferCopy" parent="5th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="5th Set/BackBuffer_NTSCBasic_5th Set"]
+material = SubResource( 10 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Grain_5th Set" type="BackBufferCopy" parent="5th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="5th Set/BackBuffer_Grain_5th Set"]
+material = SubResource( 8 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_TV_5th Set" type="BackBufferCopy" parent="5th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="5th Set/BackBuffer_TV_5th Set"]
+material = SubResource( 12 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="4th Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_VHSPause_4th Set" type="BackBufferCopy" parent="4th Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="4th Set/BackBuffer_VHSPause_4th Set"]
+material = SubResource( 13 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_CRT2_4th Set" type="BackBufferCopy" parent="4th Set"]
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect2_pas_magic" type="ColorRect" parent="4th Set/BackBuffer_CRT2_4th Set"]
+material = SubResource( 2 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="3rd Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_SimpleGlitch_3rd Set" type="BackBufferCopy" parent="3rd Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="3rd Set/BackBuffer_SimpleGlitch_3rd Set"]
+material = SubResource( 6 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Glitch_Effect_A_3rd Set" type="BackBufferCopy" parent="3rd Set"]
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect3_MAGIC!" type="ColorRect" parent="3rd Set/BackBuffer_Glitch_Effect_A_3rd Set"]
+material = SubResource( 3 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="BackBuffer_NTSC_3rd Set" type="BackBufferCopy" parent="3rd Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="3rd Set/BackBuffer_NTSC_3rd Set"]
+material = SubResource( 9 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="2nd Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_Grain_2nd Set" type="BackBufferCopy" parent="2nd Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="2nd Set/BackBuffer_Grain_2nd Set"]
+material = SubResource( 8 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_VHS_2nd Set" type="BackBufferCopy" parent="2nd Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="2nd Set/BackBuffer_VHS_2nd Set"]
+material = SubResource( 7 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Glitch_Effect_B_2nd Set" type="BackBufferCopy" parent="2nd Set"]
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect4_MAGIC!" type="ColorRect" parent="2nd Set/BackBuffer_Glitch_Effect_B_2nd Set"]
+material = SubResource( 4 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="1st Set" type="Node2D" parent="."]
+visible = false
+
+[node name="BackBuffer_Glitch_1st Set" type="BackBufferCopy" parent="1st Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="1st Set/BackBuffer_Glitch_1st Set"]
+material = SubResource( 19 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_AccurateCRT_1st Set" type="BackBufferCopy" parent="1st Set"]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="1st Set/BackBuffer_AccurateCRT_1st Set"]
+material = SubResource( 20 )
+margin_right = 480.0
+margin_bottom = 270.0

@@ -65,7 +65,7 @@ uniform float bloomAmount :hint_range(1.0, 16.0) = 16.0;
 // Display warp.
 // 0.0 = none
 // 1.0/8.0 = extreme
-uniform vec2 warp = vec2(64.0, 24.0); 
+uniform vec2 warp = vec2(480.0, 270.0); 
 
 // Amount of shadow mask.
 uniform float maskDark  :hint_range(0.0, 1.0) = 0.5;
