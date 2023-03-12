@@ -147,10 +147,10 @@ shader_param/horzFuzzOpt = 1.822
 
 [sub_resource type="ShaderMaterial" id=19]
 shader = ExtResource( 20 )
-shader_param/_ScanLineJitter = 0.718
-shader_param/_VerticalJump = 0.595
-shader_param/_HorizontalShake = 0.653
-shader_param/_ColorDrift = 0.334
+shader_param/_ScanLineJitter = 0.636
+shader_param/_VerticalJump = 0.095
+shader_param/_HorizontalShake = 0.026
+shader_param/_ColorDrift = 0.181
 
 [sub_resource type="ShaderMaterial" id=20]
 shader = ExtResource( 21 )
