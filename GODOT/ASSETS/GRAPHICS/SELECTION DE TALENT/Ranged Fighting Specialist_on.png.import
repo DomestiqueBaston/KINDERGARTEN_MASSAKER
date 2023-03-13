@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ranged fighter Specialist_on.png-1c4e36ceaa2d6cce4ff263a2a18b09d7.stex"
+path="res://.import/Ranged Fighting Specialist_on.png-26a9ebf7750283baf0004a193183fd41.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/SELECTION DE TALENT/Ranged fighter Specialist_on.png"
-dest_files=[ "res://.import/Ranged fighter Specialist_on.png-1c4e36ceaa2d6cce4ff263a2a18b09d7.stex" ]
+source_file="res://ASSETS/GRAPHICS/SELECTION DE TALENT/Ranged Fighting Specialist_on.png"
+dest_files=[ "res://.import/Ranged Fighting Specialist_on.png-26a9ebf7750283baf0004a193183fd41.stex" ]
 
 [params]
 
