@@ -12,6 +12,8 @@ config_version=4
 
 config/name="KINDERGARTEN MASSAKER"
 run/main_scene="res://SCENES/TMP/SceneTESTbis.tscn"
+boot_splash/image="res://ASSETS/GRAPHICS/MISC/Splash_Screen.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://KM_LOGO.png"
 
 [display]
