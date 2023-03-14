@@ -6,9 +6,9 @@
 
 shader_type canvas_item;
 
-uniform vec4 Shadows :hint_color = vec4(0.0, 0.0, 0.0, 1.0);
-uniform vec4 Midtones :hint_color = vec4(0.0, 0.0, 0.0, 1.0); 
-uniform vec4 Hilights :hint_color = vec4(0.0, 0.0, 0.0, 1.0);
+uniform vec4 Shadows :hint_color = vec4(0.435294, 0.255294, 0.255294, 1.0);
+uniform vec4 Midtones :hint_color = vec4(0.251765, 0.560784, 0.251765, 1.0); 
+uniform vec4 Hilights :hint_color = vec4(0.251569, 0.356863, 0.901961, 1.0);
 
 vec3 InvLerp( vec3 A, vec3 B, vec3 t){
 	return (t - A) / (B - A);
