@@ -389,6 +389,200 @@ margin_top = -135.0
 margin_right = 240.0
 margin_bottom = 135.0
 
+[node name="11th Set" type="Node2D" parent="."]
+
+[node name="BackBuffer_SimpleGlitch" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_SimpleGlitch"]
+material = SubResource( 6 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Glitch_Effect_A" type="BackBufferCopy" parent="11th Set"]
+visible = false
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect3_MAGIC!" type="ColorRect" parent="11th Set/BackBuffer_Glitch_Effect_A"]
+material = SubResource( 3 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="BackBuffer_Glitch_Effect_B" type="BackBufferCopy" parent="11th Set"]
+visible = false
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect4_MAGIC!" type="ColorRect" parent="11th Set/BackBuffer_Glitch_Effect_B"]
+material = SubResource( 4 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="BackBuffer_Grain" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_Grain"]
+material = SubResource( 8 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Dithering" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_Dithering"]
+material = SubResource( 17 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_SimpleGrain" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_SimpleGrain"]
+material = SubResource( 11 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Blur" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_Blur"]
+material = SubResource( 5 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_VHS" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_VHS"]
+material = SubResource( 7 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_NTSC" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_NTSC"]
+material = SubResource( 9 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_NTSCBasic" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_NTSCBasic"]
+material = SubResource( 10 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_VHSPause" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_VHSPause"]
+material = SubResource( 13 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_B&W" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_B&W"]
+material = SubResource( 14 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_BetterCC" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_BetterCC"]
+material = SubResource( 15 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_ColorPrecision" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_ColorPrecision"]
+material = SubResource( 16 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Sharpness" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_Sharpness"]
+material = SubResource( 18 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_TV" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_TV"]
+material = SubResource( 12 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_Glitch" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_Glitch"]
+material = SubResource( 19 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_AccurateCRT" type="BackBufferCopy" parent="11th Set"]
+visible = false
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_AccurateCRT"]
+material = SubResource( 20 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_CRT1" type="BackBufferCopy" parent="11th Set"]
+visible = false
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect1_pas_magic" type="ColorRect" parent="11th Set/BackBuffer_CRT1"]
+material = SubResource( 1 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="BackBuffer_CRT2" type="BackBufferCopy" parent="11th Set"]
+visible = false
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect2_pas_magic" type="ColorRect" parent="11th Set/BackBuffer_CRT2"]
+material = SubResource( 2 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
 [node name="10th Set" type="Node2D" parent="."]
 visible = false
 
