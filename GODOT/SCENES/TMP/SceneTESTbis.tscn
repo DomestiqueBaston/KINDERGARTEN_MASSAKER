@@ -72,12 +72,12 @@ shader_param/lum_amount = 1.3
 [sub_resource type="ShaderMaterial" id=17]
 shader = ExtResource( 18 )
 shader_param/SCREEN_WIDTH = 480.0
-shader_param/COLOR_FACTOR = 4.0
-shader_param/DITHERING_STRENTH = 0.005
+shader_param/COLOR_FACTOR = 1.797
+shader_param/DITHERING_STRENTH = 0.068
 
 [sub_resource type="ShaderMaterial" id=11]
 shader = ExtResource( 12 )
-shader_param/amount = 0.01
+shader_param/amount = 0.223
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 6 )
@@ -113,8 +113,8 @@ shader_param/white_vlines = 80.0
 
 [sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 15 )
-shader_param/contrast = 1.0
-shader_param/brightness = 0.0
+shader_param/contrast = 1.661
+shader_param/brightness = 0.271
 
 [sub_resource type="ShaderMaterial" id=15]
 shader = ExtResource( 16 )
@@ -134,7 +134,7 @@ shader_param/sharpen_amount = 1.0
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 13 )
 shader_param/vertJerkOpt = 0.2
-shader_param/vertMovementOpt = 0.585
+shader_param/vertMovementOpt = 0.0
 shader_param/bottomStaticOpt = 0.0
 shader_param/bottomStaticStrenth = 0.7
 shader_param/scalinesOpt = 0.4
@@ -640,47 +640,47 @@ margin_top = -135.0
 margin_right = 240.0
 margin_bottom = 135.0
 
-[node name="11th Set" type="Node2D" parent="."]
+[node name="11th Set (mouif)" type="Node2D" parent="."]
 visible = false
 
-[node name="BackBuffer_SimpleGrain_11th Set" type="BackBufferCopy" parent="11th Set"]
+[node name="BackBuffer_SimpleGrain_11th Set" type="BackBufferCopy" parent="11th Set (mouif)"]
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_SimpleGrain_11th Set"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set (mouif)/BackBuffer_SimpleGrain_11th Set"]
 material = SubResource( 11 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_B&W_11th Set" type="BackBufferCopy" parent="11th Set"]
+[node name="BackBuffer_B&W_11th Set" type="BackBufferCopy" parent="11th Set (mouif)"]
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_B&W_11th Set"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set (mouif)/BackBuffer_B&W_11th Set"]
 material = SubResource( 14 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_BetterCC_11th Set" type="BackBufferCopy" parent="11th Set"]
+[node name="BackBuffer_BetterCC_11th Set" type="BackBufferCopy" parent="11th Set (mouif)"]
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_BetterCC_11th Set"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set (mouif)/BackBuffer_BetterCC_11th Set"]
 material = SubResource( 15 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_Dithering_11th Set" type="BackBufferCopy" parent="11th Set"]
+[node name="BackBuffer_Dithering_11th Set" type="BackBufferCopy" parent="11th Set (mouif)"]
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set/BackBuffer_Dithering_11th Set"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="11th Set (mouif)/BackBuffer_Dithering_11th Set"]
 material = SubResource( 17 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_CRT2_11th Set" type="BackBufferCopy" parent="11th Set"]
+[node name="BackBuffer_CRT2_11th Set" type="BackBufferCopy" parent="11th Set (mouif)"]
 material = SubResource( 22 )
 position = Vector2( 240, 135 )
 copy_mode = 2
 
-[node name="ColorRect2_pas_magic" type="ColorRect" parent="11th Set/BackBuffer_CRT2_11th Set"]
+[node name="ColorRect2_pas_magic" type="ColorRect" parent="11th Set (mouif)/BackBuffer_CRT2_11th Set"]
 material = SubResource( 2 )
 margin_left = -240.0
 margin_top = -135.0
@@ -812,29 +812,29 @@ material = SubResource( 12 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="6th Set" type="Node2D" parent="."]
+[node name="6th Set (mouif)" type="Node2D" parent="."]
 visible = false
 
-[node name="BackBuffer_Sharpness_6th Set" type="BackBufferCopy" parent="6th Set"]
+[node name="BackBuffer_Sharpness_6th Set" type="BackBufferCopy" parent="6th Set (mouif)"]
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="6th Set/BackBuffer_Sharpness_6th Set"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="6th Set (mouif)/BackBuffer_Sharpness_6th Set"]
 material = SubResource( 18 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_Dithering_6th Set" type="BackBufferCopy" parent="6th Set"]
+[node name="BackBuffer_Dithering_6th Set" type="BackBufferCopy" parent="6th Set (mouif)"]
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="6th Set/BackBuffer_Dithering_6th Set"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="6th Set (mouif)/BackBuffer_Dithering_6th Set"]
 material = SubResource( 17 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBuffer_NTSC_6th Set" type="BackBufferCopy" parent="6th Set"]
+[node name="BackBuffer_NTSC_6th Set" type="BackBufferCopy" parent="6th Set (mouif)"]
 copy_mode = 2
 
-[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="6th Set/BackBuffer_NTSC_6th Set"]
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="6th Set (mouif)/BackBuffer_NTSC_6th Set"]
 material = SubResource( 9 )
 margin_right = 480.0
 margin_bottom = 270.0
@@ -949,6 +949,7 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="1st Set" type="Node2D" parent="."]
+visible = false
 
 [node name="BackBuffer_Glitch_1st Set" type="BackBufferCopy" parent="1st Set"]
 copy_mode = 2
