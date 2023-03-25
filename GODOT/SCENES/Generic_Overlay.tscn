@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://SHADERS/TMP/GodotRetro/Screen Shaders/TV.shader" type="Shader" id=2]
+[ext_resource path="res://SHADERS/TMP/CRT_2.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 2 )
+shader_param/vertJerkOpt = 0.025
+shader_param/vertMovementOpt = 0.1
+shader_param/bottomStaticOpt = 0.0
+shader_param/bottomStaticStrenth = 0.0
+shader_param/scalinesOpt = 0.0
+shader_param/rgbOffsetOpt = 0.15
+shader_param/horzFuzzOpt = 0.2
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/res = Vector2( 480, 270 )
+shader_param/mask_type = 0
+shader_param/bloom_type = 2
+shader_param/hardScan = -12.0
+shader_param/hardPix = -4.0
+shader_param/hardBloomScan = -4.0
+shader_param/hardBloomPix = 0.0
+shader_param/bloomAmount = 16.0
+shader_param/warp = Vector2( 480, 270 )
+shader_param/maskDark = 0.941
+shader_param/maskLight = 1.101
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BackBuffer_TV" type="BackBufferCopy" parent="."]
+copy_mode = 2
+
+[node name="ColorRect5_GODOTRETRO" type="ColorRect" parent="BackBuffer_TV"]
+material = SubResource( 1 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBuffer_CRT2" type="BackBufferCopy" parent="."]
+position = Vector2( 240, 135 )
+copy_mode = 2
+
+[node name="ColorRect2_pas_magic" type="ColorRect" parent="BackBuffer_CRT2"]
+material = SubResource( 2 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0

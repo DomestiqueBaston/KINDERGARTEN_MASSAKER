@@ -24,8 +24,8 @@
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 16 )
-shader_param/brightness = 0.058
-shader_param/size = 1.646
+shader_param/brightness = 0.081
+shader_param/size = 0.825
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 3 )
@@ -65,9 +65,9 @@ shader_param/shake_color_rate = 0.005
 shader = ExtResource( 18 )
 shader_param/colored = true
 shader_param/color_amount = 1.0
-shader_param/grain_amount = 0.025
+shader_param/grain_amount = 0.056
 shader_param/grain_size = 1.25
-shader_param/lum_amount = 1.3
+shader_param/lum_amount = 1.69
 
 [sub_resource type="ShaderMaterial" id=17]
 shader = ExtResource( 10 )
@@ -446,7 +446,6 @@ position = Vector2( 240, 135 )
 texture = ExtResource( 1 )
 
 [node name="Shaders alone" type="Node2D" parent="."]
-visible = false
 
 [node name="BackBuffer_SimpleGlitch" type="BackBufferCopy" parent="Shaders alone"]
 visible = false
