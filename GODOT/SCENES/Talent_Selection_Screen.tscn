@@ -1,23 +1,22 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Mirror Images_on.png" type="Texture" id=1]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Second Life_on.png" type="Texture" id=2]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Quick Runner_on.png" type="Texture" id=3]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Freezing Shock Wave_on.png" type="Texture" id=4]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Dodger_on.png" type="Texture" id=5]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Shield_on.png" type="Texture" id=6]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Teleportation_on.png" type="Texture" id=7]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/None_on.png" type="Texture" id=8]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Invisibility_on.png" type="Texture" id=9]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Repulsive Explosion_on.png" type="Texture" id=10]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Dash_on.png" type="Texture" id=11]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Healthy_on.png" type="Texture" id=12]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Regeneration_on.png" type="Texture" id=13]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Kraftfeld.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Zeitstopp.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Aversion.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Duplikat.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Agil.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Transparent.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schneller.png" type="Texture" id=7]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Frostig.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Nix.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Teleportation.png" type="Texture" id=10]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Akzeleration.png" type="Texture" id=11]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schild.png" type="Texture" id=12]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Mehr_leben.png" type="Texture" id=13]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Sélection de talent.png" type="Texture" id=14]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Force Field_on.png" type="Texture" id=15]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Time Stop_on.png" type="Texture" id=16]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Ranged Fighting Specialist_on.png" type="Texture" id=17]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Hand to Hand Connoisseur_on.png" type="Texture" id=18]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Hand_zu_hand_spezialist.png" type="Texture" id=15]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Distanz_spezialist.png" type="Texture" id=16]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Regenerierung.png" type="Texture" id=17]
 
 [node name="Node2D" type="Node2D"]
 
@@ -30,104 +29,98 @@ texture = ExtResource( 14 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="None" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 480.0
-margin_bottom = 270.0
-texture = ExtResource( 8 )
-
 [node name="Teleportation" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 
-[node name="Dash" type="TextureRect" parent="Control"]
+[node name="Akzeleration" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 11 )
 
-[node name="Repulsive_Explosion" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 10 )
-
-[node name="Freezing_Shock_Wave" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 4 )
-
-[node name="Force_Field" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 15 )
-
-[node name="Quick_Runner" type="TextureRect" parent="Control"]
+[node name="Aversion" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 3 )
 
-[node name="Time_Stop" type="TextureRect" parent="Control"]
+[node name="Frostig" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
-texture = ExtResource( 16 )
+texture = ExtResource( 8 )
 
-[node name="Mirror_Images" type="TextureRect" parent="Control"]
+[node name="Kraftfeld" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 1 )
 
-[node name="Second_Life" type="TextureRect" parent="Control"]
+[node name="Schneller" type="TextureRect" parent="Control"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+
+[node name="Zeitstopp" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 2 )
 
-[node name="Dodger" type="TextureRect" parent="Control"]
+[node name="Duplikat" type="TextureRect" parent="Control"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 4 )
+
+[node name="Nix" type="TextureRect" parent="Control"]
+visible = false
+margin_right = 480.0
+margin_bottom = 270.0
+texture = ExtResource( 9 )
+
+[node name="Agil" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 5 )
 
-[node name="Invisibility" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 9 )
-
-[node name="Shield" type="TextureRect" parent="Control"]
+[node name="Transparent" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 6 )
 
-[node name="Healthy" type="TextureRect" parent="Control"]
+[node name="Schild" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 12 )
 
-[node name="Regeneration" type="TextureRect" parent="Control"]
+[node name="Mehr_leben" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 13 )
 
-[node name="Hand_to_Hand_Connoisseur" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 18 )
-
-[node name="Ranged_Fighting_Specialist" type="TextureRect" parent="Control"]
+[node name="Regenerierung" type="TextureRect" parent="Control"]
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 17 )
+
+[node name="Hand_zu_hand_spezialist" type="TextureRect" parent="Control"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 15 )
+
+[node name="Distanz_spezialist" type="TextureRect" parent="Control"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 16 )
