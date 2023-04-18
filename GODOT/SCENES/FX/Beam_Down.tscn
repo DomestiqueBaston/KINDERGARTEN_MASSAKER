@@ -33,7 +33,7 @@ tracks/1/keys = {
 "values": [ 1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Alien (tmp):visible")
+tracks/2/path = NodePath("(place holder) Alien:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -72,7 +72,7 @@ tracks/1/keys = {
 "values": [ 0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Alien (tmp):visible")
+tracks/2/path = NodePath("(place holder) Alien:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -90,7 +90,7 @@ tracks/2/keys = {
 texture = ExtResource( 1 )
 hframes = 39
 
-[node name="Alien (tmp)" type="Sprite" parent="."]
+[node name="(place holder) Alien" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -27 )
 texture = ExtResource( 2 )
