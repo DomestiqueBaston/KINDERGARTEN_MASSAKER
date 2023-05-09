@@ -23,6 +23,7 @@ window/size/width=480
 window/size/height=270
 window/size/test_width=480
 window/size/test_height=270
+mouse_cursor/tooltip_position_offset=Vector2( 10, 20 )
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
