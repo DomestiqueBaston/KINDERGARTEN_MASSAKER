@@ -42,7 +42,7 @@ uniform float hardScan :hint_range(-12.0, -1.0) = -8.0;
 // Hardness of pixels in scanline.
 // -2.0 = soft
 // -4.0 = hard
-uniform float hardPix :hint_range(-4.0, 0.0) = -2.0;
+uniform float hardPix :hint_range(-4.0, 0.0) = -4.0;
 
 // Hardness of short vertical bloom.
 //  -1.0 = wide to the point of clipping (bad)
@@ -68,7 +68,7 @@ uniform float bloomAmount :hint_range(1.0, 16.0) = 3.0;
 uniform vec2 warp = vec2(480.0, 270.0); // (64.0, 24.0)
 
 // Amount of shadow mask.
-uniform float maskDark  :hint_range(0.0, 1.0) = 0.5;
+uniform float maskDark  :hint_range(0.0, 1.0) = 0.25;
 uniform float maskLight :hint_range(1.0, 2.0) = 1.5;
 
 //------------------------------------------------------------------------

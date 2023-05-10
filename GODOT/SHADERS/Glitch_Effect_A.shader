@@ -45,8 +45,8 @@ uniform float contrast : hint_range(0.0,3.0) = 1.0; // ajout perso
 uniform float warp_amount : hint_range(0.0, 5.0) = 0.0; // Warp the texture edges simulating the curved glass of a CRT monitor or old TV.
 uniform bool clip_warp = false;
 
-uniform float vignette_intensity : hint_range(0.0, 2.0) = 0.2; // Size of the vignette, how far towards the middle it should go.
-uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.25;
+uniform float vignette_intensity : hint_range(0.0, 2.0) = 0.0; // Size of the vignette, how far towards the middle it should go.
+uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.0;
 
 // Used by the noise functin to generate a pseudo random value between 0.0 and 1.0
 vec2 random(vec2 uv){
