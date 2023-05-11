@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Beam_Down_Rear.png-b93e7cef43055294cb2e2ea259676685.stex"
+path="res://.import/Beam_Down_Back.png-d698479ba3803359120f494b68130900.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Rear.png"
-dest_files=[ "res://.import/Beam_Down_Rear.png-b93e7cef43055294cb2e2ea259676685.stex" ]
+source_file="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Back.png"
+dest_files=[ "res://.import/Beam_Down_Back.png-d698479ba3803359120f494b68130900.stex" ]
 
 [params]
 
