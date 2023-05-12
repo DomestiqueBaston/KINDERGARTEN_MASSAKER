@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://ASSETS/GRAPHICS/SCREEN_SHUT_DOWN/Screen_shut_down.png" type="Texture" id=1]
+[ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ASSETS/GRAPHICS/SCREEN_SHUT_DOWN/Screen_shut_down.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -20,7 +22,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "Screen_Shut_Down"
 length = 1.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -38,10 +39,12 @@ tracks/0/keys = {
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 240, 135 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 hframes = 13
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
 anims/RESET = SubResource( 1 )
 anims/Screen_Shut_Down = SubResource( 2 )
+
+[node name="Screen_Overlay" parent="." instance=ExtResource( 1 )]
