@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/SCREEN_SHUT_DOWN/Screen_shut_down.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
@@ -46,5 +45,3 @@ hframes = 13
 root_node = NodePath("../Sprite")
 anims/RESET = SubResource( 1 )
 anims/Screen_Shut_Down = SubResource( 2 )
-
-[node name="Screen_Overlay" parent="." instance=ExtResource( 1 )]
