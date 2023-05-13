@@ -7,7 +7,7 @@
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Optionen.png" type="Texture" id=5]
 [ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=6]
 
-[node name="Node2D" type="Node2D"]
+[node name="Menu" type="Node2D"]
 
 [node name="Menu_OFF" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -18,28 +18,28 @@ texture = ExtResource( 1 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Beam_me_down_gudrun" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="0" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 3 )
 
-[node name="Optionen" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="1" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 5 )
 
-[node name="Wer_denn" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="2" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 2 )
 
-[node name="Beenden" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="3" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 4 )
 
 [node name="Screen_Overlay" parent="." instance=ExtResource( 6 )]

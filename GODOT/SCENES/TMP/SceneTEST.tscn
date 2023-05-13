@@ -151,7 +151,6 @@ texture = ExtResource( 13 )
 [node name="SHADERS" type="Node2D" parent="PAPA_CAM/CAM"]
 
 [node name="1st_Set" type="Node2D" parent="PAPA_CAM/CAM/SHADERS"]
-visible = false
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/1st_Set"]
 copy_mode = 2
@@ -184,6 +183,7 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="2nd_Set" type="Node2D" parent="PAPA_CAM/CAM/SHADERS"]
+visible = false
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/2nd_Set"]
 copy_mode = 2

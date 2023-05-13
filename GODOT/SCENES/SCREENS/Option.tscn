@@ -10,52 +10,55 @@
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Komplexitat_124.png" type="Texture" id=8]
 [ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=9]
 
-[node name="Node2D" type="Node2D"]
+[node name="Option" type="Node2D"]
 
 [node name="Option_OFF" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 1 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Musik_00" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="0_0" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 2 )
 
-[node name="Musik_05" type="TextureRect" parent="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="0_1" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 3 )
 
-[node name="Musik_10" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="0_2" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 6 )
 
-[node name="Tone_00" type="TextureRect" parent="Control"]
-visible = false
+[node name="1_0" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 7 )
 
-[node name="Tone_05" type="TextureRect" parent="Control"]
+[node name="1_1" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 5 )
 
-[node name="Tone_10" type="TextureRect" parent="Control"]
-visible = false
+[node name="1_2" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 4 )
 
-[node name="Komplaxitat_124" type="TextureRect" parent="Control"]
+[node name="2_0" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 8 )

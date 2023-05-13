@@ -38,6 +38,7 @@ tracks/0/keys = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 22
+frame = 21
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Booger = SubResource( 2 )

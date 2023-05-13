@@ -4,17 +4,19 @@
 [ext_resource path="res://ASSETS/GRAPHICS/TITLE_SCREEN/Kindergarten Massaker_01.png" type="Texture" id=2]
 [ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D"]
+[node name="Title" type="Node2D"]
 
 [node name="Title_Base" type="TextureRect" parent="."]
+anchor_right = 480.0
+anchor_bottom = 270.0
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 2 )
 
 [node name="Title_Highlight" type="TextureRect" parent="."]
 visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 1 )
 
 [node name="Screen_Overlay" parent="." instance=ExtResource( 3 )]

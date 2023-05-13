@@ -19,111 +19,111 @@
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Regenerierung.png" type="Texture" id=17]
 [ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=18]
 
-[node name="Node2D" type="Node2D"]
+[node name="Talent_Selection" type="Node2D"]
 
 [node name="Talent_OFF" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 14 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Teleportation" type="TextureRect" parent="Control"]
-visible = false
+[node name="1" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 10 )
 
-[node name="Akzeleration" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="2" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 11 )
 
-[node name="Aversion" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="3" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 3 )
 
-[node name="Frostig" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="4" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 8 )
 
-[node name="Kraftfeld" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="5" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 1 )
 
-[node name="Schneller" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="6" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 7 )
 
-[node name="Zeitstopp" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="7" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 2 )
 
-[node name="Duplikat" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="8" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 4 )
 
-[node name="Nix" type="TextureRect" parent="Control"]
-visible = false
+[node name="9" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 9 )
 
-[node name="Agil" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="10" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 5 )
 
-[node name="Transparent" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="11" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 6 )
 
-[node name="Schild" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="12" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 12 )
 
-[node name="Mehr_leben" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="13" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 13 )
 
-[node name="Regenerierung" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="14" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 17 )
 
-[node name="Hand_zu_hand_spezialist" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="15" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 15 )
 
-[node name="Distanz_spezialist" type="TextureRect" parent="Control"]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="16" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
 texture = ExtResource( 16 )
 
 [node name="Screen_Overlay" parent="." instance=ExtResource( 18 )]
