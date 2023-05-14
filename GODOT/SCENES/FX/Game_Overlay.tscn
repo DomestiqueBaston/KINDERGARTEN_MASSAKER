@@ -79,7 +79,7 @@ shader_param/_VerticalJump = 0.0
 shader_param/_HorizontalShake = 0.0
 shader_param/_ColorDrift = 0.0
 
-[node name="SHADERS" type="Node2D"]
+[node name="Shaders" type="Node2D"]
 physics_interpolation_mode = 1
 
 [node name="1st_Set" type="Node2D" parent="."]

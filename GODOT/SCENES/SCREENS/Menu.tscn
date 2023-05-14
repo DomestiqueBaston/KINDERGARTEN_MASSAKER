@@ -7,7 +7,7 @@
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Optionen.png" type="Texture" id=5]
 [ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=6]
 
-[node name="Menu" type="Node2D"]
+[node name="PAPA_Menu" type="Node2D"]
 
 [node name="Menu_OFF" type="TextureRect" parent="."]
 margin_right = 40.0

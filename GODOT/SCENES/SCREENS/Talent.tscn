@@ -1,30 +1,30 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Kraftfeld.png" type="Texture" id=1]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Zeitstopp.png" type="Texture" id=2]
+[ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Kraftfeld.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Aversion.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Duplikat.png" type="Texture" id=4]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Agil.png" type="Texture" id=5]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Transparent.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Transparent.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Zeitstopp.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schneller.png" type="Texture" id=7]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Frostig.png" type="Texture" id=8]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Nix.png" type="Texture" id=9]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Teleportation.png" type="Texture" id=10]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Akzeleration.png" type="Texture" id=11]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schild.png" type="Texture" id=12]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Agil.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Sélection de talent.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Regenerierung.png" type="Texture" id=10]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Frostig.png" type="Texture" id=11]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Hand_zu_hand_spezialist.png" type="Texture" id=12]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Mehr_leben.png" type="Texture" id=13]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Sélection de talent.png" type="Texture" id=14]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Hand_zu_hand_spezialist.png" type="Texture" id=15]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Distanz_spezialist.png" type="Texture" id=16]
-[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Regenerierung.png" type="Texture" id=17]
-[ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=18]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schild.png" type="Texture" id=14]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Teleportation.png" type="Texture" id=15]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Nix.png" type="Texture" id=16]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Akzeleration.png" type="Texture" id=17]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Distanz_spezialist.png" type="Texture" id=18]
 
-[node name="Talent_Selection" type="Node2D"]
+[node name="PAPA_Talent" type="Node2D"]
 
 [node name="Talent_OFF" type="TextureRect" parent="."]
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 14 )
+texture = ExtResource( 9 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -34,13 +34,13 @@ margin_bottom = 40.0
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 10 )
+texture = ExtResource( 15 )
 
 [node name="2" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 11 )
+texture = ExtResource( 17 )
 
 [node name="3" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
@@ -52,13 +52,13 @@ texture = ExtResource( 3 )
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 
 [node name="5" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="6" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
@@ -70,7 +70,7 @@ texture = ExtResource( 7 )
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 
 [node name="8" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
@@ -82,25 +82,25 @@ texture = ExtResource( 4 )
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 9 )
+texture = ExtResource( 16 )
 
 [node name="10" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="11" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 
 [node name="12" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 
 [node name="13" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
@@ -112,18 +112,18 @@ texture = ExtResource( 13 )
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 17 )
+texture = ExtResource( 10 )
 
 [node name="15" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 15 )
+texture = ExtResource( 12 )
 
 [node name="16" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 
-[node name="Screen_Overlay" parent="." instance=ExtResource( 18 )]
+[node name="Screen_Overlay" parent="." instance=ExtResource( 1 )]

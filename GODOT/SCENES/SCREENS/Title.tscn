@@ -4,7 +4,7 @@
 [ext_resource path="res://ASSETS/GRAPHICS/TITLE_SCREEN/Kindergarten Massaker_01.png" type="Texture" id=2]
 [ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=3]
 
-[node name="Title" type="Node2D"]
+[node name="PAPA_Title" type="Node2D"]
 
 [node name="Title_Base" type="TextureRect" parent="."]
 anchor_right = 480.0
