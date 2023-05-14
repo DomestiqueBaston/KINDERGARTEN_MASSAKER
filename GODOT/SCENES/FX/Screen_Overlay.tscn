@@ -10,7 +10,7 @@ shader_param/vertMovementOpt = 0.0
 shader_param/bottomStaticOpt = 0.0
 shader_param/bottomStaticStrenth = 0.0
 shader_param/scalinesOpt = 0.0
-shader_param/rgbOffsetOpt = 0.1
+shader_param/rgbOffsetOpt = 0.0
 shader_param/horzFuzzOpt = 0.15
 
 [sub_resource type="ShaderMaterial" id=2]

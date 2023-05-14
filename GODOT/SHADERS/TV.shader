@@ -11,7 +11,7 @@ uniform float vertMovementOpt :hint_range(0,1) = 0.0;
 uniform float bottomStaticOpt :hint_range(0,5) = 0.0;
 uniform float bottomStaticStrenth :hint_range(0.0, 1.5) = 0.0;
 uniform float scalinesOpt :hint_range(0,6) = 0.0;
-uniform float rgbOffsetOpt :hint_range(0,2) = 0.1;
+uniform float rgbOffsetOpt :hint_range(0,2) = 0.0;
 uniform float horzFuzzOpt :hint_range(0,5) = 0.15;
 
 // Noise generation functions borrowed from: 

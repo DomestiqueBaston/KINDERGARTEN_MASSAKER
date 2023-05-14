@@ -5,15 +5,15 @@
 shader_type canvas_item;
 
 // 振動の強さ
-uniform float shake_power : hint_range(0.0, 0.25) = 0.03;
+uniform float shake_power : hint_range(0.0, 0.25) = 0.0;
 // 振動率
-uniform float shake_rate : hint_range( 0.0, 1.0 ) = 0.2;
+uniform float shake_rate : hint_range( 0.0, 1.0 ) = 0.0;
 // 振動速度
-uniform float shake_speed : hint_range(0.0, 10.0) = 5.0;
+uniform float shake_speed : hint_range(0.0, 10.0) = 0.0;
 // 振動ブロックサイズ
-uniform float shake_block_size : hint_range(1.0,200.0) = 25.0;
+uniform float shake_block_size : hint_range(1.0,200.0) = 4.0;
 // 色の分離率
-uniform float shake_color_rate : hint_range( 0.0, .1 ) = 0.005;
+uniform float shake_color_rate : hint_range( 0.0, .1 ) = 0.0;
 
 float random( float seed )
 {

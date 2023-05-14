@@ -6,10 +6,10 @@
 
 shader_type canvas_item;
 
-uniform float tape_wave_amount :hint_range (0, .04) = 0.003;
-uniform float tape_crease_amount :hint_range (0, 15) = 2.5;
-uniform float color_displacement :hint_range (0, 5) = 1;
-uniform float lines_velocity :hint_range (0, 5) = 0.1;
+uniform float tape_wave_amount :hint_range (0, .04) = 0.0;
+uniform float tape_crease_amount :hint_range (0, 15) = 0.0;
+uniform float color_displacement :hint_range (0, 5) = 0.0;
+uniform float lines_velocity :hint_range (0, 5) = 0.0;
 
 const float PI = 3.14159265;
 

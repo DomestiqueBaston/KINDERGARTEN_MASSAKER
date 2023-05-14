@@ -19,21 +19,21 @@
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 5 )
 shader_param/overlay = true
-shader_param/scanlines_opacity = 0.1
+shader_param/scanlines_opacity = 0.0
 shader_param/scanlines_width = 0.1
 shader_param/grille_opacity = 0.1
 shader_param/resolution = Vector2( 480, 270 )
 shader_param/pixelate = false
 shader_param/roll = true
 shader_param/roll_speed = 1.0
-shader_param/roll_size = 3.0
+shader_param/roll_size = 6.0
 shader_param/roll_variation = 5.0
 shader_param/distort_intensity = 0.008
 shader_param/noise_opacity = 0.55
 shader_param/noise_speed = 5.0
-shader_param/static_noise_intensity = 0.07
+shader_param/static_noise_intensity = 0.0
 shader_param/aberration = 0.0
-shader_param/brightness = 1.1
+shader_param/brightness = 1.0
 shader_param/discolor = true
 shader_param/saturation = 0.0
 shader_param/contrast = 1.0
@@ -44,12 +44,12 @@ shader_param/vignette_opacity = 0.0
 
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 2 )
-shader_param/vertJerkOpt = 0.2
+shader_param/vertJerkOpt = 0.1
 shader_param/vertMovementOpt = 0.0
 shader_param/bottomStaticOpt = 0.0
-shader_param/bottomStaticStrenth = 0.7
+shader_param/bottomStaticStrenth = 0.0
 shader_param/scalinesOpt = 0.0
-shader_param/rgbOffsetOpt = 0.2
+shader_param/rgbOffsetOpt = 0.0
 shader_param/horzFuzzOpt = 0.15
 
 [sub_resource type="ShaderMaterial" id=15]
@@ -68,25 +68,25 @@ shader_param/maskLight = 1.5
 
 [sub_resource type="ShaderMaterial" id=7]
 shader = ExtResource( 9 )
-shader_param/tape_wave_amount = 0.003
-shader_param/tape_crease_amount = 2.5
-shader_param/color_displacement = 1.0
-shader_param/lines_velocity = 0.1
+shader_param/tape_wave_amount = 0.0
+shader_param/tape_crease_amount = 0.0
+shader_param/color_displacement = 0.0
+shader_param/lines_velocity = 0.0
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=16]
 shader = ExtResource( 8 )
-shader_param/shake_power = 0.03
-shader_param/shake_rate = 0.2
-shader_param/shake_speed = 5.0
-shader_param/shake_block_size = 25.0
-shader_param/shake_color_rate = 0.005
+shader_param/shake_power = 0.0
+shader_param/shake_rate = 0.0
+shader_param/shake_speed = 0.0
+shader_param/shake_block_size = 4.0
+shader_param/shake_color_rate = 0.0
 
 [sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 6 )
-shader_param/_ScanLineJitter = 0.25
-shader_param/_VerticalJump = 0.01
+shader_param/_ScanLineJitter = 0.2
+shader_param/_VerticalJump = 0.0
 shader_param/_HorizontalShake = 0.0
-shader_param/_ColorDrift = 0.02
+shader_param/_ColorDrift = 0.0
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -151,6 +151,7 @@ texture = ExtResource( 13 )
 [node name="SHADERS" type="Node2D" parent="PAPA_CAM/CAM"]
 
 [node name="1st_Set" type="Node2D" parent="PAPA_CAM/CAM/SHADERS"]
+visible = false
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/1st_Set"]
 copy_mode = 2
@@ -199,7 +200,7 @@ margin_bottom = 135.0
 copy_mode = 2
 
 [node name="Glitch_Effect_B" type="ColorRect" parent="PAPA_CAM/CAM/SHADERS/2nd_Set/BackBufferCopy_2"]
-material = SubResource( 4 )
+material = SubResource( 16 )
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
@@ -216,7 +217,6 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="3rd_Set" type="Node2D" parent="PAPA_CAM/CAM/SHADERS"]
-visible = false
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/3rd_Set"]
 copy_mode = 2

@@ -6,10 +6,10 @@
 
 shader_type canvas_item;
 
-uniform float _ScanLineJitter : hint_range(.2, 1) = .25; // (displacement, threshold)
-uniform float _VerticalJump : hint_range(0, 1) = .01;   // (amount, time)
-uniform float _HorizontalShake : hint_range(0, 1) = 0;
-uniform float _ColorDrift : hint_range(0, 1) = .02;     // (amount, time)
+uniform float _ScanLineJitter : hint_range(.2, 1) = 0.2; // (displacement, threshold)
+uniform float _VerticalJump : hint_range(0, 1) = 0.0;   // (amount, time)
+uniform float _HorizontalShake : hint_range(0, 1) = 0.0;
+uniform float _ColorDrift : hint_range(0, 1) = 0.0;     // (amount, time)
 
 
 float nrand(float x, float y){
