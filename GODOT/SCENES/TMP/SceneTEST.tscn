@@ -106,6 +106,7 @@ __meta__ = {
 
 [node name="BG_NOISE" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+autoplay = true
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -125,45 +126,44 @@ limit_top = 0
 limit_right = 1440
 limit_bottom = 810
 
-[node name="Node2D" type="Node2D" parent="PAPA_CAM/CAM"]
+[node name="CHARACTERS" type="Node2D" parent="PAPA_CAM/CAM"]
 position = Vector2( -2, 0 )
 
-[node name="Sprite1" type="Sprite" parent="PAPA_CAM/CAM/Node2D"]
+[node name="The Alien" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( 2, 0 )
 texture = ExtResource( 10 )
 
-[node name="Sprite2" type="Sprite" parent="PAPA_CAM/CAM/Node2D"]
+[node name="Die Kindergartnerin" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( 117, -23 )
 texture = ExtResource( 4 )
 
-[node name="Sprite3" type="Sprite" parent="PAPA_CAM/CAM/Node2D"]
+[node name="Booger kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( 28, -43 )
 texture = ExtResource( 14 )
 
-[node name="Sprite4" type="Sprite" parent="PAPA_CAM/CAM/Node2D"]
+[node name="Crying kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( -100, -24 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 11 )
 
-[node name="Sprite5" type="Sprite" parent="PAPA_CAM/CAM/Node2D"]
+[node name="Vomit kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( -75, 34 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 12 )
 
-[node name="Sprite6" type="Sprite" parent="PAPA_CAM/CAM/Node2D"]
+[node name="Spitting girl" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( 55, 46 )
 texture = ExtResource( 15 )
 
-[node name="Sprite7" type="Sprite" parent="PAPA_CAM/CAM/Node2D"]
+[node name="Stick girl" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( -22, 60 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 13 )
 
 [node name="DEATH" type="Label" parent="PAPA_CAM/CAM"]
-visible = false
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
@@ -216,7 +216,6 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="2nd_Set" type="Node2D" parent="PAPA_CAM/CAM/SHADERS"]
-visible = false
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/2nd_Set"]
 copy_mode = 2
@@ -249,6 +248,7 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="3rd_Set" type="Node2D" parent="PAPA_CAM/CAM/SHADERS"]
+visible = false
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/3rd_Set"]
 copy_mode = 2
