@@ -111,7 +111,7 @@ autoplay = true
 
 [node name="MUSIC" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
-volume_db = -5.0
+volume_db = -7.5
 autoplay = true
 
 [node name="Sprite" type="Sprite" parent="."]
