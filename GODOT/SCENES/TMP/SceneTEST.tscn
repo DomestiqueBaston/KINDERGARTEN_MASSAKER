@@ -108,11 +108,12 @@ __meta__ = {
 [node name="BG_NOISE" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 autoplay = true
+bus = "AMBIANCE"
 
 [node name="MUSIC" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
-volume_db = -7.5
 autoplay = true
+bus = "MUSIC"
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -136,40 +137,40 @@ limit_bottom = 810
 position = Vector2( -2, 0 )
 
 [node name="The Alien" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
-position = Vector2( 20, -15 )
 texture = ExtResource( 10 )
 
 [node name="Die Kindergartnerin" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
-position = Vector2( 201, -80 )
+position = Vector2( 92, -26 )
 texture = ExtResource( 4 )
 
 [node name="Booger kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
-position = Vector2( 137, -53 )
+position = Vector2( 30, -49 )
 texture = ExtResource( 14 )
 
 [node name="Crying kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
-position = Vector2( -189, -77 )
+position = Vector2( -88, 1 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 11 )
 
 [node name="Vomit kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
-position = Vector2( -149, -26 )
+position = Vector2( -46, -46 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 12 )
 
 [node name="Spitting girl" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
-position = Vector2( 175, -22 )
+position = Vector2( 58, 40 )
 texture = ExtResource( 15 )
 
 [node name="Stick girl" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
-position = Vector2( -199, 11 )
+position = Vector2( -48, 51 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 13 )
 
 [node name="DEATH" type="Label" parent="PAPA_CAM/CAM"]
+visible = false
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
