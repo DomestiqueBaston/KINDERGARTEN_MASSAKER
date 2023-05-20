@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/SCREEN_SHUT_DOWN/Screen_shut_down.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/SCREEN_SHUT_DOWN/Screen_shut_down.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/SCREEN_SHUT_DOWN/White_noise.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -35,7 +36,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
 }
 tracks/1/type = "audio"
-tracks/1/path = NodePath("../AnimationPlayer/Screen_shut_down")
+tracks/1/path = NodePath("../Screen_shut_down")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -55,12 +56,16 @@ tracks/1/keys = {
 position = Vector2( 240, 135 )
 texture = ExtResource( 2 )
 hframes = 13
+frame = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
 anims/RESET = SubResource( 1 )
 anims/Screen_Shut_Down = SubResource( 2 )
 
-[node name="Screen_shut_down" type="AudioStreamPlayer" parent="AnimationPlayer"]
+[node name="Screen_shut_down" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 bus = "FX"
+
+[node name="White_noise (to play looping starting at anim frame 4)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
