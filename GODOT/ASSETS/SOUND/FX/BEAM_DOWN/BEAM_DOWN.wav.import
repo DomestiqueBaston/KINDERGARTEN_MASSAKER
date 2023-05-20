@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/BEAM_DOWN.wav-cff6beee36219b2bd299475a5a78fd41.sample"
+path="res://.import/Beam_down.wav-ec8d54b6dd98beb963a8c8eab59172fa.sample"
 
 [deps]
 
-source_file="res://ASSETS/SOUND/FX/BEAM_DOWN/BEAM_DOWN.wav"
-dest_files=[ "res://.import/BEAM_DOWN.wav-cff6beee36219b2bd299475a5a78fd41.sample" ]
+source_file="res://ASSETS/SOUND/FX/BEAM_DOWN/Beam_down.wav"
+dest_files=[ "res://.import/Beam_down.wav-ec8d54b6dd98beb963a8c8eab59172fa.sample" ]
 
 [params]
 

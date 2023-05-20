@@ -2,16 +2,15 @@
 
 [sub_resource type="AudioEffectEQ" id=2]
 resource_name = "EQ"
-band_db/1000_hz = -25.0
-band_db/3200_hz = -25.0
+band_db/1000_hz = -15.0
 
 [sub_resource type="AudioEffectEQ" id=1]
 resource_name = "EQ"
 band_db/32_hz = -60.0
 band_db/100_hz = -60.0
 band_db/320_hz = -60.0
-band_db/1000_hz = 2.5
-band_db/3200_hz = 2.5
+band_db/1000_hz = 7.5
+band_db/3200_hz = -60.0
 band_db/10000_hz = -60.0
 
 [resource]
