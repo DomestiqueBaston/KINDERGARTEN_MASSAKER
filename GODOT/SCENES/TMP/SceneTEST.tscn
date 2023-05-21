@@ -161,6 +161,7 @@ scale = Vector2( 1, -1 )
 texture = ExtResource( 13 )
 
 [node name="Death" parent="PAPA_CAM/CAM" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( -240, -135 )
 
 [node name="SHADERS" type="Node2D" parent="PAPA_CAM/CAM"]
