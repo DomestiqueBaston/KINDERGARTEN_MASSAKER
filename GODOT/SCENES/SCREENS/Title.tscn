@@ -20,3 +20,4 @@ margin_bottom = 270.0
 texture = ExtResource( 1 )
 
 [node name="Screen_Overlay" parent="." instance=ExtResource( 3 )]
+position = Vector2( 240, 135 )

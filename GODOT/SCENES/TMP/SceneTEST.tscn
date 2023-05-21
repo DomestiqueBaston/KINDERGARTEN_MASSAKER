@@ -1,14 +1,9 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=1]
-[ext_resource path="res://SHADERS/TV.shader" type="Shader" id=2]
+[ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SCRIPTS/TMP/PAPA_CAM.gd" type="Script" id=3]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Gretchen.png" type="Texture" id=4]
-[ext_resource path="res://SHADERS/Glitch_Effect_A.shader" type="Shader" id=5]
-[ext_resource path="res://SHADERS/Glitch.shader" type="Shader" id=6]
-[ext_resource path="res://SHADERS/CRT_2.gdshader" type="Shader" id=7]
-[ext_resource path="res://SHADERS/Glitch_Effect_B.shader" type="Shader" id=8]
-[ext_resource path="res://SHADERS/VHS.shader" type="Shader" id=9]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_2.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_3.png" type="Texture" id=12]
@@ -18,78 +13,6 @@
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/kids.wav" type="AudioStream" id=16]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=17]
 [ext_resource path="res://SCENES/FX/Death_Overlay.tscn" type="PackedScene" id=18]
-
-[sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 5 )
-shader_param/overlay = true
-shader_param/scanlines_opacity = 0.0
-shader_param/scanlines_width = 0.1
-shader_param/grille_opacity = 0.1
-shader_param/resolution = Vector2( 480, 270 )
-shader_param/pixelate = false
-shader_param/roll = true
-shader_param/roll_speed = 1.0
-shader_param/roll_size = 6.0
-shader_param/roll_variation = 5.0
-shader_param/distort_intensity = 0.008
-shader_param/noise_opacity = 0.55
-shader_param/noise_speed = 5.0
-shader_param/static_noise_intensity = 0.0
-shader_param/aberration = 0.0
-shader_param/brightness = 1.0
-shader_param/discolor = true
-shader_param/saturation = 0.0
-shader_param/contrast = 1.0
-shader_param/warp_amount = 0.0
-shader_param/clip_warp = false
-shader_param/vignette_intensity = 0.0
-shader_param/vignette_opacity = 0.0
-
-[sub_resource type="ShaderMaterial" id=12]
-shader = ExtResource( 2 )
-shader_param/vertJerkOpt = 0.1
-shader_param/vertMovementOpt = 0.0
-shader_param/bottomStaticOpt = 0.0
-shader_param/bottomStaticStrenth = 0.0
-shader_param/scalinesOpt = 0.0
-shader_param/rgbOffsetOpt = 0.0
-shader_param/horzFuzzOpt = 0.15
-
-[sub_resource type="ShaderMaterial" id=15]
-shader = ExtResource( 7 )
-shader_param/res = Vector2( 480, 270 )
-shader_param/mask_type = 1
-shader_param/bloom_type = 0
-shader_param/hardScan = -8.0
-shader_param/hardPix = -4.0
-shader_param/hardBloomScan = -2.0
-shader_param/hardBloomPix = -1.5
-shader_param/bloomAmount = 3.0
-shader_param/warp = Vector2( 480, 270 )
-shader_param/maskDark = 0.25
-shader_param/maskLight = 1.5
-
-[sub_resource type="ShaderMaterial" id=7]
-shader = ExtResource( 9 )
-shader_param/tape_wave_amount = 0.0
-shader_param/tape_crease_amount = 0.0
-shader_param/color_displacement = 0.0
-shader_param/lines_velocity = 0.0
-
-[sub_resource type="ShaderMaterial" id=16]
-shader = ExtResource( 8 )
-shader_param/shake_power = 0.0
-shader_param/shake_rate = 0.0
-shader_param/shake_speed = 0.0
-shader_param/shake_block_size = 4.0
-shader_param/shake_color_rate = 0.0
-
-[sub_resource type="ShaderMaterial" id=14]
-shader = ExtResource( 6 )
-shader_param/_ScanLineJitter = 0.2
-shader_param/_VerticalJump = 0.0
-shader_param/_HorizontalShake = 0.0
-shader_param/_ColorDrift = 0.0
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -109,13 +32,13 @@ bus = "MUSIC"
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="PAPA_CAM" type="KinematicBody2D" parent="."]
 position = Vector2( 720, 405 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CAM" type="Camera2D" parent="PAPA_CAM"]
 current = true
@@ -123,9 +46,15 @@ limit_left = 0
 limit_top = 0
 limit_right = 1440
 limit_bottom = 810
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CHARACTERS" type="Node2D" parent="PAPA_CAM/CAM"]
 position = Vector2( -2, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="The Alien" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 texture = ExtResource( 10 )
@@ -161,95 +90,12 @@ scale = Vector2( 1, -1 )
 texture = ExtResource( 13 )
 
 [node name="Death" parent="PAPA_CAM/CAM" instance=ExtResource( 18 )]
-visible = false
 position = Vector2( -240, -135 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="SHADERS" type="Node2D" parent="PAPA_CAM/CAM"]
-
-[node name="1st_Set" type="Node2D" parent="PAPA_CAM/CAM/SHADERS"]
-visible = false
-
-[node name="BackBufferCopy_1" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/1st_Set"]
-copy_mode = 2
-
-[node name="Glitch_Effect_A" type="ColorRect" parent="PAPA_CAM/CAM/SHADERS/1st_Set/BackBufferCopy_1"]
-material = SubResource( 3 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
-
-[node name="BackBufferCopy_3" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/1st_Set"]
-copy_mode = 2
-
-[node name="TV" type="ColorRect" parent="PAPA_CAM/CAM/SHADERS/1st_Set/BackBufferCopy_3"]
-material = SubResource( 12 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
-
-[node name="BackBufferCopy_4" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/1st_Set"]
-copy_mode = 2
-
-[node name="CRT_2" type="ColorRect" parent="PAPA_CAM/CAM/SHADERS/1st_Set/BackBufferCopy_4"]
-material = SubResource( 15 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
-
-[node name="2nd_Set" type="Node2D" parent="PAPA_CAM/CAM/SHADERS"]
-
-[node name="BackBufferCopy_1" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/2nd_Set"]
-copy_mode = 2
-
-[node name="VHS" type="ColorRect" parent="PAPA_CAM/CAM/SHADERS/2nd_Set/BackBufferCopy_1"]
-material = SubResource( 7 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
-
-[node name="BackBufferCopy_2" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/2nd_Set"]
-copy_mode = 2
-
-[node name="Glitch_Effect_B" type="ColorRect" parent="PAPA_CAM/CAM/SHADERS/2nd_Set/BackBufferCopy_2"]
-material = SubResource( 16 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
-
-[node name="BackBufferCopy_3" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/2nd_Set"]
-copy_mode = 2
-
-[node name="CRT_2" type="ColorRect" parent="PAPA_CAM/CAM/SHADERS/2nd_Set/BackBufferCopy_3"]
-material = SubResource( 15 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
-
-[node name="3rd_Set" type="Node2D" parent="PAPA_CAM/CAM/SHADERS"]
-visible = false
-
-[node name="BackBufferCopy_1" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/3rd_Set"]
-copy_mode = 2
-
-[node name="Glitch" type="ColorRect" parent="PAPA_CAM/CAM/SHADERS/3rd_Set/BackBufferCopy_1"]
-material = SubResource( 14 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
-
-[node name="BackBufferCopy_2" type="BackBufferCopy" parent="PAPA_CAM/CAM/SHADERS/3rd_Set"]
-copy_mode = 2
-
-[node name="CRT_2" type="ColorRect" parent="PAPA_CAM/CAM/SHADERS/3rd_Set/BackBufferCopy_2"]
-material = SubResource( 15 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
+[node name="Screen_Overlay" parent="PAPA_CAM/CAM" instance=ExtResource( 2 )]
+__meta__ = {
+"_edit_lock_": true
+}

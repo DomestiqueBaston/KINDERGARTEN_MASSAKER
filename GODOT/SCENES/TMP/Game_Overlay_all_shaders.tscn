@@ -83,7 +83,6 @@ shader_param/_ColorDrift = 0.0
 physics_interpolation_mode = 1
 
 [node name="1st_Set" type="Node2D" parent="."]
-visible = false
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="1st_Set"]
 copy_mode = 2
@@ -116,7 +115,6 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="2nd_Set" type="Node2D" parent="."]
-visible = false
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="2nd_Set"]
 copy_mode = 2
@@ -149,7 +147,6 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="3rd_Set" type="Node2D" parent="."]
-visible = false
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="3rd_Set"]
 copy_mode = 2
