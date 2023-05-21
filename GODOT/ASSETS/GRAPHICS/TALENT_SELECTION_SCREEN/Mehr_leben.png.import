@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mehr_leben.png-4650898ed43e3c3071818501198a36c3.stex"
+path="res://.import/mehr_leben.png-f00bc59c768148144d6bbd704b848cb6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Mehr_leben.png"
-dest_files=[ "res://.import/Mehr_leben.png-4650898ed43e3c3071818501198a36c3.stex" ]
+source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/mehr_leben.png"
+dest_files=[ "res://.import/mehr_leben.png-f00bc59c768148144d6bbd704b848cb6.stex" ]
 
 [params]
 

@@ -90,6 +90,7 @@ scale = Vector2( 1, -1 )
 texture = ExtResource( 13 )
 
 [node name="Death" parent="PAPA_CAM/CAM" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( -240, -135 )
 __meta__ = {
 "_edit_lock_": true
