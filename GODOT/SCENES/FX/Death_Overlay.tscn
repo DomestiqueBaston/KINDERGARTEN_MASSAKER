@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="DynamicFontData" id=17]
+font_path = "res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf"
+
+[sub_resource type="DynamicFont" id=18]
+size = 111
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 17 )
+
+[node name="Death" type="Node2D"]
+
+[node name="Dead" type="Label" parent="."]
+margin_top = -65.0
+margin_right = 480.0
+margin_bottom = 205.0
+rect_rotation = -5.0
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 240, 375 )
+custom_colors/font_color = Color( 0.945098, 0.792157, 0.654902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 18 )
+text = "Tot in
+21 sEkundeN!"
+align = 1
+valign = 1
+
+[node name="B" type="Label" parent="."]
+margin_left = -155.0
+margin_top = -70.0
+margin_right = 325.0
+margin_bottom = 200.0
+rect_scale = Vector2( 0.333, 0.333 )
+rect_pivot_offset = Vector2( 240, 375 )
+custom_colors/font_color = Color( 0.945098, 0.792157, 0.654902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 18 )
+text = "b: MeNü"
+valign = 2
+
+[node name="A" type="Label" parent="."]
+margin_left = 145.0
+margin_top = -70.0
+margin_right = 627.0
+margin_bottom = 200.0
+rect_scale = Vector2( 0.333, 0.333 )
+rect_pivot_offset = Vector2( 240, 375 )
+custom_colors/font_color = Color( 0.945098, 0.792157, 0.654902, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 18 )
+text = "a: Noch EiNMal!"
+align = 2
+valign = 2
