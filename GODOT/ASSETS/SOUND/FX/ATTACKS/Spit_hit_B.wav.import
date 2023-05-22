@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Spit_hit_B.wav-3be12989dce893935d737f8bd0946b36.sample"
+
+[deps]
+
+source_file="res://ASSETS/SOUND/FX/ATTACKS/Spit_hit_B.wav"
+dest_files=[ "res://.import/Spit_hit_B.wav-3be12989dce893935d737f8bd0946b36.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

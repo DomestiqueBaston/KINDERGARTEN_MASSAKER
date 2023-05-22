@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Kick_hit.wav-a2da264d4960084c06679d14c9cf99a3.sample"
+
+[deps]
+
+source_file="res://ASSETS/SOUND/FX/ATTACKS/Kick_hit.wav"
+dest_files=[ "res://.import/Kick_hit.wav-a2da264d4960084c06679d14c9cf99a3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

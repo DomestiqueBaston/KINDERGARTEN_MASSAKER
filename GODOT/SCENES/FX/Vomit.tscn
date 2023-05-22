@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/VOMIT/Le_vomi.png" type="Texture" id=1]
-[ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Vomit.wav" type="AudioStream" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Vomit_spill.wav" type="AudioStream" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -104,7 +104,7 @@ radius = 26.0192
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 5
-frame = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
@@ -118,4 +118,3 @@ scale = Vector2( 0.6, 0.4 )
 shape = SubResource( 3 )
 
 [node name="Vomit" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )

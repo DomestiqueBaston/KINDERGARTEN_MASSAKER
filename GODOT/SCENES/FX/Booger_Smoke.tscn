@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SMOKE/Smoke.png" type="Texture" id=1]
-[ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Booger_explosion.wav" type="AudioStream" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Explosion_A.wav" type="AudioStream" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Explosion_B.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -55,7 +56,29 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
 "stream": ExtResource( 2 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0, 0.001, 0.002 )
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("Booger_explosion")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
 } ],
 "times": PoolRealArray( 0 )
 }

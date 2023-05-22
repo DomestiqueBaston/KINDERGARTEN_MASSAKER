@@ -27,8 +27,6 @@ shader_param/saturation = 0.0
 shader_param/contrast = 1.0
 shader_param/warp_amount = 0.0
 shader_param/clip_warp = false
-shader_param/vignette_intensity = 0.0
-shader_param/vignette_opacity = 0.0
 
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 6 )

@@ -45,8 +45,8 @@ uniform float contrast : hint_range(0.0,3.0) = 1.0; // ajout perso
 uniform float warp_amount : hint_range(0.0, 5.0) = 0.0; // Warp the texture edges simulating the curved glass of a CRT monitor or old TV.
 uniform bool clip_warp = false;
 
-uniform float vignette_intensity : hint_range(0.0, 2.0) = 0.0; // Size of the vignette, how far towards the middle it should go.
-uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.0;
+//uniform float vignette_intensity : hint_range(0.0, 2.0) = 0.0; // Size of the vignette, how far towards the middle it should go.
+//uniform float vignette_opacity : hint_range(0.0, 1.0) = 0.0;
 
 // Used by the noise functin to generate a pseudo random value between 0.0 and 1.0
 vec2 random(vec2 uv){
@@ -89,11 +89,11 @@ float border (vec2 uv){
 }
 
 // Adds a vignette shadow to the edges of the image
-float vignette(vec2 uv){
-	uv *= 1.0 - uv.xy;
-	float vignette = uv.x * uv.y * 15.0;
-	return pow(vignette, vignette_intensity * vignette_opacity);
-}
+//float vignette(vec2 uv){
+//	uv *= 1.0 - uv.xy;
+//	float vignette = uv.x * uv.y * 15.0;
+//	return pow(vignette, vignette_intensity * vignette_opacity);
+//}
 
 void fragment()
 {
@@ -205,7 +205,7 @@ void fragment()
 	// Apply a black border to hide imperfections caused by the warping.
 	// Also apply the vignette
 	text.rgb *= border(uv);
-	text.rgb *= vignette(uv);
+	//text.rgb *= vignette(uv);
 	// Hides the black border and make that area transparent. Good if you want to add the the texture on top an image of a TV or monitor.
 	if (clip_warp)
 	{
