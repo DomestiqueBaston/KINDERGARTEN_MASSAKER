@@ -22,7 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "Screen_Shut_Down"
-length = 5.4
+length = 1.6
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
