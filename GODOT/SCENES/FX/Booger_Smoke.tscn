@@ -96,4 +96,5 @@ anims/Smoke = SubResource( 2 )
 
 [node name="Booger_explosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+volume_db = -5.0
 bus = "FX"

@@ -22,7 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "Screen_Shut_Down"
-length = 1.4
+length = 5.4
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -69,4 +69,5 @@ bus = "FX"
 
 [node name="White_noise (to play looping starting at anim frame 4)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -5.0
 bus = "FX"
