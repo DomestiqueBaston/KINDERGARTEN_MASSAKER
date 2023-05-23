@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=1]
 [ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SCRIPTS/TMP/PAPA_CAM.gd" type="Script" id=3]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Gretchen.png" type="Texture" id=4]
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=5]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_2.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_3.png" type="Texture" id=12]
@@ -13,6 +14,11 @@
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/kids.wav" type="AudioStream" id=16]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=17]
 [ext_resource path="res://SCENES/FX/Death_Overlay.tscn" type="PackedScene" id=18]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 5 )
+shader_param/BLACK_OUTLINE = null
+shader_param/RED_OUTLINE = Color( 1, 0, 0, 1 )
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -56,7 +62,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="The Alien" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
+[node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
+material = SubResource( 1 )
 texture = ExtResource( 10 )
 
 [node name="Die Kindergartnerin" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
@@ -97,6 +104,7 @@ __meta__ = {
 }
 
 [node name="Screen_Overlay" parent="PAPA_CAM/CAM" instance=ExtResource( 2 )]
+visible = false
 __meta__ = {
 "_edit_lock_": true
 }
