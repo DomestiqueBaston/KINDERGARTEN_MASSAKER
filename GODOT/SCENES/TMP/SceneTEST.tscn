@@ -104,7 +104,6 @@ __meta__ = {
 }
 
 [node name="Screen_Overlay" parent="PAPA_CAM/CAM" instance=ExtResource( 2 )]
-visible = false
 __meta__ = {
 "_edit_lock_": true
 }
