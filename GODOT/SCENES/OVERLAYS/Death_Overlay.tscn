@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [sub_resource type="DynamicFontData" id=17]
 font_path = "res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf"
@@ -9,6 +9,38 @@ outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = SubResource( 17 )
+
+[sub_resource type="Animation" id=19]
+resource_name = "Flasher"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("A:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("A:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Death" type="Node2D"]
 
@@ -45,9 +77,9 @@ align = 1
 valign = 1
 
 [node name="A" type="Label" parent="."]
-margin_left = 167.0
+margin_left = -176.0
 margin_top = -278.25
-margin_right = 649.0
+margin_right = 306.0
 margin_bottom = -8.25
 rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 240, 375 )
@@ -58,3 +90,8 @@ custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
 text = "a: nocH EiNMal!"
 align = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Flasher"
+anims/Flasher = SubResource( 19 )
+anims/RESET = SubResource( 20 )
