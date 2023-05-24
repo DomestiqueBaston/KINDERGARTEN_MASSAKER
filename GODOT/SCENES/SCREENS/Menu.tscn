@@ -5,7 +5,7 @@
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Beam_me_down_gudrun.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Beenden.png" type="Texture" id=4]
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Optionen.png" type="Texture" id=5]
-[ext_resource path="res://SCENES/FX/Screen_Overlay.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SCENES/OVERLAYS/Screen_Overlay.tscn" type="PackedScene" id=6]
 
 [node name="PAPA_Menu" type="Node2D"]
 

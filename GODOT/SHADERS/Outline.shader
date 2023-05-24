@@ -6,7 +6,7 @@ uniform vec4 RED_OUTLINE : hint_color;
 void fragment() {
 	vec4 curr_color = texture(TEXTURE,UV); //Get current color of pixel
 	
-	//Lets check that our current pixel color is any of the BLACK_OUTLINEs we wish to swap
+	//Let's check that our current pixel color is any of the BLACK_OUTLINEs we wish to swap
 	//If our pixel is black then swap BLACK_OUTLINE to RED_OUTLINE.
 	if (curr_color == BLACK_OUTLINE)
 	{
