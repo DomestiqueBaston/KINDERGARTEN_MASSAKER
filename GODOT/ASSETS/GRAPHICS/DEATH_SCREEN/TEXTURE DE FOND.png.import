@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Screen_shut_down_alt.png-c114741a6dbc30411402e8c287fd8eb2.stex"
+path="res://.import/TEXTURE DE FOND.png-706f1b456c5ee7402485739a04be4479.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/SCREEN_SHUT_DOWN/Screen_shut_down_alt.png"
-dest_files=[ "res://.import/Screen_shut_down_alt.png-c114741a6dbc30411402e8c287fd8eb2.stex" ]
+source_file="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png"
+dest_files=[ "res://.import/TEXTURE DE FOND.png-706f1b456c5ee7402485739a04be4479.stex" ]
 
 [params]
 

@@ -1,4 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ASSETS/SOUND/MUSIC/DEATH.wav" type="AudioStream" id=1]
+[ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png" type="Texture" id=2]
+[ext_resource path="res://SCENES/OVERLAYS/Screen_Overlay.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFontData" id=17]
 font_path = "res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf"
@@ -44,44 +48,32 @@ tracks/0/keys = {
 
 [node name="Death" type="Node2D"]
 
-[node name="Tot_in" type="Label" parent="."]
-margin_top = -125.0
-margin_right = 480.0
-margin_bottom = 145.0
-rect_rotation = -5.0
-rect_scale = Vector2( 0.8, 0.8 )
-rect_pivot_offset = Vector2( 240, 375 )
-custom_colors/font_color = Color( 0.945098, 0.792157, 0.654902, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_constants/shadow_offset_x = 8
-custom_constants/shadow_offset_y = 6
-custom_fonts/font = SubResource( 18 )
-text = "Tot in:"
-align = 1
-valign = 1
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 240, 135 )
+texture = ExtResource( 2 )
 
-[node name="X_sekunden" type="Label" parent="."]
-margin_top = 35.0
-margin_right = 480.0
-margin_bottom = 305.0
+[node name="Tot_in" type="Label" parent="."]
+margin_left = -3.0
+margin_right = 477.0
+margin_bottom = 270.0
 rect_rotation = -5.0
-rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 240, 375 )
 custom_colors/font_color = Color( 0.945098, 0.792157, 0.654902, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
-text = "24 sEkundeN!"
+text = "Tot in:
+37 sEkundeN!"
 align = 1
 valign = 1
 
 [node name="A" type="Label" parent="."]
-margin_left = -176.0
-margin_top = -278.25
-margin_right = 306.0
-margin_bottom = -8.25
-rect_scale = Vector2( 0.25, 0.25 )
+margin_left = 170.0
+margin_top = -283.0
+margin_right = 652.0
+margin_bottom = -13.0
+rect_scale = Vector2( 0.225, 0.225 )
 rect_pivot_offset = Vector2( 240, 375 )
 custom_colors/font_color = Color( 0.945098, 0.792157, 0.654902, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -95,3 +87,10 @@ align = 2
 autoplay = "Flasher"
 anims/Flasher = SubResource( 19 )
 anims/RESET = SubResource( 20 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Screen_Overlay" parent="." instance=ExtResource( 3 )]
+position = Vector2( 240, 135 )
