@@ -5,9 +5,8 @@
 
 [node name="PAPA_Credits" type="Node2D"]
 
-[node name="Credits" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Credits" type="Sprite" parent="."]
+position = Vector2( 240, 135 )
 texture = ExtResource( 1 )
 
 [node name="Screen_Overlay" parent="." instance=ExtResource( 2 )]

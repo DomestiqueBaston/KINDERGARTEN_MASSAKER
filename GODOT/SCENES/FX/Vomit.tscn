@@ -82,7 +82,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.6, 0.4 ), Vector2( 1.95, 1.05 ), Vector2( 2.075, 1.125 ), Vector2( 2.2, 1.2 ), Vector2( 2.25, 1.25 ) ]
 }
 tracks/3/type = "audio"
-tracks/3/path = NodePath("Vomit")
+tracks/3/path = NodePath("Vomit (pitch_scale random 0,5 or 1)")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -92,8 +92,12 @@ tracks/3/keys = {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource( 2 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0, 0.001 )
 }
 
 [sub_resource type="CircleShape2D" id=3]
@@ -117,5 +121,5 @@ position = Vector2( 0, -4 )
 scale = Vector2( 0.6, 0.4 )
 shape = SubResource( 3 )
 
-[node name="Vomit" type="AudioStreamPlayer" parent="."]
+[node name="Vomit (pitch_scale random 0,5 or 1)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )

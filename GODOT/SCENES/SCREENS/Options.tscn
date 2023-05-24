@@ -25,9 +25,8 @@
 
 [node name="PAPA_Options" type="Node2D"]
 
-[node name="Option_OFF" type="TextureRect" parent="."]
-margin_right = 480.0
-margin_bottom = 270.0
+[node name="Option_OFF" type="Sprite" parent="."]
+position = Vector2( 240, 135 )
 texture = ExtResource( 3 )
 
 [node name="Control" type="Control" parent="."]

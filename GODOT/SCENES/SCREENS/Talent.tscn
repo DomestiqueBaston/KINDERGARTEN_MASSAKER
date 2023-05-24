@@ -22,9 +22,8 @@
 
 [node name="PAPA_Talent" type="Node2D"]
 
-[node name="Talent_OFF" type="TextureRect" parent="."]
-margin_right = 480.0
-margin_bottom = 270.0
+[node name="Talent_OFF" type="Sprite" parent="."]
+position = Vector2( 240, 135 )
 texture = ExtResource( 9 )
 
 [node name="Control" type="Control" parent="."]
