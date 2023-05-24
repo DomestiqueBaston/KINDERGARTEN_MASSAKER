@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=1]
 [ext_resource path="res://SCENES/OVERLAYS/Screen_Overlay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SCRIPTS/TMP/PAPA_CAM.gd" type="Script" id=3]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Gretchen.png" type="Texture" id=4]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=5]
+[ext_resource path="res://SCENES/OVERLAYS/Shut_Down_Overlay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_2.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_3.png" type="Texture" id=12]
@@ -96,7 +97,12 @@ rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 13 )
 
+[node name="Screen_Shut_Down" parent="PAPA_CAM/CAM" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( -240, -135 )
+
 [node name="Death" parent="PAPA_CAM/CAM" instance=ExtResource( 18 )]
+visible = false
 position = Vector2( -240, -135 )
 __meta__ = {
 "_edit_lock_": true
