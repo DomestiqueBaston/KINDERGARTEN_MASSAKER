@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dist_exp.png-2fe51c5a3aa3e2f8415b5e43273b0f1c.stex"
+path="res://.import/Unsichtbar.png-9c4fdf688550bdf61e4937c4c4ccc540.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/dist_exp.png"
-dest_files=[ "res://.import/dist_exp.png-2fe51c5a3aa3e2f8415b5e43273b0f1c.stex" ]
+source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Unsichtbar.png"
+dest_files=[ "res://.import/Unsichtbar.png-9c4fdf688550bdf61e4937c4c4ccc540.stex" ]
 
 [params]
 

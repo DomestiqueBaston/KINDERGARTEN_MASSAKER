@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/teleport.png-8aebf77d139159c0c02d07c61e62a6bb.stex"
+path="res://.import/Ausweichen.png-94f437b0e7f38f8482c21b88b4660281.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/teleport.png"
-dest_files=[ "res://.import/teleport.png-8aebf77d139159c0c02d07c61e62a6bb.stex" ]
+source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Ausweichen.png"
+dest_files=[ "res://.import/Ausweichen.png-94f437b0e7f38f8482c21b88b4660281.stex" ]
 
 [params]
 

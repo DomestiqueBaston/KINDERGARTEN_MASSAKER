@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hand_zu_hand.png-e18980ac50450e1fb071bc2b05a2b3e6.stex"
+path="res://.import/Hand_zu_hand.png-7bd9457c812a20abf3f8b1967b104e80.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/hand_zu_hand.png"
-dest_files=[ "res://.import/hand_zu_hand.png-e18980ac50450e1fb071bc2b05a2b3e6.stex" ]
+source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Hand_zu_hand.png"
+dest_files=[ "res://.import/Hand_zu_hand.png-7bd9457c812a20abf3f8b1967b104e80.stex" ]
 
 [params]
 

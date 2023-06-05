@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/duplikate.png-502bca595021918f5a8b0a0b10fe2dfe.stex"
+path="res://.import/Duplikate.png-9436e92f509a15340304424f2a2ecf25.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/duplikate.png"
-dest_files=[ "res://.import/duplikate.png-502bca595021918f5a8b0a0b10fe2dfe.stex" ]
+source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Duplikate.png"
+dest_files=[ "res://.import/Duplikate.png-9436e92f509a15340304424f2a2ecf25.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/absto_expl.png-4baab1ae030023b0e88a3b3c544a37d9.stex"
+path="res://.import/Dist_exp.png-bd5eb86d3348ba7e692b3a5560e3b07d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/absto_expl.png"
-dest_files=[ "res://.import/absto_expl.png-4baab1ae030023b0e88a3b3c544a37d9.stex" ]
+source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Dist_exp.png"
+dest_files=[ "res://.import/Dist_exp.png-bd5eb86d3348ba7e692b3a5560e3b07d.stex" ]
 
 [params]
 
