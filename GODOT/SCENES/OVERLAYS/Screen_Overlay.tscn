@@ -31,7 +31,6 @@ shader_param/maskLight = 1.5
 z_index = 100
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="."]
-z_index = 101
 copy_mode = 2
 
 [node name="TV" type="ColorRect" parent="BackBufferCopy_1"]
@@ -42,7 +41,6 @@ margin_right = 240.0
 margin_bottom = 135.0
 
 [node name="BackBufferCopy_2" type="BackBufferCopy" parent="."]
-z_index = 102
 copy_mode = 2
 
 [node name="CRT_2" type="ColorRect" parent="BackBufferCopy_2"]

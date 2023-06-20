@@ -65,20 +65,20 @@ margin_top = -135.0
 margin_right = 240.0
 margin_bottom = 135.0
 
-[node name="BackBufferCopy_3" type="BackBufferCopy" parent="."]
+[node name="BackBufferCopy_2" type="BackBufferCopy" parent="."]
 copy_mode = 2
 
-[node name="TV" type="ColorRect" parent="BackBufferCopy_3"]
+[node name="TV" type="ColorRect" parent="BackBufferCopy_2"]
 material = SubResource( 12 )
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
 margin_bottom = 135.0
 
-[node name="BackBufferCopy_4" type="BackBufferCopy" parent="."]
+[node name="BackBufferCopy_3" type="BackBufferCopy" parent="."]
 copy_mode = 2
 
-[node name="CRT_2" type="ColorRect" parent="BackBufferCopy_4"]
+[node name="CRT_2" type="ColorRect" parent="BackBufferCopy_3"]
 material = SubResource( 2 )
 margin_left = -240.0
 margin_top = -135.0
