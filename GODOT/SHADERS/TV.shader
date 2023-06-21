@@ -10,7 +10,8 @@ uniform float vertJerkOpt :hint_range(0,1) = 0.1;
 uniform float vertMovementOpt :hint_range(0,1) = 0.0;
 uniform float bottomStaticOpt :hint_range(0,5) = 0.0;
 uniform float bottomStaticStrenth :hint_range(0.0, 1.5) = 0.0;
-uniform float scalinesOpt :hint_range(0,6) = 0.0;
+// Commented by Ferdi
+//uniform float scalinesOpt :hint_range(0,6) = 0.0;
 uniform float rgbOffsetOpt :hint_range(0,2) = 0.0;
 uniform float horzFuzzOpt :hint_range(0,5) = 0.15;
 
@@ -117,8 +118,9 @@ void fragment(){
 	float blue = texture(SCREEN_TEXTURE, vec2(uv.x + xOffset +0.01*rgbOffsetOpt,_y)).b+staticVal;
 	
 	vec3 color = vec3(red,green,blue);
-	float scanline = sin(uv.y*800.0)*0.04*scalinesOpt;
-	color -= scanline;
+// Commented by Ferdi
+//	float scanline = sin(uv.y*800.0)*0.04*scalinesOpt;
+//	color -= scanline;
 	
 	COLOR = vec4(color,1.0);
 }

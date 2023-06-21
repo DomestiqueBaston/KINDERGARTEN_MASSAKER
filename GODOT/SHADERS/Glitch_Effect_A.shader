@@ -23,7 +23,8 @@ uniform float scanlines_width : hint_range(0.0, 0.5) = 0.1;
 uniform float grille_opacity : hint_range(0.0, 1.0) = 0.1;
 uniform vec2 resolution = vec2(480.0, 270.0); // Set the number of rows and columns the texture will be divided in. Scanlines and grille will make a square based on these values
 
-uniform bool pixelate = false; // Fill each square ("pixel") with a sampled color, creating a pixel look and a more accurate representation of how a CRT monitor would work.
+// Below commented by Ferdi
+//uniform bool pixelate = false; // Fill each square ("pixel") with a sampled color, creating a pixel look and a more accurate representation of how a CRT monitor would work.
 
 uniform bool roll = true;
 uniform float roll_speed : hint_range(-10.0,10.0) = 1.0; // Positive values are down, negative are up
@@ -104,10 +105,11 @@ void fragment()
 	
 
 	// Pixelate the texture based on the given resolution.
-	if (pixelate)
-	{
-		text_uv = ceil(uv * resolution) / resolution;
-	}
+	//Below: commented by Ferdi
+//	if (pixelate)
+//	{
+//		text_uv = ceil(uv * resolution) / resolution;
+//	}
 	
 	// Create the rolling effect. We need roll_line a bit later to make the noise effect.
 	// That is why this runs if roll is true OR noise_opacity is over 0.
