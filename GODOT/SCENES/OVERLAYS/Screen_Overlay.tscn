@@ -30,10 +30,7 @@ shader_param/maskLight = 1.5
 [node name="Screen_Overlay" type="Node2D"]
 z_index = 100
 
-[node name="BackBufferCopy_1" type="BackBufferCopy" parent="."]
-copy_mode = 2
-
-[node name="TV" type="ColorRect" parent="BackBufferCopy_1"]
+[node name="TV" type="ColorRect" parent="."]
 material = SubResource( 12 )
 margin_left = -240.0
 margin_top = -135.0
@@ -43,7 +40,7 @@ margin_bottom = 135.0
 [node name="BackBufferCopy_2" type="BackBufferCopy" parent="."]
 copy_mode = 2
 
-[node name="CRT_2" type="ColorRect" parent="BackBufferCopy_2"]
+[node name="CRT_2" type="ColorRect" parent="."]
 material = SubResource( 2 )
 margin_left = -240.0
 margin_top = -135.0

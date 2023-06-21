@@ -55,11 +55,18 @@ shader_param/maskLight = 1.5
 [node name="Game_overlay_1" type="Node2D"]
 physics_interpolation_mode = 1
 
+[node name="Glitch_Effect_A" type="ColorRect" parent="."]
+material = SubResource( 3 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="."]
 copy_mode = 2
 
-[node name="Glitch_Effect_A" type="ColorRect" parent="BackBufferCopy_1"]
-material = SubResource( 3 )
+[node name="TV" type="ColorRect" parent="."]
+material = SubResource( 12 )
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
@@ -68,17 +75,7 @@ margin_bottom = 135.0
 [node name="BackBufferCopy_2" type="BackBufferCopy" parent="."]
 copy_mode = 2
 
-[node name="TV" type="ColorRect" parent="BackBufferCopy_2"]
-material = SubResource( 12 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
-
-[node name="BackBufferCopy_3" type="BackBufferCopy" parent="."]
-copy_mode = 2
-
-[node name="CRT_2" type="ColorRect" parent="BackBufferCopy_3"]
+[node name="CRT_2" type="ColorRect" parent="."]
 material = SubResource( 2 )
 margin_left = -240.0
 margin_top = -135.0
