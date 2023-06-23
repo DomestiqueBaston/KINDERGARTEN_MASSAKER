@@ -102,15 +102,12 @@ scale = Vector2( 1, -1 )
 texture = ExtResource( 11 )
 
 [node name="Screen_Overlay" parent="PAPA_CAM/CAM" instance=ExtResource( 7 )]
-visible = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Game_overlay_1" parent="PAPA_CAM/CAM" instance=ExtResource( 15 )]
 visible = false
 
 [node name="Game_overlay_2" parent="PAPA_CAM/CAM" instance=ExtResource( 16 )]
+visible = false
 
 [node name="Game_overlay_3" parent="PAPA_CAM/CAM" instance=ExtResource( 1 )]
 visible = false

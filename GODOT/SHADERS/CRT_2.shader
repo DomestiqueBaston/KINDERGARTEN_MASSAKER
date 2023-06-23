@@ -87,11 +87,11 @@ vec3 ToSrgb(vec3 c){ return vec3(ToSrgb1(c.r), ToSrgb1(c.g), ToSrgb1(c.b)); }
 // Also zero's off screen.
 vec3 Fetch(vec2 pos, vec2 off, sampler2D iChannel0){
 	pos = floor(pos * res + off) / res;
-	
+
 	if(max(abs(pos.x - 0.5), abs(pos.y - 0.5)) > 0.5){
 		return vec3(0.0, 0.0, 0.0);
 	}
-	
+
 	return ToLinear(texture(iChannel0 , pos.xy , -16.0).rgb);
 }
 
@@ -213,7 +213,7 @@ vec3 Bloom(vec2 pos, sampler2D iChannel0){
 vec2 Warp(vec2 pos){
 	pos = pos * 2.0 - 1.0;    
 	pos *= vec2(1.0 + (pos.y * pos.y) * 1.0 / warp.x, 1.0 + (pos.x * pos.x) * 1.0/ warp.y);
-	
+
 	return pos * 0.5+0.5;
 }
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SHADERS/Glitch_Effect_A.shader" type="Shader" id=2]
-[ext_resource path="res://SHADERS/CRT_2.gdshader" type="Shader" id=3]
+[ext_resource path="res://SHADERS/CRT_2.shader" type="Shader" id=3]
 [ext_resource path="res://SHADERS/TV.shader" type="Shader" id=6]
 
 [sub_resource type="ShaderMaterial" id=3]

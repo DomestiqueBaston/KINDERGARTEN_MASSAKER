@@ -39,7 +39,7 @@ void fragment( )
 		) - 0.5
 	) * shake_power * enable_shift;
 	
-	// -------------------------- Ajout perso
+	// -------------------------- Ajout perso (de l'auteur)
 	
 	fixed_uv.y += (
 		random(
@@ -59,7 +59,7 @@ void fragment( )
 	,	enable_shift
 	);
 	
-	// -------------------------- Ajout perso
+	// -------------------------- Ajout perso (de l'auteur)
 	
 	pixel_color.g = mix(
 		pixel_color.g

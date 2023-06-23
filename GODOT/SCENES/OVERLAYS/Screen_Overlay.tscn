@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SHADERS/TV.shader" type="Shader" id=1]
-[ext_resource path="res://SHADERS/CRT_2.gdshader" type="Shader" id=2]
+[ext_resource path="res://SHADERS/CRT_2.shader" type="Shader" id=2]
 
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 1 )

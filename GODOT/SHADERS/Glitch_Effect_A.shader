@@ -43,6 +43,9 @@ uniform bool discolor = true; // Add a discolor effect simulating a VHS
 uniform float saturation : hint_range(-1.0,1.0) = 0.0; // ajout perso
 uniform float contrast : hint_range(0.0,3.0) = 1.0; // ajout perso
 
+//
+// FERDI: WE SHOULD DELETE THE WARP EFFECT AS WE WON'T USE IT BUT I DON'T KNOW HOW TO DO THAT
+//
 uniform float warp_amount : hint_range(0.0, 5.0) = 0.0; // Warp the texture edges simulating the curved glass of a CRT monitor or old TV.
 uniform bool clip_warp = false;
 

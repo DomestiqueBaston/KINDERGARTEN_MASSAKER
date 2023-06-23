@@ -60,7 +60,7 @@ void fragment(){
 	float snPhase = smoothstep( 0.03, 0.0, uvn.y );
 	uvn.y += snPhase * 0.3;
 	uvn.x += snPhase * ( ( noise( vec2( uv.y * 100.0, TIME * 10.0 ) ) - 0.5 ) * 0.2 );
-	
+
 	col = tex2D( SCREEN_TEXTURE, uvn );
 	col *= 1.0 - tcPhase;
 	col = mix(
@@ -70,17 +70,17 @@ void fragment(){
 	);
 	
 	// bloom
-	for( float x = -4.0; x < 2.5; x += 1.0 ){
-		col.xyz += vec3(
-		tex2D( SCREEN_TEXTURE, uvn + vec2( x - 0.0, 0.0 ) * 0.007 ).x,
-		tex2D( SCREEN_TEXTURE, uvn + vec2( x - color_displacement, 0.0 ) * 0.007 ).y,
-		tex2D( SCREEN_TEXTURE, uvn + vec2( x - color_displacement * 2.0, 0.0 ) * 0.007 ).z
-		) * 0.1;
-	}
-	col *= 0.6;
+//	for( float x = -4.0; x < 2.5; x += 1.0 ){
+//		col.xyz += vec3(
+//		tex2D( SCREEN_TEXTURE, uvn + vec2( x - 0.0, 0.0 ) * 0.007 ).x,
+//		tex2D( SCREEN_TEXTURE, uvn + vec2( x - color_displacement, 0.0 ) * 0.007 ).y,
+//		tex2D( SCREEN_TEXTURE, uvn + vec2( x - color_displacement * 2.0, 0.0 ) * 0.007 ).z
+//		) * 0.1;
+//	}
+//	col *= 0.6;
 	
 	// ac beat
 	col *= 1.0 + clamp( noise( vec2( 0.0, uv.y + TIME * lines_velocity ) ) * 0.6 - 0.25, 0.0, 0.1 );
-	
+
 	COLOR = vec4( col, 1.0 );
 }
