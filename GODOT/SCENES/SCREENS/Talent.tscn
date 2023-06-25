@@ -30,103 +30,103 @@ texture = ExtResource( 9 )
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="1" type="TextureRect" parent="Control"]
+[node name="01_telep" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 10 )
 
-[node name="2" type="TextureRect" parent="Control"]
+[node name="02_boost" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 12 )
 
-[node name="3" type="TextureRect" parent="Control"]
+[node name="03_abs_exp" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 16 )
 
-[node name="4" type="TextureRect" parent="Control"]
+[node name="04_kraft" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 18 )
 
-[node name="5" type="TextureRect" parent="Control"]
+[node name="05_schoc" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 13 )
 
-[node name="6" type="TextureRect" parent="Control"]
+[node name="06_schne" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 2 )
 
-[node name="7" type="TextureRect" parent="Control"]
+[node name="07_zeits" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 4 )
 
-[node name="8" type="TextureRect" parent="Control"]
+[node name="08_dupli" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 5 )
 
-[node name="9" type="TextureRect" parent="Control"]
+[node name="09_zwe_leb" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 14 )
 
-[node name="10" type="TextureRect" parent="Control"]
+[node name="10_auswe" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 17 )
 
-[node name="11" type="TextureRect" parent="Control"]
+[node name="11_unsic" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 15 )
 
-[node name="12" type="TextureRect" parent="Control"]
+[node name="12_schil" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 19 )
 
-[node name="13" type="TextureRect" parent="Control"]
+[node name="13_meh_leb" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 6 )
 
-[node name="14" type="TextureRect" parent="Control"]
+[node name="14_regen" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 7 )
 
-[node name="15" type="TextureRect" parent="Control"]
+[node name="15_dis_exp" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 8 )
 
-[node name="16" type="TextureRect" parent="Control"]
+[node name="16_nix" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 11 )
 
-[node name="17" type="TextureRect" parent="Control"]
+[node name="17_han_spe" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0

@@ -1,3 +1,5 @@
+//Shader adapté de : https://www.youtube.com/watch?v=zpIjme5Ah7Q
+
 shader_type canvas_item;
 
 uniform vec4 BLACK_OUTLINE : hint_color;
@@ -19,4 +21,3 @@ void fragment() {
 	}
 }
 
-//Shader adapté de : https://www.youtube.com/watch?v=zpIjme5Ah7Q
