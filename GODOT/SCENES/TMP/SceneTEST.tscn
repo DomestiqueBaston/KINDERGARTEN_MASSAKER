@@ -14,13 +14,13 @@
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/kids.wav" type="AudioStream" id=16]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=17]
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 18.0
+
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
 shader_param/BLACK_OUTLINE = null
 shader_param/RED_OUTLINE = Color( 1, 0, 0, 1 )
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 24.3311
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -38,10 +38,22 @@ autoplay = true
 bus = "MUSIC"
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
+position = Vector2( -11, -16 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PAPA_CAM" type="KinematicBody2D" parent="."]
 position = Vector2( 720, 405 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Alien_Collider" type="CollisionShape2D" parent="PAPA_CAM"]
+position = Vector2( -1, 20 )
+scale = Vector2( 1, 0.75 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -65,16 +77,25 @@ __meta__ = {
 [node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 material = SubResource( 1 )
 texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Die Kindergartnerin" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 visible = false
 position = Vector2( 92, -26 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Booger kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 visible = false
 position = Vector2( 30, -49 )
 texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Crying kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 visible = false
@@ -82,6 +103,9 @@ position = Vector2( -88, 1 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Vomit kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 visible = false
@@ -89,11 +113,17 @@ position = Vector2( -46, -46 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Spitting girl" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 visible = false
 position = Vector2( 58, 40 )
 texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Stick girl" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 visible = false
@@ -101,11 +131,9 @@ position = Vector2( -48, 51 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 13 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PAPA_CAM"]
-position = Vector2( -2, 24 )
-scale = Vector2( 1, 0.5 )
-shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Screen_Overlay" parent="." instance=ExtResource( 2 )]
 __meta__ = {

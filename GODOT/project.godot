@@ -116,7 +116,13 @@ ui_a={
 [layer_names]
 
 2d_render/layer_1="BACKGROUND"
-2d_render/layer_2="TMP_CHARACTERS"
+2d_render/layer_2="ALIEN"
+2d_render/layer_3="KINDERGARTNERIN"
+2d_render/layer_4="BOOGER KID"
+2d_render/layer_5="CRYING KID"
+2d_render/layer_6="VOMIT KID"
+2d_render/layer_7="SPITTING KID"
+2d_render/layer_8="STICK KID"
 
 [physics]
 
