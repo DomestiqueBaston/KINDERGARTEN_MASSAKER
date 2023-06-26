@@ -26,22 +26,17 @@ shader_param/warp = Vector2( 480, 270 )
 shader_param/maskDark = 0.25
 shader_param/maskLight = 1.5
 
-[node name="Screen_Overlay" type="Node2D"]
-physics_interpolation_mode = 1
+[node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="TV" type="ColorRect" parent="."]
 material = SubResource( 12 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
+margin_right = 480.0
+margin_bottom = 270.0
 
 [node name="BackBufferCopy_1" type="BackBufferCopy" parent="."]
 copy_mode = 2
 
 [node name="CRT_2" type="ColorRect" parent="."]
 material = SubResource( 2 )
-margin_left = -240.0
-margin_top = -135.0
-margin_right = 240.0
-margin_bottom = 135.0
+margin_right = 480.0
+margin_bottom = 270.0

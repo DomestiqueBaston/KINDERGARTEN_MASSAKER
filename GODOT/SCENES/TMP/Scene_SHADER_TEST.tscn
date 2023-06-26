@@ -1,44 +1,53 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://SCENES/OVERLAYS/Game_Overlay_3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=1]
 [ext_resource path="res://SCRIPTS/TMP/PAPA_CAM.gd" type="Script" id=2]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Gretchen.png" type="Texture" id=4]
-[ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=5]
-[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=6]
-[ext_resource path="res://SCENES/OVERLAYS/Screen_Overlay.tscn" type="PackedScene" id=7]
-[ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_3.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_2.png" type="Texture" id=5]
+[ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_3.png" type="Texture" id=7]
+[ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_1.png" type="Texture" id=8]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Mädchen_1.png" type="Texture" id=9]
-[ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_2.png" type="Texture" id=10]
-[ext_resource path="res://ASSETS/GRAPHICS/TMP/Mädchen_2.png" type="Texture" id=11]
-[ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_1.png" type="Texture" id=12]
-[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/kids.wav" type="AudioStream" id=13]
-[ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=14]
-[ext_resource path="res://SCENES/OVERLAYS/Game_Overlay_1.tscn" type="PackedScene" id=15]
-[ext_resource path="res://SCENES/OVERLAYS/Game_Overlay_2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://ASSETS/GRAPHICS/TMP/Mädchen_2.png" type="Texture" id=10]
+[ext_resource path="res://SHADERS/TV.shader" type="Shader" id=11]
+[ext_resource path="res://SHADERS/CRT_2.shader" type="Shader" id=12]
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 6 )
+shader = ExtResource( 1 )
 shader_param/BLACK_OUTLINE = null
 shader_param/RED_OUTLINE = Color( 1, 0, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 11 )
+shader_param/vertJerkOpt = 0.1
+shader_param/vertMovementOpt = 0.0
+shader_param/bottomStaticOpt = 0.0
+shader_param/bottomStaticStrenth = 0.0
+shader_param/rgbOffsetOpt = 0.0
+shader_param/horzFuzzOpt = 0.15
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 12 )
+shader_param/res = Vector2( 480, 270 )
+shader_param/mask_type = 1
+shader_param/bloom_type = 0
+shader_param/hardScan = -8.0
+shader_param/hardPix = -4.0
+shader_param/hardBloomScan = -2.0
+shader_param/hardBloomPix = -1.5
+shader_param/bloomAmount = 3.0
+shader_param/warp = Vector2( 480, 270 )
+shader_param/maskDark = 0.25
+shader_param/maskLight = 1.5
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BG_NOISE" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
-autoplay = true
-bus = "AMBIANCE"
-
-[node name="MUSIC" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 14 )
-autoplay = true
-bus = "MUSIC"
-
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -77,19 +86,19 @@ texture = ExtResource( 4 )
 
 [node name="Booger kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( 30, -49 )
-texture = ExtResource( 12 )
+texture = ExtResource( 8 )
 
 [node name="Crying kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( -88, 1 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
-texture = ExtResource( 10 )
+texture = ExtResource( 5 )
 
 [node name="Vomit kid" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( -46, -46 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="Spitting girl" type="Sprite" parent="PAPA_CAM/CAM/CHARACTERS"]
 position = Vector2( 58, 40 )
@@ -99,15 +108,19 @@ texture = ExtResource( 9 )
 position = Vector2( -48, 51 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
-[node name="Screen_Overlay" parent="." instance=ExtResource( 7 )]
+[node name="Screen_Overlay" type="CanvasLayer" parent="."]
 
-[node name="Game_overlay_1" parent="." instance=ExtResource( 15 )]
-visible = false
+[node name="TV" type="ColorRect" parent="Screen_Overlay"]
+material = SubResource( 12 )
+margin_right = 480.0
+margin_bottom = 270.0
 
-[node name="Game_overlay_2" parent="." instance=ExtResource( 16 )]
-visible = false
+[node name="BackBufferCopy_1" type="BackBufferCopy" parent="Screen_Overlay"]
+copy_mode = 2
 
-[node name="Game_overlay_3" parent="." instance=ExtResource( 1 )]
-visible = false
+[node name="CRT_2" type="ColorRect" parent="Screen_Overlay"]
+material = SubResource( 2 )
+margin_right = 480.0
+margin_bottom = 270.0

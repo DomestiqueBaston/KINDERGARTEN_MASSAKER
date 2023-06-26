@@ -113,6 +113,11 @@ ui_a={
  ]
 }
 
+[layer_names]
+
+2d_render/layer_1="BACKGROUND"
+2d_render/layer_2="TMP_CHARACTERS"
+
 [physics]
 
 common/enable_pause_aware_picking=true
