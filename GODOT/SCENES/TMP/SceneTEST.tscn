@@ -14,8 +14,9 @@
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/kids.wav" type="AudioStream" id=16]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=17]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 18.0
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 12.0
+height = 14.0
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -45,14 +46,16 @@ __meta__ = {
 
 [node name="PAPA_CAM" type="KinematicBody2D" parent="."]
 position = Vector2( 720, 405 )
+collision_layer = 2
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Alien_Collider" type="CollisionShape2D" parent="PAPA_CAM"]
+light_mask = 2
 position = Vector2( -1, 20 )
-scale = Vector2( 1, 0.75 )
+rotation = 1.5708
 shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
