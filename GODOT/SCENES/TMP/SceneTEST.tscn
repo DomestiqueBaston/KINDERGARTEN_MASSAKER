@@ -30,6 +30,7 @@ __meta__ = {
 
 [node name="BG_NOISE" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+volume_db = -10.0
 autoplay = true
 bus = "AMBIANCE"
 
@@ -67,6 +68,9 @@ limit_left = 0
 limit_top = 0
 limit_right = 1440
 limit_bottom = 810
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 7.5
 __meta__ = {
 "_edit_lock_": true
 }
