@@ -6,29 +6,60 @@
 [node name="Background" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 719, 403 )
+position = Vector2( 720, 405 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Left_island" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, 1 )
 polygon = PoolVector2Array( 436, 241, 397, 229, 387, 213, 320, 222, 300, 246, 273, 253, 261, 285, 225, 319, 214, 420, 227, 436, 254, 460, 302, 440, 345, 360, 393, 333, 435, 283 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Right_Island" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 1092, 403, 1061, 396, 1018.6, 396.171, 1014.48, 398.068, 994, 426, 955, 448, 916, 474, 911.8, 483, 908, 502, 907, 531, 909, 540, 949, 570, 991, 574, 1049, 575, 1148.77, 535.839, 1155, 526, 1155, 497, 1161, 482, 1160.27, 475.168, 1139, 459, 1136, 444 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Top_Right_Boundary" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 676, -115, 675, 42, 707, 46, 709, 56, 764, 84, 767, 90, 791, 114, 793, 123, 779, 180, 779, 187, 798, 213, 820, 219, 827, 235, 835, 240, 877, 246, 919, 249, 928, 235, 947.948, 230.227, 969, 214, 972, 199, 988.332, 193.804, 995.111, 186.445, 998, 172, 1024, 154, 1048, 119, 1057, 114, 1117, 68, 1128, 56, 1178, 50, 1266, 51, 1278, 62, 1323, 86, 1370, 132, 1563, 134, 1562, -123, 1315, -118, 987, -115 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Right_Boundary" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 1564, 120, 1350, 105, 1370, 146, 1400, 175, 1411, 251, 1403, 282, 1414, 354, 1404, 465, 1422, 516, 1397, 566, 1383, 642, 1369, 693, 1564, 704, 1563, 429, 1562, 222 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Bottom_Right_Boundary" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 1561, 679, 1379, 677, 1342, 731, 1258, 761, 1247, 770, 1145, 779, 1105.87, 769.543, 1093.23, 770.989, 1077.72, 779.037, 1064.76, 780.966, 981, 769, 848, 743, 835, 737, 765, 720, 702, 694, 688, 673, 635, 652, 619, 631, 557, 629, 438.161, 632.803, 429.85, 637.299, 423, 651, 370, 694, 302, 733, 293, 745, 246, 759, 233, 767, 234, 900, 362, 899, 543, 901, 765, 902, 1027, 902, 1229, 902, 1434, 902, 1562, 902 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Left_Boundary" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 245, 899, 245, 766, 162, 762, 149, 753, 121, 751, 98, 723, 65, 710, 62, 693, 49, 665, 37, 656, 33, 583, 27, 568, 33, 529, 26, 507, 23, 479, 33, 472, 35, 468, 29, 426, 28, 387, 22, 354, 38, 286, 33, 253, 34.5572, 246.656, 44, 238, -122, 234, -121.561, 340.224, -121, 476, -121, 604, -120, 721, -122, 898, 74, 898 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Top_Left_Boundary" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, 2 )
 polygon = PoolVector2Array( -123, 242, 44, 239, 47, 210, 67, 184, 68.4439, 177.664, 65, 157, 77, 133, 92, 127, 125, 108, 147, 87, 152, 78, 229, 46, 248, 42, 261, 35, 293, 35, 368, 15, 413, 23, 445, 21, 479, 23, 508, 28, 524, 26, 600, 30, 665, 38, 675, 42, 688, 44, 688, -115, 576, -117, 419, -120, 289, -117, 171, -111, -122, -116, -122, -52, -122, 145 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Background_ambiance" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
