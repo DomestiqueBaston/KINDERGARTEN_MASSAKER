@@ -26,7 +26,7 @@ shader_param/warp = Vector2( 480, 270 )
 shader_param/maskDark = 0.25
 shader_param/maskLight = 1.5
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Screen_Overlay" type="CanvasLayer"]
 
 [node name="TV" type="ColorRect" parent="."]
 material = SubResource( 12 )

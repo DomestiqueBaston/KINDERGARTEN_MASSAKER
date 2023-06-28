@@ -46,9 +46,6 @@ __meta__ = {
 }
 
 [node name="Screen_Overlay" parent="." instance=ExtResource( 2 )]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="PAPA_CHARACTERS" type="KinematicBody2D" parent="."]
 position = Vector2( 720, 405 )
