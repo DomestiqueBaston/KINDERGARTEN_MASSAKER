@@ -9,7 +9,7 @@ font_path = "res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf"
 
 [sub_resource type="DynamicFont" id=18]
 size = 111
-outline_size = 6
+outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = SubResource( 17 )
@@ -53,29 +53,29 @@ position = Vector2( 240, 135 )
 texture = ExtResource( 2 )
 
 [node name="Tot_in" type="Label" parent="."]
-margin_left = -3.0
-margin_right = 477.0
+margin_left = -15.0
+margin_right = 465.0
 margin_bottom = 270.0
 rect_rotation = -5.0
 rect_pivot_offset = Vector2( 240, 375 )
-custom_colors/font_color = Color( 0.945098, 0.792157, 0.654902, 1 )
+custom_colors/font_color = Color( 0.717647, 0.219608, 0.278431, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
-text = "Tot in:
-37 sEkundeN!"
+text = "Tot in
+ 37 sEkundeN!"
 align = 1
 valign = 1
 
 [node name="A" type="Label" parent="."]
-margin_left = 170.0
+margin_left = 165.0
 margin_top = -283.0
-margin_right = 652.0
+margin_right = 647.0
 margin_bottom = -13.0
 rect_scale = Vector2( 0.225, 0.225 )
 rect_pivot_offset = Vector2( 240, 375 )
-custom_colors/font_color = Color( 0.945098, 0.792157, 0.654902, 1 )
+custom_colors/font_color = Color( 0.890196, 0.611765, 0.568627, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
@@ -93,4 +93,3 @@ stream = ExtResource( 1 )
 autoplay = true
 
 [node name="Screen_Overlay" parent="." instance=ExtResource( 3 )]
-position = Vector2( 240, 135 )

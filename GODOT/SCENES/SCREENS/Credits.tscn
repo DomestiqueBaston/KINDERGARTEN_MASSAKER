@@ -10,4 +10,3 @@ position = Vector2( 240, 135 )
 texture = ExtResource( 1 )
 
 [node name="Screen_Overlay" parent="." instance=ExtResource( 2 )]
-position = Vector2( 240, 135 )
