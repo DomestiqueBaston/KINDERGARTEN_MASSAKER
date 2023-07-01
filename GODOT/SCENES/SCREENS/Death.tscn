@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/MUSIC/DEATH.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png" type="Texture" id=2]
 [ext_resource path="res://SCENES/OVERLAYS/Screen_Overlay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SHADERS/TMP/Textured_Text.shader" type="Shader" id=4]
+[ext_resource path="res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE TEXTE.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFontData" id=17]
+override_oversampling = 2.0
 font_path = "res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf"
 
 [sub_resource type="DynamicFont" id=18]
@@ -14,12 +18,28 @@ outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = SubResource( 17 )
 
+[sub_resource type="ShaderMaterial" id=21]
+shader = ExtResource( 4 )
+shader_param/img = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 111
+font_data = ExtResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=23]
+shader = ExtResource( 4 )
+shader_param/img = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 111
+font_data = ExtResource( 5 )
+
 [sub_resource type="Animation" id=19]
 resource_name = "Flasher"
 length = 1.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("A:modulate")
+tracks/0/path = NodePath("A_STYLE:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -30,16 +50,40 @@ tracks/0/keys = {
 "update": 1,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("A_TEXTURE:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=20]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("A:modulate")
+tracks/0/path = NodePath("A_STYLE:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("A_TEXTURE:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -52,7 +96,7 @@ tracks/0/keys = {
 position = Vector2( 240, 135 )
 texture = ExtResource( 2 )
 
-[node name="Tot_in" type="Label" parent="."]
+[node name="Tot_in_STYLE" type="Label" parent="."]
 margin_left = -15.0
 margin_right = 465.0
 margin_bottom = 270.0
@@ -68,7 +112,22 @@ text = "Tot in
 align = 1
 valign = 1
 
-[node name="A" type="Label" parent="."]
+[node name="Tot_in_TEXTURE" type="Label" parent="."]
+material = SubResource( 21 )
+margin_left = -15.0
+margin_right = 465.0
+margin_bottom = 270.0
+rect_rotation = -5.0
+rect_pivot_offset = Vector2( 240, 375 )
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 22 )
+text = "Tot in
+ 37 sEkundeN!"
+align = 1
+valign = 1
+
+[node name="A_STYLE" type="Label" parent="."]
 margin_left = 165.0
 margin_top = -283.0
 margin_right = 647.0
@@ -80,6 +139,21 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
+text = "a: nocH EiNMal!"
+align = 2
+
+[node name="A_TEXTURE" type="Label" parent="."]
+material = SubResource( 23 )
+margin_left = 165.0
+margin_top = -283.0
+margin_right = 647.0
+margin_bottom = -13.0
+rect_scale = Vector2( 0.225, 0.225 )
+rect_pivot_offset = Vector2( 240, 375 )
+custom_colors/font_color = Color( 0.890196, 0.611765, 0.568627, 1 )
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 24 )
 text = "a: nocH EiNMal!"
 align = 2
 
