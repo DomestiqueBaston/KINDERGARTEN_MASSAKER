@@ -17,6 +17,10 @@ func get_input():
 		velocity.x += 1
 	velocity = velocity.normalized() * SPEED
 #	print(velocity)
+	if Input.is_action_pressed('full_screen'):
+		OS.window_fullscreen = !OS.window_fullscreen
+		return true
+	return false
 
 
 func _physics_process(_delta):

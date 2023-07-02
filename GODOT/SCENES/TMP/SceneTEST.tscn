@@ -70,6 +70,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Polygon2D" type="Polygon2D" parent="PAPA_CHARACTERS/CHARACTERS"]
+position = Vector2( -7.22191, -9.71427 )
+scale = Vector2( 1.11855, 0.857143 )
+color = Color( 0, 0.1, 0, 0.392157 )
+polygon = PoolVector2Array( -14.9999, 44.056, -13.1739, 40.92, -10.0588, 38.5556, -1.82355, 37.0001, 6.41174, 37, 13.8235, 37.0001, 21.6548, 38.1666, 26.1249, 40.5, 27.913, 44, 26.1249, 46.3333, 20.4117, 49.4445, 13, 51, 5.08691, 51, -1.82355, 51, -10.0588, 49.4445, -13.1739, 47.192 )
+
 [node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS"]
 material = SubResource( 1 )
 texture = ExtResource( 10 )
