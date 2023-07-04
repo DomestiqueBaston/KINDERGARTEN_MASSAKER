@@ -34,7 +34,7 @@ shader_param/img = ExtResource( 6 )
 size = 111
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=26]
 resource_name = "Flasher"
 length = 1.5
 loop = true
@@ -63,7 +63,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=27]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("A_STYLE:modulate")
@@ -157,10 +157,38 @@ custom_fonts/font = SubResource( 24 )
 text = "a: nocH EiNMal!"
 align = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="BESTE_STYLE" type="Label" parent="."]
+margin_left = -174.0
+margin_top = -283.0
+margin_right = 308.0
+margin_bottom = -13.0
+rect_scale = Vector2( 0.225, 0.225 )
+rect_pivot_offset = Vector2( 240, 375 )
+custom_colors/font_color = Color( 0.890196, 0.611765, 0.568627, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 18 )
+text = "Beste: 43\""
+
+[node name="BESTE_TEXTURE" type="Label" parent="."]
+material = SubResource( 23 )
+margin_left = -174.0
+margin_top = -283.0
+margin_right = 308.0
+margin_bottom = -13.0
+rect_scale = Vector2( 0.225, 0.225 )
+rect_pivot_offset = Vector2( 240, 375 )
+custom_colors/font_color = Color( 0.890196, 0.611765, 0.568627, 1 )
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 24 )
+text = "Beste: 43\""
+
+[node name="AnimationPlayer_A" type="AnimationPlayer" parent="."]
 autoplay = "Flasher"
-anims/Flasher = SubResource( 19 )
-anims/RESET = SubResource( 20 )
+anims/Flasher = SubResource( 26 )
+anims/RESET = SubResource( 27 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
