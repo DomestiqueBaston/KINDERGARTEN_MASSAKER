@@ -36,6 +36,8 @@ window/stretch/aspect="keep"
 [global]
 
 second=false
+fps=false
+frame=false
 
 [importer_defaults]
 
@@ -133,7 +135,7 @@ ui_a={
 
 [physics]
 
-common/physics_fps=100
+common/physics_fps=120
 common/enable_pause_aware_picking=true
 
 [rendering]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/zeitstopp.png-03162e81267201975eca92fc13a67455.stex"
+path="res://.import/Zeitstopp.png-0f826dbe54af6639c01c7db38944f741.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/zeitstopp.png"
-dest_files=[ "res://.import/zeitstopp.png-03162e81267201975eca92fc13a67455.stex" ]
+source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Zeitstopp.png"
+dest_files=[ "res://.import/Zeitstopp.png-0f826dbe54af6639c01c7db38944f741.stex" ]
 
 [params]
 

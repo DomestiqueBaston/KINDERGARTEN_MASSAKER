@@ -54,7 +54,7 @@ margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 18 )
 
-[node name="05_schoc" type="TextureRect" parent="Control"]
+[node name="05_fro_sch" type="TextureRect" parent="Control"]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0

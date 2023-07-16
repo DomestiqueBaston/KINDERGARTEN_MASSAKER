@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/schneller.png-88049d8f85b97d79b39efc3cd1f4a9f8.stex"
+path="res://.import/Schneller.png-244f890050721dd4af0f27cc05ad9306.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/schneller.png"
-dest_files=[ "res://.import/schneller.png-88049d8f85b97d79b39efc3cd1f4a9f8.stex" ]
+source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schneller.png"
+dest_files=[ "res://.import/Schneller.png-244f890050721dd4af0f27cc05ad9306.stex" ]
 
 [params]
 

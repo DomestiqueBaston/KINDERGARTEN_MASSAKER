@@ -158,11 +158,11 @@ text = "a: nocH EiNMal!"
 align = 2
 
 [node name="BESTE_STYLE" type="Label" parent="."]
-margin_left = -174.0
-margin_top = -283.0
-margin_right = 308.0
-margin_bottom = -13.0
-rect_scale = Vector2( 0.225, 0.225 )
+margin_left = -158.08
+margin_top = -258.125
+margin_right = 323.92
+margin_bottom = 11.875
+rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 240, 375 )
 custom_colors/font_color = Color( 0.890196, 0.611765, 0.568627, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -173,11 +173,11 @@ text = "Beste: 43\""
 
 [node name="BESTE_TEXTURE" type="Label" parent="."]
 material = SubResource( 23 )
-margin_left = -174.0
-margin_top = -283.0
-margin_right = 308.0
-margin_bottom = -13.0
-rect_scale = Vector2( 0.225, 0.225 )
+margin_left = -158.08
+margin_top = -258.125
+margin_right = 323.92
+margin_bottom = 11.875
+rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 240, 375 )
 custom_colors/font_color = Color( 0.890196, 0.611765, 0.568627, 1 )
 custom_constants/shadow_offset_x = 8

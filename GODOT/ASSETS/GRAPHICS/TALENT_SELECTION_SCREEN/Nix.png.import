@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nix.png-fb21e8d127e7a3fe6eee36dfd69b237a.stex"
+path="res://.import/Nix.png-d20747ffb4ec44ca0d3b09f222bb4b61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/nix.png"
-dest_files=[ "res://.import/nix.png-fb21e8d127e7a3fe6eee36dfd69b237a.stex" ]
+source_file="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Nix.png"
+dest_files=[ "res://.import/Nix.png-d20747ffb4ec44ca0d3b09f222bb4b61.stex" ]
 
 [params]
 
