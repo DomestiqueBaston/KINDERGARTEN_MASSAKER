@@ -6,7 +6,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/BEAM_DOWN/Beam_down.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Beam_Down_Front"
+resource_name = "Beam_Down"
 length = 3.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Beam Down Front:frame")
@@ -103,19 +103,18 @@ tracks/2/keys = {
 [node name="Beam Down Rear" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 32
-frame = 31
 
 [node name="(place holder) Alien" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, -27 )
 texture = ExtResource( 2 )
 
 [node name="Beam Down Front" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 hframes = 32
-frame = 31
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Beam_Down_Front = SubResource( 1 )
+anims/Beam_Down = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
 [node name="Beam_Down" type="AudioStreamPlayer" parent="."]
