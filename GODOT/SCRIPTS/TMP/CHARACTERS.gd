@@ -8,13 +8,13 @@ var velocity = Vector2()
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_down"):
-		velocity.y += .75
+		velocity.y += 0.75
 	if Input.is_action_pressed("ui_up"):
-		velocity.y -= .75
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
+		velocity.y -= 0.75
 	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
+		velocity.x += 1.0
+	if Input.is_action_pressed("ui_left"):
+		velocity.x -= 1.0
 	velocity = velocity.normalized() * SPEED
 #	print(velocity)
 	if Input.is_action_pressed('full_screen'):

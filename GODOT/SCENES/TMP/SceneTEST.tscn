@@ -70,7 +70,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Polygon2D" type="Polygon2D" parent="PAPA_CHARACTERS/CHARACTERS"]
+[node name="Shadow" type="Polygon2D" parent="PAPA_CHARACTERS/CHARACTERS"]
 position = Vector2( -7.22191, -9.71427 )
 scale = Vector2( 1.11855, 0.857143 )
 color = Color( 0, 0.1, 0, 0.392157 )
@@ -83,24 +83,24 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Die Kindergartnerin" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS"]
+[node name="Enemies" type="Node2D" parent="PAPA_CHARACTERS/CHARACTERS"]
 visible = false
+
+[node name="Die Kindergartnerin" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS/Enemies"]
 position = Vector2( 92, -26 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Booger kid" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS"]
-visible = false
+[node name="Booger kid" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS/Enemies"]
 position = Vector2( 30, -49 )
 texture = ExtResource( 14 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Crying kid" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS"]
-visible = false
+[node name="Crying kid" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS/Enemies"]
 position = Vector2( -88, 1 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
@@ -109,8 +109,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Vomit kid" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS"]
-visible = false
+[node name="Vomit kid" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS/Enemies"]
 position = Vector2( -46, -46 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
@@ -119,16 +118,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Spitting girl" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS"]
-visible = false
+[node name="Spitting girl" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS/Enemies"]
 position = Vector2( 58, 40 )
 texture = ExtResource( 15 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Stick girl" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS"]
-visible = false
+[node name="Stick girl" type="Sprite" parent="PAPA_CHARACTERS/CHARACTERS/Enemies"]
 position = Vector2( -48, 51 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )

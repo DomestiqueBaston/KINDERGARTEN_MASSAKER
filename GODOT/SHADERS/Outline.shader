@@ -5,6 +5,8 @@ shader_type canvas_item;
 uniform vec4 BLACK_OUTLINE : hint_color;
 uniform vec4 RED_OUTLINE : hint_color;
 
+
+
 void fragment() {
 	vec4 curr_color = texture(TEXTURE,UV); //Get current color of pixel
 	
