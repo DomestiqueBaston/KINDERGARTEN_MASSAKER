@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/MUSIC/DEATH.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://SHADERS/TMP/Textured_Text.shader" type="Shader" id=4]
 [ext_resource path="res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE TEXTE.png" type="Texture" id=6]
+[ext_resource path="res://SCRIPTS/TMP/FULL_SCREEN_ONLY.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFontData" id=17]
 override_oversampling = 2.0
@@ -91,6 +92,7 @@ tracks/1/keys = {
 }
 
 [node name="Death" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 240, 135 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://SCENES/OVERLAYS/Screen_Overlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Tone_10.png" type="Texture" id=2]
@@ -22,8 +22,10 @@
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Tone_00_valid.png" type="Texture" id=20]
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Tone_05_valid.png" type="Texture" id=21]
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Komplexitat_124_valid.png" type="Texture" id=22]
+[ext_resource path="res://SCRIPTS/TMP/FULL_SCREEN_ONLY.gd" type="Script" id=23]
 
 [node name="PAPA_Options" type="Node2D"]
+script = ExtResource( 23 )
 
 [node name="Option_OFF" type="Sprite" parent="."]
 position = Vector2( 240, 135 )
