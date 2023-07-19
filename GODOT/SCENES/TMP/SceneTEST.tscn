@@ -6,13 +6,13 @@
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Gretchen.png" type="Texture" id=4]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=5]
 [ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=6]
+[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=7]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_2.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_3.png" type="Texture" id=12]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Mädchen_2.png" type="Texture" id=13]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Junge_1.png" type="Texture" id=14]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Mädchen_1.png" type="Texture" id=15]
-[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/kids.wav" type="AudioStream" id=16]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=17]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -30,7 +30,8 @@ __meta__ = {
 }
 
 [node name="BG_AMBIANCE" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
+stream = ExtResource( 7 )
+volume_db = -12.5
 autoplay = true
 bus = "AMBIANCE"
 
