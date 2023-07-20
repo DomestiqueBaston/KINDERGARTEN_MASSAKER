@@ -67,7 +67,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0, -4 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 0, 2 ) ]
+"values": [ Vector2( 0, -4 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Area2D/CollisionShape2D:scale")
@@ -79,7 +79,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0.6, 0.4 ), Vector2( 1.95, 1.05 ), Vector2( 2.075, 1.125 ), Vector2( 2.2, 1.2 ), Vector2( 2.25, 1.25 ) ]
+"values": [ Vector2( 0.65, 0.35 ), Vector2( 1.9, 1 ), Vector2( 2, 1.025 ), Vector2( 2.075, 1.05 ), Vector2( 2.1, 1.075 ) ]
 }
 tracks/3/type = "audio"
 tracks/3/path = NodePath("Vomit (pitch_scale random 0,5 or 1)")
