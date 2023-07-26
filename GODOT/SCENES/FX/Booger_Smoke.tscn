@@ -159,6 +159,7 @@ radius = 7.60345
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 8
+frame = 7
 
 [node name="AnimationPlayer (1 random sound out of 2)" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )

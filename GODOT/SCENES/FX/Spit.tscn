@@ -118,6 +118,7 @@ tracks/4/keys = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 18
+frame = 17
 
 [node name="AnimationPlayer (1 random sound out of 2)" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
