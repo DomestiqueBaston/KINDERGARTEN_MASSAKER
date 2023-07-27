@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=1]
-[ext_resource path="res://SCENES/OVERLAYS/Screen_Overlay.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SCRIPTS/TMP/CHARACTERS.gd" type="Script" id=3]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Gretchen.png" type="Texture" id=4]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=5]
@@ -24,7 +23,7 @@ shader = ExtResource( 5 )
 shader_param/BLACK_OUTLINE = null
 shader_param/RED_OUTLINE = Color( 1, 0, 0, 1 )
 
-[node name="Node2D" type="Node2D"]
+[node name="SceneTEST" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -45,8 +44,6 @@ collision_mask = 2
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Screen_Overlay" parent="." instance=ExtResource( 2 )]
 
 [node name="PAPA_CHARACTERS" type="KinematicBody2D" parent="."]
 position = Vector2( 720, 405 )

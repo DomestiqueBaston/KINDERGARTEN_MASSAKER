@@ -17,7 +17,7 @@ band_db/10000_hz = -60.0
 resource_name = "Reverb"
 room_size = 0.25
 damping = 0.25
-hipass = 0.25
+hipass = 0.5
 
 [resource]
 bus/1/name = "MUSIC"
