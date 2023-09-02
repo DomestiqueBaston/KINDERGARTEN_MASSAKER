@@ -42,6 +42,7 @@ window/stretch/aspect="keep"
 second=false
 fps=false
 frame=false
+wind=false
 
 [importer_defaults]
 
