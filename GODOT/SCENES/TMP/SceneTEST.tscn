@@ -21,8 +21,8 @@ height = 28.0001
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
-shader_param/BLACK_OUTLINE = null
-shader_param/RED_OUTLINE = Color( 1, 0, 0, 1 )
+shader_param/ready = null
+shader_param/cooldown = null
 
 [node name="SceneTEST" type="Node2D"]
 __meta__ = {
@@ -41,7 +41,6 @@ autoplay = true
 bus = "MUSIC"
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
-collision_mask = 2
 __meta__ = {
 "_edit_lock_": true
 }

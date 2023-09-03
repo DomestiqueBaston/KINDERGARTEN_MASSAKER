@@ -3,6 +3,7 @@
 [ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=1]
 
 [node name="Background" type="StaticBody2D"]
+collision_mask = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 720, 405 )

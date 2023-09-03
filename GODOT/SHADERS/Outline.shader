@@ -2,8 +2,8 @@
 
 shader_type canvas_item;
 
-uniform vec4 BLACK_OUTLINE : hint_color;
-uniform vec4 RED_OUTLINE : hint_color;
+uniform vec4 ready : hint_color;
+uniform vec4 cooldown : hint_color;
 
 
 
@@ -12,9 +12,9 @@ void fragment() {
 	
 	//Let's check that our current pixel color is any of the BLACK_OUTLINEs we wish to swap
 	//If our pixel is black then swap BLACK_OUTLINE to RED_OUTLINE.
-	if (curr_color == BLACK_OUTLINE)
+	if (distance(curr_color, ready) < 0.01)
 	{
-		COLOR = RED_OUTLINE;
+		COLOR = cooldown;
 	}
 	else
 	{
