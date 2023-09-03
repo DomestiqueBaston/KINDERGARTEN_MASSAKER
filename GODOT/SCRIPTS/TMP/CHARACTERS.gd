@@ -5,6 +5,9 @@ var speed = 175
 var SPEED = Vector2(speed, speed / 1.5)
 var velocity = Vector2()
 
+func _ready():
+	set_physics_process(false)
+
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_down"):
