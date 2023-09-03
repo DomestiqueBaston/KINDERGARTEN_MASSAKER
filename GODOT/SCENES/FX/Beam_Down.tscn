@@ -98,24 +98,24 @@ tracks/2/keys = {
 "values": [  ]
 }
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Intro Alien" type="KinematicBody2D"]
 
 [node name="Beam Down Rear" type="Sprite" parent="."]
-position = Vector2( 0, 27 )
+position = Vector2( 0, -12 )
 texture = ExtResource( 1 )
 hframes = 32
+frame = 29
 
 [node name="(only for the demo) Alien" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="Beam Down Front" type="Sprite" parent="."]
-position = Vector2( 0, 27 )
+position = Vector2( 0, -12 )
 texture = ExtResource( 3 )
 hframes = 32
-frame = 31
+frame = 29
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Beam_Down"
 reset_on_save = false
 anims/Beam_Down = SubResource( 1 )
 anims/RESET = SubResource( 2 )
