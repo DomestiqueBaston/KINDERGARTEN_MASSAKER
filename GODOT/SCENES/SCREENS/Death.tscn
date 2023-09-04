@@ -1,39 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/MUSIC/DEATH.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png" type="Texture" id=2]
-[ext_resource path="res://SCENES/OVERLAYS/Screen_Overlay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SHADERS/TMP/Textured_Text.shader" type="Shader" id=4]
 [ext_resource path="res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE TEXTE.png" type="Texture" id=6]
-[ext_resource path="res://SCRIPTS/TMP/FULL_SCREEN_ONLY.gd" type="Script" id=7]
-
-[sub_resource type="DynamicFontData" id=17]
-override_oversampling = 2.0
-font_path = "res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf"
-
-[sub_resource type="DynamicFont" id=18]
-size = 111
-outline_size = 4
-outline_color = Color( 0, 0, 0, 1 )
-use_filter = true
-font_data = SubResource( 17 )
-
-[sub_resource type="ShaderMaterial" id=21]
-shader = ExtResource( 4 )
-shader_param/img = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=22]
-size = 111
-font_data = ExtResource( 5 )
-
-[sub_resource type="ShaderMaterial" id=23]
-shader = ExtResource( 4 )
-shader_param/img = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=24]
-size = 111
-font_data = ExtResource( 5 )
 
 [sub_resource type="Animation" id=26]
 resource_name = "Flasher"
@@ -91,12 +62,51 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="DynamicFontData" id=17]
+override_oversampling = 2.0
+font_path = "res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf"
+
+[sub_resource type="DynamicFont" id=18]
+size = 111
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 17 )
+
+[sub_resource type="ShaderMaterial" id=21]
+shader = ExtResource( 4 )
+shader_param/img = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 111
+font_data = ExtResource( 5 )
+
+[sub_resource type="ShaderMaterial" id=23]
+shader = ExtResource( 4 )
+shader_param/img = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 111
+font_data = ExtResource( 5 )
+
 [node name="Death" type="Node2D"]
-script = ExtResource( 7 )
+
+[node name="Death_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+bus = "MUSIC"
+
+[node name="AnimationPlayer_A" type="AnimationPlayer" parent="."]
+autoplay = "Flasher"
+anims/Flasher = SubResource( 26 )
+anims/RESET = SubResource( 27 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 240, 135 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Tot_in_STYLE" type="Label" parent="."]
 margin_left = -15.0
@@ -113,6 +123,9 @@ text = "Tot in
  37 sEkundeN!"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Tot_in_TEXTURE" type="Label" parent="."]
 material = SubResource( 21 )
@@ -128,6 +141,9 @@ text = "Tot in
  37 sEkundeN!"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="A_STYLE" type="Label" parent="."]
 margin_left = 165.0
@@ -143,6 +159,9 @@ custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
 text = "a: nocH EiNMal!"
 align = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="A_TEXTURE" type="Label" parent="."]
 material = SubResource( 23 )
@@ -158,6 +177,9 @@ custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 24 )
 text = "a: nocH EiNMal!"
 align = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BESTE_STYLE" type="Label" parent="."]
 margin_left = -158.08
@@ -172,6 +194,9 @@ custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
 text = "Beste: 43\""
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BESTE_TEXTURE" type="Label" parent="."]
 material = SubResource( 23 )
@@ -186,14 +211,6 @@ custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 24 )
 text = "Beste: 43\""
-
-[node name="AnimationPlayer_A" type="AnimationPlayer" parent="."]
-autoplay = "Flasher"
-anims/Flasher = SubResource( 26 )
-anims/RESET = SubResource( 27 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 1 )
-autoplay = true
-
-[node name="Screen_Overlay" parent="." instance=ExtResource( 3 )]
+__meta__ = {
+"_edit_lock_": true
+}

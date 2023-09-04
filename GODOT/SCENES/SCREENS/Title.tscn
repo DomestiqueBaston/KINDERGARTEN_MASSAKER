@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/TITLE_SCREEN/Kindergarten Massaker_02.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/TITLE_SCREEN/Kindergarten Massaker_01.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/MENUS.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/GRAPHICS/TITLE_SCREEN/Kindergarten Massaker_03.png" type="Texture" id=5]
-[ext_resource path="res://SCRIPTS/TMP/FULL_SCREEN_ONLY.gd" type="Script" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Flasher"
@@ -63,7 +62,6 @@ tracks/1/keys = {
 }
 
 [node name="PAPA_Title" type="Node2D"]
-script = ExtResource( 6 )
 
 [node name="Title_Base" type="Sprite" parent="."]
 position = Vector2( 240, 135 )
