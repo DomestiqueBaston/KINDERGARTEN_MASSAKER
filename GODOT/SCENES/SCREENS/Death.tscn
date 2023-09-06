@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://ASSETS/SOUND/MUSIC/DEATH.wav" type="AudioStream" id=1]
-[ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png" type="Texture" id=2]
-[ext_resource path="res://SHADERS/TMP/Textured_Text.shader" type="Shader" id=4]
-[ext_resource path="res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE TEXTE.png" type="Texture" id=6]
+[ext_resource path="res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE TEXTE.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/SOUND/MUSIC/DEATH.wav" type="AudioStream" id=4]
+[ext_resource path="res://SHADERS/TMP/Textured_Text.shader" type="Shader" id=5]
 
 [sub_resource type="Animation" id=26]
 resource_name = "Flasher"
@@ -74,25 +74,25 @@ use_filter = true
 font_data = SubResource( 17 )
 
 [sub_resource type="ShaderMaterial" id=21]
-shader = ExtResource( 4 )
-shader_param/img = ExtResource( 6 )
+shader = ExtResource( 5 )
+shader_param/img = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=22]
 size = 111
-font_data = ExtResource( 5 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="ShaderMaterial" id=23]
-shader = ExtResource( 4 )
-shader_param/img = ExtResource( 6 )
+shader = ExtResource( 5 )
+shader_param/img = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=24]
 size = 111
-font_data = ExtResource( 5 )
+font_data = ExtResource( 1 )
 
 [node name="Death" type="Node2D"]
 
-[node name="Death_Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+[node name="Death_Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 autoplay = true
 bus = "MUSIC"
 
@@ -103,7 +103,7 @@ anims/RESET = SubResource( 27 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 240, 135 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }

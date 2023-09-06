@@ -22,6 +22,9 @@ func _process(_delta):
 	for i in range(get_slide_count()):
 		var _collision = get_slide_collision(i)
 		$"CHARACTERS/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(1.0, 0.0, 0.0, 1.0))
+		Autoload.time_before_death -= 1.0
+	if Autoload.time_before_death <= 0:
+		Autoload.time_to_die = true
 
 func get_input():
 	velocity = Vector2()
