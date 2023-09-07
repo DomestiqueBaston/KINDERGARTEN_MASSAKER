@@ -2,6 +2,8 @@ extends Node
 
 
 var transition_signal = false
+var scene_changed = true
+var restart_game = false
 
 var time_before_death = 25.0
 var time_to_die = false

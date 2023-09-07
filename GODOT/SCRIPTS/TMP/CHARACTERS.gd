@@ -14,7 +14,8 @@ func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 
-func _process(_delta):
+func _process(delta):
+	Autoload.elapsed_time += delta
 #	Just to demo the outline shader (without fancy effects)
 #	as it won't be used like that in the game.
 	$"CHARACTERS/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.0, 0.0, 0.0, 1.0))
@@ -25,6 +26,7 @@ func _process(_delta):
 		Autoload.time_before_death -= 1.0
 	if Autoload.time_before_death <= 0:
 		Autoload.time_to_die = true
+		Autoload.scene_changed = true
 
 func get_input():
 	velocity = Vector2()
