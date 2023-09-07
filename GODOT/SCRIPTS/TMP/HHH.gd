@@ -17,16 +17,19 @@ func _process(_delta):
 	if Autoload.transition_signal:
 		$Transition_Overlay.hide()
 	if Autoload.restart_game:
+		$Transition_Overlay.visible = true
 		one_more_time()
 		
 func one_more_time():
-	Autoload.scene_changed = true
+	Autoload.scene_changed = false
 	Autoload.transition_signal = false
 	Autoload.restart_game = false
 	Autoload.time_before_death = 25.0
 	Autoload.time_to_die = false
 	Autoload.elapsed_time = 0.0
-	var _useless = get_tree().reload_current_scene()
+	$Transition_Overlay/Sprite.take_screenshot()
+	$Active_Scene.get_child(0).queue_free()
+	$Active_Scene.add_child(SceneTwo.instance())
 
 func to_scene1():
 	Autoload.scene_changed = false

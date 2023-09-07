@@ -10,5 +10,6 @@ func _ready():
 	$BESTE_TEXTURE.text = "Beste: " + str(stepify(Autoload.best_time, 0.1)) + "''"
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_a"):
+		Autoload.transition_signal = true
 		Autoload.restart_game = true 
