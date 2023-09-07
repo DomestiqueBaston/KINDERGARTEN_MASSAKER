@@ -1,7 +1,7 @@
 # Source: https://www.youtube.com/watch?v=Jd0en-xC3bk
 extends Camera2D
 
-var TargetNodePath = NodePath("../PAPA_CHARACTERS")
+var TargetNodePath = NodePath("../PAPA_PLAYER")
 var target_node
 #export (float) var lerpspeed = 0.15
 

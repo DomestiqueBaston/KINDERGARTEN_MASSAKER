@@ -13,7 +13,7 @@ func _process(_delta):
 		if Autoload.scene_changed == true:
 			to_scene2()
 	if Input.is_action_just_pressed("ui_cancel") and Autoload.transition_signal:
-		one_more_time()
+		finally_no()
 	if Autoload.transition_signal:
 		$Transition_Overlay.hide()
 	if Autoload.restart_game:
@@ -27,9 +27,26 @@ func one_more_time():
 	Autoload.time_before_death = 25.0
 	Autoload.time_to_die = false
 	Autoload.elapsed_time = 0.0
+<<<<<<< Updated upstream
 	$Transition_Overlay/Sprite.take_screenshot()
 	$Active_Scene.get_child(0).queue_free()
 	$Active_Scene.add_child(SceneTwo.instance())
+=======
+#	var _useless = get_tree().reload_current_scene()
+	$Transition_Overlay.visible = true
+	$Transition_Overlay/Sprite.take_screenshot()
+	$Active_Scene.get_child(0).queue_free()
+	$Active_Scene.add_child(SceneTwo.instance())
+
+func finally_no():
+	Autoload.scene_changed = true
+	Autoload.transition_signal = false
+	Autoload.restart_game = false
+	Autoload.time_before_death = 25.0
+	Autoload.time_to_die = false
+	Autoload.elapsed_time = 0.0
+	var _useless = get_tree().reload_current_scene()
+>>>>>>> Stashed changes
 
 func to_scene1():
 	Autoload.scene_changed = false
@@ -43,4 +60,4 @@ func to_scene2():
 	Autoload.scene_changed = false
 	$Active_Scene.get_child(0).queue_free()
 	$Active_Scene.add_child(SceneDeath.instance())
-	Autoload.transition_signal = false
+	Autoload.transition_signal = true

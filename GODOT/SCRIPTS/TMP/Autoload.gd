@@ -1,13 +1,14 @@
 extends Node
 
 
-var transition_signal = false
-var scene_changed = true
-var restart_game = false
+var transition_signal = false	#TRUE si Transition_Overlay a fini de jouer
+var scene_changed = true		#TRUE quand on meurt
+var restart_game = false		#TRUE quand on veut rejouer après être mort
 
 var time_before_death = 25.0
-var time_to_die = false
+var time_to_die = false			#TRUE quand on meurt (aussi ?)
 
+# SCORE
 var elapsed_time = 0.0
 var best_time = 0.0
 

@@ -18,17 +18,25 @@ func _process(delta):
 	Autoload.elapsed_time += delta
 #	Just to demo the outline shader (without fancy effects)
 #	as it won't be used like that in the game.
-	$"CHARACTERS/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.0, 0.0, 0.0, 1.0))
+	$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.0, 0.0, 0.0, 1.0))
 #	Collision test
 	for i in range(get_slide_count()):
 		var _collision = get_slide_collision(i)
-		$"CHARACTERS/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(1.0, 0.0, 0.0, 1.0))
+		$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(1.0, 0.0, 0.0, 1.0))
 		Autoload.time_before_death -= 1.0
 	if Autoload.time_before_death <= 0:
 		Autoload.time_to_die = true
 		Autoload.scene_changed = true
 
-func get_input():
+func get_input(delta):
+	if Input.is_action_just_pressed("ui_a"):
+		var dash_timer = 0.0
+		speed = 350
+		dash_timer += delta
+		if dash_timer >= 100:
+			speed = 175
+			dash_timer = 0.0
+			hide()
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 0.75
@@ -39,5 +47,5 @@ func get_input():
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1.0
 	velocity = velocity.normalized() * SPEED
-#	print(velocity)
+
 
