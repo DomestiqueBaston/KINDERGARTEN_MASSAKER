@@ -95,7 +95,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Cooldown_Timer" type="Timer" parent="PAPA_PLAYER/PLAYER/Dash_Trail"]
-wait_time = 3.5
+wait_time = 4.0
 one_shot = true
 
 [node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
