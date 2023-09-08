@@ -5,6 +5,7 @@ var speed = 175
 var SPEED = Vector2(speed, speed / 1.5)
 var dash_speed = 1
 var velocity = Vector2()
+
 var cooldown_ready = true
 
 
@@ -44,22 +45,14 @@ func get_input():
 func start_dash_timer():
 	if cooldown_ready:
 		if $PLAYER/Dash_Trail/Dash_Timer.is_stopped():
-			if velocity.x != 0 and velocity.y != 0:
-				dash_speed = 1
-				$PLAYER/Dash_Trail.hide()
-				$PLAYER/Dash_Trail.clear_points()	#hide()
-			else:
-				$PLAYER/Dash_Trail/Cooldown_Timer.start()
-				$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.71, 0.21, 0.27, 1.0))
-				cooldown_ready = false
-				$PLAYER/Dash_Trail/Dash_Timer.start()
-				dash_speed = 5
-				$PLAYER/Dash_Trail.visible = true
-	else:
-		dash_speed = 1
-		$PLAYER/Dash_Trail.hide()
-		$PLAYER/Dash_Trail.clear_points()	#hide()
-		
+			$PLAYER/FX.play(0.0)
+			$PLAYER/Dash_Trail/Cooldown_Timer.start()
+			$PLAYER/Dash_Trail/Dash_Timer.start()
+			$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.71, 0.21, 0.27, 1.0))
+			cooldown_ready = false
+			dash_speed = 5
+			$PLAYER/Dash_Trail.visible = true
+
 func _on_Dash_Timer_timeout():
 	dash_speed = 1
 	$PLAYER/Dash_Trail.hide()

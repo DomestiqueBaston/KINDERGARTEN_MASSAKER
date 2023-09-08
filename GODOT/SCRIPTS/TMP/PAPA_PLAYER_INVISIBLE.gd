@@ -45,6 +45,7 @@ func get_input():
 
 func start_timers():
 	if cooldown_ready:
+		$PLAYER/FX_ON.play(0.0)
 #		Si le timer est prêt :
 		$PLAYER/Invisible_Timer.start()
 		$PLAYER/Cooldown_Timer.start()
@@ -57,6 +58,7 @@ func start_timers():
 
 
 func _on_Invisible_Timer_timeout():
+	$PLAYER/FX_OFF.play(0.0)
 #	redevient visible !
 #	$"PLAYER/The Alien (with OUTLINE shader)".self_modulate.a = 1.0
 	$"PLAYER/Shadow".self_modulate.a = 1.0

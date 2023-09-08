@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=1]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_FORCE_FIELD.gd" type="Script" id=7]
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Force_Field.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_field.wav" type="AudioStream" id=10]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.99994
@@ -60,7 +61,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3 ]
+"values": [ 1, 2, 3, 0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Force_Field:scale")
@@ -73,6 +74,20 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 0.8, 0.8 ) ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("FX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [node name="SceneTEST" type="Node2D"]
@@ -155,9 +170,13 @@ texture = ExtResource( 9 )
 hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PAPA_PLAYER/PLAYER"]
-autoplay = "force_field"
 anims/RESET = SubResource( 3 )
 anims/force_field = SubResource( 4 )
+
+[node name="FX" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
+stream = ExtResource( 10 )
+volume_db = -2.5
+bus = "FX"
 
 [node name="CAMERA" type="Camera2D" parent="."]
 position = Vector2( 720, 405 )

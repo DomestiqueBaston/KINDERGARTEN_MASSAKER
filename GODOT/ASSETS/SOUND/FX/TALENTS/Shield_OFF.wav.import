@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Shield.wav-c2e6a1d5e7e424b137c54f71eef73f43.sample"
+path="res://.import/Shield_OFF.wav-43d903cae2dda409c7a124d26243a2cc.sample"
 
 [deps]
 
-source_file="res://ASSETS/SOUND/FX/TALENTS/Shield.wav"
-dest_files=[ "res://.import/Shield.wav-c2e6a1d5e7e424b137c54f71eef73f43.sample" ]
+source_file="res://ASSETS/SOUND/FX/TALENTS/Shield_OFF.wav"
+dest_files=[ "res://.import/Shield_OFF.wav-43d903cae2dda409c7a124d26243a2cc.sample" ]
 
 [params]
 

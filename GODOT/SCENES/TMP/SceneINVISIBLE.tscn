@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=1]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_ON.wav" type="AudioStream" id=3]
 [ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=4]
 [ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_INVISIBLE.gd" type="Script" id=5]
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=6]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=7]
 [ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=9]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_OFF.wav" type="AudioStream" id=10]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.99994
@@ -89,6 +91,14 @@ texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="FX_ON" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
+stream = ExtResource( 3 )
+volume_db = -1.5
+
+[node name="FX_OFF" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
+stream = ExtResource( 10 )
+volume_db = -1.5
 
 [node name="CAMERA" type="Camera2D" parent="."]
 position = Vector2( 720, 405 )
