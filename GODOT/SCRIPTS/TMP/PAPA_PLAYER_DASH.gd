@@ -50,7 +50,7 @@ func start_dash_timer():
 				$PLAYER/Dash_Trail.clear_points()	#hide()
 			else:
 				$PLAYER/Dash_Trail/Cooldown_Timer.start()
-				$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(1.0, 0.0, 0.0, 1.0))
+				$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.71, 0.21, 0.27, 1.0))
 				cooldown_ready = false
 				$PLAYER/Dash_Trail/Dash_Timer.start()
 				dash_speed = 5
@@ -58,12 +58,12 @@ func start_dash_timer():
 	else:
 		dash_speed = 1
 		$PLAYER/Dash_Trail.hide()
-		$PLAYER/Dash_Trail.clear_points()	#uselesss?
+		$PLAYER/Dash_Trail.clear_points()	#hide()
 		
 func _on_Dash_Timer_timeout():
 	dash_speed = 1
 	$PLAYER/Dash_Trail.hide()
-	$PLAYER/Dash_Trail.clear_points()	#uselesss?
+	$PLAYER/Dash_Trail.clear_points()	#hide()
 
 func _on_Cooldown_Timer_timeout():
 	cooldown_ready = true

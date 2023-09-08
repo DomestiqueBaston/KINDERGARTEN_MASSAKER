@@ -1,6 +1,8 @@
 extends Node
 
 
+var choice = 0					#choix du pouvoir (DASH par défaut)
+
 var transition_signal = false	#TRUE si Transition_Overlay a fini de jouer
 var scene_changed = true		#TRUE quand on meurt
 var restart_game = false		#TRUE quand on veut rejouer après être mort
