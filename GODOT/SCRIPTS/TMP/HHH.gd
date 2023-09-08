@@ -5,8 +5,13 @@ const SceneTwo = preload("res://SCENES/TMP/SceneTEST.tscn")
 const SceneDeath = preload("res://SCENES/SCREENS/Death.tscn")
 const Invisible = preload("res://SCENES/TMP/SceneINVISIBLE.tscn")
 const Bouclier = preload("res://SCENES/TMP/SceneBOUCLIER.tscn")
+const Force_Field = preload("res://SCENES/TMP/SceneFORCE_FIELD.tscn")
 
 func _process(_delta):
+	if Input.is_action_just_pressed("FORCE_FIELD") and not Autoload.transition_signal:
+		if Autoload.scene_changed == true:
+			Autoload.choice = 3
+			to_FORCE_FIELD()
 	if Input.is_action_just_pressed("BOUCLIER") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 2
@@ -47,6 +52,8 @@ func one_more_time():
 		$Active_Scene.add_child(Invisible.instance())
 	if Autoload.choice == 2:
 		$Active_Scene.add_child(Bouclier.instance())
+	if Autoload.choice == 3:
+		$Active_Scene.add_child(Force_Field.instance())
 
 func finally_no():
 	Autoload.scene_changed = true
@@ -64,7 +71,15 @@ func to_scene1():
 	$Transition_Overlay/Sprite.take_screenshot()
 	$Active_Scene.get_child(0).queue_free()
 	$Active_Scene.add_child(SceneTwo.instance())
-	
+
+func to_FORCE_FIELD():
+	Autoload.scene_changed = false
+	Autoload.time_before_death = 25.0
+	Autoload.time_to_die = false
+	$Transition_Overlay/Sprite.take_screenshot()
+	$Active_Scene.get_child(0).queue_free()
+	$Active_Scene.add_child(Force_Field.instance())
+
 func to_BOUCLIER():
 	Autoload.scene_changed = false
 	Autoload.time_before_death = 25.0
