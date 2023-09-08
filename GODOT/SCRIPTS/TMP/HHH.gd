@@ -27,11 +27,6 @@ func one_more_time():
 	Autoload.time_before_death = 25.0
 	Autoload.time_to_die = false
 	Autoload.elapsed_time = 0.0
-<<<<<<< Updated upstream
-	$Transition_Overlay/Sprite.take_screenshot()
-	$Active_Scene.get_child(0).queue_free()
-	$Active_Scene.add_child(SceneTwo.instance())
-=======
 #	var _useless = get_tree().reload_current_scene()
 	$Transition_Overlay.visible = true
 	$Transition_Overlay/Sprite.take_screenshot()
@@ -46,7 +41,6 @@ func finally_no():
 	Autoload.time_to_die = false
 	Autoload.elapsed_time = 0.0
 	var _useless = get_tree().reload_current_scene()
->>>>>>> Stashed changes
 
 func to_scene1():
 	Autoload.scene_changed = false

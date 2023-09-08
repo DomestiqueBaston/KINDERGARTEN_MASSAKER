@@ -58,12 +58,12 @@ func start_dash_timer():
 	else:
 		dash_speed = 1
 		$PLAYER/Dash_Trail.hide()
-		$PLAYER/Dash_Trail.clear_points()	#hide()
+		$PLAYER/Dash_Trail.clear_points()	#uselesss?
 		
 func _on_Dash_Timer_timeout():
 	dash_speed = 1
 	$PLAYER/Dash_Trail.hide()
-	$PLAYER/Dash_Trail.clear_points()	#hide()
+	$PLAYER/Dash_Trail.clear_points()	#uselesss?
 
 func _on_Cooldown_Timer_timeout():
 	cooldown_ready = true

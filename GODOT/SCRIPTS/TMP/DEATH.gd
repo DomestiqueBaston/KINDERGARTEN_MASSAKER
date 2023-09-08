@@ -11,10 +11,5 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_a"):
-<<<<<<< Updated upstream
-		Autoload.transition_signal = true
+#		Autoload.transition_signal = true
 		Autoload.restart_game = true 
-=======
-		Autoload.restart_game = true
-	
->>>>>>> Stashed changes
