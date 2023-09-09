@@ -33,7 +33,6 @@ func _process(delta):
 		Autoload.scene_changed = true
 	if bad_teleportation:
 		self.position = Vector2(720,405)
-		print ("BAD TELEPORTATION!")
 		bad_teleportation = false
 
 func get_input():
