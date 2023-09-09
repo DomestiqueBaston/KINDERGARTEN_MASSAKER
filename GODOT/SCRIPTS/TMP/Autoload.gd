@@ -7,7 +7,7 @@ var transition_signal = false	#TRUE si Transition_Overlay a fini de jouer
 var scene_changed = true		#TRUE quand on meurt
 var restart_game = false		#TRUE quand on veut rejouer après être mort
 
-var time_before_death = 25.0
+var time_before_death = 50.0
 var time_to_die = false			#TRUE quand on meurt (aussi ?)
 
 # SCORE

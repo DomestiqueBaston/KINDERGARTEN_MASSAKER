@@ -12,6 +12,7 @@ var cooldown_ready = true
 
 func _ready():
 	set_physics_process(false)
+	$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.0, 0.0, 0.0, 1.0))
 
 func _physics_process(_delta):
 # warning-ignore:return_value_discarded
