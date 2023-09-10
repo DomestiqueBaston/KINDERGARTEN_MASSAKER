@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const SceneTwo = preload("res://SCENES/TMP/SceneTEST.tscn")
+const SceneDash = preload("res://SCENES/TMP/SceneTEST.tscn")
 const SceneDeath = preload("res://SCENES/SCREENS/Death.tscn")
 const Invisible = preload("res://SCENES/TMP/SceneINVISIBLE.tscn")
 const Bouclier = preload("res://SCENES/TMP/SceneBOUCLIER.tscn")
@@ -52,7 +52,7 @@ func one_more_time():
 	$Transition_Overlay/Sprite.take_screenshot()
 	$Active_Scene.get_child(0).queue_free()
 	if Autoload.choice == 0:
-		$Active_Scene.add_child(SceneTwo.instance())
+		$Active_Scene.add_child(SceneDash.instance())
 	if Autoload.choice == 1:
 		$Active_Scene.add_child(Invisible.instance())
 	if Autoload.choice == 2:
@@ -77,7 +77,7 @@ func to_scene1():
 	Autoload.time_to_die = false
 	$Transition_Overlay/Sprite.take_screenshot()
 	$Active_Scene.get_child(0).queue_free()
-	$Active_Scene.add_child(SceneTwo.instance())
+	$Active_Scene.add_child(SceneDash.instance())
 
 func to_TELEPORT():
 	Autoload.scene_changed = false
