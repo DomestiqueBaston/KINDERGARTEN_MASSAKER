@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=1]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=2]
@@ -6,12 +6,11 @@
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=5]
 [ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=6]
-[ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_FORCE_FIELD.gd" type="Script" id=7]
+[ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_SCHOCKWAVE.gd" type="Script" id=7]
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=8]
-[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/FORCE FIELD/Force_Field_front.png" type="Texture" id=9]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_ON.wav" type="AudioStream" id=10]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_OFF.wav" type="AudioStream" id=11]
-[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/FORCE FIELD/Force_Field_back.png" type="Texture" id=12]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SCHOCKWAVE/Schockwave_Back.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Schockwave.wav" type="AudioStream" id=10]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SCHOCKWAVE/Schockwave_Front.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.99994
@@ -23,38 +22,37 @@ shader_param/ready = null
 shader_param/cooldown = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Animation" id=3]
-length = 0.001
+length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Force_Field_Back:position")
+tracks/0/path = NodePath("Schockwave_Front:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 15 ) ]
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Force_Field_Front:position")
+tracks/1/path = NodePath("Schockwave_Back:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 15 ) ]
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "force_field"
+resource_name = "schockwave"
 length = 0.6
-loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Force_Field_Front:frame")
+tracks/0/path = NodePath("Schockwave_Front:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -66,7 +64,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Force_Field_Back:frame")
+tracks/1/path = NodePath("Schockwave_Back:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -77,29 +75,19 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 0, 1, 0, 2, 3, 4, 5 ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Force_Field_Back:position")
+tracks/2/type = "audio"
+tracks/2/path = NodePath("FX")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0, 15 ), Vector2( 0, 14 ), Vector2( 0, 13 ), Vector2( 0, 12 ), Vector2( 0, 12.75 ), Vector2( 0, 13.5 ), Vector2( 0, 14.25 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Force_Field_Front:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0, 15 ), Vector2( 0, 14.9484 ), Vector2( 0, 13.4742 ), Vector2( 0, 12 ), Vector2( 0, 12.75 ), Vector2( 0, 13.5 ), Vector2( 0, 14.25 ) ]
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [node name="SceneTEST" type="Node2D"]
@@ -158,22 +146,21 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Force_Field_Timer" type="Timer" parent="PAPA_PLAYER/PLAYER"]
-wait_time = 3.0
-one_shot = true
-
 [node name="Cooldown_Timer" type="Timer" parent="PAPA_PLAYER/PLAYER"]
 wait_time = 5.0
 one_shot = true
 
-[node name="Force_Field_Back" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
+[node name="Schockwave_Back" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
 visible = false
 modulate = Color( 1, 1, 1, 0.75 )
-position = Vector2( 0, 15 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 12 )
+position = Vector2( 0, 14.25 )
+scale = Vector2( 0.4, 0.25 )
+texture = ExtResource( 9 )
 hframes = 6
 frame = 5
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
 visible = false
@@ -183,28 +170,24 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Force_Field_Front" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
+[node name="Schockwave_Front" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
 visible = false
 self_modulate = Color( 1, 1, 1, 0.75 )
-position = Vector2( 0, 15 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 9 )
+position = Vector2( 0, 14.25 )
+scale = Vector2( 0.4, 0.25 )
+texture = ExtResource( 11 )
 hframes = 6
 frame = 5
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PAPA_PLAYER/PLAYER"]
-autoplay = "force_field"
 anims/RESET = SubResource( 3 )
-anims/force_field = SubResource( 4 )
+anims/schockwave = SubResource( 4 )
 
-[node name="FX_ON" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
+[node name="FX" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
 stream = ExtResource( 10 )
-volume_db = -2.5
-bus = "FX"
-
-[node name="FX_OFF" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
-stream = ExtResource( 11 )
-volume_db = -2.5
 bus = "FX"
 
 [node name="CAMERA" type="Camera2D" parent="."]
@@ -222,5 +205,4 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="timeout" from="PAPA_PLAYER/PLAYER/Force_Field_Timer" to="PAPA_PLAYER" method="_on_Force_Field_Timer_timeout"]
 [connection signal="timeout" from="PAPA_PLAYER/PLAYER/Cooldown_Timer" to="PAPA_PLAYER" method="_on_Cooldown_Timer_timeout"]

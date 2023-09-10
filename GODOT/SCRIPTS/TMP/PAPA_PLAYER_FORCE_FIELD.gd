@@ -46,15 +46,17 @@ func start_timers():
 #		Si le timer est prêt :
 		$PLAYER/Force_Field_Timer.start()
 		$PLAYER/Cooldown_Timer.start()
-		$PLAYER/Force_Field.visible = true
-		$PLAYER/AnimationPlayer.play("force_field")
+		$PLAYER/FX_ON.play(0.0)
+		$PLAYER/Force_Field_Front.visible = true
+		$PLAYER/Force_Field_Back.visible = true
 		$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.71, 0.21, 0.27, 1.0))
 		cooldown_ready = false
 
 
 func _on_Force_Field_Timer_timeout():
-	$PLAYER/Force_Field.visible = false
-	$PLAYER/AnimationPlayer.stop()
+	$PLAYER/FX_OFF.play(0.0)
+	$PLAYER/Force_Field_Front.visible = false
+	$PLAYER/Force_Field_Back.visible = false
 
 func _on_Cooldown_Timer_timeout():
 #	Outline redevient noir !

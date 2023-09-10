@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bouclier_Reflet.png-139f1ce70b03c053e79f693cd5c9ca04.stex"
+path="res://.import/Schockwave_Front.png-e024c63b5544cb5e48bb62e212edc450.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/TMP/Bouclier_Reflet.png"
-dest_files=[ "res://.import/Bouclier_Reflet.png-139f1ce70b03c053e79f693cd5c9ca04.stex" ]
+source_file="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SCHOCKWAVE/Schockwave_Front.png"
+dest_files=[ "res://.import/Schockwave_Front.png-e024c63b5544cb5e48bb62e212edc450.stex" ]
 
 [params]
 
