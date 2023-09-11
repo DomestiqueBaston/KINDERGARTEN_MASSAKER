@@ -10,9 +10,14 @@ const Teleport = preload("res://SCENES/TMP/SceneTELEPORT.tscn")
 const Schockwave = preload("res://SCENES/TMP/SceneSCHOCKWAVE.tscn")
 const Freezing = preload("res://SCENES/TMP/SceneFREEZING.tscn")
 const Time_Stop = preload("res://SCENES/TMP/SceneTIME_STOP.tscn")
+const Explosion = preload("res://SCENES/TMP/SceneEXPLOSION.tscn")
 
 
 func _process(_delta):
+	if Input.is_action_just_pressed("EXPLOSION") and not Autoload.transition_signal:
+		if Autoload.scene_changed == true:
+			Autoload.choice = 8
+			to_EXPLOSION()
 	if Input.is_action_just_pressed("TIME_STOP") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 7
@@ -83,6 +88,8 @@ func one_more_time():
 		$Active_Scene.add_child(Freezing.instance())
 	if Autoload.choice == 7:
 		$Active_Scene.add_child(Time_Stop.instance())
+	if Autoload.choice == 8:
+		$Active_Scene.add_child(Explosion.instance())
 
 func finally_no():
 	Autoload.scene_changed = true
@@ -100,6 +107,14 @@ func to_scene1():
 	$Transition_Overlay/Sprite.take_screenshot()
 	$Active_Scene.get_child(0).queue_free()
 	$Active_Scene.add_child(SceneDash.instance())
+
+func to_EXPLOSION():
+	Autoload.scene_changed = false
+	Autoload.time_before_death = 50.0
+	Autoload.time_to_die = false
+	$Transition_Overlay/Sprite.take_screenshot()
+	$Active_Scene.get_child(0).queue_free()
+	$Active_Scene.add_child(Explosion.instance())
 
 func to_TIME_STOP():
 	Autoload.scene_changed = false
