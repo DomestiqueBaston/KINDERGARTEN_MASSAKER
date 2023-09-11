@@ -8,9 +8,14 @@ const Bouclier = preload("res://SCENES/TMP/SceneBOUCLIER.tscn")
 const Force_Field = preload("res://SCENES/TMP/SceneFORCE_FIELD.tscn")
 const Teleport = preload("res://SCENES/TMP/SceneTELEPORT.tscn")
 const Schockwave = preload("res://SCENES/TMP/SceneSCHOCKWAVE.tscn")
+const Freezing = preload("res://SCENES/TMP/SceneFREEZING.tscn")
 
 
 func _process(_delta):
+	if Input.is_action_just_pressed("FREEZING") and not Autoload.transition_signal:
+		if Autoload.scene_changed == true:
+			Autoload.choice = 6
+			to_FREEZING()
 	if Input.is_action_just_pressed("SCHOCKWAVE") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 5
@@ -69,6 +74,8 @@ func one_more_time():
 		$Active_Scene.add_child(Teleport.instance())
 	if Autoload.choice == 5:
 		$Active_Scene.add_child(Schockwave.instance())
+	if Autoload.choice == 6:
+		$Active_Scene.add_child(Freezing.instance())
 
 func finally_no():
 	Autoload.scene_changed = true
@@ -86,6 +93,14 @@ func to_scene1():
 	$Transition_Overlay/Sprite.take_screenshot()
 	$Active_Scene.get_child(0).queue_free()
 	$Active_Scene.add_child(SceneDash.instance())
+
+func to_FREEZING():
+	Autoload.scene_changed = false
+	Autoload.time_before_death = 50.0
+	Autoload.time_to_die = false
+	$Transition_Overlay/Sprite.take_screenshot()
+	$Active_Scene.get_child(0).queue_free()
+	$Active_Scene.add_child(Freezing.instance())
 
 func to_SCHOCKWAVE():
 	Autoload.scene_changed = false
