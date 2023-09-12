@@ -109,7 +109,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0, 0 ), Vector2( -2, -2 ), Vector2( 2, 4 ), Vector2( 2, -1 ), Vector2( -1, 1 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -4, -3 ), Vector2( 5, 7 ), Vector2( 3, -3 ), Vector2( -2, 2 ), Vector2( 0, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("The Alien (with OUTLINE shader):self_modulate")
@@ -141,11 +141,11 @@ autoplay = true
 bus = "MUSIC"
 
 [node name="Background" parent="." instance=ExtResource( 8 )]
+
+[node name="Explosion" type="Node2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Explosion" type="Node2D" parent="."]
 
 [node name="PAPA_PLAYER" type="KinematicBody2D" parent="Explosion"]
 position = Vector2( 720, 405 )
