@@ -2,7 +2,7 @@
 extends Line2D
 
 
-var length = 150
+var length = 10		#150
 var point = Vector2()
 
 

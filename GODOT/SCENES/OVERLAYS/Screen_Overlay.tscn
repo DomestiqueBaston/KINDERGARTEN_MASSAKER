@@ -33,7 +33,7 @@ material = SubResource( 12 )
 margin_right = 480.0
 margin_bottom = 270.0
 
-[node name="BackBufferCopy_1" type="BackBufferCopy" parent="."]
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
 copy_mode = 2
 
 [node name="CRT_2" type="ColorRect" parent="."]
