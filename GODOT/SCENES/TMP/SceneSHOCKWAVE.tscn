@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=1]
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=2]
@@ -8,9 +8,8 @@
 [ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_SHOCKWAVE.gd" type="Script" id=6]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=7]
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=8]
-[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SCHOCKWAVE/Schockwave_Front.png" type="Texture" id=9]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Schockwave.png" type="Texture" id=9]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Schockwave.wav" type="AudioStream" id=10]
-[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SCHOCKWAVE/Schockwave_Back.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.99994
@@ -24,24 +23,12 @@ shader_param/cooldown = Color( 0, 0, 0, 1 )
 [sub_resource type="Animation" id=3]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Shockwave_Front:frame")
+tracks/0/path = NodePath("Shockwave:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Shockwave_Back:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray(  ),
 "transitions": PoolRealArray(  ),
 "update": 1,
@@ -52,36 +39,24 @@ tracks/1/keys = {
 resource_name = "shockwave"
 length = 0.6
 tracks/0/type = "value"
-tracks/0/path = NodePath("Shockwave_Front:frame")
+tracks/0/path = NodePath("Shockwave:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4, 5 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Shockwave_Back:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.101, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 0, 2, 3, 4, 5 ]
 }
-tracks/2/type = "audio"
-tracks/2/path = NodePath("FX")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+tracks/1/type = "audio"
+tracks/1/path = NodePath("FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -150,32 +125,16 @@ __meta__ = {
 wait_time = 5.0
 one_shot = true
 
-[node name="Shockwave_Back" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
+[node name="Shockwave" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
 visible = false
-modulate = Color( 1, 1, 1, 0.75 )
-position = Vector2( 0, 14.25 )
-scale = Vector2( 0.4, 0.25 )
-texture = ExtResource( 11 )
+position = Vector2( 1, 23 )
+texture = ExtResource( 9 )
 hframes = 6
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
 visible = false
 material = SubResource( 1 )
 texture = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Shockwave_Front" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
-visible = false
-self_modulate = Color( 1, 1, 1, 0.75 )
-position = Vector2( 0, 14.25 )
-scale = Vector2( 0.4, 0.25 )
-texture = ExtResource( 9 )
-hframes = 6
 __meta__ = {
 "_edit_lock_": true
 }

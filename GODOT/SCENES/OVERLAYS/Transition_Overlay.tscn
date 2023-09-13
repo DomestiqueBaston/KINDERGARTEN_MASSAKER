@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SCRIPTS/TMP/TRANSITION.gd" type="Script" id=1]
-[ext_resource path="res://ASSETS/GRAPHICS/TRANSITION_SCREEN/Spiraling_ter.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/GRAPHICS/TRANSITION_SCREEN/Spiraling_qua.png" type="Texture" id=2]
 [ext_resource path="res://SHADERS/Transition.shader" type="Shader" id=3]
 
 [sub_resource type="ShaderMaterial" id=6]
@@ -11,7 +11,7 @@ shader_param/dissolve_pattern = ExtResource( 2 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Fade"
-length = 0.6
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:material:shader_param/dissolve_state")
 tracks/0/interp = 1
@@ -19,7 +19,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.1 ]

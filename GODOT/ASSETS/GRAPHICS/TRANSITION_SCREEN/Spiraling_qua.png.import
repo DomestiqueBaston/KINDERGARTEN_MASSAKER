@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Shield_Back.png-4f38c254c716f277c78af6bba7aceae2.stex"
+path="res://.import/Spiraling_qua.png-868098126afd248b9f12ff7ee5883d44.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SHIELD/Shield_Back.png"
-dest_files=[ "res://.import/Shield_Back.png-4f38c254c716f277c78af6bba7aceae2.stex" ]
+source_file="res://ASSETS/GRAPHICS/TRANSITION_SCREEN/Spiraling_qua.png"
+dest_files=[ "res://.import/Spiraling_qua.png-868098126afd248b9f12ff7ee5883d44.stex" ]
 
 [params]
 

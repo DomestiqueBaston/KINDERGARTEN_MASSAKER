@@ -3,7 +3,7 @@ extends Node2D
 
 const SceneDash = preload("res://SCENES/TMP/SceneDASH.tscn")
 const Invisible = preload("res://SCENES/TMP/SceneINVISIBLE.tscn")
-const Bouclier = preload("res://SCENES/TMP/SceneBOUCLIER.tscn")
+const Bouclier = preload("res://SCENES/TMP/SceneSHIELD.tscn")
 const Force_Field = preload("res://SCENES/TMP/SceneFORCE_FIELD.tscn")
 const Teleport = preload("res://SCENES/TMP/SceneTELEPORT.tscn")
 const Schockwave = preload("res://SCENES/TMP/SceneSHOCKWAVE.tscn")
@@ -39,7 +39,7 @@ func _process(_delta):
 		if Autoload.scene_changed == true:
 			Autoload.choice = 3
 			to_FORCE_FIELD()
-	if Input.is_action_just_pressed("BOUCLIER") and not Autoload.transition_signal:
+	if Input.is_action_just_pressed("SHIELD") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 2
 			to_BOUCLIER()

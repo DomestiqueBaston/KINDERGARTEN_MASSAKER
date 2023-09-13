@@ -45,18 +45,19 @@ func start_timers():
 	if cooldown_ready:
 #		Si le timer est prêt :
 		$PLAYER/FX_ON.play(0.0)
-		$PLAYER/Bouclier_Timer.start()
+		$PLAYER/Shield_Timer.start()
 		$PLAYER/Cooldown_Timer.start()
-		$PLAYER/Bouclier_Front.visible = true
-		$PLAYER/Bouclier_Back.visible = true
+		$PLAYER/AnimationPlayer.play('shield')
+		$PLAYER/Shield.visible = true
 		cooldown_ready = false
 		$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.71, 0.21, 0.27, 1.0))
 
 
 func _on_Bouclier_Timer_timeout():
 	$PLAYER/FX_OFF.play(0.0)
-	$PLAYER/Bouclier_Front.visible = false
-	$PLAYER/Bouclier_Back.visible = false
+	$PLAYER/AnimationPlayer.stop()
+	$PLAYER/Shield.visible = false
+
 
 func _on_Cooldown_Timer_timeout():
 #	Outline redevient noir !

@@ -1,30 +1,30 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=1]
+[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=2]
-[ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=3]
-[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=4]
-[ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=5]
-[ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=6]
-[ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_FORCE_FIELD.gd" type="Script" id=7]
+[ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_SHIELD.gd" type="Script" id=3]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Shield.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Shield_ON.wav" type="AudioStream" id=5]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Shield_OFF.wav" type="AudioStream" id=6]
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=8]
-[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Force_Field.png" type="Texture" id=9]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_ON.wav" type="AudioStream" id=10]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_OFF.wav" type="AudioStream" id=11]
+[ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=9]
+[ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=10]
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=11]
+[ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=12]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.99994
 height = 28.0001
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 1 )
+shader = ExtResource( 11 )
 shader_param/ready = null
 shader_param/cooldown = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Force_Field:frame")
+tracks/0/path = NodePath("Shield:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,11 +37,11 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "force_field"
+resource_name = "shield"
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Force_Field:frame")
+tracks/0/path = NodePath("Shield:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -50,7 +50,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 1 ]
+"values": [ 0, 1, 2, 3 ]
 }
 
 [node name="SceneTEST" type="Node2D"]
@@ -59,7 +59,7 @@ __meta__ = {
 }
 
 [node name="BG_AMBIANCE" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 1 )
 volume_db = -15.0
 autoplay = true
 bus = "AMBIANCE"
@@ -77,7 +77,7 @@ __meta__ = {
 [node name="PAPA_PLAYER" type="KinematicBody2D" parent="."]
 position = Vector2( 720, 405 )
 collision_layer = 2
-script = ExtResource( 7 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -97,7 +97,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Intro Alien" parent="PAPA_PLAYER/PLAYER" instance=ExtResource( 6 )]
+[node name="Intro Alien" parent="PAPA_PLAYER/PLAYER" instance=ExtResource( 9 )]
 
 [node name="Shadow" type="Polygon2D" parent="PAPA_PLAYER/PLAYER"]
 visible = false
@@ -109,7 +109,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Force_Field_Timer" type="Timer" parent="PAPA_PLAYER/PLAYER"]
+[node name="Shield_Timer" type="Timer" parent="PAPA_PLAYER/PLAYER"]
 wait_time = 3.0
 one_shot = true
 
@@ -117,33 +117,31 @@ one_shot = true
 wait_time = 5.0
 one_shot = true
 
+[node name="Shield" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
+visible = false
+position = Vector2( 0, 23 )
+texture = ExtResource( 4 )
+hframes = 4
+
 [node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
 visible = false
 material = SubResource( 1 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Force_Field" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
-position = Vector2( 0, 12 )
-texture = ExtResource( 9 )
-hframes = 3
+texture = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PAPA_PLAYER/PLAYER"]
 anims/RESET = SubResource( 3 )
-anims/force_field = SubResource( 4 )
+anims/shield = SubResource( 4 )
 
-[node name="FX_ON" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
-stream = ExtResource( 10 )
+[node name="FX_OFF" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
+stream = ExtResource( 6 )
 volume_db = -1.5
 bus = "FX"
 
-[node name="FX_OFF" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
-stream = ExtResource( 11 )
+[node name="FX_ON" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
+stream = ExtResource( 5 )
 volume_db = -1.5
 bus = "FX"
 
@@ -157,10 +155,10 @@ limit_bottom = 810
 limit_smoothed = true
 smoothing_enabled = true
 smoothing_speed = 10.0
-script = ExtResource( 3 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="timeout" from="PAPA_PLAYER/PLAYER/Force_Field_Timer" to="PAPA_PLAYER" method="_on_Force_Field_Timer_timeout"]
+[connection signal="timeout" from="PAPA_PLAYER/PLAYER/Shield_Timer" to="PAPA_PLAYER" method="_on_Bouclier_Timer_timeout"]
 [connection signal="timeout" from="PAPA_PLAYER/PLAYER/Cooldown_Timer" to="PAPA_PLAYER" method="_on_Cooldown_Timer_timeout"]
