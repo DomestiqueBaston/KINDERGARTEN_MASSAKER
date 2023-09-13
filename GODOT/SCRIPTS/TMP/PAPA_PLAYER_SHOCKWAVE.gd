@@ -44,14 +44,14 @@ func get_input():
 func start_timers():
 	if cooldown_ready:
 		$PLAYER/Cooldown_Timer.start()
-		$PLAYER/Freezing_Front.visible = true
-		$PLAYER/Freezing_Back.visible = true
-		$PLAYER/AnimationPlayer.play("freezing")
+		$PLAYER/Shockwave_Front.visible = true
+		$PLAYER/Shockwave_Back.visible = true
+		$PLAYER/AnimationPlayer.play("shockwave")
 		$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.71, 0.21, 0.27, 1.0))
 		cooldown_ready = false
 		yield($PLAYER/AnimationPlayer, "animation_finished")
-		$PLAYER/Freezing_Front.visible = false
-		$PLAYER/Freezing_Back.visible = false
+		$PLAYER/Shockwave_Front.visible = false
+		$PLAYER/Shockwave_Back.visible = false
 
 func _on_Cooldown_Timer_timeout():
 #	Outline redevient noir !

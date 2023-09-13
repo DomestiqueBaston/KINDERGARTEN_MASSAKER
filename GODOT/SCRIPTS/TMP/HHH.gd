@@ -1,16 +1,17 @@
 extends Node2D
 
 
-const SceneDash = preload("res://SCENES/TMP/SceneTEST.tscn")
-const SceneDeath = preload("res://SCENES/SCREENS/Death.tscn")
+const SceneDash = preload("res://SCENES/TMP/SceneDASH.tscn")
 const Invisible = preload("res://SCENES/TMP/SceneINVISIBLE.tscn")
 const Bouclier = preload("res://SCENES/TMP/SceneBOUCLIER.tscn")
 const Force_Field = preload("res://SCENES/TMP/SceneFORCE_FIELD.tscn")
 const Teleport = preload("res://SCENES/TMP/SceneTELEPORT.tscn")
-const Schockwave = preload("res://SCENES/TMP/SceneSCHOCKWAVE.tscn")
+const Schockwave = preload("res://SCENES/TMP/SceneSHOCKWAVE.tscn")
 const Freezing = preload("res://SCENES/TMP/SceneFREEZING.tscn")
 const Time_Stop = preload("res://SCENES/TMP/SceneTIME_STOP.tscn")
 const Explosion = preload("res://SCENES/TMP/SceneEXPLOSION.tscn")
+
+const SceneDeath = preload("res://SCENES/SCREENS/Death.tscn")
 
 
 func _process(_delta):

@@ -1,30 +1,30 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=1]
-[ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=2]
-[ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=3]
-[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=4]
+[ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=1]
+[ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=3]
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=4]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=5]
-[ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=6]
-[ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_SCHOCKWAVE.gd" type="Script" id=7]
-[ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=8]
-[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SCHOCKWAVE/Schockwave_Back.png" type="Texture" id=9]
+[ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_SHOCKWAVE.gd" type="Script" id=6]
+[ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=7]
+[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=8]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SCHOCKWAVE/Schockwave_Front.png" type="Texture" id=9]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Schockwave.wav" type="AudioStream" id=10]
-[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SCHOCKWAVE/Schockwave_Front.png" type="Texture" id=11]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SCHOCKWAVE/Schockwave_Back.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.99994
 height = 28.0001
 
 [sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 1 )
+shader = ExtResource( 4 )
 shader_param/ready = null
 shader_param/cooldown = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Animation" id=3]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Schockwave_Front:frame")
+tracks/0/path = NodePath("Shockwave_Front:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,7 +36,7 @@ tracks/0/keys = {
 "values": [  ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Schockwave_Back:frame")
+tracks/1/path = NodePath("Shockwave_Back:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -49,10 +49,10 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "schockwave"
+resource_name = "shockwave"
 length = 0.6
 tracks/0/type = "value"
-tracks/0/path = NodePath("Schockwave_Front:frame")
+tracks/0/path = NodePath("Shockwave_Front:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -64,7 +64,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Schockwave_Back:frame")
+tracks/1/path = NodePath("Shockwave_Back:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -96,17 +96,17 @@ __meta__ = {
 }
 
 [node name="BG_AMBIANCE" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 8 )
 volume_db = -15.0
 autoplay = true
 bus = "AMBIANCE"
 
 [node name="MUSIC" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 7 )
 autoplay = true
 bus = "MUSIC"
 
-[node name="Background" parent="." instance=ExtResource( 8 )]
+[node name="Background" parent="." instance=ExtResource( 2 )]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -114,7 +114,7 @@ __meta__ = {
 [node name="PAPA_PLAYER" type="KinematicBody2D" parent="."]
 position = Vector2( 720, 405 )
 collision_layer = 2
-script = ExtResource( 7 )
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -134,7 +134,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Intro Alien" parent="PAPA_PLAYER/PLAYER" instance=ExtResource( 6 )]
+[node name="Intro Alien" parent="PAPA_PLAYER/PLAYER" instance=ExtResource( 3 )]
 
 [node name="Shadow" type="Polygon2D" parent="PAPA_PLAYER/PLAYER"]
 visible = false
@@ -150,14 +150,13 @@ __meta__ = {
 wait_time = 5.0
 one_shot = true
 
-[node name="Schockwave_Back" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
+[node name="Shockwave_Back" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
 visible = false
 modulate = Color( 1, 1, 1, 0.75 )
 position = Vector2( 0, 14.25 )
 scale = Vector2( 0.4, 0.25 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 hframes = 6
-frame = 5
 __meta__ = {
 "_edit_lock_": true
 }
@@ -170,21 +169,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Schockwave_Front" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
+[node name="Shockwave_Front" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
 visible = false
 self_modulate = Color( 1, 1, 1, 0.75 )
 position = Vector2( 0, 14.25 )
 scale = Vector2( 0.4, 0.25 )
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 hframes = 6
-frame = 5
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PAPA_PLAYER/PLAYER"]
 anims/RESET = SubResource( 3 )
-anims/schockwave = SubResource( 4 )
+anims/shockwave = SubResource( 4 )
 
 [node name="FX" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
 stream = ExtResource( 10 )
@@ -200,7 +198,7 @@ limit_bottom = 810
 limit_smoothed = true
 smoothing_enabled = true
 smoothing_speed = 10.0
-script = ExtResource( 3 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }

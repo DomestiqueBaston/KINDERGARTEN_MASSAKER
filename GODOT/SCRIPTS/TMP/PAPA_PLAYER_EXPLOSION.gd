@@ -46,6 +46,7 @@ func start_timers():
 		$PLAYER/Cooldown_Timer.start()
 		$PLAYER/AnimationPlayer.play("explosion")
 		$"PLAYER/The Alien (with OUTLINE shader)".material.set_shader_param("cooldown", Color(0.71, 0.21, 0.27, 1.0))
+		yield($PLAYER/AnimationPlayer, "animation_finished")
 		cooldown_ready = false
 
 func _on_Cooldown_Timer_timeout():
