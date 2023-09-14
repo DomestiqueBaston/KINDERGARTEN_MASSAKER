@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://SHADERS/TV.shader" type="Shader" id=1]
-[ext_resource path="res://SHADERS/CRT_2.shader" type="Shader" id=2]
 
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 1 )
@@ -12,31 +11,9 @@ shader_param/bottomStaticStrenth = 0.0
 shader_param/rgbOffsetOpt = 0.0
 shader_param/horzFuzzOpt = 0.15
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = ExtResource( 2 )
-shader_param/res = Vector2( 480, 270 )
-shader_param/mask_type = 1
-shader_param/bloom_type = 0
-shader_param/hardScan = -8.0
-shader_param/hardPix = -4.0
-shader_param/hardBloomScan = -2.0
-shader_param/hardBloomPix = -1.5
-shader_param/bloomAmount = 3.0
-shader_param/warp = Vector2( 480, 270 )
-shader_param/maskDark = 0.25
-shader_param/maskLight = 1.5
-
 [node name="Screen_Overlay" type="CanvasLayer"]
 
 [node name="TV" type="ColorRect" parent="."]
 material = SubResource( 12 )
-margin_right = 480.0
-margin_bottom = 270.0
-
-[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
-copy_mode = 2
-
-[node name="CRT_2" type="ColorRect" parent="."]
-material = SubResource( 2 )
 margin_right = 480.0
 margin_bottom = 270.0
