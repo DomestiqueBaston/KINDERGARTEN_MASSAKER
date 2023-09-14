@@ -50,7 +50,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("DASH") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 0
-			to_scene1()
+			to_DASH()
 	if Autoload.time_to_die:
 		if Autoload.scene_changed == true:
 			to_scene2()
@@ -61,7 +61,7 @@ func _process(_delta):
 	if Autoload.restart_game:
 		$Transition_Overlay.visible = true
 		one_more_time()
-		
+
 func one_more_time():
 	Autoload.scene_changed = false
 	Autoload.transition_signal = false
@@ -101,7 +101,7 @@ func finally_no():
 	Autoload.elapsed_time = 0.0
 	var _useless = get_tree().reload_current_scene()
 
-func to_scene1():
+func to_DASH():
 	Autoload.scene_changed = false
 	Autoload.time_before_death = 50.0
 	Autoload.time_to_die = false
