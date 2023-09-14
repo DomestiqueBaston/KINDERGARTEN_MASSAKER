@@ -13,6 +13,21 @@ const Explosion = preload("res://SCENES/TMP/SceneEXPLOSION.tscn")
 
 const SceneDeath = preload("res://SCENES/SCREENS/Death.tscn")
 
+const overlay_1 = preload('res://SCENES/OVERLAYS/Game_Overlay_1.tscn')
+const overlay_2 = preload('res://SCENES/OVERLAYS/Game_Overlay_2.tscn')
+const overlay_3 = preload('res://SCENES/OVERLAYS/Game_Overlay_3.tscn')
+
+
+func _ready() -> void:
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var overlay_choice = rng.randi_range(1, 3)
+	if overlay_choice == 1:
+		$'.'.add_child(overlay_1.instance())
+	if overlay_choice == 2:
+		$'.'.add_child(overlay_2.instance())
+	else:
+		$'.'.add_child(overlay_3.instance())
 
 func _process(_delta):
 	if Input.is_action_just_pressed("EXPLOSION") and not Autoload.transition_signal:

@@ -5,8 +5,8 @@
 
 [sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 1 )
-shader_param/_ScanLineJitter = 0.2
-shader_param/_VerticalJump = 0.0
+shader_param/_ScanLineJitter = 0.245
+shader_param/_VerticalJump = 0.01
 shader_param/_HorizontalShake = 0.0
 shader_param/_ColorDrift = 0.0
 
