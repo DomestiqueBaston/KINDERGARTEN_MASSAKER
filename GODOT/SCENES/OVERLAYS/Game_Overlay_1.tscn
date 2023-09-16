@@ -11,11 +11,11 @@ shader_param/scanlines_width = 0.1
 shader_param/grille_opacity = 0.1
 shader_param/resolution = Vector2( 480, 270 )
 shader_param/roll = true
-shader_param/roll_speed = 1.0
-shader_param/roll_size = 6.0
+shader_param/roll_speed = 0.4
+shader_param/roll_size = 10.0
 shader_param/roll_variation = 5.0
-shader_param/distort_intensity = 0.008
-shader_param/noise_opacity = 0.55
+shader_param/distort_intensity = 0.002
+shader_param/noise_opacity = 0.35
 shader_param/noise_speed = 5.0
 shader_param/static_noise_intensity = 0.0
 shader_param/aberration = 0.0
@@ -33,7 +33,7 @@ shader_param/vertMovementOpt = 0.0
 shader_param/bottomStaticOpt = 0.0
 shader_param/bottomStaticStrenth = 0.0
 shader_param/rgbOffsetOpt = 0.0
-shader_param/horzFuzzOpt = 0.15
+shader_param/horzFuzzOpt = 0.1
 
 [node name="Game_overlay_1" type="CanvasLayer"]
 physics_interpolation_mode = 1

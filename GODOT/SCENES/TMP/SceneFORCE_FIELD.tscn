@@ -126,6 +126,7 @@ __meta__ = {
 }
 
 [node name="Force_Field" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
+visible = false
 position = Vector2( 0, 12 )
 texture = ExtResource( 9 )
 hframes = 3

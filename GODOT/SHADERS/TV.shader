@@ -13,7 +13,7 @@ uniform float bottomStaticStrenth :hint_range(0.0, 1.5) = 0.0;
 // Commented by Ferdi
 //uniform float scalinesOpt :hint_range(0,6) = 0.0;
 uniform float rgbOffsetOpt :hint_range(0,2) = 0.0;
-uniform float horzFuzzOpt :hint_range(0,5) = 0.15;
+uniform float horzFuzzOpt :hint_range(0,5) = 0.1;
 
 // Noise generation functions borrowed from: 
 // https://github.com/ashima/webgl-noise/blob/master/src/noise2D.glsl
