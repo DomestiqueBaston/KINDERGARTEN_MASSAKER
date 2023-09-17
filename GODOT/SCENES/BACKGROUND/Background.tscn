@@ -60,3 +60,67 @@ polygon = PoolVector2Array( -315, 261, 37, 256, 85, 135, 158, 80, 229, 46, 267, 
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Alien_Starting_Points" type="Node2D" parent="."]
+
+[node name="Point_1" type="Node2D" parent="Alien_Starting_Points"]
+position = Vector2( 720, 405 )
+
+[node name="Point_2" type="Node2D" parent="Alien_Starting_Points"]
+position = Vector2( 260, 150 )
+
+[node name="Point_3" type="Node2D" parent="Alien_Starting_Points"]
+position = Vector2( 240, 625 )
+
+[node name="Point_4" type="Node2D" parent="Alien_Starting_Points"]
+position = Vector2( 1200, 200 )
+
+[node name="Point_5" type="Node2D" parent="Alien_Starting_Points"]
+position = Vector2( 1200, 650 )
+
+[node name="Alien_Teleportation_Points" type="Node2D" parent="."]
+
+[node name="Point_01" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 485, 118 )
+
+[node name="Point_02" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 237, 168 )
+
+[node name="Point_03" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 123, 418 )
+
+[node name="Point_04" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 1243, 161 )
+
+[node name="Point_05" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 184, 642 )
+
+[node name="Point_06" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 361, 514 )
+
+[node name="Point_07" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 553, 349 )
+
+[node name="Point_08" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 811, 366 )
+
+[node name="Point_09" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 681, 197 )
+
+[node name="Point_10" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 1048, 287 )
+
+[node name="Point_11" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 1283, 372 )
+
+[node name="Point_12" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 1242, 617 )
+
+[node name="Point_13" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 572, 529 )
+
+[node name="Point_14" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 793, 609 )
+
+[node name="Point_15" type="Node2D" parent="Alien_Teleportation_Points"]
+position = Vector2( 1013, 684 )

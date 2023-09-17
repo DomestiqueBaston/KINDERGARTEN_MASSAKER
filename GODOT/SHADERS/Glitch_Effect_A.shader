@@ -28,7 +28,7 @@ uniform vec2 resolution = vec2(480.0, 270.0); // Set the number of rows and colu
 
 uniform bool roll = true;
 uniform float roll_speed : hint_range(-10.0,10.0) = 0.4; // Positive values are down, negative are up
-uniform float roll_size : hint_range(0.0, 100.0) = 10.0;
+uniform float roll_size : hint_range(0.0, 100.0) = 6.0;
 uniform float roll_variation : hint_range(0.1, 5.0) = 5.0; // This valie is not an exact science. You have to play around with the value to find a look you like. How this works is explained in the code below.
 uniform float distort_intensity : hint_range(0.0, 0.2) = 0.002; // The distortion created by the rolling effect.
 

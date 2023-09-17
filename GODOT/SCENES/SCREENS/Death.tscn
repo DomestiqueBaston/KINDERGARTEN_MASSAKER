@@ -111,8 +111,8 @@ __meta__ = {
 }
 
 [node name="Tot_in_STYLE" type="Label" parent="."]
-margin_left = -15.0
-margin_right = 465.0
+margin_left = -10.0
+margin_right = 470.0
 margin_bottom = 270.0
 rect_rotation = -5.0
 rect_pivot_offset = Vector2( 240, 375 )
@@ -122,7 +122,7 @@ custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
 text = "Tot in
-    sEkundeN!"
+  x  sEkundeN!"
 align = 1
 valign = 1
 __meta__ = {
@@ -131,8 +131,8 @@ __meta__ = {
 
 [node name="Tot_in_TEXTURE" type="Label" parent="."]
 material = SubResource( 21 )
-margin_left = -15.0
-margin_right = 465.0
+margin_left = -10.0
+margin_right = 470.0
 margin_bottom = 270.0
 rect_rotation = -5.0
 rect_pivot_offset = Vector2( 240, 375 )
@@ -140,7 +140,7 @@ custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 22 )
 text = "Tot in
-    sEkundeN!"
+  x  sEkundeN!"
 align = 1
 valign = 1
 __meta__ = {
@@ -195,7 +195,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
-text = "Beste:  ''"
+text = "Beste:  X''"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -212,7 +212,7 @@ custom_colors/font_color = Color( 0.890196, 0.611765, 0.568627, 1 )
 custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 24 )
-text = "Beste:   ''"
+text = "Beste:  X''"
 __meta__ = {
 "_edit_lock_": true
 }
