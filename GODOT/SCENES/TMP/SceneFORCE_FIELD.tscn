@@ -9,8 +9,8 @@
 [ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_FORCE_FIELD.gd" type="Script" id=7]
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Force_Field.png" type="Texture" id=9]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_ON.wav" type="AudioStream" id=10]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_OFF.wav" type="AudioStream" id=11]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_OFF.wav" type="AudioStream" id=10]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_ON.wav" type="AudioStream" id=11]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.99994
@@ -139,12 +139,12 @@ anims/RESET = SubResource( 3 )
 anims/force_field = SubResource( 4 )
 
 [node name="FX_ON" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 volume_db = -1.5
 bus = "FX"
 
 [node name="FX_OFF" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
-stream = ExtResource( 11 )
+stream = ExtResource( 10 )
 volume_db = -1.5
 bus = "FX"
 
