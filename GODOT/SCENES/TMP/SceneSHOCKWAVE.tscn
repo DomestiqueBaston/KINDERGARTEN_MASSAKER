@@ -130,6 +130,9 @@ visible = false
 position = Vector2( 1, 23 )
 texture = ExtResource( 9 )
 hframes = 6
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
 visible = false
