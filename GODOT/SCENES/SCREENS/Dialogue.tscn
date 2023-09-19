@@ -45,7 +45,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -156.646, 29.688 ), Vector2( -156.646, -1114.92 ) ]
+"values": [ Vector2( -156.646, -102.92 ), Vector2( -156.646, -1241.92 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("DIALOGUE_TEXTURE:rect_position")
@@ -57,7 +57,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -156.646, 29.688 ), Vector2( -156.646, -1114.92 ) ]
+"values": [ Vector2( -156.646, -102.92 ), Vector2( -156.646, -1241.92 ) ]
 }
 
 [sub_resource type="DynamicFontData" id=17]
@@ -97,7 +97,7 @@ __meta__ = {
 margin_left = -156.646
 margin_top = 29.688
 margin_right = 2033.35
-margin_bottom = 2616.69
+margin_bottom = 3393.69
 rect_rotation = -2.5
 rect_scale = Vector2( 0.333, 0.333 )
 rect_pivot_offset = Vector2( 240, 375 )
@@ -106,64 +106,58 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
-text = "   - Ave Gudrun!
-   - Ave Hildegard, o großer Tependicular
-unter allen!
-   - Gudrun, wir brauchen dich, o unsere
-größte Exosoziologe uNd Onkologe (uNd
-Rheumatologe auch), der sich Nun im Ruhe-
-stand befindet, für eiNe Aufgabe von
-größter Wichtigkeit an diesem Tag.
-   - Ich kanN dir nichts abschlagen,
-O Hildegard, du,der meineM Sohn Ursula
-das Lesen (aber nicht das Rechnen)
-beigebracht hat.
-   - Das Leben auf diesem PlanetEN steht
-kurz davor, durch einE seltsame Krank-
-heit ausgelöscht zu werden, die wider
-Erwarten eine primäre Form von Intel-
-ligenz Zu besitzen scheint, und wir müs-
-sen unbedingt...
-   - Sag nichts mehr, O Hildegard,
-ich gehe sofort los!"
+text = "   - Ave bRüNhild!
+   - Ave Hildegard, oh großer Tependicular
+von alLen!
+   - bRüNhild, wir brauchen dich für einE
+MisSIon von größter Bedeutung an diesem
+Tag, oh Du, unser größter Exosoziologe
+und Onkologe (und auch Rheumatologe)
+jetzt im Ruhestand.
+   - Ich kaNn Dir nichts abschLAgen,
+o Hildegard, Du, der meineM Sohn Ursula
+das Lesen (aber nicht das Zählen)
+beigebracht hast.
+   - Aufgrund einer seltsamen Krank-
+heit, die entgeGEn aLlen Erwartungen
+mit einer primären Form der Intelligenz
+ausgestatTet zu sein scheint, steht das
+Leben auf diEseM PlaNeten kurz vor dem
+AuSsterben. Wir müSsen...
+   - Sag nichts mehr Oh Hildegard, ich
+gehe sofort!"
 valign = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="DIALOGUE_TEXTURE" type="Label" parent="."]
 material = SubResource( 21 )
 margin_left = -156.646
 margin_top = 29.688
-margin_right = 1963.35
-margin_bottom = 2626.69
+margin_right = 2033.35
+margin_bottom = 3406.69
 rect_rotation = -2.5
 rect_scale = Vector2( 0.331, 0.331 )
 rect_pivot_offset = Vector2( 240, 375 )
 custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 22 )
-text = "   - Ave Gudrun!
-   - Ave Hildegard, o großer Tependicular
-unter allen!
-   - Gudrun, wir brauchen dich, o unsere
-größte Exosoziologe uNd Onkologe (uNd
-Rheumatologe auch), der sich Nun im Ruhe-
-stand befindet, für eiNe Aufgabe von
-größter Wichtigkeit an diesem Tag.
-   - Ich kanN dir nichts abschlagen,
-O Hildegard, du,der meineM Sohn Ursula
-das Lesen (aber nicht das Rechnen)
-beigebracht hat.
-   - Das Leben auf diesem PlanetEN steht
-kurz davor, durch einE seltsame Krank-
-heit ausgelöscht zu werden, die wider
-Erwarten eine primäre Form von Intel-
-ligenz Zu besitzen scheint, und wir müs-
-sen unbedingt...
-   - Sag nichts mehr, O Hildegard,
-ich gehe sofort los!"
+text = "   - Ave bRüNhild!
+   - Ave Hildegard, oh großer Tependicular
+von alLen!
+   - bRüNhild, wir brauchen dich für einE
+MisSIon von größter Bedeutung an diesem
+Tag, oh Du, unser größter Exosoziologe
+und Onkologe (und auch Rheumatologe)
+jetzt im Ruhestand.
+   - Ich kaNn Dir nichts abschLAgen,
+o Hildegard, Du, der meineM Sohn Ursula
+das Lesen (aber nicht das Zählen)
+beigebracht hast.
+   - Aufgrund einer seltsamen Krank-
+heit, die entgeGEn aLlen Erwartungen
+mit einer primären Form der Intelligenz
+ausgestatTet zu sein scheint, steht das
+Leben auf diEseM PlaNeten kurz vor dem
+AuSsterben. Wir müSsen...
+   - Sag nichts mehr Oh Hildegard, ich
+gehe sofort!"
 valign = 1
-__meta__ = {
-"_edit_lock_": true
-}
