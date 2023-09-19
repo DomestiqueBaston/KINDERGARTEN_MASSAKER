@@ -45,7 +45,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -156.646, -102.92 ), Vector2( -156.646, -1241.92 ) ]
+"values": [ Vector2( -161.646, -102.92 ), Vector2( -161.646, -1241.92 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("DIALOGUE_TEXTURE:rect_position")
@@ -57,7 +57,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -156.646, -102.92 ), Vector2( -156.646, -1241.92 ) ]
+"values": [ Vector2( -161.646, -102.92 ), Vector2( -161.646, -1241.92 ) ]
 }
 
 [sub_resource type="DynamicFontData" id=17]
@@ -115,7 +115,7 @@ Tag, oh Du, unser größter Exosoziologe
 und Onkologe (und auch Rheumatologe)
 jetzt im Ruhestand.
    - Ich kaNn Dir nichts abschLAgen,
-o Hildegard, Du, der meineM Sohn Ursula
+oh Hildegard, Du, der meineM Sohn Ursula
 das Lesen (aber nicht das Zählen)
 beigebracht hast.
    - Aufgrund einer seltsamen Krank-
@@ -149,7 +149,7 @@ Tag, oh Du, unser größter Exosoziologe
 und Onkologe (und auch Rheumatologe)
 jetzt im Ruhestand.
    - Ich kaNn Dir nichts abschLAgen,
-o Hildegard, Du, der meineM Sohn Ursula
+oh Hildegard, Du, der meineM Sohn Ursula
 das Lesen (aber nicht das Zählen)
 beigebracht hast.
    - Aufgrund einer seltsamen Krank-
