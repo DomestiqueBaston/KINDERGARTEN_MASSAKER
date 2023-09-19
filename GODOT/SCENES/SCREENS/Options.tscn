@@ -33,121 +33,121 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="0_0" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 11 )
 
 [node name="0_0_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 17 )
 
 [node name="0_1" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 10 )
 
 [node name="0_1_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 13 )
 
 [node name="0_2" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 12 )
 
 [node name="0_2_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 16 )
 
 [node name="1_0" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 8 )
 
 [node name="1_0_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 15 )
 
 [node name="1_1" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 9 )
 
 [node name="1_1_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 14 )
 
 [node name="1_2" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 5 )
 
 [node name="1_2_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 19 )
 
 [node name="2_0" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 6 )
 
 [node name="2_0_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 20 )
 
 [node name="2_1" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 4 )
 
 [node name="2_1_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 21 )
 
 [node name="2_2" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 2 )
 
 [node name="2_2_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 18 )
 
 [node name="3_0" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 7 )
 
 [node name="3_0_valid" type="TextureRect" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 22 )

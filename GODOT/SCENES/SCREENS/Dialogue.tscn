@@ -1,0 +1,169 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE TEXTE.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://SHADERS/TMP/Textured_Text.shader" type="Shader" id=6]
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("DIALOGUE_STYLE:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -156.646, 29.688 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DIALOGUE_TEXTURE:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -156.646, 29.688 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "dialogue"
+length = 75.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DIALOGUE_STYLE:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -156.646, 29.688 ), Vector2( -156.646, -1114.92 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DIALOGUE_TEXTURE:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -156.646, 29.688 ), Vector2( -156.646, -1114.92 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=17]
+override_oversampling = 2.0
+font_path = "res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf"
+
+[sub_resource type="DynamicFont" id=18]
+size = 111
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 17 )
+
+[sub_resource type="ShaderMaterial" id=21]
+shader = ExtResource( 6 )
+shader_param/img = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 111
+font_data = ExtResource( 5 )
+
+[node name="Dialogue" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "dialogue"
+anims/RESET = SubResource( 28 )
+anims/dialogue = SubResource( 29 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 240, 135 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DIALOGUE_STYLE" type="Label" parent="."]
+margin_left = -156.646
+margin_top = 29.688
+margin_right = 2033.35
+margin_bottom = 2616.69
+rect_rotation = -2.5
+rect_scale = Vector2( 0.333, 0.333 )
+rect_pivot_offset = Vector2( 240, 375 )
+custom_colors/font_color = Color( 0.717647, 0.219608, 0.278431, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 18 )
+text = "   - Ave Gudrun!
+   - Ave Hildegard, o großer Tependicular
+unter allen!
+   - Gudrun, wir brauchen dich, o unsere
+größte Exosoziologe uNd Onkologe (uNd
+Rheumatologe auch), der sich Nun im Ruhe-
+stand befindet, für eiNe Aufgabe von
+größter Wichtigkeit an diesem Tag.
+   - Ich kanN dir nichts abschlagen,
+O Hildegard, du,der meineM Sohn Ursula
+das Lesen (aber nicht das Rechnen)
+beigebracht hat.
+   - Das Leben auf diesem PlanetEN steht
+kurz davor, durch einE seltsame Krank-
+heit ausgelöscht zu werden, die wider
+Erwarten eine primäre Form von Intel-
+ligenz Zu besitzen scheint, und wir müs-
+sen unbedingt...
+   - Sag nichts mehr, O Hildegard,
+ich gehe sofort los!"
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DIALOGUE_TEXTURE" type="Label" parent="."]
+material = SubResource( 21 )
+margin_left = -156.646
+margin_top = 29.688
+margin_right = 1963.35
+margin_bottom = 2626.69
+rect_rotation = -2.5
+rect_scale = Vector2( 0.331, 0.331 )
+rect_pivot_offset = Vector2( 240, 375 )
+custom_constants/shadow_offset_x = 8
+custom_constants/shadow_offset_y = 6
+custom_fonts/font = SubResource( 22 )
+text = "   - Ave Gudrun!
+   - Ave Hildegard, o großer Tependicular
+unter allen!
+   - Gudrun, wir brauchen dich, o unsere
+größte Exosoziologe uNd Onkologe (uNd
+Rheumatologe auch), der sich Nun im Ruhe-
+stand befindet, für eiNe Aufgabe von
+größter Wichtigkeit an diesem Tag.
+   - Ich kanN dir nichts abschlagen,
+O Hildegard, du,der meineM Sohn Ursula
+das Lesen (aber nicht das Rechnen)
+beigebracht hat.
+   - Das Leben auf diesem PlanetEN steht
+kurz davor, durch einE seltsame Krank-
+heit ausgelöscht zu werden, die wider
+Erwarten eine primäre Form von Intel-
+ligenz Zu besitzen scheint, und wir müs-
+sen unbedingt...
+   - Sag nichts mehr, O Hildegard,
+ich gehe sofort los!"
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
