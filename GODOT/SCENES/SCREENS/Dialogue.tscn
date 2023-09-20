@@ -45,7 +45,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -161.646, -102.92 ), Vector2( -161.646, -1241.92 ) ]
+"values": [ Vector2( -161.646, -82.92 ), Vector2( -161.646, -1266.92 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("DIALOGUE_TEXTURE:rect_position")
@@ -57,7 +57,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -161.646, -102.92 ), Vector2( -161.646, -1241.92 ) ]
+"values": [ Vector2( -161.646, -82.92 ), Vector2( -161.646, -1266.92 ) ]
 }
 
 [sub_resource type="DynamicFontData" id=17]
@@ -124,8 +124,9 @@ mit einer primären Form der Intelligenz
 ausgestatTet zu sein scheint, steht das
 Leben auf diEseM PlaNeten kurz vor dem
 AuSsterben. Wir müSsen...
-   - Sag nichts mehr Oh Hildegard, ich
-gehe sofort!"
+   - Sag nichts mehr Oh Hildegard, un-
+ser großer türgeSzENter LeuchTturm,
+ich gehe sofort!"
 valign = 1
 
 [node name="DIALOGUE_TEXTURE" type="Label" parent="."]
@@ -158,6 +159,7 @@ mit einer primären Form der Intelligenz
 ausgestatTet zu sein scheint, steht das
 Leben auf diEseM PlaNeten kurz vor dem
 AuSsterben. Wir müSsen...
-   - Sag nichts mehr Oh Hildegard, ich
-gehe sofort!"
+   - Sag nichts mehr Oh Hildegard, un-
+ser großer türgeSzENter LeuchTturm,
+ich gehe sofort!"
 valign = 1
