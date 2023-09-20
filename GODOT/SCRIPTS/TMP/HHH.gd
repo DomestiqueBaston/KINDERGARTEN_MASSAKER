@@ -6,7 +6,7 @@ const Invisible = preload("res://SCENES/TMP/SceneINVISIBLE.tscn")
 const Bouclier = preload("res://SCENES/TMP/SceneSHIELD.tscn")
 const Force_Field = preload("res://SCENES/TMP/SceneFORCE_FIELD.tscn")
 const Teleport = preload("res://SCENES/TMP/SceneTELEPORT.tscn")
-const Schockwave = preload("res://SCENES/TMP/SceneSHOCKWAVE.tscn")
+const Generic_Talent = preload("res://SCENES/TMP/SceneGENERIC_TALENT.tscn")
 const Freezing = preload("res://SCENES/TMP/SceneFREEZING.tscn")
 const Time_Stop = preload("res://SCENES/TMP/SceneTIME_STOP.tscn")
 const Explosion = preload("res://SCENES/TMP/SceneEXPLOSION.tscn")
@@ -42,10 +42,10 @@ func _process(_delta):
 		if Autoload.scene_changed == true:
 			Autoload.choice = 6
 			to_FREEZING()
-	if Input.is_action_just_pressed("SCHOCKWAVE") and not Autoload.transition_signal:
+	if Input.is_action_just_pressed("GENERIC_TALENT") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 5
-			to_SCHOCKWAVE()
+			to_GENERIQUE_TALENT()
 	if Input.is_action_just_pressed("TELEPORT") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 4
@@ -99,7 +99,7 @@ func one_more_time():
 	if Autoload.choice == 4:
 		$Active_Scene.add_child(Teleport.instance())
 	if Autoload.choice == 5:
-		$Active_Scene.add_child(Schockwave.instance())
+		$Active_Scene.add_child(Generic_Talent.instance())
 	if Autoload.choice == 6:
 		$Active_Scene.add_child(Freezing.instance())
 	if Autoload.choice == 7:
@@ -148,13 +148,13 @@ func to_FREEZING():
 	$Active_Scene.get_child(0).queue_free()
 	$Active_Scene.add_child(Freezing.instance())
 
-func to_SCHOCKWAVE():
+func to_GENERIQUE_TALENT():
 	Autoload.scene_changed = false
 	Autoload.time_before_death = 50.0
 	Autoload.time_to_die = false
 	$Transition_Overlay/Sprite.take_screenshot()
 	$Active_Scene.get_child(0).queue_free()
-	$Active_Scene.add_child(Schockwave.instance())
+	$Active_Scene.add_child(Generic_Talent.instance())
 
 func to_TELEPORT():
 	Autoload.scene_changed = false

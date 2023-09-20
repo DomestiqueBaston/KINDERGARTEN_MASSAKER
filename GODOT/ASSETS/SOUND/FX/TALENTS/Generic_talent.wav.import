@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Schockwave.wav-e3da24a6ec49afcfa08d932fe1a475e2.sample"
+path="res://.import/Generic_talent.wav-72d4d88deb5a05ef5ca76c1c3a7fe91e.sample"
 
 [deps]
 
-source_file="res://ASSETS/SOUND/FX/TALENTS/Schockwave.wav"
-dest_files=[ "res://.import/Schockwave.wav-e3da24a6ec49afcfa08d932fe1a475e2.sample" ]
+source_file="res://ASSETS/SOUND/FX/TALENTS/Generic_talent.wav"
+dest_files=[ "res://.import/Generic_talent.wav-72d4d88deb5a05ef5ca76c1c3a7fe91e.sample" ]
 
 [params]
 
