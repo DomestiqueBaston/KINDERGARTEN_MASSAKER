@@ -34,7 +34,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=29]
 resource_name = "dialogue"
-length = 75.0
+length = 50.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("DIALOGUE_STYLE:rect_position")
 tracks/0/interp = 1
@@ -42,10 +42,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 75 ),
+"times": PoolRealArray( 0, 50 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -161.646, -82.92 ), Vector2( -161.646, -1266.92 ) ]
+"values": [ Vector2( -161.646, -106.92 ), Vector2( -161.646, -1241.92 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("DIALOGUE_TEXTURE:rect_position")
@@ -54,10 +54,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 75 ),
+"times": PoolRealArray( 0, 50 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -161.646, -82.92 ), Vector2( -161.646, -1266.92 ) ]
+"values": [ Vector2( -161.646, -106.92 ), Vector2( -161.646, -1241.92 ) ]
 }
 
 [sub_resource type="DynamicFontData" id=17]
@@ -107,15 +107,15 @@ custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 18 )
 text = "   - Ave bRüNhild!
-   - Ave Hildegard, oh großer Tependicular
+   - Ave Hildegard, o großer Tependicular
 von alLen!
    - bRüNhild, wir brauchen dich für einE
-MisSIon von größter Bedeutung an diesem
-Tag, oh Du, unser größter Exosoziologe
-und Onkologe (und auch Rheumatologe)
+MisSIon von höchster Bedeutung aN diesem
+Tag, o Du, unser größter Exosoziologe
+und onkOloge (und auch Rheumatologe)
 jetzt im Ruhestand.
    - Ich kaNn Dir nichts abschLAgen,
-oh Hildegard, Du, der meineM Sohn Ursula
+o Hildegard, Du, der meineM Sohn Ursula
 das Lesen (aber nicht das Zählen)
 beigebracht hast.
    - Aufgrund einer seltsamen Krank-
@@ -124,10 +124,12 @@ mit einer primären Form der Intelligenz
 ausgestatTet zu sein scheint, steht das
 Leben auf diEseM PlaNeten kurz vor dem
 AuSsterben. Wir müSsen...
-   - Sag nichts mehr Oh Hildegard, un-
-ser großer türgeSzENter LeuchTturm,
-ich gehe sofort!"
+   - Sag nichts mehr o Hildegard, ich
+gehe sofort!"
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="DIALOGUE_TEXTURE" type="Label" parent="."]
 material = SubResource( 21 )
@@ -142,15 +144,15 @@ custom_constants/shadow_offset_x = 8
 custom_constants/shadow_offset_y = 6
 custom_fonts/font = SubResource( 22 )
 text = "   - Ave bRüNhild!
-   - Ave Hildegard, oh großer Tependicular
+   - Ave Hildegard, o großer Tependicular
 von alLen!
    - bRüNhild, wir brauchen dich für einE
-MisSIon von größter Bedeutung an diesem
-Tag, oh Du, unser größter Exosoziologe
-und Onkologe (und auch Rheumatologe)
+MisSIon von höchster Bedeutung aN diesem
+Tag, o Du, unser größter Exosoziologe
+und onkOloge (und auch Rheumatologe)
 jetzt im Ruhestand.
    - Ich kaNn Dir nichts abschLAgen,
-oh Hildegard, Du, der meineM Sohn Ursula
+o Hildegard, Du, der meineM Sohn Ursula
 das Lesen (aber nicht das Zählen)
 beigebracht hast.
    - Aufgrund einer seltsamen Krank-
@@ -159,7 +161,9 @@ mit einer primären Form der Intelligenz
 ausgestatTet zu sein scheint, steht das
 Leben auf diEseM PlaNeten kurz vor dem
 AuSsterben. Wir müSsen...
-   - Sag nichts mehr Oh Hildegard, un-
-ser großer türgeSzENter LeuchTturm,
-ich gehe sofort!"
+   - Sag nichts mehr o Hildegard, ich
+gehe sofort!"
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
