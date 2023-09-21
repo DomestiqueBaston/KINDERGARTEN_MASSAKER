@@ -1,0 +1,169 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=1]
+[ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_TECHNIKER.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=4]
+[ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=5]
+[ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=8]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Der_Techniker.wav" type="AudioStream" id=9]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.99994
+height = 28.0001
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/ready = null
+shader_param/cooldown = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.752941 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "techniker"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.12 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="SceneTEST" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BG_AMBIANCE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
+autoplay = true
+bus = "AMBIANCE"
+
+[node name="MUSIC" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+bus = "MUSIC"
+
+[node name="Background" parent="." instance=ExtResource( 6 )]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PAPA_PLAYER" type="KinematicBody2D" parent="."]
+position = Vector2( 720, 405 )
+collision_layer = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Alien_Collider" type="CollisionShape2D" parent="PAPA_PLAYER"]
+light_mask = 2
+position = Vector2( 0, 8 )
+rotation = 1.5708
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PLAYER" type="Node2D" parent="PAPA_PLAYER"]
+position = Vector2( 0, -15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Intro Alien" parent="PAPA_PLAYER/PLAYER" instance=ExtResource( 7 )]
+
+[node name="Shadow" type="Polygon2D" parent="PAPA_PLAYER/PLAYER"]
+visible = false
+position = Vector2( -7.22192, -9.71426 )
+scale = Vector2( 1.11855, 0.857143 )
+color = Color( 0, 0.1, 0, 0.392157 )
+polygon = PoolVector2Array( -14.9999, 44.056, -13.1739, 40.92, -10.0588, 38.5556, -1.82355, 37.0001, 6.41174, 37, 13.8235, 37.0001, 21.6548, 38.1666, 26.1249, 40.5, 27.913, 44, 26.1249, 46.3333, 20.4117, 49.4445, 13, 51, 5.08691, 51, -1.82355, 51, -10.0588, 49.4445, -13.1739, 47.192 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cooldown_Timer" type="Timer" parent="PAPA_PLAYER/PLAYER"]
+wait_time = 5.0
+one_shot = true
+
+[node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
+visible = false
+material = SubResource( 1 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PAPA_PLAYER/PLAYER"]
+anims/RESET = SubResource( 3 )
+anims/techniker = SubResource( 4 )
+
+[node name="FX" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
+stream = ExtResource( 9 )
+bus = "FX"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.752941 )
+margin_left = -73.0
+margin_top = -74.0
+margin_right = 1528.0
+margin_bottom = 874.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CAMERA" type="Camera2D" parent="."]
+position = Vector2( 720, 405 )
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1440
+limit_bottom = 810
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="timeout" from="PAPA_PLAYER/PLAYER/Cooldown_Timer" to="PAPA_PLAYER" method="_on_Cooldown_Timer_timeout"]

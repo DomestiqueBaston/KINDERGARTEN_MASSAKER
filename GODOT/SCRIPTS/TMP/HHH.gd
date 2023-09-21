@@ -6,10 +6,11 @@ const Invisible = preload("res://SCENES/TMP/SceneINVISIBLE.tscn")
 const Bouclier = preload("res://SCENES/TMP/SceneSHIELD.tscn")
 const Force_Field = preload("res://SCENES/TMP/SceneFORCE_FIELD.tscn")
 const Teleport = preload("res://SCENES/TMP/SceneTELEPORT.tscn")
-const Generic_Talent = preload("res://SCENES/TMP/SceneGENERIC_TALENT.tscn")
+const Mirror_Images = preload("res://SCENES/TMP/SceneMIRROR_IMAGES.tscn")
 const Freezing = preload("res://SCENES/TMP/SceneFREEZING.tscn")
 const Time_Stop = preload("res://SCENES/TMP/SceneTIME_STOP.tscn")
 const Explosion = preload("res://SCENES/TMP/SceneEXPLOSION.tscn")
+const Techniker = preload("res://SCENES/TMP/SceneTECHNIKER.tscn")
 
 const SceneDeath = preload("res://SCENES/SCREENS/Death.tscn")
 
@@ -30,6 +31,10 @@ func _ready() -> void:
 		$PAPA_Game_Overlay.add_child(overlay_3.instance())
 
 func _process(_delta):
+	if Input.is_action_just_pressed("DER_TECHNIKER") and not Autoload.transition_signal:
+		if Autoload.scene_changed == true:
+			Autoload.choice = 9
+			to_DER_TECHNIKER()
 	if Input.is_action_just_pressed("EXPLOSION") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 8
@@ -42,10 +47,10 @@ func _process(_delta):
 		if Autoload.scene_changed == true:
 			Autoload.choice = 6
 			to_FREEZING()
-	if Input.is_action_just_pressed("GENERIC_TALENT") and not Autoload.transition_signal:
+	if Input.is_action_just_pressed("MIRROR_IMAGES") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 5
-			to_GENERIQUE_TALENT()
+			to_MIRROR_IMAGES()
 	if Input.is_action_just_pressed("TELEPORT") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 4
@@ -99,13 +104,15 @@ func one_more_time():
 	if Autoload.choice == 4:
 		$Active_Scene.add_child(Teleport.instance())
 	if Autoload.choice == 5:
-		$Active_Scene.add_child(Generic_Talent.instance())
+		$Active_Scene.add_child(Mirror_Images.instance())
 	if Autoload.choice == 6:
 		$Active_Scene.add_child(Freezing.instance())
 	if Autoload.choice == 7:
 		$Active_Scene.add_child(Time_Stop.instance())
 	if Autoload.choice == 8:
 		$Active_Scene.add_child(Explosion.instance())
+	if Autoload.choice == 9:
+		$Active_Scene.add_child(Techniker.instance())
 
 func finally_no():
 	Autoload.scene_changed = true
@@ -115,6 +122,14 @@ func finally_no():
 	Autoload.time_to_die = false
 	Autoload.elapsed_time = 0.0
 	var _useless = get_tree().reload_current_scene()
+
+func to_DER_TECHNIKER():
+	Autoload.scene_changed = false
+	Autoload.time_before_death = 50.0
+	Autoload.time_to_die = false
+	$Transition_Overlay/Sprite.take_screenshot()
+	$Active_Scene.get_child(0).queue_free()
+	$Active_Scene.add_child(Techniker.instance())
 
 func to_DASH():
 	Autoload.scene_changed = false
@@ -148,13 +163,13 @@ func to_FREEZING():
 	$Active_Scene.get_child(0).queue_free()
 	$Active_Scene.add_child(Freezing.instance())
 
-func to_GENERIQUE_TALENT():
+func to_MIRROR_IMAGES():
 	Autoload.scene_changed = false
 	Autoload.time_before_death = 50.0
 	Autoload.time_to_die = false
 	$Transition_Overlay/Sprite.take_screenshot()
 	$Active_Scene.get_child(0).queue_free()
-	$Active_Scene.add_child(Generic_Talent.instance())
+	$Active_Scene.add_child(Mirror_Images.instance())
 
 func to_TELEPORT():
 	Autoload.scene_changed = false

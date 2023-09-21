@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Generic_talent.wav-72d4d88deb5a05ef5ca76c1c3a7fe91e.sample"
+path="res://.import/Der_Techniker.wav-c48a831516a7139d8d37bf5c6ac30c2a.sample"
 
 [deps]
 
-source_file="res://ASSETS/SOUND/FX/TALENTS/Generic_talent.wav"
-dest_files=[ "res://.import/Generic_talent.wav-72d4d88deb5a05ef5ca76c1c3a7fe91e.sample" ]
+source_file="res://ASSETS/SOUND/FX/TALENTS/Der_Techniker.wav"
+dest_files=[ "res://.import/Der_Techniker.wav-c48a831516a7139d8d37bf5c6ac30c2a.sample" ]
 
 [params]
 

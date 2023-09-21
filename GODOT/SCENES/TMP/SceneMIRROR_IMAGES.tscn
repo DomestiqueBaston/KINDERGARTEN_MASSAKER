@@ -3,71 +3,12 @@
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=2]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=3]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Generic_talent.wav" type="AudioStream" id=5]
+[ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_MIRROR_IMAGES.gd" type="Script" id=4]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror.wav" type="AudioStream" id=5]
 [ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=7]
 [ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=9]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=10]
-
-[sub_resource type="GDScript" id=5]
-script/source = "extends KinematicBody2D
-
-
-var speed = 175
-var SPEED = Vector2(speed, speed / 1.5)
-var velocity = Vector2()
-var cooldown_ready = true
-
-
-func _ready():
-	set_physics_process(false)
-	$\"PLAYER/The Alien (with OUTLINE shader)\".material.set_shader_param(\"cooldown\", Color(0.0, 0.0, 0.0, 1.0))
-
-func _physics_process(_delta):
-# warning-ignore:return_value_discarded
-	get_input()
-	velocity = move_and_slide(velocity)
-
-func _process(delta):
-	Autoload.elapsed_time += delta
-	
-#	Collision test
-	for i in range(get_slide_count()):
-		var _collision = get_slide_collision(i)
-		Autoload.time_before_death -= 1.0
-	if Autoload.time_before_death <= 0:
-		Autoload.time_to_die = true
-		Autoload.scene_changed = true
-
-func get_input():
-	velocity = Vector2()
-	if Input.is_action_just_pressed(\"ui_a\"):
-		start_timers()
-	if Input.is_action_pressed(\"ui_down\"):
-		velocity.y += 0.75
-	if Input.is_action_pressed(\"ui_up\"):
-		velocity.y -= 0.75
-	if Input.is_action_pressed(\"ui_right\"):
-		velocity.x += 1.0
-	if Input.is_action_pressed(\"ui_left\"):
-		velocity.x -= 1.0
-	velocity = velocity.normalized() * (SPEED)
-
-func start_timers():
-	if cooldown_ready:
-		$PLAYER/Cooldown_Timer.start()
-		$'../ColorRect'.visible = true
-		$PLAYER/AnimationPlayer.play(\"generic_talent\")
-		$\"PLAYER/The Alien (with OUTLINE shader)\".material.set_shader_param(\"cooldown\", Color(0.71, 0.21, 0.27, 1.0))
-		cooldown_ready = false
-		yield($PLAYER/AnimationPlayer, \"animation_finished\")
-		$'../ColorRect'.visible = false
-
-func _on_Cooldown_Timer_timeout():
-#	Outline redevient noir !
-	$\"PLAYER/The Alien (with OUTLINE shader)\".material.set_shader_param(\"cooldown\", Color(0.0, 0.0, 0.0, 1.0))
-	cooldown_ready = true
-"
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.99994
@@ -94,7 +35,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "generic_talent"
+resource_name = "mirror_images"
 length = 0.6
 tracks/0/type = "audio"
 tracks/0/path = NodePath("FX")
@@ -147,7 +88,7 @@ __meta__ = {
 [node name="PAPA_PLAYER" type="KinematicBody2D" parent="."]
 position = Vector2( 720, 405 )
 collision_layer = 2
-script = SubResource( 5 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -193,7 +134,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PAPA_PLAYER/PLAYER"]
 anims/RESET = SubResource( 3 )
-anims/generic_talent = SubResource( 4 )
+anims/mirror_images = SubResource( 4 )
 
 [node name="FX" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
 stream = ExtResource( 5 )
