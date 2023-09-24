@@ -83,7 +83,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.2, 0.2 ), Vector2( 0.35, 0.35 ), Vector2( 0.45, 0.45 ), Vector2( 0.45, 0.45 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 0.55, 0.55 ), Vector2( 0.7, 0.7 ), Vector2( 0.6, 0.6 ), Vector2( 0.5, 0.5 ), Vector2( 0.3, 0.3 ) ]
 }
 tracks/3/type = "audio"
-tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/path = NodePath("Spit")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -97,7 +97,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/4/type = "audio"
-tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/path = NodePath("Spit")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -130,6 +130,6 @@ anims/Spit = SubResource( 2 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 3 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Spit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 bus = "FX"

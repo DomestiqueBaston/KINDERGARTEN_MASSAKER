@@ -14,6 +14,8 @@ const Techniker = preload("res://SCENES/TMP/SceneTECHNIKER.tscn")
 
 const SceneDeath = preload("res://SCENES/SCREENS/Death.tscn")
 
+const Dialogue = preload("res://SCENES/SCREENS/Dialogue.tscn")
+
 const overlay_1 = preload('res://SCENES/OVERLAYS/Game_Overlay_1.tscn')
 const overlay_2 = preload('res://SCENES/OVERLAYS/Game_Overlay_2.tscn')
 const overlay_3 = preload('res://SCENES/OVERLAYS/Game_Overlay_3.tscn')
@@ -31,6 +33,10 @@ func _ready() -> void:
 		$PAPA_Game_Overlay.add_child(overlay_3.instance())
 
 func _process(_delta):
+	if Input.is_action_just_pressed("DIALOGUE") and not Autoload.transition_signal:
+		if Autoload.scene_changed == true:
+			Autoload.choice = 10
+			to_DIALOGUE()
 	if Input.is_action_just_pressed("DER_TECHNIKER") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 9
@@ -113,6 +119,8 @@ func one_more_time():
 		$Active_Scene.add_child(Explosion.instance())
 	if Autoload.choice == 9:
 		$Active_Scene.add_child(Techniker.instance())
+	if Autoload.choice == 10:
+		$Active_Scene.add_child(Dialogue.instance())
 
 func finally_no():
 	Autoload.scene_changed = true
@@ -123,6 +131,12 @@ func finally_no():
 	Autoload.elapsed_time = 0.0
 	var _useless = get_tree().reload_current_scene()
 
+func to_DIALOGUE():
+	Autoload.scene_changed = false
+	$Transition_Overlay/Sprite.take_screenshot()
+	$Active_Scene.get_child(0).queue_free()
+	$Active_Scene.add_child(Dialogue.instance())
+	
 func to_DER_TECHNIKER():
 	Autoload.scene_changed = false
 	Autoload.time_before_death = 50.0

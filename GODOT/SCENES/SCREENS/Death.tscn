@@ -93,7 +93,7 @@ font_data = ExtResource( 1 )
 [node name="Death" type="Node2D"]
 script = ExtResource( 6 )
 
-[node name="Death_Music" type="AudioStreamPlayer2D" parent="."]
+[node name="Death_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
 bus = "MUSIC"

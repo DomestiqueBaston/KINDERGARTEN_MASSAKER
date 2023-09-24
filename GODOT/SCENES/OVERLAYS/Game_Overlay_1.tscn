@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://SHADERS/Glitch_Effect_A.shader" type="Shader" id=2]
 [ext_resource path="res://SHADERS/TV.shader" type="Shader" id=6]
@@ -35,6 +35,501 @@ shader_param/bottomStaticStrenth = 0.0
 shader_param/rgbOffsetOpt = 0.0
 shader_param/horzFuzzOpt = 0.1
 
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/scanlines_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Glitch_Effect_A:material:shader_param/roll_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 6.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Glitch_Effect_A:material:shader_param/distort_intensity")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.002 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Glitch_Effect_A:material:shader_param/static_noise_intensity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TV:material:shader_param/vertJerkOpt")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.1 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TV:material:shader_param/vertMovementOpt")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TV:material:shader_param/bottomStaticOpt")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("TV:material:shader_param/bottomStaticStrenth")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("TV:material:shader_param/rgbOffsetOpt")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("TV:material:shader_param/horzFuzzOpt")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.1 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "general"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/scanlines_opacity")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Glitch_Effect_A:material:shader_param/roll_size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 6.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Glitch_Effect_A:material:shader_param/distort_intensity")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.002, 0.2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Glitch_Effect_A:material:shader_param/static_noise_intensity")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("TV:material:shader_param/vertJerkOpt")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.1, 1.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TV:material:shader_param/vertMovementOpt")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TV:material:shader_param/bottomStaticOpt")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, 5.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("TV:material:shader_param/bottomStaticStrenth")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, 1.5 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("TV:material:shader_param/rgbOffsetOpt")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, 2.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("TV:material:shader_param/horzFuzzOpt")
+tracks/9/interp = 2
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.1, 5.0 ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/aberration")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "aberration"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/aberration")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, 0.1 ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Glitch_Effect_A:material:shader_param/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "brightness"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Glitch_Effect_A:material:shader_param/brightness")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 1.13, 1.3 ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/saturation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "saturation"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/saturation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, 0.75 ]
+}
+
+[sub_resource type="Animation" id=21]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/contrast")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "contrast"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/contrast")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 1.0, 1.1 ]
+}
+
+[sub_resource type="Animation" id=23]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/aberration")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "aberration"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/aberration")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, -0.1 ]
+}
+
+[sub_resource type="Animation" id=25]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Glitch_Effect_A:material:shader_param/brightness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "brightness"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Glitch_Effect_A:material:shader_param/brightness")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 1.0, 0.5 ]
+}
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/saturation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "saturation"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/saturation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 0.0, -0.5 ]
+}
+
+[sub_resource type="Animation" id=29]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/contrast")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "contrast"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch_Effect_A:material:shader_param/contrast")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2, 2 ),
+"update": 0,
+"values": [ 1.0, 0.5 ]
+}
+
 [node name="Game_overlay_1" type="CanvasLayer"]
 physics_interpolation_mode = 1
 
@@ -50,3 +545,41 @@ copy_mode = 2
 material = SubResource( 12 )
 margin_right = 480.0
 margin_bottom = 270.0
+
+[node name="General" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 13 )
+anims/general = SubResource( 14 )
+
+[node name="Aberration_pos" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 15 )
+anims/aberration = SubResource( 16 )
+
+[node name="Brightness_pos" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Aberration_pos")
+anims/RESET = SubResource( 17 )
+anims/brightness = SubResource( 18 )
+
+[node name="Saturation_pos" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 19 )
+anims/saturation = SubResource( 20 )
+
+[node name="Contrast_pos" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 21 )
+anims/contrast = SubResource( 22 )
+
+[node name="Aberration_neg" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 23 )
+anims/aberration = SubResource( 24 )
+
+[node name="Brightness_neg" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Aberration_pos")
+anims/RESET = SubResource( 25 )
+anims/brightness = SubResource( 26 )
+
+[node name="Saturation_neg" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 27 )
+anims/saturation = SubResource( 28 )
+
+[node name="Contrast_neg" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 29 )
+anims/contrast = SubResource( 30 )

@@ -14,7 +14,6 @@ var time_to_die = false			#TRUE quand on meurt (aussi ?)
 var elapsed_time = 0.0
 var best_time = 0.0
 
-
 func _physics_process(_delta):
 # warning-ignore:return_value_discarded
 	get_input()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SHADERS/Glitch.shader" type="Shader" id=1]
 
@@ -9,6 +9,109 @@ shader_param/_VerticalJump = 0.005
 shader_param/_HorizontalShake = 0.0
 shader_param/_ColorDrift = 0.0
 
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch:material:shader_param/_ScanLineJitter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.245 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Glitch:material:shader_param/_VerticalJump")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.005 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Glitch:material:shader_param/_HorizontalShake")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Glitch:material:shader_param/_ColorDrift")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "animation"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Glitch:material:shader_param/_ScanLineJitter")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 0.245, 0.75 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Glitch:material:shader_param/_VerticalJump")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 0.005, 0.3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Glitch:material:shader_param/_HorizontalShake")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 0.0, 0.5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Glitch:material:shader_param/_ColorDrift")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 0.0, 0.5 ]
+}
+
 [node name="Game_overlay_3" type="CanvasLayer"]
 physics_interpolation_mode = 1
 
@@ -16,3 +119,7 @@ physics_interpolation_mode = 1
 material = SubResource( 14 )
 margin_right = 480.0
 margin_bottom = 270.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 15 )
+anims/animation = SubResource( 16 )
