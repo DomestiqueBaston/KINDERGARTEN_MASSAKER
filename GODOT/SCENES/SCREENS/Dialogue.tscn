@@ -192,5 +192,4 @@ bus = "MUSIC"
 
 [node name="Dialogue" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 2.5
 bus = "AMBIANCE"
