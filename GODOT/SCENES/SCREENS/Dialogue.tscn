@@ -198,6 +198,6 @@ bus = "AMBIANCE"
 
 [node name="Noise (add Fade in when entering and Fade out when leaving)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -2.5
+volume_db = -10.0
 autoplay = true
 bus = "AMBIANCE"
