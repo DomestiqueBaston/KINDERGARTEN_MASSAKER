@@ -29,7 +29,7 @@ func _ready() -> void:
 		$PAPA_Game_Overlay.add_child(overlay_1.instance())
 	if overlay_choice == 2:
 		$PAPA_Game_Overlay.add_child(overlay_2.instance())
-	else:
+	if overlay_choice == 3:
 		$PAPA_Game_Overlay.add_child(overlay_3.instance())
 
 func _process(_delta):
