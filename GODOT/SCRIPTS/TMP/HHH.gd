@@ -25,12 +25,14 @@ func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	var overlay_choice = rng.randi_range(1, 3)
-	if overlay_choice == 1:
-		$PAPA_Game_Overlay.add_child(overlay_1.instance())
-	if overlay_choice == 2:
-		$PAPA_Game_Overlay.add_child(overlay_2.instance())
-	else:
-		$PAPA_Game_Overlay.add_child(overlay_3.instance())
+	#var overlay_choice = 1
+	match overlay_choice:
+		1:
+			$PAPA_Game_Overlay.add_child(overlay_1.instance())
+		2:
+			$PAPA_Game_Overlay.add_child(overlay_2.instance())
+		3:
+			$PAPA_Game_Overlay.add_child(overlay_3.instance())
 
 func _process(_delta):
 	if Input.is_action_just_pressed("DIALOGUE") and not Autoload.transition_signal:
