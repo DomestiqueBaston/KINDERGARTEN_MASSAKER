@@ -33,6 +33,7 @@ window/size/height=270
 window/size/always_on_top=true
 window/size/test_width=960
 window/size/test_height=540
+window/vsync/use_vsync=false
 mouse_cursor/tooltip_position_offset=Vector2( 10, 20 )
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"

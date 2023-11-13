@@ -28,7 +28,7 @@ position = Vector2( 240, 135 )
 texture = ExtResource( 9 )
 
 [node name="Techniker_Off" type="Sprite" parent="."]
-visible = false
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 240, 135 )
 texture = ExtResource( 1 )
 

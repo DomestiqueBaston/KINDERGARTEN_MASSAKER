@@ -42,13 +42,13 @@ margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 4 )
 
-[node name="4" type="TextureRect" parent="Control"]
+[node name="X" type="TextureRect" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 7 )
 
-[node name="5" type="TextureRect" parent="Control"]
+[node name="4" type="TextureRect" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
