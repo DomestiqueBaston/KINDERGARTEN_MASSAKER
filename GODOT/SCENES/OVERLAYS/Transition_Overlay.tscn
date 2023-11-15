@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://SCRIPTS/TMP/TRANSITION.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/TRANSITION_SCREEN/Spiraling_qua.png" type="Texture" id=2]
 [ext_resource path="res://SHADERS/Transition.shader" type="Shader" id=3]
 [ext_resource path="res://SCRIPTS/Transition_Overlay.gd" type="Script" id=4]
+[ext_resource path="res://ASSETS/SOUND/FX/TRANSITION_SCREEN/transition.wav" type="AudioStream" id=5]
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 3 )
@@ -24,6 +25,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.1 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("../FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=5]
@@ -52,6 +67,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../FX:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [node name="Transition_Overlay" type="CanvasLayer"]
 script = ExtResource( 4 )
@@ -65,6 +92,11 @@ script = ExtResource( 1 )
 root_node = NodePath("../Sprite")
 anims/Fade = SubResource( 3 )
 anims/RESET = SubResource( 5 )
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -2.5
+bus = "FX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Sprite" method="_on_AnimationPlayer_animation_finished"]
