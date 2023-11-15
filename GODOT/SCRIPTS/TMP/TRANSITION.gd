@@ -1,6 +1,5 @@
 extends Sprite
 
-
 onready var animationPlayer = $"../AnimationPlayer"
 export var animation = "Fade"
 
@@ -11,7 +10,6 @@ func take_screenshot():
 	screenshot.create_from_image(img)
 	texture = screenshot
 	animationPlayer.play("Fade")
-
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
 	Autoload.transition_signal = true

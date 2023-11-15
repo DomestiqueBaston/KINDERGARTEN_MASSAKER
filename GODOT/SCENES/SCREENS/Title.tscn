@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/TITLE_SCREEN/Kindergarten Massaker_02.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/TITLE_SCREEN/Kindergarten Massaker_01.png" type="Texture" id=2]
-[ext_resource path="res://ASSETS/SOUND/MUSIC/MENUS.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/GRAPHICS/TITLE_SCREEN/Kindergarten Massaker_03.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
@@ -81,9 +80,3 @@ texture = ExtResource( 5 )
 autoplay = "Flasher"
 anims/Flasher = SubResource( 1 )
 anims/RESET = SubResource( 2 )
-
-[node name="Menu_Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-volume_db = 5.0
-autoplay = true
-bus = "MUSIC"

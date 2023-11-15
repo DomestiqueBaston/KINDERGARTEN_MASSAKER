@@ -22,10 +22,6 @@ config/windows_native_icon="res://KM_LOGO.ico"
 
 Autoload="*res://SCRIPTS/TMP/Autoload.gd"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/size/width=480
@@ -44,6 +40,7 @@ second=false
 fps=false
 frame=false
 wind=false
+show=false
 
 [importer_defaults]
 
