@@ -1,6 +1,5 @@
 extends Node2D
 
-
 const SceneDash = preload("res://SCENES/TMP/SceneDASH.tscn")
 const Invisible = preload("res://SCENES/TMP/SceneINVISIBLE.tscn")
 const Bouclier = preload("res://SCENES/TMP/SceneSHIELD.tscn")
@@ -11,30 +10,89 @@ const Freezing = preload("res://SCENES/TMP/SceneFREEZING.tscn")
 const Time_Stop = preload("res://SCENES/TMP/SceneTIME_STOP.tscn")
 const Explosion = preload("res://SCENES/TMP/SceneEXPLOSION.tscn")
 const Techniker = preload("res://SCENES/TMP/SceneTECHNIKER.tscn")
-
 const SceneDeath = preload("res://SCENES/SCREENS/Death.tscn")
-
 const Dialogue = preload("res://SCENES/SCREENS/Dialogue.tscn")
 
-const overlay_1 = preload('res://SCENES/OVERLAYS/Game_Overlay_1.tscn')
-const overlay_2 = preload('res://SCENES/OVERLAYS/Game_Overlay_2.tscn')
-const overlay_3 = preload('res://SCENES/OVERLAYS/Game_Overlay_3.tscn')
+var menu = preload("res://SCENES/SCREENS/Menu.tscn")
+var options = preload("res://SCENES/SCREENS/Options.tscn")
+var credits = preload("res://SCENES/SCREENS/Credits.tscn")
+var dialogue = preload("res://SCENES/SCREENS/Dialogue.tscn")
 
+var credits_seen = false
 
-func _ready() -> void:
+enum GameState {
+	TITLE,
+	MENU,
+	OPTIONS,
+	CREDITS,
+	DIALOGUE
+}
+
+var state = GameState.TITLE
+var next_state
+
+func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	var overlay_choice = rng.randi_range(1, 3)
-	#var overlay_choice = 1
-	match overlay_choice:
+	var overlay_path
+	match rng.randi_range(1, 3):
 		1:
-			$PAPA_Game_Overlay.add_child(overlay_1.instance())
+			overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_1.tscn"
 		2:
-			$PAPA_Game_Overlay.add_child(overlay_2.instance())
+			overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_2.tscn"
 		3:
-			$PAPA_Game_Overlay.add_child(overlay_3.instance())
+			overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_3.tscn"
+	var overlay_scene = load(overlay_path)
+	$PAPA_Game_Overlay.add_child(overlay_scene.instance())
 
-func _process(_delta):
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("full_screen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+	elif state != GameState.MENU and event.is_pressed():
+		next_state = GameState.MENU
+		$Transition_Overlay.start_transition()
+
+func _on_Transition_Overlay_transition_finished():
+	$Active_Scene.get_child(0).queue_free()
+	var child
+	match next_state:
+		GameState.MENU:
+			child = menu.instance()
+			child.set_dialogue_enabled(credits_seen)
+			child.connect("start_game", self, "on_start_game")
+			child.connect("show_options", self, "on_show_options")
+			child.connect("show_credits", self, "on_show_credits")
+			child.connect("exit_game", self, "on_exit_game")
+			child.connect("show_dialogue", self, "on_show_dialogue")
+		GameState.OPTIONS:
+			child = options.instance()
+		GameState.CREDITS:
+			child = credits.instance()
+			credits_seen = true
+		GameState.DIALOGUE:
+			child = dialogue.instance()
+	$Active_Scene.add_child(child)
+	state = next_state
+
+func on_start_game():
+	pass
+
+func on_show_options():
+	next_state = GameState.OPTIONS
+	$Transition_Overlay.start_transition()
+
+func on_show_credits():
+	next_state = GameState.CREDITS
+	$Transition_Overlay.start_transition()
+
+func on_show_dialogue():
+	next_state = GameState.DIALOGUE
+	$Transition_Overlay.start_transition()
+
+func on_exit_game():
+	get_tree().quit(0)
+
+func _process_Ferdi(_delta):
 	if Input.is_action_just_pressed("DIALOGUE") and not Autoload.transition_signal:
 		if Autoload.scene_changed == true:
 			Autoload.choice = 10

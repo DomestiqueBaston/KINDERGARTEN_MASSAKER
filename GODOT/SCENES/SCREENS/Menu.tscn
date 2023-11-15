@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Menu.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Wer_denn.png" type="Texture" id=2]
@@ -7,8 +7,10 @@
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Optionen.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Menu_Dialogue_On.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Menu_Dialogue_Off.png" type="Texture" id=7]
+[ext_resource path="res://SCRIPTS/Menu.gd" type="Script" id=8]
 
 [node name="PAPA_Menu" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="Menu_OFF" type="Sprite" parent="."]
 position = Vector2( 240, 135 )

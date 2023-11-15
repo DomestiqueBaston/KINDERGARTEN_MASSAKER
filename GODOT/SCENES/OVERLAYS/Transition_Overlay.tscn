@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://SCRIPTS/TMP/TRANSITION.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/TRANSITION_SCREEN/Spiraling_qua.png" type="Texture" id=2]
 [ext_resource path="res://SHADERS/Transition.shader" type="Shader" id=3]
+[ext_resource path="res://SCRIPTS/Transition_Overlay.gd" type="Script" id=4]
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 3 )
@@ -53,6 +54,7 @@ tracks/1/keys = {
 }
 
 [node name="Transition_Overlay" type="CanvasLayer"]
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 6 )
@@ -64,4 +66,5 @@ root_node = NodePath("../Sprite")
 anims/Fade = SubResource( 3 )
 anims/RESET = SubResource( 5 )
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Sprite" method="_on_AnimationPlayer_animation_finished"]
