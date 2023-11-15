@@ -185,5 +185,5 @@ __meta__ = {
 
 [node name="Dialogue" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 5.0
+volume_db = 6.666
 bus = "AMBIANCE"
