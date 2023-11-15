@@ -77,20 +77,20 @@ vec2 warp(vec2 uv){
 	vec2 delta = uv - 0.5;
 	float delta2 = dot(delta.xy, delta.xy);
 	float delta4 = delta2 * delta2;
-	float delta_offset = delta4 * warp_amount;
+	float delta_offset = 0.0 /* delta4 * warp_amount */;
 	
 	return uv + delta * delta_offset;
 }
 
 // Adds a black border to hide stretched pixel created by the warp effect
-float border (vec2 uv){
+/* float border (vec2 uv){
 	float radius = min(warp_amount, 0.08);
 	radius = max(min(min(abs(radius * 2.0), abs(1.0)), abs(1.0)), 1e-5);
 	vec2 abs_uv = abs(uv * 2.0 - 1.0) - vec2(1.0, 1.0) + radius;
 	float dist = length(max(vec2(0.0), abs_uv)) / radius;
 	float square = smoothstep(0.96, 1.0, dist);
 	return clamp(1.0 - square, 0.0, 1.0);
-}
+} */
 
 // Adds a vignette shadow to the edges of the image
 //float vignette(vec2 uv){
@@ -128,16 +128,16 @@ void fragment()
 	}
 	
 	vec4 text;
-	if (roll)
-	{
+	// if (roll)
+	// {
 		// If roll is true distort the texture with roll_uv. The texture is split up into RGB to 
 		// make some chromatic aberration. We apply the aberration to the red and green channels accorging to the aberration parameter
 		// and intensify it a bit in the roll distortion.
-		text.r = texture(SCREEN_TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .1).r;
-		text.g = texture(SCREEN_TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .1 ).g;
-		text.b = texture(SCREEN_TEXTURE, text_uv + roll_uv).b;
-		text.a = 1.0;
-	}
+	text.r = texture(SCREEN_TEXTURE, text_uv + roll_uv * 0.8 + vec2(aberration, 0.0) * .1).r;
+	text.g = texture(SCREEN_TEXTURE, text_uv + roll_uv * 1.2 - vec2(aberration, 0.0) * .1 ).g;
+	text.b = texture(SCREEN_TEXTURE, text_uv + roll_uv).b;
+	text.a = 1.0;
+	/* }
 	else
 	{
 		// If roll is false only apply the aberration without any distorion. The aberration values are very small so the .1 is only 
@@ -146,7 +146,7 @@ void fragment()
 		text.g = texture(SCREEN_TEXTURE, text_uv - vec2(aberration, 0.0) * .1).g;
 		text.b = texture(SCREEN_TEXTURE, text_uv).b;
 		text.a = 1.0;
-	}
+	} */
 	
 	float r = text.r;
 	float g = text.g;
@@ -209,13 +209,14 @@ void fragment()
 	
 	// Apply a black border to hide imperfections caused by the warping.
 	// Also apply the vignette
-	text.rgb *= border(uv);
+	//text.rgb *= border(uv);
 	//text.rgb *= vignette(uv);
 	// Hides the black border and make that area transparent. Good if you want to add the the texture on top an image of a TV or monitor.
-	if (clip_warp)
+	//COMMENTED BY FERDI:
+/* 	if (clip_warp)
 	{
 		text.a = border(uv);
-	}
+	} */
 	
 	// Apply discoloration to get a VHS look (lower saturation and higher contrast)
 	// You can play with the values below or expose them in the Inspector.
