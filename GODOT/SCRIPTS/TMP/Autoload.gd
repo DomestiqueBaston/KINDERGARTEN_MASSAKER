@@ -12,3 +12,6 @@ var time_to_die = false			#TRUE quand on meurt (aussi ?)
 # SCORE
 var elapsed_time = 0.0
 var best_time = 0.0
+
+func event_is_key_press(event: InputEvent):
+	return event.is_pressed() and event is InputEventKey and event.scancode != KEY_ALT

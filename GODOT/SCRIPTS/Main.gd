@@ -29,7 +29,6 @@ enum GameState {
 }
 
 var state = GameState.TITLE
-var next_state
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
@@ -48,11 +47,16 @@ func _ready():
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("full_screen"):
 		OS.window_fullscreen = !OS.window_fullscreen
-	elif state != GameState.MENU and event.is_pressed():
-		next_state = GameState.MENU
-		$Transition_Overlay.start_transition()
+		get_tree().set_input_as_handled()
 
-func _on_Transition_Overlay_transition_finished():
+func _unhandled_key_input(event: InputEventKey):
+	if state != GameState.MENU and Autoload.event_is_key_press(event):
+		change_state(GameState.MENU)
+		get_tree().set_input_as_handled()
+
+func change_state(next_state):
+	$Transition_Overlay.show()
+	$Transition_Overlay.start_transition()
 	$Active_Scene.get_child(0).queue_free()
 	var child
 	match next_state:
@@ -74,20 +78,20 @@ func _on_Transition_Overlay_transition_finished():
 	$Active_Scene.add_child(child)
 	state = next_state
 
+func _on_Transition_Overlay_transition_finished():
+	$Transition_Overlay.hide()
+
 func on_start_game():
 	pass
 
 func on_show_options():
-	next_state = GameState.OPTIONS
-	$Transition_Overlay.start_transition()
+	change_state(GameState.OPTIONS)
 
 func on_show_credits():
-	next_state = GameState.CREDITS
-	$Transition_Overlay.start_transition()
+	change_state(GameState.CREDITS)
 
 func on_show_dialogue():
-	next_state = GameState.DIALOGUE
-	$Transition_Overlay.start_transition()
+	change_state(GameState.DIALOGUE)
 
 func on_exit_game():
 	get_tree().quit(0)
