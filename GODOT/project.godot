@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="KINDERGARTEN MASSAKER"
-run/main_scene="res://SCENES/TMP/The_Game.tscn"
+run/main_scene="res://SCENES/The_Game.tscn"
 boot_splash/image="res://ASSETS/GRAPHICS/MISC/Splash_Screen.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
@@ -21,6 +21,7 @@ config/windows_native_icon="res://KM_LOGO.ico"
 [autoload]
 
 Autoload="*res://SCRIPTS/TMP/Autoload.gd"
+SoundFX="*res://SCENES/FX/SoundFX.tscn"
 
 [display]
 

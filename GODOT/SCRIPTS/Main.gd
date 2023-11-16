@@ -54,6 +54,7 @@ func _unhandled_input(event: InputEvent):
 
 func _unhandled_key_input(event: InputEventKey):
 	if state != GameState.MENU and Autoload.event_is_key_press(event):
+		SoundFX.playCancel()
 		change_state(GameState.MENU)
 		get_tree().set_input_as_handled()
 

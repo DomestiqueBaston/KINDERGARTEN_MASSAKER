@@ -21,16 +21,19 @@ func _unhandled_input(event):
 			$Control.get_node(current_item as String).self_modulate.a = 0
 			current_item += 1
 			$Control.get_node(current_item as String).self_modulate.a = 1
+			SoundFX.playDown()
 		get_tree().set_input_as_handled()
 	elif event.is_action_pressed("ui_up"):
 		if current_item > 0:
 			$Control.get_node(current_item as String).self_modulate.a = 0
 			current_item -= 1
 			$Control.get_node(current_item as String).self_modulate.a = 1
+			SoundFX.playUp()
 		get_tree().set_input_as_handled()
 
 func _unhandled_key_input(event: InputEventKey):
 	if Autoload.event_is_key_press(event):
+		SoundFX.playOK()
 		match current_item:
 			0:
 				emit_signal("start_game")

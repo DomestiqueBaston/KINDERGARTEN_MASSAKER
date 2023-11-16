@@ -27,6 +27,7 @@ func _unhandled_input(event: InputEvent):
 			next_item = 17
 		else:
 			next_item = current_item + 2
+		SoundFX.playDown()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_up"):
@@ -41,12 +42,14 @@ func _unhandled_input(event: InputEvent):
 				next_item = 16
 		else:
 			next_item = current_item - 2
+		SoundFX.playUp()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_right"):
 		next_item = current_item + 1
 		if next_item > item_count:
 			next_item = 1
+		SoundFX.playDown()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_left"):
@@ -54,14 +57,17 @@ func _unhandled_input(event: InputEvent):
 			next_item = item_count
 		else:
 			next_item = current_item - 1
+		SoundFX.playUp()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_a"):
 		if current_item > 0:
+			SoundFX.playOK()
 			emit_signal("talent_chosen", current_item)
 		get_tree().set_input_as_handled()
 		
 	elif Autoload.event_is_key_press(event):
+		SoundFX.playCancel()
 		emit_signal("talent_aborted")
 		get_tree().set_input_as_handled()
 		
