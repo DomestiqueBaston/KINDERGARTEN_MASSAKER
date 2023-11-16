@@ -6,12 +6,13 @@ signal show_credits
 signal exit_game
 signal show_dialogue
 
+# item count is 3 by default, 4 if the dialogue button is enabled
 var item_count = 3
+# index of the current item (the first, initially)
 var current_item = 0
-var dialogue_enabled = false
 
 func _ready():
-	current_item = 0
+	# the first item is selected by default
 	$"Control/0".self_modulate.a = 1
 
 func _unhandled_input(event):
@@ -43,6 +44,9 @@ func _unhandled_key_input(event: InputEventKey):
 				emit_signal("show_dialogue")
 		get_tree().set_input_as_handled()
 
+#
+# Enables or disables the dialogue button. It is disabled by default.
+#
 func set_dialogue_enabled(enabled):
 	if enabled:
 		item_count = 4

@@ -13,7 +13,7 @@ var time_to_die = false			#TRUE quand on meurt (aussi ?)
 var elapsed_time = 0.0
 var best_time = 0.0
 
-const ignored_keys = [KEY_ALT, KEY_SHIFT, KEY_CONTROL, KEY_META, KEY_MENU]
+const _ignored_keys = [KEY_ALT, KEY_SHIFT, KEY_CONTROL, KEY_META, KEY_MENU]
 
 #
 # Returns true if the given event can be interpreted as "any key press" by a
@@ -23,4 +23,4 @@ const ignored_keys = [KEY_ALT, KEY_SHIFT, KEY_CONTROL, KEY_META, KEY_MENU]
 #
 func event_is_key_press(event: InputEvent):
 	return event.is_pressed() and not (
-		event is InputEventKey and event.scancode in ignored_keys)
+		event is InputEventKey and event.scancode in _ignored_keys)
