@@ -13,5 +13,12 @@ var time_to_die = false			#TRUE quand on meurt (aussi ?)
 var elapsed_time = 0.0
 var best_time = 0.0
 
+#
+# Returns true if the given event can be interpreted as "any key press" by a
+# temporary screen which exits when "any key" is pressed. We have to explicitly
+# ignore the Alt key, to avoid exiting when the Alt-Enter keyboard shortcut is
+# used to toggle full-screen mode.
+#
 func event_is_key_press(event: InputEvent):
-	return event.is_pressed() and event is InputEventKey and event.scancode != KEY_ALT
+	return event.is_pressed() and not (
+		event is InputEventKey and event.scancode == KEY_ALT)
