@@ -12,20 +12,20 @@ var dialogue_enabled = false
 
 func _ready():
 	current_item = 0
-	$Control.find_node("0").self_modulate.a = 1
+	$"Control/0".self_modulate.a = 1
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_down"):
 		if current_item < item_count:
-			$Control.find_node(current_item as String).self_modulate.a = 0
+			$Control.get_node(current_item as String).self_modulate.a = 0
 			current_item += 1
-			$Control.find_node(current_item as String).self_modulate.a = 1
+			$Control.get_node(current_item as String).self_modulate.a = 1
 		get_tree().set_input_as_handled()
 	elif event.is_action_pressed("ui_up"):
 		if current_item > 0:
-			$Control.find_node(current_item as String).self_modulate.a = 0
+			$Control.get_node(current_item as String).self_modulate.a = 0
 			current_item -= 1
-			$Control.find_node(current_item as String).self_modulate.a = 1
+			$Control.get_node(current_item as String).self_modulate.a = 1
 		get_tree().set_input_as_handled()
 
 func _unhandled_key_input(event: InputEventKey):

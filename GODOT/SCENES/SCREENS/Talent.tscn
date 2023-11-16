@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Techniker_off.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schneller.png" type="Texture" id=2]
@@ -20,8 +20,10 @@
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Kraftfeld.png" type="Texture" id=18]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schild.png" type="Texture" id=19]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Techniker_on.png" type="Texture" id=20]
+[ext_resource path="res://SCRIPTS/Talent.gd" type="Script" id=21]
 
 [node name="PAPA_Talent" type="Node2D"]
+script = ExtResource( 21 )
 
 [node name="Talent_OFF" type="Sprite" parent="."]
 position = Vector2( 240, 135 )

@@ -17,15 +17,18 @@ var menu = preload("res://SCENES/SCREENS/Menu.tscn")
 var options = preload("res://SCENES/SCREENS/Options.tscn")
 var credits = preload("res://SCENES/SCREENS/Credits.tscn")
 var dialogue = preload("res://SCENES/SCREENS/Dialogue.tscn")
+var talent = preload("res://SCENES/SCREENS/Talent.tscn")
 
 var credits_seen = false
+var dialogue_seen = false
 
 enum GameState {
 	TITLE,
 	MENU,
 	OPTIONS,
 	CREDITS,
-	DIALOGUE
+	DIALOGUE,
+	TALENT
 }
 
 var state = GameState.TITLE
@@ -76,6 +79,11 @@ func change_state(next_state):
 		GameState.DIALOGUE:
 			child = dialogue.instance()
 			child.connect("dialogue_finished", self, "on_dialogue_finished")
+		GameState.TALENT:
+			child = talent.instance()
+			child.set_techn_enabled(dialogue_seen)
+			child.connect("talent_aborted", self, "on_talent_aborted")
+			child.connect("talent_chosen", self, "on_talent_chosen")
 	$Active_Scene.add_child(child)
 	state = next_state
 
@@ -83,11 +91,11 @@ func _on_Transition_Overlay_transition_finished():
 	$Transition_Overlay.hide()
 
 func on_dialogue_finished():
-	if state == GameState.DIALOGUE:
-		change_state(GameState.MENU)
+	dialogue_seen = true
+	change_state(GameState.MENU)
 
 func on_start_game():
-	pass
+	change_state(GameState.TALENT)
 
 func on_show_options():
 	change_state(GameState.OPTIONS)
@@ -97,6 +105,14 @@ func on_show_credits():
 
 func on_show_dialogue():
 	change_state(GameState.DIALOGUE)
+
+func on_talent_aborted():
+	change_state(GameState.MENU)
+
+func on_talent_chosen(talent_index):
+	print("chose talent: ", talent_index)
+	# TODO
+	change_state(GameState.MENU)
 
 func on_exit_game():
 	get_tree().quit(0)
