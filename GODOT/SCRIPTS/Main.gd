@@ -75,11 +75,16 @@ func change_state(next_state):
 			credits_seen = true
 		GameState.DIALOGUE:
 			child = dialogue.instance()
+			child.connect("dialogue_finished", self, "on_dialogue_finished")
 	$Active_Scene.add_child(child)
 	state = next_state
 
 func _on_Transition_Overlay_transition_finished():
 	$Transition_Overlay.hide()
+
+func on_dialogue_finished():
+	if state == GameState.DIALOGUE:
+		change_state(GameState.MENU)
 
 func on_start_game():
 	pass
