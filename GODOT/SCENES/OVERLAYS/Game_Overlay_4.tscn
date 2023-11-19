@@ -1,0 +1,240 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://SHADERS/VHSPause.shader" type="Shader" id=1]
+[ext_resource path="res://SHADERS/NTSCBasic.shader" type="Shader" id=2]
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 2 )
+shader_param/_bleeding = 0.0
+shader_param/_fringing = 0.0
+shader_param/_scanline = 0.0
+shader_param/linearColorSpace = false
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 1 )
+shader_param/lines_intensity = 0.025
+shader_param/multiplier = 10.0
+shader_param/white_alpha = 0.0
+shader_param/shake_amount_x = 500.0
+shader_param/shake_amount_y = 500.0
+shader_param/white_hlines = 50.0
+shader_param/white_vlines = 80.0
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("NTSCBasic:material:shader_param/_bleeding")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NTSCBasic:material:shader_param/_fringing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NTSCBasic:material:shader_param/_scanline")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("VHSPause:material:shader_param/shake_amount_x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 500.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("VHSPause:material:shader_param/shake_amount_y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 500.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("VHSPause:material:shader_param/white_alpha")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("VHSPause:material:shader_param/multiplier")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("VHSPause:material:shader_param/lines_intensity")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.025 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "animation"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("NTSCBasic:material:shader_param/_bleeding")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NTSCBasic:material:shader_param/_fringing")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("NTSCBasic:material:shader_param/_scanline")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 0.0, 0.05 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("VHSPause:material:shader_param/shake_amount_x")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 500.0, 50.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("VHSPause:material:shader_param/shake_amount_y")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 500.0, 10.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("VHSPause:material:shader_param/white_alpha")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("VHSPause:material:shader_param/multiplier")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 10.0, 1.0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("VHSPause:material:shader_param/lines_intensity")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 2.5, 2.5 ),
+"update": 0,
+"values": [ 0.025, 0.1 ]
+}
+
+[node name="Game_overlay_4" type="CanvasLayer"]
+physics_interpolation_mode = 1
+
+[node name="NTSCBasic" type="ColorRect" parent="."]
+material = SubResource( 7 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+copy_mode = 2
+
+[node name="VHSPause" type="ColorRect" parent="."]
+material = SubResource( 4 )
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 8 )
+anims/animation = SubResource( 9 )

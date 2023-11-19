@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://SHADERS/VHSPause.shader" type="Shader" id=1]
+[ext_resource path="res://SHADERS/CRT.shader" type="Shader" id=2]
+[ext_resource path="res://SHADERS/NTSCBasic.shader" type="Shader" id=3]
+[ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 3 )
+shader_param/_bleeding = 0.15
+shader_param/_fringing = 0.1
+shader_param/_scanline = 0.0
+shader_param/linearColorSpace = true
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 1 )
+shader_param/shake_amount_x = 500.0
+shader_param/shake_amount_y = 500.0
+shader_param/white_hlines = 50.0
+shader_param/white_vlines = 80.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 2 )
+shader_param/res = Vector2( 480, 270 )
+shader_param/mask_type = 1
+shader_param/bloom_type = 0
+shader_param/hardScan = -8.0
+shader_param/hardPix = -4.0
+shader_param/hardBloomScan = -2.0
+shader_param/hardBloomPix = -1.5
+shader_param/bloomAmount = 3.0
+shader_param/warp = Vector2( 480, 270 )
+shader_param/maskDark = 0.25
+shader_param/maskLight = 1.5
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 178, 80 )
+texture = ExtResource( 4 )
+
+[node name="Shaders" type="Node2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2( 240, 135 )
+
+[node name="1st_Set" type="Node2D" parent="Shaders"]
+
+[node name="BackBufferCopy_5" type="BackBufferCopy" parent="Shaders/1st_Set"]
+copy_mode = 2
+
+[node name="NTSCBasic" type="ColorRect" parent="Shaders/1st_Set/BackBufferCopy_5"]
+material = SubResource( 3 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="BackBufferCopy_3" type="BackBufferCopy" parent="Shaders/1st_Set"]
+copy_mode = 2
+
+[node name="VHSPause" type="ColorRect" parent="Shaders/1st_Set/BackBufferCopy_3"]
+material = SubResource( 12 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+
+[node name="BackBufferCopy_4" type="BackBufferCopy" parent="Shaders/1st_Set"]
+copy_mode = 2
+
+[node name="CRT" type="ColorRect" parent="Shaders/1st_Set/BackBufferCopy_4"]
+material = SubResource( 2 )
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
