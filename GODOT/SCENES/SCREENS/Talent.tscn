@@ -73,6 +73,7 @@ margin_bottom = 40.0
 
 [node name="00_beam" type="TextureRect" parent="Control"]
 visible = false
+self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 22 )
