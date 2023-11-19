@@ -25,6 +25,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "Beam_blink"
+length = 0.8
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/00_beam:visible")
@@ -33,7 +34,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, true ]
