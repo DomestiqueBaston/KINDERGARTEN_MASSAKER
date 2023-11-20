@@ -1,9 +1,9 @@
 // From https://godotshaders.com/shader/old-movie-shader/
 shader_type canvas_item;
 
-uniform float projector_power : hint_range(0,1) = 0.05;
+uniform float projector_power : hint_range(0,1) = 0.075;
 uniform sampler2D distortionTexture;
-uniform float vignette_param: hint_range(1,10)=1.0;
+uniform float vignette_param: hint_range(1,10)=10.0;
 
 //vars related to the passing lines
 
@@ -21,8 +21,9 @@ void fragment() {
 
 	//grayscale-related:
 	vec4 pixelcolor = texture(SCREEN_TEXTURE, SCREEN_UV);
-	float brightness = (.299*pixelcolor.r + 0.487*pixelcolor.g + 0.114*pixelcolor.b);
-	vec4 grayscale= vec4(brightness,brightness,brightness,pixelcolor.a);
+//	float brightness = (.299*pixelcolor.r + 0.487*pixelcolor.g + 0.114*pixelcolor.b);
+//	vec4 grayscale= vec4(brightness,brightness,brightness,pixelcolor.a);
+	vec4 grayscale= vec4(pixelcolor.r, pixelcolor.g, pixelcolor.b, pixelcolor.a);
 	
 	//random-fluctuation:
 	vec4 random=texture(distortionTexture,UV);

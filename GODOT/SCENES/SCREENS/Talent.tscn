@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Techniker_off.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schneller.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://SCRIPTS/Talent.gd" type="Script" id=21]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Beam_me_down.png" type="Texture" id=22]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Beam_me_down_off.png" type="Texture" id=23]
+[ext_resource path="res://ASSETS/SOUND/INTERFACE/Beam_me_down.wav" type="AudioStream" id=24]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Beam_blink"
@@ -196,3 +197,8 @@ texture = ExtResource( 20 )
 autoplay = "Beam_blink"
 anims/Beam_blink = SubResource( 1 )
 anims/RESET = SubResource( 2 )
+
+[node name="Beam_me_down" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+volume_db = -5.0
+bus = "FX"
