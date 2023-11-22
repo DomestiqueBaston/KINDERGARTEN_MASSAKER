@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Techniker_off.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schneller.png" type="Texture" id=2]
@@ -26,6 +26,8 @@
 [ext_resource path="res://ASSETS/SOUND/INTERFACE/Beam_me_down.wav" type="AudioStream" id=24]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Zufallig_off.png" type="Texture" id=25]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Zufallig_on.png" type="Texture" id=26]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Kotzsicher_on.png" type="Texture" id=27]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Kotzsicher_off.png" type="Texture" id=28]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Beam_blink"
@@ -79,6 +81,11 @@ texture = ExtResource( 23 )
 [node name="Zufallig_Off" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 25 )
+centered = false
+
+[node name="Kotzsicher_Off" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 28 )
 centered = false
 
 [node name="Control" type="Control" parent="."]
@@ -205,6 +212,12 @@ self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 26 )
+
+[node name="20_kotzs" type="TextureRect" parent="Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
+texture = ExtResource( 27 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Beam_blink"
