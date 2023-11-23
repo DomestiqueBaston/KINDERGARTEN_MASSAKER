@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Techniker_off.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Schneller.png" type="Texture" id=2]
@@ -28,6 +28,10 @@
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Zufallig_on.png" type="Texture" id=26]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Kotzsicher_on.png" type="Texture" id=27]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Kotzsicher_off.png" type="Texture" id=28]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Bullet_time_off.png" type="Texture" id=29]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Geist_off.png" type="Texture" id=30]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Bullet_time_on.png" type="Texture" id=31]
+[ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Geist_on.png" type="Texture" id=32]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Beam_blink"
@@ -68,11 +72,6 @@ script = ExtResource( 21 )
 position = Vector2( 240, 135 )
 texture = ExtResource( 9 )
 
-[node name="Techniker_Off" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 240, 135 )
-texture = ExtResource( 1 )
-
 [node name="Beam_Me_Down_Off" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 240, 135 )
@@ -87,6 +86,21 @@ centered = false
 self_modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 28 )
 centered = false
+
+[node name="Geist_Off" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 30 )
+centered = false
+
+[node name="Bullet_Time_Off" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 29 )
+centered = false
+
+[node name="Techniker_Off" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 240, 135 )
+texture = ExtResource( 1 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -201,23 +215,35 @@ margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 3 )
 
-[node name="18_techn" type="TextureRect" parent="Control"]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 480.0
-margin_bottom = 270.0
-texture = ExtResource( 20 )
-
-[node name="19_zufal" type="TextureRect" parent="Control"]
+[node name="18_zufal" type="TextureRect" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 26 )
 
-[node name="20_kotzs" type="TextureRect" parent="Control"]
+[node name="19_kotzs" type="TextureRect" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 27 )
+
+[node name="20_geist" type="TextureRect" parent="Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
+texture = ExtResource( 32 )
+
+[node name="21_bul_tim" type="TextureRect" parent="Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
+texture = ExtResource( 31 )
+
+[node name="22_techn" type="TextureRect" parent="Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
+texture = ExtResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Beam_blink"
