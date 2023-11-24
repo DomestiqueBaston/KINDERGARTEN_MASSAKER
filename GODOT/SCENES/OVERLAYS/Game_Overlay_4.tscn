@@ -12,7 +12,7 @@ shader_param/linearColorSpace = false
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 1 )
-shader_param/lines_intensity = 0.025
+shader_param/lines_intensity = 0.05
 shader_param/multiplier = 10.0
 shader_param/white_alpha = 0.0
 shader_param/shake_amount_x = 500.0
@@ -116,7 +116,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.025 ]
+"values": [ 0.05 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -216,7 +216,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 2.5, 2.5 ),
 "update": 0,
-"values": [ 0.025, 0.1 ]
+"values": [ 0.05, 0.1 ]
 }
 
 [node name="Game_overlay_4" type="CanvasLayer"]
