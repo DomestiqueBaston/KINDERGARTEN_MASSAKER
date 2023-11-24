@@ -87,14 +87,14 @@ self_modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 28 )
 centered = false
 
-[node name="Geist_Off" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-texture = ExtResource( 30 )
-centered = false
-
 [node name="Bullet_Time_Off" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 29 )
+centered = false
+
+[node name="Geist_Off" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 30 )
 centered = false
 
 [node name="Techniker_Off" type="Sprite" parent="."]
@@ -227,17 +227,17 @@ margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 27 )
 
-[node name="20_geist" type="TextureRect" parent="Control"]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 480.0
-margin_bottom = 270.0
-texture = ExtResource( 32 )
-
-[node name="21_bul_tim" type="TextureRect" parent="Control"]
+[node name="20_bul_tim" type="TextureRect" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 480.0
 margin_bottom = 270.0
 texture = ExtResource( 31 )
+
+[node name="21_geist" type="TextureRect" parent="Control"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 480.0
+margin_bottom = 270.0
+texture = ExtResource( 32 )
 
 [node name="22_techn" type="TextureRect" parent="Control"]
 self_modulate = Color( 1, 1, 1, 0 )
