@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ASSETS/GRAPHICS/TUTO/TUTO.png" type="Texture" id=1]
+
+[node name="PAPA_Tuto" type="Node2D"]
+
+[node name="Tuto" type="Sprite" parent="."]
+position = Vector2( 240, 135 )
+texture = ExtResource( 1 )
