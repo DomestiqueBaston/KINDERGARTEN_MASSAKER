@@ -95,10 +95,12 @@ __meta__ = {
 [node name="FX_ON" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
 stream = ExtResource( 3 )
 volume_db = -1.5
+bus = "FX"
 
 [node name="FX_OFF" type="AudioStreamPlayer" parent="PAPA_PLAYER/PLAYER"]
 stream = ExtResource( 10 )
 volume_db = -1.5
+bus = "FX"
 
 [node name="CAMERA" type="Camera2D" parent="."]
 position = Vector2( 720, 405 )
