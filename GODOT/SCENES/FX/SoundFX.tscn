@@ -11,12 +11,16 @@ script = ExtResource( 5 )
 
 [node name="Up" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+bus = "FX"
 
 [node name="Down" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+bus = "FX"
 
 [node name="Cancel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+bus = "FX"
 
 [node name="OK" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+bus = "FX"

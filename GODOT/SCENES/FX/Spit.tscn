@@ -4,6 +4,8 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Spitting_A.wav" type="AudioStream" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Spitting_B.wav" type="AudioStream" id=3]
 
+[sub_resource type="CircleShape2D" id=3]
+
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
@@ -111,8 +113,6 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="CircleShape2D" id=3]
-
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -120,15 +120,15 @@ texture = ExtResource( 1 )
 hframes = 18
 frame = 17
 
-[node name="AnimationPlayer (1 random sound out of 2)" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 1 )
-anims/Spit = SubResource( 2 )
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="SpitCollider" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 3 )
+
+[node name="AnimationPlayer (1 random sound out of 2)" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/Spit = SubResource( 2 )
 
 [node name="Spit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

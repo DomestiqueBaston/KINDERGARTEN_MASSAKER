@@ -4,6 +4,9 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Explosion_A.wav" type="AudioStream" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Explosion_B.wav" type="AudioStream" id=3]
 
+[sub_resource type="CircleShape2D" id=3]
+radius = 7.60345
+
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
@@ -151,15 +154,19 @@ tracks/4/keys = {
 "values": [ Vector2( 1, 0.7 ), Vector2( 1.7, 1 ), Vector2( 2, 1.1 ), Vector2( 2.4, 1.4 ), Vector2( 2.5, 1.5 ), Vector2( 2.55, 1.7 ), Vector2( 2.6, 1.75 ), Vector2( 2.65, 1.8 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 7.60345
-
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 8
 frame = 7
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1.5, 0 )
+scale = Vector2( 1, 0.8 )
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer (1 random sound out of 2)" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
@@ -169,10 +176,3 @@ anims/Smoke = SubResource( 2 )
 stream = ExtResource( 2 )
 volume_db = -5.0
 bus = "FX"
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1.5, 0 )
-scale = Vector2( 1, 0.8 )
-shape = SubResource( 3 )
