@@ -14,6 +14,7 @@ const SceneDeath = preload("res://SCENES/SCREENS/Death.tscn")
 const Dialogue = preload("res://SCENES/SCREENS/Dialogue.tscn")
 
 var menu = preload("res://SCENES/SCREENS/Menu.tscn")
+var tutorial = preload("res://SCENES/SCREENS/Tuto.tscn")
 var options = preload("res://SCENES/SCREENS/Options.tscn")
 var credits = preload("res://SCENES/SCREENS/Credits.tscn")
 var dialogue = preload("res://SCENES/SCREENS/Dialogue.tscn")
@@ -25,6 +26,7 @@ var dialogue_seen = false
 enum GameState {
 	TITLE,
 	MENU,
+	TUTORIAL,
 	OPTIONS,
 	CREDITS,
 	DIALOGUE,
@@ -68,10 +70,13 @@ func change_state(next_state):
 			child = menu.instance()
 			child.set_dialogue_enabled(credits_seen)
 			child.connect("start_game", self, "on_start_game")
+			child.connect("show_tutorial", self, "on_show_tutorial")
 			child.connect("show_options", self, "on_show_options")
 			child.connect("show_credits", self, "on_show_credits")
 			child.connect("exit_game", self, "on_exit_game")
 			child.connect("show_dialogue", self, "on_show_dialogue")
+		GameState.TUTORIAL:
+			child = tutorial.instance()
 		GameState.OPTIONS:
 			child = options.instance()
 		GameState.CREDITS:
@@ -97,6 +102,9 @@ func on_dialogue_finished():
 
 func on_start_game():
 	change_state(GameState.TALENT)
+
+func on_show_tutorial():
+	change_state(GameState.TUTORIAL)
 
 func on_show_options():
 	change_state(GameState.OPTIONS)
