@@ -99,4 +99,3 @@ volume_db = -2.5
 bus = "FX"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="animation_finished" from="AnimationPlayer" to="Sprite" method="_on_AnimationPlayer_animation_finished"]
