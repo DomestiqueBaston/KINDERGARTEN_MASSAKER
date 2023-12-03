@@ -33,9 +33,11 @@ func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("full_screen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 		get_tree().set_input_as_handled()
-
-func _unhandled_key_input(event: InputEventKey):
-	if state != GameState.MENU and Autoload.event_is_key_press(event):
+	elif state == GameState.TITLE and event.is_action_pressed("ui_accept"):
+		SoundFX.playOK()
+		change_state(GameState.MENU)
+		get_tree().set_input_as_handled()
+	elif state != GameState.MENU and event.is_action_pressed("ui_cancel"):
 		SoundFX.playCancel()
 		change_state(GameState.MENU)
 		get_tree().set_input_as_handled()

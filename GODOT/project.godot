@@ -20,7 +20,6 @@ config/windows_native_icon="res://KM_LOGO.ico"
 
 [autoload]
 
-Autoload="*res://SCRIPTS/Autoload.gd"
 SoundFX="*res://SCENES/FX/SoundFX.tscn"
 
 [display]

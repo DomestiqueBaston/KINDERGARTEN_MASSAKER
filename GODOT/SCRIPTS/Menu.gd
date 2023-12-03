@@ -33,9 +33,7 @@ func _unhandled_input(event):
 		$Control.get_node(current_item as String).self_modulate.a = 1
 		SoundFX.playUp()
 		get_tree().set_input_as_handled()
-
-func _unhandled_key_input(event: InputEventKey):
-	if Autoload.event_is_key_press(event):
+	elif event.is_action_pressed("ui_accept"):
 		SoundFX.playOK()
 		match current_item:
 			0:
