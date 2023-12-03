@@ -38,14 +38,7 @@ var state = GameState.TITLE
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	var overlay_path
-	match rng.randi_range(1, 3):
-		1:
-			overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_1.tscn"
-		2:
-			overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_2.tscn"
-		3:
-			overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_3.tscn"
+	var overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_%d.tscn" % rng.randi_range(1, 4)
 	var overlay_scene = load(overlay_path)
 	$PAPA_Game_Overlay.add_child(overlay_scene.instance())
 
