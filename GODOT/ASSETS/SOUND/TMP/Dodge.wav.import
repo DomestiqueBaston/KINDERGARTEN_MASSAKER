@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Dodge.wav-6e8bf26f4ed3ba6e9c247d23c0218d5f.sample"
+path="res://.import/Dodge.wav-03df7d4a698760232d529377c0f53e73.sample"
 
 [deps]
 
-source_file="res://ASSETS/SOUND/FX/TALENTS/Dodge.wav"
-dest_files=[ "res://.import/Dodge.wav-6e8bf26f4ed3ba6e9c247d23c0218d5f.sample" ]
+source_file="res://ASSETS/SOUND/TMP/Dodge.wav"
+dest_files=[ "res://.import/Dodge.wav-03df7d4a698760232d529377c0f53e73.sample" ]
 
 [params]
 
