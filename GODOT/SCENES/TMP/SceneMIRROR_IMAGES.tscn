@@ -60,7 +60,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.12 ), Color( 1, 1, 1, 0 ) ]
 }
 
@@ -111,7 +111,6 @@ __meta__ = {
 [node name="Intro Alien" parent="PAPA_PLAYER/PLAYER" instance=ExtResource( 8 )]
 
 [node name="Shadow" type="Polygon2D" parent="PAPA_PLAYER/PLAYER"]
-visible = false
 position = Vector2( -7.22192, -9.71426 )
 scale = Vector2( 1.11855, 0.857143 )
 color = Color( 0, 0.1, 0, 0.392157 )
@@ -125,7 +124,6 @@ wait_time = 5.0
 one_shot = true
 
 [node name="The Alien (with OUTLINE shader)" type="Sprite" parent="PAPA_PLAYER/PLAYER"]
-visible = false
 material = SubResource( 1 )
 texture = ExtResource( 10 )
 __meta__ = {
@@ -141,7 +139,6 @@ stream = ExtResource( 5 )
 bus = "FX"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 self_modulate = Color( 1, 1, 1, 0.752941 )
 margin_left = -73.0
 margin_top = -74.0
