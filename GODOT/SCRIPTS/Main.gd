@@ -39,6 +39,8 @@ func _unhandled_input(event: InputEvent):
 		get_tree().set_input_as_handled()
 	elif state != GameState.MENU and event.is_action_pressed("ui_cancel"):
 		SoundFX.playCancel()
+		if state == GameState.OPTIONS:
+			Settings.save_settings()
 		change_state(GameState.MENU)
 		get_tree().set_input_as_handled()
 
