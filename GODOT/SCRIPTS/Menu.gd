@@ -25,6 +25,7 @@ func _unhandled_input(event):
 		$Control.get_node(current_item as String).self_modulate.a = 1
 		SoundFX.playDown()
 		get_tree().set_input_as_handled()
+		
 	elif event.is_action_pressed("ui_up"):
 		$Control.get_node(current_item as String).self_modulate.a = 0
 		current_item -= 1
@@ -33,7 +34,8 @@ func _unhandled_input(event):
 		$Control.get_node(current_item as String).self_modulate.a = 1
 		SoundFX.playUp()
 		get_tree().set_input_as_handled()
-	elif event.is_action_pressed("ui_accept"):
+		
+	elif event.is_action_pressed("ui_accept", false, true):
 		SoundFX.playOK()
 		match current_item:
 			0:

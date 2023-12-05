@@ -18,6 +18,7 @@ func _unhandled_input(event):
 			new_item = 0
 		_set_current_item(new_item)
 		get_tree().set_input_as_handled()
+		
 	elif event.is_action_pressed("ui_up"):
 		SoundFX.playUp()
 		new_item = current_item - 1
@@ -25,6 +26,7 @@ func _unhandled_input(event):
 			new_item = item_count - 1
 		_set_current_item(new_item)
 		get_tree().set_input_as_handled()
+		
 	elif event.is_action_pressed("ui_left"):
 		SoundFX.playUp()
 		if current_item < 3:
@@ -32,6 +34,7 @@ func _unhandled_input(event):
 		else:
 			_update_complexity(true)
 		get_tree().set_input_as_handled()
+		
 	elif event.is_action_pressed("ui_right"):
 		SoundFX.playDown()
 		if current_item < 3:

@@ -60,7 +60,7 @@ func _unhandled_input(event: InputEvent):
 		SoundFX.playUp()
 		get_tree().set_input_as_handled()
 		
-	elif event.is_action_pressed("ui_accept"):
+	elif event.is_action_pressed("ui_accept", false, true):
 		if current_item > 0:
 			SoundFX.playOK()
 			emit_signal("talent_chosen", current_item)
