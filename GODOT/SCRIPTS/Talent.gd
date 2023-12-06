@@ -6,7 +6,7 @@ signal talent_chosen
 # the number of items (some of which may be hidden)
 const item_count = 23
 # the current item (the "cursor")
-var current_item = -1
+var current_item = 0
 # whether or not each item is visible
 var item_visible = []
 # 0 for the lefthand column, 1 for the righthand column
@@ -20,9 +20,8 @@ var selected_talent = 0
 
 func _ready():
 	item_visible.resize(item_count)
+	item_visible.fill(true)
 	item_visible[0] = false
-	for i in range(1, 18):
-		item_visible[i] = true
 	item_visible[18] = dialogue_seen
 	item_visible[19] = dialogue_seen and survival_time >= 15
 	item_visible[20] = dialogue_seen and survival_time >= 30
@@ -125,13 +124,14 @@ func _set_current_item(which):
 	if current_item > 0:
 		_find_item(current_item).self_modulate.a = 0
 	current_item = which
-	if current_item >= 0:
+	if current_item > 0:
 		_find_item(current_item).self_modulate.a = 1
-	if current_item >= 1 and current_item <= 16:
-		current_column = (current_item - 1) % 2
+		if current_item <= 16:
+			current_column = (current_item - 1) % 2
 
 #
-# Saves the current item as the selected talent and makes the Beam Me Down item visible.
+# Saves the current item as the selected talent and makes the Beam Me Down item
+# visible.
 #
 func _show_beam_me_down():
 	selected_talent = current_item
