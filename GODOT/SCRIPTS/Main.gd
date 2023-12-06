@@ -33,12 +33,19 @@ func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("full_screen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 		get_tree().set_input_as_handled()
-	elif state == GameState.TITLE and event.is_action_pressed("ui_accept"):
-		SoundFX.playOK()
-		change_state(GameState.MENU)
-		get_tree().set_input_as_handled()
-	elif state != GameState.MENU and event.is_action_pressed("ui_cancel"):
-		SoundFX.playCancel()
+		
+	# user can go back to main menu by pressing ui_accept, ui_cancel or most
+	# keyboard keys (symbols such as letters, numbers and punctuation)
+	
+	elif (state != GameState.MENU and
+			(event.is_action_pressed("ui_accept", false, true) or
+			event.is_action_pressed("ui_cancel") or
+			(event is InputEventKey and event.is_pressed() and
+				event.scancode >= KEY_SPACE and event.scancode <= 255))):
+		if event.is_action_pressed("ui_accept", false, true):
+			SoundFX.playOK()
+		else:
+			SoundFX.playCancel()
 		if state == GameState.OPTIONS:
 			Settings.save_settings()
 		change_state(GameState.MENU)
