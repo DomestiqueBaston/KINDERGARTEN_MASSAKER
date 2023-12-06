@@ -1,6 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=1]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 778, 205, 789, 227, 453, 267, 228, 304, 207, 359, 38, 358, 44, 289, 70, 205, 102, 144, 773, 180, 440, 231, 506, 37, 622, 44, 684, 57, 737, 89, 272, 252, 147, 101, 208, 65, 312, 224, 277, 46, 350, 212, 388, 35, 399, 211, 766, 127 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5, 6, 7, 8 ), PoolIntArray( 9, 0, 2, 10, 11, 12, 13, 14 ), PoolIntArray( 15, 3, 8, 16, 17 ), PoolIntArray( 18, 15, 17, 19 ), PoolIntArray( 20, 18, 19, 21 ), PoolIntArray( 22, 20, 21, 11 ), PoolIntArray( 10, 22, 11 ), PoolIntArray( 9, 14, 23 ) ]
+outlines = [ PoolVector2Array( 207, 359, 38, 358, 44, 289, 70, 205, 102, 144, 147, 101, 208, 65, 277, 46, 388, 35, 506, 37, 622, 44, 684, 57, 737, 89, 766, 127, 773, 180, 778, 205, 789, 227, 453, 267, 440, 231, 399, 211, 350, 212, 312, 224, 272, 252, 228, 304 ) ]
+
+[sub_resource type="NavigationPolygon" id=2]
+vertices = PoolVector2Array( 302, 457, 436, 624, 402, 649, 285, 470, 41, 495, 38, 358, 207, 359, 207, 407, 219, 443, 51, 601, 262, 474, 358, 689, 311, 723, 258, 747, 209, 759, 168, 755, 129, 742, 97, 714, 65, 659, 239, 464 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 4, 7, 8, 9 ), PoolIntArray( 10, 3, 2, 11, 12, 13, 14, 15, 16, 17, 18, 9 ), PoolIntArray( 9, 8, 19 ), PoolIntArray( 9, 19, 10 ) ]
+outlines = [ PoolVector2Array( 38, 358, 41, 495, 51, 601, 65, 659, 97, 714, 129, 742, 168, 755, 209, 759, 258, 747, 311, 723, 358, 689, 402, 649, 436, 624, 302, 457, 285, 470, 262, 474, 239, 464, 219, 443, 207, 407, 207, 359 ) ]
+
+[sub_resource type="NavigationPolygon" id=3]
+vertices = PoolVector2Array( 922, 564, 959, 577, 902, 749, 829, 731, 732, 695, 916, 257, 983, 428, 942, 450, 872, 260, 904, 543, 692, 666, 631, 633, 597, 623, 447, 293, 453, 267, 789, 227, 828, 251, 913, 476, 900, 510, 436, 624, 302, 457, 324, 421, 356, 378, 420, 330 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 9, 0, 4, 10 ), PoolIntArray( 11, 12, 13, 14, 15, 16, 17, 18 ), PoolIntArray( 12, 19, 20, 21, 22, 23 ), PoolIntArray( 8, 7, 17, 16 ), PoolIntArray( 18, 9, 10, 11 ), PoolIntArray( 12, 23, 13 ) ]
+outlines = [ PoolVector2Array( 453, 267, 447, 293, 420, 330, 356, 378, 324, 421, 302, 457, 436, 624, 597, 623, 631, 633, 692, 666, 732, 695, 829, 731, 902, 749, 959, 577, 922, 564, 904, 543, 900, 510, 913, 476, 942, 450, 983, 428, 916, 257, 872, 260, 828, 251, 789, 227 ) ]
+
+[sub_resource type="NavigationPolygon" id=4]
+vertices = PoolVector2Array( 999, 410, 983, 428, 916, 257, 1015, 397, 960, 236, 1397, 351, 1398, 512, 1166, 509, 1165, 478, 1141, 445, 1391, 277, 1044, 395, 1003, 198, 1071, 396, 1088, 109, 1136, 78, 1187, 66, 1248, 68, 1302, 88, 1345, 131, 1377, 195, 1096, 403 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 0, 2, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 5, 8, 9, 10 ), PoolIntArray( 11, 3, 4, 12 ), PoolIntArray( 13, 11, 12 ), PoolIntArray( 14, 15, 16, 17, 18, 19, 20, 10, 9, 21, 12 ), PoolIntArray( 13, 12, 21 ) ]
+outlines = [ PoolVector2Array( 916, 257, 960, 236, 1003, 198, 1088, 109, 1136, 78, 1187, 66, 1248, 68, 1302, 88, 1345, 131, 1377, 195, 1391, 277, 1397, 351, 1398, 512, 1166, 509, 1165, 478, 1141, 445, 1096, 403, 1071, 396, 1044, 395, 1015, 397, 999, 410, 983, 428 ) ]
+
+[sub_resource type="NavigationPolygon" id=5]
+vertices = PoolVector2Array( 1017, 767, 902, 749, 959, 577, 1008, 582, 1162, 529, 1166, 509, 1398, 512, 1386, 603, 1366, 690, 1045, 769, 1052, 581, 1100, 766, 1107, 566, 1166, 769, 1146, 549, 1343, 721, 1289, 748, 1229, 761 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8 ), PoolIntArray( 9, 0, 3, 10, 11 ), PoolIntArray( 11, 10, 12, 13 ), PoolIntArray( 14, 4, 8, 15, 16, 17, 13 ), PoolIntArray( 13, 12, 14 ) ]
+outlines = [ PoolVector2Array( 902, 749, 959, 577, 1008, 582, 1052, 581, 1107, 566, 1146, 549, 1162, 529, 1166, 509, 1398, 512, 1386, 603, 1366, 690, 1343, 721, 1289, 748, 1229, 761, 1166, 769, 1100, 766, 1045, 769, 1017, 767 ) ]
 
 [node name="Background" type="StaticBody2D"]
 collision_mask = 2
@@ -57,6 +82,38 @@ __meta__ = {
 [node name="Top_Left_Boundary" type="CollisionPolygon2D" parent="."]
 position = Vector2( 1, 2 )
 polygon = PoolVector2Array( -315, 261, 37, 265, 48, 230, 63, 199, 74.1633, 166.525, 90, 136, 119, 111, 139, 98, 158, 80, 197, 60, 240, 46, 298, 36, 321, 32, 370, 24, 413, 26, 449, 23, 514, 28, 598, 30, 665, 38, 688, 44, 687, -276, 597, -276, 437, -276, 305, -275, 171, -274, -311, -270, -314, -63, -316, 116 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+navpoly = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+navpoly = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NavigationPolygonInstance3" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+navpoly = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NavigationPolygonInstance4" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+navpoly = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="NavigationPolygonInstance5" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+navpoly = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
