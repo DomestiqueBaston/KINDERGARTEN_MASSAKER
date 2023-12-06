@@ -2,7 +2,7 @@ extends Node2D
 
 var menu = preload("res://SCENES/SCREENS/Menu.tscn")
 var tutorial = preload("res://SCENES/SCREENS/Tuto.tscn")
-var options = preload("res://SCENES/SCREENS/Options.tscn")
+var options = preload("res://SCENES/SCREENS/Options_v2.tscn")
 var credits = preload("res://SCENES/SCREENS/Credits.tscn")
 var dialogue = preload("res://SCENES/SCREENS/Dialogue.tscn")
 var talent = preload("res://SCENES/SCREENS/Talent.tscn")
