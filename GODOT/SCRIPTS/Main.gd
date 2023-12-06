@@ -45,8 +45,12 @@ func _unhandled_input(event: InputEvent):
 		get_tree().set_input_as_handled()
 
 func change_state(next_state):
+	# hide overlay before $Transition_Overlay takes a screenshot
+	$PAPA_Game_Overlay.hide()
 	$Transition_Overlay.show()
 	$Transition_Overlay.start_transition()
+	# put overlay back after screenshot has been taken
+	$PAPA_Game_Overlay.show()
 	$Active_Scene.get_child(0).queue_free()
 	var child
 	match next_state:
