@@ -71,7 +71,7 @@ func change_state(next_state):
 			child.connect("dialogue_finished", self, "on_dialogue_finished")
 		GameState.TALENT:
 			child = talent.instance()
-			child.set_talent_level(dialogue_seen, 100)
+			child.set_techn_enabled(dialogue_seen)
 			child.connect("talent_aborted", self, "on_talent_aborted")
 			child.connect("talent_chosen", self, "on_talent_chosen")
 	$Active_Scene.add_child(child)
