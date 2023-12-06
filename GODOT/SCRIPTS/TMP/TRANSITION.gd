@@ -6,4 +6,7 @@ func take_screenshot():
 	var screenshot = ImageTexture.new()
 	screenshot.create_from_image(img)
 	texture = screenshot
+	# ensure that texture is made invisible immediately, rather than waiting
+	# for the animation to start...
+	$"../AnimationPlayer".advance(0)
 	$"../AnimationPlayer".play("Fade")
