@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
+[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Tone_10.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Options.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Tone_05.png" type="Texture" id=4]
@@ -387,3 +388,8 @@ anims/2_1_flash = SubResource( 8 )
 anims/2_2_flash = SubResource( 9 )
 anims/3_0_flash = SubResource( 10 )
 anims/RESET = SubResource( 11 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+bus = "AMBIANCE"

@@ -10,7 +10,7 @@
 [sub_resource type="Animation" id=28]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("DIALOGUE_STYLE:rect_position")
+tracks/0/path = NodePath("DIALOGUE_STYLE:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -19,10 +19,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -156.646, 29.688 ) ]
+"values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("DIALOGUE_TEXTURE:rect_position")
+tracks/1/path = NodePath("DIALOGUE_TEXTURE:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -31,35 +31,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -156.646, 29.688 ) ]
-}
-
-[sub_resource type="Animation" id=29]
-resource_name = "dialogue"
-length = 40.6
-tracks/0/type = "value"
-tracks/0/path = NodePath("DIALOGUE_STYLE:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 38.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -161.646, -106.92 ), Vector2( -161.646, -1241.92 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("DIALOGUE_TEXTURE:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 38.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -161.646, -106.92 ), Vector2( -161.646, -1241.92 ) ]
+"values": [ false ]
 }
 tracks/2/type = "audio"
 tracks/2/path = NodePath("Dialogue")
@@ -68,12 +40,98 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DIALOGUE_STYLE:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -156.646, 29.688 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DIALOGUE_TEXTURE:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -156.646, 29.688 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "dialogue"
+length = 38.5
+tracks/0/type = "audio"
+tracks/0/path = NodePath("Dialogue")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0.5 )
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DIALOGUE_STYLE:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 37, 37.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DIALOGUE_TEXTURE:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 37, 37.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DIALOGUE_STYLE:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 37, 37.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -156.646, 100 ), Vector2( -156.646, -105 ), Vector2( -156.646, -1240 ), Vector2( -156.646, -1400 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DIALOGUE_TEXTURE:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 37, 37.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -156.646, 100 ), Vector2( -156.646, -105 ), Vector2( -156.646, -1240 ), Vector2( -156.646, -1400 ) ]
 }
 
 [sub_resource type="DynamicFontData" id=17]
@@ -111,6 +169,7 @@ __meta__ = {
 }
 
 [node name="DIALOGUE_STYLE" type="Label" parent="."]
+visible = false
 margin_left = -156.646
 margin_top = 29.688
 margin_right = 2033.35
@@ -149,6 +208,7 @@ __meta__ = {
 }
 
 [node name="DIALOGUE_TEXTURE" type="Label" parent="."]
+visible = false
 material = SubResource( 21 )
 margin_left = -156.646
 margin_top = 29.688
@@ -187,7 +247,7 @@ __meta__ = {
 
 [node name="Dialogue" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = 6.666
+volume_db = 4.0
 bus = "AMBIANCE"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
