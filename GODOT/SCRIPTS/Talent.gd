@@ -16,7 +16,7 @@ var dialogue_seen = false
 # how long did the user survive previous games (in seconds)?
 var survival_time = 0
 # talent selected by the user
-var selected_talent = -1
+var selected_talent = 0
 
 func _ready():
 	item_visible.resize(item_count)
@@ -28,44 +28,47 @@ func _ready():
 	item_visible[20] = dialogue_seen and survival_time >= 30
 	item_visible[21] = dialogue_seen and survival_time >= 45
 	item_visible[22] = dialogue_seen and survival_time >= 60
-	$Beam_Me_Down_Off.self_modulate.a = 1 if item_visible[0] else 0
 	$Zufallig_Off.self_modulate.a = 1 if item_visible[18] else 0
 	$Kotzsicher_Off.self_modulate.a = 1 if item_visible[19] else 0
 	$Bullet_Time_Off.self_modulate.a = 1 if item_visible[20] else 0
 	$Geist_Off.self_modulate.a = 1 if item_visible[21] else 0
 	$Techniker_Off.self_modulate.a = 1 if item_visible[22] else 0
 	_set_current_item(1)
+	_hide_beam_me_down()
 
 func _unhandled_input(event: InputEvent):
 	var next_item = current_item
 	
 	if event.is_action_pressed("ui_down"):
 		SoundFX.playDown()
+		_hide_beam_me_down()
 		next_item = _move_down()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_up"):
 		SoundFX.playUp()
+		_hide_beam_me_down()
 		next_item = _move_up()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_left"):
 		SoundFX.playUp()
+		_hide_beam_me_down()
 		next_item = _move_left()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_right"):
 		SoundFX.playDown()
+		_hide_beam_me_down()
 		next_item = _move_right()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_accept", false, true):
 		SoundFX.playOK()
-		if current_item == 0:
+		if selected_talent > 0:
 			emit_signal("talent_chosen", selected_talent)
 		else:
-			selected_talent = current_item
-			next_item = 0
+			_show_beam_me_down()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_cancel"):
@@ -79,14 +82,12 @@ func _unhandled_input(event: InputEvent):
 func _move_down():
 	var item = current_item
 	while item == current_item or not item_visible[item]:
-		if item == 0:
-			item = 1 if current_column == 0 else 2
-		elif item <= 15:
+		if item <= 15:
 			item += 2
 		elif item < item_count - 1:
 			item += 1
 		else:
-			item = 0
+			item = 1 if current_column == 0 else 2
 	return item
 
 func _move_up():
@@ -96,10 +97,8 @@ func _move_up():
 			item -= 1
 		elif item == 17:
 			item = 15 if current_column == 0 else 16
-		elif item >= 2:
+		elif item >= 3:
 			item -= 2
-		elif item > 0:
-			item -= 1
 		else:
 			item = item_count - 1
 	return item
@@ -123,30 +122,29 @@ func _move_left():
 # the current item.
 #
 func _set_current_item(which):
-	# entering Beam Me Down: make it visible, DON'T unhighlight selected talent
-	if which == 0:
-		item_visible[0] = true
-		$Beam_Me_Down_Off.self_modulate.a = 1
-		_find_item(0).self_modulate.a = 1
-	# leaving Beam Me Down: hide it again, unhighlight selected talent
-	elif current_item == 0:
-		item_visible[0] = false
-		$Beam_Me_Down_Off.self_modulate.a = 0
-		_find_item(0).self_modulate.a = 0
-		if selected_talent > 0:
-			_find_item(selected_talent).self_modulate.a = 0
-	# normal case: just unhighlight the current item
-	elif current_item > 0:
+	if current_item > 0:
 		_find_item(current_item).self_modulate.a = 0
-	
-	# highlight the new current item
 	current_item = which
 	if current_item >= 0:
 		_find_item(current_item).self_modulate.a = 1
-	
-	# keep track of which column the "cursor" is in (left or right)
 	if current_item >= 1 and current_item <= 16:
 		current_column = (current_item - 1) % 2
+
+#
+# Saves the current item as the selected talent and makes the Beam Me Down item visible.
+#
+func _show_beam_me_down():
+	selected_talent = current_item
+	$Beam_Me_Down_Off.self_modulate.a = 1
+	_find_item(0).self_modulate.a = 1
+
+#
+# Clears the selected talent and hides the Beam Me Down item.
+#
+func _hide_beam_me_down():
+	selected_talent = 0
+	$Beam_Me_Down_Off.self_modulate.a = 0
+	_find_item(0).self_modulate.a = 0
 
 #
 # Returns the control for the given item. Which is in the range [0 item_count).
