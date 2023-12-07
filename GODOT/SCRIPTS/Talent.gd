@@ -51,15 +51,17 @@ func _unhandled_input(event: InputEvent):
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_left"):
-		SoundFX.playUp()
-		_hide_beam_me_down()
 		next_item = _move_left()
+		if selected_talent > 0 or next_item != current_item:
+			SoundFX.playUp()
+		_hide_beam_me_down()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_right"):
-		SoundFX.playDown()
-		_hide_beam_me_down()
 		next_item = _move_right()
+		if selected_talent > 0 or next_item != current_item:
+			SoundFX.playDown()
+		_hide_beam_me_down()
 		get_tree().set_input_as_handled()
 		
 	elif event.is_action_pressed("ui_accept", false, true):
@@ -103,18 +105,16 @@ func _move_up():
 	return item
 
 func _move_right():
-	var item = current_item
-	if item >= 1 and item <= 15 and current_column == 0:
-		return item + 1
+	if current_item >= 1 and current_item <= 15 and current_column == 0:
+		return current_item + 1
 	else:
-		return item
+		return current_item
 
 func _move_left():
-	var item = current_item
-	if item >= 2 and item <= 16 and current_column == 1:
-		return item - 1
+	if current_item >= 2 and current_item <= 16 and current_column == 1:
+		return current_item - 1
 	else:
-		return item
+		return current_item
 
 #
 # Unhighlights the current item and highlights the given item, which is made
