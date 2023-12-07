@@ -3,29 +3,29 @@
 [ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=1]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( 778, 205, 789, 227, 453, 267, 228, 304, 207, 359, 38, 358, 44, 289, 70, 205, 102, 144, 773, 180, 440, 231, 506, 37, 622, 44, 684, 57, 737, 89, 272, 252, 147, 101, 208, 65, 312, 224, 277, 46, 350, 212, 388, 35, 399, 211, 766, 127 )
-polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5, 6, 7, 8 ), PoolIntArray( 9, 0, 2, 10, 11, 12, 13, 14 ), PoolIntArray( 15, 3, 8, 16, 17 ), PoolIntArray( 18, 15, 17, 19 ), PoolIntArray( 20, 18, 19, 21 ), PoolIntArray( 22, 20, 21, 11 ), PoolIntArray( 10, 22, 11 ), PoolIntArray( 9, 14, 23 ) ]
-outlines = [ PoolVector2Array( 207, 359, 38, 358, 44, 289, 70, 205, 102, 144, 147, 101, 208, 65, 277, 46, 388, 35, 506, 37, 622, 44, 684, 57, 737, 89, 766, 127, 773, 180, 778, 205, 789, 227, 453, 267, 440, 231, 399, 211, 350, 212, 312, 224, 272, 252, 228, 304 ) ]
+vertices = PoolVector2Array( 773, 199, 794, 226, 450, 267, 218, 327, 212, 359, 40, 359, 48, 265, 73, 207, 227, 303, 768, 180, 438, 231, 506, 37, 622, 44, 684, 57, 246, 274, 95, 149, 147, 105, 269, 247, 207, 67, 309, 221, 279, 49, 349, 210, 388, 35, 399, 211, 747, 87, 768, 126 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5, 6, 7 ), PoolIntArray( 8, 3, 7 ), PoolIntArray( 9, 0, 2, 10, 11, 12, 13 ), PoolIntArray( 14, 8, 7, 15, 16 ), PoolIntArray( 17, 14, 16, 18 ), PoolIntArray( 19, 17, 18, 20 ), PoolIntArray( 21, 19, 20, 22 ), PoolIntArray( 23, 21, 22, 11 ), PoolIntArray( 10, 23, 11 ), PoolIntArray( 9, 13, 24, 25 ) ]
+outlines = [ PoolVector2Array( 212, 359, 40, 359, 48, 265, 73, 207, 95, 149, 147, 105, 207, 67, 279, 49, 388, 35, 506, 37, 622, 44, 684, 57, 747, 87, 768, 126, 768, 180, 773, 199, 794, 226, 450, 267, 438, 231, 399, 211, 349, 210, 309, 221, 269, 247, 246, 274, 227, 303, 218, 327 ) ]
 
 [sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( 302, 457, 436, 624, 402, 649, 285, 470, 41, 495, 38, 358, 207, 359, 207, 407, 219, 443, 51, 601, 262, 474, 358, 689, 311, 723, 258, 747, 209, 759, 168, 755, 129, 742, 97, 714, 65, 659, 239, 464 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 4, 7, 8, 9 ), PoolIntArray( 10, 3, 2, 11, 12, 13, 14, 15, 16, 17, 18, 9 ), PoolIntArray( 9, 8, 19 ), PoolIntArray( 9, 19, 10 ) ]
-outlines = [ PoolVector2Array( 38, 358, 41, 495, 51, 601, 65, 659, 97, 714, 129, 742, 168, 755, 209, 759, 258, 747, 311, 723, 358, 689, 402, 649, 436, 624, 302, 457, 285, 470, 262, 474, 239, 464, 219, 443, 207, 407, 207, 359 ) ]
+vertices = PoolVector2Array( 40, 359, 212, 359, 209, 388, 44, 493, 209, 420, 219, 443, 48, 600, 283, 464, 300, 454, 432, 627, 407, 655, 361, 693, 308, 722, 261, 467, 258, 747, 169, 753, 128, 740, 83, 701, 61, 660, 239, 461, 215, 758 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 2, 4 ), PoolIntArray( 3, 4, 5, 6 ), PoolIntArray( 7, 8, 9, 10, 11, 12 ), PoolIntArray( 13, 7, 12, 14 ), PoolIntArray( 15, 16, 17, 18, 6, 5, 19, 14, 20 ), PoolIntArray( 19, 13, 14 ) ]
+outlines = [ PoolVector2Array( 40, 359, 44, 493, 48, 600, 61, 660, 83, 701, 128, 740, 169, 753, 215, 758, 258, 747, 308, 722, 361, 693, 407, 655, 432, 627, 300, 454, 283, 464, 261, 467, 239, 461, 219, 443, 209, 420, 209, 388, 212, 359 ) ]
 
 [sub_resource type="NavigationPolygon" id=3]
-vertices = PoolVector2Array( 922, 564, 959, 577, 902, 749, 829, 731, 732, 695, 916, 257, 983, 428, 942, 450, 872, 260, 904, 543, 692, 666, 631, 633, 597, 623, 447, 293, 453, 267, 789, 227, 828, 251, 913, 476, 900, 510, 436, 624, 302, 457, 324, 421, 356, 378, 420, 330 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 9, 0, 4, 10 ), PoolIntArray( 11, 12, 13, 14, 15, 16, 17, 18 ), PoolIntArray( 12, 19, 20, 21, 22, 23 ), PoolIntArray( 8, 7, 17, 16 ), PoolIntArray( 18, 9, 10, 11 ), PoolIntArray( 12, 23, 13 ) ]
-outlines = [ PoolVector2Array( 453, 267, 447, 293, 420, 330, 356, 378, 324, 421, 302, 457, 436, 624, 597, 623, 631, 633, 692, 666, 732, 695, 829, 731, 902, 749, 959, 577, 922, 564, 904, 543, 900, 510, 913, 476, 942, 450, 983, 428, 916, 257, 872, 260, 828, 251, 789, 227 ) ]
+vertices = PoolVector2Array( 923, 567, 959, 580, 902, 747, 830, 729, 749, 704, 922, 257, 982, 425, 940, 447, 873, 258, 432, 627, 300, 454, 318, 435, 597, 621, 902, 545, 720, 688, 692, 666, 909, 473, 828, 249, 898, 508, 630, 629, 442, 295, 450, 267, 794, 226, 654, 648, 353, 373, 407, 331 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11, 12 ), PoolIntArray( 13, 0, 4, 14, 15 ), PoolIntArray( 8, 7, 16, 17 ), PoolIntArray( 18, 19, 12, 20, 21, 22, 17, 16 ), PoolIntArray( 18, 13, 15, 23, 19 ), PoolIntArray( 12, 11, 24, 25 ), PoolIntArray( 12, 25, 20 ) ]
+outlines = [ PoolVector2Array( 450, 267, 442, 295, 407, 331, 353, 373, 318, 435, 300, 454, 432, 627, 597, 621, 630, 629, 654, 648, 692, 666, 720, 688, 749, 704, 830, 729, 902, 747, 959, 580, 923, 567, 902, 545, 898, 508, 909, 473, 940, 447, 982, 425, 922, 257, 873, 258, 828, 249, 794, 226 ) ]
 
 [sub_resource type="NavigationPolygon" id=4]
-vertices = PoolVector2Array( 999, 410, 983, 428, 916, 257, 1015, 397, 960, 236, 1397, 351, 1398, 512, 1166, 509, 1165, 478, 1141, 445, 1391, 277, 1044, 395, 1003, 198, 1071, 396, 1088, 109, 1136, 78, 1187, 66, 1248, 68, 1302, 88, 1345, 131, 1377, 195, 1096, 403 )
-polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 0, 2, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 5, 8, 9, 10 ), PoolIntArray( 11, 3, 4, 12 ), PoolIntArray( 13, 11, 12 ), PoolIntArray( 14, 15, 16, 17, 18, 19, 20, 10, 9, 21, 12 ), PoolIntArray( 13, 12, 21 ) ]
-outlines = [ PoolVector2Array( 916, 257, 960, 236, 1003, 198, 1088, 109, 1136, 78, 1187, 66, 1248, 68, 1302, 88, 1345, 131, 1377, 195, 1391, 277, 1397, 351, 1398, 512, 1166, 509, 1165, 478, 1141, 445, 1096, 403, 1071, 396, 1044, 395, 1015, 397, 999, 410, 983, 428 ) ]
+vertices = PoolVector2Array( 996, 407, 982, 425, 922, 257, 1014, 394, 961, 240, 1395, 456, 1398, 512, 1170, 509, 1170, 477, 1400, 365, 1146, 442, 1391, 277, 1043, 391, 1003, 198, 1088, 109, 1136, 78, 1187, 66, 1248, 68, 1302, 88, 1345, 131, 1390, 203, 1100, 401, 1073, 393 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 0, 2, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 9, 5, 8, 10, 11 ), PoolIntArray( 12, 3, 4, 13 ), PoolIntArray( 14, 15, 16, 17, 18, 19, 20, 11, 10, 21, 13 ), PoolIntArray( 22, 12, 13 ), PoolIntArray( 22, 13, 21 ) ]
+outlines = [ PoolVector2Array( 922, 257, 961, 240, 1003, 198, 1088, 109, 1136, 78, 1187, 66, 1248, 68, 1302, 88, 1345, 131, 1390, 203, 1391, 277, 1400, 365, 1395, 456, 1398, 512, 1170, 509, 1170, 477, 1146, 442, 1100, 401, 1073, 393, 1043, 391, 1014, 394, 996, 407, 982, 425 ) ]
 
 [sub_resource type="NavigationPolygon" id=5]
-vertices = PoolVector2Array( 1017, 767, 902, 749, 959, 577, 1008, 582, 1162, 529, 1166, 509, 1398, 512, 1386, 603, 1366, 690, 1045, 769, 1052, 581, 1100, 766, 1107, 566, 1166, 769, 1146, 549, 1343, 721, 1289, 748, 1229, 761 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8 ), PoolIntArray( 9, 0, 3, 10, 11 ), PoolIntArray( 11, 10, 12, 13 ), PoolIntArray( 14, 4, 8, 15, 16, 17, 13 ), PoolIntArray( 13, 12, 14 ) ]
-outlines = [ PoolVector2Array( 902, 749, 959, 577, 1008, 582, 1052, 581, 1107, 566, 1146, 549, 1162, 529, 1166, 509, 1398, 512, 1386, 603, 1366, 690, 1343, 721, 1289, 748, 1229, 761, 1166, 769, 1100, 766, 1045, 769, 1017, 767 ) ]
+vertices = PoolVector2Array( 1164, 532, 1170, 509, 1398, 512, 1382, 603, 1364, 690, 1341, 720, 1289, 746, 1017, 767, 902, 747, 959, 580, 1008, 586, 1045, 769, 1053, 584, 1100, 766, 1108, 568, 1166, 768, 1149, 550, 1229, 761 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 11, 7, 10, 12, 13 ), PoolIntArray( 13, 12, 14, 15 ), PoolIntArray( 16, 0, 6, 17, 15 ), PoolIntArray( 15, 14, 16 ) ]
+outlines = [ PoolVector2Array( 902, 747, 959, 580, 1008, 586, 1053, 584, 1108, 568, 1149, 550, 1164, 532, 1170, 509, 1398, 512, 1382, 603, 1364, 690, 1341, 720, 1289, 746, 1229, 761, 1166, 768, 1100, 766, 1045, 769, 1017, 767 ) ]
 
 [node name="Background" type="StaticBody2D"]
 collision_mask = 2
@@ -119,65 +119,253 @@ __meta__ = {
 }
 
 [node name="Alien_Starting_Points" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_1" type="Node2D" parent="Alien_Starting_Points"]
-position = Vector2( 720, 405 )
+position = Vector2( 685, 409 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_2" type="Node2D" parent="Alien_Starting_Points"]
 position = Vector2( 260, 150 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_3" type="Node2D" parent="Alien_Starting_Points"]
 position = Vector2( 240, 625 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_4" type="Node2D" parent="Alien_Starting_Points"]
 position = Vector2( 1200, 200 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_5" type="Node2D" parent="Alien_Starting_Points"]
 position = Vector2( 1200, 650 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Alien_Teleportation_Points" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_01" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 485, 118 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_02" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 237, 168 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_03" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 123, 418 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_04" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 1243, 161 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_05" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 184, 642 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_06" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 361, 514 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_07" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 553, 349 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_08" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 811, 366 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_09" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 681, 197 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_10" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 1048, 287 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_11" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 1283, 372 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_12" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 1242, 617 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_13" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 572, 529 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_14" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 793, 609 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Point_15" type="Node2D" parent="Alien_Teleportation_Points"]
 position = Vector2( 1013, 684 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Kids_Spawning_Points" type="Node2D" parent="."]
+visible = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_01" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 428, 113 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_02" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 248, 148 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_03" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 138, 288 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_04" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1222, 133 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_05" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 119, 481 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_06" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 187, 647 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_07" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 495, 331 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_08" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 781, 309 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_09" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 623, 163 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_10" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 976, 332 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_11" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1321, 308 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_12" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1280, 488 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_13" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1211, 648 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_14" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1011, 673 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_15" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 802, 608 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_16" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 698, 459 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_17" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 487, 484 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_18" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 349, 578 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_19" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1144, 261 )
+__meta__ = {
+"_edit_lock_": true
+}
