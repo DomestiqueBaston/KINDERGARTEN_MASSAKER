@@ -7,14 +7,23 @@ signal show_credits
 signal exit_game
 signal show_dialogue
 
+enum MenuItem {
+	TALENTS,
+	TUTORIAL,
+	OPTIONS,
+	CREDITS,
+	EXIT,
+	DIALOGUE
+}
+
 # item count is 5 by default, 6 if the dialogue button is enabled
 var item_count = 5
-# index of the current item (the first, initially)
-var current_item = 0
+# index of the current item
+var current_item = -1
 
 func _ready():
-	# the first item is selected by default
-	$"Control/0".self_modulate.a = 1
+	if current_item < 0:
+		set_current_item(0)
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_down"):
@@ -38,17 +47,17 @@ func _unhandled_input(event):
 	elif event.is_action_pressed("ui_accept", false, true):
 		SoundFX.playOK()
 		match current_item:
-			0:
+			MenuItem.TALENTS:
 				emit_signal("start_game")
-			1:
+			MenuItem.TUTORIAL:
 				emit_signal("show_tutorial")
-			2:
+			MenuItem.OPTIONS:
 				emit_signal("show_options")
-			3:
+			MenuItem.CREDITS:
 				emit_signal("show_credits")
-			4:
+			MenuItem.EXIT:
 				emit_signal("exit_game")
-			5:
+			MenuItem.DIALOGUE:
 				emit_signal("show_dialogue")
 		get_tree().set_input_as_handled()
 
@@ -62,3 +71,18 @@ func set_dialogue_enabled(enabled):
 	else:
 		item_count = 5
 		$Control/X.self_modulate.a = 0
+
+#
+# Sets the current (highlighted) item: see MenuItem.
+#
+func set_current_item(which):
+	if current_item >= 0:
+		$Control.get_node(current_item as String).self_modulate.a = 0
+	current_item = which
+	$Control.get_node(current_item as String).self_modulate.a = 1
+
+#
+# Returns the current (highlighted) item: see MenuItem.
+#
+func get_current_item():
+	return current_item

@@ -21,6 +21,7 @@ enum GameState {
 }
 
 var state = GameState.TITLE
+var previous_menu_item = -1
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
@@ -52,14 +53,20 @@ func _unhandled_input(event: InputEvent):
 		get_tree().set_input_as_handled()
 
 func change_state(next_state):
+	var child = $Active_Scene.get_child(0)
+	if state == GameState.MENU:
+		previous_menu_item = child.get_current_item()
+		
 	# hide overlay before $Transition_Overlay takes a screenshot
 	$PAPA_Game_Overlay.hide()
 	$Transition_Overlay.show()
 	$Transition_Overlay.start_transition()
 	# put overlay back after screenshot has been taken
 	$PAPA_Game_Overlay.show()
-	$Active_Scene.get_child(0).queue_free()
-	var child
+	
+	child.queue_free()
+	child = null
+	
 	match next_state:
 		GameState.MENU:
 			child = menu.instance()
@@ -70,6 +77,8 @@ func change_state(next_state):
 			child.connect("show_credits", self, "on_show_credits")
 			child.connect("exit_game", self, "on_exit_game")
 			child.connect("show_dialogue", self, "on_show_dialogue")
+			if previous_menu_item >= 0:
+				child.set_current_item(previous_menu_item)
 		GameState.TUTORIAL:
 			child = tutorial.instance()
 		GameState.OPTIONS:
@@ -85,7 +94,10 @@ func change_state(next_state):
 			child.set_talent_level(dialogue_seen, 100)
 			child.connect("talent_aborted", self, "on_talent_aborted")
 			child.connect("talent_chosen", self, "on_talent_chosen")
-	$Active_Scene.add_child(child)
+	
+	if child:
+		$Active_Scene.add_child(child)
+	
 	state = next_state
 
 func _on_Transition_Overlay_transition_finished():
