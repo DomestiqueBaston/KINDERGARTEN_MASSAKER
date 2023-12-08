@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://SCRIPTS/Options.gd" type="Script" id=1]
+[ext_resource path="res://SCRIPTS/TMP/Options.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Tone_10.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Options.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/GRAPHICS/OPTION_SCREEN/Tone_05.png" type="Texture" id=4]

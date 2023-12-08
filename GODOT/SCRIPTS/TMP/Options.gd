@@ -71,10 +71,9 @@ func _adjust_volume(which, how_much):
 
 #
 # Positions the "cursor" over the given item (there isn't actually a cursor,
-# but the value on the line corresponding to the item flashes).
+# but the value on the line corresponding to the item is highlighted).
 #
 func _set_current_item(which):
-	$AnimationPlayer.stop()
 	if current_item < 3:
 		_update_volume(current_item, false)
 	else:
@@ -107,23 +106,25 @@ func _update_volume(which, is_current):
 		volume_index = 2
 	for index in range(3):
 		var selected_control = get_node("Control/%d_%d" % [which, index])
-		if index == volume_index:
+		var current_control = get_node("Control/%d_%d_valid" % [which, index])
+		if index != volume_index:
+			selected_control.self_modulate.a = 0
+			current_control.self_modulate.a = 0
+		elif is_current:
 			selected_control.self_modulate.a = 1
-			if is_current:
-				var anim = "%d_%d_flash" % [which, index]
-				$AnimationPlayer.play(anim)
-			else:
-				selected_control.visible = true
+			current_control.self_modulate.a = 0
 		else:
 			selected_control.self_modulate.a = 0
+			current_control.self_modulate.a = 1
 
 #
 # Updates the appearance of the complexity control, depending only on whether
 # the user is positioned over it, since he cannot modify it...
 #
 func _update_complexity(is_current):
-	$"Control/3_0".self_modulate.a = 1
 	if is_current:
-		$AnimationPlayer.play("3_0_flash")
+		$"Control/3_0".self_modulate.a = 1
+		$"Control/3_0_valid".self_modulate.a = 0
 	else:
-		$"Control/3_0".visible = true
+		$"Control/3_0".self_modulate.a = 0
+		$"Control/3_0_valid".self_modulate.a = 1
