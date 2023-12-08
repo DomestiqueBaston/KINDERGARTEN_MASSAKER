@@ -104,6 +104,10 @@ func _on_Transition_Overlay_transition_finished():
 	$Transition_Overlay.hide()
 
 func on_dialogue_finished():
+	# Without this pause, when the dialogue -> menu transition begins in full
+	# screen mode, the menu sometimes appears for a frame before it disappears
+	# and then fades in as it should. Perhaps we should always pause for a
+	# frame before triggering a transition...?
 	yield(get_tree(), "idle_frame")
 	dialogue_seen = true
 	change_state(GameState.MENU)
@@ -127,7 +131,7 @@ func on_talent_aborted():
 	change_state(GameState.MENU)
 
 func on_talent_chosen(talent_index):
-	print("chose talent: ", talent_index)
+	print("chose talent: ", Globals.talent_name[talent_index])
 	# TODO
 	change_state(GameState.MENU)
 

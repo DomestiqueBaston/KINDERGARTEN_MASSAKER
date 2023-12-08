@@ -20,8 +20,9 @@ config/windows_native_icon="res://KM_LOGO.ico"
 
 [autoload]
 
-SoundFX="*res://SCENES/FX/SoundFX.tscn"
+Globals="*res://SCRIPTS/Globals.gd"
 Settings="*res://SCRIPTS/Settings.gd"
+SoundFX="*res://SCENES/FX/SoundFX.tscn"
 
 [display]
 
