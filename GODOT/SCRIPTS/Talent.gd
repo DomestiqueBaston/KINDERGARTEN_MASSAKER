@@ -18,6 +18,33 @@ var survival_time = 0
 # talent selected by the user
 var selected_talent = 0
 
+# mapping of UI items to the talents they represent
+const ui_talent_map = [
+	-1,
+	Globals.Talent.TELEPORT,
+	Globals.Talent.DASH,
+	Globals.Talent.EXPLOSION,
+	Globals.Talent.FORCE_FIELD,
+	Globals.Talent.FREEZE,
+	Globals.Talent.SPEED,
+	Globals.Talent.TIME_STOP,
+	Globals.Talent.MIRROR_IMAGE,
+	Globals.Talent.SECOND_LIFE,
+	Globals.Talent.DODGE,
+	Globals.Talent.INVISIBLE,
+	Globals.Talent.SHIELD,
+	Globals.Talent.HEALTH,
+	Globals.Talent.REGENERATE,
+	Globals.Talent.RANGED_COMBAT,
+	Globals.Talent.NONE,
+	Globals.Talent.HAND_TO_HAND,
+	Globals.Talent.RANDOM,
+	Globals.Talent.VOMIT_PROOF,
+	Globals.Talent.BULLET_TIME,
+	Globals.Talent.GHOST,
+	Globals.Talent.TECHNICIAN
+]
+
 func _ready():
 	item_visible.resize(item_count)
 	item_visible.fill(true)
@@ -67,7 +94,7 @@ func _unhandled_input(event: InputEvent):
 	elif event.is_action_pressed("ui_accept", false, true):
 		SoundFX.playOK()
 		if selected_talent > 0:
-			emit_signal("talent_chosen", selected_talent)
+			emit_signal("talent_chosen", ui_talent_map[selected_talent])
 		else:
 			_show_beam_me_down()
 		get_tree().set_input_as_handled()

@@ -131,7 +131,7 @@ func on_talent_aborted():
 	change_state(GameState.MENU)
 
 func on_talent_chosen(talent_index):
-	print("chose talent: ", talent_index)
+	print("chose talent: ", Globals.talent_name[talent_index])
 	# TODO
 	change_state(GameState.MENU)
 
