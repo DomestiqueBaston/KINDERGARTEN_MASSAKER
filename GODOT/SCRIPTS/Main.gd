@@ -104,6 +104,7 @@ func _on_Transition_Overlay_transition_finished():
 	$Transition_Overlay.hide()
 
 func on_dialogue_finished():
+	yield(get_tree(), "idle_frame")
 	dialogue_seen = true
 	change_state(GameState.MENU)
 
