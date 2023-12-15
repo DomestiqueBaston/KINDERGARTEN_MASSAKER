@@ -1,7 +1,9 @@
+#	Everything's temporary here, to test the AnimationTree.
+
 extends KinematicBody2D
 
 
-export(int) var speed = 80
+export(int) var speed = 125
 
 func _physics_process(_delta):
 	var velocity = Vector2.ZERO
@@ -17,7 +19,9 @@ func _physics_process(_delta):
 	
 #	velocity = velocity.normalized()
 	if velocity == Vector2.ZERO:
-		pass
+		$AnimationTree.get("parameters/playback").travel("Check")
 	else:
+		$AnimationTree.get("parameters/playback").travel("Omg")
 		$AnimationTree.set("parameters/Check/blend_position", velocity)
+		$AnimationTree.set("parameters/Run/blend_position", velocity)
 		var _ignore_collision = move_and_slide(velocity.normalized() * speed)

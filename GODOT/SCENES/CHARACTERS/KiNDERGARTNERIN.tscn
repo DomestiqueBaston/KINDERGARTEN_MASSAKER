@@ -1,0 +1,2043 @@
+[gd_scene load_steps=84 format=2]
+
+[ext_resource path="res://SCRIPTS/Kindergartnerin.gd" type="Script" id=1]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/EDUC/KINDERGARTNERIN.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 23.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "00_Check"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -6, 17 ), Vector2( -6, 17 ), Vector2( -7, 17 ), Vector2( -8, 17 ), Vector2( -8, 17 ), Vector2( -7, 17 ), Vector2( -6, 17 ), Vector2( -6, 17 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.4 ), Vector2( 1, 0.4 ), Vector2( 0.9, 0.4 ), Vector2( 0.8, 0.4 ), Vector2( 0.8, 0.4 ), Vector2( 0.9, 0.4 ), Vector2( 1, 0.4 ), Vector2( 1, 0.4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "00_No"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 19, 20, 21 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -6.5, 17 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "00_OMG"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 28, 29, 30, 31, 32, 33, 34 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -6.5, 17 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.4 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "00_Run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 22, 23, 24, 25, 26, 27 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -6.5, 4.5 ), Vector2( -6.5, 10 ), Vector2( -6.5, 0 ), Vector2( -6.5, 4.5 ), Vector2( -6.5, 10 ), Vector2( -6.5, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.625 ), Vector2( 1, 0.5 ), Vector2( 1, 0.75 ), Vector2( 1, 0.625 ), Vector2( 1, 0.5 ), Vector2( 1, 0.75 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "135D_Check"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -17, 8 ), Vector2( -17, 8 ), Vector2( -13, 9 ), Vector2( -9, 10 ), Vector2( -9, 10 ), Vector2( -13, 9 ), Vector2( -17, 8 ), Vector2( -17, 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -17.5, -17.5, -12.5, -7.5, -7.5, -12.5, -17.5, -17.5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.6 ), Vector2( 1, 0.6 ), Vector2( 0.95, 0.55 ), Vector2( 0.9, 0.5 ), Vector2( 0.9, 0.5 ), Vector2( 0.95, 0.55 ), Vector2( 1, 0.6 ), Vector2( 1, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "135D_No"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 123, 124, 125, 126 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -13, 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -12.5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.9, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "135D_OMG"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 133, 134, 135, 136, 137, 138, 139 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.55, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -107.1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -43, 46 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "135D_Run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 127, 128, 129, 130, 131, 132 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.6 ), Vector2( 0.75, 0.8 ), Vector2( 0.666, 1 ), Vector2( 0.7, 0.75 ), Vector2( 0.5, 1.05 ), Vector2( 0.5, 1.25 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -12.5, -34.3, -56.1, -67.7, -79.3, -74.6 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -13, 6 ), Vector2( -25, 3 ), Vector2( -40, 7 ), Vector2( -32, 21 ), Vector2( -47, 25 ), Vector2( -60, 20 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "135G_Check"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.9, 0.5 ), Vector2( 0.9, 0.5 ), Vector2( 0.875, 0.5 ), Vector2( 0.85, 0.5 ), Vector2( 0.85, 0.5 ), Vector2( 0.875, 0.5 ), Vector2( 0.9, 0.5 ), Vector2( 0.9, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9.3, 9.3, 13.95, 18.6, 18.6, 13.95, 9.3, 9.3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 9 ), Vector2( 1, 9 ), Vector2( 3.5, 9 ), Vector2( 6, 9 ), Vector2( 6, 9 ), Vector2( 3.5, 9 ), Vector2( 1, 9 ), Vector2( 1, 9 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "135G_No"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 193, 194, 195, 196 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.95, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9.3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 1, 9 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "135G_OMG"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 203, 204, 205, 206, 207, 208, 209 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.95, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 13.9 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 2, 8 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "135G_Run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 197, 198, 199, 200, 201, 202 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.8, 0.5 ), Vector2( 1.05, 0.5 ), Vector2( 1.3, 0.5 ), Vector2( 0.9, 0.55 ), Vector2( 0.65, 0.525 ), Vector2( 0.9, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 9.3, 0.75, -7.8, 18.6, -76.7, -41.8 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1.19209e-07, 9 ), Vector2( -4, 10 ), Vector2( -8, 11 ), Vector2( 5, 5 ), Vector2( -23, 31 ), Vector2( -16, 20 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "180_Check"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.5 ), Vector2( 1, 0.5 ), Vector2( 0.9, 0.5 ), Vector2( 0.8, 0.5 ), Vector2( 0.8, 0.5 ), Vector2( 0.9, 0.5 ), Vector2( 1, 0.5 ), Vector2( 1, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -8, 8 ), Vector2( -8, 8 ), Vector2( -5.5, 8 ), Vector2( -3, 8 ), Vector2( -3, 8 ), Vector2( -5.5, 8 ), Vector2( -8, 8 ), Vector2( -8, 8 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "180_No"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 158, 159, 160, 161 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -7, 9 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "180_OMG"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 168, 169, 170, 171, 172, 173, 174 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.9, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -6, 9 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "180_Run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 162, 163, 164, 165, 166, 167 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -7, 9 ), Vector2( -6, 0 ), Vector2( -5, -9 ), Vector2( -7, 9 ), Vector2( 1.5, 7.5 ), Vector2( 10, 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 0.0, 0.0, 0.0, 16.25, 32.5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.5 ), Vector2( 0.9, 0.7 ), Vector2( 0.8, 0.9 ), Vector2( 1, 0.5 ), Vector2( 0.95, 0.55 ), Vector2( 0.9, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "45D_Check"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -1.49012e-07, 6 ), Vector2( -1.49012e-07, 6 ), Vector2( -0.5, 6 ), Vector2( -1, 6 ), Vector2( -1, 6 ), Vector2( -0.5, 6 ), Vector2( -1.49012e-07, 6 ), Vector2( -1.49012e-07, 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 17.5, 17.5, 17.5, 17.5, 17.5, 17.5, 17.5, 17.5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.95, 0.55 ), Vector2( 0.95, 0.55 ), Vector2( 0.9, 0.55 ), Vector2( 0.85, 0.55 ), Vector2( 0.85, 0.55 ), Vector2( 0.9, 0.55 ), Vector2( 0.95, 0.55 ), Vector2( 0.95, 0.55 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "45D_No"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 53, 54, 55, 56 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -1.49012e-07, 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 17.5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.95, 0.55 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "45D_OMG"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 63, 64, 65, 66, 67, 68, 69 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -1.49012e-07, 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 17.5 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.95, 0.55 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "45D_Run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 57, 58, 59, 60, 61, 62 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 3, 2 ), Vector2( 6.5, -4 ), Vector2( 10, -10 ), Vector2( 3, 2 ), Vector2( 5, -3 ), Vector2( 10, -10 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20.0, 20.0, 20.0, 20.0, 20.0, 20.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.625 ), Vector2( 1, 0.8125 ), Vector2( 1, 1 ), Vector2( 1, 0.625 ), Vector2( 0.75, 0.75 ), Vector2( 0.8, 1 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "45G_Check"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.95, 0.55 ), Vector2( 0.95, 0.55 ), Vector2( 0.9, 0.55 ), Vector2( 0.85, 0.55 ), Vector2( 0.85, 0.55 ), Vector2( 0.9, 0.55 ), Vector2( 0.95, 0.55 ), Vector2( 0.95, 0.55 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -13.9, -13.9, -11.6, -9.3, -9.3, -11.6, -13.9, -13.9 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -9, 7 ), Vector2( -9, 7 ), Vector2( -8.5, 7.5 ), Vector2( -8, 8 ), Vector2( -8, 8 ), Vector2( -8.5, 7.5 ), Vector2( -9, 7 ), Vector2( -9, 7 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "45G_No"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 263, 264, 265, 266 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.9, 0.6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -13.9 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -10, 5 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "45G_OMG"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 273, 274, 275, 276, 277, 278, 279 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.9, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -13.9 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -9, 10 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "45G_Run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 267, 268, 269, 270, 271, 272 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.9, 0.55 ), Vector2( 0.8, 0.55 ), Vector2( 0.85, 0.55 ), Vector2( 0.75, 0.55 ), Vector2( 1.1, 0.5 ), Vector2( 1.2, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4.7, 39.5, 46.5, -37.1, -4.6, 9.3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -3, 5 ), Vector2( 12, 7 ), Vector2( 16, 9 ), Vector2( -18, 13 ), Vector2( -9, 7 ), Vector2( -3.57628e-07, 6 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "90D_Check"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -8, 4 ), Vector2( -8, 4 ), Vector2( -8, 3 ), Vector2( -8, 2 ), Vector2( -8, 2 ), Vector2( -8, 3 ), Vector2( -8, 4 ), Vector2( -8, 4 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "90D_No"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 88, 89, 90, 91 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -8, 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.8, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "90D_OMG"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 98, 99, 100, 101, 102, 103, 104 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -8, 3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.7, 0.6 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "90D_Run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 92, 93, 94, 95, 96, 97 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.8, 0.6 ), Vector2( 1, 0.55 ), Vector2( 1.2, 0.5 ), Vector2( 0.8, 0.6 ), Vector2( 0.95, 0.55 ), Vector2( 1.2, 0.5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -8, 3 ), Vector2( -6, 4.5 ), Vector2( -11, 6 ), Vector2( -8, 3 ), Vector2( -7, 6 ), Vector2( -13, 9 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "90G_Check"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.7, 0.6 ), Vector2( 0.7, 0.6 ), Vector2( 0.7, 0.575 ), Vector2( 0.7, 0.55 ), Vector2( 0.7, 0.55 ), Vector2( 0.7, 0.575 ), Vector2( 0.7, 0.6 ), Vector2( 0.7, 0.6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -2, 3 ), Vector2( -2, 3 ), Vector2( -2, 4.5 ), Vector2( -2, 6 ), Vector2( -2, 6 ), Vector2( -2, 4.5 ), Vector2( -2, 3 ), Vector2( -2, 3 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "90G_No"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 228, 229, 230, 231 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.7, 0.6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -2, 3 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "90G_OMG"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 238, 239, 240, 241, 242, 243, 244 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.7, 0.6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -2, 3 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "90G_Run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 232, 233, 234, 235, 236, 237 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -2, 3 ), Vector2( 5.96046e-08, 12 ), Vector2( -3, 8 ), Vector2( -2, 3 ), Vector2( -8, 5 ), Vector2( -7, 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 16.2, 4.6, 0.0, -2.35, -4.7 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.7, 0.6 ), Vector2( 1, 0.4 ), Vector2( 1.2, 0.5 ), Vector2( 0.7, 0.6 ), Vector2( 0.95, 0.55 ), Vector2( 1.2, 0.5 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Shadow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -6, 17 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.4 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "90D_Check"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "90G_Check"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "00_Check"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "180_Check"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "00_Check"
+
+[sub_resource type="AnimationNodeAnimation" id=40]
+animation = "180_Check"
+
+[sub_resource type="AnimationNodeAnimation" id=41]
+animation = "45D_Check"
+
+[sub_resource type="AnimationNodeAnimation" id=42]
+animation = "45G_Check"
+
+[sub_resource type="AnimationNodeAnimation" id=43]
+animation = "135G_Check"
+
+[sub_resource type="AnimationNodeAnimation" id=44]
+animation = "135D_Check"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=45]
+blend_point_0/node = SubResource( 35 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 36 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 37 )
+blend_point_2/pos = Vector2( 0, 1 )
+blend_point_3/node = SubResource( 38 )
+blend_point_3/pos = Vector2( 0, -1 )
+blend_point_4/node = SubResource( 39 )
+blend_point_4/pos = Vector2( 0, 1 )
+blend_point_5/node = SubResource( 40 )
+blend_point_5/pos = Vector2( 0, -1 )
+blend_point_6/node = SubResource( 41 )
+blend_point_6/pos = Vector2( -1, 1 )
+blend_point_7/node = SubResource( 42 )
+blend_point_7/pos = Vector2( 1, 1 )
+blend_point_8/node = SubResource( 43 )
+blend_point_8/pos = Vector2( 1, -1 )
+blend_point_9/node = SubResource( 44 )
+blend_point_9/pos = Vector2( -1, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=59]
+animation = "00_No"
+
+[sub_resource type="AnimationNodeAnimation" id=60]
+animation = "180_No"
+
+[sub_resource type="AnimationNodeAnimation" id=61]
+animation = "90D_No"
+
+[sub_resource type="AnimationNodeAnimation" id=62]
+animation = "90G_No"
+
+[sub_resource type="AnimationNodeAnimation" id=63]
+animation = "45D_No"
+
+[sub_resource type="AnimationNodeAnimation" id=64]
+animation = "45G_No"
+
+[sub_resource type="AnimationNodeAnimation" id=65]
+animation = "135G_No"
+
+[sub_resource type="AnimationNodeAnimation" id=66]
+animation = "135D_No"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=67]
+blend_point_0/node = SubResource( 59 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 60 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 61 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 62 )
+blend_point_3/pos = Vector2( 1, 0 )
+blend_point_4/node = SubResource( 63 )
+blend_point_4/pos = Vector2( -1, 1 )
+blend_point_5/node = SubResource( 64 )
+blend_point_5/pos = Vector2( 1, 1 )
+blend_point_6/node = SubResource( 65 )
+blend_point_6/pos = Vector2( 1, -1 )
+blend_point_7/node = SubResource( 66 )
+blend_point_7/pos = Vector2( -1, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=68]
+animation = "00_OMG"
+
+[sub_resource type="AnimationNodeAnimation" id=69]
+animation = "180_OMG"
+
+[sub_resource type="AnimationNodeAnimation" id=70]
+animation = "90G_OMG"
+
+[sub_resource type="AnimationNodeAnimation" id=71]
+animation = "90D_OMG"
+
+[sub_resource type="AnimationNodeAnimation" id=72]
+animation = "45D_OMG"
+
+[sub_resource type="AnimationNodeAnimation" id=73]
+animation = "45G_OMG"
+
+[sub_resource type="AnimationNodeAnimation" id=74]
+animation = "135G_OMG"
+
+[sub_resource type="AnimationNodeAnimation" id=75]
+animation = "135D_OMG"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=76]
+blend_point_0/node = SubResource( 68 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 69 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 70 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 71 )
+blend_point_3/pos = Vector2( -1, 0 )
+blend_point_4/node = SubResource( 72 )
+blend_point_4/pos = Vector2( -1, 1 )
+blend_point_5/node = SubResource( 73 )
+blend_point_5/pos = Vector2( 1, 1 )
+blend_point_6/node = SubResource( 74 )
+blend_point_6/pos = Vector2( 1, -1 )
+blend_point_7/node = SubResource( 75 )
+blend_point_7/pos = Vector2( -1, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=48]
+animation = "45D_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=49]
+animation = "135G_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=50]
+animation = "45G_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=51]
+animation = "135D_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=52]
+animation = "90D_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=53]
+animation = "90G_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=54]
+animation = "00_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=55]
+animation = "180_Run"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=56]
+blend_point_0/node = SubResource( 48 )
+blend_point_0/pos = Vector2( -1, 1 )
+blend_point_1/node = SubResource( 49 )
+blend_point_1/pos = Vector2( 1, -1 )
+blend_point_2/node = SubResource( 50 )
+blend_point_2/pos = Vector2( 1, 1 )
+blend_point_3/node = SubResource( 51 )
+blend_point_3/pos = Vector2( -1, -1 )
+blend_point_4/node = SubResource( 52 )
+blend_point_4/pos = Vector2( -1, 0 )
+blend_point_5/node = SubResource( 53 )
+blend_point_5/pos = Vector2( 1, 0 )
+blend_point_6/node = SubResource( 54 )
+blend_point_6/pos = Vector2( 0, 1 )
+blend_point_7/node = SubResource( 55 )
+blend_point_7/pos = Vector2( 0, -1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=58]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=77]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=78]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=79]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=80]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=81]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=82]
+
+[sub_resource type="AnimationNodeStateMachine" id=46]
+states/Check/node = SubResource( 45 )
+states/Check/position = Vector2( 367, 122 )
+states/No/node = SubResource( 67 )
+states/No/position = Vector2( 674, 93 )
+states/Omg/node = SubResource( 76 )
+states/Omg/position = Vector2( 418, 240 )
+states/Run/node = SubResource( 56 )
+states/Run/position = Vector2( 517, 44 )
+transitions = [ "Run", "Check", SubResource( 58 ), "Run", "No", SubResource( 77 ), "No", "Run", SubResource( 78 ), "Check", "Run", SubResource( 79 ), "No", "Check", SubResource( 80 ), "Omg", "Run", SubResource( 81 ), "Check", "Omg", SubResource( 82 ) ]
+start_node = "Check"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=47]
+
+[node name="EDUC" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+speed = 150
+
+[node name="Move_Collider" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 31 )
+scale = Vector2( 1, 0.666 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Alien_Detection_Collider" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 34 )
+scale = Vector2( 7.5, 4.995 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Shadow" type="Polygon2D" parent="."]
+position = Vector2( -6, 17 )
+scale = Vector2( 1, 0.4 )
+color = Color( 0, 0.101961, 0, 0.392157 )
+polygon = PoolVector2Array( -14, 45, -12.2222, 36, -9, 30, -2.22222, 26, 6, 25, 14.4444, 26, 22, 30, 25.5556, 36, 27, 45, 25.5556, 54, 22, 60, 14.4444, 64, 6, 65, -2.22222, 64, -9, 60, -12.2222, 54 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Educ" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 17
+vframes = 17
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/00_Check = SubResource( 2 )
+anims/00_No = SubResource( 3 )
+anims/00_OMG = SubResource( 5 )
+anims/00_Run = SubResource( 6 )
+anims/135D_Check = SubResource( 15 )
+anims/135D_No = SubResource( 16 )
+anims/135D_OMG = SubResource( 17 )
+anims/135D_Run = SubResource( 18 )
+anims/135G_Check = SubResource( 23 )
+anims/135G_No = SubResource( 24 )
+anims/135G_OMG = SubResource( 25 )
+anims/135G_Run = SubResource( 26 )
+anims/180_Check = SubResource( 19 )
+anims/180_No = SubResource( 20 )
+anims/180_OMG = SubResource( 22 )
+anims/180_Run = SubResource( 21 )
+anims/45D_Check = SubResource( 7 )
+anims/45D_No = SubResource( 8 )
+anims/45D_OMG = SubResource( 9 )
+anims/45D_Run = SubResource( 10 )
+anims/45G_Check = SubResource( 31 )
+anims/45G_No = SubResource( 32 )
+anims/45G_OMG = SubResource( 34 )
+anims/45G_Run = SubResource( 33 )
+anims/90D_Check = SubResource( 11 )
+anims/90D_No = SubResource( 12 )
+anims/90D_OMG = SubResource( 14 )
+anims/90D_Run = SubResource( 13 )
+anims/90G_Check = SubResource( 27 )
+anims/90G_No = SubResource( 28 )
+anims/90G_OMG = SubResource( 30 )
+anims/90G_Run = SubResource( 29 )
+anims/RESET = SubResource( 4 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 46 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 47 )
+parameters/Check/blend_position = Vector2( -0.132797, -0.359155 )
+parameters/No/blend_position = Vector2( -0.205231, 0.542253 )
+parameters/Omg/blend_position = Vector2( 0.122736, -0.894366 )
+parameters/Run/blend_position = Vector2( -0.0885312, -0.985916 )
