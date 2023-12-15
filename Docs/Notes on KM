@@ -84,7 +84,7 @@ Enemies
 - Vomiting Kids (attack with large effect area). Wandering, then vomiting somewhere there’s enough space for the puddle, then resuming… The vomit puddle generate an area that everybody’s running away from. As soon as the kid starts vomiting, the area is locked for the teacher and other kids to avoid it.
 	Alien loses 50 HP per second when walking in the vomit puddle until exiting it. He also takes decreasing damage for up to 2 seconds (35HP the first second, then 15HP the next one) after exiting the area. Alien becomes green (except outline) until he exits the vomit puddle.
 
-- The teacher (see *1 below) running randomly then stops looking around then resumes. When close enough to the Alien and kids involved in a fight, tries to stop the mess (she is an obstacle: running then stopping, trying to calm things down staying between kids and Alien).
+- The teacher (see *1 below) running randomly then stops looking around then resumes. When close enough to the Alien and kids involved in a fight, tries to stop the mess (she is an obstacle: moving in front of the Alien to say him “no”).
 
 ----------
 
@@ -114,7 +114,7 @@ Technically
 	8 waving directions (when two kids face each other and only in this case, they forget about the Alien and stop running then wave at each other for a couple of seconds then resume moving) – only throwing booger kids, spitting kids, crying kids and kids with sticks.
 
 	Teacher animations (left and right are flopped animations, up/left and up/right are flopped animations and down/left and down/right are also flopped animations):
-	8 Idle/checking directions
+	8 (idle/)checking directions
 	8 run directions
 	8 “stop fighting” directions
 	
@@ -190,9 +190,10 @@ Technically
 		1 obstacle collider (for background, vomit, kids and the Alien).
 		1 fight detection collider (!).
 
-	The Alien has 2 colliders:
+	The Alien has 2 colliders + 1 special:
 		1 obstacle collider (for background, kids and the teacher).
 		1 “get hit” collider.
+		1 aim “collider” (used by the Teacher as her target to reach).
 
 	When a projectile hits the Alien, the projectile flashes white at contact then disappears.
 
