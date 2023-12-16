@@ -84,7 +84,7 @@ Enemies
 - Vomiting Kids (attack with large effect area). Wandering, then vomiting somewhere there’s enough space for the puddle, then resuming… The vomit puddle generate an area that everybody’s running away from. As soon as the kid starts vomiting, the area is locked for the teacher and other kids to avoid it.
 	Alien loses 50 HP per second when walking in the vomit puddle until exiting it. He also takes decreasing damage for up to 2 seconds (35HP the first second, then 15HP the next one) after exiting the area. Alien becomes green (except outline) until he exits the vomit puddle.
 
-- The teacher (see *1 below) running randomly then stops looking around then resumes. When close enough to the Alien and kids involved in a fight, tries to stop the mess (she is an obstacle: moving in front of the Alien to say him “no”).
+- The teacher (see *1 below) running randomly then stops looking around then resumes. When seeing the Alien, she runs toward the situation, aiming at a point ahead of the Alien. Then she tries to stop the mess by saying “no” to the Alien.
 
 ----------
 
@@ -130,7 +130,7 @@ Technically
 	Somewhat random:
 		Vomiting Kids (run randomly then stop to vomit then resume but stay in range). They never commit in long or short range attacks.
 		Crying Kids (run randomly then stop to cry for 3 seconds then resume… Until the Alien is detected and then they try to reach him for a good kicking session. They go away only after hitting the Alien 3 times then resume.
-		Teacher (Stays where she is then runs somewhere else then resume… Until she detects a short ranged fight between kids and the Alien and tries to take place between kids and the Alien (eventually) forcing a way between colliders – (see *1 above))
+		Teacher (she’s looking around with the Check animation played randomly between 2 and 4 times, runs somewhere else and again and again. When seeing the alien (using the Alien_Detection_Collider in the Checking animation), then she reacts by playing her OMG animation (1 time). She starts running aiming a point in front of the Alien and then tries to make the Alien go away by playing her No animation. She’s a monolith: she tends to not be affected by the Alien Collision collider (kids’ Collisions Colliders). When the Alien quits her “Alien Detection Collider” (in the No animation) or after 4 seconds, she tries to resume her action: she runs towards a point in front of the Alien, etc. If the Alien dies (only when his power is “Second Life” otherwise we never see him die in game), then she starts running somewhere else to look around... – (see *1 above))
 
 
 	The game starts with 1 Teacher (only 1 per game), 1 Crying Kid, 1 Vomiting Kid, 1 Throwing Booger Kid, 3 Kids with Stick and 2 Spitting Kid spawning randomly on the map. Eventually from spawning points defined before hands too.
@@ -164,17 +164,17 @@ Technically
 		1 waving collider.
 		1 attack collider.
 
-	Spitting Kids have 4 colliders:
+	Spitting Kids have “4” colliders:
 		1 obstacle collider (for background, vomit, other kids, teacher and Alien).
 		1 Alien detection collider.
 		1 waving collider.
-		1 emitter point for their projectiles.
+		“1” emitter point for their projectiles.
 
-	Throwing Booger Kids have 4 colliders:
+	Throwing Booger Kids have “4” colliders:
 		1 obstacle collider (for background, vomit, other kids, teacher and Alien).
 		1 Alien detection collider.
 		1 waving collider.
-		1 emitter point for their projectiles.
+		“1” emitter point for their projectiles.
 
 	Vomiting Kids have 2 colliders:
 		1 obstacle collider (for background, vomit, other kids, teacher and Alien).
@@ -188,12 +188,12 @@ Technically
 
 	The Teacher has 2 colliders:
 		1 obstacle collider (for background, vomit, kids and the Alien).
-		1 fight detection collider (!).
+		1 Alien detection collider (!).
 
 	The Alien has 2 colliders + 1 special:
 		1 obstacle collider (for background, kids and the teacher).
 		1 “get hit” collider.
-		1 aim “collider” (used by the Teacher as her target to reach).
+		1 target “collider” (used by the Teacher as her target to reach).
 
 	When a projectile hits the Alien, the projectile flashes white at contact then disappears.
 
