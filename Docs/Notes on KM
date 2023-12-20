@@ -46,7 +46,7 @@ The Alien has 1000 hit points (HP).
 	- Dodger (hit box size reduced by 20% – permanent). Uses NO fx.
 	- Invisible (makes enemies go away as if the Alien wasn’t here for 4 seconds but can take damages and movement collisions apply)– cooldown: 20 seconds). Uses INVISIBLE fx.
 	- Shield (invulnerable to hand-to-hand attacks for 3 seconds – cooldown: 10 seconds). Uses SHIELD fx.
-	- Second life (restart with 300 HP from where the Alien died – only 1 time). No teleportation at the restart. The enemies resume doing their things. The alien stays dead for 2 seconds then revives, quickly “flashing” white for 1 second (invulnerable at restart for 1 second).
+	- Second life (restart with 300 HP from where the Alien died – only 1 time). No teleportation at the restart. The enemies resume doing their things. The alien stays dead for 2 seconds then revives, quickly “flashing” white for 1 second (invulnerable at restart for 1 second). When dying, kids won’t care anymore for the body and resume their lives (running, going idle, waving at each other…) and the teacher will go checkin, running, etc… Until the Alien revives!
 	- Healthy (20% more hit points – permanent). Uses NO fx.
 	- Regeneration (5 hp per second – permanent). Uses NO fx.
 	- Hand to hand specialist (50% damage from short range but 200% damage from long range – permanent). Uses NO fx.
@@ -61,7 +61,7 @@ The Alien has 1000 hit points (HP).
 	Shaders are never affected by talents (except by Der Techniker)!
 
 	Skill cooldown is shown by the sprite outline color (red means not ready).
-	No HP shown on screen (we’ll eventually show that also with the outline turning blue).
+	No HP shown on screen (we’ll eventually show that also with the outline turning blue – cooldown (red)+HP(blue)=violet!).
 	When hit, the Alien flashes white for 3 frames.
 	Each skill has its own cooldown (duration depending on the skill as seen above).
 
@@ -81,7 +81,7 @@ Enemies
 - Crying Kids run randomly then stop to cry. If the Alien is close enough, that kid will try to kick him. Then resume his routine.
 	Alien loses 75 HP when hit.
 
-- Vomiting Kids (attack with large effect area). Wandering, then vomiting somewhere there’s enough space for the puddle, then resuming… The vomit puddle generate an area that everybody’s running away from. As soon as the kid starts vomiting, the area is locked for the teacher and other kids to avoid it.
+- Vomiting Kids (attack with large effect area). Wandering, then vomiting somewhere there’s enough space for the puddle, then resuming… The vomit puddle generate an area that everybody’s running away from. As soon as the kid starts vomiting, the area is locked for the teacher and other kids to avoid it. Sometimes (50%), he will run then stop (Idle) then resume without vomiting...
 	Alien loses 50 HP per second when walking in the vomit puddle until exiting it. He also takes decreasing damage for up to 2 seconds (35HP the first second, then 15HP the next one) after exiting the area. Alien becomes green (except outline) until he exits the vomit puddle.
 
 - The teacher (see *1 below) running randomly then stops looking around then resumes. When seeing the Alien, she runs toward the situation, aiming at a point ahead of the Alien. Then she tries to stop the mess by saying “no” to the Alien.
@@ -101,19 +101,19 @@ Technically
 
 	Alien and Enemies have 8 action directions.
 
-	Alien animations (left and right are flopped animations, up/left and up/right are flopped animations and down/left and down/right are also flopped animations):
+	Alien animations:
 	8 Move (run) directions
 	8 Idle directions
 	8 Getting Hit directions
 	8 Death Directions (needed for second life talent)
 
-	Enemies (kids) animations (left and right are flopped animations, up/left and up/right are flopped animations and down/left and down/right are also flopped animations):
+	Enemies (kids) animations:
 	8 move (run) directions
 	8 attack directions
 	8 Idle directions
 	8 waving directions (when two kids face each other and only in this case, they forget about the Alien and stop running then wave at each other for a couple of seconds then resume moving) – only throwing booger kids, spitting kids, crying kids and kids with sticks.
 
-	Teacher animations (left and right are flopped animations, up/left and up/right are flopped animations and down/left and down/right are also flopped animations):
+	Teacher animations:
 	8 (idle/)checking directions
 	8 run directions
 	8 “stop fighting” directions
@@ -122,20 +122,24 @@ Technically
 	Enemy behaviors:
 
 	Followers and stoppers and followers, etc.:
+
+		When kids are going “Idle” (let’s say their “default” animation), it will last 1 or 2 seconds.
+		The teacher’s Check animation (her “default” animation) will last 3 to 5 seconds.
+
 		Throwing Booger Kids (run randomly then stop then resume… Until they detect the Alien and then follow him to throw projectile at him but stay in range). They throw up to 5 boogers until going away for 3 seconds.
 		Spitting Kids (run randomly then stop then resume… Until they detect the Alien and then follow him to throw projectile at him but stay in range). When the Alien’s hit, they go away for 3 seconds.
 	Followers:
 		Kids With Sticks (run randomly then stop then resume… Until they detect the Alien and then follow him to beat the hell out of him). They never stop attacking if the Alien is at reach. If not, they try to reach him.
 
 	Somewhat random:
-		Vomiting Kids (run randomly then stop to vomit then resume but stay in range). They never commit in long or short range attacks.
+		Vomiting Kids (run randomly then stop to vomit then resume but stay in range but 50% of the time will run then go Idle, then resume...). They never commit in long or short range attacks.
 		Crying Kids (run randomly then stop to cry for 3 seconds then resume… Until the Alien is detected and then they try to reach him for a good kicking session. They go away only after hitting the Alien 3 times then resume.
-		Teacher (she’s looking around with the Check animation played randomly between 2 and 4 times, runs somewhere else and again and again. When seeing the alien (using the Alien_Detection_Collider in the Checking animation), then she reacts by playing her OMG animation (1 time). She starts running aiming a point in front of the Alien and then tries to make the Alien go away by playing her No animation. She’s a monolith: she tends to not be affected by the Alien Collision collider (kids’ Collisions Colliders). When the Alien quits her “Alien Detection Collider” (in the No animation) or after 4 seconds, she tries to resume her action: she runs towards a point in front of the Alien, etc. If the Alien dies (only when his power is “Second Life” otherwise we never see him die in game), then she starts running somewhere else to look around... – (see *1 above))
+		Teacher (she’s looking around with the Check animation played randomly between 2 and 4 times, runs somewhere else and again and again. When seeing the alien (using the Alien_Detection_Collider in the Checking animation), then she reacts by playing her OMG animation (1 time). She starts running aiming a point in front of the Alien and then tries to make the Alien go away by playing her No animation. She’s a monolith: she tends to not be affected by the Alien Collision collider (kids’ Collisions Colliders). When the Alien quits her “Alien Detection Collider” (in the No animation) or after 4 seconds, she tries to resume her action: she runs towards a point in front of the Alien, etc. If she can’t reach him within 4 seconds, then she’ll leave for some other place in the Kindergarten. If the Alien dies (only when his power is “Second Life” otherwise we never see him die in game), then she starts running somewhere else to look around... – (see *1 above))
 
 
-	The game starts with 1 Teacher (only 1 per game), 1 Crying Kid, 1 Vomiting Kid, 1 Throwing Booger Kid, 3 Kids with Stick and 2 Spitting Kid spawning randomly on the map. Eventually from spawning points defined before hands too.
+	The game starts with 1 Teacher (only 1 per game), 1 Crying Kid, 1 Vomiting Kid, 1 Throwing Booger Kid, 3 Kids with Stick and 2 Spitting Kid spawning randomly on the map off-camera from spawning points defined before hands too.
 
-	After 5 seconds of game, every 2 seconds 1 kid spawns in the field (outside of the screen). It doesn’t apply when the Alien dies and until he revives after using Second Life talent:
+	After 5 seconds of game, every 2 seconds 1 kid spawns in the field (off-camera). It doesn’t apply when the Alien dies and until he revives after using Second Life talent:
 
 	Chances of spawning:
 		Spitting Kid: 25%
@@ -146,15 +150,15 @@ Technically
 
 	Kids are running randomly until they detect the Alien (or another kid and are able to wave at each other). They stop waving at each other after 3 seconds then resume…  
 
-	Enemies detection colliders will have a somewhat random size (about 10%).
-
 	Kids don’t wave while fighting.
+
+	The Spilling_Vomit (Vomit.tscn) starts at 3rd frame of VOMITO’s Spilling_Vomit animation and located where the Point_of_vomit_spawn (Position2D node in the VOMITO.tscn scene) is in the world space (!).
 
 	Kids are slower than the Alien and the teacher is faster than the Alien.
 
 	Just in case it wasn’t obvious, spits, vomit puddles and boogers don’t affect kids and teacher!
 
-	Kids and teacher avoid vomit puddles.
+	Kids and teacher avoid vomit puddles nonetheless (in order to avoid issues with vomiting kid vomiting on his own feet or others’ (except the Alien), we’ll have to disable their vomit colliders when he’s vomiting and until they leave the vomit spill).
 
 	What follows could very be more or less obsolete by the time the project really starts.
 

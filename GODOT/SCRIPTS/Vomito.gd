@@ -3,7 +3,7 @@
 extends KinematicBody2D
 
 
-export(int) var speed = 125
+export(int) var speed = 100
 
 func _physics_process(_delta):
 	var velocity = Vector2.ZERO
@@ -19,9 +19,9 @@ func _physics_process(_delta):
 	
 #	velocity = velocity.normalized()
 	if velocity == Vector2.ZERO:
-		$AnimationTree.get("parameters/playback").travel("Check")
+		$AnimationTree.get("parameters/playback").travel("Idle")
 	else:
 		$AnimationTree.get("parameters/playback").travel("Run")
-		$AnimationTree.set("parameters/Check/blend_position", velocity)
+		$AnimationTree.set("parameters/Idle/blend_position", velocity)
 		$AnimationTree.set("parameters/Run/blend_position", velocity)
 		var _ignore_collision = move_and_slide(velocity.normalized() * speed)
