@@ -87,7 +87,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Screen_Shut_Down" type="Node2D"]
+[node name="Shutdown_Overlay" type="CanvasLayer"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 240, 135 )

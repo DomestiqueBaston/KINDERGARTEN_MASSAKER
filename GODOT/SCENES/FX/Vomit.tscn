@@ -97,7 +97,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.65, 0.35 ), Vector2( 1.9, 1 ), Vector2( 2, 1.025 ), Vector2( 2.075, 1.05 ), Vector2( 2.1, 1.075 ) ]
 }
 tracks/3/type = "audio"
-tracks/3/path = NodePath("Vomit (pitch_scale random 0,5 or 1)")
+tracks/3/path = NodePath("Vomit")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -157,6 +157,6 @@ reset_on_save = false
 anims/RESET = SubResource( 1 )
 anims/Spilling_Vomit = SubResource( 2 )
 
-[node name="Vomit (pitch_scale random 0,5 or 1)" type="AudioStreamPlayer" parent="."]
+[node name="Vomit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 bus = "FX"
