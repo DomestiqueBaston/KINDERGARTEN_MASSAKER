@@ -21,7 +21,7 @@ tracks/0/keys = {
 "values": [  ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Poison/CollisionShape2D:position")
+tracks/1/path = NodePath("Poison_Collider/CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -33,7 +33,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -4 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Poison/CollisionShape2D:scale")
+tracks/2/path = NodePath("Poison_Collider/CollisionShape2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -56,6 +56,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0.5 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Vomit_Collider:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -4 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Vomit_Collider:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.65, 0.35 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Spilling_Vomit"
@@ -73,7 +97,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Poison/CollisionShape2D:position")
+tracks/1/path = NodePath("Poison_Collider/CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -85,7 +109,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -4 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Poison/CollisionShape2D:scale")
+tracks/2/path = NodePath("Poison_Collider/CollisionShape2D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -114,15 +138,58 @@ tracks/3/keys = {
 } ],
 "times": PoolRealArray( 0, 0.001 )
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Vomit_Collider:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, -4 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Vomit_Collider:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.65, 0.35 ), Vector2( 1.9, 1 ), Vector2( 2, 1.025 ), Vector2( 2.075, 1.05 ), Vector2( 2.1, 1.075 ) ]
+}
 
 [node name="VOMIT" type="KinematicBody2D"]
 collision_layer = 512
 collision_mask = 8
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Obstacle" type="CollisionShape2D" parent="."]
+[node name="Vomit_Collider" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 0, -4 )
-scale = Vector2( 0.65, 0.35 )
+position = Vector2( 1, 1 )
+scale = Vector2( 2.1, 1.075 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Poison_Collider" type="Area2D" parent="."]
+visible = false
+collision_layer = 512
+collision_mask = 8
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison_Collider"]
+position = Vector2( 1, 1 )
+scale = Vector2( 2.1, 1.075 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
@@ -132,23 +199,10 @@ __meta__ = {
 position = Vector2( 0, 0.5 )
 texture = ExtResource( 1 )
 hframes = 5
+frame = 4
 __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": "Keep Transform Y=0.5"
-}
-
-[node name="Poison" type="Area2D" parent="."]
-visible = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Poison"]
-position = Vector2( 0, -4 )
-scale = Vector2( 0.65, 0.35 )
-shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

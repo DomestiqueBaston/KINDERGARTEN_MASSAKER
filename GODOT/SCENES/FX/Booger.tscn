@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ 0, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("BoogerCollider:position")
+tracks/1/path = NodePath("Booger_Collider:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [ Vector2( -2, 0 ), Vector2( -2.98023e-08, -1 ), Vector2( 0, 0 ), Vector2( 1, 0 ), Vector2( 0, 0 ), Vector2( -0.5, -0.166667 ), Vector2( -1.5, 0 ), Vector2( -1.5, -0.5 ), Vector2( 0.5, 0.5 ), Vector2( 0.5, 1 ), Vector2( -1, -0.5 ), Vector2( 2.98023e-08, -2 ), Vector2( 0.5, -1.5 ), Vector2( 1, -1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("BoogerCollider:scale")
+tracks/2/path = NodePath("Booger_Collider:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -75,7 +75,7 @@ tracks/0/keys = {
 "values": [  ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("BoogerCollider:position")
+tracks/1/path = NodePath("Booger_Collider:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -87,7 +87,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("BoogerCollider:scale")
+tracks/2/path = NodePath("Booger_Collider:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -103,13 +103,13 @@ tracks/2/keys = {
 collision_layer = 2048
 collision_mask = 8
 
-[node name="BoogerCollider" type="CollisionShape2D" parent="."]
+[node name="Booger_Collider" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 22
-frame = 13
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Booger = SubResource( 2 )

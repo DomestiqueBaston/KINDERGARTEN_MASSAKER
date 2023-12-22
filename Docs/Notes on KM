@@ -180,9 +180,11 @@ Technically
 		1 waving collider.
 		“1” emitter point for their projectiles.
 
-	Vomiting Kids have 2 colliders:
+	Vomiting Kids have “4” colliders:
 		1 obstacle collider (for background, vomit, other kids, teacher and Alien).
-		1 collider to never unleash a vomit puddle that intersects with the background colliders.
+		1 collider to never unleash a vomit puddle that intersects with the background colliders or another vomit puddle.
+		1 waving collider.
+		“1” emitter point for their projectiles.
 
 	Crying Kids have 4 colliders:
 		1 obstacle collider (for background, vomit, other kids, teacher and Alien).
