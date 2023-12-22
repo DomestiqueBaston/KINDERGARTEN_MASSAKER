@@ -8,6 +8,7 @@
 [ext_resource path="res://SCENES/OVERLAYS/Shutdown_Overlay.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 4 )
 
 [node name="Active_Scene" type="Node2D" parent="."]
