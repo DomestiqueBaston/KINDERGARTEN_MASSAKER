@@ -1,9 +1,12 @@
-[gd_scene load_steps=81 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/CRACHEUSE/Cracheuse.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Spitting_A.wav" type="AudioStream" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/ENEMIES/Steps_C.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/ENEMIES/Steps_D.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=34]
-radius = 14.0
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id=80]
 radius = 20.413
@@ -209,10 +212,41 @@ tracks/7/keys = {
 "update": 1,
 "values": [ Vector2( 7.62939e-06, 80 ) ]
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Footsteps")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.17694, 0.48847 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "00_Spit"
 length = 0.7
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -234,7 +268,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 0, 25 ) ]
 }
 tracks/2/type = "value"
@@ -296,6 +330,32 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("../Spit")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.159645 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Spit:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -573,8 +633,38 @@ tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( -40, -1 ) ]
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Footsteps")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.175787, 0.489623 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -664,6 +754,32 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("../Spit")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.159645 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Spit:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -944,10 +1060,41 @@ tracks/7/keys = {
 "update": 1,
 "values": [ Vector2( 40, -1 ) ]
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Footsteps")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.166563, 0.490776 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "135G_Spit"
 length = 0.7
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -1031,6 +1178,32 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("../Spit")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.160798 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Spit:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -1299,10 +1472,41 @@ tracks/7/keys = {
 "update": 1,
 "values": [ Vector2( 0, -10 ) ]
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Footsteps")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.175787, 0.48847 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "180_Spit"
 length = 0.7
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -1386,6 +1590,32 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("../Spit")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.160798 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Spit:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -1666,10 +1896,41 @@ tracks/7/keys = {
 "update": 1,
 "values": [ Vector2( -41, 68 ) ]
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Footsteps")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.175787, 0.48847 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=19]
 resource_name = "45D_Spit"
 length = 0.7
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -1753,6 +2014,32 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("../Spit")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.159645 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Spit:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -2033,10 +2320,41 @@ tracks/7/keys = {
 "update": 1,
 "values": [ Vector2( 41, 68 ) ]
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Footsteps")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.173481, 0.487317 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "45G_Spit"
 length = 0.7
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -2120,6 +2438,32 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("../Spit")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.159645 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Spit:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -2400,10 +2744,41 @@ tracks/7/keys = {
 "update": 1,
 "values": [ Vector2( -62, 36 ) ]
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Footsteps")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.174634, 0.487317 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=27]
 resource_name = "90D_Spit"
 length = 0.7
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -2487,6 +2862,32 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("../Spit")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.159645 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Spit:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -2767,6 +3168,36 @@ tracks/7/keys = {
 "update": 1,
 "values": [ Vector2( 62, 36 ) ]
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Footsteps")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.174634, 0.487317 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=31]
 resource_name = "90G_Spit"
@@ -2855,6 +3286,32 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("../Spit")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0.159645 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Spit:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -3043,6 +3500,30 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 7.62939e-06, 80 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Spit:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=36]
@@ -3363,3 +3844,11 @@ parameters/Idle/blend_position = Vector2( 0.678252, -1.65517 )
 parameters/Run/blend_position = Vector2( 0.483615, 0.422414 )
 parameters/Spit/blend_position = Vector2( -0.82721, 0.543103 )
 parameters/Waving/blend_position = Vector2( -0.868918, 0.543103 )
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+
+[node name="Spit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0

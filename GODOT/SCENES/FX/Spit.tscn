@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SPIT/Spit.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Spitting_A.wav" type="AudioStream" id=2]
-[ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Spitting_B.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/SOUND/TMP/Spitting_B.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=3]
 

@@ -1,10 +1,12 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://SCRIPTS/TMP/Kindergartnerin.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/EDUC/KINDERGARTNERIN.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/ENEMIES/Steps_G.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/ENEMIES/Steps_H.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 23.0
+radius = 26.0433
 
 [sub_resource type="Animation" id=2]
 resource_name = "00_Check"
@@ -311,6 +313,36 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("Footsteps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.170022, 0.473481 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Footsteps:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -619,6 +651,36 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "audio"
+tracks/5/path = NodePath("Footsteps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.171175, 0.473481 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Footsteps:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "135G_Check"
@@ -925,6 +987,36 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("Footsteps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.170022, 0.472017 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Footsteps:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -1233,6 +1325,36 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "audio"
+tracks/5/path = NodePath("Footsteps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.171175, 0.474634 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Footsteps:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "45D_Check"
@@ -1539,6 +1661,36 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("Footsteps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0.172328, 0.471175 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Footsteps:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=31]
@@ -1847,6 +1999,36 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "audio"
+tracks/5/path = NodePath("Footsteps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.171175, 0.473481 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Footsteps:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "90D_Check"
@@ -2152,6 +2334,36 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("Footsteps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.171175, 0.473481 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Footsteps:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=27]
@@ -2460,6 +2672,36 @@ tracks/4/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/5/type = "audio"
+tracks/5/path = NodePath("Footsteps")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.170022, 0.473481 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Footsteps:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -10.0 ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -2558,6 +2800,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Footsteps:volume_db")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=35]
@@ -2866,9 +3120,12 @@ anims/RESET = SubResource( 4 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 46 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 47 )
 parameters/Check/blend_position = Vector2( -0.872856, 0.931034 )
 parameters/No/blend_position = Vector2( -0.205231, 0.542253 )
 parameters/Omg/blend_position = Vector2( 0.122736, -0.894366 )
 parameters/Run/blend_position = Vector2( -0.0885312, -0.985916 )
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0

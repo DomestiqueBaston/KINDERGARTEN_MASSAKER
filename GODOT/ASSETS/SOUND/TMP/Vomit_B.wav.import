@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Spitting_B.wav-a330b2972ccdc9ad49a901adfd26ad47.sample"
+path="res://.import/Vomit_B.wav-576c0c20b9ad78664ea742c6c64858b8.sample"
 
 [deps]
 
-source_file="res://ASSETS/SOUND/FX/ATTACKS/Spitting_B.wav"
-dest_files=[ "res://.import/Spitting_B.wav-a330b2972ccdc9ad49a901adfd26ad47.sample" ]
+source_file="res://ASSETS/SOUND/TMP/Vomit_B.wav"
+dest_files=[ "res://.import/Vomit_B.wav-576c0c20b9ad78664ea742c6c64858b8.sample" ]
 
 [params]
 
