@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://SCRIPTS/TMP/Kindergartnerin.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/EDUC/KINDERGARTNERIN.png" type="Texture" id=2]
@@ -3441,8 +3441,6 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=58]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=77]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=78]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=79]
@@ -3454,18 +3452,23 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=82]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=83]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=84]
+
 [sub_resource type="AnimationNodeStateMachine" id=46]
 states/Check/node = SubResource( 45 )
 states/Check/position = Vector2( 367, 122 )
 states/No/node = SubResource( 67 )
 states/No/position = Vector2( 674, 93 )
 states/Omg/node = SubResource( 76 )
-states/Omg/position = Vector2( 418, 240 )
+states/Omg/position = Vector2( 403, 243 )
 states/Run/node = SubResource( 56 )
 states/Run/position = Vector2( 517, 44 )
-transitions = [ "Run", "Check", SubResource( 58 ), "Run", "No", SubResource( 77 ), "No", "Run", SubResource( 78 ), "Check", "Run", SubResource( 79 ), "No", "Check", SubResource( 80 ), "Omg", "Run", SubResource( 81 ), "Check", "Omg", SubResource( 82 ) ]
+transitions = [ "Run", "Check", SubResource( 58 ), "No", "Run", SubResource( 78 ), "Check", "Run", SubResource( 79 ), "No", "Check", SubResource( 80 ), "Omg", "Run", SubResource( 81 ), "Check", "Omg", SubResource( 82 ), "Omg", "No", SubResource( 83 ), "Run", "No", SubResource( 84 ) ]
 start_node = "Check"
-graph_offset = Vector2( -3, 17 )
+graph_offset = Vector2( 4, -104 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=47]
 
@@ -3563,6 +3566,7 @@ anims/RESET = SubResource( 4 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 46 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 47 )
 parameters/Check/blend_position = Vector2( -0.872856, 0.931034 )
 parameters/No/blend_position = Vector2( -0.205231, 0.542253 )

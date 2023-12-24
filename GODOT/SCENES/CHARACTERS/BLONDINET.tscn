@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/BLONDINET/BLONDINET.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Woosh_B.wav" type="AudioStream" id=2]
@@ -4326,6 +4326,8 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=69]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=90]
+
 [sub_resource type="AnimationNodeStateMachine" id=70]
 states/Idle/node = SubResource( 44 )
 states/Idle/position = Vector2( 376, 205 )
@@ -4335,7 +4337,7 @@ states/Slash/node = SubResource( 54 )
 states/Slash/position = Vector2( 608, 96 )
 states/Waving/node = SubResource( 63 )
 states/Waving/position = Vector2( 614, 211 )
-transitions = [ "Idle", "Run", SubResource( 64 ), "Run", "Idle", SubResource( 65 ), "Idle", "Waving", SubResource( 66 ), "Run", "Slash", SubResource( 67 ), "Slash", "Run", SubResource( 68 ), "Run", "Waving", SubResource( 69 ) ]
+transitions = [ "Idle", "Run", SubResource( 64 ), "Run", "Idle", SubResource( 65 ), "Idle", "Waving", SubResource( 66 ), "Run", "Slash", SubResource( 67 ), "Slash", "Run", SubResource( 68 ), "Run", "Waving", SubResource( 69 ), "Waving", "Idle", SubResource( 90 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -18, 15 )
 

@@ -80,6 +80,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 0.65, 0.35 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Spilling_Vomit"
@@ -162,6 +174,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ Vector2( 0.65, 0.35 ), Vector2( 1.9, 1 ), Vector2( 2, 1.025 ), Vector2( 2.075, 1.05 ), Vector2( 2.1, 1.075 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0.0 ]
+}
 
 [node name="VOMIT" type="KinematicBody2D"]
 collision_layer = 512
@@ -172,8 +196,8 @@ __meta__ = {
 
 [node name="Vomit_Collider" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 1, 1 )
-scale = Vector2( 2.1, 1.075 )
+position = Vector2( 0, -4 )
+scale = Vector2( 0.65, 0.35 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
@@ -188,8 +212,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Poison_Collider"]
-position = Vector2( 1, 1 )
-scale = Vector2( 2.1, 1.075 )
+position = Vector2( 0, -4 )
+scale = Vector2( 0.65, 0.35 )
 shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
@@ -199,7 +223,6 @@ __meta__ = {
 position = Vector2( 0, 0.5 )
 texture = ExtResource( 1 )
 hframes = 5
-frame = 4
 __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": "Keep Transform Y=0.5"

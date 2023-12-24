@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/CRACHEUSE/Cracheuse.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Spitting_A.wav" type="AudioStream" id=2]
@@ -3711,6 +3711,8 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=69]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=81]
+
 [sub_resource type="AnimationNodeStateMachine" id=70]
 states/Idle/node = SubResource( 44 )
 states/Idle/position = Vector2( 376, 205 )
@@ -3720,7 +3722,7 @@ states/Spit/node = SubResource( 54 )
 states/Spit/position = Vector2( 608, 96 )
 states/Waving/node = SubResource( 63 )
 states/Waving/position = Vector2( 614, 211 )
-transitions = [ "Idle", "Run", SubResource( 64 ), "Run", "Idle", SubResource( 65 ), "Idle", "Waving", SubResource( 66 ), "Run", "Spit", SubResource( 67 ), "Spit", "Run", SubResource( 68 ), "Run", "Waving", SubResource( 69 ) ]
+transitions = [ "Idle", "Run", SubResource( 64 ), "Run", "Idle", SubResource( 65 ), "Idle", "Waving", SubResource( 66 ), "Run", "Spit", SubResource( 67 ), "Spit", "Run", SubResource( 68 ), "Run", "Waving", SubResource( 69 ), "Waving", "Idle", SubResource( 81 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -18, 15 )
 
