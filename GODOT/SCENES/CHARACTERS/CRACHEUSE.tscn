@@ -3848,7 +3848,9 @@ parameters/Waving/blend_position = Vector2( -0.868918, 0.543103 )
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
+bus = "FX"
 
 [node name="Spit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -10.0
+bus = "FX"

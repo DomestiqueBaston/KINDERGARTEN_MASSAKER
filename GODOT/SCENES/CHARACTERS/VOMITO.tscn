@@ -3354,7 +3354,9 @@ parameters/Waving/blend_position = Vector2( 0.049445, 0.959551 )
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -10.0
+bus = "FX"
 
 [node name="Vomiting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -10.0
+bus = "FX"
