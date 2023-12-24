@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Cri_A.wav-4a9837866e7069bd99d21bab9bfd47f0.sample"
+path="res://.import/Cri_A.wav-38be29bb756328e84732aa36ba33069e.sample"
 
 [deps]
 
-source_file="res://ASSETS/SOUND/TMP/Cri_A.wav"
-dest_files=[ "res://.import/Cri_A.wav-4a9837866e7069bd99d21bab9bfd47f0.sample" ]
+source_file="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_A.wav"
+dest_files=[ "res://.import/Cri_A.wav-38be29bb756328e84732aa36ba33069e.sample" ]
 
 [params]
 
