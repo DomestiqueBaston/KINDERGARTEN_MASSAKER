@@ -87,33 +87,39 @@ __meta__ = {
 }
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 4096
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
 navpoly = SubResource( 1 )
+navigation_layers = 4096
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
 navpoly = SubResource( 2 )
+navigation_layers = 4096
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="NavigationPolygonInstance3" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
 navpoly = SubResource( 3 )
+navigation_layers = 4096
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="NavigationPolygonInstance4" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
 navpoly = SubResource( 4 )
+navigation_layers = 4096
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="NavigationPolygonInstance5" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
 navpoly = SubResource( 5 )
+navigation_layers = 4096
 __meta__ = {
 "_edit_lock_": true
 }

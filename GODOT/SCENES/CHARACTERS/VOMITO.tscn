@@ -67,7 +67,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -79,7 +79,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -144,7 +144,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.4 ), Vector2( 0.5, 0.4 ), Vector2( 0.4875, 0.4 ), Vector2( 0.6, 0.4 ), Vector2( 0.525, 0.3 ), Vector2( 0.45, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -156,7 +156,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -213,7 +213,7 @@ tracks/0/keys = {
 "values": [ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Point_of_vomit_spawn:position")
+tracks/1/path = NodePath("../Point_of_Vomit_Spawn:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -225,7 +225,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 59 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Bg_collider_for_vomit_spill/CollisionShape2D:position")
+tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -273,7 +273,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.6, 0.4 ), Vector2( 0.6, 0.45 ), Vector2( 0.6, 0.7 ), Vector2( 0.6, 0.7 ), Vector2( 0.6, 0.45 ), Vector2( 0.6, 0.4 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -364,7 +364,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -429,7 +429,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -441,7 +441,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -506,7 +506,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.4 ), Vector2( 0.6, 0.4 ), Vector2( 0.6, 0.4 ), Vector2( 0.6, 0.4 ), Vector2( 0.6, 0.4 ), Vector2( 0.6, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -518,7 +518,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -575,7 +575,7 @@ tracks/0/keys = {
 "values": [ 82, 83, 84, 85, 86, 87, 88, 89, 90, 91 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Point_of_vomit_spawn:position")
+tracks/1/path = NodePath("../Point_of_Vomit_Spawn:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -587,7 +587,7 @@ tracks/1/keys = {
 "values": [ Vector2( -29, 22 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Bg_collider_for_vomit_spill/CollisionShape2D:position")
+tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -635,7 +635,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.6, 0.4 ), Vector2( 0.5, 0.65 ), Vector2( 0.5, 0.65 ), Vector2( 0.5, 0.65 ), Vector2( 0.475, 0.6 ), Vector2( 0.47, 0.59 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -726,7 +726,7 @@ tracks/3/keys = {
 "values": [ Vector2( -10, 17 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -791,7 +791,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -803,7 +803,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -868,7 +868,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.5, 0.4 ), Vector2( 0.5, 0.4 ), Vector2( 0.45, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.6, 0.4 ), Vector2( 0.6, 0.35 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -880,7 +880,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -937,7 +937,7 @@ tracks/0/keys = {
 "values": [ 134, 135, 136, 137, 138, 139, 140, 141, 142, 143 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Point_of_vomit_spawn:position")
+tracks/1/path = NodePath("../Point_of_Vomit_Spawn:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -949,7 +949,7 @@ tracks/1/keys = {
 "values": [ Vector2( 33, 23 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Bg_collider_for_vomit_spill/CollisionShape2D:position")
+tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -997,7 +997,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.5, 0.4 ), Vector2( 0.59, 0.49 ), Vector2( 0.6, 0.5 ), Vector2( 0.6, 0.5 ), Vector2( 0.56, 0.5 ), Vector2( 0.55, 0.5 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1088,7 +1088,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1153,7 +1153,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1165,7 +1165,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1230,7 +1230,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.4 ), Vector2( 0.4, 0.4 ), Vector2( 0.45, 0.4 ), Vector2( 0.6, 0.4 ), Vector2( 0.45, 0.4 ), Vector2( 0.4, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1242,7 +1242,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1299,7 +1299,7 @@ tracks/0/keys = {
 "values": [ 107, 108, 109, 110, 111, 112, 113, 114, 115, 116 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Point_of_vomit_spawn:position")
+tracks/1/path = NodePath("../Point_of_Vomit_Spawn:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1311,7 +1311,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 8 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Bg_collider_for_vomit_spill/CollisionShape2D:position")
+tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1359,7 +1359,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.6, 0.4 ), Vector2( 0.6, 0.385 ), Vector2( 0.6, 0.45 ), Vector2( 0.6, 0.45 ), Vector2( 0.6, 0.441667 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1450,7 +1450,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.6, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1515,7 +1515,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1527,7 +1527,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1592,7 +1592,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.5, 0.4 ), Vector2( 0.45, 0.35 ), Vector2( 0.45, 0.375 ), Vector2( 0.5, 0.4 ), Vector2( 0.45, 0.5 ), Vector2( 0.4, 0.5 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1604,7 +1604,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1661,7 +1661,7 @@ tracks/0/keys = {
 "values": [ 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Point_of_vomit_spawn:position")
+tracks/1/path = NodePath("../Point_of_Vomit_Spawn:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1673,7 +1673,7 @@ tracks/1/keys = {
 "values": [ Vector2( -31, 56 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Bg_collider_for_vomit_spill/CollisionShape2D:position")
+tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -1721,7 +1721,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.5, 0.4 ), Vector2( 0.466667, 0.466667 ), Vector2( 0.4, 0.6 ), Vector2( 0.4, 0.6 ), Vector2( 0.401852, 0.596296 ), Vector2( 0.4, 0.58 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1812,7 +1812,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1877,7 +1877,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1889,7 +1889,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1954,7 +1954,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.5, 0.4 ), Vector2( 0.525, 0.35 ), Vector2( 0.55, 0.35 ), Vector2( 0.5, 0.4 ), Vector2( 0.5, 0.375 ), Vector2( 0.5, 0.3875 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1966,7 +1966,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2023,7 +2023,7 @@ tracks/0/keys = {
 "values": [ 186, 187, 188, 189, 190, 191, 192, 193, 194, 195 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Point_of_vomit_spawn:position")
+tracks/1/path = NodePath("../Point_of_Vomit_Spawn:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -2035,7 +2035,7 @@ tracks/1/keys = {
 "values": [ Vector2( 38, 47 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Bg_collider_for_vomit_spill/CollisionShape2D:position")
+tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -2071,7 +2071,7 @@ tracks/4/keys = {
 "values": [ Vector2( 0.5, 0.4 ), Vector2( 0.65, 0.4 ), Vector2( 0.8, 0.4 ), Vector2( 0.8, 0.4 ), Vector2( 0.725, 0.4 ), Vector2( 0.65, 0.4 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2174,7 +2174,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2239,7 +2239,7 @@ tracks/3/keys = {
 "values": [ Vector2( -4, 19 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2251,7 +2251,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2316,7 +2316,7 @@ tracks/3/keys = {
 "values": [ Vector2( -4, 19 ), Vector2( -3, 20 ), Vector2( -4, 21 ), Vector2( -4, 19 ), Vector2( -3.5, 20 ), Vector2( -3, 21 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2328,7 +2328,7 @@ tracks/4/keys = {
 "values": [ Vector2( -62, 33 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2385,7 +2385,7 @@ tracks/0/keys = {
 "values": [ 56, 57, 58, 59, 60, 61, 62, 63, 64, 65 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Point_of_vomit_spawn:position")
+tracks/1/path = NodePath("../Point_of_Vomit_Spawn:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -2397,7 +2397,7 @@ tracks/1/keys = {
 "values": [ Vector2( -45, 36 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Bg_collider_for_vomit_spill/CollisionShape2D:position")
+tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -2445,7 +2445,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.45, 0.35 ), Vector2( 0.575, 0.35 ), Vector2( 0.7, 0.35 ), Vector2( 0.7, 0.35 ), Vector2( 0.65, 0.35 ), Vector2( 0.6, 0.35 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -2536,7 +2536,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.45, 0.35 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2601,7 +2601,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.45, 0.35 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2613,7 +2613,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2678,7 +2678,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.45, 0.3 ), Vector2( 0.475, 0.3 ), Vector2( 0.5, 0.3 ), Vector2( 0.4, 0.3 ), Vector2( 0.45, 0.3 ), Vector2( 0.5, 0.3 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2690,7 +2690,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2747,7 +2747,7 @@ tracks/0/keys = {
 "values": [ 160, 161, 162, 163, 164, 165, 166, 167, 168, 169 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Point_of_vomit_spawn:position")
+tracks/1/path = NodePath("../Point_of_Vomit_Spawn:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -2759,7 +2759,7 @@ tracks/1/keys = {
 "values": [ Vector2( 38, 37 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Bg_collider_for_vomit_spill/CollisionShape2D:position")
+tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -2807,7 +2807,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.4, 0.35 ), Vector2( 0.6, 0.35 ), Vector2( 0.7, 0.35 ), Vector2( 0.7, 0.35 ), Vector2( 0.683333, 0.35 ), Vector2( 0.666667, 0.35 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -2898,7 +2898,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.45, 0.35 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2925,7 +2925,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Point_of_vomit_spawn:position")
+tracks/1/path = NodePath("../Point_of_Vomit_Spawn:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -2937,7 +2937,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 56 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../Bg_collider_for_vomit_spill/CollisionShape2D:position")
+tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -2985,7 +2985,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:disabled")
+tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -2997,7 +2997,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("../Kid_waving_detection_collider/CollisionShape2D:position")
+tracks/7/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -3242,7 +3242,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Move_collider" type="CollisionShape2D" parent="."]
+[node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0, 33 )
 scale = Vector2( 1, 0.666 )
@@ -3251,7 +3251,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Bg_collider_for_vomit_spill" type="Area2D" parent="."]
+[node name="Bg_Collider_for_Vomit_Spill" type="Area2D" parent="."]
 visible = false
 collision_layer = 512
 collision_mask = 513
@@ -3259,7 +3259,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bg_collider_for_vomit_spill"]
+[node name="VSCollider" type="CollisionShape2D" parent="Bg_Collider_for_Vomit_Spill"]
 position = Vector2( -59, 12 )
 scale = Vector2( 1.9, 1 )
 shape = SubResource( 35 )
@@ -3267,7 +3267,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Kid_waving_detection_collider" type="Area2D" parent="."]
+[node name="Kid_Waving_Detection_Collider" type="Area2D" parent="."]
 visible = false
 collision_layer = 256
 collision_mask = 64
@@ -3275,7 +3275,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kid_waving_detection_collider"]
+[node name="KWDCollider" type="CollisionShape2D" parent="Kid_Waving_Detection_Collider"]
 position = Vector2( 7.62939e-06, 80 )
 scale = Vector2( 3, 2.22 )
 shape = SubResource( 80 )
@@ -3283,7 +3283,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Point_of_vomit_spawn" type="Position2D" parent="."]
+[node name="Point_of_Vomit_Spawn" type="Position2D" parent="."]
 visible = false
 position = Vector2( 0, 56 )
 __meta__ = {
@@ -3362,3 +3362,6 @@ bus = "FX"
 stream = ExtResource( 2 )
 volume_db = -10.0
 bus = "FX"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 4096

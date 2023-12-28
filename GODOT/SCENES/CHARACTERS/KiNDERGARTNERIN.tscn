@@ -63,7 +63,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -75,7 +75,7 @@ tracks/4/keys = {
 "values": [ Vector2( 210, 75 ), Vector2( 210, 75 ), Vector2( 113, 121 ), Vector2( 0, 150 ), Vector2( -120, 120 ), Vector2( -189, 92 ), Vector2( -210, 75 ), Vector2( -210, 75 ), Vector2( -155, 124 ), Vector2( 0, 150 ), Vector2( 134, 123 ), Vector2( 210, 75 ), Vector2( 210, 75 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -140,7 +140,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -152,7 +152,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:scale")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -164,7 +164,7 @@ tracks/5/keys = {
 "values": [ Vector2( 3, 2.22 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/CollisionShape2D:rotation_degrees")
+tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -176,7 +176,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -266,7 +266,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 0.4 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -357,7 +357,7 @@ tracks/3/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -452,7 +452,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 0.6 ), Vector2( 1, 0.6 ), Vector2( 0.95, 0.55 ), Vector2( 0.9, 0.5 ), Vector2( 0.9, 0.5 ), Vector2( 0.95, 0.55 ), Vector2( 1, 0.6 ), Vector2( 1, 0.6 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -464,7 +464,7 @@ tracks/4/keys = {
 "values": [ Vector2( -210, 75 ), Vector2( -210, 75 ), Vector2( -209, 36 ), Vector2( -161, -35 ), Vector2( -91, -74 ), Vector2( 13, -98 ), Vector2( 55, -100 ), Vector2( 55, -100 ), Vector2( -11, -93 ), Vector2( -127, -60 ), Vector2( -192, 8 ), Vector2( -210, 75 ), Vector2( -210, 75 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -529,7 +529,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.9, 0.6 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -541,7 +541,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:scale")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -553,7 +553,7 @@ tracks/5/keys = {
 "values": [ Vector2( 3, 2.22 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -565,7 +565,7 @@ tracks/6/keys = {
 "values": [ Vector2( -66, -10 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/CollisionShape2D:rotation_degrees")
+tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -655,7 +655,7 @@ tracks/3/keys = {
 "values": [ Vector2( -43, 46 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -746,7 +746,7 @@ tracks/3/keys = {
 "values": [ Vector2( -13, 6 ), Vector2( -25, 3 ), Vector2( -40, 7 ), Vector2( -32, 21 ), Vector2( -47, 25 ), Vector2( -60, 20 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -841,7 +841,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 9 ), Vector2( 1, 9 ), Vector2( 3.5, 9 ), Vector2( 6, 9 ), Vector2( 6, 9 ), Vector2( 3.5, 9 ), Vector2( 1, 9 ), Vector2( 1, 9 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -853,7 +853,7 @@ tracks/4/keys = {
 "values": [ Vector2( -110, -101 ), Vector2( -110, -101 ), Vector2( -68, -98 ), Vector2( 76, -92 ), Vector2( 155, -36 ), Vector2( 171, 54 ), Vector2( 183, 97 ), Vector2( 183, 97 ), Vector2( 175, 27 ), Vector2( 127, -58 ), Vector2( 10, -93 ), Vector2( -110, -101 ), Vector2( -110, -101 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -918,7 +918,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 9 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -930,7 +930,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:scale")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -942,7 +942,7 @@ tracks/5/keys = {
 "values": [ Vector2( 3, 2.22 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/CollisionShape2D:rotation_degrees")
+tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -954,7 +954,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1044,7 +1044,7 @@ tracks/3/keys = {
 "values": [ Vector2( 2, 8 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1135,7 +1135,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1.19209e-07, 9 ), Vector2( -4, 10 ), Vector2( -8, 11 ), Vector2( 5, 5 ), Vector2( -23, 31 ), Vector2( -16, 20 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1230,7 +1230,7 @@ tracks/3/keys = {
 "values": [ Vector2( -8, 8 ), Vector2( -8, 8 ), Vector2( -5.5, 8 ), Vector2( -3, 8 ), Vector2( -3, 8 ), Vector2( -5.5, 8 ), Vector2( -8, 8 ), Vector2( -8, 8 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1242,7 +1242,7 @@ tracks/4/keys = {
 "values": [ Vector2( -148, -64 ), Vector2( -148, -64 ), Vector2( -111, -83 ), Vector2( 2, -98 ), Vector2( 76, -85 ), Vector2( 141, -73 ), Vector2( 183, -59 ), Vector2( 183, -59 ), Vector2( 148, -73 ), Vector2( 19, -104 ), Vector2( -119, -96 ), Vector2( -148, -64 ), Vector2( -148, -64 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1307,7 +1307,7 @@ tracks/3/keys = {
 "values": [ Vector2( -7, 9 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1319,7 +1319,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1331,7 +1331,7 @@ tracks/5/keys = {
 "values": [ Vector2( 0, -29 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/CollisionShape2D:rotation_degrees")
+tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1343,7 +1343,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/CollisionShape2D:scale")
+tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1433,7 +1433,7 @@ tracks/3/keys = {
 "values": [ Vector2( -6, 9 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1524,7 +1524,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 0.5 ), Vector2( 0.9, 0.7 ), Vector2( 0.8, 0.9 ), Vector2( 1, 0.5 ), Vector2( 0.95, 0.55 ), Vector2( 0.9, 0.6 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1619,7 +1619,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.95, 0.55 ), Vector2( 0.95, 0.55 ), Vector2( 0.9, 0.55 ), Vector2( 0.85, 0.55 ), Vector2( 0.85, 0.55 ), Vector2( 0.9, 0.55 ), Vector2( 0.95, 0.55 ), Vector2( 0.95, 0.55 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1631,7 +1631,7 @@ tracks/4/keys = {
 "values": [ Vector2( 168, 126 ), Vector2( 168, 126 ), Vector2( 96, 136 ), Vector2( -68, 151 ), Vector2( -170, 91 ), Vector2( -191, 8 ), Vector2( -203, -34 ), Vector2( -203, -34 ), Vector2( -198, 41 ), Vector2( -107, 141 ), Vector2( 63, 137 ), Vector2( 168, 126 ), Vector2( 168, 126 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1696,7 +1696,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.95, 0.55 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1708,7 +1708,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1720,7 +1720,7 @@ tracks/5/keys = {
 "values": [ Vector2( -62, 73 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/CollisionShape2D:rotation_degrees")
+tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -1732,7 +1732,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/CollisionShape2D:scale")
+tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1822,7 +1822,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.95, 0.55 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -1913,7 +1913,7 @@ tracks/3/keys = {
 "values": [ Vector2( 1, 0.625 ), Vector2( 1, 0.8125 ), Vector2( 1, 1 ), Vector2( 1, 0.625 ), Vector2( 0.75, 0.75 ), Vector2( 0.8, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2008,7 +2008,7 @@ tracks/3/keys = {
 "values": [ Vector2( -9, 7 ), Vector2( -9, 7 ), Vector2( -8.5, 7.5 ), Vector2( -8, 8 ), Vector2( -8, 8 ), Vector2( -8.5, 7.5 ), Vector2( -9, 7 ), Vector2( -9, 7 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2020,7 +2020,7 @@ tracks/4/keys = {
 "values": [ Vector2( 220, 25 ), Vector2( 220, 25 ), Vector2( 194, 61 ), Vector2( 119, 120 ), Vector2( -46, 148 ), Vector2( -101, 149 ), Vector2( -101, 149 ), Vector2( -3, 146 ), Vector2( 160, 107 ), Vector2( 210, 59 ), Vector2( 220, 25 ), Vector2( 220, 25 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2085,7 +2085,7 @@ tracks/3/keys = {
 "values": [ Vector2( -10, 5 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2097,7 +2097,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2109,7 +2109,7 @@ tracks/5/keys = {
 "values": [ Vector2( 65, 73 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/CollisionShape2D:rotation_degrees")
+tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -2121,7 +2121,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/CollisionShape2D:scale")
+tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -2211,7 +2211,7 @@ tracks/3/keys = {
 "values": [ Vector2( -9, 10 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2302,7 +2302,7 @@ tracks/3/keys = {
 "values": [ Vector2( -3, 5 ), Vector2( 12, 7 ), Vector2( 16, 9 ), Vector2( -18, 13 ), Vector2( -9, 7 ), Vector2( -3.57628e-07, 6 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2397,7 +2397,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ), Vector2( 0.8, 0.6 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2409,7 +2409,7 @@ tracks/4/keys = {
 "values": [ Vector2( -116, 146 ), Vector2( -116, 146 ), Vector2( -165, 107 ), Vector2( -201, 15 ), Vector2( -188, -54 ), Vector2( -136, -85 ), Vector2( -76, -103 ), Vector2( -76, -103 ), Vector2( -118, -89 ), Vector2( -195, 7 ), Vector2( -167, 115 ), Vector2( -116, 146 ), Vector2( -116, 146 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2474,7 +2474,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.8, 0.6 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2486,7 +2486,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2498,7 +2498,7 @@ tracks/5/keys = {
 "values": [ Vector2( -89, 29 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/CollisionShape2D:rotation_degrees")
+tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -2510,7 +2510,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/CollisionShape2D:scale")
+tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -2600,7 +2600,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.7, 0.6 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2691,7 +2691,7 @@ tracks/3/keys = {
 "values": [ Vector2( -8, 3 ), Vector2( -6, 4.5 ), Vector2( -11, 6 ), Vector2( -8, 3 ), Vector2( -7, 6 ), Vector2( -13, 9 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2786,7 +2786,7 @@ tracks/3/keys = {
 "values": [ Vector2( -2, 3 ), Vector2( -2, 3 ), Vector2( -2, 4.5 ), Vector2( -2, 6 ), Vector2( -2, 6 ), Vector2( -2, 4.5 ), Vector2( -2, 3 ), Vector2( -2, 3 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2798,7 +2798,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2863,7 +2863,7 @@ tracks/3/keys = {
 "values": [ Vector2( -2, 3 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -2875,7 +2875,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2887,7 +2887,7 @@ tracks/5/keys = {
 "values": [ Vector2( 86, 29 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/CollisionShape2D:rotation_degrees")
+tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -2899,7 +2899,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/CollisionShape2D:scale")
+tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -2989,7 +2989,7 @@ tracks/3/keys = {
 "values": [ Vector2( -2, 3 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -3080,7 +3080,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.7, 0.6 ), Vector2( 1, 0.4 ), Vector2( 1.2, 0.5 ), Vector2( 0.7, 0.6 ), Vector2( 0.95, 0.55 ), Vector2( 1.2, 0.5 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -3173,7 +3173,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Alien_Detection_Collider/CollisionShape2D:position")
+tracks/4/path = NodePath("Alien_Detection_Collider/ADCollider:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -3185,7 +3185,7 @@ tracks/4/keys = {
 "values": [ Vector2( 0, -55 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Alien_Detection_Collider/CollisionShape2D:disabled")
+tracks/5/path = NodePath("Alien_Detection_Collider/ADCollider:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -3197,7 +3197,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/CollisionShape2D:scale")
+tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -3209,7 +3209,7 @@ tracks/6/keys = {
 "values": [ Vector2( 3, 2.22 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/CollisionShape2D:rotation_degrees")
+tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -3481,7 +3481,7 @@ __meta__ = {
 }
 speed = 150
 
-[node name="Move_collider" type="CollisionShape2D" parent="."]
+[node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0, 31 )
 scale = Vector2( 1, 0.666 )
@@ -3498,7 +3498,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Alien_Detection_Collider"]
+[node name="ADCollider" type="CollisionShape2D" parent="Alien_Detection_Collider"]
 position = Vector2( 0, -55 )
 scale = Vector2( 3, 2.22 )
 shape = SubResource( 1 )
@@ -3587,3 +3587,6 @@ bus = "FX"
 stream = ExtResource( 6 )
 volume_db = -10.0
 bus = "FX"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 4096
