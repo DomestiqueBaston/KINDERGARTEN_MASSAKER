@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/EDUC.png-83a081062b8c9da890d74d939588fe31.stex"
+path="res://.import/BOOGIRL.png-2dd6d9c502b6f3b6b10dfaab8926fd8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/GRAPHICS/ANIMATIONS/TMP/EDUC.png"
-dest_files=[ "res://.import/EDUC.png-83a081062b8c9da890d74d939588fe31.stex" ]
+source_file="res://ASSETS/GRAPHICS/ANIMATIONS/BOOGIRL/BOOGIRL.png"
+dest_files=[ "res://.import/BOOGIRL.png-2dd6d9c502b6f3b6b10dfaab8926fd8c.stex" ]
 
 [params]
 
