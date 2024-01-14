@@ -234,6 +234,7 @@ CONDITION to UNLOCK Zufällig:
 
 
 You just can’t unlock these before unlocking Zufällig:
+When a talent is unlocked AND the player’s still in game playing, then we hear the “Talent unlocked” bell ring (through AMBIENCE Audio Bus).
 
 
 CONDITIONS to UNLOCK Kotzsicher:
@@ -255,7 +256,7 @@ CONDITIONS to UNLOCK Der Techniker:
 CONDITIONS to UNLOCK Rücklauf
 (if validated, we’ll exchange the list position with Der Techniker:
 
-	Dying after 65 seconds.
+	Dying after 65 seconds (it could very possibly be almost impossible to achieve)!
 Shaders
 
 	The top overlay is CRT_Overlay.tscn and is always on!
@@ -286,7 +287,7 @@ What we borrowed from the world outside:
 
 Assets from Animallogic
 Fonts from Iconian Fonts
-Sounds from Mixkit.co, Freesound.org, Quicksounds.com
+Sounds from Mixkit.co, Freesound.org, Quicksounds.com, Freesoundslibrary.com
 Video shaders by Ahopness (original shaders by: Timothy Lottes, Keijiro, Ehj1, FMS_Cat), Yui Kinomoto, Peter Höglund
 Stuff from PlayWithFurcifer, Jon Topielski, 
 
