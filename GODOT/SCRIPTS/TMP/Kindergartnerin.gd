@@ -23,5 +23,5 @@ func _physics_process(_delta):
 		$AnimationTree.set("parameters/Check/blend_position", velocity)
 		$AnimationTree.set("parameters/Run/blend_position", velocity)
 		velocity = velocity.normalized()
-		velocity.y *= .75 #Not an ideal solution but I did my best...
+		velocity.y *= .5 #Probably not an ideal solution but I did my best...
 		var _ignore_collision = move_and_slide(velocity * speed)
