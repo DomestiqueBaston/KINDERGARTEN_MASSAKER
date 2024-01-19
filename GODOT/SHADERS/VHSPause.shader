@@ -6,11 +6,11 @@
 
 shader_type canvas_item;
 
-uniform float lines_intensity : hint_range(0.01, 0.1) = 0.075; /* FERDI */
+uniform float lines_intensity : hint_range(0.01, 0.1) = 0.05; /* FERDI */
 uniform float multiplier : hint_range(1, 10) = 10.0; /* FERDI */
 uniform float white_alpha : hint_range(0, 1) = 0.0; /* FERDI */
-uniform float shake_amount_x  : hint_range(1, 500) = 500.0;
-uniform float shake_amount_y  : hint_range(1, 500) = 500.0;
+uniform float shake_amount_x  : hint_range(1, 500) = 100.0;
+uniform float shake_amount_y  : hint_range(1, 500) = 100.0;
 uniform float white_hlines : hint_range(0, 50) = 50;
 uniform float white_vlines : hint_range(0,80) = 80;
 

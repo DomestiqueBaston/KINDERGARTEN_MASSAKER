@@ -130,7 +130,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 2.5, 2.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
@@ -142,7 +142,7 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 2.5, 2.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
@@ -154,7 +154,7 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 2.5, 2.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 0.0, 0.05 ]
 }
@@ -166,9 +166,9 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 2.5, 2.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
-"values": [ 500.0, 50.0 ]
+"values": [ 100.0, 25.0 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("VHSPause:material:shader_param/shake_amount_y")
@@ -178,9 +178,9 @@ tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 2.5, 2.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
-"values": [ 500.0, 10.0 ]
+"values": [ 100.0, 2.5 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("VHSPause:material:shader_param/white_alpha")
@@ -190,7 +190,7 @@ tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 2.5, 2.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
@@ -202,7 +202,7 @@ tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 2.5, 2.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 10.0, 1.0 ]
 }
@@ -214,7 +214,7 @@ tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 2.5, 2.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 0.05, 0.1 ]
 }
