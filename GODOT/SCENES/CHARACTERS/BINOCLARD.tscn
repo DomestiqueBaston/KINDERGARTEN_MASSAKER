@@ -5353,7 +5353,7 @@ states/Waving/node = SubResource( 63 )
 states/Waving/position = Vector2( 614, 211 )
 transitions = [ "Idle", "Run", SubResource( 64 ), "Run", "Idle", SubResource( 65 ), "Idle", "Waving", SubResource( 66 ), "Run", "Kick", SubResource( 67 ), "Kick", "Run", SubResource( 68 ), "Run", "Waving", SubResource( 69 ), "Waving", "Idle", SubResource( 90 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -18, 15 )
+graph_offset = Vector2( -18, 26.04 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=71]
 
@@ -5480,8 +5480,9 @@ anims/RESET = SubResource( 33 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 71 )
-parameters/Idle/blend_position = Vector2( 0.277061, -0.317865 )
+parameters/Idle/blend_position = Vector2( -0.518293, 0.62931 )
 parameters/Kick/blend_position = Vector2( 0.22145, -0.206496 )
 parameters/Run/blend_position = Vector2( -0.00496525, -0.322506 )
 parameters/Waving/blend_position = Vector2( -0.779543, 0.484919 )
