@@ -162,7 +162,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -5.0 ]
+"values": [ 0.0 ]
 }
 tracks/12/type = "audio"
 tracks/12/path = NodePath("../Cries")
@@ -780,7 +780,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -5.0 ]
+"values": [ 0.0 ]
 }
 tracks/12/type = "audio"
 tracks/12/path = NodePath("../Cries")
@@ -1398,7 +1398,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -5.0 ]
+"values": [ 0.0 ]
 }
 tracks/12/type = "audio"
 tracks/12/path = NodePath("../Cries")
@@ -2004,7 +2004,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -5.0 ]
+"values": [ 0.0 ]
 }
 tracks/12/type = "audio"
 tracks/12/path = NodePath("../Cries")
@@ -2622,7 +2622,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -5.0 ]
+"values": [ 0.0 ]
 }
 tracks/12/type = "audio"
 tracks/12/path = NodePath("../Cries")
@@ -3240,7 +3240,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -5.0 ]
+"values": [ 0.0 ]
 }
 tracks/12/type = "audio"
 tracks/12/path = NodePath("../Cries")
@@ -3858,7 +3858,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -5.0 ]
+"values": [ 0.0 ]
 }
 tracks/12/type = "audio"
 tracks/12/path = NodePath("../Cries")
@@ -4476,7 +4476,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -5.0 ]
+"values": [ 0.0 ]
 }
 tracks/12/type = "audio"
 tracks/12/path = NodePath("../Cries")
