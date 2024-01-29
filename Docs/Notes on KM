@@ -196,10 +196,9 @@ Technically
 		1 obstacle collider (for background, vomit, kids and the Alien).
 		1 Alien detection collider (!).
 
-	The Alien has 2 colliders + 1 special:
-		1 obstacle collider (for background, kids and the teacher).
+	The Alien has 2 colliders:
+		1 obstacle collider (for background, kids and the teacher). Also used by the Teacher to run toward the Alien.
 		1 “get hit” collider.
-		1 target “collider” (used by the Teacher as her target to reach).
 
 	When a projectile hits the Alien, the projectile flashes white at contact then disappears.
 
@@ -215,6 +214,13 @@ About screen shaders
 
 	NOTE: as it is, the transition scene doesn’t cross fades between two playing scenes but between a screenshot of the active scene that will replace the scene and the following scene. That’s not “perfect” (I don’t know how to cross fade between two “active scenes”. Is there even a way to do that without asking too much to the GPU?
 
+
+
+
+
+/ IMPORTANT NOTE \
+
+Some AnimationPlayers (or eventually other nodes, I can’t remember) have notes In the Inspector, under Node in the Editor Description area. So for instance, the Alien has a note about the fact that when the Alien is running in a vomit puddle, we should use the audio track with wet footsteps instead of “normal” ones in his AnimationPlayer.
 “Script” of a game
 
 	Contrary to what you can hear in the “demo”, the music shouldn’t be interrupted by changing menu screens. The same music (MENUS.wav) plays until the game itself.

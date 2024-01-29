@@ -1,9 +1,9 @@
 [gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Kick_C.wav" type="AudioStream" id=1]
-[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/ENEMIES/Steps_F.wav" type="AudioStream" id=2]
-[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/ENEMIES/Steps_B.wav" type="AudioStream" id=3]
-[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/ENEMIES/Steps_A.wav" type="AudioStream" id=4]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_F.wav" type="AudioStream" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_B.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_A.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/BINOCLARD/BINOCLARD.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/SOUND/FX/MISC/Cries_D.wav" type="AudioStream" id=6]
 

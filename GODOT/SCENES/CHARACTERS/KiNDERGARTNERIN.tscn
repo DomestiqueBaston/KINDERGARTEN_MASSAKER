@@ -2,10 +2,11 @@
 
 [ext_resource path="res://SCRIPTS/TMP/Kindergartnerin.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/EDUC/KINDERGARTNERIN.png" type="Texture" id=2]
-[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/ENEMIES/Steps_G.wav" type="AudioStream" id=3]
-[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/ENEMIES/Steps_H.wav" type="AudioStream" id=4]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_H.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_C.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_A.wav" type="AudioStream" id=6]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 26.0433
