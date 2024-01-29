@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Back.png" type="Texture" id=1]
-[ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Front.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/BEAM_DOWN/Beam_down.wav" type="AudioStream" id=4]
-[ext_resource path="res://SCRIPTS/TMP/Beam_Down.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Beam_Down"
 length = 3.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Beam Down Front:frame")
 tracks/0/interp = 1
@@ -33,43 +32,19 @@ tracks/1/keys = {
 "update": 1,
 "values": [ 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 0 ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("(only for the demo) Alien:visible")
+tracks/2/type = "audio"
+tracks/2/path = NodePath("Beam_Down")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/3/type = "audio"
-tracks/3/path = NodePath("Beam_Down")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("(only for the demo) Shadow:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 2.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -98,53 +73,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [  ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("(only for the demo) Alien:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 0,
-"values": [  ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("(only for the demo) Shadow:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
 
-[node name="Intro Alien" type="KinematicBody2D"]
-script = ExtResource( 5 )
+[node name="Beam_Down" type="Node2D"]
 
 [node name="Beam Down Rear" type="Sprite" parent="."]
 position = Vector2( 0, -12 )
+z_index = -1
 texture = ExtResource( 1 )
 hframes = 32
-
-[node name="(only for the demo) Shadow" type="Polygon2D" parent="."]
-position = Vector2( -7.22191, -9.71427 )
-scale = Vector2( 1.11855, 0.857143 )
-color = Color( 0, 0.1, 0, 0.392157 )
-polygon = PoolVector2Array( -14.9999, 44.056, -13.1739, 40.92, -10.0588, 38.5556, -1.82355, 37.0001, 6.41174, 37, 13.8235, 37.0001, 21.6548, 38.1666, 26.1249, 40.5, 27.913, 44, 26.1249, 46.3333, 20.4117, 49.4445, 13, 51, 5.08691, 51, -1.82355, 51, -10.0588, 49.4445, -13.1739, 47.192 )
-
-[node name="(only for the demo) Alien" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+frame = 24
 
 [node name="Beam Down Front" type="Sprite" parent="."]
 position = Vector2( 0, -12 )
+z_index = 1
 texture = ExtResource( 3 )
 hframes = 32
-frame = 31
+frame = 24
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Beam_Down"
@@ -155,5 +99,3 @@ anims/RESET = SubResource( 2 )
 [node name="Beam_Down" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 bus = "FX"
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

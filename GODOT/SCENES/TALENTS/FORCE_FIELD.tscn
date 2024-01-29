@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_OFF.wav" type="AudioStream" id=1]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Force_Field.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_ON.wav" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Force_Field:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "force_field"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Force_Field:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1 ]
+}
+
+[node name="Force_Field" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Force_Field_Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="Cooldown_Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Force_Field" type="Sprite" parent="."]
+position = Vector2( 0, 12 )
+texture = ExtResource( 2 )
+hframes = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/force_field = SubResource( 4 )
+
+[node name="FX_ON" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -1.5
+bus = "FX"
+
+[node name="FX_OFF" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -1.5
+bus = "FX"

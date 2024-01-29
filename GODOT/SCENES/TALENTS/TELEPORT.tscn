@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation.wav" type="AudioStream" id=9]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation_End.wav" type="AudioStream" id=10]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation_Beginning.wav" type="AudioStream" id=11]
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+
+[sub_resource type="Animation" id=4]
+resource_name = "Teleport_BEGINNING"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Teleport_END"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Teleport_FULL"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="Teleport" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cooldown_Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 1
+anims/RESET = SubResource( 7 )
+anims/Teleport_BEGINNING = SubResource( 4 )
+anims/Teleport_END = SubResource( 5 )
+anims/Teleport_FULL = SubResource( 6 )
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "FX"

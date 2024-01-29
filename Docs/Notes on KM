@@ -218,9 +218,11 @@ About screen shaders
 
 
 
-/ IMPORTANT NOTE \
+/ VERY IMPORTANT NOTE \
 
 Some AnimationPlayers (or eventually other nodes, I can’t remember) have notes In the Inspector, under Node in the Editor Description area. So for instance, the Alien has a note about the fact that when the Alien is running in a vomit puddle, we should use the audio track with wet footsteps instead of “normal” ones in his AnimationPlayer.
+
+Notes can also be found on Sprite nodes (same place in the Inspector…)!
 “Script” of a game
 
 	Contrary to what you can hear in the “demo”, the music shouldn’t be interrupted by changing menu screens. The same music (MENUS.wav) plays until the game itself.

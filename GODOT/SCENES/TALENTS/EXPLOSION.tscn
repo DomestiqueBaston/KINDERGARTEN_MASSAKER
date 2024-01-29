@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_explosion.wav" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../../Background:constant_linear_velocity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../../Background:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "explosion"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 4, -4 ), Vector2( -5, 9 ), Vector2( -3, -3 ), Vector2( 2, 2 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../../Background:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( -4, -3 ), Vector2( 5, 7 ), Vector2( 3, -3 ), Vector2( -2, 2 ), Vector2( 0, 0 ) ]
+}
+
+[node name="Explosion" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cooldown_Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -7.5
+bus = "FX"
+
+[node name="AnimationPlayer_(tmp\?)" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/explosion = SubResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 480.0
+margin_bottom = 270.0
+__meta__ = {
+"_edit_lock_": true
+}

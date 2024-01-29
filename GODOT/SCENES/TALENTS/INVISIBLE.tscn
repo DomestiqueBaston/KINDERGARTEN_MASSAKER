@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_ON.wav" type="AudioStream" id=7]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_OFF.wav" type="AudioStream" id=8]
+
+[node name="Invisible" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Invisible_Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Cooldown_Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="FX_ON" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -1.5
+bus = "FX"
+
+[node name="FX_OFF" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -1.5
+bus = "FX"

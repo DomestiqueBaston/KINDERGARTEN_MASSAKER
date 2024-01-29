@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -8,12 +8,18 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Mud_steps_C.wav" type="AudioStream" id=6]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Fall_A.wav" type="AudioStream" id=7]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Moan_E.wav" type="AudioStream" id=8]
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=9]
 
 [sub_resource type="CircleShape2D" id=34]
 radius = 20.0
 
 [sub_resource type="CircleShape2D" id=81]
 radius = 26.0
+
+[sub_resource type="ShaderMaterial" id=94]
+shader = ExtResource( 9 )
+shader_param/ready = Color( 0, 0, 0, 1 )
+shader_param/cooldown = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "00_Dead"
@@ -4435,6 +4441,9 @@ __meta__ = {
 position = Vector2( -6, 21 )
 scale = Vector2( 1, 0.7 )
 shape = SubResource( 81 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Shadow" type="Polygon2D" parent="."]
 position = Vector2( -4, 16 )
@@ -4446,6 +4455,7 @@ __meta__ = {
 }
 
 [node name="Alien" type="Sprite" parent="."]
+material = SubResource( 94 )
 texture = ExtResource( 2 )
 offset = Vector2( 0.5, 0.5 )
 hframes = 14
@@ -4453,7 +4463,19 @@ vframes = 14
 __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": "Keep Transform X=0.5
-Keep Transform Y=0.5"
+Keep Transform Y=0.5
+
+There is a Cooldown shader for the outline on that sprite!"
+}
+
+[node name="Talent" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Beam_Down" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -4495,7 +4517,6 @@ anims/RESET = SubResource( 33 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 71 )
 parameters/Dead/blend_position = Vector2( 0.797418, 0.752381 )
 parameters/Hit/blend_position = Vector2( -0.747766, 0.794286 )
