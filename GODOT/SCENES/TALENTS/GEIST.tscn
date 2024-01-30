@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Geist.wav" type="AudioStream" id=1]
+
+[node name="Geist" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Invisible_Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Cooldown_Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "FX"

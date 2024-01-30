@@ -32,6 +32,7 @@ collision_mask = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 720, 405 )
+z_index = -100
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true

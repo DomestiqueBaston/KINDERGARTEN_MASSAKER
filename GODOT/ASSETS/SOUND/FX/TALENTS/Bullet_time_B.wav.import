@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Bullet_time.wav-442ca064e1b6727fe5e4a24d8104c12c.sample"
+path="res://.import/Bullet_time_B.wav-25131d4cbee3ce6f15f8cd14a1b18223.sample"
 
 [deps]
 
-source_file="res://ASSETS/SOUND/FX/TALENTS/Bullet_time.wav"
-dest_files=[ "res://.import/Bullet_time.wav-442ca064e1b6727fe5e4a24d8104c12c.sample" ]
+source_file="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_B.wav"
+dest_files=[ "res://.import/Bullet_time_B.wav-25131d4cbee3ce6f15f8cd14a1b18223.sample" ]
 
 [params]
 

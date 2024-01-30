@@ -35,14 +35,14 @@ The Alien has 1000 hit points (HP).
 
 	The Alien has 1 defensive skill to choose:
 
-	- Random teleportation (cooldown: 10 seconds). Available teleportation points are defined in the Background.tscn. Uses RANDOM TELEPORTATION fx.
+	- Random teleportation (cooldown: 10 seconds). Available teleportation points are defined in the Background.tscn. Uses TELEPORT fx.
 	- Dash (pass through kids and attacks – cooldown: 15 seconds). Uses DASH fx.
-	- Repulsive explosion (repulsive effect only on kids – not the ranged attacks – cooldown: 10 seconds). Uses REPULSIVE EXPLOSION fx.
-	- Freezing shockwave (Freezes nearby enemies for 4 seconds – not the ranged attacks – cooldown: 15 seconds). Uses FREEZING SHOCKWAVE fx.
+	- Repulsive explosion (repulsive effect only on kids – not the ranged attacks – cooldown: 10 seconds). Uses EXPLOSION fx.
+	- Freezing shockwave (Freezes nearby enemies for 4 seconds – not the ranged attacks – cooldown: 15 seconds). Uses FREEZING fx.
 	- Quick runner (runs 20% faster – permanent). It means increasing fps or m/s. Uses NO fx.
-	- Force field (repulsive effect for 6 seconds on ranged attacks – cooldown: 10 seconds). Uses FORCE FIELD fx.
-	- Time stop (affects everything (except the Alien) for 3 seconds – cooldown: 20 seconds).  Uses TIME STOP fx.
-	- Mirror images (3 invulnerable copies of the Alien appear (“flashing” white for 3 frames) and start running in random directions (movement collisions apply) from the player attracting close enough kids for 3 seconds then disappear (“flashing” white for 3 frames) – cooldown: 15 seconds). If hit by an attack, the mirror image disappears instantly (“flashing” white for 3 frames). Uses MIRROR IMAGES fx.
+	- Force field (repulsive effect for 6 seconds on ranged attacks – cooldown: 10 seconds). Uses FORCE_FIELD fx.
+	- Time stop (affects everything (except the Alien) for 3 seconds – cooldown: 20 seconds).  Uses TIME_STOP fx.
+	- Mirror images (3 invulnerable copies of the Alien appear (“flashing” white for 3 frames) and start running in random directions (movement collisions apply) from the player attracting close enough kids for 3 seconds then disappear (“flashing” white for 3 frames) – cooldown: 15 seconds). If hit by an attack, the mirror image disappears instantly (“flashing” white for 3 frames). Uses MIRROR_IMAGES fx.
 	- Dodger (hit box size reduced by 20% – permanent). Uses NO fx.
 	- Invisible (makes enemies go away as if the Alien wasn’t here for 4 seconds but can take damages and movement collisions apply)– cooldown: 20 seconds). Uses INVISIBLE fx.
 	- Shield (invulnerable to hand-to-hand attacks for 3 seconds – cooldown: 10 seconds). Uses SHIELD fx.
@@ -55,8 +55,8 @@ The Alien has 1000 hit points (HP).
 	- Der Techniker The technician (hidden talent to unlock (see condition at the end) – only 1 time). Resets the game overlay shader values (and restarts its animation!). We’ll eventually also reset the random selections in the Overlay #1). This allows a longer game leading to more kids… Once the screen starts shuting down, you can’t use that talent. Uses TECHNIKER fx.
 	- Zufällig… Hidden “talent” to unlock (see condition at the end). A random talent is selected at game launch… The player won’t know which one has been selected until using it (if not permanent).
 	- Kotzsicher “Vomit-proof” (the alien can walk through vomit suffering only 50% of damages – permanent). (see condition at the end) Uses NO fx.
-	- Bullet time (everything except the Alien is slowed down by 50% for 3 seconds – cooldown: 15 seconds). (see condition at the end). “Almost” uses MIRROR IMAGES fx but with Bullet_time.wav!
-	- Geist (the Alien takes no damage and can pass through enemies for 4 seconds – cooldown: 20 seconds). (see condition at the end). “Almost” uses INVISIBLE fx but flashes white instead of being transparent and Geist.wav!
+	- Bullet time (everything except the Alien is slowed down by 50% for 3 seconds – cooldown: 15 seconds). (see condition at the end). Uses BULLET_TIME “Almost” as MIRROR IMAGES fx!
+	- Geist (the Alien takes no damage and can pass through enemies for 4 seconds – cooldown: 20 seconds). (see condition at the end). Uses GEIST “Almost” as INVISIBLE fx but flashes white instead of being transparent!
 
 	Shaders are never affected by talents (except by Der Techniker)!
 

@@ -6,7 +6,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=4]
 [ext_resource path="res://SCRIPTS/TMP/CAMERA.gd" type="Script" id=5]
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=6]
-[ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=7]
+[ext_resource path="res://SCENES/TMP/Beam_Down.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=8]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Der_Techniker.wav" type="AudioStream" id=9]
 

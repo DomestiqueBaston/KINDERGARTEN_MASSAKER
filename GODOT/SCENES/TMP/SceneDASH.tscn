@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SCENES/BACKGROUND/Background.tscn" type="PackedScene" id=1]
-[ext_resource path="res://SCENES/FX/Beam_Down.tscn" type="PackedScene" id=2]
+[ext_resource path="res://SCENES/TMP/Beam_Down.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SCRIPTS/TMP/PAPA_PLAYER_DASH.gd" type="Script" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Dash.wav" type="AudioStream" id=4]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=5]
@@ -10,6 +10,7 @@
 [ext_resource path="res://SCRIPTS/TMP/Trail.gd" type="Script" id=8]
 [ext_resource path="res://ASSETS/GRAPHICS/TMP/Alien.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=17]
+
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 8.99994
