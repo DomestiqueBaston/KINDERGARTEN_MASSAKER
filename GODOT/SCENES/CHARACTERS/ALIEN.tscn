@@ -4517,6 +4517,7 @@ anims/RESET = SubResource( 33 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 71 )
 parameters/Dead/blend_position = Vector2( 0.797418, 0.752381 )
 parameters/Hit/blend_position = Vector2( -0.747766, 0.794286 )
