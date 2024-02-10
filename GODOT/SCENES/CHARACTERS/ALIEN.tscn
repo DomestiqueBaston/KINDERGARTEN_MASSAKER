@@ -5917,11 +5917,11 @@ tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 71 )
-parameters/Dead/blend_position = Vector2( 0.797418, 0.752381 )
-parameters/Hit/blend_position = Vector2( -0.747766, 0.794286 )
-parameters/Idle/blend_position = Vector2( -0.847561, 0.619048 )
-parameters/Run/blend_position = Vector2( 0.134062, -0.886525 )
-parameters/Scratching/blend_position = Vector2( 0.040715, 0.489736 )
+parameters/Dead/blend_position = Vector2( 0, 0 )
+parameters/Hit/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
+parameters/Scratching/blend_position = Vector2( 0, 0 )
 
 [node name="Hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

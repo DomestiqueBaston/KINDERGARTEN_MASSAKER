@@ -7,7 +7,6 @@
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_C.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_A.wav" type="AudioStream" id=6]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 26.0433
 
@@ -3569,10 +3568,10 @@ tree_root = SubResource( 46 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 47 )
-parameters/Check/blend_position = Vector2( -0.872856, 0.931034 )
-parameters/No/blend_position = Vector2( -0.205231, 0.542253 )
-parameters/Omg/blend_position = Vector2( 0.122736, -0.894366 )
-parameters/Run/blend_position = Vector2( -0.0885312, -0.985916 )
+parameters/Check/blend_position = Vector2( 0, 0 )
+parameters/No/blend_position = Vector2( 0, 0 )
+parameters/Omg/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

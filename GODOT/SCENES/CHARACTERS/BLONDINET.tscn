@@ -5,7 +5,6 @@
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_B.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_A.wav" type="AudioStream" id=4]
 
-
 [sub_resource type="CircleShape2D" id=34]
 radius = 16.0
 
@@ -4469,10 +4468,10 @@ tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 71 )
-parameters/Idle/blend_position = Vector2( 0.914598, -1.13439 )
-parameters/Run/blend_position = Vector2( 0.753724, -0.177866 )
-parameters/Slash/blend_position = Vector2( -0.372393, -0.470356 )
-parameters/Waving/blend_position = Vector2( 0.376365, 0.249012 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
+parameters/Slash/blend_position = Vector2( 0, 0 )
+parameters/Waving/blend_position = Vector2( 0, 0 )
 
 [node name="Slash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )

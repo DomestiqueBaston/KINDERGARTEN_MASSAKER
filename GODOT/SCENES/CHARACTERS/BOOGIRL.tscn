@@ -3837,10 +3837,10 @@ tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 71 )
-parameters/Booger/blend_position = Vector2( 0.253227, 0.146552 )
-parameters/Idle/blend_position = Vector2( -0.936445, -0.87069 )
-parameters/Run/blend_position = Vector2( -0.112215, 0.551724 )
-parameters/Waving/blend_position = Vector2( -0.821251, -0.732759 )
+parameters/Booger/blend_position = Vector2( 0, 0 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
+parameters/Waving/blend_position = Vector2( 0, 0 )
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

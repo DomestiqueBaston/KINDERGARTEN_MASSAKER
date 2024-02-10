@@ -5482,10 +5482,10 @@ tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 71 )
-parameters/Idle/blend_position = Vector2( -0.518293, 0.62931 )
-parameters/Kick/blend_position = Vector2( 0.22145, -0.206496 )
-parameters/Run/blend_position = Vector2( -0.00496525, -0.322506 )
-parameters/Waving/blend_position = Vector2( -0.779543, 0.484919 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Kick/blend_position = Vector2( 0, 0 )
+parameters/Run/blend_position = Vector2( 0, 0 )
+parameters/Waving/blend_position = Vector2( 0, 0 )
 
 [node name="Kick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
