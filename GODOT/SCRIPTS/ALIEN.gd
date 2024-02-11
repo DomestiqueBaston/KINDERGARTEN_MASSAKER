@@ -4,7 +4,7 @@ extends KinematicBody2D
 export var speed = Vector2(125, 62.5)
 
 # likelihood the alien will scratch after a second
-export var scratch_chances = 0.75
+export var scratch_chances = 0.25
 
 var anim_tree
 var state_machine
@@ -42,7 +42,7 @@ func _physics_process(delta):
 		var next_state = state
 		if state == State.MOVE:
 			next_state = State.FIRST_IDLE
-		elif state == State.FIRST_IDLE and randf() > scratch_chances:
+		elif state == State.FIRST_IDLE and randf() < scratch_chances:
 			next_state = State.SCRATCH
 		elif state != State.SCRATCH:
 			next_state = State.IDLE
