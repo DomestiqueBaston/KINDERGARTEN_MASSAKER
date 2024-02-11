@@ -5762,6 +5762,7 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=115]
 switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=70]
 states/Dead/node = SubResource( 63 )

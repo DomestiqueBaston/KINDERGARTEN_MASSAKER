@@ -3,15 +3,31 @@ extends KinematicBody2D
 # speed of movement in pixels/second
 export var speed = Vector2(125, 62.5)
 
+# likelihood the alien will scratch after a second
+export var scratch_chances = 0.75
+
 var anim_tree
 var state_machine
 var direction = Vector2.ZERO
 
+enum State {
+	FIRST_IDLE,
+	SCRATCH,
+	IDLE,
+	MOVE
+}
+
+var state = State.MOVE
+
 func _ready():
+	randomize()
 	anim_tree = $AnimationTree
 	state_machine = anim_tree["parameters/playback"]
 
 func _physics_process(delta):
+	if state == State.SCRATCH and state_machine.get_current_node() == "Scratching":
+		return
+
 	var dir = Vector2.ZERO
 	if Input.is_action_pressed("ui_left"):
 		dir.x -= 1
@@ -23,10 +39,24 @@ func _physics_process(delta):
 		dir.y += 1
 
 	if dir == Vector2.ZERO:
-		state_machine.travel("Idle")
+		var next_state = state
+		if state == State.MOVE:
+			next_state = State.FIRST_IDLE
+		elif state == State.FIRST_IDLE and randf() > scratch_chances:
+			next_state = State.SCRATCH
+		elif state != State.SCRATCH:
+			next_state = State.IDLE
+		if state != next_state:
+			if next_state == State.SCRATCH:
+				state_machine.travel("Scratching")
+			else:
+				state_machine.travel("Idle")
+			state = next_state
 	else:
 		direction = dir.normalized()
 		anim_tree["parameters/Idle/blend_position"] = direction
+		anim_tree["parameters/Scratching/blend_position"] = direction
 		anim_tree["parameters/Run/blend_position"] = direction
 		state_machine.travel("Run")
+		state = State.MOVE
 		var _collision = move_and_collide(direction * speed * delta)
