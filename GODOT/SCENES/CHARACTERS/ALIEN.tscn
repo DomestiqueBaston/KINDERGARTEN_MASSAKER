@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/BEAM_DOWN/Beam_down.wav" type="AudioStream" id=12]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Scratching_A.wav" type="AudioStream" id=13]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Hmm_A.wav" type="AudioStream" id=14]
+[ext_resource path="res://SCRIPTS/ALIEN.gd" type="Script" id=15]
 
 [sub_resource type="CircleShape2D" id=34]
 radius = 20.0
@@ -5782,6 +5783,7 @@ graph_offset = Vector2( -75, 25 )
 [node name="ALIEN" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 81
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -5854,7 +5856,6 @@ hframes = 32
 frame = 31
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Beam_Down"]
-autoplay = "Beam_Down"
 reset_on_save = false
 anims/Beam_Down = SubResource( 95 )
 anims/RESET = SubResource( 96 )
