@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # speed of movement in pixels/second
-export var speed = 50
+export var speed = Vector2(125, 62.5)
 
 var anim_tree
 var state_machine
