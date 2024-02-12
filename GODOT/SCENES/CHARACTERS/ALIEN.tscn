@@ -28,7 +28,6 @@ shader_param/cooldown = Color( 0, 0, 0, 1 )
 [sub_resource type="Animation" id=95]
 resource_name = "Beam_Down"
 length = 3.4
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Beam Down Front:frame")
 tracks/0/interp = 1
