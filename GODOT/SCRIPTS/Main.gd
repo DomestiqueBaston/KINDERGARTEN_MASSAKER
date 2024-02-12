@@ -1,11 +1,16 @@
 extends Node2D
 
+# determines how quickly the camera follows the alien's movements
+export var camera_speed = 5
+
 var menu = preload("res://SCENES/SCREENS/Menu.tscn")
 var tutorial = preload("res://SCENES/SCREENS/Tuto.tscn")
 var options = preload("res://SCENES/SCREENS/Options.tscn")
 var credits = preload("res://SCENES/SCREENS/Credits.tscn")
 var dialogue = preload("res://SCENES/SCREENS/Dialogue.tscn")
 var talent = preload("res://SCENES/SCREENS/Talent.tscn")
+var background = preload("res://SCENES/BACKGROUND/Background.tscn")
+var alien = preload("res://SCENES/CHARACTERS/ALIEN.tscn")
 
 var credits_seen = false
 var dialogue_seen = false
@@ -17,18 +22,21 @@ enum GameState {
 	OPTIONS,
 	CREDITS,
 	DIALOGUE,
-	TALENT
+	TALENT,
+	PLAY
 }
 
 var state = GameState.TITLE
 var previous_menu_item = -1
+var player
+var overlay
 
 func _ready():
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	var overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_%d.tscn" % rng.randi_range(1, 4)
+	set_process(false)
+	var overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_%d.tscn" % (1 + randi() % 4)
 	var overlay_scene = load(overlay_path)
-	$PAPA_Game_Overlay.add_child(overlay_scene.instance())
+	overlay = overlay_scene.instance()
+	$PAPA_Game_Overlay.add_child(overlay)
 
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("full_screen"):
@@ -38,7 +46,7 @@ func _unhandled_input(event: InputEvent):
 	# user can go back to main menu by pressing ui_accept, ui_cancel or most
 	# keyboard keys (symbols such as letters, numbers and punctuation)
 	
-	elif (state != GameState.MENU and
+	elif (state != GameState.MENU and state != GameState.PLAY and
 			(event.is_action_pressed("ui_accept", false, true) or
 			event.is_action_pressed("ui_cancel") or
 			(event is InputEventKey and event.is_pressed() and
@@ -51,6 +59,11 @@ func _unhandled_input(event: InputEvent):
 			Settings.save_settings()
 		change_state(GameState.MENU)
 		get_tree().set_input_as_handled()
+
+func _process(delta):
+	if player:
+		var lerp_weight = clamp(camera_speed * delta, 0.0, 1.0)
+		$Camera.position = lerp($Camera.position, player.position, lerp_weight)
 
 func change_state(next_state):
 	var child = $Active_Scene.get_child(0)
@@ -94,6 +107,9 @@ func change_state(next_state):
 			child.set_talent_level(dialogue_seen, 100)
 			child.connect("talent_aborted", self, "on_talent_aborted")
 			child.connect("talent_chosen", self, "on_talent_chosen")
+		GameState.PLAY:
+			child = background.instance()
+			start_game(child)
 	
 	if child:
 		$Active_Scene.add_child(child)
@@ -132,8 +148,51 @@ func on_talent_aborted():
 
 func on_talent_chosen(talent_index):
 	print("chose talent: ", Globals.talent_name[talent_index])
-	# TODO
-	change_state(GameState.MENU)
+	change_state(GameState.PLAY)
 
 func on_exit_game():
 	get_tree().quit(0)
+
+#
+# Starts the game: populates the scene with an alien and his enemies.
+#
+func start_game(bg):
+	# instantiate the alien and position him at a random starting point
+	player = alien.instance()
+	player.position = bg.get_alien_starting_point()
+	bg.add_child(player)
+
+	# activate the camera that follows the alien around
+	$Camera.current = true
+	set_process(true)
+
+	# wait for the beam down animation to finish before starting the overlay
+	# animation which will eventually make it impossible to see
+	yield(player, "beam_down_finished")
+
+	# some overlay nodes have several animation players, so find them all
+	var anim_players = []
+	for i in range(overlay.get_child_count()):
+		var child = overlay.get_child(i)
+		if child.is_class("AnimationPlayer"):
+			anim_players.append(child)
+
+	# pick one of the animation players at random
+	var anim_player
+	if anim_players.size() == 1:
+		anim_player = anim_players[0]
+	elif anim_players.size() > 1:
+		var which = randi() % anim_players.size()
+		anim_player = anim_players[which]
+
+	# start its first animation playing (other than RESET)
+	if anim_player:
+		var anim_name
+		for a in anim_player.get_animation_list():
+			if a != "RESET":
+				anim_name = a
+				break
+		if anim_name:
+			print("starting animation: %s/%s/%s" %
+				[overlay.name, anim_player.name, anim_name])
+			anim_player.play(anim_name)

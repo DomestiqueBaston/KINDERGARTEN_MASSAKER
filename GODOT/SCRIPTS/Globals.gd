@@ -58,3 +58,4 @@ const talent_name = [
 
 func _ready():
 	assert(Talent.size() == talent_name.size())
+	randomize()

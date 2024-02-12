@@ -6,6 +6,9 @@ export var speed = Vector2(125, 62.5)
 # likelihood the alien will scratch after a second
 export var scratch_chances = 0.25
 
+# signal emitted whenn the beam down animation has finished
+signal beam_down_finished
+
 var anim_tree
 var state_machine
 var direction = Vector2.ZERO
@@ -20,13 +23,17 @@ enum State {
 var state = State.MOVE
 
 func _ready():
-	randomize()
 	anim_tree = $AnimationTree
 	anim_tree.set_active(true)
 	anim_tree["parameters/Idle/blend_position"] = Vector2.DOWN
 	anim_tree["parameters/Scratching/blend_position"] = Vector2.DOWN
 	anim_tree["parameters/Run/blend_position"] = Vector2.DOWN
 	state_machine = anim_tree["parameters/playback"]
+	set_physics_process(false)
+
+func _on_beam_down_finished(_anim_name):
+	set_physics_process(true)
+	emit_signal("beam_down_finished")
 
 func _physics_process(delta):
 	if state == State.SCRATCH and state_machine.get_current_node() == "Scratching":
