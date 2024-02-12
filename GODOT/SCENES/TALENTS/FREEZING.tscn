@@ -62,7 +62,8 @@ wait_time = 15.0
 one_shot = true
 
 [node name="Freezing" type="Sprite" parent="."]
-position = Vector2( 723, 416 )
+position = Vector2( 0, 37 )
+z_index = -1
 texture = ExtResource( 1 )
 hframes = 6
 __meta__ = {
