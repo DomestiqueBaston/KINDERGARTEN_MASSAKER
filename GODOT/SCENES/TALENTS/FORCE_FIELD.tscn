@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_OFF.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Force_Field.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_ON.wav" type="AudioStream" id=3]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -17,6 +18,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FX:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -34,6 +47,48 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 1 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("FX_ON")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("FX_OFF")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 1 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [node name="Force_Field" type="Node2D"]
@@ -69,4 +124,9 @@ bus = "FX"
 [node name="FX_OFF" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 volume_db = -1.5
+bus = "FX"
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
 bus = "FX"

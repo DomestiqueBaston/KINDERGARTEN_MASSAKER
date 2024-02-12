@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Shield.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Shield.png" type="Texture" id=9]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Shield_OFF.wav" type="AudioStream" id=10]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Shield_ON.wav" type="AudioStream" id=11]
@@ -35,6 +36,48 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
 }
+tracks/1/type = "audio"
+tracks/1/path = NodePath("FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 1 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("FX_OFF")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("FX_ON")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 11 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [node name="Shield" type="Node2D"]
 __meta__ = {
@@ -69,4 +112,8 @@ bus = "FX"
 [node name="FX_ON" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -1.5
+bus = "FX"
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
 bus = "FX"

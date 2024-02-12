@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Geist.wav" type="AudioStream" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "geist"
+length = 4.0
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 1 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [node name="Geist" type="Node2D"]
 __meta__ = {
@@ -17,4 +35,9 @@ one_shot = true
 
 [node name="FX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+autoplay = true
 bus = "FX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../FX")
+anims/geist = SubResource( 1 )
