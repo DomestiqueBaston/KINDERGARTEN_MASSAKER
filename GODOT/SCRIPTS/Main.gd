@@ -167,6 +167,7 @@ func start_game(bg):
 	# activate the camera that follows the alien around
 
 	$Camera.current = true
+	$Camera.position = player.position
 	set_process(true)
 
 	# wait for the beam down animation to finish before starting the overlay
