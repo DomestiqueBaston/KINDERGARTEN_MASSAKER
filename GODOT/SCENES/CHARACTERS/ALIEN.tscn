@@ -7,7 +7,6 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Mud_steps_E.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Mud_steps_C.wav" type="AudioStream" id=6]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Fall_A.wav" type="AudioStream" id=7]
-[ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Moan_E.wav" type="AudioStream" id=8]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=9]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Back.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Front.png" type="Texture" id=11]
@@ -15,6 +14,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Scratching_A.wav" type="AudioStream" id=13]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Hmm_A.wav" type="AudioStream" id=14]
 [ext_resource path="res://SCRIPTS/ALIEN.gd" type="Script" id=15]
+[ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Moan_H.wav" type="AudioStream" id=16]
 
 [sub_resource type="CircleShape2D" id=34]
 radius = 20.0
@@ -435,7 +435,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -449,7 +449,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -15.0 ]
+"values": [ -17.5 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -724,7 +724,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -5.0 ]
+"values": [ -10.0 ]
 }
 tracks/10/type = "audio"
 tracks/10/path = NodePath("../Hmm")
@@ -750,7 +750,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -12.5 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1091,7 +1091,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -1105,7 +1105,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -15.0 ]
+"values": [ -17.5 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -1380,7 +1380,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -5.0 ]
+"values": [ -10.0 ]
 }
 tracks/10/type = "audio"
 tracks/10/path = NodePath("../Scratching")
@@ -1406,7 +1406,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -12.5 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -1747,7 +1747,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -1761,7 +1761,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -15.0 ]
+"values": [ -17.5 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -2036,7 +2036,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -5.0 ]
+"values": [ -10.0 ]
 }
 tracks/10/type = "audio"
 tracks/10/path = NodePath("../Hmm")
@@ -2062,7 +2062,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -12.5 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -2403,7 +2403,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -2417,7 +2417,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -15.0 ]
+"values": [ -17.5 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -2692,7 +2692,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -5.0 ]
+"values": [ -10.0 ]
 }
 tracks/10/type = "audio"
 tracks/10/path = NodePath("../Hmm")
@@ -2718,7 +2718,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -12.5 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -3059,7 +3059,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -3073,7 +3073,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -15.0 ]
+"values": [ -17.5 ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -3348,7 +3348,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -5.0 ]
+"values": [ -10.0 ]
 }
 tracks/10/type = "audio"
 tracks/10/path = NodePath("../Hmm")
@@ -3374,7 +3374,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -12.5 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -3715,7 +3715,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -3729,7 +3729,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -15.0 ]
+"values": [ -17.5 ]
 }
 
 [sub_resource type="Animation" id=22]
@@ -4004,7 +4004,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -5.0 ]
+"values": [ -10.0 ]
 }
 tracks/10/type = "audio"
 tracks/10/path = NodePath("../Hmm")
@@ -4030,7 +4030,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -12.5 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -4371,7 +4371,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -15.0 ]
+"values": [ -17.5 ]
 }
 tracks/9/type = "audio"
 tracks/9/path = NodePath("../Moaning")
@@ -4383,7 +4383,7 @@ tracks/9/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -4660,7 +4660,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -5.0 ]
+"values": [ -10.0 ]
 }
 tracks/10/type = "audio"
 tracks/10/path = NodePath("../Hmm")
@@ -4686,7 +4686,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -12.5 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -5027,7 +5027,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 8 )
+"stream": ExtResource( 16 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -5041,7 +5041,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -15.0 ]
+"values": [ -17.5 ]
 }
 
 [sub_resource type="Animation" id=30]
@@ -5316,7 +5316,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -5.0 ]
+"values": [ -10.0 ]
 }
 tracks/10/type = "audio"
 tracks/10/path = NodePath("../Hmm")
@@ -5342,7 +5342,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ -12.5 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=33]
@@ -5917,7 +5917,6 @@ anims/RESET = SubResource( 33 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 71 )
 parameters/Dead/blend_position = Vector2( 0, 0 )
 parameters/Hit/blend_position = Vector2( 0, 0 )
@@ -5948,7 +5947,7 @@ __meta__ = {
 }
 
 [node name="Moaning" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 16 )
 volume_db = -10.0
 bus = "FX"
 __meta__ = {
