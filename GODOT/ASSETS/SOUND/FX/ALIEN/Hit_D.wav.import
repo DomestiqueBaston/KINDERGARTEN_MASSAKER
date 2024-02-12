@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Hmm_A.wav-3fff8497a898aa61dc24bb829a0843c1.sample"
+path="res://.import/Hit_D.wav-295787b565c89bc49c4c12a94869b9bb.sample"
 
 [deps]
 
-source_file="res://ASSETS/SOUND/FX/ALIEN/Hmm_A.wav"
-dest_files=[ "res://.import/Hmm_A.wav-3fff8497a898aa61dc24bb829a0843c1.sample" ]
+source_file="res://ASSETS/SOUND/FX/ALIEN/Hit_D.wav"
+dest_files=[ "res://.import/Hit_D.wav-295787b565c89bc49c4c12a94869b9bb.sample" ]
 
 [params]
 
