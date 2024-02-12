@@ -22,6 +22,10 @@ var state = State.MOVE
 func _ready():
 	randomize()
 	anim_tree = $AnimationTree
+	anim_tree.set_active(true)
+	anim_tree["parameters/Idle/blend_position"] = Vector2.DOWN
+	anim_tree["parameters/Scratching/blend_position"] = Vector2.DOWN
+	anim_tree["parameters/Run/blend_position"] = Vector2.DOWN
 	state_machine = anim_tree["parameters/playback"]
 
 func _physics_process(delta):
@@ -53,10 +57,10 @@ func _physics_process(delta):
 				state_machine.travel("Idle")
 			state = next_state
 	else:
-		direction = dir.normalized()
-		anim_tree["parameters/Idle/blend_position"] = direction
-		anim_tree["parameters/Scratching/blend_position"] = direction
-		anim_tree["parameters/Run/blend_position"] = direction
+		anim_tree["parameters/Idle/blend_position"] = dir
+		anim_tree["parameters/Scratching/blend_position"] = dir
+		anim_tree["parameters/Run/blend_position"] = dir
 		state_machine.travel("Run")
 		state = State.MOVE
+		direction = dir.normalized()
 		var _collision = move_and_collide(direction * speed * delta)
