@@ -157,27 +157,32 @@ func on_exit_game():
 # Starts the game: populates the scene with an alien and his enemies.
 #
 func start_game(bg):
+
 	# instantiate the alien and position him at a random starting point
+
 	player = alien.instance()
 	player.position = bg.get_alien_starting_point()
 	bg.add_child(player)
 
 	# activate the camera that follows the alien around
+
 	$Camera.current = true
 	set_process(true)
 
 	# wait for the beam down animation to finish before starting the overlay
 	# animation which will eventually make it impossible to see
+
 	yield(player, "beam_down_finished")
 
 	# some overlay nodes have several animation players, so find them all
+
 	var anim_players = []
-	for i in range(overlay.get_child_count()):
-		var child = overlay.get_child(i)
+	for child in overlay.get_children():
 		if child.is_class("AnimationPlayer"):
 			anim_players.append(child)
 
 	# pick one of the animation players at random
+
 	var anim_player
 	if anim_players.size() == 1:
 		anim_player = anim_players[0]
@@ -186,6 +191,7 @@ func start_game(bg):
 		anim_player = anim_players[which]
 
 	# start its first animation playing (other than RESET)
+
 	if anim_player:
 		var anim_name
 		for a in anim_player.get_animation_list():
