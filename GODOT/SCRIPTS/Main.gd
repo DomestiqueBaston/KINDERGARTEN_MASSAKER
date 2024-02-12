@@ -109,7 +109,7 @@ func change_state(next_state):
 			child.connect("talent_chosen", self, "on_talent_chosen")
 		GameState.PLAY:
 			child = background.instance()
-			start_game(child)
+			prepare_game(child)
 	
 	if child:
 		$Active_Scene.add_child(child)
@@ -118,6 +118,8 @@ func change_state(next_state):
 
 func _on_Transition_Overlay_transition_finished():
 	$Transition_Overlay.hide()
+	if state == GameState.PLAY:
+		start_game($Active_Scene.get_child(0))
 
 func on_dialogue_finished():
 	# Without this pause, when the dialogue -> menu transition begins in full
@@ -154,20 +156,27 @@ func on_exit_game():
 	get_tree().quit(0)
 
 #
-# Starts the game: populates the scene with an alien and his enemies.
+# Stuff to do when the background has been instanced but before the game
+# actually starts: determine where the alien will appear, and put the camera
+# there.
+#
+func prepare_game(bg):
+	$Camera.position = bg.get_alien_starting_point()
+	$Camera.current = true
+
+#
+# Start the game: populate the scene with an alien and his enemies.
 #
 func start_game(bg):
 
-	# instantiate the alien and position him at a random starting point
+	# instantiate the alien and position him in front of the camera, initially
 
 	player = alien.instance()
-	player.position = bg.get_alien_starting_point()
+	player.position = $Camera.position
 	bg.add_child(player)
 
 	# activate the camera that follows the alien around
 
-	$Camera.current = true
-	$Camera.position = player.position
 	set_process(true)
 
 	# wait for the beam down animation to finish before starting the overlay
