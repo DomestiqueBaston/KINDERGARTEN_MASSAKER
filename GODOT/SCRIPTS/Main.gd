@@ -12,6 +12,13 @@ var talent_scene = preload("res://SCENES/SCREENS/Talent.tscn")
 var background_scene = preload("res://SCENES/BACKGROUND/Background.tscn")
 var alien_scene = preload("res://SCENES/CHARACTERS/ALIEN.tscn")
 
+var teacher_scene = preload("res://SCENES/CHARACTERS/KINDERGARTNERIN.tscn")
+var crying_kid_scene = preload("res://SCENES/CHARACTERS/BINOCLARD.tscn")
+var vomiting_kid_scene = preload("res://SCENES/CHARACTERS/VOMITO.tscn")
+var booger_kid_scene = preload("res://SCENES/CHARACTERS/BOOGIRL.tscn")
+var stick_kid_scene = preload("res://SCENES/CHARACTERS/BLONDINET.tscn")
+var spitting_kid_scene = preload("res://SCENES/CHARACTERS/CRACHEUSE.tscn")
+
 var credits_seen = false
 var dialogue_seen = false
 
@@ -188,9 +195,7 @@ func start_game():
 
 	# instantiate the alien and position him in front of the camera, initially
 
-	alien = alien_scene.instance()
-	alien.position = $Camera.position
-	background.add_child(alien)
+	alien = _add_character_at(alien_scene, $Camera.position)
 
 	# from now on, the camera follows the alien's movements
 
@@ -203,11 +208,30 @@ func start_game():
 	$Background_Sound.play()
 	$Intro_Music.play()
 
+	# add teacher and initial kids
+
+	var positions = background.get_spawning_points(9)
+	_add_character_at(teacher_scene, positions[0])
+	_add_character_at(crying_kid_scene, positions[1])
+	_add_character_at(vomiting_kid_scene, positions[2])
+	_add_character_at(booger_kid_scene, positions[3])
+	_add_character_at(stick_kid_scene, positions[4])
+	_add_character_at(stick_kid_scene, positions[5])
+	_add_character_at(stick_kid_scene, positions[6])
+	_add_character_at(spitting_kid_scene, positions[7])
+	_add_character_at(spitting_kid_scene, positions[8])
+
 	# wait for the beam down animation to finish before starting the overlay
 	# animation which will eventually make it impossible to see
 
 	yield(alien, "beam_down_finished")
 	overlay.start_animation()
+
+func _add_character_at(scene, pos):
+	var inst = scene.instance()
+	inst.position = pos
+	background.add_child(inst)
+	return inst
 
 func _on_Intro_Music_finished():
 	$Game_Music.play()

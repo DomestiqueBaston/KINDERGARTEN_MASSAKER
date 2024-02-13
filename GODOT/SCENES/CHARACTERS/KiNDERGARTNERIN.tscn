@@ -1,6 +1,5 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=88 format=2]
 
-[ext_resource path="res://SCRIPTS/TMP/Kindergartnerin.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/EDUC/KINDERGARTNERIN.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_H.wav" type="AudioStream" id=4]
@@ -3475,11 +3474,9 @@ graph_offset = Vector2( 4, -104 )
 [node name="KINDERGARTNERIN" type="KinematicBody2D"]
 collision_layer = 16
 collision_mask = 579
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-speed = 150
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
@@ -3574,7 +3571,7 @@ parameters/Omg/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 volume_db = -10.0
 bus = "FX"
 
