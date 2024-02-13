@@ -1,5 +1,6 @@
-[gd_scene load_steps=88 format=2]
+[gd_scene load_steps=89 format=2]
 
+[ext_resource path="res://SCENES/CHARACTERS/KINDERGARTNERIN.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/EDUC/KINDERGARTNERIN.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_H.wav" type="AudioStream" id=4]
@@ -3467,13 +3468,14 @@ states/Run/node = SubResource( 56 )
 states/Run/position = Vector2( 517, 44 )
 transitions = [ "Run", "Check", SubResource( 58 ), "No", "Run", SubResource( 78 ), "Check", "Run", SubResource( 79 ), "No", "Check", SubResource( 80 ), "Omg", "Run", SubResource( 81 ), "Check", "Omg", SubResource( 82 ), "Omg", "No", SubResource( 83 ), "Run", "No", SubResource( 84 ) ]
 start_node = "Check"
-graph_offset = Vector2( 4, -104 )
+graph_offset = Vector2( 4, 25.56 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=47]
 
 [node name="KINDERGARTNERIN" type="KinematicBody2D"]
 collision_layer = 16
 collision_mask = 579
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }

@@ -1,9 +1,10 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/BOOGIRL/BOOGIRL.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Throwing_booger.wav" type="AudioStream" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_B.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_D.wav" type="AudioStream" id=4]
+[ext_resource path="res://SCENES/CHARACTERS/BOOGIRL.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=34]
 radius = 16.0
@@ -3723,6 +3724,7 @@ graph_offset = Vector2( -18, 15 )
 [node name="BOOGIRL" type="KinematicBody2D"]
 collision_layer = 64
 collision_mask = 595
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
