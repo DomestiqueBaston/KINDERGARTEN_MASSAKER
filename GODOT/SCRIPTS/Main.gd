@@ -72,7 +72,7 @@ func _process(delta):
 	if alien:
 		update_camera(delta)
 
-func _get_window_size():
+func _get_window_size() -> Vector2:
 	return Vector2(
 		ProjectSettings.get_setting("display/window/size/width"),
 		ProjectSettings.get_setting("display/window/size/height"))
@@ -186,16 +186,35 @@ func on_exit_game():
 
 #
 # Stuff to do when the background has been instanced but before the game
-# actually starts: determine where the alien will appear, and put the camera
-# there.
+# actually starts: determine where the alien will appear, put the camera there,
+# and populate the scene with bad guys.
 #
 func prepare_game():
+
+	# position the camera where the alien will appear
+
 	$Camera.position = background.get_alien_starting_point()
 	$Camera.current = true
 
+	# add teacher and initial kids, ensuring they are on camera
+
+	var window_size = _get_window_size()
+	var bbox = Rect2($Camera.position - window_size / 2.0, window_size)
+
+	var positions = background.get_spawning_points(9, bbox)
+	background.instance_character_at(teacher_scene, positions[0])
+	background.instance_character_at(crying_kid_scene, positions[1])
+	background.instance_character_at(vomiting_kid_scene, positions[2])
+	background.instance_character_at(booger_kid_scene, positions[3])
+	background.instance_character_at(stick_kid_scene, positions[4])
+	background.instance_character_at(stick_kid_scene, positions[5])
+	background.instance_character_at(stick_kid_scene, positions[6])
+	background.instance_character_at(spitting_kid_scene, positions[7])
+	background.instance_character_at(spitting_kid_scene, positions[8])
+
 #
-# Start the game: populate the scene with an alien and his enemies, change the
-# music, etc.
+# Start the game: beam down the alien, change the music, and track the alien
+# with the camera.
 #
 func start_game():
 
@@ -213,22 +232,6 @@ func start_game():
 	$Menu_Music.stop()
 	$Background_Sound.play()
 	$Intro_Music.play()
-
-	# add teacher and initial kids, ensuring they are on camera
-
-	var window_size = _get_window_size()
-	var bbox = Rect2(alien.position - window_size / 2.0, window_size)
-
-	var positions = background.get_spawning_points(9, bbox)
-	background.instance_character_at(teacher_scene, positions[0])
-	background.instance_character_at(crying_kid_scene, positions[1])
-	background.instance_character_at(vomiting_kid_scene, positions[2])
-	background.instance_character_at(booger_kid_scene, positions[3])
-	background.instance_character_at(stick_kid_scene, positions[4])
-	background.instance_character_at(stick_kid_scene, positions[5])
-	background.instance_character_at(stick_kid_scene, positions[6])
-	background.instance_character_at(spitting_kid_scene, positions[7])
-	background.instance_character_at(spitting_kid_scene, positions[8])
 
 	# wait for the beam down animation to finish before starting the overlay
 	# animation which will eventually make it impossible to see
