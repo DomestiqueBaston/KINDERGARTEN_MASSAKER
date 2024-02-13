@@ -5343,6 +5343,7 @@ __meta__ = {
 }
 
 [node name="Shadow" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( -4, 16 )
 scale = Vector2( 0.5, 0.4 )
 color = Color( 0, 0.101961, 0, 0.392157 )
@@ -5352,7 +5353,7 @@ __meta__ = {
 }
 
 [node name="Beam_Down" type="Node2D" parent="."]
-position = Vector2( 0, 8 )
+position = Vector2( 0, -31 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -5380,6 +5381,7 @@ stream = ExtResource( 12 )
 bus = "FX"
 
 [node name="Alien" type="Sprite" parent="."]
+visible = false
 material = SubResource( 94 )
 texture = ExtResource( 2 )
 offset = Vector2( 0.5, 0.5 )
