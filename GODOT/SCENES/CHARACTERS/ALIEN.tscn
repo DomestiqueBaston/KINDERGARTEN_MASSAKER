@@ -20,11 +20,6 @@ radius = 20.0
 [sub_resource type="CircleShape2D" id=81]
 radius = 26.0
 
-[sub_resource type="ShaderMaterial" id=94]
-shader = ExtResource( 9 )
-shader_param/ready = Color( 0, 0, 0, 1 )
-shader_param/cooldown = Color( 0, 0, 0, 1 )
-
 [sub_resource type="Animation" id=95]
 resource_name = "Beam_Down"
 length = 3.4
@@ -141,6 +136,11 @@ tracks/3/keys = {
 "update": 0,
 "values": [ true ]
 }
+
+[sub_resource type="ShaderMaterial" id=94]
+shader = ExtResource( 9 )
+shader_param/ready = Color( 0, 0, 0, 1 )
+shader_param/cooldown = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "00_Dead"
@@ -5351,20 +5351,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Alien" type="Sprite" parent="."]
-material = SubResource( 94 )
-texture = ExtResource( 2 )
-offset = Vector2( 0.5, 0.5 )
-hframes = 14
-vframes = 22
-__meta__ = {
-"_edit_lock_": true,
-"_editor_description_": "Keep Transform X=0.5
-Keep Transform Y=0.5
-
-There is a Cooldown shader for the outline on that sprite!"
-}
-
 [node name="Beam_Down" type="Node2D" parent="."]
 position = Vector2( 0, 8 )
 __meta__ = {
@@ -5373,7 +5359,6 @@ __meta__ = {
 
 [node name="Beam Down Rear" type="Sprite" parent="Beam_Down"]
 position = Vector2( 0, -12 )
-z_index = -1
 texture = ExtResource( 10 )
 hframes = 32
 
@@ -5393,6 +5378,20 @@ anims/RESET = SubResource( 96 )
 [node name="Beam_Down" type="AudioStreamPlayer" parent="Beam_Down"]
 stream = ExtResource( 12 )
 bus = "FX"
+
+[node name="Alien" type="Sprite" parent="."]
+material = SubResource( 94 )
+texture = ExtResource( 2 )
+offset = Vector2( 0.5, 0.5 )
+hframes = 14
+vframes = 22
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": "Keep Transform X=0.5
+Keep Transform Y=0.5
+
+There is a Cooldown shader for the outline on that sprite!"
+}
 
 [node name="Talent" type="Node2D" parent="."]
 __meta__ = {
