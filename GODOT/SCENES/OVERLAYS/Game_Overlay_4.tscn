@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://SHADERS/VHSPause.shader" type="Shader" id=1]
 [ext_resource path="res://SHADERS/NTSCBasic.shader" type="Shader" id=2]
+[ext_resource path="res://SCENES/OVERLAYS/Game_Overlay_4.gd" type="Script" id=3]
 
 [sub_resource type="ShaderMaterial" id=7]
 shader = ExtResource( 2 )
@@ -221,6 +222,7 @@ tracks/7/keys = {
 
 [node name="Game_overlay_4" type="CanvasLayer"]
 physics_interpolation_mode = 1
+script = ExtResource( 3 )
 
 [node name="NTSCBasic" type="ColorRect" parent="."]
 material = SubResource( 7 )

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://SHADERS/Glitch.shader" type="Shader" id=1]
+[ext_resource path="res://SCENES/OVERLAYS/Game_Overlay_3.gd" type="Script" id=2]
 
 [sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 1 )
@@ -114,6 +115,7 @@ tracks/3/keys = {
 
 [node name="Game_overlay_3" type="CanvasLayer"]
 physics_interpolation_mode = 1
+script = ExtResource( 2 )
 
 [node name="Glitch" type="ColorRect" parent="."]
 material = SubResource( 14 )

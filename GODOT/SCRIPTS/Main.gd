@@ -199,32 +199,4 @@ func start_game():
 	# animation which will eventually make it impossible to see
 
 	yield(alien, "beam_down_finished")
-
-	# some overlay nodes have several animation players, so find them all
-
-	var anim_players = []
-	for child in overlay.get_children():
-		if child.is_class("AnimationPlayer"):
-			anim_players.append(child)
-
-	# pick one of the animation players at random
-
-	var anim_player
-	if anim_players.size() == 1:
-		anim_player = anim_players[0]
-	elif anim_players.size() > 1:
-		var which = randi() % anim_players.size()
-		anim_player = anim_players[which]
-
-	# start its first animation playing (other than RESET)
-
-	if anim_player:
-		var anim_name
-		for a in anim_player.get_animation_list():
-			if a != "RESET":
-				anim_name = a
-				break
-		if anim_name:
-			print("starting animation: %s/%s/%s" %
-				[overlay.name, anim_player.name, anim_name])
-			anim_player.play(anim_name)
+	overlay.start_animation()
