@@ -8,7 +8,8 @@ func get_limits():
 	return Rect2($Sprite.position - size / 2, size)
 
 #
-# Returns one of the predefined starting points for the alien, chosen at random (a Vector2).
+# Returns one of the predefined starting points for the alien, chosen at random
+# (a Vector2).
 #
 func get_alien_starting_point():
 	var which = randi() % 5
