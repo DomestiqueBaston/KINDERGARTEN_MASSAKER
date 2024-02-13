@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 const START_POINT_COUNT = 5
-const SPAWN_POINT_COUNT = 19
+const SPAWN_POINT_COUNT = 86
 
 #
 # Returns the background's bounding box (a Rect2).
