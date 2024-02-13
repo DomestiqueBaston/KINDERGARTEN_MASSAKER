@@ -43,3 +43,13 @@ func get_spawning_points(count):
 		positions.append(
 			get_node("Kids_Spawning_Points/Point_%02d" % (index + 1)).position)
 	return positions
+
+#
+# Creates an instance of the given scene, adds it as a child of the background,
+# and places it at the given position. Returns the new instance.
+#
+func instance_character_at(scene, pos):
+	var inst = scene.instance()
+	inst.position = pos
+	$YSort.add_child(inst)
+	return inst
