@@ -170,91 +170,91 @@ __meta__ = {
 }
 
 [node name="Point_01" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 485, 118 )
+position = Vector2( 511, 88 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_02" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 237, 168 )
+position = Vector2( 247, 186 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_03" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 123, 418 )
+position = Vector2( 109, 397 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_04" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 1243, 161 )
+position = Vector2( 1276, 204 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_05" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 184, 642 )
+position = Vector2( 212, 611 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_06" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 361, 514 )
+position = Vector2( 367, 488 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_07" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 553, 349 )
+position = Vector2( 587, 349 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_08" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 811, 366 )
+position = Vector2( 850, 406 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_09" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 681, 197 )
+position = Vector2( 690, 234 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_10" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 1048, 287 )
+position = Vector2( 996, 262 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_11" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 1283, 372 )
+position = Vector2( 1263, 377 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_12" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 1242, 617 )
+position = Vector2( 1231, 612 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_13" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 572, 529 )
+position = Vector2( 578, 543 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_14" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 793, 609 )
+position = Vector2( 819, 521 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_15" type="Node2D" parent="Alien_Teleportation_Points"]
-position = Vector2( 1013, 684 )
+position = Vector2( 1095, 733 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -272,31 +272,31 @@ __meta__ = {
 }
 
 [node name="Point_02" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 248, 148 )
+position = Vector2( 211, 110 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_03" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 138, 288 )
+position = Vector2( 158, 308 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_04" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 1222, 133 )
+position = Vector2( 1238, 120 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_05" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 119, 481 )
+position = Vector2( 169, 484 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_06" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 187, 647 )
+position = Vector2( 133, 684 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -308,7 +308,7 @@ __meta__ = {
 }
 
 [node name="Point_08" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 781, 309 )
+position = Vector2( 790, 269 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -338,31 +338,31 @@ __meta__ = {
 }
 
 [node name="Point_13" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 1211, 648 )
+position = Vector2( 1290, 672 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_14" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 1011, 673 )
+position = Vector2( 991, 662 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_15" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 802, 608 )
+position = Vector2( 763, 580 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_16" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 698, 459 )
+position = Vector2( 871, 486 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_17" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 487, 484 )
+position = Vector2( 493, 485 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -374,7 +374,283 @@ __meta__ = {
 }
 
 [node name="Point_19" type="Node2D" parent="Kids_Spawning_Points"]
-position = Vector2( 1144, 261 )
+position = Vector2( 1094, 256 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_20" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1204, 306 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_21" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1180, 409 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_22" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1102, 151 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_23" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 943, 410 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_24" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 640, 298 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_25" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 713, 341 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_26" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 500, 220 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_27" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 408, 412 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_28" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 545, 407 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_29" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 582, 566 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_30" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 336, 481 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_31" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 438, 545 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_32" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 80, 590 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_33" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 237, 509 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_34" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 79, 334 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_35" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 217, 251 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_36" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 132, 192 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_37" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 322, 62 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_38" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 355, 178 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_39" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 606, 76 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_40" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 721, 123 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_41" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 581, 254 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_42" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 881, 299 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_43" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 785, 449 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_44" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 857, 713 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_45" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1140, 614 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_46" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1342, 598 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_47" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1347, 399 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_48" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1087, 351 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_49" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1208, 544 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_50" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 921, 596 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_51" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1207, 726 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_52" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 156, 560 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_53" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 224, 684 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_54" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 337, 662 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_55" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 671, 606 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_56" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 758, 671 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_57" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 841, 630 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_58" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1071, 656 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_59" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 977, 728 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_60" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 1357, 501 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_61" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 605, 468 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_62" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 500, 597 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_63" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 69, 471 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_64" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 795, 355 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Point_65" type="Node2D" parent="Kids_Spawning_Points"]
+position = Vector2( 699, 492 )
 __meta__ = {
 "_edit_lock_": true
 }
