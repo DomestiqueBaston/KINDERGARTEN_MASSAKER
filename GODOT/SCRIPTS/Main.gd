@@ -181,7 +181,8 @@ func prepare_game():
 	$Camera.current = true
 
 #
-# Start the game: populate the scene with an alien and his enemies.
+# Start the game: populate the scene with an alien and his enemies, change the
+# music, etc.
 #
 func start_game():
 
@@ -195,8 +196,17 @@ func start_game():
 
 	set_process(true)
 
+	# stop menu music, start intro music (game music starts when intro music
+	# finishes)
+
+	$Menu_Music.stop()
+	$Intro_Music.play()
+
 	# wait for the beam down animation to finish before starting the overlay
 	# animation which will eventually make it impossible to see
 
 	yield(alien, "beam_down_finished")
 	overlay.start_animation()
+
+func _on_Intro_Music_finished():
+	$Game_Music.play()
