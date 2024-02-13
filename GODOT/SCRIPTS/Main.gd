@@ -3,14 +3,14 @@ extends Node2D
 # determines how quickly the camera follows the alien's movements
 export var camera_speed = 5
 
-var menu = preload("res://SCENES/SCREENS/Menu.tscn")
-var tutorial = preload("res://SCENES/SCREENS/Tuto.tscn")
-var options = preload("res://SCENES/SCREENS/Options.tscn")
-var credits = preload("res://SCENES/SCREENS/Credits.tscn")
-var dialogue = preload("res://SCENES/SCREENS/Dialogue.tscn")
-var talent = preload("res://SCENES/SCREENS/Talent.tscn")
-var background = preload("res://SCENES/BACKGROUND/Background.tscn")
-var alien = preload("res://SCENES/CHARACTERS/ALIEN.tscn")
+var menu_scene = preload("res://SCENES/SCREENS/Menu.tscn")
+var tutorial_scene = preload("res://SCENES/SCREENS/Tuto.tscn")
+var options_scene = preload("res://SCENES/SCREENS/Options.tscn")
+var credits_scene = preload("res://SCENES/SCREENS/Credits.tscn")
+var dialogue_scene = preload("res://SCENES/SCREENS/Dialogue.tscn")
+var talent_scene = preload("res://SCENES/SCREENS/Talent.tscn")
+var background_scene = preload("res://SCENES/BACKGROUND/Background.tscn")
+var alien_scene = preload("res://SCENES/CHARACTERS/ALIEN.tscn")
 
 var credits_seen = false
 var dialogue_seen = false
@@ -28,8 +28,9 @@ enum GameState {
 
 var state = GameState.TITLE
 var previous_menu_item = -1
-var player
 var overlay
+var background
+var alien
 
 func _ready():
 	set_process(false)
@@ -61,9 +62,23 @@ func _unhandled_input(event: InputEvent):
 		get_tree().set_input_as_handled()
 
 func _process(delta):
-	if player:
-		var lerp_weight = clamp(camera_speed * delta, 0.0, 1.0)
-		$Camera.position = lerp($Camera.position, player.position, lerp_weight)
+	if alien:
+		update_camera(delta)
+
+#
+# Called by _process() to update the camera, which follows the alien's position.
+# Rather than snapping directly to the target position, the camera moves toward
+# the target position more or less gradually, depending on camera_speed. Also,
+# the camera refuses to move outside the limits of the background scene.
+#
+func update_camera(delta):
+	var limits = background.get_limits()
+	var w = ProjectSettings.get_setting("display/window/size/width") / 2.0
+	var h = ProjectSettings.get_setting("display/window/size/height") / 2.0
+	var x = clamp(alien.position.x, limits.position.x + w, limits.end.x - w)
+	var y = clamp(alien.position.y, limits.position.y + h, limits.end.y - h)
+	var lerp_weight = clamp(camera_speed * delta, 0.0, 1.0)
+	$Camera.position = lerp($Camera.position, Vector2(x, y), lerp_weight)
 
 func change_state(next_state):
 	var child = $Active_Scene.get_child(0)
@@ -82,7 +97,7 @@ func change_state(next_state):
 	
 	match next_state:
 		GameState.MENU:
-			child = menu.instance()
+			child = menu_scene.instance()
 			child.set_dialogue_enabled(credits_seen)
 			child.connect("start_game", self, "on_start_game")
 			child.connect("show_tutorial", self, "on_show_tutorial")
@@ -93,23 +108,24 @@ func change_state(next_state):
 			if previous_menu_item >= 0:
 				child.set_current_item(previous_menu_item)
 		GameState.TUTORIAL:
-			child = tutorial.instance()
+			child = tutorial_scene.instance()
 		GameState.OPTIONS:
-			child = options.instance()
+			child = options_scene.instance()
 		GameState.CREDITS:
-			child = credits.instance()
+			child = credits_scene.instance()
 			credits_seen = true
 		GameState.DIALOGUE:
-			child = dialogue.instance()
+			child = dialogue_scene.instance()
 			child.connect("dialogue_finished", self, "on_dialogue_finished")
 		GameState.TALENT:
-			child = talent.instance()
+			child = talent_scene.instance()
 			child.set_talent_level(dialogue_seen, 100)
 			child.connect("talent_aborted", self, "on_talent_aborted")
 			child.connect("talent_chosen", self, "on_talent_chosen")
 		GameState.PLAY:
-			child = background.instance()
-			prepare_game(child)
+			child = background_scene.instance()
+			background = child
+			prepare_game()
 	
 	if child:
 		$Active_Scene.add_child(child)
@@ -119,7 +135,7 @@ func change_state(next_state):
 func _on_Transition_Overlay_transition_finished():
 	$Transition_Overlay.hide()
 	if state == GameState.PLAY:
-		start_game($Active_Scene.get_child(0))
+		start_game()
 
 func on_dialogue_finished():
 	# Without this pause, when the dialogue -> menu transition begins in full
@@ -160,29 +176,29 @@ func on_exit_game():
 # actually starts: determine where the alien will appear, and put the camera
 # there.
 #
-func prepare_game(bg):
-	$Camera.position = bg.get_alien_starting_point()
+func prepare_game():
+	$Camera.position = background.get_alien_starting_point()
 	$Camera.current = true
 
 #
 # Start the game: populate the scene with an alien and his enemies.
 #
-func start_game(bg):
+func start_game():
 
 	# instantiate the alien and position him in front of the camera, initially
 
-	player = alien.instance()
-	player.position = $Camera.position
-	bg.add_child(player)
+	alien = alien_scene.instance()
+	alien.position = $Camera.position
+	background.add_child(alien)
 
-	# activate the camera that follows the alien around
+	# from now on, the camera follows the alien's movements
 
 	set_process(true)
 
 	# wait for the beam down animation to finish before starting the overlay
 	# animation which will eventually make it impossible to see
 
-	yield(player, "beam_down_finished")
+	yield(alien, "beam_down_finished")
 
 	# some overlay nodes have several animation players, so find them all
 

@@ -1,7 +1,7 @@
 extends Node
 
 #
-# Alien talents
+# alien talents
 #
 enum Talent {
 	TELEPORT,
