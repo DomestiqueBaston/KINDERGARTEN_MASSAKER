@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://SCENES/OVERLAYS/Transition_Overlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/OVERLAYS/CRT_Overlay.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://SCENES/OVERLAYS/Shutdown_Overlay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=7]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INTRO_INGAME.wav" type="AudioStream" id=8]
+[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=9]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
@@ -31,11 +32,19 @@ volume_db = 5.0
 autoplay = true
 bus = "MUSIC"
 
-[node name="Intro_Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 8 )
+[node name="Background_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -5.0
+bus = "AMBIANCE"
 
-[node name="Game_Music" type="AudioStreamPlayer2D" parent="."]
+[node name="Intro_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = 5.0
+bus = "MUSIC"
+
+[node name="Game_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+bus = "MUSIC"
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 240, 136 )
