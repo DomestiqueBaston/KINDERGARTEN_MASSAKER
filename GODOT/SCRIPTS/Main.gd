@@ -72,6 +72,11 @@ func _process(delta):
 	if alien:
 		update_camera(delta)
 
+func _get_window_size():
+	return Vector2(
+		ProjectSettings.get_setting("display/window/size/width"),
+		ProjectSettings.get_setting("display/window/size/height"))
+
 #
 # Called by _process() to update the camera, which follows the alien's position.
 # Rather than snapping directly to the target position, the camera moves toward
@@ -80,8 +85,9 @@ func _process(delta):
 #
 func update_camera(delta):
 	var limits = background.get_limits()
-	var w = ProjectSettings.get_setting("display/window/size/width") / 2.0
-	var h = ProjectSettings.get_setting("display/window/size/height") / 2.0
+	var size = _get_window_size()
+	var w = size.x / 2.0
+	var h = size.y / 2.0
 	var x = clamp(alien.position.x, limits.position.x + w, limits.end.x - w)
 	var y = clamp(alien.position.y, limits.position.y + h, limits.end.y - h)
 	var lerp_weight = clamp(camera_speed * delta, 0.0, 1.0)
@@ -208,9 +214,12 @@ func start_game():
 	$Background_Sound.play()
 	$Intro_Music.play()
 
-	# add teacher and initial kids
+	# add teacher and initial kids, ensuring they are on camera
 
-	var positions = background.get_spawning_points(9)
+	var window_size = _get_window_size()
+	var bbox = Rect2(alien.position - window_size / 2.0, window_size)
+
+	var positions = background.get_spawning_points(9, bbox)
 	background.instance_character_at(teacher_scene, positions[0])
 	background.instance_character_at(crying_kid_scene, positions[1])
 	background.instance_character_at(vomiting_kid_scene, positions[2])
