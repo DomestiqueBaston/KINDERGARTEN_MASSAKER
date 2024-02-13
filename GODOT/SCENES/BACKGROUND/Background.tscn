@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/BACKGROUND/Background.png" type="Texture" id=1]
-[ext_resource path="res://SCRIPTS/Background.gd" type="Script" id=2]
+[ext_resource path="res://SCENES/BACKGROUND/Background.gd" type="Script" id=2]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 773, 199, 794, 226, 450, 267, 218, 327, 212, 359, 40, 359, 48, 265, 73, 207, 227, 303, 768, 180, 438, 231, 506, 37, 622, 44, 684, 57, 246, 274, 95, 149, 147, 105, 269, 247, 207, 67, 309, 221, 279, 49, 349, 210, 388, 35, 399, 211, 747, 87, 768, 126 )
