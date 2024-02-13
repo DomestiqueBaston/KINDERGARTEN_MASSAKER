@@ -12,7 +12,7 @@
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Front.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/SOUND/FX/BEAM_DOWN/Beam_down.wav" type="AudioStream" id=12]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Scratching_A.wav" type="AudioStream" id=13]
-[ext_resource path="res://SCRIPTS/CHARACTERS/ALIEN.gd" type="Script" id=15]
+[ext_resource path="res://SCENES/CHARACTERS/ALIEN.gd" type="Script" id=15]
 
 [sub_resource type="CircleShape2D" id=34]
 radius = 20.0
