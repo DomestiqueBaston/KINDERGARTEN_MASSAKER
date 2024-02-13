@@ -1,11 +1,11 @@
 [gd_scene load_steps=89 format=2]
 
 [ext_resource path="res://SCENES/CHARACTERS/KINDERGARTNERIN.gd" type="Script" id=1]
-[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/EDUC/KINDERGARTNERIN.png" type="Texture" id=2]
-[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=3]
-[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_H.wav" type="AudioStream" id=4]
-[ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_C.wav" type="AudioStream" id=5]
-[ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_A.wav" type="AudioStream" id=6]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=2]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/EDUC/KINDERGARTNERIN.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_A.wav" type="AudioStream" id=4]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_H.wav" type="AudioStream" id=5]
+[ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_C.wav" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 26.0433
@@ -197,7 +197,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.20306,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
+"stream": ExtResource( 6 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -287,7 +287,7 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
 }
@@ -378,11 +378,11 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 2 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.170022, 0.473481 )
 }
@@ -586,7 +586,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.202332,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
+"stream": ExtResource( 6 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -676,7 +676,7 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
 }
@@ -767,11 +767,11 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 2 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.171175, 0.473481 )
 }
@@ -975,7 +975,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
+"stream": ExtResource( 6 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -1065,7 +1065,7 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
 }
@@ -1156,11 +1156,11 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 2 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.170022, 0.472017 )
 }
@@ -1364,7 +1364,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.205302,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
+"stream": ExtResource( 6 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -1454,7 +1454,7 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
 }
@@ -1545,11 +1545,11 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 2 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.171175, 0.474634 )
 }
@@ -1753,7 +1753,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.2119,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
+"stream": ExtResource( 6 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -1843,7 +1843,7 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
 }
@@ -1934,11 +1934,11 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 2 )
 } ],
 "times": PoolRealArray( 0.172328, 0.471175 )
 }
@@ -2142,7 +2142,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.204838,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
+"stream": ExtResource( 6 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -2232,7 +2232,7 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
 }
@@ -2323,11 +2323,11 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 2 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.171175, 0.473481 )
 }
@@ -2531,7 +2531,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.204838,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
+"stream": ExtResource( 6 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -2621,7 +2621,7 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
 }
@@ -2712,11 +2712,11 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 2 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.171175, 0.473481 )
 }
@@ -2920,7 +2920,7 @@ tracks/8/keys = {
 "clips": [ {
 "end_offset": 0.196303,
 "start_offset": 0.0,
-"stream": ExtResource( 5 )
+"stream": ExtResource( 6 )
 } ],
 "times": PoolRealArray( 0 )
 }
@@ -3010,7 +3010,7 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 6 )
+"stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
 }
@@ -3101,11 +3101,11 @@ tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 3 )
+"stream": ExtResource( 2 )
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 4 )
+"stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.170022, 0.473481 )
 }
@@ -3517,7 +3517,7 @@ __meta__ = {
 
 [node name="Educ" type="Sprite" parent="."]
 position = Vector2( -0.5, -0.5 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 hframes = 17
 vframes = 17
 __meta__ = {
@@ -3573,17 +3573,17 @@ parameters/Omg/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 2 )
 volume_db = -10.0
 bus = "FX"
 
 [node name="Scream" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = -10.0
 bus = "FX"
 
 [node name="OMG" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 4 )
 volume_db = -10.0
 bus = "FX"
 
