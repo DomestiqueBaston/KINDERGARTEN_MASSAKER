@@ -196,10 +196,11 @@ func start_game():
 
 	set_process(true)
 
-	# stop menu music, start intro music (game music starts when intro music
-	# finishes)
+	# stop menu music, start background noise and intro music (game music
+	# starts when intro music finishes)
 
 	$Menu_Music.stop()
+	$Background_Sound.play()
 	$Intro_Music.play()
 
 	# wait for the beam down animation to finish before starting the overlay
