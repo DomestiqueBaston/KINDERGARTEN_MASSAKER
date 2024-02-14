@@ -31,6 +31,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../White_noise:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5.0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Screen_Shut_Down"
@@ -52,7 +64,7 @@ tracks/1/path = NodePath("../Screen_shut_down")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -73,7 +85,7 @@ tracks/2/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 3 )
 } ],
-"times": PoolRealArray( 0.4 )
+"times": PoolRealArray( 0 )
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath(".:modulate")
@@ -87,6 +99,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("../White_noise:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ -80.0, 5.0 ]
+}
 
 [node name="Shutdown_Overlay" type="CanvasLayer"]
 script = ExtResource( 4 )
@@ -95,6 +119,7 @@ script = ExtResource( 4 )
 position = Vector2( 240, 135 )
 texture = ExtResource( 2 )
 hframes = 13
+frame = 12
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
@@ -103,9 +128,10 @@ anims/Screen_Shut_Down = SubResource( 2 )
 
 [node name="Screen_shut_down" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+volume_db = 15.0
 bus = "FX"
 
 [node name="White_noise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -5.0
+volume_db = 5.0
 bus = "FX"
