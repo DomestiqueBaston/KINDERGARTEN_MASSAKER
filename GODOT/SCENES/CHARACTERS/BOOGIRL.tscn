@@ -3757,7 +3757,7 @@ __meta__ = {
 [node name="Kid_Waving_Detection_Collider" type="Area2D" parent="."]
 visible = false
 collision_layer = 256
-collision_mask = 64
+collision_mask = 320
 __meta__ = {
 "_edit_lock_": true
 }
