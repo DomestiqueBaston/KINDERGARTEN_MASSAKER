@@ -48,15 +48,27 @@ var alien: Node
 
 func _ready():
 	set_process(false)
+	_set_game_overlay()
+
+#
+# Chooses a game overlay scene at random and adds it below PAPA_Game_Overlay.
+# If there is already an overlay, it is removed.
+#
+func _set_game_overlay():
 	var overlay_path = "res://SCENES/OVERLAYS/Game_Overlay_%d.tscn" % (1 + randi() % 4)
 	var overlay_scene = load(overlay_path)
+	if overlay:
+		overlay.queue_free()
 	overlay = overlay_scene.instance()
+	print("game overlay: " + overlay.name)
 	$PAPA_Game_Overlay.add_child(overlay)
 
 func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("full_screen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 		get_tree().set_input_as_handled()
+
+	# ui_cancel interrupts the game
 
 	elif state == GameState.PLAY:
 		if event.is_action_pressed("ui_cancel"):
@@ -76,6 +88,8 @@ func _unhandled_input(event: InputEvent):
 			SoundFX.playOK()
 		else:
 			SoundFX.playCancel()
+			if state == GameState.DEATH:
+				_set_game_overlay()
 		if state == GameState.OPTIONS:
 			Settings.save_settings()
 		change_state(GameState.MENU)
@@ -264,7 +278,8 @@ func start_game():
 	$Shutdown_Timer.start()
 
 func _on_Intro_Music_finished():
-	$Game_Music.play()
+	if state == GameState.PLAY:
+		$Game_Music.play()
 
 func _on_Enemy_Timer_timeout():
 
@@ -289,7 +304,7 @@ func _on_Enemy_Timer_timeout():
 	else:
 		enemy_scene = vomiting_kid_scene
 
-	# spawn the enemy and reset the timer for 3 seconds
+	# spawn the enemy and restart the timer
 
 	background.instance_character_at(enemy_scene, pos)
 	$Enemy_Timer.start(spawn_cycle_time)
