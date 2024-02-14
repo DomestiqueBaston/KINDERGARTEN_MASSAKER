@@ -109,3 +109,5 @@ bus = "FX"
 stream = ExtResource( 3 )
 volume_db = -5.0
 bus = "FX"
+
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]
