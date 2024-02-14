@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/SCREEN_SHUT_DOWN/Screen_shut_down.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/SCREEN_SHUTDOWN/Screen_shut_down.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/SCREEN_SHUT_DOWN/White_noise.wav" type="AudioStream" id=3]
+[ext_resource path="res://SCENES/OVERLAYS/Shutdown_Overlay.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -88,6 +89,7 @@ tracks/3/keys = {
 }
 
 [node name="Shutdown_Overlay" type="CanvasLayer"]
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 240, 135 )

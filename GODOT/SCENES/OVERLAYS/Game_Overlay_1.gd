@@ -19,3 +19,14 @@ func start_animation():
 	else:
 		$Contrast_neg.play("contrast")
 	$General.play("general")
+
+func reset_animation():
+	$Aberration_pos.play("RESET")
+	$Aberration_neg.play("RESET")
+	$Brightness_pos.play("RESET")
+	$Brightness_neg.play("RESET")
+	$Saturation_pos.play("RESET")
+	$Saturation_neg.play("RESET")
+	$Contrast_pos.play("RESET")
+	$Contrast_neg.play("RESET")
+	$General.play("RESET")

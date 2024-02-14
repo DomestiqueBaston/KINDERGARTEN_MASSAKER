@@ -245,9 +245,10 @@ func start_game():
 	yield(alien, "beam_down_finished")
 	overlay.start_animation()
 
-	# start spawning enemies
+	# start spawning enemies and counting down
 
 	$Enemy_Timer.start(spawn_first_time)
+	$Shutdown_Timer.start()
 
 func _on_Intro_Music_finished():
 	$Game_Music.play()
@@ -262,7 +263,7 @@ func _on_Enemy_Timer_timeout():
 
 	# what sort of enemy?
 
-	var enemy_scene
+	var enemy_scene: PackedScene
 	var rand = randf()
 	if rand < 0.25:
 		enemy_scene = spitting_kid_scene
@@ -279,3 +280,8 @@ func _on_Enemy_Timer_timeout():
 
 	background.instance_character_at(enemy_scene, pos)
 	$Enemy_Timer.start(spawn_cycle_time)
+
+func _on_Shutdown_Timer_timeout():
+	$Shutdown_Overlay.set_visible(true)
+	$Shutdown_Overlay.start_animation()
+	overlay.reset_animation()
