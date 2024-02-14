@@ -15,9 +15,9 @@ var options_scene = preload("res://SCENES/SCREENS/Options.tscn")
 var credits_scene = preload("res://SCENES/SCREENS/Credits.tscn")
 var dialogue_scene = preload("res://SCENES/SCREENS/Dialogue.tscn")
 var talent_scene = preload("res://SCENES/SCREENS/Talent.tscn")
+var death_scene = preload("res://SCENES/SCREENS/Death.tscn")
 var background_scene = preload("res://SCENES/BACKGROUND/Background.tscn")
 var alien_scene = preload("res://SCENES/CHARACTERS/ALIEN.tscn")
-
 var teacher_scene = preload("res://SCENES/CHARACTERS/KINDERGARTNERIN.tscn")
 var crying_kid_scene = preload("res://SCENES/CHARACTERS/BINOCLARD.tscn")
 var vomiting_kid_scene = preload("res://SCENES/CHARACTERS/VOMITO.tscn")
@@ -36,7 +36,8 @@ enum GameState {
 	CREDITS,
 	DIALOGUE,
 	TALENT,
-	PLAY
+	PLAY,
+	DEATH
 }
 
 var state = GameState.TITLE
@@ -56,11 +57,17 @@ func _unhandled_input(event: InputEvent):
 	if event.is_action_pressed("full_screen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 		get_tree().set_input_as_handled()
-		
+
+	elif state == GameState.PLAY:
+		if event.is_action_pressed("ui_cancel"):
+			stop_game()
+			change_state(GameState.DEATH)
+			get_tree().set_input_as_handled()
+
 	# user can go back to main menu by pressing ui_accept, ui_cancel or most
 	# keyboard keys (symbols such as letters, numbers and punctuation)
 	
-	elif (state != GameState.MENU and state != GameState.PLAY and
+	elif (state != GameState.MENU and
 			(event.is_action_pressed("ui_accept", false, true) or
 			event.is_action_pressed("ui_cancel") or
 			(event is InputEventKey and event.is_pressed() and
@@ -101,15 +108,17 @@ func update_camera(delta):
 
 func change_state(next_state):
 	var child = $Active_Scene.get_child(0)
+	
 	if state == GameState.MENU:
 		previous_menu_item = child.get_current_item()
-		
-	# hide overlay before $Transition_Overlay takes a screenshot
-	$PAPA_Game_Overlay.hide()
-	$Transition_Overlay.show()
-	$Transition_Overlay.start_transition()
-	# put overlay back after screenshot has been taken
-	$PAPA_Game_Overlay.show()
+	
+	if next_state != GameState.DEATH:
+		# hide overlay before $Transition_Overlay takes a screenshot
+		$PAPA_Game_Overlay.hide()
+		$Transition_Overlay.show()
+		$Transition_Overlay.start_transition()
+		# put overlay back after screenshot has been taken
+		$PAPA_Game_Overlay.show()
 	
 	child.queue_free()
 	child = null
@@ -145,6 +154,8 @@ func change_state(next_state):
 			child = background_scene.instance()
 			background = child
 			prepare_game()
+		GameState.DEATH:
+			child = death_scene.instance()
 	
 	if child:
 		$Active_Scene.add_child(child)
@@ -200,7 +211,6 @@ func prepare_game():
 	# position the camera where the alien will appear
 
 	$Camera.position = background.get_alien_starting_point()
-	$Camera.current = true
 
 	# add teacher and initial kids, ensuring they are on camera
 
@@ -282,6 +292,19 @@ func _on_Enemy_Timer_timeout():
 	$Enemy_Timer.start(spawn_cycle_time)
 
 func _on_Shutdown_Timer_timeout():
-	$Shutdown_Overlay.set_visible(true)
+	$Shutdown_Overlay.visible = true
 	$Shutdown_Overlay.start_animation()
+	overlay.reset_animation()
+
+func stop_game():
+	$Camera.position = _get_window_size() / 2.0
+	set_process(false)
+	$Menu_Music.play()
+	$Background_Sound.stop()
+	$Intro_Music.stop()
+	$Game_Music.stop()
+	$Enemy_Timer.stop()
+	$Shutdown_Timer.stop()
+	$Shutdown_Overlay.visible = false
+	$Shutdown_Overlay.reset_animation()
 	overlay.reset_animation()

@@ -7,7 +7,7 @@
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Optionen.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Menu_Dialogue_On.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Menu_Dialogue_Off.png" type="Texture" id=7]
-[ext_resource path="res://SCRIPTS/Menu.gd" type="Script" id=8]
+[ext_resource path="res://SCENES/SCREENS/Menu.gd" type="Script" id=8]
 [ext_resource path="res://ASSETS/GRAPHICS/MENU_SCREEN/Tuto.png" type="Texture" id=9]
 
 [node name="PAPA_Menu" type="Node2D"]

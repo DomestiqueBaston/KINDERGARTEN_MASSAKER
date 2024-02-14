@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE TEXTE.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png" type="Texture" id=2]
-[ext_resource path="res://SCRIPTS/Dialogue.gd" type="Script" id=3]
+[ext_resource path="res://SCENES/SCREENS/Dialogue.gd" type="Script" id=3]
 [ext_resource path="res://ASSETS/SOUND/INTERFACE/Dialogue.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://SHADERS/TMP/Textured_Text.shader" type="Shader" id=6]

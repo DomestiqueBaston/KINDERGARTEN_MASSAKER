@@ -48,6 +48,7 @@ bus = "MUSIC"
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 240, 136 )
+current = true
 
 [node name="Enemy_Timer" type="Timer" parent="."]
 one_shot = true
