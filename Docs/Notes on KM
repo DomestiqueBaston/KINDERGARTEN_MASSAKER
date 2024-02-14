@@ -140,7 +140,7 @@ Technically
 
 	The game starts with 1 Teacher (only 1 per game), 1 Crying Kid, 1 Vomiting Kid, 1 Throwing Booger Kid, 3 Kids with Stick and 2 Spitting Kid all playing Idle animation spawning randomly on the map from spawning points defined before hands too.
 
-	After 5 seconds of game, every 3 seconds 1 kid spawns in the field (off-camera). It doesn’t apply when the Alien dies and until he revives after using Second Life talent:
+	After 5 seconds of game, every 2 seconds 1 kid spawns in the field (off-camera). It doesn’t apply when the Alien dies and until he revives after using Second Life talent:
 
 	Chances of spawning:
 		Spitting Kid: 25%
