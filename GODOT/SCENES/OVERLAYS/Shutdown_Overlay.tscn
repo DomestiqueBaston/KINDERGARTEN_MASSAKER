@@ -64,7 +64,7 @@ tracks/1/path = NodePath("../Screen_shut_down")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -106,8 +106,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.6 ),
-"transitions": PoolRealArray( 0.25, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.4, 1 ),
 "update": 0,
 "values": [ -80.0, 5.0 ]
 }
