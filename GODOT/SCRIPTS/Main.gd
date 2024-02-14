@@ -7,7 +7,7 @@ export var camera_speed = 5.0
 export var spawn_first_time = 5.0
 
 # every how many seconds are new enemies spawned subsequently?
-export var spawn_cycle_time = 3.0
+export var spawn_cycle_time = 2.0
 
 var menu_scene = preload("res://SCENES/SCREENS/Menu.tscn")
 var tutorial_scene = preload("res://SCENES/SCREENS/Tuto.tscn")
