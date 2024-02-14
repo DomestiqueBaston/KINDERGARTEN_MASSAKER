@@ -111,7 +111,9 @@ func change_state(next_state):
 	
 	if state == GameState.MENU:
 		previous_menu_item = child.get_current_item()
-	
+	elif state == GameState.DEATH:
+		$Menu_Music.play()
+
 	if next_state != GameState.DEATH:
 		# hide overlay before $Transition_Overlay takes a screenshot
 		$PAPA_Game_Overlay.hide()
@@ -301,7 +303,6 @@ func _on_Shutdown_Timer_timeout():
 func stop_game():
 	$Camera.position = _get_window_size() / 2.0
 	set_process(false)
-	$Menu_Music.play()
 	$Background_Sound.stop()
 	$Intro_Music.stop()
 	$Game_Music.stop()
