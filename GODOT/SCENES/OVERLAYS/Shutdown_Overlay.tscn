@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/SCREEN_SHUT_DOWN/Screen_shut_down.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/SCREEN_SHUTDOWN/Screen_shut_down.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/SCREEN_SHUT_DOWN/White_noise.wav" type="AudioStream" id=3]
 [ext_resource path="res://SCENES/OVERLAYS/Shutdown_Overlay.gd" type="Script" id=4]
+[ext_resource path="res://SHADERS/Noise.gdshader" type="Shader" id=5]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 5 )
+shader_param/amount = 0.0
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -42,6 +47,54 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 5.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../ColorRect:material:shader_param/amount")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../ColorRect:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.501961 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../ColorRect:material:render_priority")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -88,38 +141,70 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath(".:modulate")
+tracks/3/path = NodePath("../White_noise:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 0.4, 1 ),
+"update": 0,
+"values": [ -80.0, 5.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../White_noise:volume_db")
+tracks/4/path = NodePath(".:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 0.4, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -80.0, 5.0 ]
+"values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../ColorRect:material:shader_param/amount")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.25, 0.75, 0.0, 0.25, 10.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../ColorRect:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.00784314 ) ]
 }
 
 [node name="Shutdown_Overlay" type="CanvasLayer"]
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.501961 )
 position = Vector2( 240, 135 )
 texture = ExtResource( 2 )
 hframes = 13
-frame = 12
+frame = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.5 )
+material = SubResource( 4 )
+margin_right = 480.0
+margin_bottom = 270.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
