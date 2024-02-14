@@ -59,3 +59,26 @@ const talent_name = [
 func _ready():
 	assert(Talent.size() == talent_name.size())
 	randomize()
+
+#
+# Returns a random direction vector (NOT normalized) that can be fed to an
+# AnimationNodeBlendSpace2D.
+#
+func get_random_direction() -> Vector2:
+	match randi() % 8:
+		0:
+			return Vector2(0, 1)
+		1:
+			return Vector2(-1, 1)
+		2:
+			return Vector2(-1, 0)
+		3:
+			return Vector2(-1, -1)
+		4:
+			return Vector2(0, -1)
+		5:
+			return Vector2(1, -1)
+		6:
+			return Vector2(1, 0)
+		_:
+			return Vector2(1, 1)
