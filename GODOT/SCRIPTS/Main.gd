@@ -1,7 +1,13 @@
 extends Node2D
 
 # determines how quickly the camera follows the alien's movements
-export var camera_speed = 5
+export var camera_speed = 5.0
+
+# after how many seconds is the first new enemy spawned?
+export var spawn_first_time = 5.0
+
+# every how many seconds are new enemies spawned subsequently?
+export var spawn_cycle_time = 3.0
 
 var menu_scene = preload("res://SCENES/SCREENS/Menu.tscn")
 var tutorial_scene = preload("res://SCENES/SCREENS/Tuto.tscn")
@@ -35,9 +41,9 @@ enum GameState {
 
 var state = GameState.TITLE
 var previous_menu_item = -1
-var overlay
-var background
-var alien
+var overlay: Node
+var background: Background
+var alien: Node
 
 func _ready():
 	set_process(false)
@@ -239,5 +245,37 @@ func start_game():
 	yield(alien, "beam_down_finished")
 	overlay.start_animation()
 
+	# start spawning enemies
+
+	$Enemy_Timer.start(spawn_first_time)
+
 func _on_Intro_Music_finished():
 	$Game_Music.play()
+
+func _on_Enemy_Timer_timeout():
+
+	# find a spawning point off-camera
+
+	var window_size = _get_window_size()
+	var bbox = Rect2($Camera.position - window_size / 2.0, window_size)
+	var pos = background.get_spawning_point(null, bbox)
+
+	# what sort of enemy?
+
+	var enemy_scene
+	var rand = randf()
+	if rand < 0.25:
+		enemy_scene = spitting_kid_scene
+	elif rand < 0.55:
+		enemy_scene = stick_kid_scene
+	elif rand < 0.74:
+		enemy_scene = booger_kid_scene
+	elif rand < 0.87:
+		enemy_scene = crying_kid_scene
+	else:
+		enemy_scene = vomiting_kid_scene
+
+	# spawn the enemy and reset the timer for 3 seconds
+
+	background.instance_character_at(enemy_scene, pos)
+	$Enemy_Timer.start(spawn_cycle_time)

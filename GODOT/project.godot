@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "Background",
+"language": "GDScript",
+"path": "res://SCENES/BACKGROUND/Background.gd"
+} ]
+_global_script_class_icons={
+"Background": ""
+}
+
 [application]
 
 config/name="KINDERGARTEN MASSAKER"
@@ -23,6 +33,10 @@ config/windows_native_icon="res://KM_LOGO.ico"
 Globals="*res://SCRIPTS/Globals.gd"
 Settings="*res://SCRIPTS/Settings.gd"
 SoundFX="*res://SCENES/FX/SoundFX.tscn"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
 
 [display]
 

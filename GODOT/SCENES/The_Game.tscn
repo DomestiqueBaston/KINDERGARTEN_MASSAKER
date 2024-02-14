@@ -49,5 +49,9 @@ bus = "MUSIC"
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 240, 136 )
 
+[node name="Enemy_Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="transition_finished" from="Transition_Overlay" to="." method="_on_Transition_Overlay_transition_finished"]
 [connection signal="finished" from="Intro_Music" to="." method="_on_Intro_Music_finished"]
+[connection signal="timeout" from="Enemy_Timer" to="." method="_on_Enemy_Timer_timeout"]
