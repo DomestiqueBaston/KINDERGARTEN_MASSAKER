@@ -270,7 +270,7 @@ func _on_Enemy_Timer_timeout():
 
 	# find a spawning point off-camera
 
-	var window_size = _get_window_size()
+	var window_size = _get_window_size() * 1.5
 	var bbox = Rect2($Camera.position - window_size / 2.0, window_size)
 	var pos = background.get_spawning_point(null, bbox)
 
