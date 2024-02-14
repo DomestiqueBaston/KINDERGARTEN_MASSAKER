@@ -212,9 +212,10 @@ func prepare_game():
 
 	$Camera.position = background.get_alien_starting_point()
 
-	# add teacher and initial kids, ensuring they are on camera
+	# add teacher and initial kids, ensuring they are on camera (or not far
+	# off-camera...)
 
-	var window_size = _get_window_size()
+	var window_size = _get_window_size() * 1.5
 	var bbox = Rect2($Camera.position - window_size / 2.0, window_size)
 
 	var positions = background.get_spawning_points(9, bbox)
@@ -294,6 +295,7 @@ func _on_Enemy_Timer_timeout():
 func _on_Shutdown_Timer_timeout():
 	$Shutdown_Overlay.visible = true
 	$Shutdown_Overlay.start_animation()
+	yield($Shutdown_Overlay, "animation_started")
 	overlay.reset_animation()
 
 func stop_game():
