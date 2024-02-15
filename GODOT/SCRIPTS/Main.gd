@@ -44,7 +44,8 @@ var state = GameState.TITLE
 var previous_menu_item = -1
 var overlay: Node
 var background: Background
-var alien: Node
+var alien: Alien
+var talent: int
 
 func _ready():
 	set_process(false)
@@ -218,6 +219,7 @@ func on_talent_aborted():
 	change_state(GameState.MENU)
 
 func on_talent_chosen(talent_index):
+	talent = talent_index
 	print("chose talent: ", Globals.talent_name[talent_index])
 	change_state(GameState.PLAY)
 
@@ -261,6 +263,8 @@ func start_game():
 	# instantiate the alien and position him in front of the camera, initially
 
 	alien = background.instance_character_at(alien_scene, $Camera.position)
+	alien.set_talent(talent)
+	alien.connect("teleport", self, "teleport")
 
 	# from now on, the camera follows the alien's movements
 
@@ -273,10 +277,13 @@ func start_game():
 	$Background_Sound.play()
 	$Intro_Music.play()
 
-	# wait for the beam down animation to finish before starting the overlay
-	# animation which will eventually make it impossible to see
+	# wait for the beam down animation to finish before continuing
 
 	yield(alien, "beam_down_finished")
+
+	# start the overlay animation which will eventually make it impossible to
+	# see
+
 	overlay.start_animation()
 
 	# start spawning enemies and counting down
@@ -333,3 +340,6 @@ func stop_game():
 	$Shutdown_Overlay.visible = false
 	$Shutdown_Overlay.reset_animation()
 	overlay.reset_animation()
+
+func teleport():
+	alien.position = background.get_teleportation_point()
