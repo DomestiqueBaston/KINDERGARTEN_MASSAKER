@@ -41,7 +41,7 @@ The Alien has 1000 hit points (HP).
 	- Dash (pass through kids and attacks – cooldown: 15 seconds). Uses DASH fx.
 	- Repulsive explosion (repulsive effect only on kids – not the ranged attacks – cooldown: 10 seconds). Uses EXPLOSION fx.
 	- Freezing shockwave (Freezes nearby enemies for 4 seconds – not the ranged attacks – cooldown: 15 seconds). Uses FREEZING fx.
-	- Quick runner (runs 20% faster – permanent). It means increasing fps or m/s. Uses NO fx.
+	- Quick runner (runs 20% faster – permanent). It means increasing m/s and/or fps . Uses NO fx.
 	- Force field (repulsive effect for 6 seconds on ranged attacks – cooldown: 10 seconds). Uses FORCE_FIELD fx.
 	- Time stop (affects everything (except the Alien) for 3 seconds – cooldown: 20 seconds).  Uses TIME_STOP fx.
 	- Mirror images (3 invulnerable copies of the Alien appear (“flashing” white for 3 frames) and start running in random directions (movement collisions apply) from the player attracting close enough kids for 3 seconds then disappear (“flashing” white for 3 frames) – cooldown: 15 seconds). If hit by an attack, the mirror image disappears instantly (“flashing” white for 3 frames). Uses MIRROR_IMAGES fx.
