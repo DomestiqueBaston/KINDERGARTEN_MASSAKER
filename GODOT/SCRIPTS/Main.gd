@@ -76,6 +76,12 @@ func _unhandled_input(event: InputEvent):
 			change_state(GameState.DEATH)
 			get_tree().set_input_as_handled()
 
+	# ui_accept from DEATH starts a new game directly
+
+	elif (state == GameState.DEATH and
+			event.is_action_pressed("ui_accept", false, true)):
+		change_state(GameState.PLAY)
+
 	# user can go back to main menu by pressing ui_accept, ui_cancel or most
 	# keyboard keys (symbols such as letters, numbers and punctuation)
 	
