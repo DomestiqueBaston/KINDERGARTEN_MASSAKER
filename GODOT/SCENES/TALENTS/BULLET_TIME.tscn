@@ -18,7 +18,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "mirror_images"
+resource_name = "bullet_time"
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:self_modulate")
@@ -58,7 +58,7 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
-anims/mirror_images = SubResource( 4 )
+anims/bullet_time = SubResource( 4 )
 __meta__ = {
 "_editor_description_": "Audio: Track A for Mirror_Images and track B for Bullet_Time!"
 }

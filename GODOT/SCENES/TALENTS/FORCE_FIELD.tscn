@@ -62,34 +62,6 @@ tracks/1/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/2/type = "audio"
-tracks/2/path = NodePath("FX_ON")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-} ],
-"times": PoolRealArray( 0 )
-}
-tracks/3/type = "audio"
-tracks/3/path = NodePath("FX_OFF")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = false
-tracks/3/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 1 )
-} ],
-"times": PoolRealArray( 0 )
-}
 
 [node name="Force_Field" type="Node2D"]
 __meta__ = {
