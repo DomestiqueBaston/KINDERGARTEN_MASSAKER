@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Alien",
+"language": "GDScript",
+"path": "res://SCENES/CHARACTERS/ALIEN.gd"
+}, {
 "base": "StaticBody2D",
 "class": "Background",
 "language": "GDScript",
 "path": "res://SCENES/BACKGROUND/Background.gd"
 } ]
 _global_script_class_icons={
+"Alien": "",
 "Background": ""
 }
 

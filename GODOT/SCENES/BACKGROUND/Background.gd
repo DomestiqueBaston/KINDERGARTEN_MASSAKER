@@ -3,6 +3,7 @@ extends StaticBody2D
 class_name Background
 
 const START_POINT_COUNT = 5
+const TELEPORTATION_POINT_COUNT = 15
 const SPAWN_POINT_COUNT = 86
 
 #
@@ -18,6 +19,14 @@ func get_limits() -> Rect2:
 func get_alien_starting_point() -> Vector2:
 	var index = randi() % START_POINT_COUNT
 	return get_node("Alien_Starting_Points/Point_%d" % (index + 1)).position
+
+#
+# Returns one of the predefined teleportation points for the alien, chosen at
+# random.
+#
+func get_teleportation_point() -> Vector2:
+	var index = randi() % TELEPORTATION_POINT_COUNT
+	return get_node("Alien_Teleportation_Points/Point_%02d" % (index + 1)).position
 
 func _get_spawning_position(index) -> Vector2:
 	return get_node("Kids_Spawning_Points/Point_%02d" % (index + 1)).position
