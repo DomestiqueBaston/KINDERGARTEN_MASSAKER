@@ -167,9 +167,9 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 100.0, 25.0 ]
+"values": [ 100.0, 15.0 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("VHSPause:material:shader_param/shake_amount_y")
@@ -179,9 +179,9 @@ tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 100.0, 2.5 ]
+"values": [ 100.0, 1.5 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("VHSPause:material:shader_param/white_alpha")

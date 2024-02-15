@@ -5336,6 +5336,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 speed = Vector2( 150, 75 )
+scratch_chances = 0.33
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false

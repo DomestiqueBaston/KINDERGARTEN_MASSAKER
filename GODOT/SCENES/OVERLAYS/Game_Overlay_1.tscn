@@ -299,7 +299,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1.5, 1.5 ),
 "update": 0,
-"values": [ 0.0, 0.1 ]
+"values": [ 0.001, 0.1 ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -361,7 +361,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1.5, 1.5 ),
 "update": 0,
-"values": [ 0.0, 0.75 ]
+"values": [ 0.001, 0.75 ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -423,7 +423,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1.5, 1.5 ),
 "update": 0,
-"values": [ 0.0, -0.1 ]
+"values": [ -0.001, -0.1 ]
 }
 
 [sub_resource type="Animation" id=25]
@@ -485,7 +485,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1.5, 1.5 ),
 "update": 0,
-"values": [ 0.0, -0.5 ]
+"values": [ -0.001, -0.5 ]
 }
 
 [sub_resource type="Animation" id=29]
@@ -537,6 +537,7 @@ margin_right = 480.0
 margin_bottom = 270.0
 
 [node name="General" type="AnimationPlayer" parent="."]
+autoplay = "general"
 anims/RESET = SubResource( 13 )
 anims/general = SubResource( 14 )
 
