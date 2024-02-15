@@ -5382,12 +5382,16 @@ __meta__ = {
 [node name="Beam Down Rear" type="Sprite" parent="Beam_Down"]
 position = Vector2( 0, -12 )
 texture = ExtResource( 10 )
+centered = false
+offset = Vector2( -48, -96 )
 hframes = 32
 
 [node name="Beam Down Front" type="Sprite" parent="Beam_Down"]
 position = Vector2( 0, -12 )
 z_index = 1
 texture = ExtResource( 11 )
+centered = false
+offset = Vector2( -48, -96 )
 hframes = 32
 frame = 31
 
