@@ -95,8 +95,8 @@ shape = SubResource( 3 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 22
-frame = 21
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Booger"
 anims/Booger = SubResource( 2 )
 anims/RESET = SubResource( 1 )

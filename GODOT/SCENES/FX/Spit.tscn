@@ -97,5 +97,6 @@ texture = ExtResource( 1 )
 hframes = 18
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Spit"
 anims/RESET = SubResource( 1 )
 anims/Spit = SubResource( 2 )

@@ -123,26 +123,24 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 2 )
-} ],
-"times": PoolRealArray( 0 )
-}
-tracks/2/type = "audio"
-tracks/2/path = NodePath("Booger_explosion")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
 "stream": ExtResource( 3 )
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Booger_Collider:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1, 0.5 ), Vector2( 1, 1 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 0.5, 1 ), Vector2( 0, 0.5 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+}
 tracks/3/type = "value"
-tracks/3/path = NodePath("Booger_Collider:position")
+tracks/3/path = NodePath("Booger_Collider:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -151,31 +149,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 1, 0.5 ), Vector2( 1, 1 ), Vector2( 0, 1 ), Vector2( 0, 1 ), Vector2( 0.5, 1 ), Vector2( 0, 0.5 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Booger_Collider:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
 "values": [ Vector2( 1, 0.7 ), Vector2( 1.7, 1 ), Vector2( 2, 1.1 ), Vector2( 2.4, 1.4 ), Vector2( 2.5, 1.5 ), Vector2( 2.55, 1.7 ), Vector2( 2.6, 1.75 ), Vector2( 2.65, 1.8 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Booger_explosion:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -5.0 ]
 }
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
@@ -191,13 +165,13 @@ shape = SubResource( 3 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 8
-frame = 7
 
-[node name="AnimationPlayer (1 random sound out of 2)" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Smoke"
 anims/RESET = SubResource( 1 )
 anims/Smoke = SubResource( 2 )
 
 [node name="Booger_explosion" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 3 )
 volume_db = -5.0
 bus = "FX"

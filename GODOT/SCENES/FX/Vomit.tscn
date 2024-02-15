@@ -174,18 +174,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [ Vector2( 0.65, 0.35 ), Vector2( 1.9, 1 ), Vector2( 2, 1.025 ), Vector2( 2.075, 1.05 ), Vector2( 2.1, 1.075 ) ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Vomit:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
 
 [node name="VOMIT" type="KinematicBody2D"]
 collision_layer = 512
