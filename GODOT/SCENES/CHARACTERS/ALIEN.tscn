@@ -5335,6 +5335,7 @@ script = ExtResource( 15 )
 __meta__ = {
 "_edit_lock_": true
 }
+speed = Vector2( 150, 75 )
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
