@@ -23,6 +23,7 @@
 [ext_resource path="res://SCENES/SCREENS/Talent.gd" type="Script" id=21]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Beam_me_down.png" type="Texture" id=22]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Beam_me_down_off.png" type="Texture" id=23]
+[ext_resource path="res://ASSETS/SOUND/INTERFACE/Ready_to_beam_down.wav" type="AudioStream" id=24]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Zufallig_off.png" type="Texture" id=25]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Zufallig_on.png" type="Texture" id=26]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Kotzsicher_on.png" type="Texture" id=27]
@@ -31,7 +32,6 @@
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Geist_off.png" type="Texture" id=30]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Bullet_time_on.png" type="Texture" id=31]
 [ext_resource path="res://ASSETS/GRAPHICS/TALENT_SELECTION_SCREEN/Geist_on.png" type="Texture" id=32]
-[ext_resource path="res://ASSETS/SOUND/INTERFACE/Ready_to_Beam_Down.wav" type="AudioStream" id=33]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Beam_blink"
@@ -59,7 +59,7 @@ tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource( 33 )
+"stream": ExtResource( 24 )
 } ],
 "times": PoolRealArray( 0.1 )
 }
@@ -264,6 +264,6 @@ anims/Beam_blink = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
 [node name="Ready_to_beam_down" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 33 )
+stream = ExtResource( 24 )
 volume_db = -5.0
 bus = "FX"
