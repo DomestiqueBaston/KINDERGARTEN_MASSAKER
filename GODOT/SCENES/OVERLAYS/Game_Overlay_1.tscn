@@ -537,7 +537,6 @@ margin_right = 480.0
 margin_bottom = 270.0
 
 [node name="General" type="AnimationPlayer" parent="."]
-autoplay = "general"
 anims/RESET = SubResource( 13 )
 anims/general = SubResource( 14 )
 
