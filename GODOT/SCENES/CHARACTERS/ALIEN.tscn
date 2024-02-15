@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Mud_steps_E.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Mud_steps_C.wav" type="AudioStream" id=6]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Fall_A.wav" type="AudioStream" id=7]
+[ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Hit_D.wav" type="AudioStream" id=8]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=9]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Back.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Front.png" type="Texture" id=11]
@@ -14,11 +15,13 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Scratching_A.wav" type="AudioStream" id=13]
 [ext_resource path="res://SCENES/CHARACTERS/ALIEN.gd" type="Script" id=15]
 
-[sub_resource type="CircleShape2D" id=34]
-radius = 20.0
+[sub_resource type="CapsuleShape2D" id=117]
+radius = 13.0
+height = 14.0
 
-[sub_resource type="CircleShape2D" id=81]
-radius = 26.0
+[sub_resource type="CapsuleShape2D" id=118]
+radius = 25.0
+height = 4.05406
 
 [sub_resource type="Animation" id=95]
 resource_name = "Beam_Down"
@@ -332,7 +335,7 @@ tracks/7/keys = {
 "values": [ false ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit")
+tracks/8/path = NodePath("../Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -343,19 +346,21 @@ tracks/8/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0.1 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit:volume_db")
+tracks/9/type = "audio"
+tracks/9/path = NodePath("../Hit_2")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -5.0 ]
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=1]
@@ -551,7 +556,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0.0 ]
+"values": [ 2.5 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
@@ -924,7 +929,7 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 20 ) ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit")
+tracks/8/path = NodePath("../Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -935,19 +940,21 @@ tracks/8/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0.1 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit:volume_db")
+tracks/9/type = "audio"
+tracks/9/path = NodePath("../Hit_2")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -5.0 ]
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=5]
@@ -1143,7 +1150,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0.0 ]
+"values": [ 2.5 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
@@ -1535,7 +1542,7 @@ tracks/7/keys = {
 "values": [ Vector2( 0.666, 0.666 ) ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit")
+tracks/8/path = NodePath("../Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1546,19 +1553,21 @@ tracks/8/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0.1 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit:volume_db")
+tracks/9/type = "audio"
+tracks/9/path = NodePath("../Hit_2")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -5.0 ]
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=9]
@@ -1754,7 +1763,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0.0 ]
+"values": [ 2.5 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
@@ -2127,7 +2136,7 @@ tracks/7/keys = {
 "values": [ Vector2( 2, 18 ) ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit")
+tracks/8/path = NodePath("../Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -2138,19 +2147,21 @@ tracks/8/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0.1 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit:volume_db")
+tracks/9/type = "audio"
+tracks/9/path = NodePath("../Hit_2")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -5.0 ]
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=13]
@@ -2346,7 +2357,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0.0 ]
+"values": [ 2.5 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
@@ -2719,7 +2730,7 @@ tracks/7/keys = {
 "values": [ Vector2( -1, 20 ) ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit")
+tracks/8/path = NodePath("../Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -2730,19 +2741,21 @@ tracks/8/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0.1 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit:volume_db")
+tracks/9/type = "audio"
+tracks/9/path = NodePath("../Hit_2")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -5.0 ]
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=17]
@@ -2938,7 +2951,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0.0 ]
+"values": [ 2.5 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
@@ -3311,7 +3324,7 @@ tracks/7/keys = {
 "values": [ Vector2( 0.666, 0.666 ) ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit")
+tracks/8/path = NodePath("../Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -3322,19 +3335,21 @@ tracks/8/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0.1 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit:volume_db")
+tracks/9/type = "audio"
+tracks/9/path = NodePath("../Hit_2")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -5.0 ]
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=21]
@@ -3530,7 +3545,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0.0 ]
+"values": [ 2.5 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
@@ -3903,7 +3918,7 @@ tracks/7/keys = {
 "values": [ Vector2( -1, 20 ) ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit")
+tracks/8/path = NodePath("../Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -3914,19 +3929,21 @@ tracks/8/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0.1 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit:volume_db")
+tracks/9/type = "audio"
+tracks/9/path = NodePath("../Hit_2")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -5.0 ]
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=25]
@@ -4122,7 +4139,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0.0 ]
+"values": [ 2.5 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
@@ -4495,7 +4512,7 @@ tracks/7/keys = {
 "values": [ Vector2( 1, 20 ) ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit")
+tracks/8/path = NodePath("../Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -4506,19 +4523,21 @@ tracks/8/keys = {
 "start_offset": 0.0,
 "stream": ExtResource( 4 )
 } ],
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 0.1 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit:volume_db")
+tracks/9/type = "audio"
+tracks/9/path = NodePath("../Hit_2")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -5.0 ]
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=29]
@@ -4714,7 +4733,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0.0 ]
+"values": [ 2.5 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
@@ -5008,7 +5027,7 @@ tracks/8/keys = {
 "values": [ -10.0 ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit:volume_db")
+tracks/9/path = NodePath("../Hit_1:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -5032,7 +5051,7 @@ tracks/10/keys = {
 "values": [ -10.0 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit:pitch_scale")
+tracks/11/path = NodePath("../Hit_1:pitch_scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -5319,9 +5338,9 @@ __meta__ = {
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 0, 33 )
-scale = Vector2( 1, 0.666 )
-shape = SubResource( 34 )
+position = Vector2( 0, 35 )
+rotation = 1.5708
+shape = SubResource( 117 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -5337,7 +5356,7 @@ __meta__ = {
 [node name="HCollider" type="CollisionShape2D" parent="Hit_Collider"]
 position = Vector2( -6, 21 )
 scale = Vector2( 1, 0.7 )
-shape = SubResource( 81 )
+shape = SubResource( 118 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -5454,14 +5473,18 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 parameters/Scratching/blend_position = Vector2( 0, 0 )
 
-[node name="Hit" type="AudioStreamPlayer" parent="."]
+[node name="Hit_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
 pitch_scale = 1.67
 bus = "FX"
 
+[node name="Hit_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+bus = "FX"
+
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 1 )
 volume_db = -10.0
 bus = "FX"
 __meta__ = {

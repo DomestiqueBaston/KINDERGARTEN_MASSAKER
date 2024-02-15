@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://SCENES/CHARACTERS/KINDERGARTNERIN.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_A.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_H.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_C.wav" type="AudioStream" id=6]
+
+[sub_resource type="CapsuleShape2D" id=85]
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 26.0433
@@ -3441,11 +3444,7 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=58]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=78]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=79]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=80]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=81]
 switch_mode = 2
@@ -3457,18 +3456,24 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=84]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=86]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=87]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id=46]
 states/Check/node = SubResource( 45 )
 states/Check/position = Vector2( 367, 122 )
 states/No/node = SubResource( 67 )
-states/No/position = Vector2( 674, 93 )
+states/No/position = Vector2( 684, 112 )
 states/Omg/node = SubResource( 76 )
 states/Omg/position = Vector2( 403, 243 )
 states/Run/node = SubResource( 56 )
 states/Run/position = Vector2( 517, 44 )
-transitions = [ "Run", "Check", SubResource( 58 ), "No", "Run", SubResource( 78 ), "Check", "Run", SubResource( 79 ), "No", "Check", SubResource( 80 ), "Omg", "Run", SubResource( 81 ), "Check", "Omg", SubResource( 82 ), "Omg", "No", SubResource( 83 ), "Run", "No", SubResource( 84 ) ]
+transitions = [ "Run", "Check", SubResource( 58 ), "Check", "Run", SubResource( 79 ), "Omg", "Run", SubResource( 81 ), "Check", "Omg", SubResource( 82 ), "Omg", "No", SubResource( 83 ), "Run", "No", SubResource( 84 ), "No", "Run", SubResource( 86 ), "No", "Check", SubResource( 87 ) ]
 start_node = "Check"
-graph_offset = Vector2( 4, 25.56 )
+graph_offset = Vector2( -35, -63.44 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=47]
 
@@ -3483,8 +3488,8 @@ __meta__ = {
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0, 31 )
-scale = Vector2( 1, 0.666 )
-shape = SubResource( 1 )
+rotation = 1.5708
+shape = SubResource( 85 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -3573,7 +3578,7 @@ parameters/Omg/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 5 )
 volume_db = -10.0
 bus = "FX"
 

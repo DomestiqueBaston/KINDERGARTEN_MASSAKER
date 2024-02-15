@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/BLONDINET/BLONDINET.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Woosh_B.wav" type="AudioStream" id=2]
@@ -6,8 +6,8 @@
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_A.wav" type="AudioStream" id=4]
 [ext_resource path="res://SCENES/CHARACTERS/BLONDINET.gd" type="Script" id=5]
 
-[sub_resource type="CircleShape2D" id=34]
-radius = 16.0
+[sub_resource type="CapsuleShape2D" id=91]
+height = 10.0
 
 [sub_resource type="CircleShape2D" id=80]
 radius = 20.413
@@ -274,7 +274,6 @@ tracks/10/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "00_Slash"
 length = 0.6
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -4329,6 +4328,13 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=90]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=92]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=93]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=94]
+
 [sub_resource type="AnimationNodeStateMachine" id=70]
 states/Idle/node = SubResource( 44 )
 states/Idle/position = Vector2( 376, 205 )
@@ -4338,7 +4344,7 @@ states/Slash/node = SubResource( 54 )
 states/Slash/position = Vector2( 608, 96 )
 states/Waving/node = SubResource( 63 )
 states/Waving/position = Vector2( 614, 211 )
-transitions = [ "Idle", "Run", SubResource( 64 ), "Run", "Idle", SubResource( 65 ), "Idle", "Waving", SubResource( 66 ), "Run", "Slash", SubResource( 67 ), "Slash", "Run", SubResource( 68 ), "Run", "Waving", SubResource( 69 ), "Waving", "Idle", SubResource( 90 ) ]
+transitions = [ "Idle", "Run", SubResource( 64 ), "Run", "Idle", SubResource( 65 ), "Idle", "Waving", SubResource( 66 ), "Run", "Slash", SubResource( 67 ), "Slash", "Run", SubResource( 68 ), "Run", "Waving", SubResource( 69 ), "Waving", "Idle", SubResource( 90 ), "Idle", "Slash", SubResource( 92 ), "Slash", "Idle", SubResource( 93 ), "Waving", "Run", SubResource( 94 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -18, 15 )
 
@@ -4355,8 +4361,8 @@ __meta__ = {
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0, 33 )
-scale = Vector2( 1, 0.666 )
-shape = SubResource( 34 )
+rotation = 1.5708
+shape = SubResource( 91 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -4394,7 +4400,6 @@ __meta__ = {
 }
 
 [node name="Attack_Collider" type="Area2D" parent="."]
-visible = false
 collision_layer = 2048
 collision_mask = 8
 __meta__ = {
@@ -4478,7 +4483,7 @@ parameters/Waving/blend_position = Vector2( 0, 0 )
 [node name="Slash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = -10.0
-pitch_scale = 2.0
+pitch_scale = 4.0
 bus = "FX"
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
