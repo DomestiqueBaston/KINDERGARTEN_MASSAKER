@@ -39,7 +39,7 @@ func _ready():
 	state_machine = anim_tree["parameters/playback"]
 	set_process_unhandled_input(false)
 	set_physics_process(false)
-	stop_cooldown()
+	_stop_cooldown()
 
 func _on_beam_down_finished(_anim_name):
 	set_process_unhandled_input(true)
@@ -49,7 +49,7 @@ func _on_beam_down_finished(_anim_name):
 func _unhandled_input(event):
 	if not in_cooldown and event.is_action_pressed("ui_accept", false, true):
 		if talent == Globals.Talent.TELEPORT:
-			start_teleport()
+			_start_teleport()
 		get_tree().set_input_as_handled()
 
 func _physics_process(delta):
@@ -100,10 +100,10 @@ func set_talent(talent_index: int):
 			var teleport = scene.instance()
 			$Talent.add_child(teleport)
 			cooldown_timer = teleport.get_node("Cooldown_Timer")
-			cooldown_timer.connect("timeout", self, "stop_cooldown")
+			cooldown_timer.connect("timeout", self, "_stop_cooldown")
 
-func start_teleport():
-	start_cooldown()
+func _start_teleport():
+	_start_cooldown()
 	cooldown_timer.start()
 	
 	var anim: AnimationPlayer = get_node("Talent/Teleport/AnimationPlayer")
@@ -112,10 +112,10 @@ func start_teleport():
 	emit_signal("teleport")
 	anim.play("Teleport_END")
 
-func start_cooldown():
+func _start_cooldown():
 	in_cooldown = true
 	$Alien.material.set_shader_param("cooldown", Color(0xff0000ff))
 
-func stop_cooldown():
+func _stop_cooldown():
 	in_cooldown = false
 	$Alien.material.set_shader_param("cooldown", Color(0x000000ff))
