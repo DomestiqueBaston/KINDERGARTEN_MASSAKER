@@ -358,7 +358,8 @@ func stop_game():
 	$Shutdown_Overlay.hide()
 	$Shutdown_Overlay.reset_animation()
 	$Cooldown_Timer.stop()
-	stop_dash()
+	if talent == Globals.Talent.DASH:
+		stop_dash()
 	overlay.reset_animation()
 	alien.hide()
 	alien.reset()
@@ -390,3 +391,4 @@ func stop_dash():
 	alien.stop_dash()
 	$Dash_Trail.hide()
 	$Dash_Trail.clear_points()
+	$Dash_Timer.stop()
