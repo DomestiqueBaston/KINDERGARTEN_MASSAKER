@@ -383,7 +383,7 @@ func start_dash():
 
 func update_dash_trail():
 	if $Dash_Trail.visible:
-		while $Dash_Trail.get_point_count() > 15:
+		while $Dash_Trail.get_point_count() > 50:
 			$Dash_Trail.remove_point(0)
 		$Dash_Trail.add_point(alien.position)
 
