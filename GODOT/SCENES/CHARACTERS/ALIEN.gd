@@ -16,6 +16,7 @@ signal teleport
 
 var state_machine: AnimationNodeStateMachinePlayback
 var direction = Vector2.DOWN
+var run_cycle = "Run"
 var accelerate = 1.0
 
 enum State {
@@ -36,8 +37,10 @@ func reset():
 	$AnimationTree["parameters/Idle/blend_position"] = direction
 	$AnimationTree["parameters/Scratching/blend_position"] = direction
 	$AnimationTree["parameters/Run/blend_position"] = direction
+	$AnimationTree["parameters/Run_fast/blend_position"] = direction
 	set_physics_process(false)
 	stop_cooldown()
+	set_fast_run_cycle(false)
 
 func beam_down():
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
@@ -78,10 +81,19 @@ func _physics_process(delta):
 		$AnimationTree["parameters/Idle/blend_position"] = dir
 		$AnimationTree["parameters/Scratching/blend_position"] = dir
 		$AnimationTree["parameters/Run/blend_position"] = dir
-		state_machine.travel("Run")
+		$AnimationTree["parameters/Run_fast/blend_position"] = dir
+		state_machine.travel(run_cycle)
 		state = State.MOVE
 		direction = dir.normalized()
 		var _collision = move_and_collide(direction * speed * accelerate * delta)
+
+func set_fast_run_cycle(fast: bool):
+	if fast:
+		run_cycle = "Run_fast"
+		accelerate = 1.2
+	else:
+		run_cycle = "Run"
+		accelerate = 1.0
 
 func start_teleport():
 	$Talent/Teleport/AnimationPlayer.play("Teleport_BEGINNING")
