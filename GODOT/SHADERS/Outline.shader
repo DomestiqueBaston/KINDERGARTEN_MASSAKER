@@ -10,7 +10,7 @@ void fragment() {
 	// flash true => pixels with a non-zero mask turn white
 	
 	if (flash) {
-		if (curr_color.a > 0.0) {
+		if (curr_color.r > 0.0) { // Modif by Ferdi: color.a became color.r
 			COLOR = vec4(1.0);
 		} else {
 			COLOR = curr_color;

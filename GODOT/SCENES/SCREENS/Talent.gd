@@ -164,6 +164,7 @@ func _show_beam_me_down():
 	selected_talent = current_item
 	$Beam_Me_Down_Off.self_modulate.a = 1
 	_find_item(0).self_modulate.a = 1
+	$AnimationPlayer.play("Beam_blink")
 
 #
 # Clears the selected talent and hides the Beam Me Down item.
@@ -172,6 +173,7 @@ func _hide_beam_me_down():
 	selected_talent = 0
 	$Beam_Me_Down_Off.self_modulate.a = 0
 	_find_item(0).self_modulate.a = 0
+	$AnimationPlayer.stop()
 
 #
 # Returns the control for the given item. Which is in the range [0 item_count).

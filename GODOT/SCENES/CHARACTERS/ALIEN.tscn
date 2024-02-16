@@ -191,12 +191,6 @@ tracks/5/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="ShaderMaterial" id=94]
-shader = ExtResource( 9 )
-shader_param/outline = null
-shader_param/cooldown = Color( 0, 0, 0, 1 )
-shader_param/flash = false
-
 [sub_resource type="Animation" id=7]
 length = 0.001
 tracks/0/type = "value"
@@ -210,6 +204,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -236,10 +242,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ false, true, false ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -266,10 +272,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -301,6 +307,12 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false, true, false ]
 }
+
+[sub_resource type="ShaderMaterial" id=94]
+shader = ExtResource( 9 )
+shader_param/outline = null
+shader_param/cooldown = Color( 0, 0, 0, 1 )
+shader_param/flash = false
 
 [sub_resource type="Animation" id=119]
 length = 0.6
@@ -5541,7 +5553,6 @@ stream = ExtResource( 12 )
 bus = "FX"
 
 [node name="Shadow" type="Polygon2D" parent="."]
-visible = false
 position = Vector2( -4, 16 )
 scale = Vector2( 0.5, 0.4 )
 color = Color( 0, 0.101961, 0, 0.392157 )
@@ -5549,6 +5560,31 @@ polygon = PoolVector2Array( -14, 45, -12.2222, 36, -9, 30, -2.22222, 26, 6, 25, 
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Talent" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Teleport" type="Node2D" parent="Talent"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cooldown_Timer" type="Timer" parent="Talent/Teleport"]
+wait_time = 10.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Teleport"]
+pause_mode = 1
+anims/RESET = SubResource( 7 )
+anims/Teleport_BEGINNING = SubResource( 4 )
+anims/Teleport_END = SubResource( 5 )
+anims/Teleport_FULL = SubResource( 6 )
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Teleport"]
+stream = ExtResource( 14 )
+bus = "FX"
 
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )
@@ -5575,31 +5611,6 @@ centered = false
 offset = Vector2( -48, -96 )
 hframes = 32
 frame = 31
-
-[node name="Talent" type="Node2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Teleport" type="Node2D" parent="Talent"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Cooldown_Timer" type="Timer" parent="Talent/Teleport"]
-wait_time = 10.0
-one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Teleport"]
-pause_mode = 1
-anims/RESET = SubResource( 7 )
-anims/Teleport_BEGINNING = SubResource( 4 )
-anims/Teleport_END = SubResource( 5 )
-anims/Teleport_FULL = SubResource( 6 )
-
-[node name="FX" type="AudioStreamPlayer" parent="Talent/Teleport"]
-stream = ExtResource( 14 )
-bus = "FX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Alien")
