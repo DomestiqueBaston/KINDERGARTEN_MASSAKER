@@ -11,7 +11,7 @@ export var scratch_chances = 0.25
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
 
-# signal emitted when the alien wants to teleport
+# signal emitted when the alien teleports
 signal teleport
 
 var anim_tree: AnimationTree
@@ -96,25 +96,21 @@ func set_talent(talent_index: int):
 	talent = talent_index
 	match talent:
 		Globals.Talent.TELEPORT:
-			var scene = load("res://SCENES/TALENTS/TELEPORT.tscn")
-			var teleport = scene.instance()
-			$Talent.add_child(teleport)
-			cooldown_timer = teleport.get_node("Cooldown_Timer")
+			cooldown_timer = $Talent/Teleport/Cooldown_Timer
 			cooldown_timer.connect("timeout", self, "_stop_cooldown")
 
 func _start_teleport():
 	_start_cooldown()
 	cooldown_timer.start()
-	
-	var anim: AnimationPlayer = get_node("Talent/Teleport/AnimationPlayer")
+	var anim = $Talent/Teleport/AnimationPlayer
 	anim.play("Teleport_BEGINNING")
-	yield(anim,"animation_finished")
+	yield(anim, "animation_finished")
 	emit_signal("teleport")
 	anim.play("Teleport_END")
 
 func _start_cooldown():
 	in_cooldown = true
-	$Alien.material.set_shader_param("cooldown", Color(0xff0000ff))
+	$Alien.material.set_shader_param("cooldown", Color(0xb73847ff))
 
 func _stop_cooldown():
 	in_cooldown = false
