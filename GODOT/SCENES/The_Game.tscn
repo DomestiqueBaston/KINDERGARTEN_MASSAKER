@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://SCENES/OVERLAYS/Transition_Overlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/OVERLAYS/CRT_Overlay.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=9]
 [ext_resource path="res://SCENES/CHARACTERS/ALIEN.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SCENES/ScoreTracker.tscn" type="PackedScene" id=11]
+[ext_resource path="res://SCENES/TALENTS/TECHNIKER.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 2
@@ -24,7 +25,9 @@ script = ExtResource( 4 )
 
 [node name="PAPA_Title" parent="Active_Scene" instance=ExtResource( 3 )]
 
-[node name="Dash_Trail" type="Line2D" parent="."]
+[node name="FX" type="Node2D" parent="."]
+
+[node name="Dash_Trail" type="Line2D" parent="FX"]
 visible = false
 width = 36.0
 default_color = Color( 0.960784, 0.976471, 1, 1 )
@@ -33,12 +36,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Dash_Timer" type="Timer" parent="FX"]
+wait_time = 0.2
+one_shot = true
+
 [node name="Characters" type="YSort" parent="."]
 
 [node name="ALIEN" parent="Characters" instance=ExtResource( 10 )]
 visible = false
 
 [node name="Enemies" type="YSort" parent="Characters"]
+
+[node name="Techniker" parent="." instance=ExtResource( 12 )]
+visible = false
 
 [node name="Shutdown_Overlay" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -83,16 +93,12 @@ one_shot = true
 [node name="Cooldown_Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Dash_Timer" type="Timer" parent="."]
-wait_time = 0.2
-one_shot = true
-
 [node name="ScoreTracker" parent="." instance=ExtResource( 11 )]
 
+[connection signal="timeout" from="FX/Dash_Timer" to="." method="stop_dash"]
 [connection signal="teleport" from="Characters/ALIEN" to="." method="teleport"]
 [connection signal="transition_finished" from="Transition_Overlay" to="." method="_on_Transition_Overlay_transition_finished"]
 [connection signal="finished" from="Intro_Music" to="." method="_on_Intro_Music_finished"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_Enemy_Timer_timeout"]
 [connection signal="timeout" from="Shutdown_Timer" to="." method="_on_Shutdown_Timer_timeout"]
 [connection signal="timeout" from="Cooldown_Timer" to="Characters/ALIEN" method="stop_cooldown"]
-[connection signal="timeout" from="Dash_Timer" to="." method="stop_dash"]

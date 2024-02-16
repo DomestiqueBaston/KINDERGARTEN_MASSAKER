@@ -20,6 +20,17 @@ func start_animation():
 		$Contrast_neg.play("contrast")
 	$General.play("general")
 
+func rewind_animation():
+	$Aberration_pos.seek(0)
+	$Aberration_neg.seek(0)
+	$Brightness_pos.seek(0)
+	$Brightness_neg.seek(0)
+	$Saturation_pos.seek(0)
+	$Saturation_neg.seek(0)
+	$Contrast_pos.seek(0)
+	$Contrast_neg.seek(0)
+	$General.seek(0)
+
 func reset_animation():
 	$Aberration_pos.play("RESET")
 	$Aberration_neg.play("RESET")

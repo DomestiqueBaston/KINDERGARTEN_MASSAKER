@@ -49,9 +49,9 @@ const talent_name = [
 	"hand to hand specialist",
 	"ranged fighting expert",
 	"none!",
-	"der techniker",
-	"zufällig",
-	"kotzsicher",
+	"der Techniker",
+	"Zufällig",
+	"Kotzsicher",
 	"bullet time",
 	"ghost"
 ]

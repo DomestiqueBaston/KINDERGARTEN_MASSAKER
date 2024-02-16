@@ -47,6 +47,7 @@ var background: Background
 var alien: Alien
 var enemies: Node2D
 var talent = -1
+var techniker_used = false
 
 func _ready():
 	set_process(false)
@@ -82,6 +83,9 @@ func _unhandled_input(event: InputEvent):
 					start_teleport()
 				Globals.Talent.DASH:
 					start_dash()
+				Globals.Talent.TECHNICIAN:
+					if not $Shutdown_Overlay.visible:
+						techniker()
 			get_tree().set_input_as_handled()
 		elif event.is_action_pressed("ui_cancel"):
 			stop_game()
@@ -349,8 +353,10 @@ func _on_Shutdown_Timer_timeout():
 
 func stop_game():
 	$ScoreTracker.stop_game()
+	
 	$Camera.position = _get_window_size() / 2.0
 	set_process(false)
+	
 	$Background_Sound.stop()
 	$Intro_Music.stop()
 	$Game_Music.stop()
@@ -359,9 +365,15 @@ func stop_game():
 	$Shutdown_Overlay.hide()
 	$Shutdown_Overlay.reset_animation()
 	$Cooldown_Timer.stop()
-	if talent == Globals.Talent.DASH:
-		stop_dash()
+	
+	match talent:
+		Globals.Talent.DASH:
+			stop_dash()
+		Globals.Talent.TECHNICIAN:
+			techniker_used = false
+	
 	overlay.reset_animation()
+	
 	alien.hide()
 	alien.reset()
 	for enemy in enemies.get_children():
@@ -377,19 +389,30 @@ func teleport():
 
 func start_dash():
 	alien.start_dash()
-	$Dash_Trail.show()
-	$Dash_Timer.start()
+	$FX/Dash_Trail.show()
+	$FX/Dash_Timer.start()
 	alien.start_cooldown()
 	$Cooldown_Timer.start(Globals.talent_cooldown[talent])
 
 func update_dash_trail():
-	if $Dash_Trail.visible:
-		$Dash_Trail.add_point(alien.position)
-		while $Dash_Trail.get_point_count() > 50:
-			$Dash_Trail.remove_point(0)
+	if $FX/Dash_Trail.visible:
+		$FX/Dash_Trail.add_point(alien.position)
+		while $FX/Dash_Trail.get_point_count() > 50:
+			$FX/Dash_Trail.remove_point(0)
 
 func stop_dash():
 	alien.stop_dash()
-	$Dash_Trail.hide()
-	$Dash_Trail.clear_points()
-	$Dash_Timer.stop()
+	$FX/Dash_Trail.hide()
+	$FX/Dash_Trail.clear_points()
+	$FX/Dash_Timer.stop()
+
+func techniker():
+	if techniker_used:
+		return
+	techniker_used = true
+	$Techniker.start_animation()
+	$Techniker.position = $Camera.position
+	$Techniker.show()
+	yield($Techniker, "animation_finished")
+	overlay.rewind_animation()
+	$Techniker.hide()

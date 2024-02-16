@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://SCENES/TALENTS/TECHNIKER.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Der_Techniker.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=3]
@@ -48,6 +49,7 @@ tracks/1/keys = {
 }
 
 [node name="Techniker" type="Node2D"]
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
