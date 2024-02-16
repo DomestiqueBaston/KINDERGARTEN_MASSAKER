@@ -256,6 +256,7 @@ func prepare_game():
 
 	# position the camera and the alien
 
+	alien.set_fast_run_cycle(talent == Globals.Talent.SPEED)
 	alien.position = background.get_alien_starting_point()
 	$Camera.position = alien.position
 
