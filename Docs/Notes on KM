@@ -54,7 +54,7 @@ The Alien has 1000 hit points (HP).
 	- Hand to hand specialist (50% damage from short range but 200% damage from long range – permanent). Uses NO fx.
 	- Ranged fighting expert (50% damage from long range but 200% damage from short range – permanent). Uses NO fx.
 	- None! Uses NO fx.
-	- Der Techniker The technician (hidden talent to unlock (see condition at the end) – only 1 time). Resets the game overlay shader values (and restarts its animation!). We’ll eventually also reset the random selections in the Overlay #1). This allows a longer game leading to more kids… Once the screen starts shuting down, you can’t use that talent. Uses TECHNIKER fx.
+	- Der Techniker The technician (hidden talent to unlock (see condition at the end) – only 1 time). Resets the game overlay shader values (and restarts its animation!). This allows a longer game leading to more kids… Once the screen starts shutting down, you can’t use that talent. Uses TECHNIKER fx.
 	- Zufällig… Hidden “talent” to unlock (see condition at the end). A random talent is selected at game launch… The player won’t know which one has been selected until using it (if not permanent).
 	- Kotzsicher “Vomit-proof” (the alien can walk through vomit suffering only 50% of damages – permanent). (see condition at the end) Uses NO fx.
 	- Bullet time (everything except the Alien is slowed down by 50% for 3 seconds – cooldown: 15 seconds). (see condition at the end). Uses BULLET_TIME “Almost” as MIRROR IMAGES fx!
