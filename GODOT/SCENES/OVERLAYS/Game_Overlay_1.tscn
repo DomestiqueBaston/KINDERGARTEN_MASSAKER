@@ -23,7 +23,7 @@ shader_param/aberration = 0.0
 shader_param/brightness = 1.0
 shader_param/discolor = true
 shader_param/saturation = 0.0
-shader_param/contrast = 1.0
+shader_param/contrast = 1.001
 shader_param/warp_amount = 0.0
 shader_param/clip_warp = false
 
@@ -283,7 +283,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.001 ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -314,7 +314,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.0 ]
+"values": [ 1.001 ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -345,7 +345,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.001 ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -376,7 +376,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.0 ]
+"values": [ 1.001 ]
 }
 
 [sub_resource type="Animation" id=22]
@@ -392,7 +392,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1.5, 1.5 ),
 "update": 0,
-"values": [ 1.0, 1.1 ]
+"values": [ 1.001, 1.1 ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -407,7 +407,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ -0.001 ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -438,7 +438,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.0 ]
+"values": [ 0.999 ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -469,7 +469,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ -0.001 ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -500,7 +500,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.0 ]
+"values": [ 0.999 ]
 }
 
 [sub_resource type="Animation" id=30]
@@ -516,7 +516,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1.5, 1.5 ),
 "update": 0,
-"values": [ 1.0, 0.5 ]
+"values": [ 0.999, 0.5 ]
 }
 
 [node name="Game_overlay_1" type="CanvasLayer"]
