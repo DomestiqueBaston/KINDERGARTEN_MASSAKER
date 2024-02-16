@@ -51,8 +51,8 @@ var talent = -1
 func _ready():
 	set_process(false)
 	_set_game_overlay()
-	alien = $YSort/ALIEN
-	enemies = $YSort/Enemies
+	alien = $Characters/ALIEN
+	enemies = $Characters/Enemies
 
 #
 # Chooses a game overlay scene at random and adds it below PAPA_Game_Overlay.
@@ -183,7 +183,8 @@ func change_state(next_state):
 			child.connect("dialogue_finished", self, "on_dialogue_finished")
 		GameState.TALENT:
 			child = talent_scene.instance()
-			child.set_talent_level(dialogue_seen, 100)
+			child.set_talent_level(
+				dialogue_seen, $ScoreTracker.get_best_score())
 			child.connect("talent_aborted", self, "on_talent_aborted")
 			child.connect("talent_chosen", self, "on_talent_chosen")
 		GameState.PLAY:
@@ -192,6 +193,8 @@ func change_state(next_state):
 			prepare_game()
 		GameState.DEATH:
 			child = death_scene.instance()
+			child.best_time = $ScoreTracker.get_best_score()
+			child.elapsed_time = $ScoreTracker.get_last_score()
 	
 	if child:
 		$Active_Scene.add_child(child)
@@ -281,8 +284,8 @@ func start_game():
 
 	# instantiate the alien and position him in front of the camera, initially
 
-	alien.show()
 	alien.beam_down()
+	alien.show()
 
 	# from now on, the camera follows the alien's movements
 
@@ -295,19 +298,15 @@ func start_game():
 	$Background_Sound.play()
 	$Intro_Music.play()
 
-	# wait for the beam down animation to finish before continuing
+	# wait for the beam down animation to finish before starting the overlay
+	# animation, which will eventually make it impossible to see, spawning
+	# enemies and counting down
 
 	yield(alien, "beam_down_finished")
-
-	# start the overlay animation which will eventually make it impossible to
-	# see
-
 	overlay.start_animation()
-
-	# start spawning enemies and counting down
-
 	$Enemy_Timer.start(spawn_first_time)
 	$Shutdown_Timer.start()
+	$ScoreTracker.start_game()
 
 func _on_Intro_Music_finished():
 	if state == GameState.PLAY:
@@ -348,6 +347,7 @@ func _on_Shutdown_Timer_timeout():
 	overlay.reset_animation()
 
 func stop_game():
+	$ScoreTracker.stop_game()
 	$Camera.position = _get_window_size() / 2.0
 	set_process(false)
 	$Background_Sound.stop()
@@ -383,9 +383,9 @@ func start_dash():
 
 func update_dash_trail():
 	if $Dash_Trail.visible:
+		$Dash_Trail.add_point(alien.position)
 		while $Dash_Trail.get_point_count() > 50:
 			$Dash_Trail.remove_point(0)
-		$Dash_Trail.add_point(alien.position)
 
 func stop_dash():
 	alien.stop_dash()
