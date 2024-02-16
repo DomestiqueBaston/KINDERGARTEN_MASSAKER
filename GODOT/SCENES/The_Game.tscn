@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://SCENES/OVERLAYS/Transition_Overlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/OVERLAYS/CRT_Overlay.tscn" type="PackedScene" id=2]
@@ -9,6 +9,12 @@
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=7]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INTRO_INGAME.wav" type="AudioStream" id=8]
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=9]
+[ext_resource path="res://SCENES/CHARACTERS/ALIEN.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Gradient" id=1]
+interpolation_mode = 2
+offsets = PoolRealArray( 0.0052356, 0.329843, 0.842932, 1 )
+colors = PoolColorArray( 0.960784, 0.976471, 1, 0, 0.960784, 0.976471, 1, 1, 0.994561, 0.996737, 1, 1, 0.960784, 0.976471, 1, 0 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
@@ -16,6 +22,22 @@ script = ExtResource( 4 )
 [node name="Active_Scene" type="Node2D" parent="."]
 
 [node name="PAPA_Title" parent="Active_Scene" instance=ExtResource( 3 )]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="ALIEN" parent="YSort" instance=ExtResource( 10 )]
+visible = false
+
+[node name="Enemies" type="YSort" parent="YSort"]
+
+[node name="Dash_Trail" type="Line2D" parent="."]
+visible = false
+width = 36.0
+default_color = Color( 0.960784, 0.976471, 1, 1 )
+gradient = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Shutdown_Overlay" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -57,7 +79,17 @@ one_shot = true
 wait_time = 60.0
 one_shot = true
 
+[node name="Cooldown_Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Dash_Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="teleport" from="YSort/ALIEN" to="." method="teleport"]
 [connection signal="transition_finished" from="Transition_Overlay" to="." method="_on_Transition_Overlay_transition_finished"]
 [connection signal="finished" from="Intro_Music" to="." method="_on_Intro_Music_finished"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_Enemy_Timer_timeout"]
 [connection signal="timeout" from="Shutdown_Timer" to="." method="_on_Shutdown_Timer_timeout"]
+[connection signal="timeout" from="Cooldown_Timer" to="YSort/ALIEN" method="stop_cooldown"]
+[connection signal="timeout" from="Dash_Timer" to="." method="stop_dash"]

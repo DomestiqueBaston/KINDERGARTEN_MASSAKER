@@ -11,15 +11,12 @@ export var scratch_chances = 0.25
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
 
-# signal emitted when the alien teleports
+# signal emitted when the alien is ready to teleport
 signal teleport
 
-var anim_tree: AnimationTree
 var state_machine: AnimationNodeStateMachinePlayback
-var direction = Vector2.ZERO
-var talent = -1
-var cooldown_timer: Timer
-var in_cooldown = false
+var direction = Vector2.DOWN
+var accelerate = 1.0
 
 enum State {
 	FIRST_IDLE,
@@ -31,26 +28,23 @@ enum State {
 var state = State.MOVE
 
 func _ready():
-	anim_tree = $AnimationTree
-	anim_tree.set_active(true)
-	anim_tree["parameters/Idle/blend_position"] = Vector2.DOWN
-	anim_tree["parameters/Scratching/blend_position"] = Vector2.DOWN
-	anim_tree["parameters/Run/blend_position"] = Vector2.DOWN
-	state_machine = anim_tree["parameters/playback"]
-	set_process_unhandled_input(false)
+	state_machine = $AnimationTree["parameters/playback"]
+	reset()
+
+func reset():
+	direction = Vector2.DOWN
+	$AnimationTree["parameters/Idle/blend_position"] = direction
+	$AnimationTree["parameters/Scratching/blend_position"] = direction
+	$AnimationTree["parameters/Run/blend_position"] = direction
 	set_physics_process(false)
-	_stop_cooldown()
+	stop_cooldown()
+
+func beam_down():
+	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
 
 func _on_beam_down_finished(_anim_name):
-	set_process_unhandled_input(true)
 	set_physics_process(true)
 	emit_signal("beam_down_finished")
-
-func _unhandled_input(event):
-	if not in_cooldown and event.is_action_pressed("ui_accept", false, true):
-		if talent == Globals.Talent.TELEPORT:
-			_start_teleport()
-		get_tree().set_input_as_handled()
 
 func _physics_process(delta):
 	if state == State.SCRATCH and state_machine.get_current_node() == "Scratching":
@@ -81,37 +75,29 @@ func _physics_process(delta):
 				state_machine.travel("Idle")
 			state = next_state
 	else:
-		anim_tree["parameters/Idle/blend_position"] = dir
-		anim_tree["parameters/Scratching/blend_position"] = dir
-		anim_tree["parameters/Run/blend_position"] = dir
+		$AnimationTree["parameters/Idle/blend_position"] = dir
+		$AnimationTree["parameters/Scratching/blend_position"] = dir
+		$AnimationTree["parameters/Run/blend_position"] = dir
 		state_machine.travel("Run")
 		state = State.MOVE
 		direction = dir.normalized()
-		var _collision = move_and_collide(direction * speed * delta)
+		var _collision = move_and_collide(direction * speed * accelerate * delta)
 
-func set_talent(talent_index: int):
-	if talent >= 0:
-		printerr("alien already has a talent")
-		return
-	talent = talent_index
-	match talent:
-		Globals.Talent.TELEPORT:
-			cooldown_timer = $Talent/Teleport/Cooldown_Timer
-			cooldown_timer.connect("timeout", self, "_stop_cooldown")
-
-func _start_teleport():
-	_start_cooldown()
-	cooldown_timer.start()
-	var anim = $Talent/Teleport/AnimationPlayer
-	anim.play("Teleport_BEGINNING")
-	yield(anim, "animation_finished")
+func start_teleport():
+	$Talent/Teleport/AnimationPlayer.play("Teleport_BEGINNING")
+	yield($Talent/Teleport/AnimationPlayer, "animation_finished")
 	emit_signal("teleport")
-	anim.play("Teleport_END")
+	$Talent/Teleport/AnimationPlayer.play("Teleport_END")
 
-func _start_cooldown():
-	in_cooldown = true
+func start_dash():
+	$Talent/Dash/FX.play()
+	accelerate = 5.0
+
+func stop_dash():
+	accelerate = 1.0
+
+func start_cooldown():
 	$Alien.material.set_shader_param("cooldown", Color(0xb73847ff))
 
-func _stop_cooldown():
-	in_cooldown = false
+func stop_cooldown():
 	$Alien.material.set_shader_param("cooldown", Color(0x000000ff))

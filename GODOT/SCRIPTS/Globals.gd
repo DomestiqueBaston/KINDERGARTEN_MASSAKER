@@ -56,8 +56,37 @@ const talent_name = [
 	"ghost"
 ]
 
+#
+# talent cooldown times
+#
+const talent_cooldown = [
+	10,
+	15,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+]
+
 func _ready():
 	assert(Talent.size() == talent_name.size())
+	assert(Talent.size() == talent_cooldown.size())
 	randomize()
 
 #

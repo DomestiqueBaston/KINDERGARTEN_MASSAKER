@@ -81,13 +81,3 @@ func get_spawning_points(
 			break
 
 	return positions
-
-#
-# Creates an instance of the given scene, adds it as a child of the background,
-# and places it at the given position. Returns the new instance.
-#
-func instance_character_at(scene: PackedScene, pos: Vector2) -> Node:
-	var inst = scene.instance()
-	inst.position = pos
-	$YSort.add_child(inst)
-	return inst

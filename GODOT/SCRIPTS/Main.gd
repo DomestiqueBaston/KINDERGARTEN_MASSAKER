@@ -45,11 +45,14 @@ var previous_menu_item = -1
 var overlay: Node
 var background: Background
 var alien: Alien
-var talent: int
+var enemies: Node2D
+var talent = -1
 
 func _ready():
 	set_process(false)
 	_set_game_overlay()
+	alien = $YSort/ALIEN
+	enemies = $YSort/Enemies
 
 #
 # Chooses a game overlay scene at random and adds it below PAPA_Game_Overlay.
@@ -72,7 +75,15 @@ func _unhandled_input(event: InputEvent):
 	# ui_cancel interrupts the game
 
 	elif state == GameState.PLAY:
-		if event.is_action_pressed("ui_cancel"):
+		if (event.is_action_pressed("ui_accept", false, true)
+			and $Cooldown_Timer.is_stopped()):
+			match talent:
+				Globals.Talent.TELEPORT:
+					start_teleport()
+				Globals.Talent.DASH:
+					start_dash()
+			get_tree().set_input_as_handled()
+		elif event.is_action_pressed("ui_cancel"):
 			stop_game()
 			change_state(GameState.DEATH)
 			get_tree().set_input_as_handled()
@@ -104,8 +115,9 @@ func _unhandled_input(event: InputEvent):
 		get_tree().set_input_as_handled()
 
 func _process(delta):
-	if alien:
-		update_camera(delta)
+	update_camera(delta)
+	if talent == Globals.Talent.DASH:
+		update_dash_trail()
 
 func _get_window_size() -> Vector2:
 	return Vector2(
@@ -226,6 +238,12 @@ func on_talent_chosen(talent_index):
 func on_exit_game():
 	get_tree().quit(0)
 
+func instance_character_at(scene: PackedScene, pos: Vector2) -> Node:
+	var inst = scene.instance()
+	inst.position = pos
+	enemies.add_child(inst)
+	return inst
+
 #
 # Stuff to do when the background has been instanced but before the game
 # actually starts: determine where the alien will appear, put the camera there,
@@ -233,9 +251,10 @@ func on_exit_game():
 #
 func prepare_game():
 
-	# position the camera where the alien will appear
+	# position the camera and the alien
 
-	$Camera.position = background.get_alien_starting_point()
+	alien.position = background.get_alien_starting_point()
+	$Camera.position = alien.position
 
 	# add teacher and initial kids, ensuring they are on camera (or not far
 	# off-camera...)
@@ -244,15 +263,15 @@ func prepare_game():
 	var bbox = Rect2($Camera.position - window_size / 2.0, window_size)
 
 	var positions = background.get_spawning_points(9, bbox)
-	background.instance_character_at(teacher_scene, positions[0])
-	background.instance_character_at(crying_kid_scene, positions[1])
-	background.instance_character_at(vomiting_kid_scene, positions[2])
-	background.instance_character_at(booger_kid_scene, positions[3])
-	background.instance_character_at(stick_kid_scene, positions[4])
-	background.instance_character_at(stick_kid_scene, positions[5])
-	background.instance_character_at(stick_kid_scene, positions[6])
-	background.instance_character_at(spitting_kid_scene, positions[7])
-	background.instance_character_at(spitting_kid_scene, positions[8])
+	instance_character_at(teacher_scene, positions[0])
+	instance_character_at(crying_kid_scene, positions[1])
+	instance_character_at(vomiting_kid_scene, positions[2])
+	instance_character_at(booger_kid_scene, positions[3])
+	instance_character_at(stick_kid_scene, positions[4])
+	instance_character_at(stick_kid_scene, positions[5])
+	instance_character_at(stick_kid_scene, positions[6])
+	instance_character_at(spitting_kid_scene, positions[7])
+	instance_character_at(spitting_kid_scene, positions[8])
 
 #
 # Start the game: beam down the alien, change the music, and track the alien
@@ -262,9 +281,8 @@ func start_game():
 
 	# instantiate the alien and position him in front of the camera, initially
 
-	alien = background.instance_character_at(alien_scene, $Camera.position)
-	alien.set_talent(talent)
-	alien.connect("teleport", self, "teleport")
+	alien.show()
+	alien.beam_down()
 
 	# from now on, the camera follows the alien's movements
 
@@ -320,11 +338,11 @@ func _on_Enemy_Timer_timeout():
 
 	# spawn the enemy and restart the timer
 
-	background.instance_character_at(enemy_scene, pos)
+	instance_character_at(enemy_scene, pos)
 	$Enemy_Timer.start(spawn_cycle_time)
 
 func _on_Shutdown_Timer_timeout():
-	$Shutdown_Overlay.visible = true
+	$Shutdown_Overlay.show()
 	$Shutdown_Overlay.start_animation()
 	yield($Shutdown_Overlay, "animation_started")
 	overlay.reset_animation()
@@ -337,9 +355,38 @@ func stop_game():
 	$Game_Music.stop()
 	$Enemy_Timer.stop()
 	$Shutdown_Timer.stop()
-	$Shutdown_Overlay.visible = false
+	$Shutdown_Overlay.hide()
 	$Shutdown_Overlay.reset_animation()
+	$Cooldown_Timer.stop()
+	stop_dash()
 	overlay.reset_animation()
+	alien.hide()
+	alien.reset()
+	for enemy in enemies.get_children():
+		enemy.queue_free()
+
+func start_teleport():
+	alien.start_teleport()
+	alien.start_cooldown()
+	$Cooldown_Timer.start(Globals.talent_cooldown[talent])
 
 func teleport():
 	alien.position = background.get_teleportation_point()
+
+func start_dash():
+	alien.start_dash()
+	$Dash_Trail.show()
+	$Dash_Timer.start()
+	alien.start_cooldown()
+	$Cooldown_Timer.start(Globals.talent_cooldown[talent])
+
+func update_dash_trail():
+	if $Dash_Trail.visible:
+		while $Dash_Trail.get_point_count() > 15:
+			$Dash_Trail.remove_point(0)
+		$Dash_Trail.add_point(alien.position)
+
+func stop_dash():
+	alien.stop_dash()
+	$Dash_Trail.hide()
+	$Dash_Trail.clear_points()
