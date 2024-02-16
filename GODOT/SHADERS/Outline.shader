@@ -1,25 +1,29 @@
-//Shader adapté de : https://www.youtube.com/watch?v=zpIjme5Ah7Q
-
 shader_type canvas_item;
 
-uniform vec4 ready : hint_color;
+uniform vec4 outline : hint_color;
 uniform vec4 cooldown : hint_color;
-
-
+uniform bool flash;
 
 void fragment() {
-	vec4 curr_color = texture(TEXTURE,UV); //Get current color of pixel
+	vec4 curr_color = texture(TEXTURE,UV);
 	
-	//Let's check that our current pixel color is any of the BLACK_OUTLINEs we wish to swap
-	//If our pixel is black then swap BLACK_OUTLINE to RED_OUTLINE.
-	if (distance(curr_color, ready) < 0.01)
-	{
-		COLOR = cooldown;
+	// flash true => pixels with a non-zero mask turn white
+	
+	if (flash) {
+		if (curr_color.a > 0.0) {
+			COLOR = vec4(1.0);
+		} else {
+			COLOR = curr_color;
+		}
 	}
-	else
-	{
-		//We didn't find any old color for this pixel so keep it it's original color
-		COLOR = curr_color;
+	
+	// flash false => pixels very close to outline color take cooldown color
+	
+	else {
+		if (distance(curr_color, outline) < 0.01) {
+			COLOR = cooldown;
+		} else {
+			COLOR = curr_color;
+		}
 	}
 }
-

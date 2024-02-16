@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -13,7 +13,10 @@
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Front.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/SOUND/FX/BEAM_DOWN/Beam_down.wav" type="AudioStream" id=12]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Scratching_A.wav" type="AudioStream" id=13]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation.wav" type="AudioStream" id=14]
 [ext_resource path="res://SCENES/CHARACTERS/ALIEN.gd" type="Script" id=15]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation_End.wav" type="AudioStream" id=16]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation_Beginning.wav" type="AudioStream" id=17]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -190,11 +193,116 @@ tracks/5/keys = {
 
 [sub_resource type="ShaderMaterial" id=94]
 shader = ExtResource( 9 )
-shader_param/ready = Color( 0, 0, 0, 1 )
+shader_param/outline = null
 shader_param/cooldown = Color( 0, 0, 0, 1 )
+shader_param/flash = false
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=4]
-resource_name = "00_Dead"
+resource_name = "Teleport_BEGINNING"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Teleport_END"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 16 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Teleport_FULL"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 14 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=119]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -877,8 +985,7 @@ tracks/6/keys = {
 "values": [ -10.0 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "135D_Hit"
+[sub_resource type="Animation" id=120]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -1005,8 +1112,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "135D_Idle"
+[sub_resource type="Animation" id=121]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -1106,8 +1212,7 @@ tracks/7/keys = {
 "values": [ Vector2( 0.666, 0.666 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "135D_Run"
+[sub_resource type="Animation" id=122]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -5446,7 +5551,6 @@ __meta__ = {
 }
 
 [node name="Alien" type="Sprite" parent="."]
-visible = false
 material = SubResource( 94 )
 texture = ExtResource( 2 )
 offset = Vector2( 0.5, 0.5 )
@@ -5477,17 +5581,37 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Teleport" type="Node2D" parent="Talent"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cooldown_Timer" type="Timer" parent="Talent/Teleport"]
+wait_time = 10.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Teleport"]
+pause_mode = 1
+anims/RESET = SubResource( 7 )
+anims/Teleport_BEGINNING = SubResource( 4 )
+anims/Teleport_END = SubResource( 5 )
+anims/Teleport_FULL = SubResource( 6 )
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Teleport"]
+stream = ExtResource( 14 )
+bus = "FX"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Alien")
-anims/00_Dead = SubResource( 4 )
+anims/00_Dead = SubResource( 119 )
 anims/00_Hit = SubResource( 3 )
 anims/00_Idle = SubResource( 1 )
 anims/00_Run = SubResource( 2 )
 anims/00_Scratching = SubResource( 97 )
 anims/135D_Dead = SubResource( 8 )
-anims/135D_Hit = SubResource( 7 )
-anims/135D_Idle = SubResource( 5 )
-anims/135D_Run = SubResource( 6 )
+anims/135D_Hit = SubResource( 120 )
+anims/135D_Idle = SubResource( 121 )
+anims/135D_Run = SubResource( 122 )
 anims/135D_Scratching = SubResource( 98 )
 anims/135G_Dead = SubResource( 12 )
 anims/135G_Hit = SubResource( 11 )
