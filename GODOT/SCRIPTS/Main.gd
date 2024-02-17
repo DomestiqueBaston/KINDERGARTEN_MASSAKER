@@ -89,6 +89,8 @@ func _unhandled_input(event: InputEvent):
 					start_teleport()
 				Globals.Talent.DASH:
 					start_dash()
+				Globals.Talent.SHIELD:
+					start_shield()
 				Globals.Talent.TECHNICIAN:
 					if not $Shutdown_Overlay.visible:
 						techniker()
@@ -409,6 +411,14 @@ func stop_dash():
 	$FX/Dash_Trail.clear_points()
 	$FX/Dash_Timer.stop()
 
+func start_shield():
+	alien.start_cooldown()
+	$Cooldown_Timer.start(Globals.talent_cooldown[talent])
+	$Characters/ALIEN/Shield.show()
+	$Characters/ALIEN/Shield/AnimationPlayer.play("shield")
+	yield($Characters/ALIEN/Shield/AnimationPlayer, "animation_finished")
+	$Characters/ALIEN/Shield.hide()
+
 func techniker():
 	if techniker_used:
 		return
@@ -416,7 +426,7 @@ func techniker():
 	$Shutdown_Timer.stop()
 	$Techniker.position = $Camera.position
 	$Techniker.show()
-	$Techniker.start_animation()
-	yield($Techniker, "animation_finished")
+	$Techniker/AnimationPlayer.play("techniker")
+	yield($Techniker/AnimationPlayer, "animation_finished")
 	overlay.rewind_animation()
 	$Techniker.hide()
