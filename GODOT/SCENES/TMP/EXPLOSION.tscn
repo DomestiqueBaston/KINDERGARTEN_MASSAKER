@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_explosion.wav" type="AudioStream" id=3]
+
+[node name="Explosion" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cooldown_Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="FX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -7.5
+bus = "FX"
