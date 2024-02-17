@@ -9,11 +9,13 @@
 [sub_resource type="CapsuleShape2D" id=90]
 height = 10.0
 
-[sub_resource type="CircleShape2D" id=34]
-radius = 16.0
+[sub_resource type="CapsuleShape2D" id=94]
+radius = 44.0
+height = 30.0
 
-[sub_resource type="CircleShape2D" id=80]
-radius = 20.413
+[sub_resource type="CapsuleShape2D" id=95]
+radius = 44.0
+height = 30.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "00_Booger"
@@ -3644,15 +3646,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Move_Collider2" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 0, 33 )
-scale = Vector2( 1, 0.666 )
-shape = SubResource( 34 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Alien_Detection_Collider" type="Area2D" parent="."]
 visible = false
 collision_layer = 128
@@ -3663,8 +3656,8 @@ __meta__ = {
 
 [node name="ADCollider" type="CollisionShape2D" parent="Alien_Detection_Collider"]
 position = Vector2( 0, 114 )
-scale = Vector2( 3, 2.22 )
-shape = SubResource( 80 )
+rotation = 1.5708
+shape = SubResource( 94 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -3679,14 +3672,13 @@ __meta__ = {
 
 [node name="KWDCollider" type="CollisionShape2D" parent="Kid_Waving_Detection_Collider"]
 position = Vector2( 7.62939e-06, 80 )
-scale = Vector2( 3, 2.22 )
-shape = SubResource( 80 )
+rotation = 1.5708
+shape = SubResource( 95 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Point_of_Booger_Spawn" type="Position2D" parent="."]
-visible = false
 position = Vector2( 0, 56 )
 __meta__ = {
 "_edit_lock_": true,
@@ -3752,7 +3744,6 @@ anims/RESET = SubResource( 33 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 71 )
 parameters/Booger/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )

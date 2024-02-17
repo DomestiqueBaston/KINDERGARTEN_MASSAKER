@@ -10,8 +10,9 @@
 [sub_resource type="CapsuleShape2D" id=85]
 radius = 16.0
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 26.0433
+[sub_resource type="CapsuleShape2D" id=88]
+radius = 56.09
+height = 39.4709
 
 [sub_resource type="Animation" id=2]
 resource_name = "00_Check"
@@ -3505,7 +3506,7 @@ __meta__ = {
 [node name="ADCollider" type="CollisionShape2D" parent="Alien_Detection_Collider"]
 position = Vector2( 0, -55 )
 scale = Vector2( 3, 2.22 )
-shape = SubResource( 1 )
+shape = SubResource( 88 )
 disabled = true
 __meta__ = {
 "_edit_lock_": true
@@ -3570,7 +3571,6 @@ anims/RESET = SubResource( 4 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 46 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 47 )
 parameters/Check/blend_position = Vector2( 0, 0 )
 parameters/No/blend_position = Vector2( 0, 0 )
