@@ -29,6 +29,7 @@ enum State {
 var state = State.MOVE
 
 func _ready():
+	$AnimationTree.active = true
 	state_machine = $AnimationTree["parameters/playback"]
 	reset()
 

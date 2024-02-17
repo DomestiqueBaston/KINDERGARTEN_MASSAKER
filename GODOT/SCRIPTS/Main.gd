@@ -9,6 +9,12 @@ export var spawn_first_time = 5.0
 # every how many seconds are new enemies spawned subsequently?
 export var spawn_cycle_time = 2.0
 
+# how many kids are placed initially on camera
+export var kids_on_camera = 8
+
+# how many kids are placed initially off camera
+export var kids_off_camera = 16
+
 var menu_scene = preload("res://SCENES/SCREENS/Menu.tscn")
 var tutorial_scene = preload("res://SCENES/SCREENS/Tuto.tscn")
 var options_scene = preload("res://SCENES/SCREENS/Options.tscn")
@@ -251,6 +257,19 @@ func instance_character_at(scene: PackedScene, pos: Vector2) -> Node:
 	enemies.add_child(inst)
 	return inst
 
+func get_random_kid() -> PackedScene:
+	var rand = randf()
+	if rand < 0.25:
+		return spitting_kid_scene
+	elif rand < 0.55:
+		return stick_kid_scene
+	elif rand < 0.74:
+		return booger_kid_scene
+	elif rand < 0.87:
+		return crying_kid_scene
+	else:
+		return vomiting_kid_scene
+
 #
 # Stuff to do when the background has been instanced but before the game
 # actually starts: determine where the alien will appear, put the camera there,
@@ -264,22 +283,21 @@ func prepare_game():
 	alien.position = background.get_alien_starting_point()
 	$Camera.position = alien.position
 
-	# add teacher and initial kids, ensuring they are on camera (or not far
-	# off-camera...)
+	# add teacher and some kids, on camera (or not far off-camera...)
 
 	var window_size = _get_window_size() * 1.5
 	var bbox = Rect2($Camera.position - window_size / 2.0, window_size)
 
-	var positions = background.get_spawning_points(9, bbox)
+	var positions = background.get_spawning_points(1 + kids_on_camera, bbox)
 	instance_character_at(teacher_scene, positions[0])
-	instance_character_at(crying_kid_scene, positions[1])
-	instance_character_at(vomiting_kid_scene, positions[2])
-	instance_character_at(booger_kid_scene, positions[3])
-	instance_character_at(stick_kid_scene, positions[4])
-	instance_character_at(stick_kid_scene, positions[5])
-	instance_character_at(stick_kid_scene, positions[6])
-	instance_character_at(spitting_kid_scene, positions[7])
-	instance_character_at(spitting_kid_scene, positions[8])
+	for i in range(1, kids_on_camera + 1):
+		instance_character_at(get_random_kid(), positions[i])
+
+	# add more kids off camera
+
+	positions = background.get_spawning_points(kids_off_camera, null, bbox)
+	for i in range(kids_off_camera):
+		instance_character_at(get_random_kid(), positions[i])
 
 #
 # Start the game: beam down the alien, change the music, and track the alien
@@ -325,24 +343,9 @@ func _on_Enemy_Timer_timeout():
 	var bbox = Rect2($Camera.position - window_size / 2.0, window_size)
 	var pos = background.get_spawning_point(null, bbox)
 
-	# what sort of enemy?
-
-	var enemy_scene: PackedScene
-	var rand = randf()
-	if rand < 0.25:
-		enemy_scene = spitting_kid_scene
-	elif rand < 0.55:
-		enemy_scene = stick_kid_scene
-	elif rand < 0.74:
-		enemy_scene = booger_kid_scene
-	elif rand < 0.87:
-		enemy_scene = crying_kid_scene
-	else:
-		enemy_scene = vomiting_kid_scene
-
 	# spawn the enemy and restart the timer
 
-	instance_character_at(enemy_scene, pos)
+	instance_character_at(get_random_kid(), pos)
 	$Enemy_Timer.start(spawn_cycle_time)
 
 func _on_Shutdown_Timer_timeout():
@@ -410,9 +413,10 @@ func techniker():
 	if techniker_used:
 		return
 	techniker_used = true
-	$Techniker.start_animation()
+	$Shutdown_Timer.stop()
 	$Techniker.position = $Camera.position
 	$Techniker.show()
+	$Techniker.start_animation()
 	yield($Techniker, "animation_finished")
 	overlay.rewind_animation()
 	$Techniker.hide()
