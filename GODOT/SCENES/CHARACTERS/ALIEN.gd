@@ -45,6 +45,8 @@ func reset():
 
 func beam_down():
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
+	# to ensure alien is invisible, in particular...
+	$Beam_Down_Rear/AnimationPlayer.advance(0)
 
 func _on_beam_down_finished(_anim_name):
 	set_physics_process(true)

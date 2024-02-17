@@ -79,10 +79,12 @@ func _unhandled_input(event: InputEvent):
 		OS.window_fullscreen = !OS.window_fullscreen
 		get_tree().set_input_as_handled()
 
-	# ui_cancel interrupts the game
+	# during the game: ui_cancel to interrupt, ui_accept to use talent
 
 	elif state == GameState.PLAY:
-		if (event.is_action_pressed("ui_accept", false, true)
+		if not $ScoreTracker.is_playing():
+			pass
+		elif (event.is_action_pressed("ui_accept", false, true)
 			and $Cooldown_Timer.is_stopped()):
 			match talent:
 				Globals.Talent.TELEPORT:
@@ -281,14 +283,15 @@ func prepare_game():
 
 	# position the camera and the alien
 
+	var pos = background.get_alien_starting_point()
 	alien.set_fast_run_cycle(talent == Globals.Talent.SPEED)
-	alien.position = background.get_alien_starting_point()
-	$Camera.position = alien.position
+	alien.position = pos
+	$Camera.position = pos
 
 	# add teacher and some kids, on camera (or not far off-camera...)
 
 	var window_size = _get_window_size() * 1.5
-	var bbox = Rect2($Camera.position - window_size / 2.0, window_size)
+	var bbox = Rect2(pos - window_size / 2.0, window_size)
 
 	var positions = background.get_spawning_points(1 + kids_on_camera, bbox)
 	instance_character_at(teacher_scene, positions[0])
@@ -338,6 +341,8 @@ func _on_Intro_Music_finished():
 		$Game_Music.play()
 
 func _on_Enemy_Timer_timeout():
+	if state != GameState.PLAY:
+		return
 
 	# find a spawning point off-camera
 

@@ -14,6 +14,9 @@ func stop_game():
 	best_score = max(best_score, last_score)
 	$Timer.stop()
 
+func is_playing() -> bool:
+	return not $Timer.is_stopped()
+
 func get_current_score() -> float:
 	return (Time.get_ticks_msec() - start_time) / 1000.0
 
