@@ -29,6 +29,7 @@ enum State {
 var state = State.MOVE
 
 func _ready():
+	$AnimationTree.active = true
 	state_machine = $AnimationTree["parameters/playback"]
 	reset()
 
@@ -49,7 +50,7 @@ func _on_beam_down_finished(_anim_name):
 	set_physics_process(true)
 	emit_signal("beam_down_finished")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if state == State.SCRATCH and state_machine.get_current_node() == "Scratching":
 		return
 
@@ -85,7 +86,7 @@ func _physics_process(delta):
 		state_machine.travel(run_cycle)
 		state = State.MOVE
 		direction = dir.normalized()
-		var _collision = move_and_collide(direction * speed * accelerate * delta)
+		move_and_slide(direction * speed * accelerate)
 
 func set_fast_run_cycle(fast: bool):
 	if fast:
