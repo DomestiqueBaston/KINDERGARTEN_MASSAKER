@@ -1,34 +1,27 @@
 extends CanvasLayer
 
+var aberration_player: AnimationPlayer
+var brightness_player: AnimationPlayer
+var saturation_player: AnimationPlayer
+var contrast_player: AnimationPlayer
+
 func start_animation():
 	var rand = randi()
-	if rand & 0x1:
-		$Aberration_pos.play("aberration")
-	else:
-		$Aberration_neg.play("aberration")
-	if rand & 0x2:
-		$Brightness_pos.play("brightness")
-	else:
-		$Brightness_neg.play("brightness")
-	if rand & 0x4:
-		$Saturation_pos.play("saturation")
-	else:
-		$Saturation_neg.play("saturation")
-	if rand & 0x8:
-		$Contrast_pos.play("contrast")
-	else:
-		$Contrast_neg.play("contrast")
+	aberration_player = $Aberration_pos if rand & 0x1 else $Aberration_neg
+	brightness_player = $Brightness_pos if rand & 0x2 else $Brightness_neg
+	saturation_player = $Saturation_pos if rand & 0x4 else $Saturation_neg
+	contrast_player   = $Contrast_pos   if rand & 0x8 else $Contrast_neg
+	aberration_player.play("aberration")
+	brightness_player.play("brightness")
+	saturation_player.play("saturation")
+	contrast_player.play("contrast")
 	$General.play("general")
 
 func rewind_animation():
-	$Aberration_pos.seek(0)
-	$Aberration_neg.seek(0)
-	$Brightness_pos.seek(0)
-	$Brightness_neg.seek(0)
-	$Saturation_pos.seek(0)
-	$Saturation_neg.seek(0)
-	$Contrast_pos.seek(0)
-	$Contrast_neg.seek(0)
+	aberration_player.seek(0)
+	brightness_player.seek(0)
+	saturation_player.seek(0)
+	contrast_player.seek(0)
 	$General.seek(0)
 
 func reset_animation():
