@@ -1,24 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_Explosion_C.wav" type="AudioStream" id=1]
-
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
-
-uniform vec2 center;
-uniform float force;
-uniform float size;
-uniform float thickness;
-
-void fragment() {
-	float mask = (1.0 - smoothstep(size, size + 0.1, length(UV - center))) * smoothstep(size - thickness - 0.1, size - thickness, length(UV - center));
-	vec2 disp = normalize(UV - center) * force * mask;
-	COLOR = texture(SCREEN_TEXTURE, UV - disp);
-}
-"
+[ext_resource path="res://SHADERS/Shockwave.gdshader" type="Shader" id=2]
 
 [sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
+shader = ExtResource( 2 )
 shader_param/center = Vector2( 0.5, 0.5 )
 shader_param/force = 0.0
 shader_param/size = 0.0
