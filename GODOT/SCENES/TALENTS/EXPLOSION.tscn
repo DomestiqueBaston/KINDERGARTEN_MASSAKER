@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_explosion.wav" type="AudioStream" id=1]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_Explosion_C.wav" type="AudioStream" id=1]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -126,7 +126,6 @@ one_shot = true
 
 [node name="FX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -7.5
 bus = "FX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
