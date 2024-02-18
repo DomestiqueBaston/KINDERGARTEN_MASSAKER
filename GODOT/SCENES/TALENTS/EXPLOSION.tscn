@@ -1,12 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_explosion.wav" type="AudioStream" id=1]
-[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Explosion.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec2 center;
+uniform float force;
+uniform float size;
+uniform float thickness;
+
+void fragment() {
+	float mask = (1.0 - smoothstep(size, size + 0.1, length(UV - center))) * smoothstep(size - thickness - 0.1, size - thickness, length(UV - center));
+	vec2 disp = normalize(UV - center) * force * mask;
+	COLOR = texture(SCREEN_TEXTURE, UV - disp);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/center = Vector2( 0.5, 0.5 )
+shader_param/force = 0.0
+shader_param/size = 0.0
+shader_param/thickness = 0.0
 
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Explosion:frame")
+tracks/0/path = NodePath("ColorRect:material:shader_param/force")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -15,10 +36,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
+"values": [ 0.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Explosion:visible")
+tracks/1/path = NodePath("ColorRect:material:shader_param/size")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -27,31 +48,32 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ false ]
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:material:shader_param/thickness")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "explosion"
+resource_name = "repulsive_explosion"
 length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Explosion:frame")
+loop = true
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-tracks/1/type = "audio"
-tracks/1/path = NodePath("FX")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -59,20 +81,54 @@ tracks/1/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:material:shader_param/force")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.092, 0.062, 0.0 ]
+}
 tracks/2/type = "value"
-tracks/2/path = NodePath("Explosion:visible")
+tracks/2/path = NodePath("ColorRect:material:shader_param/size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.007, 0.198, 0.453 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect:material:shader_param/thickness")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
 }
 
 [node name="Explosion" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 2 )
+margin_left = -240.0
+margin_top = -100.0
+margin_right = 240.0
+margin_bottom = 170.0
 __meta__ = {
 "_edit_lock_": true
 }
@@ -81,20 +137,11 @@ __meta__ = {
 wait_time = 10.0
 one_shot = true
 
-[node name="Explosion" type="Sprite" parent="."]
-visible = false
-position = Vector2( 0, 23 )
-texture = ExtResource( 2 )
-hframes = 4
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 3 )
-anims/explosion = SubResource( 4 )
-
 [node name="FX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 volume_db = -7.5
 bus = "FX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/repulsive_explosion = SubResource( 4 )
