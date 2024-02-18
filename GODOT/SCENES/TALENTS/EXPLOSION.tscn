@@ -66,7 +66,6 @@ tracks/2/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "repulsive_explosion"
 length = 0.5
-loop = true
 tracks/0/type = "audio"
 tracks/0/path = NodePath("FX")
 tracks/0/interp = 1
@@ -91,7 +90,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0.092, 0.077, 0.062, 0.0413333, 0.0206667, 0.0 ]
+"values": [ 0.118, 0.062, 0.0465, 0.035, 0.005, 0.0 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("ColorRect:material:shader_param/size")
@@ -103,7 +102,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0.007, 0.1025, 0.198, 0.283, 0.368, 0.453 ]
+"values": [ 0.0706667, 0.198, 0.26175, 0.3255, 0.38925, 0.453 ]
 }
 
 [node name="Explosion" type="Node2D"]
