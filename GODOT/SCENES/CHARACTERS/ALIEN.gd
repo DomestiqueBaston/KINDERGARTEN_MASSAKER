@@ -105,11 +105,13 @@ func start_teleport():
 	$Talent/Teleport/AnimationPlayer.play("Teleport_END")
 
 func start_dash():
-	$Talent/Dash/FX.play()
 	accelerate = 5.0
 
 func stop_dash():
 	accelerate = 1.0
+
+func start_shield(duration):
+	$Talent/Shield.start(duration)
 
 func start_cooldown():
 	$Alien.material.set_shader_param("cooldown", Color(0xb73847ff))

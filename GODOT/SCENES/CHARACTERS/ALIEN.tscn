@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=2]
+[gd_scene load_steps=141 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -13,11 +13,9 @@
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Front.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/SOUND/FX/BEAM_DOWN/Beam_down.wav" type="AudioStream" id=12]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Scratching_A.wav" type="AudioStream" id=13]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation.wav" type="AudioStream" id=14]
+[ext_resource path="res://SCENES/TALENTS/TELEPORT.tscn" type="PackedScene" id=14]
 [ext_resource path="res://SCENES/CHARACTERS/ALIEN.gd" type="Script" id=15]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation_End.wav" type="AudioStream" id=16]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation_Beginning.wav" type="AudioStream" id=17]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Dash.wav" type="AudioStream" id=18]
+[ext_resource path="res://SCENES/TALENTS/SHIELD.tscn" type="PackedScene" id=16]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -190,111 +188,6 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ true ]
-}
-
-[sub_resource type="Animation" id=7]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("../../Alien:material:shader_param/flash")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "Teleport_BEGINNING"
-length = 0.2
-tracks/0/type = "audio"
-tracks/0/path = NodePath("FX")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 17 )
-} ],
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "Teleport_END"
-length = 0.2
-tracks/0/type = "audio"
-tracks/0/path = NodePath("FX")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 16 )
-} ],
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "Teleport_FULL"
-length = 0.4
-tracks/0/type = "audio"
-tracks/0/path = NodePath("FX")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 14 )
-} ],
-"times": PoolRealArray( 0 )
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
 }
 
 [sub_resource type="ShaderMaterial" id=94]
@@ -6291,31 +6184,9 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Teleport" type="Node2D" parent="Talent"]
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Teleport" parent="Talent" instance=ExtResource( 14 )]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Teleport"]
-pause_mode = 1
-anims/RESET = SubResource( 7 )
-anims/Teleport_BEGINNING = SubResource( 4 )
-anims/Teleport_END = SubResource( 5 )
-anims/Teleport_FULL = SubResource( 6 )
-
-[node name="FX" type="AudioStreamPlayer" parent="Talent/Teleport"]
-stream = ExtResource( 14 )
-bus = "FX"
-
-[node name="Dash" type="Node2D" parent="Talent"]
-z_index = -1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FX" type="AudioStreamPlayer" parent="Talent/Dash"]
-stream = ExtResource( 18 )
-bus = "FX"
+[node name="Shield" parent="Talent" instance=ExtResource( 16 )]
 
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )

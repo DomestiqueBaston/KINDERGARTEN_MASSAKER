@@ -15,6 +15,12 @@ export var kids_on_camera = 8
 # how many kids are placed initially off camera
 export var kids_off_camera = 16
 
+export var teleport_cooldown = 10
+export var dash_cooldown = 15
+export var dash_duration = 0.25
+export var shield_cooldown = 10
+export var shield_duration = 3
+
 var menu_scene = preload("res://SCENES/SCREENS/Menu.tscn")
 var tutorial_scene = preload("res://SCENES/SCREENS/Tuto.tscn")
 var options_scene = preload("res://SCENES/SCREENS/Options.tscn")
@@ -392,37 +398,31 @@ func stop_game():
 func start_teleport():
 	alien.start_teleport()
 	alien.start_cooldown()
-	$Cooldown_Timer.start(Globals.talent_cooldown[talent])
+	$Cooldown_Timer.start(teleport_cooldown)
 
 func teleport():
 	alien.position = background.get_teleportation_point()
 
 func start_dash():
 	alien.start_dash()
-	$FX/Dash_Trail.show()
-	$FX/Dash_Timer.start()
+	$Talents/Dash.start()
 	alien.start_cooldown()
-	$Cooldown_Timer.start(Globals.talent_cooldown[talent])
+	$Cooldown_Timer.start(dash_cooldown)
+	$Talent_Timer.start(dash_duration)
+	yield($Talent_Timer, "timeout")
+	stop_dash()
 
 func update_dash_trail():
-	if $FX/Dash_Trail.visible:
-		$FX/Dash_Trail.add_point(alien.position)
-		while $FX/Dash_Trail.get_point_count() > 100: # I think 100 is ok but maybe we could "export var" it just in case?
-			$FX/Dash_Trail.remove_point(0)
+	$Talents/Dash.add_point_to_trail(alien.position)
 
 func stop_dash():
 	alien.stop_dash()
-	$FX/Dash_Trail.hide()
-	$FX/Dash_Trail.clear_points()
-	$FX/Dash_Timer.stop()
+	$Talents/Dash.stop()
 
 func start_shield():
 	alien.start_cooldown()
-	$Cooldown_Timer.start(Globals.talent_cooldown[talent])
-	$Characters/ALIEN/Shield.show()
-	$Characters/ALIEN/Shield/AnimationPlayer.play("shield")
-	yield($Characters/ALIEN/Shield/AnimationPlayer, "animation_finished")
-	$Characters/ALIEN/Shield.hide()
+	$Cooldown_Timer.start(shield_cooldown)
+	alien.start_shield(shield_duration)
 
 func techniker():
 	if techniker_used:
