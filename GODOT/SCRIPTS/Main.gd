@@ -407,7 +407,7 @@ func start_dash():
 func update_dash_trail():
 	if $FX/Dash_Trail.visible:
 		$FX/Dash_Trail.add_point(alien.position)
-		while $FX/Dash_Trail.get_point_count() > 50:
+		while $FX/Dash_Trail.get_point_count() > 100: # I think 100 is ok but maybe we could "export var" it just in case?
 			$FX/Dash_Trail.remove_point(0)
 
 func stop_dash():

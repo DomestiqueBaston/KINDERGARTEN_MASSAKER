@@ -16,7 +16,7 @@
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 2
-offsets = PoolRealArray( 0.0052356, 0.209738, 0.895131, 1 )
+offsets = PoolRealArray( 0.0052356, 0.497207, 0.860335, 1 )
 colors = PoolColorArray( 0.960784, 0.976471, 1, 0, 0.960784, 0.976471, 1, 1, 0.994561, 0.996737, 1, 1, 0.960784, 0.976471, 1, 0 )
 
 [node name="Main" type="Node2D"]
@@ -38,7 +38,7 @@ __meta__ = {
 }
 
 [node name="Dash_Timer" type="Timer" parent="FX"]
-wait_time = 0.2
+wait_time = 0.25
 one_shot = true
 
 [node name="Characters" type="YSort" parent="."]
