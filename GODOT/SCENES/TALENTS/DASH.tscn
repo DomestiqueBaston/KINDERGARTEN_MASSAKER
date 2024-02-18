@@ -2,11 +2,7 @@
 
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Dash.wav" type="AudioStream" id=1]
 [ext_resource path="res://SCENES/TALENTS/DASH.gd" type="Script" id=2]
-
-[sub_resource type="Gradient" id=1]
-interpolation_mode = 2
-offsets = PoolRealArray( 0.0052356, 0.209738, 0.895131, 1 )
-colors = PoolColorArray( 0.960784, 0.976471, 1, 0, 0.960784, 0.976471, 1, 1, 0.994561, 0.996737, 1, 1, 0.960784, 0.976471, 1, 0 )
+[ext_resource path="res://SHADERS/Dash_Gradient.tres" type="Gradient" id=3]
 
 [node name="Dash" type="Node"]
 script = ExtResource( 2 )
@@ -15,7 +11,7 @@ script = ExtResource( 2 )
 visible = false
 width = 36.0
 default_color = Color( 0.960784, 0.976471, 1, 1 )
-gradient = SubResource( 1 )
+gradient = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
