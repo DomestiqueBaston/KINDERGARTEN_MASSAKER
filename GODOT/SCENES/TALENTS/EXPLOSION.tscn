@@ -93,5 +93,4 @@ anims/explosion = SubResource( 4 )
 
 [node name="FX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -7.5
 bus = "FX"
