@@ -4844,7 +4844,7 @@ animation = "90D_Run"
 animation = "135D_Run"
 
 [sub_resource type="AnimationNodeAnimation" id=127]
-animation = "00_Run"
+animation = "180_Run"
 
 [sub_resource type="AnimationNodeAnimation" id=128]
 animation = "135G_Run"
@@ -4882,7 +4882,7 @@ nodes/BlendSpace2D/position = Vector2( 220, 80 )
 nodes/TimeScale/node = SubResource( 132 )
 nodes/TimeScale/position = Vector2( 440, 100 )
 nodes/output/position = Vector2( 620, 120 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=105]
 animation = "45D_Scratching"
