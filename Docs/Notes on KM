@@ -262,8 +262,8 @@ CONDITIONS to UNLOCK Der Techniker:
 
 	Dying after 60 seconds.
 
-CONDITIONS to UNLOCK Rücklauf
-(if validated, we’ll exchange the list position with Der Techniker:
+CONDITIONS to UNLOCK Rücklauf:
+(if validated, we’ll exchange the list position with Der Techniker)
 
 	Dying after 65 seconds (it could very possibly be almost impossible to achieve)!
 Shaders
