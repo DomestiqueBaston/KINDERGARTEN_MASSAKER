@@ -406,8 +406,6 @@ func stop_game():
 	match talent:
 		Globals.Talent.DASH:
 			stop_dash()
-		Globals.Talent.EXPLOSION:
-			stop_explosion()
 		Globals.Talent.TECHNICIAN:
 			stop_techniker()
 			techniker_used = false
@@ -446,16 +444,10 @@ func stop_dash():
 	$Talents/Dash.stop()
 
 func start_explosion():
-	$Explosion/AnimationPlayer.play("repulsive_explosion")
-	$Explosion.position = $Camera.position
-	$Explosion.show()
 	alien.start_cooldown()
 	$Cooldown_Timer.start(EXPLOSION_cooldown)
-	yield($Explosion/AnimationPlayer, "animation_finished")
-	stop_explosion()
-
-func stop_explosion():
-	$Explosion.hide()
+	alien.start_explosion()
+	$Camera_Shake.play("shake")
 
 func start_shield():
 	alien.start_cooldown()

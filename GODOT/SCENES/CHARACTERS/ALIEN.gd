@@ -88,20 +88,23 @@ func _physics_process(_delta):
 		direction = dir.normalized()
 		move_and_slide(direction * speed * accelerate)
 
-func start_teleport():
-	$Talent/Teleport/AnimationPlayer.play("Teleport_BEGINNING")
-	yield($Talent/Teleport/AnimationPlayer, "animation_finished")
-	emit_signal("teleport")
-	$Talent/Teleport/AnimationPlayer.play("Teleport_END")
-
 func set_run_cycle_speed(multiplier):
 	$AnimationTree["parameters/Run/TimeScale/scale"] = multiplier
 
 func set_run_speed(multiplier):
 	accelerate = multiplier
 
+func start_teleport():
+	$Talent/Teleport/AnimationPlayer.play("Teleport_BEGINNING")
+	yield($Talent/Teleport/AnimationPlayer, "animation_finished")
+	emit_signal("teleport")
+	$Talent/Teleport/AnimationPlayer.play("Teleport_END")
+
 func start_invisible(duration):
 	$Talent/Invisible.start(duration)
+
+func start_explosion():
+	$Talent/Explosion/AnimationPlayer.play("explosion")
 
 func start_shield(duration):
 	$Talent/Shield.start(duration)
