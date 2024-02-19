@@ -1,7 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://SHADERS/Outline_Invisible.shader" type="Shader" id=1]
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=2]
+[ext_resource path="res://SCENES/TALENTS/INVISIBLE.gd" type="Script" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_ON.wav" type="AudioStream" id=7]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_OFF.wav" type="AudioStream" id=8]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Alien:material:shader")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 2 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "invisible_off"
@@ -19,6 +37,18 @@ tracks/0/keys = {
 "stream": ExtResource( 8 )
 } ],
 "times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 2 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -38,18 +68,27 @@ tracks/0/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 1 ) ]
+}
 
 [node name="Invisible" type="Node2D"]
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Invisible_Timer" type="Timer" parent="."]
 wait_time = 4.0
-one_shot = true
-
-[node name="Cooldown_Timer" type="Timer" parent="."]
-wait_time = 20.0
 one_shot = true
 
 [node name="FX_ON" type="AudioStreamPlayer" parent="."]
@@ -63,5 +102,6 @@ volume_db = -1.5
 bus = "FX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
 anims/invisible_off = SubResource( 1 )
 anims/invisible_on = SubResource( 2 )

@@ -100,6 +100,9 @@ func set_run_cycle_speed(multiplier):
 func set_run_speed(multiplier):
 	accelerate = multiplier
 
+func start_invisible(duration):
+	$Talent/Invisible.start(duration)
+
 func start_shield(duration):
 	$Talent/Shield.start(duration)
 
