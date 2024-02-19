@@ -290,9 +290,15 @@ func prepare_game():
 	# position the camera and the alien
 
 	var pos = background.get_alien_starting_point()
-	alien.set_fast_run_cycle(talent == Globals.Talent.SPEED)
 	alien.position = pos
 	$Camera.position = pos
+
+	if talent == Globals.Talent.SPEED:
+		alien.set_run_cycle_speed(1.2)
+		alien.set_run_speed(1.2)
+	else:
+		alien.set_run_cycle_speed(1)
+		alien.set_run_speed(1)
 
 	# add teacher and some kids, on camera (or not far off-camera...)
 
@@ -404,7 +410,8 @@ func teleport():
 	alien.position = background.get_teleportation_point()
 
 func start_dash():
-	alien.start_dash()
+	alien.set_run_cycle_speed(2)
+	alien.set_run_speed(5)
 	$Talents/Dash.start()
 	alien.start_cooldown()
 	$Cooldown_Timer.start(dash_cooldown)
@@ -416,7 +423,8 @@ func update_dash_trail():
 	$Talents/Dash.add_point_to_trail(alien.position)
 
 func stop_dash():
-	alien.stop_dash()
+	alien.set_run_cycle_speed(1)
+	alien.set_run_speed(1)
 	$Talents/Dash.stop()
 
 func start_shield():

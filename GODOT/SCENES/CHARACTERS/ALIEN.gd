@@ -37,11 +37,10 @@ func reset():
 	direction = Vector2.DOWN
 	$AnimationTree["parameters/Idle/blend_position"] = direction
 	$AnimationTree["parameters/Scratching/blend_position"] = direction
-	$AnimationTree["parameters/Run/blend_position"] = direction
-	$AnimationTree["parameters/Run_fast/blend_position"] = direction
+	$AnimationTree["parameters/Run/Blend/blend_position"] = direction
+	$AnimationTree["parameters/Run/TimeScale/scale"] = 1
 	set_physics_process(false)
 	stop_cooldown()
-	set_fast_run_cycle(false)
 
 func beam_down():
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
@@ -83,20 +82,11 @@ func _physics_process(_delta):
 	else:
 		$AnimationTree["parameters/Idle/blend_position"] = dir
 		$AnimationTree["parameters/Scratching/blend_position"] = dir
-		$AnimationTree["parameters/Run/blend_position"] = dir
-		$AnimationTree["parameters/Run_fast/blend_position"] = dir
+		$AnimationTree["parameters/Run/Blend/blend_position"] = dir
 		state_machine.travel(run_cycle)
 		state = State.MOVE
 		direction = dir.normalized()
 		move_and_slide(direction * speed * accelerate)
-
-func set_fast_run_cycle(fast: bool):
-	if fast:
-		run_cycle = "Run_fast"
-		accelerate = 1.2
-	else:
-		run_cycle = "Run"
-		accelerate = 1.0
 
 func start_teleport():
 	$Talent/Teleport/AnimationPlayer.play("Teleport_BEGINNING")
@@ -104,11 +94,11 @@ func start_teleport():
 	emit_signal("teleport")
 	$Talent/Teleport/AnimationPlayer.play("Teleport_END")
 
-func start_dash():
-	accelerate = 5.0
+func set_run_cycle_speed(multiplier):
+	$AnimationTree["parameters/Run/TimeScale/scale"] = multiplier
 
-func stop_dash():
-	accelerate = 1.0
+func set_run_speed(multiplier):
+	accelerate = multiplier
 
 func start_shield(duration):
 	$Talent/Shield.start(duration)
