@@ -15,11 +15,16 @@ export var kids_on_camera = 8
 # how many kids are placed initially off camera
 export var kids_off_camera = 16
 
-export var teleport_cooldown = 10
-export var dash_cooldown = 15
-export var dash_duration = 0.25
-export var shield_cooldown = 10
-export var shield_duration = 3
+# talent settings
+export var TELEPORT_cooldown = 10
+export var DASH_cooldown = 15
+export var DASH_duration = 0.25
+export var DASH_run_speed = 5
+export var DASH_run_cycle_speed = 2
+export var SPEED_run_speed = 1.2
+export var SPEED_run_cycle_speed = 1.2
+export var SHIELD_cooldown = 10
+export var SHIELD_duration = 3
 
 var menu_scene = preload("res://SCENES/SCREENS/Menu.tscn")
 var tutorial_scene = preload("res://SCENES/SCREENS/Tuto.tscn")
@@ -294,13 +299,13 @@ func prepare_game():
 	$Camera.position = pos
 
 	if talent == Globals.Talent.SPEED:
-		alien.set_run_cycle_speed(1.2)
-		alien.set_run_speed(1.2)
+		alien.set_run_cycle_speed(SPEED_run_cycle_speed)
+		alien.set_run_speed(SPEED_run_speed)
 	else:
 		alien.set_run_cycle_speed(1)
 		alien.set_run_speed(1)
 
-	# add teacher and some kids, on camera (or not far off-camera...)
+	# add teacher and some kids, on camera (or not far off camera...)
 
 	var window_size = _get_window_size() * 1.5
 	var bbox = Rect2(pos - window_size / 2.0, window_size)
@@ -404,18 +409,18 @@ func stop_game():
 func start_teleport():
 	alien.start_teleport()
 	alien.start_cooldown()
-	$Cooldown_Timer.start(teleport_cooldown)
+	$Cooldown_Timer.start(TELEPORT_cooldown)
 
 func teleport():
 	alien.position = background.get_teleportation_point()
 
 func start_dash():
-	alien.set_run_cycle_speed(2)
-	alien.set_run_speed(5)
+	alien.set_run_cycle_speed(DASH_run_cycle_speed)
+	alien.set_run_speed(DASH_run_speed)
 	$Talents/Dash.start()
 	alien.start_cooldown()
-	$Cooldown_Timer.start(dash_cooldown)
-	$Talent_Timer.start(dash_duration)
+	$Cooldown_Timer.start(DASH_cooldown)
+	$Talent_Timer.start(DASH_duration)
 	yield($Talent_Timer, "timeout")
 	stop_dash()
 
@@ -429,8 +434,8 @@ func stop_dash():
 
 func start_shield():
 	alien.start_cooldown()
-	$Cooldown_Timer.start(shield_cooldown)
-	alien.start_shield(shield_duration)
+	$Cooldown_Timer.start(SHIELD_cooldown)
+	alien.start_shield(SHIELD_duration)
 
 func techniker():
 	if techniker_used:
