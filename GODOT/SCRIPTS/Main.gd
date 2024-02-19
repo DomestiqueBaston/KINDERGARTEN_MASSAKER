@@ -108,8 +108,7 @@ func _unhandled_input(event: InputEvent):
 				Globals.Talent.SHIELD:
 					start_shield()
 				Globals.Talent.TECHNICIAN:
-					if not $Shutdown_Overlay.visible:
-						techniker()
+					start_techniker()
 			get_tree().set_input_as_handled()
 		elif event.is_action_pressed("ui_cancel"):
 			stop_game()
@@ -402,6 +401,7 @@ func stop_game():
 		Globals.Talent.EXPLOSION:
 			stop_explosion()
 		Globals.Talent.TECHNICIAN:
+			stop_techniker()
 			techniker_used = false
 	
 	overlay.reset_animation()
@@ -454,8 +454,8 @@ func start_shield():
 	$Cooldown_Timer.start(SHIELD_cooldown)
 	alien.start_shield(SHIELD_duration)
 
-func techniker():
-	if techniker_used:
+func start_techniker():
+	if techniker_used or $Shutdown_Overlay.visible:
 		return
 	techniker_used = true
 	$Shutdown_Timer.stop()
@@ -464,4 +464,7 @@ func techniker():
 	$Techniker/AnimationPlayer.play("techniker")
 	yield($Techniker/AnimationPlayer, "animation_finished")
 	overlay.rewind_animation()
+	stop_techniker()
+
+func stop_techniker():
 	$Techniker.hide()
