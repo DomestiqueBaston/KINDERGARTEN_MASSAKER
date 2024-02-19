@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_explosion.wav" type="AudioStream" id=1]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_Explosion_B.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Explosion.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=3]
@@ -17,18 +17,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Explosion:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
 
 [sub_resource type="Animation" id=4]
 resource_name = "explosion"
@@ -40,10 +28,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3 ]
+"values": [ 0, 1, 2, 3, 4 ]
 }
 tracks/1/type = "audio"
 tracks/1/path = NodePath("FX")
@@ -59,18 +47,6 @@ tracks/1/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Explosion:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
 
 [node name="Explosion" type="Node2D"]
 __meta__ = {
@@ -82,10 +58,9 @@ wait_time = 10.0
 one_shot = true
 
 [node name="Explosion" type="Sprite" parent="."]
-visible = false
 position = Vector2( 0, 23 )
 texture = ExtResource( 2 )
-hframes = 4
+hframes = 5
 __meta__ = {
 "_edit_lock_": true
 }
