@@ -21,6 +21,7 @@ export var DASH_cooldown = 15
 export var DASH_duration = 0.25
 export var DASH_run_speed = 5
 export var DASH_run_cycle_speed = 2
+export var EXPLOSION_cooldown = 10
 export var SPEED_run_speed = 1.2
 export var SPEED_run_cycle_speed = 1.2
 export var SHIELD_cooldown = 10
@@ -102,6 +103,8 @@ func _unhandled_input(event: InputEvent):
 					start_teleport()
 				Globals.Talent.DASH:
 					start_dash()
+				Globals.Talent.EXPLOSION:
+					start_explosion()
 				Globals.Talent.SHIELD:
 					start_shield()
 				Globals.Talent.TECHNICIAN:
@@ -396,6 +399,8 @@ func stop_game():
 	match talent:
 		Globals.Talent.DASH:
 			stop_dash()
+		Globals.Talent.EXPLOSION:
+			stop_explosion()
 		Globals.Talent.TECHNICIAN:
 			techniker_used = false
 	
@@ -431,6 +436,18 @@ func stop_dash():
 	alien.set_run_cycle_speed(1)
 	alien.set_run_speed(1)
 	$Talents/Dash.stop()
+
+func start_explosion():
+	$Explosion/AnimationPlayer.play("repulsive_explosion")
+	$Explosion.position = $Camera.position
+	$Explosion.show()
+	alien.start_cooldown()
+	$Cooldown_Timer.start(EXPLOSION_cooldown)
+	yield($Explosion/AnimationPlayer, "animation_finished")
+	stop_explosion()
+
+func stop_explosion():
+	$Explosion.hide()
 
 func start_shield():
 	alien.start_cooldown()
