@@ -9,7 +9,7 @@
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=7]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INTRO_INGAME.wav" type="AudioStream" id=8]
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=9]
-[ext_resource path="res://SCENES/CHARACTERS/ALIEN_tmp.tscn" type="PackedScene" id=10]
+[ext_resource path="res://SCENES/CHARACTERS/ALIEN.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SCENES/ScoreTracker.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SCENES/TALENTS/TECHNIKER.tscn" type="PackedScene" id=12]
 [ext_resource path="res://SCENES/TALENTS/DASH.tscn" type="PackedScene" id=14]
@@ -41,7 +41,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 0, 0 ), Vector2( 4, 3 ), Vector2( -5, -7 ), Vector2( -3, 3 ), Vector2( 2, -2 ), Vector2( 0, 0 ) ]
 }
 

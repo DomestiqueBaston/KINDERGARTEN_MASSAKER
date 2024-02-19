@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=2]
+[gd_scene load_steps=125 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -16,6 +16,9 @@
 [ext_resource path="res://SCENES/TALENTS/TELEPORT.tscn" type="PackedScene" id=14]
 [ext_resource path="res://SCENES/CHARACTERS/ALIEN.gd" type="Script" id=15]
 [ext_resource path="res://SCENES/TALENTS/SHIELD.tscn" type="PackedScene" id=16]
+[ext_resource path="res://SCENES/TALENTS/FORCE_FIELD.tscn" type="PackedScene" id=17]
+[ext_resource path="res://SCENES/TALENTS/INVISIBLE.tscn" type="PackedScene" id=18]
+[ext_resource path="res://SCENES/TALENTS/EXPLOSION.tscn" type="PackedScene" id=19]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -603,144 +606,6 @@ tracks/9/keys = {
 "times": PoolRealArray( 0.253135, 0.679624 )
 }
 
-[sub_resource type="Animation" id=123]
-resource_name = "00_Run_fast"
-length = 0.666667
-loop = true
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 8, 9, 10, 11, 12, 13, 14, 15 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Shadow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0, 12 ), Vector2( -2, 12 ), Vector2( -9, 13 ), Vector2( -17, 15 ), Vector2( -18, 15 ), Vector2( -11.3333, 13.5 ), Vector2( -4.66667, 12 ), Vector2( 6, 12 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Shadow:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, -1.0, -10.0, -15.0, -15.0, -7.5, 0.0, 15.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Shadow:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1, 0.5 ), Vector2( 1, 0.5 ), Vector2( 1, 0.5 ), Vector2( 1, 0.5 ), Vector2( 1, 0.5 ), Vector2( 1, 0.5 ), Vector2( 1, 0.5 ), Vector2( 1, 0.5 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 1 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-} ],
-"times": PoolRealArray( 0.226729, 0.573598 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2.5 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 10, 22 ), Vector2( 8, 7 ), Vector2( 0, 3 ), Vector2( -5, 3 ), Vector2( -9, 20 ), Vector2( -6, 7 ), Vector2( 1, 2 ), Vector2( 6, 4 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider/HCollider:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
-}
-tracks/9/type = "audio"
-tracks/9/path = NodePath("../Footsteps")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = false
-tracks/9/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 5 )
-} ],
-"times": PoolRealArray( 0.202278, 0.563567 )
-}
-
 [sub_resource type="Animation" id=97]
 resource_name = "00_Scratching"
 length = 1.4
@@ -1282,144 +1147,6 @@ tracks/9/keys = {
 "stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.251254, 0.681819 )
-}
-
-[sub_resource type="Animation" id=124]
-resource_name = "135D_Run_fast"
-length = 0.666667
-loop = true
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 80, 81, 82, 83, 84, 85, 86, 87 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Shadow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -19, 12 ), Vector2( -33, 31 ), Vector2( -18, 43 ), Vector2( -24, 22 ), Vector2( -11, 8 ), Vector2( 2, 5 ), Vector2( -3, 3 ), Vector2( -16, 8 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Shadow:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ -18.6, -79.9, -125.9, -72.25, -18.6, 12.0, 12.0, -3.3 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Shadow:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0.9, 0.5 ), Vector2( 0.8, 0.6 ), Vector2( 0.833333, 0.566667 ), Vector2( 0.7, 0.533 ), Vector2( 0.9, 0.5 ), Vector2( 0.9, 0.5 ), Vector2( 1.1, 0.5 ), Vector2( 1.1, 0.5 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 1 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-} ],
-"times": PoolRealArray( 0.224692, 0.573178 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2.5 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -10, 20 ), Vector2( -7, 5 ), Vector2( -2, 1 ), Vector2( 2, 0 ), Vector2( 5, 13 ), Vector2( 2, 2 ), Vector2( -3, 2 ), Vector2( -7, 3 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider/HCollider:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
-}
-tracks/9/type = "audio"
-tracks/9/path = NodePath("../Footsteps")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = false
-tracks/9/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 5 )
-} ],
-"times": PoolRealArray( 0.200397, 0.567066 )
 }
 
 [sub_resource type="AudioStreamSample" id=116]
@@ -1987,144 +1714,6 @@ tracks/9/keys = {
 "times": PoolRealArray( 0.253135, 0.677743 )
 }
 
-[sub_resource type="Animation" id=125]
-resource_name = "135G_Run_fast"
-length = 0.666667
-loop = true
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 128, 129, 130, 131, 132, 133, 134, 135 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Shadow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 3, 6 ), Vector2( -7, 7.33333 ), Vector2( -12, 8 ), Vector2( -0.499997, 8 ), Vector2( 13, 9 ), Vector2( -14, 28 ), Vector2( -17, 15 ), Vector2( 5, 4 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Shadow:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 27.0, -0.266666, -13.9, 6.55, 27.0, -69.9, -44.5, 27.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Shadow:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1, 0.5 ), Vector2( 1.06667, 0.5 ), Vector2( 1.1, 0.5 ), Vector2( 1, 0.5 ), Vector2( 0.8, 0.5 ), Vector2( 0.8, 0.5 ), Vector2( 1.1, 0.5 ), Vector2( 0.8, 0.5 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 1 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-} ],
-"times": PoolRealArray( 0.225262, 0.572294 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2.5 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -3, 13 ), Vector2( -2, 5 ), Vector2( 3, 0 ), Vector2( 6, 7 ), Vector2( 10, 19 ), Vector2( 7, 7 ), Vector2( 4, 2 ), Vector2( -1, 2 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider/HCollider:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
-}
-tracks/9/type = "audio"
-tracks/9/path = NodePath("../Footsteps")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = false
-tracks/9/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 5 )
-} ],
-"times": PoolRealArray( 0.204886, 0.560382 )
-}
-
 [sub_resource type="Animation" id=99]
 resource_name = "135G_Scratching"
 length = 1.4
@@ -2669,144 +2258,6 @@ tracks/9/keys = {
 "stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.253135, 0.673511 )
-}
-
-[sub_resource type="Animation" id=126]
-resource_name = "180_Run_fast"
-length = 0.666667
-loop = true
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 104, 105, 106, 107, 108, 109, 110, 111 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Shadow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -11, 13 ), Vector2( -16, 14 ), Vector2( -21, 15 ), Vector2( -3, 8 ), Vector2( -2, 13 ), Vector2( 5.5, 9.5 ), Vector2( 13, 6 ), Vector2( -7, 8 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Shadow:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, -22.95, -45.9, -5.0, 0.0, 23.0, 46.0, 12.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Shadow:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1.1, 0.4 ), Vector2( 1.05, 0.45 ), Vector2( 1, 0.5 ), Vector2( 1.05, 0.45 ), Vector2( 1.1, 0.4 ), Vector2( 1.05, 0.45 ), Vector2( 1, 0.5 ), Vector2( 1, 0.45 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 1 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-} ],
-"times": PoolRealArray( 0.224692, 0.572858 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2.5 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -9, 15 ), Vector2( -6, 4 ), Vector2( 0, 1 ), Vector2( 7, 3 ), Vector2( 11, 16 ), Vector2( 7, 5 ), Vector2( 0, 0.999999 ), Vector2( -6, 3 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider/HCollider:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
-}
-tracks/9/type = "audio"
-tracks/9/path = NodePath("../Footsteps")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = false
-tracks/9/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 5 )
-} ],
-"times": PoolRealArray( 0.202278, 0.56267 )
 }
 
 [sub_resource type="Animation" id=100]
@@ -3355,144 +2806,6 @@ tracks/9/keys = {
 "times": PoolRealArray( 0.259248, 0.677586 )
 }
 
-[sub_resource type="Animation" id=127]
-resource_name = "45D_Run_fast"
-length = 0.666667
-loop = true
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 32, 33, 34, 35, 36, 37, 38, 39 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Shadow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 3, 12 ), Vector2( -0.5, 11.5 ), Vector2( -4, 11 ), Vector2( -18, 15 ), Vector2( -4, 10 ), Vector2( -0.5, 6 ), Vector2( 3, 2 ), Vector2( -3, -2 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Shadow:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 18.6, 9.3, 0.0, -11.1, 18.6, 18.6, 18.6, -1.8 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Shadow:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0.8, 0.5 ), Vector2( 0.9, 0.45 ), Vector2( 1, 0.4 ), Vector2( 1.1, 0.4 ), Vector2( 0.8, 0.5 ), Vector2( 0.6, 0.55 ), Vector2( 0.5, 0.6 ), Vector2( 0.5, 0.8 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 1 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-} ],
-"times": PoolRealArray( 0.224692, 0.570413 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2.5 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 6, 21 ), Vector2( 2, 8 ), Vector2( -2, 2 ), Vector2( -6, 3 ), Vector2( -8, 15 ), Vector2( -7, 4 ), Vector2( -2, 2 ), Vector2( 3, 9 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider/HCollider:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
-}
-tracks/9/type = "audio"
-tracks/9/path = NodePath("../Footsteps")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = false
-tracks/9/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 5 )
-} ],
-"times": PoolRealArray( 0.208391, 0.560225 )
-}
-
 [sub_resource type="Animation" id=101]
 resource_name = "45D_Scratching"
 length = 1.4
@@ -4037,144 +3350,6 @@ tracks/9/keys = {
 "stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.253135, 0.675549 )
-}
-
-[sub_resource type="Animation" id=128]
-resource_name = "45G_Run_fast"
-length = 0.666667
-loop = true
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 176, 177, 178, 179, 180, 181, 182, 183 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Shadow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( -4, 14 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Shadow:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -18.6 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Shadow:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0.7, 0.5 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 1 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-} ],
-"times": PoolRealArray( 0.225832, 0.570984 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2.5 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 9, 15 ), Vector2( 8, 5 ), Vector2( 3, 2 ), Vector2( -1, 8 ), Vector2( -5, 20 ), Vector2( -2, 10 ), Vector2( 2, 5 ), Vector2( 5, 3 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider/HCollider:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
-}
-tracks/9/type = "audio"
-tracks/9/path = NodePath("../Footsteps")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = false
-tracks/9/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 5 )
-} ],
-"times": PoolRealArray( 0.207494, 0.560796 )
 }
 
 [sub_resource type="Animation" id=102]
@@ -4723,144 +3898,6 @@ tracks/9/keys = {
 "times": PoolRealArray( 0.251097, 0.681661 )
 }
 
-[sub_resource type="Animation" id=129]
-resource_name = "90D_Run_fast"
-length = 0.666667
-loop = true
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 56, 57, 58, 59, 60, 61, 62, 63 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Shadow:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0.7, 0.7 ), Vector2( 0.9, 0.6 ), Vector2( 1.1, 0.5 ), Vector2( 0.9, 0.5 ), Vector2( 0.7, 0.7 ), Vector2( 0.85, 0.6 ), Vector2( 1, 0.5 ), Vector2( 0.5, 0.9 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Shadow:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 10.2, 20.4, 10.2, 0.0, 2.55, 5.1, 40.8 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Shadow:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -7, 1 ), Vector2( -2, 2 ), Vector2( 3, 3 ), Vector2( -6, 5 ), Vector2( -7, -3 ), Vector2( -6, -0.5 ), Vector2( -5, 2 ), Vector2( 16, -1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 1 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-} ],
-"times": PoolRealArray( 0.222654, 0.56968 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2.5 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -2, 23 ), Vector2( -3, 8 ), Vector2( -3, 0 ), Vector2( -3, 0 ), Vector2( -3, 16 ), Vector2( -3, 1 ), Vector2( -3, -1 ), Vector2( -3, 4 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider/HCollider:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
-}
-tracks/9/type = "audio"
-tracks/9/path = NodePath("../Footsteps")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = false
-tracks/9/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 5 )
-} ],
-"times": PoolRealArray( 0.20024, 0.565604 )
-}
-
 [sub_resource type="Animation" id=103]
 resource_name = "90D_Scratching"
 length = 1.4
@@ -5407,144 +4444,6 @@ tracks/9/keys = {
 "times": PoolRealArray( 0.259248, 0.675549 )
 }
 
-[sub_resource type="Animation" id=130]
-resource_name = "90G_Run_fast"
-length = 0.666667
-loop = true
-step = 0.0833333
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 152, 153, 154, 155, 156, 157, 158, 159 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Shadow:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1, -10 ), Vector2( -3, 3 ), Vector2( -6, 9 ), Vector2( 7, 13 ), Vector2( 1, -5 ), Vector2( 19, -7 ), Vector2( 36, -3 ), Vector2( -1, 11 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("../Shadow:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 30.6, 0.0, 28.1, 56.2, -7.6 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../Shadow:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0.6, 0.8 ), Vector2( 0.8, 0.5 ), Vector2( 1, 0.4 ), Vector2( 1.1, 0.4 ), Vector2( 0.6, 0.8 ), Vector2( 0.55, 0.9 ), Vector2( 0.5, 1 ), Vector2( 0.8, 0.4 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 1 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 3 )
-} ],
-"times": PoolRealArray( 0.220046, 0.571717 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 2.5 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider/HCollider:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 3, 12 ), Vector2( 5, 2 ), Vector2( 4, 1 ), Vector2( 4, 4 ), Vector2( 4, 20 ), Vector2( 4, 6 ), Vector2( 4, -9.53674e-07 ), Vector2( 3, 1 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider/HCollider:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
-}
-tracks/9/type = "audio"
-tracks/9/path = NodePath("../Footsteps")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = false
-tracks/9/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 6 )
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 5 )
-} ],
-"times": PoolRealArray( 0.205783, 0.559492 )
-}
-
 [sub_resource type="Animation" id=104]
 resource_name = "90G_Scratching"
 length = 1.4
@@ -5935,91 +4834,58 @@ blend_point_7/node = SubResource( 43 )
 blend_point_7/pos = Vector2( -1, -1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=45]
+[sub_resource type="AnimationNodeAnimation" id=123]
 animation = "00_Run"
 
-[sub_resource type="AnimationNodeAnimation" id=46]
-animation = "180_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=47]
-animation = "90D_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=48]
-animation = "90G_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=49]
+[sub_resource type="AnimationNodeAnimation" id=124]
 animation = "45D_Run"
 
-[sub_resource type="AnimationNodeAnimation" id=50]
-animation = "45G_Run"
+[sub_resource type="AnimationNodeAnimation" id=125]
+animation = "90D_Run"
 
-[sub_resource type="AnimationNodeAnimation" id=51]
-animation = "135G_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=52]
+[sub_resource type="AnimationNodeAnimation" id=126]
 animation = "135D_Run"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=53]
-blend_point_0/node = SubResource( 45 )
+[sub_resource type="AnimationNodeAnimation" id=127]
+animation = "180_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=128]
+animation = "135G_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=129]
+animation = "90G_Run"
+
+[sub_resource type="AnimationNodeAnimation" id=130]
+animation = "45G_Run"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=131]
+blend_point_0/node = SubResource( 123 )
 blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 46 )
-blend_point_1/pos = Vector2( 0, -1 )
-blend_point_2/node = SubResource( 47 )
-blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 48 )
-blend_point_3/pos = Vector2( 1, 0 )
-blend_point_4/node = SubResource( 49 )
-blend_point_4/pos = Vector2( -1, 1 )
-blend_point_5/node = SubResource( 50 )
-blend_point_5/pos = Vector2( 1, 1 )
-blend_point_6/node = SubResource( 51 )
-blend_point_6/pos = Vector2( 1, -1 )
-blend_point_7/node = SubResource( 52 )
-blend_point_7/pos = Vector2( -1, -1 )
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id=131]
-animation = "00_Run_fast"
-
-[sub_resource type="AnimationNodeAnimation" id=132]
-animation = "45D_Run_fast"
-
-[sub_resource type="AnimationNodeAnimation" id=133]
-animation = "90D_Run_fast"
-
-[sub_resource type="AnimationNodeAnimation" id=134]
-animation = "135D_Run_fast"
-
-[sub_resource type="AnimationNodeAnimation" id=135]
-animation = "180_Run_fast"
-
-[sub_resource type="AnimationNodeAnimation" id=136]
-animation = "135G_Run_fast"
-
-[sub_resource type="AnimationNodeAnimation" id=137]
-animation = "90G_Run_fast"
-
-[sub_resource type="AnimationNodeAnimation" id=138]
-animation = "45G_Run_fast"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=139]
-blend_point_0/node = SubResource( 131 )
-blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 132 )
+blend_point_1/node = SubResource( 124 )
 blend_point_1/pos = Vector2( -1, 1 )
-blend_point_2/node = SubResource( 133 )
+blend_point_2/node = SubResource( 125 )
 blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 134 )
+blend_point_3/node = SubResource( 126 )
 blend_point_3/pos = Vector2( -1, -1 )
-blend_point_4/node = SubResource( 135 )
+blend_point_4/node = SubResource( 127 )
 blend_point_4/pos = Vector2( 0, -1 )
-blend_point_5/node = SubResource( 136 )
+blend_point_5/node = SubResource( 128 )
 blend_point_5/pos = Vector2( 1, -1 )
-blend_point_6/node = SubResource( 137 )
+blend_point_6/node = SubResource( 129 )
 blend_point_6/pos = Vector2( 1, 0 )
-blend_point_7/node = SubResource( 138 )
+blend_point_7/node = SubResource( 130 )
 blend_point_7/pos = Vector2( 1, 1 )
 blend_mode = 1
+
+[sub_resource type="AnimationNodeTimeScale" id=132]
+
+[sub_resource type="AnimationNodeBlendTree" id=133]
+nodes/Blend/node = SubResource( 131 )
+nodes/Blend/position = Vector2( 220, 80 )
+nodes/TimeScale/node = SubResource( 132 )
+nodes/TimeScale/position = Vector2( 440, 100 )
+nodes/output/position = Vector2( 620, 120 )
+node_connections = [ "TimeScale", 0, "Blend", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=105]
 animation = "45D_Scratching"
@@ -6064,19 +4930,11 @@ blend_point_7/node = SubResource( 112 )
 blend_point_7/pos = Vector2( 0, 1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=64]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=65]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=67]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=90]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=91]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=92]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=93]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=114]
 switch_mode = 2
@@ -6085,13 +4943,13 @@ switch_mode = 2
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=140]
+[sub_resource type="AnimationNodeStateMachineTransition" id=134]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=141]
+[sub_resource type="AnimationNodeStateMachineTransition" id=135]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=142]
+[sub_resource type="AnimationNodeStateMachineTransition" id=136]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=143]
+[sub_resource type="AnimationNodeStateMachineTransition" id=137]
 
 [sub_resource type="AnimationNodeStateMachine" id=70]
 states/Dead/node = SubResource( 63 )
@@ -6100,13 +4958,11 @@ states/Hit/node = SubResource( 54 )
 states/Hit/position = Vector2( 608, 96 )
 states/Idle/node = SubResource( 44 )
 states/Idle/position = Vector2( 376, 211 )
-states/Run/node = SubResource( 53 )
-states/Run/position = Vector2( 409, 112 )
-states/Run_fast/node = SubResource( 139 )
-states/Run_fast/position = Vector2( 271, 28 )
+states/Run/node = SubResource( 133 )
+states/Run/position = Vector2( 355, 85 )
 states/Scratching/node = SubResource( 113 )
 states/Scratching/position = Vector2( 163, 211 )
-transitions = [ "Idle", "Run", SubResource( 64 ), "Run", "Idle", SubResource( 65 ), "Run", "Hit", SubResource( 67 ), "Idle", "Hit", SubResource( 90 ), "Hit", "Idle", SubResource( 91 ), "Hit", "Dead", SubResource( 92 ), "Hit", "Run", SubResource( 93 ), "Idle", "Scratching", SubResource( 114 ), "Scratching", "Idle", SubResource( 115 ), "Idle", "Run_fast", SubResource( 140 ), "Run_fast", "Idle", SubResource( 141 ), "Run_fast", "Hit", SubResource( 142 ), "Hit", "Run_fast", SubResource( 143 ) ]
+transitions = [ "Idle", "Hit", SubResource( 90 ), "Hit", "Idle", SubResource( 91 ), "Hit", "Dead", SubResource( 92 ), "Idle", "Scratching", SubResource( 114 ), "Scratching", "Idle", SubResource( 115 ), "Idle", "Run", SubResource( 134 ), "Run", "Idle", SubResource( 135 ), "Run", "Hit", SubResource( 136 ), "Hit", "Run", SubResource( 137 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -101, -22 )
 
@@ -6186,7 +5042,13 @@ __meta__ = {
 
 [node name="Teleport" parent="Talent" instance=ExtResource( 14 )]
 
+[node name="Force_Field" parent="Talent" instance=ExtResource( 17 )]
+
+[node name="Invisible" parent="Talent" instance=ExtResource( 18 )]
+
 [node name="Shield" parent="Talent" instance=ExtResource( 16 )]
+
+[node name="Explosion" parent="Talent" instance=ExtResource( 19 )]
 
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )
@@ -6220,49 +5082,41 @@ anims/00_Dead = SubResource( 119 )
 anims/00_Hit = SubResource( 3 )
 anims/00_Idle = SubResource( 1 )
 anims/00_Run = SubResource( 2 )
-anims/00_Run_fast = SubResource( 123 )
 anims/00_Scratching = SubResource( 97 )
 anims/135D_Dead = SubResource( 8 )
 anims/135D_Hit = SubResource( 120 )
 anims/135D_Idle = SubResource( 121 )
 anims/135D_Run = SubResource( 122 )
-anims/135D_Run_fast = SubResource( 124 )
 anims/135D_Scratching = SubResource( 98 )
 anims/135G_Dead = SubResource( 12 )
 anims/135G_Hit = SubResource( 11 )
 anims/135G_Idle = SubResource( 9 )
 anims/135G_Run = SubResource( 10 )
-anims/135G_Run_fast = SubResource( 125 )
 anims/135G_Scratching = SubResource( 99 )
 anims/180_Dead = SubResource( 16 )
 anims/180_Hit = SubResource( 15 )
 anims/180_Idle = SubResource( 13 )
 anims/180_Run = SubResource( 14 )
-anims/180_Run_fast = SubResource( 126 )
 anims/180_Scratching = SubResource( 100 )
 anims/45D_Dead = SubResource( 20 )
 anims/45D_Hit = SubResource( 19 )
 anims/45D_Idle = SubResource( 17 )
 anims/45D_Run = SubResource( 18 )
-anims/45D_Run_fast = SubResource( 127 )
 anims/45D_Scratching = SubResource( 101 )
 anims/45G_Dead = SubResource( 24 )
 anims/45G_Hit = SubResource( 23 )
 anims/45G_Idle = SubResource( 21 )
 anims/45G_Run = SubResource( 22 )
-anims/45G_Run_fast = SubResource( 128 )
 anims/45G_Scratching = SubResource( 102 )
 anims/90D_Dead = SubResource( 28 )
 anims/90D_Hit = SubResource( 27 )
 anims/90D_Idle = SubResource( 25 )
 anims/90D_Run = SubResource( 26 )
-anims/90D_Run_fast = SubResource( 129 )
 anims/90D_Scratching = SubResource( 103 )
 anims/90G_Dead = SubResource( 32 )
 anims/90G_Hit = SubResource( 31 )
 anims/90G_Idle = SubResource( 29 )
 anims/90G_Run = SubResource( 30 )
-anims/90G_Run_fast = SubResource( 130 )
 anims/90G_Scratching = SubResource( 104 )
 anims/RESET = SubResource( 33 )
 
@@ -6273,8 +5127,8 @@ parameters/playback = SubResource( 71 )
 parameters/Dead/blend_position = Vector2( 0, 0 )
 parameters/Hit/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
-parameters/Run/blend_position = Vector2( 0, 0 )
-parameters/Run_fast/blend_position = Vector2( 0, 0 )
+parameters/Run/Blend/blend_position = Vector2( 0, 0 )
+parameters/Run/TimeScale/scale = 1.0
 parameters/Scratching/blend_position = Vector2( 0, 0 )
 
 [node name="Hit_1" type="AudioStreamPlayer" parent="."]
@@ -6288,7 +5142,7 @@ stream = ExtResource( 8 )
 bus = "FX"
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource( 3 )
 volume_db = -10.0
 bus = "FX"
 __meta__ = {
