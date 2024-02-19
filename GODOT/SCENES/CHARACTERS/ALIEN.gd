@@ -103,6 +103,9 @@ func set_run_speed(multiplier):
 func start_shield(duration):
 	$Talent/Shield.start(duration)
 
+func start_force_field(duration):
+	$Talent/Force_Field.start(duration)
+
 func start_cooldown():
 	$Alien.material.set_shader_param("cooldown", Color(0xb73847ff))
 

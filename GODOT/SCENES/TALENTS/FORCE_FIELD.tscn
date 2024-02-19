@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_OFF.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Force_Field.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_ON.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field.wav" type="AudioStream" id=4]
+[ext_resource path="res://SCENES/TALENTS/FORCE_FIELD.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -64,6 +65,7 @@ tracks/1/keys = {
 }
 
 [node name="Force_Field" type="Node2D"]
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -72,11 +74,8 @@ __meta__ = {
 wait_time = 6.0
 one_shot = true
 
-[node name="Cooldown_Timer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
-
 [node name="Force_Field" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, 12 )
 texture = ExtResource( 2 )
 hframes = 3
@@ -102,3 +101,5 @@ bus = "FX"
 stream = ExtResource( 4 )
 volume_db = -10.0
 bus = "FX"
+
+[connection signal="timeout" from="Force_Field_Timer" to="." method="_on_Force_Field_Timer_timeout"]

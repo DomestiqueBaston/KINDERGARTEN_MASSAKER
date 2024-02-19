@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=2]
+[gd_scene load_steps=123 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://SCENES/TALENTS/TELEPORT.tscn" type="PackedScene" id=14]
 [ext_resource path="res://SCENES/CHARACTERS/ALIEN.gd" type="Script" id=15]
 [ext_resource path="res://SCENES/TALENTS/SHIELD.tscn" type="PackedScene" id=16]
+[ext_resource path="res://SCENES/TALENTS/FORCE_FIELD.tscn" type="PackedScene" id=17]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -5040,6 +5041,8 @@ __meta__ = {
 [node name="Teleport" parent="Talent" instance=ExtResource( 14 )]
 
 [node name="Shield" parent="Talent" instance=ExtResource( 16 )]
+
+[node name="Force_Field" parent="Talent" instance=ExtResource( 17 )]
 
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )

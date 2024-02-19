@@ -24,6 +24,8 @@ export var DASH_run_cycle_speed = 2
 export var EXPLOSION_cooldown = 10
 export var SPEED_run_speed = 1.2
 export var SPEED_run_cycle_speed = 1.2
+export var FORCE_FIELD_cooldown = 10
+export var FORCE_FIELD_duration = 6
 export var SHIELD_cooldown = 10
 export var SHIELD_duration = 3
 
@@ -105,6 +107,8 @@ func _unhandled_input(event: InputEvent):
 					start_dash()
 				Globals.Talent.EXPLOSION:
 					start_explosion()
+				Globals.Talent.FORCE_FIELD:
+					start_force_field()
 				Globals.Talent.SHIELD:
 					start_shield()
 				Globals.Talent.TECHNICIAN:
@@ -453,6 +457,11 @@ func start_shield():
 	alien.start_cooldown()
 	$Cooldown_Timer.start(SHIELD_cooldown)
 	alien.start_shield(SHIELD_duration)
+
+func start_force_field():
+	alien.start_cooldown()
+	$Cooldown_Timer.start(FORCE_FIELD_cooldown)
+	alien.start_force_field(FORCE_FIELD_duration)
 
 func start_techniker():
 	if techniker_used or $Shutdown_Overlay.visible:

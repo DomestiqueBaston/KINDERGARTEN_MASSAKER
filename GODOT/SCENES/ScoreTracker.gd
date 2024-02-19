@@ -10,9 +10,9 @@ func start_game():
 	$Timer.start()
 
 func stop_game():
+	$Timer.stop()
 	last_score = get_current_score()
 	best_score = max(best_score, last_score)
-	$Timer.stop()
 
 func is_playing() -> bool:
 	return not $Timer.is_stopped()
