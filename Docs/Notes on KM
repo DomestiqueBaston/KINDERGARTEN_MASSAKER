@@ -39,8 +39,8 @@ The Alien has 1000 hit points (HP).
 
 	- Random teleportation (cooldown: 10 seconds). Available teleportation points are defined in the Background.tscn. Uses TELEPORT fx.
 	- Dash (pass through kids and attacks – cooldown: 15 seconds). Uses DASH fx.
-	- Repulsive explosion (repulsive effect (50 pixels) only on kids – not the ranged attacks – cooldown: 10 seconds). Uses EXPLOSION fx.
-	- Freezing shockwave (Freezes nearby enemies for 4 seconds – not the ranged attacks – cooldown: 15 seconds). Uses FREEZING fx.
+	- Repulsive explosion (repulsive effect (50 pixels) only on kids – not the ranged attacks nor the vomit puddles – cooldown: 10 seconds). Uses EXPLOSION fx.
+	- Freezing shockwave (Freezes nearby enemies for 4 seconds – not the ranged attacks nor the vomit puddles – cooldown: 15 seconds). Uses FREEZING fx.
 	- Quick runner (runs 20% faster – permanent). Uses NO fx.
 	- Force field (repulsive effect for 6 seconds on ranged attacks – cooldown: 10 seconds). Uses FORCE_FIELD fx.
 	- Time stop (affects everything (except the Alien) for 3 seconds – cooldown: 20 seconds).  Uses TIME_STOP fx.
@@ -48,17 +48,17 @@ The Alien has 1000 hit points (HP).
 	- Dodger (hit box size reduced by 20% – permanent). Uses NO fx.
 	- Invisible (makes enemies go away as if the Alien wasn’t here for 4 seconds but can take damages and movement collisions apply)– cooldown: 20 seconds). Uses INVISIBLE fx.
 	- Shield (invulnerable to hand-to-hand attacks for 3 seconds – cooldown: 10 seconds). Uses SHIELD fx.
-	- Second life (restart with 300 HP from where the Alien died – only 1 time). No teleportation at the restart. The enemies resume doing their things. The alien stays dead for 2 seconds then revives, quickly “flashing” white for 1 second (invulnerable at restart for 1 second). When dying, kids won’t care anymore for the body and resume their lives (running, going idle, waving at each other…) and the teacher will go checkin, running, etc… Until the Alien revives!
+	- Second life (restart with 300 HP from where the Alien died – only 1 time). No teleportation at the restart. The enemies resume doing their things. The alien stays dead for 2 seconds then revives, quickly “flashing” white for 1 second (invulnerable at restart for 1 second). When the Alien’s dead, kids won’t care anymore for the body and resume their lives (running, going idle, waving at each other…) and the teacher will go checking, running, etc… Until the Alien revives!
 	- Healthy (20% more hit points – permanent). Uses NO fx.
 	- Regeneration (5 hp per second – permanent). Uses NO fx.
 	- Hand to hand specialist (50% damage from short range but 200% damage from long range – permanent). Uses NO fx.
 	- Ranged fighting expert (50% damage from long range but 200% damage from short range – permanent). Uses NO fx.
 	- None! Uses NO fx.
-	- Der Techniker The technician (hidden talent to unlock (see condition at the end) – only 1 time). Resets the game overlay shader values (and restarts its animation!). This allows a longer game leading to more kids… Once the screen starts shutting down, you can’t use that talent. Uses TECHNIKER fx.
-	- Zufällig… Hidden “talent” to unlock (see condition at the end). A random talent is selected at game launch… The player won’t know which one has been selected until using it (if not permanent).
+	- Der Techniker The technician (hidden talent to unlock (see condition at the end) – only 1 time). Resets the game overlay shader values (and restarts its animation!). This allows a longer game leading to more kids… Once the screen starts shutting down, you can’t use that talent, it’s too late. Uses TECHNIKER fx.
+	- Zufällig… Hidden “talent” to unlock (see condition at the end). A random talent (except Zufällig!) is selected at game launch… The player won’t know which one has been selected until using it (if not permanent).
 	- Kotzsicher “Vomit-proof” (the alien can walk through vomit suffering only 50% of damages – permanent). (see condition at the end) Uses NO fx.
 	- Bullet time (everything except the Alien is slowed down by 50% for 3 seconds – cooldown: 15 seconds). (see condition at the end). Uses BULLET_TIME “Almost” as MIRROR IMAGES fx!
-	- Geist (the Alien takes no damage and can pass through enemies for 4 seconds – cooldown: 20 seconds). (see condition at the end). Uses GEIST “Almost” as INVISIBLE fx but flashes white instead of being transparent!
+	- Geist (the Alien takes no damage and can pass through enemies for 4 seconds – cooldown: 20 seconds). (see condition at the end). Uses GEIST (“Almost” as INVISIBLE fx but flashes white instead of being transparent)!
 
 	Shaders are never affected by talents (except by Der Techniker)!
 
