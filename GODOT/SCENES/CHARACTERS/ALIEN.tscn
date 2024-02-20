@@ -248,7 +248,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0.6, 0.4 ), Vector2( 0.975, 0.4 ), Vector2( 1.35, 0.4 ), Vector2( 1.5, 0.4 ), Vector2( 1.5, 0.4 ) ]
+"values": [ Vector2( 1.1, 0.4 ), Vector2( 0.975, 0.4 ), Vector2( 1.35, 0.4 ), Vector2( 1.5, 0.4 ), Vector2( 1.5, 0.4 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
@@ -392,6 +392,18 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Shadow:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0.5, 0.4 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "00_Idle"
@@ -478,7 +490,7 @@ tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ Vector2( 1, 0.4 ) ]
 }
 
@@ -4898,7 +4910,7 @@ nodes/Blend/position = Vector2( 220, 80 )
 nodes/TimeScale/node = SubResource( 132 )
 nodes/TimeScale/position = Vector2( 440, 100 )
 nodes/output/position = Vector2( 620, 120 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Blend" ]
+node_connections = [ "TimeScale", 0, "Blend", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=105]
 animation = "45D_Scratching"
