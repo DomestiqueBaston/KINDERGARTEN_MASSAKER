@@ -413,7 +413,6 @@ func stop_game():
 		Globals.Talent.DASH:
 			stop_dash()
 		Globals.Talent.TECHNICIAN:
-			stop_techniker()
 			techniker_used = false
 	
 	overlay.reset_animation()
@@ -488,12 +487,7 @@ func start_techniker():
 		return
 	techniker_used = true
 	$Shutdown_Timer.stop()
-	$Techniker.position = $Camera.position
-	$Techniker.show()
-	$Techniker/AnimationPlayer.play("techniker")
-	yield($Techniker/AnimationPlayer, "animation_finished")
+	$Talent_Overlays/Techniker.position = $Camera.position
+	$Talent_Overlays/Techniker/AnimationPlayer.play("techniker")
+	yield($Talent_Overlays/Techniker/AnimationPlayer, "animation_finished")
 	overlay.rewind_animation()
-	stop_techniker()
-
-func stop_techniker():
-	$Techniker.hide()

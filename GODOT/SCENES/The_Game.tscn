@@ -63,8 +63,9 @@ visible = false
 
 [node name="Enemies" type="YSort" parent="Characters"]
 
-[node name="Techniker" parent="." instance=ExtResource( 12 )]
-visible = false
+[node name="Talent_Overlays" type="Node2D" parent="."]
+
+[node name="Techniker" parent="Talent_Overlays" instance=ExtResource( 12 )]
 
 [node name="Shutdown_Overlay" parent="." instance=ExtResource( 6 )]
 visible = false

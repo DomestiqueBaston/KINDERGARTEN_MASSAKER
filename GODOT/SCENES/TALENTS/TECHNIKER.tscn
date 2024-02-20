@@ -16,6 +16,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0.752941 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "techniker"
@@ -46,6 +58,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.12 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="Techniker" type="Node2D"]
 __meta__ = {
@@ -61,6 +85,7 @@ stream = ExtResource( 9 )
 bus = "FX"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0.752941 )
 margin_left = -265.0
 margin_top = -160.0
