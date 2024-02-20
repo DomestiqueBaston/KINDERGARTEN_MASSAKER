@@ -461,8 +461,11 @@ func start_freeze():
 	alien.start_freeze()
 	var frozen_enemies = enemies.get_children()
 	for enemy in frozen_enemies:
-		enemy.freeze()
-		$Talent_Timer.connect("timeout", enemy, "unfreeze", [], CONNECT_ONESHOT)
+		var dist2 = enemy.position.distance_squared_to(alien.position)
+		if dist2 < FREEZE_radius * FREEZE_radius:
+			enemy.freeze()
+			$Talent_Timer.connect(
+				"timeout", enemy, "unfreeze", [], CONNECT_ONESHOT)
 	$Talent_Timer.start(FREEZE_duration)
 
 func start_shield():

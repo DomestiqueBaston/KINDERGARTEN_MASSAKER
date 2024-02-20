@@ -1,10 +1,11 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/CRACHEUSE/Cracheuse.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Spitting_A.wav" type="AudioStream" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_C.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_D.wav" type="AudioStream" id=4]
 [ext_resource path="res://SCRIPTS/Enemy.gd" type="Script" id=5]
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=6]
 
 [sub_resource type="CapsuleShape2D" id=82]
 height = 12.0
@@ -16,6 +17,12 @@ height = 30.0
 [sub_resource type="CapsuleShape2D" id=87]
 radius = 44.0
 height = 30.0
+
+[sub_resource type="ShaderMaterial" id=142]
+shader = ExtResource( 6 )
+shader_param/outline = Color( 0, 0, 0, 1 )
+shader_param/cooldown = Color( 0, 0, 0, 1 )
+shader_param/flash = false
 
 [sub_resource type="Animation" id=1]
 resource_name = "00_Idle"
@@ -3480,7 +3487,7 @@ nodes/BlendSpace2D/position = Vector2( 320, 120 )
 nodes/TimeScale/node = SubResource( 97 )
 nodes/TimeScale/position = Vector2( 620, 220 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=99]
 animation = "00_Run"
@@ -3533,7 +3540,7 @@ nodes/BlendSpace2D/position = Vector2( 326, 198 )
 nodes/TimeScale/node = SubResource( 108 )
 nodes/TimeScale/position = Vector2( 577, 200 )
 nodes/output/position = Vector2( 840, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=110]
 animation = "00_Spit"
@@ -3586,7 +3593,7 @@ nodes/BlendSpace2D/position = Vector2( 380, 160 )
 nodes/TimeScale/node = SubResource( 119 )
 nodes/TimeScale/position = Vector2( 660, 200 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=121]
 animation = "00_Waving"
@@ -3639,7 +3646,7 @@ nodes/BlendSpace2D/position = Vector2( 340, 160 )
 nodes/TimeScale/node = SubResource( 130 )
 nodes/TimeScale/position = Vector2( 620, 240 )
 nodes/output/position = Vector2( 880, 180 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=132]
 
@@ -3685,6 +3692,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
+char_name = "Cracheuse"
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
@@ -3745,6 +3753,7 @@ __meta__ = {
 }
 
 [node name="Cracheuse" type="Sprite" parent="."]
+material = SubResource( 142 )
 texture = ExtResource( 1 )
 offset = Vector2( 0.5, 0.5 )
 hframes = 16

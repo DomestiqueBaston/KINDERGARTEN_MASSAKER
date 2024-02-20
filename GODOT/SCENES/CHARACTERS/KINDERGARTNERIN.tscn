@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://SCRIPTS/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_A.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_H.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_C.wav" type="AudioStream" id=6]
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=7]
 
 [sub_resource type="CapsuleShape2D" id=85]
 radius = 16.0
@@ -13,6 +14,12 @@ radius = 16.0
 [sub_resource type="CapsuleShape2D" id=88]
 radius = 56.09
 height = 39.4709
+
+[sub_resource type="ShaderMaterial" id=141]
+shader = ExtResource( 7 )
+shader_param/outline = Color( 0, 0, 0, 1 )
+shader_param/cooldown = Color( 0, 0, 0, 1 )
+shader_param/flash = false
 
 [sub_resource type="Animation" id=2]
 resource_name = "00_Check"
@@ -3312,7 +3319,7 @@ nodes/BlendSpace2D/position = Vector2( 380, 160 )
 nodes/TimeScale/node = SubResource( 98 )
 nodes/TimeScale/position = Vector2( 640, 200 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=100]
 animation = "00_No"
@@ -3365,7 +3372,7 @@ nodes/BlendSpace2D/position = Vector2( 430, 148 )
 nodes/TimeScale/node = SubResource( 109 )
 nodes/TimeScale/position = Vector2( 640, 220 )
 nodes/output/position = Vector2( 840, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=111]
 animation = "00_OMG"
@@ -3418,7 +3425,7 @@ nodes/BlendSpace2D/position = Vector2( 380, 160 )
 nodes/TimeScale/node = SubResource( 120 )
 nodes/TimeScale/position = Vector2( 660, 220 )
 nodes/output/position = Vector2( 900, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=122]
 animation = "00_Run"
@@ -3471,7 +3478,7 @@ nodes/BlendSpace2D/position = Vector2( 326, 168 )
 nodes/TimeScale/node = SubResource( 131 )
 nodes/TimeScale/position = Vector2( 620, 220 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=133]
 
@@ -3515,6 +3522,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+char_name = "Educ"
 default_anim = "Check"
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
@@ -3553,6 +3561,7 @@ __meta__ = {
 }
 
 [node name="Educ" type="Sprite" parent="."]
+material = SubResource( 141 )
 position = Vector2( -0.5, -0.5 )
 texture = ExtResource( 3 )
 hframes = 17

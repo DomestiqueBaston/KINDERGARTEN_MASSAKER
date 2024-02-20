@@ -1,10 +1,11 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/BLONDINET/BLONDINET.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Woosh_B.wav" type="AudioStream" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_B.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_A.wav" type="AudioStream" id=4]
 [ext_resource path="res://SCRIPTS/Enemy.gd" type="Script" id=5]
+[ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=6]
 
 [sub_resource type="CapsuleShape2D" id=91]
 height = 10.0
@@ -20,6 +21,12 @@ height = 28.0
 [sub_resource type="CapsuleShape2D" id=97]
 radius = 17.0
 height = 14.0
+
+[sub_resource type="ShaderMaterial" id=152]
+shader = ExtResource( 6 )
+shader_param/outline = Color( 0, 0, 0, 1 )
+shader_param/cooldown = Color( 0, 0, 0, 1 )
+shader_param/flash = false
 
 [sub_resource type="Animation" id=1]
 resource_name = "00_Idle"
@@ -4102,7 +4109,7 @@ nodes/BlendSpace2D/position = Vector2( 289, 207 )
 nodes/TimeScale/node = SubResource( 107 )
 nodes/TimeScale/position = Vector2( 523, 203 )
 nodes/output/position = Vector2( 740, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=109]
 animation = "00_Run"
@@ -4155,7 +4162,7 @@ nodes/BlendSpace2D/position = Vector2( 260, 140 )
 nodes/TimeScale/node = SubResource( 118 )
 nodes/TimeScale/position = Vector2( 520, 140 )
 nodes/output/position = Vector2( 760, 180 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=120]
 animation = "00_Slash"
@@ -4208,7 +4215,7 @@ nodes/BlendSpace2D/position = Vector2( 327, 174 )
 nodes/TimeScale/node = SubResource( 129 )
 nodes/TimeScale/position = Vector2( 575, 190 )
 nodes/output/position = Vector2( 800, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=131]
 animation = "00_Waving"
@@ -4261,7 +4268,7 @@ nodes/BlendSpace2D/position = Vector2( 265, 205 )
 nodes/TimeScale/node = SubResource( 140 )
 nodes/TimeScale/position = Vector2( 573, 189 )
 nodes/output/position = Vector2( 760, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=142]
 
@@ -4307,6 +4314,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
+char_name = "Blondinet"
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
@@ -4375,6 +4383,7 @@ __meta__ = {
 }
 
 [node name="Blondinet" type="Sprite" parent="."]
+material = SubResource( 152 )
 texture = ExtResource( 1 )
 offset = Vector2( 0.5, 0.5 )
 hframes = 14
