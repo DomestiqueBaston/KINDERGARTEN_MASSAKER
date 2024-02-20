@@ -3,10 +3,10 @@ extends KinematicBody2D
 class_name Alien
 
 # speed of movement in pixels/second
-export var speed = Vector2(125, 62.5)
+export var speed := Vector2(125, 62.5)
 
 # likelihood the alien will scratch after a second
-export var scratch_chances = 0.25
+export var scratch_chances := 0.25
 
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
@@ -15,8 +15,8 @@ signal beam_down_finished
 signal teleport
 
 var state_machine: AnimationNodeStateMachinePlayback
-var direction = Vector2.DOWN
-var accelerate = 1.0
+var direction := Vector2.DOWN
+var accelerate := 1.0
 
 enum State {
 	FIRST_IDLE,
