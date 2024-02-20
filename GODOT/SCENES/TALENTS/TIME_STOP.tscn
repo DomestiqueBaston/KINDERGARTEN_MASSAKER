@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Time_restart.wav" type="AudioStream" id=1]
+[ext_resource path="res://SCENES/TALENTS/TIME_STOP.gd" type="Script" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Time_stop.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=5]
@@ -28,6 +29,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -59,6 +72,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0.12549 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "time_stop"
@@ -89,18 +114,26 @@ tracks/1/keys = {
 "update": 1,
 "values": [ Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0.12549 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="Time_Stop" type="Node2D"]
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Time_Stop_Timer" type="Timer" parent="."]
-wait_time = 3.0
-
-[node name="Cooldown_Timer" type="Timer" parent="."]
-wait_time = 20.0
-one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 5 )
@@ -108,13 +141,14 @@ anims/time_restart = SubResource( 6 )
 anims/time_stop = SubResource( 4 )
 
 [node name="FX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource( 9 )
 bus = "FX"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 480.0
-margin_bottom = 270.0
+margin_right = 1440.0
+margin_bottom = 810.0
 __meta__ = {
 "_edit_lock_": true
 }
