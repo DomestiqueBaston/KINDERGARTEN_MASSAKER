@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror_Image_Plop.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror.wav" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=3]
@@ -66,6 +67,14 @@ __meta__ = {
 [node name="FX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 bus = "FX"
+
+[node name="PLOP" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -5.0
+bus = "FX"
+__meta__ = {
+"_editor_description_": "Play PLOP when mirror image disappears."
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 self_modulate = Color( 1, 1, 1, 0.752941 )
