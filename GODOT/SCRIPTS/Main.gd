@@ -22,6 +22,9 @@ export var DASH_duration = 0.25
 export var DASH_run_speed = 5
 export var DASH_run_cycle_speed = 2
 export var EXPLOSION_cooldown = 10
+export var FREEZE_cooldown = 15
+export var FREEZE_duration = 4
+export var FREEZE_radius = 135
 export var SPEED_run_speed = 1.2
 export var SPEED_run_cycle_speed = 1.2
 export var FORCE_FIELD_cooldown = 10
@@ -109,6 +112,8 @@ func _unhandled_input(event: InputEvent):
 					start_dash()
 				Globals.Talent.EXPLOSION:
 					start_explosion()
+				Globals.Talent.FREEZE:
+					start_freeze()
 				Globals.Talent.FORCE_FIELD:
 					start_force_field()
 				Globals.Talent.INVISIBLE:
@@ -449,6 +454,12 @@ func start_explosion():
 	$Cooldown_Timer.start(EXPLOSION_cooldown)
 	alien.start_explosion()
 	$Camera_Shake.play("shake")
+
+func start_freeze():
+	alien.start_cooldown()
+	$Cooldown_Timer.start(FREEZE_cooldown)
+	alien.start_freeze()
+	# TODO: freeze enemies!
 
 func start_shield():
 	alien.start_cooldown()

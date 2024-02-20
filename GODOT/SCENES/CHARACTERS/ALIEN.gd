@@ -108,6 +108,9 @@ func start_invisible(duration):
 func start_explosion():
 	$Talent/Explosion/AnimationPlayer.play("explosion")
 
+func start_freeze():
+	$Talent/Freezing_Shockwave/AnimationPlayer.play("Freezing_Shockwave")
+
 func start_shield(duration):
 	$Talent/Shield.start(duration)
 
