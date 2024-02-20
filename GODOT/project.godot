@@ -63,6 +63,7 @@ fps=false
 frame=false
 wind=false
 show=false
+overflow=false
 
 [importer_defaults]
 

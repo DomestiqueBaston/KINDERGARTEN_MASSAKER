@@ -5,7 +5,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_B.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_A.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/BINOCLARD/BINOCLARD.png" type="Texture" id=5]
-[ext_resource path="res://SCENES/CHARACTERS/BINOCLARD.gd" type="Script" id=6]
+[ext_resource path="res://SCRIPTS/Enemy.gd" type="Script" id=6]
 
 [sub_resource type="CapsuleShape2D" id=91]
 radius = 11.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=96 format=2]
 
-[ext_resource path="res://SCENES/CHARACTERS/KINDERGARTNERIN.gd" type="Script" id=1]
+[ext_resource path="res://SCRIPTS/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=2]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/EDUC/KINDERGARTNERIN.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_A.wav" type="AudioStream" id=4]
@@ -3515,6 +3515,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+default_anim = "Check"
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
