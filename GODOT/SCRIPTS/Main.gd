@@ -29,6 +29,8 @@ export var SPEED_run_speed := 1.2
 export var SPEED_run_cycle_speed := 1.2
 export var FORCE_FIELD_cooldown := 10
 export var FORCE_FIELD_duration := 6
+export var TIME_STOP_cooldown := 20
+export var TIME_STOP_duration := 3
 export var INVISIBLE_cooldown := 20
 export var INVISIBLE_duration := 4
 export var SHIELD_cooldown := 10
@@ -116,6 +118,8 @@ func _unhandled_input(event: InputEvent):
 					start_freeze()
 				Globals.Talent.FORCE_FIELD:
 					start_force_field()
+				Globals.Talent.TIME_STOP:
+					start_time_stop()
 				Globals.Talent.INVISIBLE:
 					start_invisible()
 				Globals.Talent.SHIELD:
@@ -477,6 +481,11 @@ func start_force_field():
 	$Cooldown_Timer.start(FORCE_FIELD_cooldown)
 	alien.start_force_field(FORCE_FIELD_duration)
 
+func start_time_stop():
+	alien.start_cooldown()
+	$Cooldown_Timer.start(TIME_STOP_cooldown)
+	$Talent_Overlays/Time_Stop.start(TIME_STOP_duration)
+
 func start_invisible():
 	alien.start_cooldown()
 	$Cooldown_Timer.start(INVISIBLE_cooldown)
@@ -486,8 +495,7 @@ func start_techniker():
 	if techniker_used or $Shutdown_Overlay.visible:
 		return
 	techniker_used = true
-	$Shutdown_Timer.stop()
-	$Talent_Overlays/Techniker.position = $Camera.position
+	$Shutdown_Timer.start()
 	$Talent_Overlays/Techniker/AnimationPlayer.play("techniker")
 	yield($Talent_Overlays/Techniker/AnimationPlayer, "animation_finished")
 	overlay.rewind_animation()
