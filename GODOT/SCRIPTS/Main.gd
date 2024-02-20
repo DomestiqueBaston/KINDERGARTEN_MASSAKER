@@ -1,57 +1,57 @@
 extends Node2D
 
 # determines how quickly the camera follows the alien's movements
-export var camera_speed = 5.0
+export var camera_speed := 5.0
 
 # after how many seconds is the first new enemy spawned?
-export var spawn_first_time = 5.0
+export var spawn_first_time := 5.0
 
 # every how many seconds are new enemies spawned subsequently?
-export var spawn_cycle_time = 2.0
+export var spawn_cycle_time := 2.0
 
 # how many kids are placed initially on camera
-export var kids_on_camera = 8
+export var kids_on_camera := 8
 
 # how many kids are placed initially off camera
-export var kids_off_camera = 16
+export var kids_off_camera := 16
 
 # talent settings
-export var TELEPORT_cooldown = 10
-export var DASH_cooldown = 15
-export var DASH_duration = 0.25
-export var DASH_run_speed = 5
-export var DASH_run_cycle_speed = 2
-export var EXPLOSION_cooldown = 10
-export var FREEZE_cooldown = 15
-export var FREEZE_duration = 4
-export var FREEZE_radius = 135
-export var SPEED_run_speed = 1.2
-export var SPEED_run_cycle_speed = 1.2
-export var FORCE_FIELD_cooldown = 10
-export var FORCE_FIELD_duration = 6
-export var INVISIBLE_cooldown = 20
-export var INVISIBLE_duration = 4
-export var SHIELD_cooldown = 10
-export var SHIELD_duration = 3
+export var TELEPORT_cooldown := 10
+export var DASH_cooldown := 15
+export var DASH_duration := 0.25
+export var DASH_run_speed := 5
+export var DASH_run_cycle_speed := 2
+export var EXPLOSION_cooldown := 10
+export var FREEZE_cooldown := 15
+export var FREEZE_duration := 4
+export var FREEZE_radius := 135
+export var SPEED_run_speed := 1.2
+export var SPEED_run_cycle_speed := 1.2
+export var FORCE_FIELD_cooldown := 10
+export var FORCE_FIELD_duration := 6
+export var INVISIBLE_cooldown := 20
+export var INVISIBLE_duration := 4
+export var SHIELD_cooldown := 10
+export var SHIELD_duration := 3
 
-var menu_scene = preload("res://SCENES/SCREENS/Menu.tscn")
-var tutorial_scene = preload("res://SCENES/SCREENS/Tuto.tscn")
-var options_scene = preload("res://SCENES/SCREENS/Options.tscn")
-var credits_scene = preload("res://SCENES/SCREENS/Credits.tscn")
-var dialogue_scene = preload("res://SCENES/SCREENS/Dialogue.tscn")
-var talent_scene = preload("res://SCENES/SCREENS/Talent.tscn")
-var death_scene = preload("res://SCENES/SCREENS/Death.tscn")
-var background_scene = preload("res://SCENES/BACKGROUND/Background.tscn")
-var alien_scene = preload("res://SCENES/CHARACTERS/ALIEN.tscn")
-var teacher_scene = preload("res://SCENES/CHARACTERS/KINDERGARTNERIN.tscn")
-var crying_kid_scene = preload("res://SCENES/CHARACTERS/BINOCLARD.tscn")
-var vomiting_kid_scene = preload("res://SCENES/CHARACTERS/VOMITO.tscn")
-var booger_kid_scene = preload("res://SCENES/CHARACTERS/BOOGIRL.tscn")
-var stick_kid_scene = preload("res://SCENES/CHARACTERS/BLONDINET.tscn")
-var spitting_kid_scene = preload("res://SCENES/CHARACTERS/CRACHEUSE.tscn")
+var menu_scene := preload("res://SCENES/SCREENS/Menu.tscn")
+var tutorial_scene := preload("res://SCENES/SCREENS/Tuto.tscn")
+var options_scene := preload("res://SCENES/SCREENS/Options.tscn")
+var credits_scene := preload("res://SCENES/SCREENS/Credits.tscn")
+var dialogue_scene := preload("res://SCENES/SCREENS/Dialogue.tscn")
+var talent_scene := preload("res://SCENES/SCREENS/Talent.tscn")
+var death_scene := preload("res://SCENES/SCREENS/Death.tscn")
+var background_scene := preload("res://SCENES/BACKGROUND/Background.tscn")
+var alien_scene := preload("res://SCENES/CHARACTERS/ALIEN.tscn")
+var teacher_scene := preload("res://SCENES/CHARACTERS/KINDERGARTNERIN.tscn")
+var crying_kid_scene := preload("res://SCENES/CHARACTERS/BINOCLARD.tscn")
+var vomiting_kid_scene := preload("res://SCENES/CHARACTERS/VOMITO.tscn")
+var booger_kid_scene := preload("res://SCENES/CHARACTERS/BOOGIRL.tscn")
+var stick_kid_scene := preload("res://SCENES/CHARACTERS/BLONDINET.tscn")
+var spitting_kid_scene := preload("res://SCENES/CHARACTERS/CRACHEUSE.tscn")
 
-var credits_seen = false
-var dialogue_seen = false
+var credits_seen := false
+var dialogue_seen := false
 
 enum GameState {
 	TITLE,
@@ -65,14 +65,14 @@ enum GameState {
 	DEATH
 }
 
-var state = GameState.TITLE
-var previous_menu_item = -1
+var state: int = GameState.TITLE
+var previous_menu_item := -1
 var overlay: Node
 var background: Background
 var alien: Alien
 var enemies: Node2D
-var talent = -1
-var techniker_used = false
+var talent := -1
+var techniker_used := false
 
 func _ready():
 	set_process(false)
