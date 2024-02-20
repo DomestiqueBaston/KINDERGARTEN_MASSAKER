@@ -180,8 +180,6 @@ func change_state(next_state):
 	
 	if state == GameState.MENU:
 		previous_menu_item = child.get_current_item()
-	elif state == GameState.DEATH:
-		$Menu_Music.play()
 
 	if next_state != GameState.DEATH:
 		# hide overlay before $Transition_Overlay takes a screenshot
@@ -235,6 +233,9 @@ func change_state(next_state):
 		$Active_Scene.add_child(child)
 	
 	state = next_state
+
+	if not state in [GameState.PLAY, GameState.DEATH] and !$Menu_Music.playing:
+		$Menu_Music.play()
 
 func _on_Transition_Overlay_transition_finished():
 	$Transition_Overlay.hide()

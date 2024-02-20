@@ -16,7 +16,6 @@ signal teleport
 
 var state_machine: AnimationNodeStateMachinePlayback
 var direction = Vector2.DOWN
-var run_cycle = "Run"
 var accelerate = 1.0
 
 enum State {
@@ -31,6 +30,7 @@ var state = State.MOVE
 func _ready():
 	$AnimationTree.active = true
 	state_machine = $AnimationTree["parameters/playback"]
+	state_machine.stop()
 	reset()
 
 func reset():
@@ -41,8 +41,10 @@ func reset():
 	$AnimationTree["parameters/Run/TimeScale/scale"] = 1
 	set_physics_process(false)
 	stop_cooldown()
+	state_machine.stop()
 
 func beam_down():
+	state_machine.travel("Idle")
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
 	# to ensure alien is invisible, in particular...
 	$Beam_Down_Rear/AnimationPlayer.advance(0)
@@ -83,7 +85,7 @@ func _physics_process(_delta):
 		$AnimationTree["parameters/Idle/blend_position"] = dir
 		$AnimationTree["parameters/Scratching/blend_position"] = dir
 		$AnimationTree["parameters/Run/Blend/blend_position"] = dir
-		state_machine.travel(run_cycle)
+		state_machine.travel("Run")
 		state = State.MOVE
 		direction = dir.normalized()
 		move_and_slide(direction * speed * accelerate)

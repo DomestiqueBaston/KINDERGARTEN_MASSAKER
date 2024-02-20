@@ -5026,7 +5026,6 @@ stream = ExtResource( 12 )
 bus = "FX"
 
 [node name="Shadow" type="Polygon2D" parent="."]
-visible = false
 position = Vector2( -4, 16 )
 scale = Vector2( 0.5, 0.4 )
 color = Color( 0, 0.101961, 0, 0.392157 )
