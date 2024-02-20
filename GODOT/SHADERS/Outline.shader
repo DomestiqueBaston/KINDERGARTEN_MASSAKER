@@ -1,8 +1,8 @@
 shader_type canvas_item;
 
-uniform vec4 outline : hint_color;
-uniform vec4 cooldown : hint_color;
-uniform bool flash;
+uniform vec4 outline : hint_color = vec4(0, 0, 0, 1);
+uniform vec4 cooldown : hint_color = vec4(0, 0, 0, 1);
+uniform bool flash = false;
 
 void fragment() {
 	vec4 curr_color = texture(TEXTURE,UV);
