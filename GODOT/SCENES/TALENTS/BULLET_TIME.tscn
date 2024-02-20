@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_B.wav" type="AudioStream" id=1]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_C.wav" type="AudioStream" id=2]
 
 [sub_resource type="Animation" id=3]
 length = 0.1
@@ -17,9 +18,38 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.752941 ) ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "bullet_time_off"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.12 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
 [sub_resource type="Animation" id=4]
-resource_name = "bullet_time"
-length = 1.5
+resource_name = "bullet_time_on"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:self_modulate")
 tracks/0/interp = 1
@@ -58,7 +88,8 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
-anims/bullet_time = SubResource( 4 )
+anims/bullet_time_off = SubResource( 5 )
+anims/bullet_time_on = SubResource( 4 )
 __meta__ = {
 "_editor_description_": "Audio: Track A for Mirror_Images and track B for Bullet_Time!"
 }
