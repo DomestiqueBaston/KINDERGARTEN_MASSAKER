@@ -3043,7 +3043,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -4, 14 ), Vector2( -8, 9 ), Vector2( -12, 1 ), Vector2( -17, -10 ), Vector2( -12, 16 ), Vector2( -11, 14 ), Vector2( -6, 11 ), Vector2( 2, 11 ) ]
+"values": [ Vector2( -4, 14 ), Vector2( -11, 2 ), Vector2( -13, -1 ), Vector2( -17, -10 ), Vector2( -12, 16 ), Vector2( -11, 14 ), Vector2( -6, 11 ), Vector2( 2, 11 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -3067,7 +3067,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0.7, 0.5 ), Vector2( 0.6, 0.625 ), Vector2( 0.5, 0.75 ), Vector2( 0.5, 1 ), Vector2( 0.8, 0.5 ), Vector2( 0.8, 0.5 ), Vector2( 0.8, 0.5 ), Vector2( 0.9, 0.5 ) ]
+"values": [ Vector2( 0.7, 0.5 ), Vector2( 0.5, 0.7 ), Vector2( 0.5, 0.8 ), Vector2( 0.5, 1 ), Vector2( 0.8, 0.5 ), Vector2( 0.8, 0.5 ), Vector2( 0.8, 0.5 ), Vector2( 0.9, 0.5 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Hit_Collider/HCollider:disabled")
@@ -4551,7 +4551,7 @@ nodes/Blend/position = Vector2( 220, 80 )
 nodes/TimeScale/node = SubResource( 132 )
 nodes/TimeScale/position = Vector2( 440, 100 )
 nodes/output/position = Vector2( 620, 120 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Blend" ]
+node_connections = [ "TimeScale", 0, "Blend", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=105]
 animation = "45D_Scratching"
@@ -4696,6 +4696,9 @@ position = Vector2( -4, 16 )
 scale = Vector2( 0.5, 0.4 )
 color = Color( 0, 0.101961, 0, 0.392157 )
 polygon = PoolVector2Array( -14, 45, -12.2222, 36, -9, 30, -2.22222, 26, 6, 25, 14.4444, 26, 22, 30, 25.5556, 36, 27, 45, 25.5556, 54, 22, 60, 14.4444, 64, 6, 65, -2.22222, 64, -9, 60, -12.2222, 54 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Talent" type="Node2D" parent="."]
 __meta__ = {
@@ -4806,7 +4809,7 @@ stream = ExtResource( 8 )
 bus = "FX"
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource( 3 )
 volume_db = 2.5
 bus = "FX"
 __meta__ = {
