@@ -14,8 +14,8 @@ func _ready():
 
 func freeze():
 	$AnimationTree[time_param] = 0
-	$AnimationPlayer.play("flash")
+	$Flasher.play("flash")
 
 func unfreeze():
 	$AnimationTree[time_param] = 1
-	$AnimationPlayer.play("flash")
+	$Flasher.play("flash")

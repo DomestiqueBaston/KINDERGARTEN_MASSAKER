@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/BOOGIRL/BOOGIRL.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Woosh_B.wav" type="AudioStream" id=2]
@@ -3426,34 +3426,6 @@ tracks/10/keys = {
 "update": 0,
 "values": [ -10.0 ]
 }
-tracks/11/type = "value"
-tracks/11/path = NodePath(".:material:shader_param/flash")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=151]
-resource_name = "flash"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:material:shader_param/flash")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false, true, false ]
-}
 
 [sub_resource type="AnimationNodeAnimation" id=96]
 animation = "00_Booger"
@@ -3704,6 +3676,37 @@ graph_offset = Vector2( -30, 161 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=71]
 
+[sub_resource type="Animation" id=151]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Boogirl:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=152]
+resource_name = "flash"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Boogirl:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+
 [node name="BOOGIRL" type="KinematicBody2D"]
 collision_layer = 64
 collision_mask = 595
@@ -3817,7 +3820,6 @@ anims/90G_Idle = SubResource( 29 )
 anims/90G_Run = SubResource( 30 )
 anims/90G_Waving = SubResource( 32 )
 anims/RESET = SubResource( 33 )
-anims/flash = SubResource( 151 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )
@@ -3845,3 +3847,7 @@ bus = "FX"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 4096
+
+[node name="Flasher" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 151 )
+anims/flash = SubResource( 152 )

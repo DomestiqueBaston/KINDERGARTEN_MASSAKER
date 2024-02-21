@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://SCRIPTS/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=2]
@@ -3267,34 +3267,6 @@ tracks/10/keys = {
 "update": 0,
 "values": [ -10.0 ]
 }
-tracks/11/type = "value"
-tracks/11/path = NodePath("Educ:material:shader_param/flash")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=142]
-resource_name = "flash"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath("Educ:material:shader_param/flash")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false, true, false ]
-}
 
 [sub_resource type="AnimationNodeAnimation" id=89]
 animation = "00_Check"
@@ -3543,6 +3515,37 @@ graph_offset = Vector2( 11, 170.56 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=47]
 
+[sub_resource type="Animation" id=142]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=143]
+resource_name = "flash"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Educ:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+
 [node name="KINDERGARTNERIN" type="KinematicBody2D"]
 collision_layer = 16
 collision_mask = 579
@@ -3635,7 +3638,6 @@ anims/90G_No = SubResource( 28 )
 anims/90G_OMG = SubResource( 30 )
 anims/90G_Run = SubResource( 29 )
 anims/RESET = SubResource( 4 )
-anims/flash = SubResource( 142 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 46 )
@@ -3667,3 +3669,7 @@ bus = "FX"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 4096
+
+[node name="Flasher" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 142 )
+anims/flash = SubResource( 143 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Woosh_B.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_F.wav" type="AudioStream" id=2]
@@ -3943,34 +3943,6 @@ tracks/12/keys = {
 "update": 0,
 "values": [ -10.0 ]
 }
-tracks/13/type = "value"
-tracks/13/path = NodePath(".:material:shader_param/flash")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-
-[sub_resource type="Animation" id=152]
-resource_name = "flash"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:material:shader_param/flash")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false, true, false ]
-}
 
 [sub_resource type="AnimationNodeAnimation" id=97]
 animation = "00_Idle"
@@ -4221,6 +4193,37 @@ graph_offset = Vector2( -44, 192.04 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=71]
 
+[sub_resource type="Animation" id=152]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Binoclard:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=153]
+resource_name = "flash"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Binoclard:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+
 [node name="BINOCLARD" type="KinematicBody2D"]
 collision_layer = 64
 collision_mask = 595
@@ -4342,7 +4345,6 @@ anims/90G_Kick = SubResource( 31 )
 anims/90G_Run = SubResource( 30 )
 anims/90G_Waving = SubResource( 32 )
 anims/RESET = SubResource( 33 )
-anims/flash = SubResource( 152 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )
@@ -4370,3 +4372,7 @@ bus = "FX"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 4096
+
+[node name="Flasher" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 152 )
+anims/flash = SubResource( 153 )
