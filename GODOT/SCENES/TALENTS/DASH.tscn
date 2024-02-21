@@ -7,6 +7,9 @@
 [node name="Dash" type="Node"]
 script = ExtResource( 2 )
 
+[node name="Dash_Timer" type="Timer" parent="."]
+one_shot = true
+
 [node name="Dash_Trail" type="Line2D" parent="."]
 visible = false
 width = 36.0
@@ -19,3 +22,5 @@ __meta__ = {
 [node name="FX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 bus = "FX"
+
+[connection signal="timeout" from="Dash_Timer" to="." method="_on_Dash_Timer_timeout"]

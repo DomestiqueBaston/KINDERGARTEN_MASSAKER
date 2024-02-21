@@ -427,7 +427,7 @@ func stop_game():
 	
 	match talent:
 		Globals.Talent.DASH:
-			stop_dash()
+			$Talents/Dash.stop()
 		Globals.Talent.MIRROR_IMAGE:
 			for mirror in get_tree().get_nodes_in_group("mirror_images"):
 				mirror.queue_free()
@@ -455,22 +455,18 @@ func teleport():
 	alien.position = background.get_teleportation_point()
 
 func start_dash():
-	alien.set_run_cycle_speed(DASH_run_cycle_speed)
-	alien.set_run_speed(DASH_run_speed)
-	$Talents/Dash.start()
 	alien.start_cooldown()
 	$Cooldown_Timer.start(DASH_cooldown)
-	$Talent_Timer.start(DASH_duration)
-	yield($Talent_Timer, "timeout")
-	stop_dash()
+	alien.set_run_cycle_speed(DASH_run_cycle_speed)
+	alien.set_run_speed(DASH_run_speed)
+	$Talents/Dash.start(DASH_duration)
 
 func update_dash_trail():
 	$Talents/Dash.add_point_to_trail(alien.position)
 
-func stop_dash():
+func _on_dash_done():
 	alien.set_run_cycle_speed(1)
 	alien.set_run_speed(1)
-	$Talents/Dash.stop()
 
 func start_explosion():
 	alien.start_cooldown()

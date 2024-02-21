@@ -129,6 +129,7 @@ one_shot = true
 
 [node name="ScoreTracker" parent="." instance=ExtResource( 11 )]
 
+[connection signal="done" from="Talents/Dash" to="." method="_on_dash_done"]
 [connection signal="teleport" from="Characters/ALIEN" to="." method="teleport"]
 [connection signal="done" from="Talent_Overlays/Time_Stop" to="." method="_on_time_stop_done"]
 [connection signal="done" from="Talent_Overlays/Bullet_Time" to="." method="_on_bullet_time_done"]
