@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=2]
+[gd_scene load_steps=127 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -195,6 +195,7 @@ tracks/5/keys = {
 }
 
 [sub_resource type="ShaderMaterial" id=94]
+resource_local_to_scene = true
 shader = ExtResource( 9 )
 shader_param/outline = Color( 0, 0, 0, 1 )
 shader_param/cooldown = Color( 0, 0, 0, 1 )
@@ -4551,7 +4552,7 @@ nodes/Blend/position = Vector2( 220, 80 )
 nodes/TimeScale/node = SubResource( 132 )
 nodes/TimeScale/position = Vector2( 440, 100 )
 nodes/output/position = Vector2( 620, 120 )
-node_connections = [ "TimeScale", 0, "Blend", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Blend" ]
 
 [sub_resource type="AnimationNodeAnimation" id=105]
 animation = "45D_Scratching"
@@ -4633,6 +4634,37 @@ start_node = "Idle"
 graph_offset = Vector2( -101, -22 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=71]
+
+[sub_resource type="Animation" id=138]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Alien:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=139]
+resource_name = "flash"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Alien:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
 
 [node name="ALIEN" type="KinematicBody2D"]
 collision_layer = 2
@@ -4831,5 +4863,9 @@ bus = "FX"
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Flasher" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 138 )
+anims/flash = SubResource( 139 )
 
 [connection signal="animation_finished" from="Beam_Down_Rear/AnimationPlayer" to="." method="_on_beam_down_finished"]

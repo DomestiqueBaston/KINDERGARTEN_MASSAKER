@@ -31,6 +31,8 @@ export var FORCE_FIELD_cooldown := 10
 export var FORCE_FIELD_duration := 6
 export var TIME_STOP_cooldown := 20
 export var TIME_STOP_duration := 3
+export var MIRROR_IMAGE_cooldown := 15
+export var MIRROR_IMAGE_duration := 3
 export var INVISIBLE_cooldown := 20
 export var INVISIBLE_duration := 4
 export var SHIELD_cooldown := 10
@@ -81,6 +83,7 @@ func _ready():
 	_set_game_overlay()
 	alien = $Characters/ALIEN
 	enemies = $Characters/Enemies
+	$Cooldown_Timer.connect("timeout", alien, "stop_cooldown")
 
 #
 # Chooses a game overlay scene at random and adds it below PAPA_Game_Overlay.
@@ -120,6 +123,8 @@ func _unhandled_input(event: InputEvent):
 					start_force_field()
 				Globals.Talent.TIME_STOP:
 					start_time_stop()
+				Globals.Talent.MIRROR_IMAGE:
+					start_mirror_images()
 				Globals.Talent.INVISIBLE:
 					start_invisible()
 				Globals.Talent.SHIELD:
@@ -417,6 +422,9 @@ func stop_game():
 	match talent:
 		Globals.Talent.DASH:
 			stop_dash()
+		Globals.Talent.MIRROR_IMAGE:
+			for mirror in get_tree().get_nodes_in_group("mirror_images"):
+				mirror.queue_free()
 		Globals.Talent.TECHNICIAN:
 			techniker_used = false
 	
@@ -493,6 +501,16 @@ func start_time_stop():
 	$Talent_Timer.start(TIME_STOP_duration)
 	yield($Talent_Timer, "timeout")
 	$Enemy_Timer.set_paused(false)
+
+func start_mirror_images():
+	alien.start_cooldown()
+	$Cooldown_Timer.start(MIRROR_IMAGE_cooldown)
+	for dir in [ Vector2(-1,-1), Vector2(1,-1), Vector2(0,1) ]:
+		var offset = dir.normalized() * 10
+		var mirror = alien_scene.instance()
+		alien.get_parent().add_child_below_node(alien, mirror)
+		mirror.start_mirror(MIRROR_IMAGE_duration, alien.position + offset, dir)
+		mirror.add_to_group("mirror_images");
 
 func start_invisible():
 	alien.start_cooldown()

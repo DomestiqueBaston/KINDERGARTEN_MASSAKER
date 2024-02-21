@@ -17,6 +17,7 @@ signal teleport
 var state_machine: AnimationNodeStateMachinePlayback
 var direction := Vector2.DOWN
 var accelerate := 1.0
+var mirror := false
 
 enum State {
 	FIRST_IDLE,
@@ -30,7 +31,6 @@ var state = State.MOVE
 func _ready():
 	$AnimationTree.active = true
 	state_machine = $AnimationTree["parameters/playback"]
-	state_machine.stop()
 	reset()
 
 func reset():
@@ -54,6 +54,10 @@ func _on_beam_down_finished(_anim_name):
 	emit_signal("beam_down_finished")
 
 func _physics_process(_delta):
+	if mirror:
+		move_and_slide(direction * speed * accelerate)
+		return
+
 	if state == State.SCRATCH and state_machine.get_current_node() == "Scratching":
 		return
 
@@ -98,10 +102,10 @@ func _physics_process(_delta):
 		direction = dir.normalized()
 		move_and_slide(direction * speed * accelerate)
 
-func set_run_cycle_speed(multiplier):
+func set_run_cycle_speed(multiplier: float):
 	$AnimationTree["parameters/Run/TimeScale/scale"] = multiplier
 
-func set_run_speed(multiplier):
+func set_run_speed(multiplier: float):
 	accelerate = multiplier
 
 func start_teleport():
@@ -110,7 +114,7 @@ func start_teleport():
 	emit_signal("teleport")
 	$Talent/Teleport/AnimationPlayer.play("Teleport_END")
 
-func start_invisible(duration):
+func start_invisible(duration: float):
 	$Talent/Invisible.start(duration)
 
 func start_explosion():
@@ -119,14 +123,43 @@ func start_explosion():
 func start_freeze():
 	$Talent/Freezing_Shockwave/AnimationPlayer.play("Freezing_Shockwave")
 
-func start_shield(duration):
+func start_shield(duration: float):
 	$Talent/Shield.start(duration)
 
-func start_force_field(duration):
+func start_force_field(duration: float):
 	$Talent/Force_Field.start(duration)
+
+#
+# Starts this alien going in mirror mode: it will run randomly, starting at the
+# given position and facing in the given direction (which is NOT normalized but
+# contains only zeros and ones). When the given time has elapsed, the alien will
+# self-destruct.
+#
+func start_mirror(duration: float, pos: Vector2, dir: Vector2):
+	position = pos
+	$AnimationTree["parameters/Run/Blend/blend_position"] = dir
+	direction = dir.normalized()
+	state_machine.travel("Run")
+	flash()
+	mirror = true
+	set_physics_process(true)
+	var flash_time = $Flasher.get_animation("flash").length
+	var timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.connect("timeout", self, "_stop_mirror")
+	timer.start(max(0, duration - flash_time))
+
+func _stop_mirror():
+	flash()
+	yield($Flasher, "animation_finished")
+	queue_free()
 
 func start_cooldown():
 	$Alien.material.set_shader_param("cooldown", Color(0xb73847ff))
 
 func stop_cooldown():
 	$Alien.material.set_shader_param("cooldown", Color(0x000000ff))
+
+func flash():
+	$Flasher.play("flash")

@@ -19,6 +19,7 @@ radius = 44.0
 height = 30.0
 
 [sub_resource type="ShaderMaterial" id=142]
+resource_local_to_scene = true
 shader = ExtResource( 6 )
 shader_param/outline = Color( 0, 0, 0, 1 )
 shader_param/cooldown = Color( 0, 0, 0, 1 )
