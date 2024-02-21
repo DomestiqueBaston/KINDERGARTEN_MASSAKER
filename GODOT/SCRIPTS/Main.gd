@@ -380,7 +380,6 @@ func start_game():
 	yield(alien, "beam_down_finished")
 	overlay.start_animation()
 	$Enemy_Timer.start(spawn_first_time)
-	$Enemy_Timer.set_paused(false)
 	$Shutdown_Timer.start()
 	$ScoreTracker.start_game()
 
@@ -432,6 +431,9 @@ func stop_game():
 		Globals.Talent.MIRROR_IMAGE:
 			for mirror in get_tree().get_nodes_in_group("mirror_images"):
 				mirror.queue_free()
+		Globals.Talent.TIME_STOP:
+			$Talent_Overlays/Time_Stop.stop()
+			$Enemy_Timer.set_paused(false)
 		Globals.Talent.TECHNICIAN:
 			techniker_used = false
 		Globals.Talent.BULLET_TIME:
@@ -505,11 +507,11 @@ func start_time_stop():
 	$Enemy_Timer.set_paused(true)
 	for enemy in enemies.get_children():
 		enemy.freeze(false)
-		$Talent_Timer.connect(
-			"timeout", enemy, "unfreeze", [false], CONNECT_ONESHOT)
-	$Talent_Timer.start(TIME_STOP_duration)
-	yield($Talent_Timer, "timeout")
+
+func _on_time_stop_done():
 	$Enemy_Timer.set_paused(false)
+	for enemy in enemies.get_children():
+		enemy.unfreeze(false)
 
 func start_mirror_images():
 	alien.start_cooldown()
