@@ -370,6 +370,7 @@ func start_game():
 	yield(alien, "beam_down_finished")
 	overlay.start_animation()
 	$Enemy_Timer.start(spawn_first_time)
+	$Enemy_Timer.set_paused(false)
 	$Shutdown_Timer.start()
 	$ScoreTracker.start_game()
 
@@ -462,8 +463,7 @@ func start_freeze():
 	alien.start_cooldown()
 	$Cooldown_Timer.start(FREEZE_cooldown)
 	alien.start_freeze()
-	var frozen_enemies = enemies.get_children()
-	for enemy in frozen_enemies:
+	for enemy in enemies.get_children():
 		var dist2 = enemy.position.distance_squared_to(alien.position)
 		if dist2 < FREEZE_radius * FREEZE_radius:
 			enemy.freeze()
@@ -485,6 +485,14 @@ func start_time_stop():
 	alien.start_cooldown()
 	$Cooldown_Timer.start(TIME_STOP_cooldown)
 	$Talent_Overlays/Time_Stop.start(TIME_STOP_duration)
+	$Enemy_Timer.set_paused(true)
+	for enemy in enemies.get_children():
+		enemy.freeze(false)
+		$Talent_Timer.connect(
+			"timeout", enemy, "unfreeze", [false], CONNECT_ONESHOT)
+	$Talent_Timer.start(TIME_STOP_duration)
+	yield($Talent_Timer, "timeout")
+	$Enemy_Timer.set_paused(false)
 
 func start_invisible():
 	alien.start_cooldown()
