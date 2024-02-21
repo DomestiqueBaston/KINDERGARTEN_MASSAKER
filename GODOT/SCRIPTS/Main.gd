@@ -37,6 +37,9 @@ export var INVISIBLE_cooldown := 20
 export var INVISIBLE_duration := 4
 export var SHIELD_cooldown := 10
 export var SHIELD_duration := 3
+export var BULLET_TIME_cooldown := 15
+export var BULLET_TIME_duration := 3
+export var BULLET_TIME_slowdown := 0.5
 
 var menu_scene := preload("res://SCENES/SCREENS/Menu.tscn")
 var tutorial_scene := preload("res://SCENES/SCREENS/Tuto.tscn")
@@ -131,6 +134,8 @@ func _unhandled_input(event: InputEvent):
 					start_shield()
 				Globals.Talent.TECHNICIAN:
 					start_techniker()
+				Globals.Talent.BULLET_TIME:
+					start_bullet_time()
 			get_tree().set_input_as_handled()
 		elif event.is_action_pressed("ui_cancel"):
 			stop_game()
@@ -395,7 +400,9 @@ func _on_Enemy_Timer_timeout():
 
 	# spawn the enemy and restart the timer
 
-	instance_character_at(get_random_kid(), pos)
+	var enemy = instance_character_at(get_random_kid(), pos)
+	if $Talent_Overlays/Bullet_Time.is_running():
+		enemy.set_time_scale(BULLET_TIME_slowdown)
 	$Enemy_Timer.start(spawn_cycle_time)
 
 func _on_Shutdown_Timer_timeout():
@@ -427,6 +434,8 @@ func stop_game():
 				mirror.queue_free()
 		Globals.Talent.TECHNICIAN:
 			techniker_used = false
+		Globals.Talent.BULLET_TIME:
+			$Talent_Overlays/Bullet_Time.stop()
 	
 	overlay.reset_animation()
 	
@@ -525,3 +534,14 @@ func start_techniker():
 	$Talent_Overlays/Techniker/AnimationPlayer.play("techniker")
 	yield($Talent_Overlays/Techniker/AnimationPlayer, "animation_finished")
 	overlay.rewind_animation()
+
+func start_bullet_time():
+	alien.start_cooldown()
+	$Cooldown_Timer.start(BULLET_TIME_cooldown)
+	$Talent_Overlays/Bullet_Time.start(BULLET_TIME_duration)
+	for enemy in enemies.get_children():
+		enemy.set_time_scale(BULLET_TIME_slowdown)
+
+func _on_bullet_time_done():
+	for enemy in enemies.get_children():
+		enemy.set_time_scale(1)

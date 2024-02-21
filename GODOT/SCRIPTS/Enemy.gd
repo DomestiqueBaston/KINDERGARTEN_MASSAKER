@@ -12,12 +12,15 @@ func _ready():
 	time_param = "parameters/%s/TimeScale/scale" % default_anim
 	$AnimationTree[blend_param] = Globals.get_random_direction()
 
+func set_time_scale(scale = 1.0):
+	$AnimationTree[time_param] = scale
+
 func freeze(flash=true):
-	$AnimationTree[time_param] = 0
+	set_time_scale(0)
 	if flash:
 		$Flasher.play("flash")
 
 func unfreeze(flash=true):
-	$AnimationTree[time_param] = 1
+	set_time_scale(1)
 	if flash:
 		$Flasher.play("flash")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_B.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_C.wav" type="AudioStream" id=2]
+[ext_resource path="res://SCENES/TALENTS/BULLET_TIME.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=3]
 length = 0.1
@@ -15,7 +16,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.752941 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -78,12 +79,12 @@ tracks/1/keys = {
 }
 
 [node name="Bullet_Time" type="Node2D"]
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Cooldown_Timer" type="Timer" parent="."]
-wait_time = 15.0
+[node name="Bullet_Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -95,13 +96,16 @@ __meta__ = {
 }
 
 [node name="FX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource( 2 )
 bus = "FX"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0.752941 )
-margin_right = 480.0
-margin_bottom = 270.0
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 1440.0
+margin_bottom = 810.0
 __meta__ = {
 "_edit_lock_": true
 }
+
+[connection signal="timeout" from="Bullet_Timer" to="." method="_on_Bullet_Timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
