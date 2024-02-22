@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://SCENES/OVERLAYS/Transition_Overlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/OVERLAYS/CRT_Overlay.tscn" type="PackedScene" id=2]
@@ -11,11 +11,329 @@
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=9]
 [ext_resource path="res://SCENES/CHARACTERS/ALIEN.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SCENES/ScoreTracker.tscn" type="PackedScene" id=11]
-[ext_resource path="res://SCENES/TALENTS/TECHNIKER.tscn" type="PackedScene" id=12]
-[ext_resource path="res://SCENES/TALENTS/TIME_STOP.tscn" type="PackedScene" id=13]
-[ext_resource path="res://SCENES/TALENTS/DASH.tscn" type="PackedScene" id=14]
-[ext_resource path="res://SCENES/TALENTS/MIRROR_IMAGES.tscn" type="PackedScene" id=15]
-[ext_resource path="res://SCENES/TALENTS/BULLET_TIME.tscn" type="PackedScene" id=16]
+[ext_resource path="res://SCRIPTS/DASH.gd" type="Script" id=12]
+[ext_resource path="res://SCRIPTS/BULLET_TIME.gd" type="Script" id=13]
+[ext_resource path="res://SCRIPTS/TIME_STOP.gd" type="Script" id=14]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror_Image_Plop.wav" type="AudioStream" id=15]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror.wav" type="AudioStream" id=16]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_B.wav" type="AudioStream" id=17]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_C.wav" type="AudioStream" id=18]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Der_Techniker.wav" type="AudioStream" id=19]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Time_restart.wav" type="AudioStream" id=20]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Time_stop.wav" type="AudioStream" id=21]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Dash.wav" type="AudioStream" id=22]
+[ext_resource path="res://SHADERS/Dash_Gradient.tres" type="Gradient" id=23]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "time_restart"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 20 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0.12549 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "time_stop"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 21 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0.12549 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "mirror_images"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 16 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.12 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.752941 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "techniker"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 19 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.12 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "bullet_time_off"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.12 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 18 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "bullet_time_on"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.5 ), Color( 1, 1, 1, 0.12 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -57,7 +375,24 @@ script = ExtResource( 4 )
 
 [node name="Talents" type="Node2D" parent="."]
 
-[node name="Dash" parent="Talents" instance=ExtResource( 14 )]
+[node name="Dash" type="Node" parent="Talents"]
+script = ExtResource( 12 )
+
+[node name="Dash_Timer" type="Timer" parent="Talents/Dash"]
+one_shot = true
+
+[node name="Dash_Trail" type="Line2D" parent="Talents/Dash"]
+visible = false
+width = 36.0
+default_color = Color( 0.960784, 0.976471, 1, 1 )
+gradient = ExtResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FX" type="AudioStreamPlayer" parent="Talents/Dash"]
+stream = ExtResource( 22 )
+bus = "FX"
 
 [node name="Characters" type="YSort" parent="."]
 
@@ -68,13 +403,117 @@ visible = false
 
 [node name="Talent_Overlays" type="Node2D" parent="."]
 
-[node name="Time_Stop" parent="Talent_Overlays" instance=ExtResource( 13 )]
+[node name="Time_Stop" type="Node2D" parent="Talent_Overlays"]
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Mirror_Images" parent="Talent_Overlays" instance=ExtResource( 15 )]
+[node name="Time_Stop_Timer" type="Timer" parent="Talent_Overlays/Time_Stop"]
+one_shot = true
 
-[node name="Techniker" parent="Talent_Overlays" instance=ExtResource( 12 )]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent_Overlays/Time_Stop"]
+anims/RESET = SubResource( 5 )
+anims/time_restart = SubResource( 6 )
+anims/time_stop = SubResource( 4 )
 
-[node name="Bullet_Time" parent="Talent_Overlays" instance=ExtResource( 16 )]
+[node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Time_Stop"]
+stream = ExtResource( 21 )
+bus = "FX"
+
+[node name="ColorRect" type="ColorRect" parent="Talent_Overlays/Time_Stop"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 1440.0
+margin_bottom = 810.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Mirror_Images" type="Node2D" parent="Talent_Overlays"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent_Overlays/Mirror_Images"]
+anims/RESET = SubResource( 3 )
+anims/mirror_images = SubResource( 7 )
+__meta__ = {
+"_editor_description_": "Audio: Track A for Mirror_Images and track B for Bullet_Time!"
+}
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Mirror_Images"]
+stream = ExtResource( 16 )
+bus = "FX"
+
+[node name="PLOP" type="AudioStreamPlayer" parent="Talent_Overlays/Mirror_Images"]
+stream = ExtResource( 15 )
+volume_db = -5.0
+bus = "FX"
+__meta__ = {
+"_editor_description_": "Play PLOP when mirror image disappears."
+}
+
+[node name="ColorRect" type="ColorRect" parent="Talent_Overlays/Mirror_Images"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -265.0
+margin_top = -160.0
+margin_right = 265.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Techniker" type="Node2D" parent="Talent_Overlays"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent_Overlays/Techniker"]
+anims/RESET = SubResource( 8 )
+anims/techniker = SubResource( 9 )
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Techniker"]
+stream = ExtResource( 19 )
+bus = "FX"
+
+[node name="ColorRect" type="ColorRect" parent="Talent_Overlays/Techniker"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.752941 )
+margin_right = 1440.0
+margin_bottom = 810.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bullet_Time" type="Node2D" parent="Talent_Overlays"]
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bullet_Timer" type="Timer" parent="Talent_Overlays/Bullet_Time"]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent_Overlays/Bullet_Time"]
+anims/RESET = SubResource( 10 )
+anims/bullet_time_off = SubResource( 11 )
+anims/bullet_time_on = SubResource( 12 )
+__meta__ = {
+"_editor_description_": "Audio: Track A for Mirror_Images and track B for Bullet_Time!"
+}
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Bullet_Time"]
+stream = ExtResource( 18 )
+bus = "FX"
+
+[node name="ColorRect" type="ColorRect" parent="Talent_Overlays/Bullet_Time"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 1440.0
+margin_bottom = 810.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Shutdown_Overlay" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -127,9 +566,14 @@ one_shot = true
 [node name="ScoreTracker" parent="." instance=ExtResource( 11 )]
 
 [connection signal="done" from="Talents/Dash" to="." method="_on_dash_done"]
+[connection signal="timeout" from="Talents/Dash/Dash_Timer" to="Talents/Dash" method="_on_Dash_Timer_timeout"]
 [connection signal="teleport" from="Characters/ALIEN" to="." method="teleport"]
 [connection signal="done" from="Talent_Overlays/Time_Stop" to="." method="_on_time_stop_done"]
+[connection signal="timeout" from="Talent_Overlays/Time_Stop/Time_Stop_Timer" to="Talent_Overlays/Time_Stop" method="_on_Time_Stop_Timer_timeout"]
+[connection signal="animation_finished" from="Talent_Overlays/Time_Stop/AnimationPlayer" to="Talent_Overlays/Time_Stop" method="_on_animation_finished"]
 [connection signal="done" from="Talent_Overlays/Bullet_Time" to="." method="_on_bullet_time_done"]
+[connection signal="timeout" from="Talent_Overlays/Bullet_Time/Bullet_Timer" to="Talent_Overlays/Bullet_Time" method="_on_Bullet_Timer_timeout"]
+[connection signal="animation_finished" from="Talent_Overlays/Bullet_Time/AnimationPlayer" to="Talent_Overlays/Bullet_Time" method="_on_animation_finished"]
 [connection signal="transition_finished" from="Transition_Overlay" to="." method="_on_Transition_Overlay_transition_finished"]
 [connection signal="finished" from="Intro_Music" to="." method="_on_Intro_Music_finished"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_Enemy_Timer_timeout"]
