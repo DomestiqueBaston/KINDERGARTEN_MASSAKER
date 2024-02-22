@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=2]
+[gd_scene load_steps=166 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -13,15 +13,32 @@
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/BEAM DOWN/Beam_Down_Front.png" type="Texture" id=11]
 [ext_resource path="res://ASSETS/SOUND/FX/BEAM_DOWN/Beam_down.wav" type="AudioStream" id=12]
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Scratching_A.wav" type="AudioStream" id=13]
-[ext_resource path="res://SCENES/TALENTS/TELEPORT.tscn" type="PackedScene" id=14]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Explosion.png" type="Texture" id=14]
 [ext_resource path="res://SCENES/CHARACTERS/ALIEN.gd" type="Script" id=15]
-[ext_resource path="res://SCENES/TALENTS/SHIELD.tscn" type="PackedScene" id=16]
-[ext_resource path="res://SCENES/TALENTS/FORCE_FIELD.tscn" type="PackedScene" id=17]
-[ext_resource path="res://SCENES/TALENTS/INVISIBLE.tscn" type="PackedScene" id=18]
-[ext_resource path="res://SCENES/TALENTS/EXPLOSION.tscn" type="PackedScene" id=19]
-[ext_resource path="res://SCENES/TALENTS/FREEZING.tscn" type="PackedScene" id=20]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_Explosion_B.wav" type="AudioStream" id=16]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Repulsive_Explosion_A.wav" type="AudioStream" id=17]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Freezing.png" type="Texture" id=18]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Freezing.wav" type="AudioStream" id=19]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Geist.wav" type="AudioStream" id=20]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Talent_OFF.wav" type="AudioStream" id=21]
-[ext_resource path="res://SCENES/TALENTS/GEIST.tscn" type="PackedScene" id=22]
+[ext_resource path="res://SCRIPTS/GEIST.gd" type="Script" id=22]
+[ext_resource path="res://SCRIPTS/INVISIBLE.gd" type="Script" id=23]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation_End.wav" type="AudioStream" id=24]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation.wav" type="AudioStream" id=25]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Teleportation_Beginning.wav" type="AudioStream" id=26]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Shield.wav" type="AudioStream" id=27]
+[ext_resource path="res://SCRIPTS/SHIELD.gd" type="Script" id=28]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Shield.png" type="Texture" id=29]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Shield_OFF.wav" type="AudioStream" id=30]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Shield_ON.wav" type="AudioStream" id=31]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_OFF.wav" type="AudioStream" id=32]
+[ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/TALENTS/Force_Field.png" type="Texture" id=33]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field_ON.wav" type="AudioStream" id=34]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Force_Field.wav" type="AudioStream" id=35]
+[ext_resource path="res://SCRIPTS/FORCE_FIELD.gd" type="Script" id=36]
+[ext_resource path="res://SHADERS/Outline_Invisible.shader" type="Shader" id=37]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_ON.wav" type="AudioStream" id=38]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_OFF.wav" type="AudioStream" id=39]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -196,6 +213,544 @@ tracks/5/keys = {
 "values": [ true ]
 }
 
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Teleport_BEGINNING"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 26 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Teleport_END"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 24 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Teleport_FULL"
+length = 0.4
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 25 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Explosion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=145]
+resource_name = "explosion"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("FX_1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 16 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Explosion:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("FX_2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Freezing_Shockwave"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Freezing:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 19 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Freezing:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Freezing:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Freezing:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=146]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Force_Field:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("FX:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -10.0 ]
+}
+
+[sub_resource type="Animation" id=147]
+resource_name = "force_field"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Force_Field:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1 ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("FX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 35 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=148]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Alien:material:shader")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Shadow:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=149]
+resource_name = "invisible_off"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX_OFF")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 39 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 37 ), ExtResource( 9 ), ExtResource( 37 ), ExtResource( 9 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../Shadow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+
+[sub_resource type="Animation" id=150]
+resource_name = "invisible_on"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/path = NodePath("FX_ON")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 38 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 37 ), ExtResource( 9 ), ExtResource( 37 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../Shadow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false ]
+}
+
+[sub_resource type="Animation" id=151]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Shield:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=152]
+resource_name = "shield"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Shield:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=143]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Shadow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../Alien:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=144]
+resource_name = "ghost"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../../Shadow:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../../Alien:material:shader_param/flash")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../Alien:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [sub_resource type="ShaderMaterial" id=94]
 resource_local_to_scene = true
 shader = ExtResource( 9 )
@@ -292,8 +847,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "00_Hit"
+[sub_resource type="Animation" id=153]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -394,8 +948,7 @@ tracks/7/keys = {
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "00_Idle"
+[sub_resource type="Animation" id=154]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -483,8 +1036,7 @@ tracks/6/keys = {
 "values": [ Vector2( 1, 0.4 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "00_Run"
+[sub_resource type="Animation" id=155]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -4554,7 +5106,7 @@ nodes/Blend/position = Vector2( 220, 80 )
 nodes/TimeScale/node = SubResource( 132 )
 nodes/TimeScale/position = Vector2( 440, 100 )
 nodes/output/position = Vector2( 620, 120 )
-node_connections = [ "TimeScale", 0, "Blend", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Blend" ]
 
 [sub_resource type="AnimationNodeAnimation" id=105]
 animation = "45D_Scratching"
@@ -4800,19 +5352,186 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Teleport" parent="Talent" instance=ExtResource( 14 )]
+[node name="Teleport" type="Node2D" parent="Talent"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Explosion" parent="Talent" instance=ExtResource( 19 )]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Teleport"]
+pause_mode = 1
+anims/RESET = SubResource( 7 )
+anims/Teleport_BEGINNING = SubResource( 4 )
+anims/Teleport_END = SubResource( 5 )
+anims/Teleport_FULL = SubResource( 6 )
 
-[node name="Freezing_Shockwave" parent="Talent" instance=ExtResource( 20 )]
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Teleport"]
+stream = ExtResource( 25 )
+bus = "FX"
 
-[node name="Force_Field" parent="Talent" instance=ExtResource( 17 )]
+[node name="Explosion" type="Node2D" parent="Talent"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Invisible" parent="Talent" instance=ExtResource( 18 )]
+[node name="Explosion" type="Sprite" parent="Talent/Explosion"]
+visible = false
+position = Vector2( 0, 23 )
+texture = ExtResource( 14 )
+offset = Vector2( 0, 15 )
+hframes = 5
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Shield" parent="Talent" instance=ExtResource( 16 )]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Explosion"]
+anims/RESET = SubResource( 3 )
+anims/explosion = SubResource( 145 )
 
-[node name="Ghost" parent="Talent" instance=ExtResource( 22 )]
+[node name="FX_1" type="AudioStreamPlayer" parent="Talent/Explosion"]
+stream = ExtResource( 16 )
+bus = "FX"
+
+[node name="FX_2" type="AudioStreamPlayer" parent="Talent/Explosion"]
+stream = ExtResource( 17 )
+volume_db = -7.5
+bus = "FX"
+
+[node name="Freezing_Shockwave" type="Node2D" parent="Talent"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Freezing" type="Sprite" parent="Talent/Freezing_Shockwave"]
+visible = false
+position = Vector2( 0, 37 )
+z_index = -1
+texture = ExtResource( 18 )
+hframes = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Freezing_Shockwave"]
+stream = ExtResource( 19 )
+bus = "FX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Freezing_Shockwave"]
+anims/Freezing_Shockwave = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="Force_Field" type="Node2D" parent="Talent"]
+script = ExtResource( 36 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Force_Field_Timer" type="Timer" parent="Talent/Force_Field"]
+wait_time = 6.0
+one_shot = true
+
+[node name="Force_Field" type="Sprite" parent="Talent/Force_Field"]
+visible = false
+position = Vector2( 0, 12 )
+texture = ExtResource( 33 )
+hframes = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Force_Field"]
+anims/RESET = SubResource( 146 )
+anims/force_field = SubResource( 147 )
+
+[node name="FX_ON" type="AudioStreamPlayer" parent="Talent/Force_Field"]
+stream = ExtResource( 34 )
+volume_db = -1.5
+bus = "FX"
+
+[node name="FX_OFF" type="AudioStreamPlayer" parent="Talent/Force_Field"]
+stream = ExtResource( 32 )
+volume_db = -1.5
+bus = "FX"
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Force_Field"]
+stream = ExtResource( 35 )
+volume_db = -10.0
+bus = "FX"
+
+[node name="Invisible" type="Node2D" parent="Talent"]
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Invisible_Timer" type="Timer" parent="Talent/Invisible"]
+wait_time = 4.0
+one_shot = true
+
+[node name="FX_ON" type="AudioStreamPlayer" parent="Talent/Invisible"]
+stream = ExtResource( 38 )
+volume_db = -1.5
+bus = "FX"
+
+[node name="FX_OFF" type="AudioStreamPlayer" parent="Talent/Invisible"]
+stream = ExtResource( 39 )
+volume_db = -1.5
+bus = "FX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Invisible"]
+anims/RESET = SubResource( 148 )
+anims/invisible_off = SubResource( 149 )
+anims/invisible_on = SubResource( 150 )
+
+[node name="Shield" type="Node2D" parent="Talent"]
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Shield_Timer" type="Timer" parent="Talent/Shield"]
+one_shot = true
+
+[node name="Shield" type="Sprite" parent="Talent/Shield"]
+visible = false
+position = Vector2( 0, 23 )
+texture = ExtResource( 29 )
+hframes = 4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Shield"]
+anims/RESET = SubResource( 151 )
+anims/shield = SubResource( 152 )
+
+[node name="FX_OFF" type="AudioStreamPlayer" parent="Talent/Shield"]
+stream = ExtResource( 30 )
+volume_db = -1.5
+bus = "FX"
+
+[node name="FX_ON" type="AudioStreamPlayer" parent="Talent/Shield"]
+stream = ExtResource( 31 )
+volume_db = -1.5
+bus = "FX"
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Shield"]
+stream = ExtResource( 27 )
+volume_db = -1.5
+bus = "FX"
+
+[node name="Ghost" type="Node2D" parent="Talent"]
+script = ExtResource( 22 )
+
+[node name="Ghost_Timer" type="Timer" parent="Talent/Ghost"]
+one_shot = true
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Ghost"]
+stream = ExtResource( 20 )
+volume_db = -5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Ghost"]
+anims/RESET = SubResource( 143 )
+anims/ghost = SubResource( 144 )
 
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )
@@ -4843,9 +5562,9 @@ frame = 31
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Alien")
 anims/00_Dead = SubResource( 119 )
-anims/00_Hit = SubResource( 3 )
-anims/00_Idle = SubResource( 1 )
-anims/00_Run = SubResource( 2 )
+anims/00_Hit = SubResource( 153 )
+anims/00_Idle = SubResource( 154 )
+anims/00_Run = SubResource( 155 )
 anims/00_Scratching = SubResource( 97 )
 anims/135D_Dead = SubResource( 8 )
 anims/135D_Hit = SubResource( 120 )
@@ -4947,4 +5666,8 @@ volume_db = 2.5
 bus = "FX"
 
 [connection signal="animation_finished" from="Beam_Down_Rear/AnimationPlayer" to="." method="_on_beam_down_finished"]
+[connection signal="timeout" from="Talent/Force_Field/Force_Field_Timer" to="Talent/Force_Field" method="_on_Force_Field_Timer_timeout"]
+[connection signal="timeout" from="Talent/Invisible/Invisible_Timer" to="Talent/Invisible" method="_on_Invisible_Timer_timeout"]
+[connection signal="timeout" from="Talent/Shield/Shield_Timer" to="Talent/Shield" method="_on_Shield_Timer_timeout"]
+[connection signal="timeout" from="Talent/Ghost/Ghost_Timer" to="Talent/Ghost" method="_on_Ghost_Timer_timeout"]
 [connection signal="timeout" from="Cooldown_Timer" to="." method="_on_Cooldown_Timer_timeout"]
