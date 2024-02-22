@@ -91,6 +91,7 @@ one_shot = true
 
 [node name="FX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+volume_db = -5.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 143 )
