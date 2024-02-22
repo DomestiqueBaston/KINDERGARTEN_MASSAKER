@@ -73,7 +73,7 @@ func is_scratching() -> bool:
 	# the end of the idle cycle is reached, which is why we need to test the
 	# current node in the state machine
 
-	return (state == State.SCRATCHING and
+	return (state == State.SCRATCH and
 			state_machine.get_current_node() == "Scratching")
 
 func _physics_process(_delta):
