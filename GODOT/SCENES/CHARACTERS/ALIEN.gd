@@ -210,7 +210,7 @@ func start_mirror(duration: float, pos: Vector2, dir: Vector2):
 	flash()
 	mirror = true
 	set_physics_process(true)
-	var flash_time = $Flasher.get_animation("flash").length
+	var flash_time = $Flash.get_animation("flash").length
 	var timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = true
