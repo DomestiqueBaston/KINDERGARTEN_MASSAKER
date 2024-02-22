@@ -4,5 +4,6 @@ func start(duration):
 	var off_anim = $AnimationPlayer.get_animation("invisible_off")
 	$Invisible_Timer.start(duration - off_anim.length)
 	$AnimationPlayer.play("invisible_on")
-	yield($Invisible_Timer, "timeout")
+
+func _on_Invisible_Timer_timeout():
 	$AnimationPlayer.play("invisible_off")

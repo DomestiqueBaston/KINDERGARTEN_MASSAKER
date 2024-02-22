@@ -141,3 +141,5 @@ bus = "FX"
 anims/RESET = SubResource( 3 )
 anims/invisible_off = SubResource( 1 )
 anims/invisible_on = SubResource( 2 )
+
+[connection signal="timeout" from="Invisible_Timer" to="." method="_on_Invisible_Timer_timeout"]
