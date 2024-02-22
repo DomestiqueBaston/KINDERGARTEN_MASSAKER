@@ -111,7 +111,8 @@ func _unhandled_input(event: InputEvent):
 		if not $ScoreTracker.is_playing():
 			pass
 		elif (event.is_action_pressed("ui_accept", false, true)
-			  and not alien.is_cooldown_active()):
+			  and not alien.is_cooldown_active()
+			  and not alien.is_scratching()):
 			match talent:
 				Globals.Talent.TELEPORT:
 					start_teleport()

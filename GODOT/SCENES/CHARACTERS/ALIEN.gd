@@ -46,6 +46,7 @@ func reset():
 	set_physics_process(false)
 	stop_cooldown()
 	state_machine.stop()
+	state = State.MOVE
 
 #
 # Starts the alien's "idle" animation cycle and beams him down. Once the "beam
@@ -62,13 +63,33 @@ func _on_beam_down_finished(_anim_name):
 	set_physics_process(true)
 	emit_signal("beam_down_finished")
 
+#
+# Returns true if the alien is busy scratching himself.
+#
+func is_scratching() -> bool:
+
+	# NB. state may be set to SCRATCHING in _physics_process() as soon as the
+	# alien first starts idling, but he doesn't actually start scratching until
+	# the end of the idle cycle is reached, which is why we need to test the
+	# current node in the state machine
+
+	return (state == State.SCRATCHING and
+			state_machine.get_current_node() == "Scratching")
+
 func _physics_process(_delta):
+
+	# a mirror image alien just moves automatically
+
 	if mirror:
 		move_and_slide(direction * speed * accelerate)
 		return
 
-	if state == State.SCRATCH and state_machine.get_current_node() == "Scratching":
+	# can't do anything else while scratching
+
+	if is_scratching():
 		return
+
+	# check for movement inputs
 
 	var dir = Vector2.ZERO
 	if (Input.is_action_pressed("ui_left") or
@@ -88,20 +109,31 @@ func _physics_process(_delta):
 		Input.is_action_pressed("ui_down_right")):
 		dir.y += 1
 
+	# no movement inputs => idle or maybe scratch
+
 	if dir == Vector2.ZERO:
 		var next_state = state
+
 		if state == State.MOVE:
 			next_state = State.FIRST_IDLE
 		elif state == State.FIRST_IDLE and randf() < scratch_chances:
 			next_state = State.SCRATCH
 		elif state != State.SCRATCH:
 			next_state = State.IDLE
+
+		# NB. transitions in the animation tree to/from Scratching are in "at
+		# end" switch mode, so a switch between Scratching and Idle doesn't
+		# happen right away
+
 		if state != next_state:
 			if next_state == State.SCRATCH:
 				state_machine.travel("Scratching")
 			else:
 				state_machine.travel("Idle")
 			state = next_state
+
+	# otherwise => run
+
 	else:
 		$AnimationTree["parameters/Idle/blend_position"] = dir
 		$AnimationTree["parameters/Scratching/blend_position"] = dir
