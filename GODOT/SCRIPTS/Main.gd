@@ -86,7 +86,6 @@ func _ready():
 	_set_game_overlay()
 	alien = $Characters/ALIEN
 	enemies = $Characters/Enemies
-	$Cooldown_Timer.connect("timeout", alien, "stop_cooldown")
 
 #
 # Chooses a game overlay scene at random and adds it below PAPA_Game_Overlay.
@@ -112,7 +111,7 @@ func _unhandled_input(event: InputEvent):
 		if not $ScoreTracker.is_playing():
 			pass
 		elif (event.is_action_pressed("ui_accept", false, true)
-			and $Cooldown_Timer.is_stopped()):
+			  and not alien.is_cooldown_active()):
 			match talent:
 				Globals.Talent.TELEPORT:
 					start_teleport()
@@ -423,7 +422,6 @@ func stop_game():
 	$Shutdown_Timer.stop()
 	$Shutdown_Overlay.hide()
 	$Shutdown_Overlay.reset_animation()
-	$Cooldown_Timer.stop()
 	
 	match talent:
 		Globals.Talent.DASH:
@@ -448,15 +446,13 @@ func stop_game():
 
 func start_teleport():
 	alien.start_teleport()
-	alien.start_cooldown()
-	$Cooldown_Timer.start(TELEPORT_cooldown)
+	alien.start_cooldown(TELEPORT_cooldown)
 
 func teleport():
 	alien.position = background.get_teleportation_point()
 
 func start_dash():
-	alien.start_cooldown()
-	$Cooldown_Timer.start(DASH_cooldown)
+	alien.start_cooldown(DASH_cooldown)
 	alien.set_run_cycle_speed(DASH_run_cycle_speed)
 	alien.set_run_speed(DASH_run_speed)
 	$Talents/Dash.start(DASH_duration)
@@ -469,14 +465,12 @@ func _on_dash_done():
 	alien.set_run_speed(1)
 
 func start_explosion():
-	alien.start_cooldown()
-	$Cooldown_Timer.start(EXPLOSION_cooldown)
+	alien.start_cooldown(EXPLOSION_cooldown)
 	alien.start_explosion()
 	$Camera_Shake.play("shake")
 
 func start_freeze():
-	alien.start_cooldown()
-	$Cooldown_Timer.start(FREEZE_cooldown)
+	alien.start_cooldown(FREEZE_cooldown)
 	alien.start_freeze()
 	for enemy in enemies.get_children():
 		var dist2 = enemy.position.distance_squared_to(alien.position)
@@ -487,18 +481,15 @@ func start_freeze():
 	$Talent_Timer.start(FREEZE_duration)
 
 func start_shield():
-	alien.start_cooldown()
-	$Cooldown_Timer.start(SHIELD_cooldown)
+	alien.start_cooldown(SHIELD_cooldown)
 	alien.start_shield(SHIELD_duration)
 
 func start_force_field():
-	alien.start_cooldown()
-	$Cooldown_Timer.start(FORCE_FIELD_cooldown)
+	alien.start_cooldown(FORCE_FIELD_cooldown)
 	alien.start_force_field(FORCE_FIELD_duration)
 
 func start_time_stop():
-	alien.start_cooldown()
-	$Cooldown_Timer.start(TIME_STOP_cooldown)
+	alien.start_cooldown(TIME_STOP_cooldown)
 	$Talent_Overlays/Time_Stop.start(TIME_STOP_duration)
 	$Enemy_Timer.set_paused(true)
 	for enemy in enemies.get_children():
@@ -510,8 +501,7 @@ func _on_time_stop_done():
 		enemy.unfreeze(false)
 
 func start_mirror_images():
-	alien.start_cooldown()
-	$Cooldown_Timer.start(MIRROR_IMAGE_cooldown)
+	alien.start_cooldown(MIRROR_IMAGE_cooldown)
 	for dir in [ Vector2(-1,-1), Vector2(1,-1), Vector2(0,1) ]:
 		var offset = dir.normalized() * 10
 		var mirror = alien_scene.instance()
@@ -520,8 +510,7 @@ func start_mirror_images():
 		mirror.add_to_group("mirror_images");
 
 func start_invisible():
-	alien.start_cooldown()
-	$Cooldown_Timer.start(INVISIBLE_cooldown)
+	alien.start_cooldown(INVISIBLE_cooldown)
 	alien.start_invisible(INVISIBLE_duration)
 
 func start_techniker():
@@ -534,8 +523,7 @@ func start_techniker():
 	overlay.rewind_animation()
 
 func start_bullet_time():
-	alien.start_cooldown()
-	$Cooldown_Timer.start(BULLET_TIME_cooldown)
+	alien.start_cooldown(BULLET_TIME_cooldown)
 	$Talent_Overlays/Bullet_Time.start(BULLET_TIME_duration)
 	for enemy in enemies.get_children():
 		enemy.set_time_scale(BULLET_TIME_slowdown)

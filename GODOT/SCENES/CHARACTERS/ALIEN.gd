@@ -152,14 +152,23 @@ func start_mirror(duration: float, pos: Vector2, dir: Vector2):
 
 func _stop_mirror():
 	flash()
-	yield($Flasher, "animation_finished")
+	yield($Flash, "animation_finished")
 	queue_free()
 
-func start_cooldown():
-	$Alien.material.set_shader_param("cooldown", Color(0xb73847ff))
+func start_cooldown(duration: float):
+	$Cooldown_Timer.start(
+		max(0, duration - $Cooldown.get_animation("cooldown_off").length))
+	$Cooldown.play("cooldown_on")
+
+func _on_Cooldown_Timer_timeout():
+	$Cooldown.play("cooldown_off")
 
 func stop_cooldown():
-	$Alien.material.set_shader_param("cooldown", Color(0x000000ff))
+	$Cooldown_Timer.stop() 
+	$Cooldown.play("RESET")
+
+func is_cooldown_active() -> bool:
+	return not $Cooldown_Timer.is_stopped()
 
 func flash():
-	$Flasher.play("flash")
+	$Flash.play("flash")
