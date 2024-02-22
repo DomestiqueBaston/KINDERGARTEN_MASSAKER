@@ -33,6 +33,10 @@ func _ready():
 	state_machine = $AnimationTree["parameters/playback"]
 	reset()
 
+#
+# Returns the alien to its initial state: facing forward, no animation, no
+# physics processing (movement), and no cooldown.
+#
 func reset():
 	direction = Vector2.DOWN
 	$AnimationTree["parameters/Idle/blend_position"] = direction
@@ -43,6 +47,11 @@ func reset():
 	stop_cooldown()
 	state_machine.stop()
 
+#
+# Starts the alien's "idle" animation cycle and beams him down. Once the "beam
+# down" animation has finished, physics processing is turned on (so he can move)
+# and a "beam_down_finished" signal is emitted.
+#
 func beam_down():
 	state_machine.travel("Idle")
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
@@ -102,30 +111,56 @@ func _physics_process(_delta):
 		direction = dir.normalized()
 		move_and_slide(direction * speed * accelerate)
 
+#
+# Sets a multiplier for the speed of the alien's Run animation cycle (1 by
+# default).
+#
 func set_run_cycle_speed(multiplier: float):
 	$AnimationTree["parameters/Run/TimeScale/scale"] = multiplier
 
+#
+# Sets a multiplier for the speed of the alien's movements (1 by default).
+#
 func set_run_speed(multiplier: float):
 	accelerate = multiplier
 
+#
+# Starts the alien's teleport animation, emits a "teleport" signal, then
+# finishes the teleport animation.
+#
 func start_teleport():
 	$Talent/Teleport/AnimationPlayer.play("Teleport_BEGINNING")
 	yield($Talent/Teleport/AnimationPlayer, "animation_finished")
 	emit_signal("teleport")
 	$Talent/Teleport/AnimationPlayer.play("Teleport_END")
 
+#
+# Makes the alien invisible for the given time, in seconds.
+#
 func start_invisible(duration: float):
 	$Talent/Invisible.start(duration)
 
+#
+# Plays the explosion animation.
+#
 func start_explosion():
 	$Talent/Explosion/AnimationPlayer.play("explosion")
 
+#
+# Plays the freeze animation.
+#
 func start_freeze():
 	$Talent/Freezing_Shockwave/AnimationPlayer.play("Freezing_Shockwave")
 
+#
+# Plays the shield animation for the given time, in seconds.
+#
 func start_shield(duration: float):
 	$Talent/Shield.start(duration)
 
+#
+# Plays the force field animation for the given time, in seconds.
+#
 func start_force_field(duration: float):
 	$Talent/Force_Field.start(duration)
 
@@ -155,6 +190,9 @@ func _stop_mirror():
 	yield($Flash, "animation_finished")
 	queue_free()
 
+#
+# Starts cooldown: the alien is outlined in red for the given time, in seconds.
+#
 func start_cooldown(duration: float):
 	$Cooldown_Timer.start(
 		max(0, duration - $Cooldown.get_animation("cooldown_off").length))
@@ -163,12 +201,21 @@ func start_cooldown(duration: float):
 func _on_Cooldown_Timer_timeout():
 	$Cooldown.play("cooldown_off")
 
+#
+# Interrupts the cooldown in progress, if there is one.
+#
 func stop_cooldown():
 	$Cooldown_Timer.stop() 
 	$Cooldown.play("RESET")
 
+#
+# Returns true if a cooldown is in progress.
+#
 func is_cooldown_active() -> bool:
 	return not $Cooldown_Timer.is_stopped()
 
+#
+# Causes the alien to flash on and off briefly.
+#
 func flash():
 	$Flash.play("flash")
