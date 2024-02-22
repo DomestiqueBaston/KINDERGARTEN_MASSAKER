@@ -223,6 +223,18 @@ func _stop_mirror():
 	queue_free()
 
 #
+# Plays the ghost animation for the given time, in seconds.
+#
+func start_ghost(duration: float):
+	$Talent/Ghost.start(duration)
+
+#
+# Interrupts the ghost animation in progress.
+#
+func stop_ghost():
+	$Talent/Ghost.stop()
+
+#
 # Starts cooldown: the alien is outlined in red for the given time, in seconds.
 #
 func start_cooldown(duration: float):

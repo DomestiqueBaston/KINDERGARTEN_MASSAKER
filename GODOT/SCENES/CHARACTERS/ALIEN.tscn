@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=2]
+[gd_scene load_steps=132 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://SCENES/TALENTS/EXPLOSION.tscn" type="PackedScene" id=19]
 [ext_resource path="res://SCENES/TALENTS/FREEZING.tscn" type="PackedScene" id=20]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Talent_OFF.wav" type="AudioStream" id=21]
+[ext_resource path="res://SCENES/TALENTS/GEIST.tscn" type="PackedScene" id=22]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -4810,6 +4811,8 @@ __meta__ = {
 [node name="Invisible" parent="Talent" instance=ExtResource( 18 )]
 
 [node name="Shield" parent="Talent" instance=ExtResource( 16 )]
+
+[node name="Ghost" parent="Talent" instance=ExtResource( 22 )]
 
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )
