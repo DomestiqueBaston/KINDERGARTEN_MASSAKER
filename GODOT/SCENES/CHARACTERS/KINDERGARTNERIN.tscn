@@ -101,7 +101,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "00_No"
 length = 4.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Educ:frame")
 tracks/0/interp = 1
@@ -212,18 +211,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Scream:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=5]
 resource_name = "00_OMG"
@@ -301,18 +288,6 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("OMG:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -397,18 +372,6 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.170022, 0.473481 )
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=15]
 resource_name = "135D_Check"
@@ -490,7 +453,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=16]
 resource_name = "135D_No"
 length = 4.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Educ:frame")
 tracks/0/interp = 1
@@ -601,18 +563,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Scream:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=17]
 resource_name = "135D_OMG"
@@ -690,18 +640,6 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("OMG:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -786,18 +724,6 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.171175, 0.473481 )
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=23]
 resource_name = "135G_Check"
@@ -879,7 +805,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=24]
 resource_name = "135G_No"
 length = 4.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Educ:frame")
 tracks/0/interp = 1
@@ -990,18 +915,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Scream:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=25]
 resource_name = "135G_OMG"
@@ -1079,18 +992,6 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("OMG:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -1175,18 +1076,6 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.170022, 0.472017 )
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=19]
 resource_name = "180_Check"
@@ -1268,7 +1157,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=20]
 resource_name = "180_No"
 length = 4.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Educ:frame")
 tracks/0/interp = 1
@@ -1379,18 +1267,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Scream:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=22]
 resource_name = "180_OMG"
@@ -1468,18 +1344,6 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("OMG:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -1564,18 +1428,6 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.171175, 0.474634 )
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=7]
 resource_name = "45D_Check"
@@ -1657,7 +1509,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=8]
 resource_name = "45D_No"
 length = 4.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Educ:frame")
 tracks/0/interp = 1
@@ -1768,18 +1619,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Scream:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=9]
 resource_name = "45D_OMG"
@@ -1857,18 +1696,6 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("OMG:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -1953,18 +1780,6 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.172328, 0.471175 )
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=31]
 resource_name = "45G_Check"
@@ -2046,7 +1861,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=32]
 resource_name = "45G_No"
 length = 4.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Educ:frame")
 tracks/0/interp = 1
@@ -2157,18 +1971,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Scream:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=34]
 resource_name = "45G_OMG"
@@ -2246,18 +2048,6 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("OMG:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=33]
@@ -2342,18 +2132,6 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.171175, 0.473481 )
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=11]
 resource_name = "90D_Check"
@@ -2435,7 +2213,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=12]
 resource_name = "90D_No"
 length = 4.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Educ:frame")
 tracks/0/interp = 1
@@ -2546,18 +2323,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Scream:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=14]
 resource_name = "90D_OMG"
@@ -2635,18 +2400,6 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("OMG:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -2731,18 +2484,6 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.171175, 0.473481 )
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=27]
 resource_name = "90G_Check"
@@ -2824,7 +2565,6 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=28]
 resource_name = "90G_No"
 length = 4.8
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Educ:frame")
 tracks/0/interp = 1
@@ -2935,18 +2675,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("Scream:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=30]
 resource_name = "90G_OMG"
@@ -3024,18 +2752,6 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("OMG:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=29]
@@ -3119,18 +2835,6 @@ tracks/5/keys = {
 "stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.170022, 0.473481 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Footsteps:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -3230,42 +2934,6 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Footsteps:volume_db")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("Scream:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("OMG:volume_db")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=89]
@@ -3654,7 +3322,8 @@ parameters/Run/TimeScale/scale = 1.0
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -10.0
+volume_db = -5.0
+pitch_scale = 0.5
 bus = "FX"
 
 [node name="Scream" type="AudioStreamPlayer" parent="."]
