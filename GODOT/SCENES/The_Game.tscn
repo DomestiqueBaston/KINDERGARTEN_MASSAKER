@@ -27,7 +27,7 @@
 [sub_resource type="Animation" id=5]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("../../ColorRect:self_modulate")
+tracks/0/path = NodePath("ColorRect:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -39,24 +39,12 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ColorRect:self_modulate")
+tracks/1/path = NodePath("ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("ColorRect:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -565,6 +553,7 @@ one_shot = true
 
 [connection signal="done" from="Talents/Dash" to="." method="_on_dash_done"]
 [connection signal="timeout" from="Talents/Dash/Dash_Timer" to="Talents/Dash" method="_on_Dash_Timer_timeout"]
+[connection signal="ghost_done" from="Characters/ALIEN" to="." method="_on_ghost_done"]
 [connection signal="teleport" from="Characters/ALIEN" to="." method="teleport"]
 [connection signal="done" from="Talent_Overlays/Time_Stop" to="." method="_on_time_stop_done"]
 [connection signal="timeout" from="Talent_Overlays/Time_Stop/Time_Stop_Timer" to="Talent_Overlays/Time_Stop" method="_on_Time_Stop_Timer_timeout"]

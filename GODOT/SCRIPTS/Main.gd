@@ -41,7 +41,6 @@ export var BULLET_TIME_cooldown := 15
 export var BULLET_TIME_duration := 3
 export var BULLET_TIME_slowdown := 0.5
 export var GHOST_cooldown := 20
-export var GHOST_duration := 4
 
 var menu_scene := preload("res://SCENES/SCREENS/Menu.tscn")
 var tutorial_scene := preload("res://SCENES/SCREENS/Tuto.tscn")
@@ -405,6 +404,8 @@ func _on_Enemy_Timer_timeout():
 	var enemy = instance_character_at(get_random_kid(), pos)
 	if $Talent_Overlays/Bullet_Time.is_running():
 		enemy.set_time_scale(BULLET_TIME_slowdown)
+	if alien.is_ghost_running():
+		enemy.add_collision_exception_with(alien)
 	$Enemy_Timer.start(spawn_cycle_time)
 
 func _on_Shutdown_Timer_timeout():
@@ -534,9 +535,13 @@ func start_bullet_time():
 	$Talent_Overlays/Bullet_Time.start(BULLET_TIME_duration)
 	get_tree().call_group("enemies", "set_time_scale", BULLET_TIME_slowdown)
 
-func start_ghost():
-	alien.start_cooldown(GHOST_cooldown)
-	alien.start_ghost(GHOST_duration)
-
 func _on_bullet_time_done():
 	get_tree().call_group("enemies", "set_time_scale", 1)
+
+func start_ghost():
+	alien.start_cooldown(GHOST_cooldown)
+	alien.start_ghost()
+	get_tree().call_group("enemies", "add_collision_exception_with", alien)
+
+func _on_ghost_done():
+	get_tree().call_group("enemies", "remove_collision_exception_with", alien)

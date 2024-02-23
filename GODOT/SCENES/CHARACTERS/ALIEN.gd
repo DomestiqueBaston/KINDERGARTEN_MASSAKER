@@ -14,6 +14,9 @@ signal beam_down_finished
 # signal emitted when the alien is ready to teleport
 signal teleport
 
+# signal emitted when the ghost effect wears off
+signal ghost_done
+
 var state_machine: AnimationNodeStateMachinePlayback
 var direction := Vector2.DOWN
 var accelerate := 1.0
@@ -235,10 +238,19 @@ func _stop_mirror():
 	queue_free()
 
 #
-# Plays the ghost animation for the given time, in seconds.
+# Plays the ghost animation.
 #
-func start_ghost(duration: float):
-	$Talent/Ghost.start(duration)
+func start_ghost():
+	$Talent/Ghost.start()
+
+func _on_ghost_done():
+	emit_signal("ghost_done")
+
+#
+# Returns true if the ghost animation is running.
+#
+func is_ghost_running() -> bool:
+	return $Talent/Ghost.is_running()
 
 #
 # Interrupts the ghost animation in progress.
