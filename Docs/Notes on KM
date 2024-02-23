@@ -48,7 +48,7 @@ The Alien has 1000 hit points (HP).
 	- Dodger (hit box size reduced by 20% – permanent). Uses NO fx.
 	- Invisible (makes enemies go away as if the Alien wasn’t here for 4 seconds but can take damages and movement collisions apply)– cooldown: 20 seconds). Uses INVISIBLE fx.
 	- Shield (invulnerable to hand-to-hand attacks for 3 seconds – cooldown: 10 seconds). Uses SHIELD fx.
-	- Second life (restart with 300 HP from where the Alien died – only 1 time). No teleportation at the restart. The enemies resume doing their things. The alien stays dead for 2 seconds then revives, quickly “flashing” white for 1 second (invulnerable at restart for 1 second). When the Alien’s dead, kids won’t care anymore for the body and resume their lives (running, going idle, waving at each other…) and the teacher will go checking, running, etc… Until the Alien revives!
+	- Second life (restart with 300 HP from where the Alien died – only 1 time).  The alien stays dead for 2 seconds then revives instantly (Idle), quickly “flashing” white for 1 second (invulnerable at restart for 1 second). So no teleportation at the restart. When the Alien’s dead, kids won’t care anymore for the body and resume their lives (running, going idle, waving at each other…) and the teacher will go checking, running, etc… Until the Alien revives!
 	- Healthy (20% more hit points – permanent). Uses NO fx.
 	- Regeneration (5 hp per second – permanent). Uses NO fx.
 	- Hand to hand specialist (50% damage from short range but 200% damage from long range – permanent). Uses NO fx.
