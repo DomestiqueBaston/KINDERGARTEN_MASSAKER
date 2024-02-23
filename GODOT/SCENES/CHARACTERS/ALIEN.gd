@@ -84,7 +84,11 @@ func _physics_process(_delta):
 	# a mirror image alien just moves automatically
 
 	if mirror:
-		move_and_slide(direction * speed * accelerate)
+		var dir = move_and_slide(direction * speed * accelerate)
+		if get_slide_count() > 0:
+			dir = Globals.get_nearest_direction(dir)
+			$AnimationTree["parameters/Run/Blend/blend_position"] = dir
+			direction = dir.normalized()
 		return
 
 	# can't do anything else while scratching
