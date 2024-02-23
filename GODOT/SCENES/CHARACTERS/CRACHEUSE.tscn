@@ -23,6 +23,7 @@ resource_local_to_scene = true
 shader = ExtResource( 6 )
 shader_param/outline = Color( 0, 0, 0, 1 )
 shader_param/cooldown = Color( 0, 0, 0, 1 )
+shader_param/mask = 1.0
 shader_param/flash = false
 
 [sub_resource type="Animation" id=1]
@@ -253,8 +254,8 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -664,8 +665,8 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -1075,8 +1076,8 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -1474,8 +1475,8 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -1885,8 +1886,8 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -2296,8 +2297,8 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -2707,8 +2708,8 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=27]
@@ -3118,8 +3119,8 @@ tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=31]
@@ -3412,7 +3413,7 @@ tracks/8/keys = {
 "values": [ Vector2( 7.62939e-06, 80 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/path = NodePath("../Spit:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -3424,7 +3425,7 @@ tracks/9/keys = {
 "values": [ -10.0 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../Spit:volume_db")
+tracks/10/path = NodePath("../Footsteps:volume_db")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -3433,7 +3434,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -10.0 ]
+"values": [ -20.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=88]
@@ -3847,7 +3848,7 @@ parameters/Waving/TimeScale/scale = 1.0
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
+volume_db = -20.0
 bus = "FX"
 
 [node name="Spit" type="AudioStreamPlayer" parent="."]

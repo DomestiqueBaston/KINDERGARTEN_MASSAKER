@@ -27,6 +27,7 @@ radius = 9.48683
 shader = ExtResource( 7 )
 shader_param/outline = Color( 0, 0, 0, 1 )
 shader_param/cooldown = Color( 0, 0, 0, 1 )
+shader_param/mask = 1.0
 shader_param/flash = false
 
 [sub_resource type="Animation" id=1]
@@ -407,8 +408,8 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -878,8 +879,8 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1349,8 +1350,8 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -1808,8 +1809,8 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -2279,8 +2280,8 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -2750,8 +2751,8 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -3221,8 +3222,8 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -3692,8 +3693,8 @@ tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ -10.0 ]
+"update": 0,
+"values": [ -20.0 ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -3920,7 +3921,7 @@ tracks/10/keys = {
 "values": [ false ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("../Footsteps:volume_db")
+tracks/11/path = NodePath("../Kick:volume_db")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -3932,7 +3933,7 @@ tracks/11/keys = {
 "values": [ -10.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("../Kick:volume_db")
+tracks/12/path = NodePath("../Footsteps:volume_db")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -3941,7 +3942,7 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -10.0 ]
+"values": [ -20.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=97]
@@ -4367,7 +4368,7 @@ bus = "FX"
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -10.0
+volume_db = -20.0
 bus = "FX"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
