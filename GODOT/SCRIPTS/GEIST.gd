@@ -7,9 +7,9 @@ func start(duration):
 
 func _on_Ghost_Timer_timeout():
 	$FX.stop()
-	$AnimationPlayer.play("RESET")
+	$AnimationPlayer.play("ghost_off")
 
 func stop():
 	$Ghost_Timer.stop()
 	$FX.stop()
-	$AnimationPlayer.play("ghost_off")
+	$AnimationPlayer.play("RESET")
