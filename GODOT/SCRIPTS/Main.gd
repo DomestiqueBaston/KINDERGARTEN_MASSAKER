@@ -437,8 +437,7 @@ func stop_game():
 			$Talent_Overlays/Time_Stop.stop()
 			$Enemy_Timer.set_paused(false)
 		Globals.Talent.MIRROR_IMAGE:
-			for mirror in get_tree().get_nodes_in_group("mirror_images"):
-				mirror.queue_free()
+			get_tree().call_group("mirror_images", "free")
 		Globals.Talent.SHIELD:
 			alien.stop_shield()
 		Globals.Talent.TECHNICIAN:
