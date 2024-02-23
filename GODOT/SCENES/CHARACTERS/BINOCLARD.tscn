@@ -409,7 +409,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -880,7 +880,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1351,7 +1351,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -1810,7 +1810,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -2281,7 +2281,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -2752,7 +2752,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -3223,7 +3223,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -3694,7 +3694,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -3942,7 +3942,7 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=97]

@@ -231,7 +231,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -629,7 +629,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -1027,7 +1027,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -1425,7 +1425,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -1823,7 +1823,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -2221,7 +2221,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -2619,7 +2619,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=27]
@@ -3017,7 +3017,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=31]
@@ -3342,7 +3342,7 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -20.0 ]
+"values": [ -10.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=88]
@@ -3396,7 +3396,7 @@ nodes/BlendSpace2D/position = Vector2( 420, 140 )
 nodes/TimeScale/node = SubResource( 97 )
 nodes/TimeScale/position = Vector2( 680, 200 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=99]
 animation = "00_Run"
@@ -3449,7 +3449,7 @@ nodes/BlendSpace2D/position = Vector2( 360, 140 )
 nodes/TimeScale/node = SubResource( 108 )
 nodes/TimeScale/position = Vector2( 660, 240 )
 nodes/output/position = Vector2( 880, 140 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=110]
 animation = "00_Vomit"
@@ -3502,7 +3502,7 @@ nodes/BlendSpace2D/position = Vector2( 380, 180 )
 nodes/TimeScale/node = SubResource( 119 )
 nodes/TimeScale/position = Vector2( 660, 240 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=121]
 animation = "00_Waving"
@@ -3555,7 +3555,7 @@ nodes/BlendSpace2D/position = Vector2( 360, 160 )
 nodes/TimeScale/node = SubResource( 130 )
 nodes/TimeScale/position = Vector2( 640, 240 )
 nodes/output/position = Vector2( 840, 180 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=132]
 
@@ -3752,7 +3752,7 @@ parameters/Waving/TimeScale/scale = 1.0
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -20.0
+volume_db = -10.0
 bus = "FX"
 
 [node name="Vomiting" type="AudioStreamPlayer" parent="."]
