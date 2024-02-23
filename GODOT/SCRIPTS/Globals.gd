@@ -82,3 +82,29 @@ func get_random_direction() -> Vector2:
 			return Vector2(1, 0)
 		_:
 			return Vector2(1, 1)
+
+#
+# Given any direction vector (normalized or not), returns the "cardinal"
+# direction (one of eight, NOT normalized) that is nearest to that one and can
+# be fed to an AnimationNodeBlendSpace2D.
+#
+func get_nearest_direction(dir: Vector2) -> Vector2:
+	var vec = dir.normalized()
+	var angle = atan2(-vec.x, -vec.y)			# in the range [-PI, PI]
+	var deg = int(stepify(rad2deg(angle), 45))	# -180, -135, -90, -45, 0, etc.
+	if deg <= -180:
+		return Vector2(0, 1)
+	elif deg <= -135:
+		return Vector2(1, 1)
+	elif deg <= -90:
+		return Vector2(1, 0)
+	elif deg <= -45:
+		return Vector2(1, -1)
+	elif deg <= 0:
+		return Vector2(0, -1)
+	elif deg <= 45:
+		return Vector2(-1, -1)
+	elif deg <= 90:
+		return Vector2(-1, 0)
+	else:
+		return Vector2(-1, 1)
