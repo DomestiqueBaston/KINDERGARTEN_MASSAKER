@@ -191,10 +191,22 @@ func start_shield(duration: float):
 	$Talent/Shield.start(duration)
 
 #
+# Interrupts the shield animation in progress.
+#
+func stop_shield():
+	$Talent/Shield.stop()
+
+#
 # Plays the force field animation for the given time, in seconds.
 #
 func start_force_field(duration: float):
 	$Talent/Force_Field.start(duration)
+
+#
+# Interrupts the force field animation in progress.
+#
+func stop_force_field():
+	$Talent/Force_Field.stop()
 
 #
 # Starts this alien going in mirror mode: it will run randomly, starting at the

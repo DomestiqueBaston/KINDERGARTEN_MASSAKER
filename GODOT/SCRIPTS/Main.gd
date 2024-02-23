@@ -79,7 +79,6 @@ var previous_menu_item := -1
 var overlay: Node
 var background: Background
 var alien: Alien
-var enemies: Node2D
 var talent := -1
 var techniker_used := false
 
@@ -87,7 +86,6 @@ func _ready():
 	set_process(false)
 	_set_game_overlay()
 	alien = $Characters/ALIEN
-	enemies = $Characters/Enemies
 
 #
 # Chooses a game overlay scene at random and adds it below PAPA_Game_Overlay.
@@ -303,7 +301,8 @@ func on_exit_game():
 func instance_character_at(scene: PackedScene, pos: Vector2) -> Node:
 	var inst = scene.instance()
 	inst.position = pos
-	enemies.add_child(inst)
+	$Characters.add_child(inst)
+	inst.add_to_group("enemies")
 	return inst
 
 func get_random_kid() -> PackedScene:
@@ -431,12 +430,16 @@ func stop_game():
 	match talent:
 		Globals.Talent.DASH:
 			$Talents/Dash.stop()
-		Globals.Talent.MIRROR_IMAGE:
-			for mirror in get_tree().get_nodes_in_group("mirror_images"):
-				mirror.queue_free()
+		Globals.Talent.FORCE_FIELD:
+			alien.stop_force_field()
 		Globals.Talent.TIME_STOP:
 			$Talent_Overlays/Time_Stop.stop()
 			$Enemy_Timer.set_paused(false)
+		Globals.Talent.MIRROR_IMAGE:
+			for mirror in get_tree().get_nodes_in_group("mirror_images"):
+				mirror.queue_free()
+		Globals.Talent.SHIELD:
+			alien.stop_shield()
 		Globals.Talent.TECHNICIAN:
 			techniker_used = false
 		Globals.Talent.BULLET_TIME:
@@ -448,8 +451,7 @@ func stop_game():
 	
 	alien.hide()
 	alien.reset()
-	for enemy in enemies.get_children():
-		enemy.queue_free()
+	get_tree().call_group("enemies", "free")
 
 func start_teleport():
 	alien.start_teleport()
@@ -479,7 +481,7 @@ func start_explosion():
 func start_freeze():
 	alien.start_cooldown(FREEZE_cooldown)
 	alien.start_freeze()
-	for enemy in enemies.get_children():
+	for enemy in get_tree().get_nodes_in_group("enemies"):
 		var dist2 = enemy.position.distance_squared_to(alien.position)
 		if dist2 < FREEZE_radius * FREEZE_radius:
 			enemy.freeze()
@@ -499,13 +501,11 @@ func start_time_stop():
 	alien.start_cooldown(TIME_STOP_cooldown)
 	$Talent_Overlays/Time_Stop.start(TIME_STOP_duration)
 	$Enemy_Timer.set_paused(true)
-	for enemy in enemies.get_children():
-		enemy.freeze(false)
+	get_tree().call_group("enemies", "freeze", false)
 
 func _on_time_stop_done():
 	$Enemy_Timer.set_paused(false)
-	for enemy in enemies.get_children():
-		enemy.unfreeze(false)
+	get_tree().call_group("enemies", "unfreeze", false)
 
 func start_mirror_images():
 	alien.start_cooldown(MIRROR_IMAGE_cooldown)
@@ -532,13 +532,11 @@ func start_techniker():
 func start_bullet_time():
 	alien.start_cooldown(BULLET_TIME_cooldown)
 	$Talent_Overlays/Bullet_Time.start(BULLET_TIME_duration)
-	for enemy in enemies.get_children():
-		enemy.set_time_scale(BULLET_TIME_slowdown)
+	get_tree().call_group("enemies", "set_time_scale", BULLET_TIME_slowdown)
 
 func start_ghost():
 	alien.start_cooldown(GHOST_cooldown)
 	alien.start_ghost(GHOST_duration)
 
 func _on_bullet_time_done():
-	for enemy in enemies.get_children():
-		enemy.set_time_scale(1)
+	get_tree().call_group("enemies", "set_time_scale", 1)

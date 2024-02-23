@@ -399,8 +399,6 @@ bus = "FX"
 [node name="ALIEN" parent="Characters" instance=ExtResource( 10 )]
 visible = false
 
-[node name="Enemies" type="YSort" parent="Characters"]
-
 [node name="Talent_Overlays" type="Node2D" parent="."]
 
 [node name="Time_Stop" type="Node2D" parent="Talent_Overlays"]
