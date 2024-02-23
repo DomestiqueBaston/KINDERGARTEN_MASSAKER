@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=2]
+[gd_scene load_steps=167 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -39,7 +39,6 @@
 [ext_resource path="res://SHADERS/Outline_Invisible.shader" type="Shader" id=37]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_ON.wav" type="AudioStream" id=38]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_OFF.wav" type="AudioStream" id=39]
-[ext_resource path="res://SHADERS/Outline_Invisible_Anim.shader" type="Shader" id=40]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -675,7 +674,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=143]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("../../Shadow:visible")
+tracks/0/path = NodePath("../../Alien:material:shader_param/mask")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -684,10 +683,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ 1.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../../Alien:material:shader")
+tracks/1/path = NodePath("../../Shadow:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -696,39 +695,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../../Alien:material:shader_param/transparency")
+tracks/2/path = NodePath("../../Alien:material:shader_param/flash")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../../Shadow:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../../Alien:material:shader_param/flash")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -739,19 +714,19 @@ tracks/4/keys = {
 resource_name = "ghost_off"
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("../../Shadow:visible")
+tracks/0/path = NodePath("../../Alien:material:shader_param/mask")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 0.5, 0.625, 0.75, 0.875, 1.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../../Alien:material:shader")
+tracks/1/path = NodePath("../../Shadow:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -760,39 +735,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 40 ), ExtResource( 9 ), ExtResource( 40 ), ExtResource( 9 ), ExtResource( 40 ) ]
+"values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0.627451 ), Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 0.878431 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../../Alien:material:shader_param/transparency")
+tracks/2/path = NodePath("../../Alien:material:shader_param/flash")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.5, 0.625, 0.75, 0.875, 1.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../../Shadow:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0.627451 ), Color( 1, 1, 1, 0.752941 ), Color( 1, 1, 1, 0.878431 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../../Alien:material:shader_param/flash")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
@@ -803,19 +754,19 @@ tracks/4/keys = {
 resource_name = "ghost_on"
 length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("../../Shadow:visible")
+tracks/0/path = NodePath("../../Alien:material:shader_param/mask")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 1.0, 0.875, 0.75, 0.625, 0.5 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../../Alien:material:shader")
+tracks/1/path = NodePath("../../Shadow:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -824,39 +775,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 40 ), ExtResource( 9 ), ExtResource( 40 ), ExtResource( 9 ), ExtResource( 40 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.333333 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../../Alien:material:shader_param/transparency")
+tracks/2/path = NodePath("../../Alien:material:shader_param/flash")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 1.0, 0.875, 0.75, 0.625, 0.5 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("../../Shadow:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.333333 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("../../Alien:material:shader_param/flash")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
@@ -868,6 +795,7 @@ resource_local_to_scene = true
 shader = ExtResource( 9 )
 shader_param/outline = Color( 0, 0, 0, 1 )
 shader_param/cooldown = Color( 0, 0, 0, 1 )
+shader_param/mask = 1.0
 shader_param/flash = false
 
 [sub_resource type="Animation" id=119]
