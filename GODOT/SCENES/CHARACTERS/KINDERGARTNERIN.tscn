@@ -3433,7 +3433,7 @@ parameters/Run/TimeScale/scale = 1.0
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -15.0
+volume_db = -7.5
 pitch_scale = 0.5
 bus = "FX"
 

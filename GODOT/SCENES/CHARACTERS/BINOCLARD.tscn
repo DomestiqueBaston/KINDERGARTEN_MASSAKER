@@ -4368,7 +4368,7 @@ bus = "FX"
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -20.0
+volume_db = -10.0
 bus = "FX"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
