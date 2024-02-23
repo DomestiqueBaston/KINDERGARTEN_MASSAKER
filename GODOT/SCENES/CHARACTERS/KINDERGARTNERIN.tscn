@@ -20,6 +20,7 @@ resource_local_to_scene = true
 shader = ExtResource( 7 )
 shader_param/outline = Color( 0, 0, 0, 1 )
 shader_param/cooldown = Color( 0, 0, 0, 1 )
+shader_param/mask = 1.0
 shader_param/flash = false
 
 [sub_resource type="Animation" id=2]
@@ -3223,6 +3224,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 char_name = "Educ"
+speed = Vector2( 200, 100 )
 default_anim = "Check"
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
