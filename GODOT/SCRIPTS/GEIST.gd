@@ -2,7 +2,7 @@ extends Node2D
 
 func start(duration):
 	$FX.play()
-	$AnimationPlayer.play("ghost")
+	$AnimationPlayer.play("ghost_on")
 	$Ghost_Timer.start(duration)
 
 func _on_Ghost_Timer_timeout():
@@ -12,4 +12,4 @@ func _on_Ghost_Timer_timeout():
 func stop():
 	$Ghost_Timer.stop()
 	$FX.stop()
-	$AnimationPlayer.play("RESET")
+	$AnimationPlayer.play("ghost_off")
