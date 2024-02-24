@@ -3,7 +3,7 @@ extends Enemy
 var vomit_blend_param := "parameters/Vomit/BlendSpace2D/blend_position"
 onready var vomit_length = $AnimationPlayer.get_animation("00_Vomit").length
 
-func _on_timer_timeout():
+func on_timer_timeout():
 
 	# running => either vomit or idle 1-3 seconds
 

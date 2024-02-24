@@ -38,21 +38,21 @@ func _ready():
 	timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = true
-	timer.connect("timeout", self, "_on_timer_timeout")
-	_init_timer()
+	timer.connect("timeout", self, "on_timer_timeout")
+	init_timer()
 
 #
 # Called once to set the animation timer the first time. May be overridden by
 # each character subclass.
 #
-func _init_timer():
+func init_timer():
 	timer.start(2 + 3 * randf())
 
 #
 # Called when the animation timer times out, to update the character's animation
 # state. May be overridden by each character subclass.
 #
-func _on_timer_timeout():
+func on_timer_timeout():
 
 	# running => stop and idle for 2-5 seconds
 

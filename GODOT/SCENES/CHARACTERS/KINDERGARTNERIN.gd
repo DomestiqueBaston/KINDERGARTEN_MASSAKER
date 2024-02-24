@@ -3,11 +3,11 @@ extends Enemy
 # length in seconds of her Check (default) animation
 var idle_length: float
 
-func _init_timer():
+func init_timer():
 	idle_length = $AnimationPlayer.get_animation("00_Check").length
 	timer.start(idle_length * (2 + randi() % 3))
 	
-func _on_timer_timeout():
+func on_timer_timeout():
 
 	# running => stop and do 2-4 Check cycles
 
