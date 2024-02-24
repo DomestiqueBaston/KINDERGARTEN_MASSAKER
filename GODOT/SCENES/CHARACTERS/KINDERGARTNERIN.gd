@@ -3,18 +3,11 @@ extends Enemy
 # length in seconds of her Check (default) animation
 var idle_length
 
-func _init_movement():
-	var dir = Globals.get_random_direction()
-	direction = dir.normalized()
-	$AnimationTree[idle_blend_param] = dir
-
-	# always start out in the Check cycle and do it 2-4 times before running
-
-	state_machine.travel(default_anim)
-	is_running = false
+func _init_timer():
 	idle_length = $AnimationPlayer.get_animation("00_Check").length
 	timer.start(idle_length * (2 + randi() % 3))
 
+	
 func _on_timer_timeout():
 
 	# running => stop and do 2-4 Check cycles
