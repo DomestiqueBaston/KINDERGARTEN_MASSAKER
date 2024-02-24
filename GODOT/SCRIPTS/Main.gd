@@ -513,8 +513,9 @@ func start_mirror_images():
 		var offset = dir.normalized() * 10
 		var mirror = alien_scene.instance()
 		alien.get_parent().add_child_below_node(alien, mirror)
-		mirror.start_mirror(MIRROR_IMAGE_duration, alien.position + offset, dir)
 		mirror.add_to_group("mirror_images");
+		mirror.start_mirror(MIRROR_IMAGE_duration, alien.position + offset, dir)
+		mirror.show()
 
 func start_invisible():
 	alien.start_cooldown(INVISIBLE_cooldown)
