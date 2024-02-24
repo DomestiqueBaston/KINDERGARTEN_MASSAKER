@@ -356,6 +356,10 @@ tracks/0/keys = {
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
+spawn_first_time = 3.0
+spawn_cycle_time = 1.0
+kids_on_camera = 6
+kids_off_camera = 12
 DASH_duration = 0.3
 DASH_run_speed = 6
 
