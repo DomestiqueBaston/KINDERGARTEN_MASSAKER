@@ -1,12 +1,11 @@
 extends Enemy
 
 # length in seconds of her Check (default) animation
-var idle_length
+var idle_length: float
 
 func _init_timer():
 	idle_length = $AnimationPlayer.get_animation("00_Check").length
 	timer.start(idle_length * (2 + randi() % 3))
-
 	
 func _on_timer_timeout():
 
