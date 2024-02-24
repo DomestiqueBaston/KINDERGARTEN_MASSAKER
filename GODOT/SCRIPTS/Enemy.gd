@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+class_name Enemy
+
 export var char_name: String
 export var speed := Vector2(100, 50)
 export var default_anim := "Idle"
@@ -27,26 +29,39 @@ func _ready():
 	add_child(timer)
 	timer.one_shot = true
 	timer.connect("timeout", self, "_on_timer_timeout")
-	timer.start(3 * randf())
 
+	_init_movement()
+
+#
+# Called once to set up the character's initial animation state. May be
+# overridden by each character subclass.
+#
+func _init_movement():
 	var dir = Globals.get_random_direction()
 	direction = dir.normalized()
-
 	if randf() < 0.5:
 		$AnimationTree[idle_blend_param] = dir
 		state_machine.travel(default_anim)
+		is_running = false
 	else:
 		$AnimationTree[run_blend_param] = dir
 		state_machine.travel(run_anim)
+		is_running = true
+	timer.start(5 * randf())
 
+#
+# Called when the animation timer times out, to update the character's animation
+# state. May be overridden by each character subclass.
+#
 func _on_timer_timeout():
 	if is_running:
 		$AnimationTree[idle_blend_param] = $AnimationTree[run_blend_param]
 		state_machine.travel(default_anim)
+		is_running = false
 	else:
 		$AnimationTree[run_blend_param] = $AnimationTree[idle_blend_param]
 		state_machine.travel(run_anim)
-	is_running = not is_running
+		is_running = true
 	timer.start(2 + 3 * randf())
 
 func _physics_process(_delta):
