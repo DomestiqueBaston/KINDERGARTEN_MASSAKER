@@ -258,7 +258,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 59 ) ]
+"values": [ Vector2( 0, 63 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -656,7 +656,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -29, 22 ) ]
+"values": [ Vector2( -40, 25 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -1054,7 +1054,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 33, 23 ) ]
+"values": [ Vector2( 38, 30 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -1452,7 +1452,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 8 ) ]
+"values": [ Vector2( -1, 13 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -1850,7 +1850,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -31, 56 ) ]
+"values": [ Vector2( -27, 56 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -2248,7 +2248,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 38, 47 ) ]
+"values": [ Vector2( 38, 50 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -2646,7 +2646,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -45, 36 ) ]
+"values": [ Vector2( -49, 38 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -3044,7 +3044,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 38, 37 ) ]
+"values": [ Vector2( 33, 32 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -3396,7 +3396,7 @@ nodes/BlendSpace2D/position = Vector2( 420, 140 )
 nodes/TimeScale/node = SubResource( 97 )
 nodes/TimeScale/position = Vector2( 680, 200 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=99]
 animation = "00_Run"
@@ -3449,7 +3449,7 @@ nodes/BlendSpace2D/position = Vector2( 360, 140 )
 nodes/TimeScale/node = SubResource( 108 )
 nodes/TimeScale/position = Vector2( 660, 240 )
 nodes/output/position = Vector2( 880, 140 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=110]
 animation = "00_Vomit"
@@ -3502,7 +3502,7 @@ nodes/BlendSpace2D/position = Vector2( 380, 180 )
 nodes/TimeScale/node = SubResource( 119 )
 nodes/TimeScale/position = Vector2( 660, 240 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=121]
 animation = "00_Waving"
@@ -3555,7 +3555,7 @@ nodes/BlendSpace2D/position = Vector2( 360, 160 )
 nodes/TimeScale/node = SubResource( 130 )
 nodes/TimeScale/position = Vector2( 640, 240 )
 nodes/output/position = Vector2( 840, 180 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=132]
 
@@ -3677,7 +3677,6 @@ __meta__ = {
 }
 
 [node name="Point_of_Vomit_Spawn" type="Position2D" parent="."]
-visible = false
 position = Vector2( 0, 56 )
 __meta__ = {
 "_edit_lock_": true
@@ -3688,6 +3687,9 @@ position = Vector2( -4, 16 )
 scale = Vector2( 0.5, 0.4 )
 color = Color( 0, 0.101961, 0, 0.392157 )
 polygon = PoolVector2Array( -14, 45, -12.2222, 36, -9, 30, -2.22222, 26, 6, 25, 14.4444, 26, 22, 30, 25.5556, 36, 27, 45, 25.5556, 54, 22, 60, 14.4444, 64, 6, 65, -2.22222, 64, -9, 60, -12.2222, 54 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Vomito" type="Sprite" parent="."]
 material = SubResource( 142 )
