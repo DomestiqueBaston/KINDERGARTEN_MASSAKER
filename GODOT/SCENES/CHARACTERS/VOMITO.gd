@@ -29,9 +29,16 @@ func _on_timer_timeout():
 		$AnimationTree[run_blend_param] = $AnimationTree[idle_blend_param]
 		state_machine.travel(run_anim)
 		var time_to_wait = 2 + 3 * randf()
+
+		# We set the timer above to go off during the Vomit cycle, to ensure
+		# that travel("Run") is called before the cycle ends. The AnimationTree
+		# won't transition to Run until the end of the Vomit cycle, so we have
+		# to add to the timer however much time is remaining in the cycle.
+
 		if state_machine.get_current_node() == "Vomit":
 			time_to_wait += (state_machine.get_current_length() -
 							 state_machine.get_current_play_position())
+
 		timer.start(time_to_wait)
 
 	is_running = not is_running
