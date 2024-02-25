@@ -310,9 +310,9 @@ func get_random_kid() -> PackedScene:
 		return spitting_kid_scene
 	elif rand < 0.55:
 		return stick_kid_scene
-	elif rand < 0.74:
+	elif rand < 0.76:
 		return booger_kid_scene
-	elif rand < 0.87:
+	elif rand < 0.9:
 		return crying_kid_scene
 	else:
 		return vomiting_kid_scene
