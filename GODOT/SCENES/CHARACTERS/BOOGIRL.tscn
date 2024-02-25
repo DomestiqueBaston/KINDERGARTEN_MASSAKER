@@ -11,7 +11,7 @@
 height = 10.0
 
 [sub_resource type="CapsuleShape2D" id=94]
-radius = 44.0
+radius = 50.9999
 height = 30.0
 
 [sub_resource type="CapsuleShape2D" id=95]
@@ -201,7 +201,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 114 ) ]
+"values": [ Vector2( 0, 200 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -302,7 +302,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 114 ) ]
+"values": [ Vector2( 0, 200 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -611,7 +611,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, -27 ) ]
+"values": [ Vector2( -163, -82 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -712,7 +712,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, -27 ) ]
+"values": [ Vector2( -163, -82 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -1021,7 +1021,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, -27 ) ]
+"values": [ Vector2( 163, -82 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -1122,7 +1122,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, -27 ) ]
+"values": [ Vector2( 163, -82 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -1407,7 +1407,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -48 ) ]
+"values": [ Vector2( 0, -125 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("../Alien_Detection_Collider/ADCollider:disabled")
@@ -1520,7 +1520,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -48 ) ]
+"values": [ Vector2( 0, -125 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -1829,7 +1829,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, 93 ) ]
+"values": [ Vector2( -144, 100 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -1930,7 +1930,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, 93 ) ]
+"values": [ Vector2( -144, 100 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -2239,7 +2239,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, 93 ) ]
+"values": [ Vector2( 144, 100 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -2340,7 +2340,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, 93 ) ]
+"values": [ Vector2( 144, 100 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -2649,7 +2649,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -109, 34 ) ]
+"values": [ Vector2( -193, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -2750,7 +2750,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -109, 34 ) ]
+"values": [ Vector2( -193, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -3059,7 +3059,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 109, 34 ) ]
+"values": [ Vector2( 193, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -3160,7 +3160,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 109, 34 ) ]
+"values": [ Vector2( 193, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -3480,7 +3480,7 @@ nodes/BlendSpace2D/position = Vector2( 380, 160 )
 nodes/TimeScale/node = SubResource( 105 )
 nodes/TimeScale/position = Vector2( 659, 186 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=107]
 animation = "00_Idle"
@@ -3533,7 +3533,7 @@ nodes/BlendSpace2D/position = Vector2( 280, 160 )
 nodes/TimeScale/node = SubResource( 116 )
 nodes/TimeScale/position = Vector2( 569, 188 )
 nodes/output/position = Vector2( 780, 160 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=118]
 animation = "00_Run"
@@ -3586,7 +3586,7 @@ nodes/BlendSpace2D/position = Vector2( 280, 180 )
 nodes/TimeScale/node = SubResource( 127 )
 nodes/TimeScale/position = Vector2( 577, 224 )
 nodes/output/position = Vector2( 860, 180 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=129]
 animation = "00_Waving"
@@ -3639,7 +3639,7 @@ nodes/BlendSpace2D/position = Vector2( 300, 160 )
 nodes/TimeScale/node = SubResource( 138 )
 nodes/TimeScale/position = Vector2( 587, 193 )
 nodes/output/position = Vector2( 820, 180 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=140]
 
