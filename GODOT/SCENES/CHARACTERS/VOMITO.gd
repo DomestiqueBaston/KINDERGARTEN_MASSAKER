@@ -13,7 +13,7 @@ func on_timer_timeout():
 
 		# vomit until end of cycle (transition out of Vomit is AtEnd)
 
-		if randf() < 0.5:
+		if randf() < 0.33:
 			state_machine.travel("Vomit")
 			timer.start(vomit_length * 0.5)
 
