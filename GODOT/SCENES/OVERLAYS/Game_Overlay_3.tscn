@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://SHADERS/Glitch.shader" type="Shader" id=1]
 [ext_resource path="res://SCENES/OVERLAYS/Game_Overlay_3.gd" type="Script" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/SCREEN_SHUT_DOWN/White_noise.wav" type="AudioStream" id=3]
 
 [sub_resource type="ShaderMaterial" id=14]
 shader = ExtResource( 1 )
@@ -60,6 +61,28 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("White_noise:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("White_noise")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
 
 [sub_resource type="Animation" id=16]
 resource_name = "animation"
@@ -112,6 +135,32 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 0.0, 0.5 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("White_noise:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ -80.0, 2.5 ]
+}
+tracks/5/type = "audio"
+tracks/5/path = NodePath("White_noise")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [node name="Game_overlay_3" type="CanvasLayer"]
 physics_interpolation_mode = 1
@@ -125,3 +174,7 @@ margin_bottom = 270.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 15 )
 anims/animation = SubResource( 16 )
+
+[node name="White_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -80.0

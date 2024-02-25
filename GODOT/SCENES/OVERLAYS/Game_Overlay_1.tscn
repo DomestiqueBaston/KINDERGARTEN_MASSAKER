@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://SCENES/OVERLAYS/Game_Overlay_1.gd" type="Script" id=1]
 [ext_resource path="res://SHADERS/Glitch_Effect_A.shader" type="Shader" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/SCREEN_SHUT_DOWN/White_noise.wav" type="AudioStream" id=3]
 [ext_resource path="res://SHADERS/TV.shader" type="Shader" id=6]
 
 [sub_resource type="ShaderMaterial" id=3]
@@ -19,11 +20,11 @@ shader_param/distort_intensity = 0.002
 shader_param/noise_opacity = 0.35
 shader_param/noise_speed = 5.0
 shader_param/static_noise_intensity = 0.0
-shader_param/aberration = 0.0
-shader_param/brightness = 1.0
+shader_param/aberration = -0.001
+shader_param/brightness = 0.999
 shader_param/discolor = true
-shader_param/saturation = 0.0
-shader_param/contrast = 1.001
+shader_param/saturation = -0.001
+shader_param/contrast = 0.999
 shader_param/warp_amount = 0.0
 shader_param/clip_warp = false
 
@@ -158,6 +159,28 @@ tracks/9/keys = {
 "update": 0,
 "values": [ 0.1 ]
 }
+tracks/10/type = "audio"
+tracks/10/path = NodePath("White_noise")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = false
+tracks/10/keys = {
+"clips": [  ],
+"times": PoolRealArray(  )
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("White_noise:volume_db")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
 
 [sub_resource type="Animation" id=14]
 resource_name = "general"
@@ -269,6 +292,32 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1.5, 1.5 ),
 "update": 0,
 "values": [ 0.1, 5.0 ]
+}
+tracks/9/type = "audio"
+tracks/9/path = NodePath("White_noise")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("White_noise:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 60 ),
+"transitions": PoolRealArray( 0.5, 1 ),
+"update": 0,
+"values": [ -80.0, 2.5 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -573,3 +622,8 @@ anims/saturation = SubResource( 28 )
 [node name="Contrast_neg" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 29 )
 anims/contrast = SubResource( 30 )
+
+[node name="White_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -80.0
+bus = "FX"
