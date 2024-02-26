@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=2]
+[gd_scene load_steps=103 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/BOOGIRL/BOOGIRL.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Woosh_B.wav" type="AudioStream" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_D.wav" type="AudioStream" id=4]
 [ext_resource path="res://SCRIPTS/Enemy.gd" type="Script" id=5]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=6]
+[ext_resource path="res://SCRIPTS/CyclePlayer.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape2D" id=90]
 height = 10.0
@@ -3716,7 +3717,6 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
-char_name = "Boogirl"
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
@@ -3822,6 +3822,10 @@ anims/90G_Idle = SubResource( 29 )
 anims/90G_Run = SubResource( 30 )
 anims/90G_Waving = SubResource( 32 )
 anims/RESET = SubResource( 33 )
+
+[node name="CyclePlayer" type="Node" parent="."]
+script = ExtResource( 7 )
+anim_player_path = NodePath("../AnimationPlayer")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )

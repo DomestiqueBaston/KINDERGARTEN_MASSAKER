@@ -17,8 +17,8 @@ signal teleport
 # signal emitted when the ghost effect wears off
 signal ghost_done
 
-var state_machine: AnimationNodeStateMachinePlayback
 var direction := Vector2.DOWN
+var scratch_interval := 0.0
 var accelerate := 1.0
 var mirror := false
 
@@ -32,8 +32,6 @@ enum State {
 var state = State.MOVE
 
 func _ready():
-	$AnimationTree.active = true
-	state_machine = $AnimationTree["parameters/playback"]
 	reset()
 
 #
@@ -42,13 +40,11 @@ func _ready():
 #
 func reset():
 	direction = Vector2.DOWN
-	$AnimationTree["parameters/Idle/blend_position"] = direction
-	$AnimationTree["parameters/Scratching/blend_position"] = direction
-	$AnimationTree["parameters/Run/Blend/blend_position"] = direction
-	$AnimationTree["parameters/Run/TimeScale/scale"] = 1
+	scratch_interval = $AnimationPlayer.get_animation("00_Idle").length - 0.1
+	$CyclePlayer.set_direction_vector(direction)
+	$CyclePlayer.stop()
 	set_physics_process(false)
 	stop_cooldown()
-	state_machine.stop()
 	state = State.MOVE
 
 #
@@ -57,7 +53,7 @@ func reset():
 # and a "beam_down_finished" signal is emitted.
 #
 func beam_down():
-	state_machine.travel("Idle")
+	$CyclePlayer.play("Idle")
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
 	# to ensure alien is invisible, in particular...
 	$Beam_Down_Rear/AnimationPlayer.advance(0)
@@ -70,14 +66,7 @@ func _on_beam_down_finished(_anim_name):
 # Returns true if the alien is busy scratching himself.
 #
 func is_scratching() -> bool:
-
-	# NB. state may be set to SCRATCHING in _physics_process() as soon as the
-	# alien first starts idling, but he doesn't actually start scratching until
-	# the end of the idle cycle is reached, which is why we need to test the
-	# current node in the state machine
-
-	return (state == State.SCRATCH and
-			state_machine.get_current_node() == "Scratching")
+	return state == State.SCRATCH
 
 func _physics_process(_delta):
 
@@ -86,9 +75,8 @@ func _physics_process(_delta):
 	if mirror:
 		var dir = move_and_slide(direction * speed * accelerate)
 		if get_slide_count() > 0:
-			dir = Globals.get_nearest_direction(dir)
-			$AnimationTree["parameters/Run/Blend/blend_position"] = dir
 			direction = dir.normalized()
+			$CyclePlayer.set_direction_vector(direction)
 		return
 
 	# can't do anything else while scratching
@@ -123,31 +111,28 @@ func _physics_process(_delta):
 
 		if state == State.MOVE:
 			next_state = State.FIRST_IDLE
-		elif state == State.FIRST_IDLE and randf() < scratch_chances:
-			next_state = State.SCRATCH
-		elif state != State.SCRATCH:
-			next_state = State.IDLE
-
-		# NB. transitions in the animation tree to/from Scratching are in "at
-		# end" switch mode, so a switch between Scratching and Idle doesn't
-		# happen right away
+		elif (state == State.FIRST_IDLE and
+			  "Idle" in $AnimationPlayer.current_animation and
+			  $AnimationPlayer.current_animation_position >= scratch_interval):
+			if randf() < scratch_chances:
+				next_state = State.SCRATCH
+			else:
+				next_state = State.IDLE
 
 		if state != next_state:
 			if next_state == State.SCRATCH:
-				state_machine.travel("Scratching")
-			else:
-				state_machine.travel("Idle")
+				$CyclePlayer.play("Idle", true)
+				$CyclePlayer.play("Scratching", true)
+			$CyclePlayer.play("Idle")
 			state = next_state
 
 	# otherwise => run
 
 	else:
-		$AnimationTree["parameters/Idle/blend_position"] = dir
-		$AnimationTree["parameters/Scratching/blend_position"] = dir
-		$AnimationTree["parameters/Run/Blend/blend_position"] = dir
-		state_machine.travel("Run")
 		state = State.MOVE
 		direction = dir.normalized()
+		$CyclePlayer.set_direction_vector(direction)
+		$CyclePlayer.play("Run")
 		move_and_slide(direction * speed * accelerate)
 
 #
@@ -155,7 +140,7 @@ func _physics_process(_delta):
 # default).
 #
 func set_run_cycle_speed(multiplier: float):
-	$AnimationTree["parameters/Run/TimeScale/scale"] = multiplier
+	$CyclePlayer.set_speed(multiplier)
 
 #
 # Sets a multiplier for the speed of the alien's movements (1 by default).
@@ -222,12 +207,12 @@ func stop_force_field():
 # self-destruct.
 #
 func start_mirror(duration: float, pos: Vector2, dir: Vector2):
-	position = pos
-	$AnimationTree["parameters/Run/Blend/blend_position"] = dir
-	direction = dir.normalized()
-	state_machine.travel("Run")
 	flash()
 	mirror = true
+	position = pos
+	direction = dir.normalized()
+	$CyclePlayer.set_direction_vector(dir)
+	$CyclePlayer.play("Run")
 	set_physics_process(true)
 	var flash_time = $Flash.get_animation("flash").length
 	var timer = Timer.new()
@@ -291,3 +276,7 @@ func is_cooldown_active() -> bool:
 #
 func flash():
 	$Flash.play("flash")
+
+func _on_AnimationPlayer_animation_changed(old_name, _new_name):
+	if state == State.SCRATCH and "Scratching" in old_name:
+		state = State.IDLE

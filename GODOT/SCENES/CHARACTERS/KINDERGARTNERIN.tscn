@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://SCENES/CHARACTERS/KINDERGARTNERIN.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_H.wav" type="AudioStream" id=5]
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_C.wav" type="AudioStream" id=6]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=7]
+[ext_resource path="res://SCRIPTS/CyclePlayer.gd" type="Script" id=8]
 
 [sub_resource type="CapsuleShape2D" id=85]
 radius = 16.0
@@ -3331,7 +3332,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-char_name = "Educ"
 speed = Vector2( 200, 100 )
 default_anim = "Check"
 
@@ -3417,6 +3417,10 @@ anims/90G_No = SubResource( 28 )
 anims/90G_OMG = SubResource( 30 )
 anims/90G_Run = SubResource( 29 )
 anims/RESET = SubResource( 4 )
+
+[node name="CyclePlayer" type="Node" parent="."]
+script = ExtResource( 8 )
+anim_player_path = NodePath("../AnimationPlayer")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 46 )

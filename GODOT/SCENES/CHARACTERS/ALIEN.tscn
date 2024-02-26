@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=2]
+[gd_scene load_steps=169 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -39,6 +39,7 @@
 [ext_resource path="res://SHADERS/Outline_Invisible.shader" type="Shader" id=37]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_ON.wav" type="AudioStream" id=38]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_OFF.wav" type="AudioStream" id=39]
+[ext_resource path="res://SCRIPTS/CyclePlayer.gd" type="Script" id=40]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -7134,6 +7135,10 @@ anims/90G_Run = SubResource( 30 )
 anims/90G_Scratching = SubResource( 104 )
 anims/RESET = SubResource( 33 )
 
+[node name="CyclePlayer" type="Node" parent="."]
+script = ExtResource( 40 )
+anim_player_path = NodePath("../AnimationPlayer")
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )
 anim_player = NodePath("../AnimationPlayer")
@@ -7203,4 +7208,5 @@ one_shot = true
 [connection signal="done" from="Talent/Ghost" to="." method="_on_ghost_done"]
 [connection signal="timeout" from="Talent/Ghost/Ghost_Timer" to="Talent/Ghost" method="_on_Ghost_Timer_timeout"]
 [connection signal="animation_finished" from="Talent/Ghost/AnimationPlayer" to="Talent/Ghost" method="_on_animation_finished"]
+[connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_changed"]
 [connection signal="timeout" from="Cooldown_Timer" to="." method="_on_Cooldown_Timer_timeout"]

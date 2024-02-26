@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Woosh_B.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_F.wav" type="AudioStream" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=7]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Cries_D.wav" type="AudioStream" id=8]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Finish_crying_run.wav" type="AudioStream" id=9]
+[ext_resource path="res://SCRIPTS/CyclePlayer.gd" type="Script" id=10]
 
 [sub_resource type="CapsuleShape2D" id=91]
 radius = 11.0
@@ -4400,7 +4401,7 @@ nodes/BlendSpace2D/position = Vector2( 160, 120 )
 nodes/TimeScale/node = SubResource( 106 )
 nodes/TimeScale/position = Vector2( 380, 140 )
 nodes/output/position = Vector2( 620, 160 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=108]
 animation = "00_Kick"
@@ -4453,7 +4454,7 @@ nodes/BlendSpace2D/position = Vector2( 217, 224 )
 nodes/TimeScale/node = SubResource( 117 )
 nodes/TimeScale/position = Vector2( 520, 160 )
 nodes/output/position = Vector2( 740, 180 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=119]
 animation = "00_Run"
@@ -4506,7 +4507,7 @@ nodes/BlendSpace2D/position = Vector2( 240, 160 )
 nodes/TimeScale/node = SubResource( 128 )
 nodes/TimeScale/position = Vector2( 460, 160 )
 nodes/output/position = Vector2( 640, 200 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=130]
 animation = "00_Waving"
@@ -4559,7 +4560,7 @@ nodes/BlendSpace2D/position = Vector2( 160, 100 )
 nodes/TimeScale/node = SubResource( 139 )
 nodes/TimeScale/position = Vector2( 400, 160 )
 nodes/output/position = Vector2( 600, 180 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=141]
 
@@ -4636,7 +4637,6 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
-char_name = "Binoclard"
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
@@ -4750,6 +4750,10 @@ anims/90G_Kick = SubResource( 31 )
 anims/90G_Run = SubResource( 30 )
 anims/90G_Waving = SubResource( 32 )
 anims/RESET = SubResource( 33 )
+
+[node name="CyclePlayer" type="Node" parent="."]
+script = ExtResource( 10 )
+anim_player_path = NodePath("../AnimationPlayer")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 70 )
