@@ -3480,7 +3480,7 @@ nodes/BlendSpace2D/position = Vector2( 380, 160 )
 nodes/TimeScale/node = SubResource( 105 )
 nodes/TimeScale/position = Vector2( 659, 186 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=107]
 animation = "00_Idle"
@@ -3533,7 +3533,7 @@ nodes/BlendSpace2D/position = Vector2( 280, 160 )
 nodes/TimeScale/node = SubResource( 116 )
 nodes/TimeScale/position = Vector2( 569, 188 )
 nodes/output/position = Vector2( 780, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=118]
 animation = "00_Run"
@@ -3586,7 +3586,7 @@ nodes/BlendSpace2D/position = Vector2( 280, 180 )
 nodes/TimeScale/node = SubResource( 127 )
 nodes/TimeScale/position = Vector2( 577, 224 )
 nodes/output/position = Vector2( 860, 180 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=129]
 animation = "00_Waving"
@@ -3639,7 +3639,7 @@ nodes/BlendSpace2D/position = Vector2( 300, 160 )
 nodes/TimeScale/node = SubResource( 138 )
 nodes/TimeScale/position = Vector2( 587, 193 )
 nodes/output/position = Vector2( 820, 180 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=140]
 
@@ -3836,12 +3836,12 @@ parameters/Run/TimeScale/scale = 1.0
 parameters/Waving/BlendSpace2D/blend_position = Vector2( 0, 0 )
 parameters/Waving/TimeScale/scale = 1.0
 
-[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
 bus = "FX"
 
-[node name="Booger" type="AudioStreamPlayer" parent="."]
+[node name="Booger" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 volume_db = -10.0
 pitch_scale = 4.0

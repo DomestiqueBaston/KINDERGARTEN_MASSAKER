@@ -3489,7 +3489,7 @@ nodes/BlendSpace2D/position = Vector2( 320, 120 )
 nodes/TimeScale/node = SubResource( 97 )
 nodes/TimeScale/position = Vector2( 620, 220 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=99]
 animation = "00_Run"
@@ -3542,7 +3542,7 @@ nodes/BlendSpace2D/position = Vector2( 326, 198 )
 nodes/TimeScale/node = SubResource( 108 )
 nodes/TimeScale/position = Vector2( 577, 200 )
 nodes/output/position = Vector2( 840, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=110]
 animation = "00_Spit"
@@ -3595,7 +3595,7 @@ nodes/BlendSpace2D/position = Vector2( 380, 160 )
 nodes/TimeScale/node = SubResource( 119 )
 nodes/TimeScale/position = Vector2( 660, 200 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=121]
 animation = "00_Waving"
@@ -3648,7 +3648,7 @@ nodes/BlendSpace2D/position = Vector2( 340, 160 )
 nodes/TimeScale/node = SubResource( 130 )
 nodes/TimeScale/position = Vector2( 620, 240 )
 nodes/output/position = Vector2( 880, 180 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=132]
 
@@ -3845,12 +3845,12 @@ parameters/Spit/TimeScale/scale = 1.0
 parameters/Waving/BlendSpace2D/blend_position = Vector2( 0, 0 )
 parameters/Waving/TimeScale/scale = 1.0
 
-[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
 bus = "FX"
 
-[node name="Spit" type="AudioStreamPlayer" parent="."]
+[node name="Spit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 volume_db = -10.0
 bus = "FX"

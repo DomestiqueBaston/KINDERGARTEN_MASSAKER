@@ -211,12 +211,12 @@ root_node = NodePath("../Sprite")
 anims/RESET = SubResource( 1 )
 anims/Screen_Shut_Down = SubResource( 2 )
 
-[node name="Screen_shut_down" type="AudioStreamPlayer" parent="."]
+[node name="Screen_shut_down" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
 volume_db = 15.0
 bus = "FX"
 
-[node name="White_noise" type="AudioStreamPlayer" parent="."]
+[node name="White_noise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = 5.0
 bus = "FX"

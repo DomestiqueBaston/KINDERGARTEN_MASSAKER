@@ -4764,22 +4764,22 @@ parameters/Run/TimeScale/scale = 1.0
 parameters/Waving/BlendSpace2D/blend_position = Vector2( 0, 0 )
 parameters/Waving/TimeScale/scale = 1.0
 
-[node name="Kick" type="AudioStreamPlayer" parent="."]
+[node name="Kick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
 volume_db = -10.0
 pitch_scale = 2.0
 bus = "FX"
 
-[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 volume_db = -10.0
 bus = "FX"
 
-[node name="Cries" type="AudioStreamPlayer" parent="."]
+[node name="Cries" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
 bus = "FX"
 
-[node name="Finishing_cries" type="AudioStreamPlayer" parent="."]
+[node name="Finishing_cries" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
 bus = "FX"
 

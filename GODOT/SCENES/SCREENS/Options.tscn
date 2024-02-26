@@ -391,7 +391,7 @@ anims/2_2_flash = SubResource( 9 )
 anims/3_0_flash = SubResource( 10 )
 anims/RESET = SubResource( 11 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
 autoplay = true
 bus = "AMBIANCE"

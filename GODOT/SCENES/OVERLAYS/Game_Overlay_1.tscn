@@ -623,7 +623,7 @@ anims/saturation = SubResource( 28 )
 anims/RESET = SubResource( 29 )
 anims/contrast = SubResource( 30 )
 
-[node name="White_noise" type="AudioStreamPlayer" parent="."]
+[node name="White_noise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = -80.0
 bus = "FX"

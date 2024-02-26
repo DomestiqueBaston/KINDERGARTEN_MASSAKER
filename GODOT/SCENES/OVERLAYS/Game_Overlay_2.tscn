@@ -312,6 +312,6 @@ margin_bottom = 270.0
 anims/RESET = SubResource( 8 )
 anims/animation = SubResource( 9 )
 
-[node name="White_noise" type="AudioStreamPlayer" parent="."]
+[node name="White_noise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 volume_db = -80.0

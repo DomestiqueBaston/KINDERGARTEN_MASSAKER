@@ -383,7 +383,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FX" type="AudioStreamPlayer" parent="Talents/Dash"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Talents/Dash"]
 stream = ExtResource( 22 )
 bus = "FX"
 
@@ -408,7 +408,7 @@ anims/RESET = SubResource( 5 )
 anims/time_restart = SubResource( 6 )
 anims/time_stop = SubResource( 4 )
 
-[node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Time_Stop"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Talent_Overlays/Time_Stop"]
 stream = ExtResource( 21 )
 bus = "FX"
 
@@ -433,11 +433,11 @@ __meta__ = {
 "_editor_description_": "Audio: Track A for Mirror_Images and track B for Bullet_Time!"
 }
 
-[node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Mirror_Images"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Talent_Overlays/Mirror_Images"]
 stream = ExtResource( 16 )
 bus = "FX"
 
-[node name="PLOP" type="AudioStreamPlayer" parent="Talent_Overlays/Mirror_Images"]
+[node name="PLOP" type="AudioStreamPlayer2D" parent="Talent_Overlays/Mirror_Images"]
 stream = ExtResource( 15 )
 volume_db = -5.0
 bus = "FX"
@@ -464,7 +464,7 @@ __meta__ = {
 anims/RESET = SubResource( 8 )
 anims/techniker = SubResource( 9 )
 
-[node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Techniker"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Talent_Overlays/Techniker"]
 stream = ExtResource( 19 )
 bus = "FX"
 
@@ -494,7 +494,7 @@ __meta__ = {
 "_editor_description_": "Audio: Track A for Mirror_Images and track B for Bullet_Time!"
 }
 
-[node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Bullet_Time"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Talent_Overlays/Bullet_Time"]
 stream = ExtResource( 18 )
 bus = "FX"
 
@@ -515,23 +515,23 @@ visible = false
 
 [node name="CRT_Overlay" parent="." instance=ExtResource( 2 )]
 
-[node name="Menu_Music" type="AudioStreamPlayer" parent="."]
+[node name="Menu_Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 volume_db = 5.0
 autoplay = true
 bus = "MUSIC"
 
-[node name="Background_Sound" type="AudioStreamPlayer" parent="."]
+[node name="Background_Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
 volume_db = -5.0
 bus = "AMBIANCE"
 
-[node name="Intro_Music" type="AudioStreamPlayer" parent="."]
+[node name="Intro_Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
 volume_db = 5.0
 bus = "MUSIC"
 
-[node name="Game_Music" type="AudioStreamPlayer" parent="."]
+[node name="Game_Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
 bus = "MUSIC"
 

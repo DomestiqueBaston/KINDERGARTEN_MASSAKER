@@ -142,7 +142,7 @@ autoplay = "Smoke"
 anims/RESET = SubResource( 1 )
 anims/Smoke = SubResource( 2 )
 
-[node name="Booger_explosion" type="AudioStreamPlayer" parent="."]
+[node name="Booger_explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = -5.0
 bus = "FX"

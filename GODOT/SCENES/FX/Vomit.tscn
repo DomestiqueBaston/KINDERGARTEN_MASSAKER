@@ -166,6 +166,6 @@ reset_on_save = false
 anims/RESET = SubResource( 1 )
 anims/Spilling_Vomit = SubResource( 2 )
 
-[node name="Vomit" type="AudioStreamPlayer" parent="."]
+[node name="Vomit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 bus = "FX"

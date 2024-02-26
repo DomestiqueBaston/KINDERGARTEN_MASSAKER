@@ -9,18 +9,18 @@
 [node name="SoundFX" type="Node"]
 script = ExtResource( 5 )
 
-[node name="Up" type="AudioStreamPlayer" parent="."]
+[node name="Up" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 bus = "FX"
 
-[node name="Down" type="AudioStreamPlayer" parent="."]
+[node name="Down" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
 bus = "FX"
 
-[node name="Cancel" type="AudioStreamPlayer" parent="."]
+[node name="Cancel" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 bus = "FX"
 
-[node name="OK" type="AudioStreamPlayer" parent="."]
+[node name="OK" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
 bus = "FX"
