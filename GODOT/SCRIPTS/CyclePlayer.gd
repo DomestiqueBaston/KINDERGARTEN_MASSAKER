@@ -74,13 +74,20 @@ func _ready():
 #
 func play(anim: String, block := false):
 
+	# if we're already playing that animation, do nothing, or maybe just change
+	# its blocking status, if possible
+
 	if anim_queue.size() > 0:
 		var req = anim_queue.front()
-		if req.name == anim and req.block == block:
-			return
+		if req.name == anim:
+			if req.block == block:
+				return
+			elif block or anim_queue.size() == 1:
+				req.block = block
+				return
 
-	# if the last animation requested is not blocking, the new animation will
-	# replace it
+	# if the last animation requested is not blocking, the new animation
+	# replaces it
 
 	if anim_queue.size() > 0 and not anim_queue.back().block:
 		anim_queue.pop_back()
@@ -93,10 +100,6 @@ func play(anim: String, block := false):
 
 	if anim_queue.size() > 0:
 		anim_player.queue(full_name)
-	elif anim_player.is_playing():
-		var t = anim_player.current_animation_position
-		anim_player.play(full_name)
-		anim_player.seek(t)
 	else:
 		anim_player.play(full_name)
 
