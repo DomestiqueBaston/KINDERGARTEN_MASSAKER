@@ -347,18 +347,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0.176512, 0.48927 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=4]
 resource_name = "00_Waving"
@@ -756,18 +744,6 @@ tracks/8/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.176512, 0.486578 )
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1167,18 +1143,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0.174834, 0.486578 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=12]
 resource_name = "135G_Waving"
@@ -1564,18 +1528,6 @@ tracks/8/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.176512, 0.486578 )
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -1975,18 +1927,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0.17819, 0.484901 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=20]
 resource_name = "45D_Waving"
@@ -2384,18 +2324,6 @@ tracks/8/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.174834, 0.484901 )
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -2795,18 +2723,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0.176512, 0.484901 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=28]
 resource_name = "90D_Waving"
@@ -3205,18 +3121,6 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0.174834, 0.4849 )
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=32]
 resource_name = "90G_Waving"
@@ -3404,30 +3308,6 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 7.62939e-06, 80 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Booger:volume_db")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Footsteps:volume_db")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=96]
@@ -3842,13 +3722,15 @@ parameters/Waving/TimeScale/scale = 1.0
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
+max_distance = 250.0
+attenuation = 0.5
 bus = "FX"
 
 [node name="Booger" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
-volume_db = -10.0
 pitch_scale = 4.0
+max_distance = 250.0
+attenuation = 0.5
 bus = "FX"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

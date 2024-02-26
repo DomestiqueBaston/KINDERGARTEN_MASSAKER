@@ -131,7 +131,6 @@ __meta__ = {
 position = Vector2( 0, 0.5 )
 texture = ExtResource( 1 )
 hframes = 5
-frame = 4
 __meta__ = {
 "_edit_lock_": true,
 "_editor_description_": "Keep Transform Y=0.5"
@@ -141,6 +140,7 @@ __meta__ = {
 visible = false
 rotation = 1.5708
 shape = SubResource( 3 )
+disabled = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -156,6 +156,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Poison_Collider"]
 rotation = 1.5708
 shape = SubResource( 4 )
+disabled = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -168,4 +169,6 @@ anims/Spilling_Vomit = SubResource( 2 )
 
 [node name="Vomit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+max_distance = 250.0
+attenuation = 0.5
 bus = "FX"

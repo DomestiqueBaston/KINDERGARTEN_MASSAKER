@@ -440,25 +440,13 @@ tracks/9/keys = {
 } ],
 "times": PoolRealArray( 0.2, 0.5, 0.8, 1.1, 1.4, 1.7, 2, 2.3 )
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Footsteps:volume_db")
+tracks/10/type = "audio"
+tracks/10/path = NodePath("../Finishing_cries")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/11/type = "audio"
-tracks/11/path = NodePath("../Finishing_cries")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -963,25 +951,13 @@ tracks/9/keys = {
 } ],
 "times": PoolRealArray( 0.2, 0.5, 0.8, 1.1, 1.4, 1.7, 2, 2.3 )
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Footsteps:volume_db")
+tracks/10/type = "audio"
+tracks/10/path = NodePath("../Finishing_cries")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/11/type = "audio"
-tracks/11/path = NodePath("../Finishing_cries")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -1486,25 +1462,13 @@ tracks/9/keys = {
 } ],
 "times": PoolRealArray( 0.2, 0.5, 0.8, 1.1, 1.4, 1.7, 2, 2.3 )
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Footsteps:volume_db")
+tracks/10/type = "audio"
+tracks/10/path = NodePath("../Finishing_cries")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/11/type = "audio"
-tracks/11/path = NodePath("../Finishing_cries")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -1997,25 +1961,13 @@ tracks/9/keys = {
 } ],
 "times": PoolRealArray( 0.2, 0.5, 0.8, 1.1, 1.4, 1.7, 2, 2.3 )
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Footsteps:volume_db")
+tracks/10/type = "audio"
+tracks/10/path = NodePath("../Finishing_cries")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/11/type = "audio"
-tracks/11/path = NodePath("../Finishing_cries")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -2520,25 +2472,13 @@ tracks/9/keys = {
 } ],
 "times": PoolRealArray( 0.2, 0.5, 0.8, 1.1, 1.4, 1.7, 2, 2.3 )
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Footsteps:volume_db")
+tracks/10/type = "audio"
+tracks/10/path = NodePath("../Finishing_cries")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/11/type = "audio"
-tracks/11/path = NodePath("../Finishing_cries")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -3043,18 +2983,6 @@ tracks/9/keys = {
 } ],
 "times": PoolRealArray( 0.2, 0.5, 0.8, 1.1, 1.4, 1.7, 2, 2.3 )
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Footsteps:volume_db")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="Animation" id=24]
 resource_name = "45G_Waving"
@@ -3552,25 +3480,13 @@ tracks/9/keys = {
 } ],
 "times": PoolRealArray( 0.2, 0.5, 0.8, 1.1, 1.4, 1.7, 2, 2.3 )
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Footsteps:volume_db")
+tracks/10/type = "audio"
+tracks/10/path = NodePath("../Finishing_cries")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/11/type = "audio"
-tracks/11/path = NodePath("../Finishing_cries")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -4075,25 +3991,13 @@ tracks/9/keys = {
 } ],
 "times": PoolRealArray( 0.2, 0.5, 0.8, 1.1, 1.4, 1.7, 2, 2.3 )
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Footsteps:volume_db")
+tracks/10/type = "audio"
+tracks/10/path = NodePath("../Finishing_cries")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/11/type = "audio"
-tracks/11/path = NodePath("../Finishing_cries")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
 "clips": [ {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -4325,30 +4229,6 @@ tracks/10/keys = {
 "update": 0,
 "values": [ false ]
 }
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Kick:volume_db")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../Footsteps:volume_db")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -10.0 ]
-}
 
 [sub_resource type="AnimationNodeAnimation" id=97]
 animation = "00_Idle"
@@ -4401,7 +4281,7 @@ nodes/BlendSpace2D/position = Vector2( 160, 120 )
 nodes/TimeScale/node = SubResource( 106 )
 nodes/TimeScale/position = Vector2( 380, 140 )
 nodes/output/position = Vector2( 620, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=108]
 animation = "00_Kick"
@@ -4454,7 +4334,7 @@ nodes/BlendSpace2D/position = Vector2( 217, 224 )
 nodes/TimeScale/node = SubResource( 117 )
 nodes/TimeScale/position = Vector2( 520, 160 )
 nodes/output/position = Vector2( 740, 180 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=119]
 animation = "00_Run"
@@ -4507,7 +4387,7 @@ nodes/BlendSpace2D/position = Vector2( 240, 160 )
 nodes/TimeScale/node = SubResource( 128 )
 nodes/TimeScale/position = Vector2( 460, 160 )
 nodes/output/position = Vector2( 640, 200 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeAnimation" id=130]
 animation = "00_Waving"
@@ -4560,7 +4440,7 @@ nodes/BlendSpace2D/position = Vector2( 160, 100 )
 nodes/TimeScale/node = SubResource( 139 )
 nodes/TimeScale/position = Vector2( 400, 160 )
 nodes/output/position = Vector2( 600, 180 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
+node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=141]
 
@@ -4770,21 +4650,29 @@ parameters/Waving/TimeScale/scale = 1.0
 
 [node name="Kick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
-volume_db = -10.0
 pitch_scale = 2.0
+max_distance = 250.0
+attenuation = 0.5
 bus = "FX"
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
-volume_db = -10.0
+max_distance = 250.0
+attenuation = 0.5
 bus = "FX"
 
 [node name="Cries" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 7, 0 )
 stream = ExtResource( 8 )
+volume_db = 10.0
+max_distance = 250.0
+attenuation = 0.5
 bus = "FX"
 
 [node name="Finishing_cries" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+max_distance = 250.0
+attenuation = 0.5
 bus = "FX"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

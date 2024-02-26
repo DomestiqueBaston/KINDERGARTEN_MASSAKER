@@ -144,5 +144,6 @@ anims/Smoke = SubResource( 2 )
 
 [node name="Booger_explosion" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
-volume_db = -5.0
+max_distance = 250.0
+attenuation = 0.5
 bus = "FX"
