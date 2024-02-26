@@ -93,11 +93,9 @@ func play(anim: String, block := false):
 		anim_queue.pop_back()
 
 	# if one or more animations must finish before the new one begins, just
-	# queue it up; otherwise, start the new animation playing immediately in
-	# place of the current animation, at the same position
+	# queue it up; otherwise, start the new animation playing immediately
 
 	var full_name = _full_anim_name(anim)
-
 	if anim_queue.size() > 0:
 		anim_player.queue(full_name)
 	else:
