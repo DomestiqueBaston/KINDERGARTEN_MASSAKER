@@ -54,7 +54,10 @@ var anim_queue: Array
 
 func _ready():
 	anim_player = get_node(anim_player_path)
+	for anim in anim_player.get_animation_list():
+		anim_player.get_animation(anim).loop = false
 	anim_player.connect("animation_changed", self, "_on_animation_changed")
+	anim_player.connect("animation_finished", self, "_on_animation_finished")
 
 #
 # Plays the given animation cycle. The given name must NOT include the
@@ -71,25 +74,22 @@ func _ready():
 #
 func play(anim: String, block := false):
 
-	# turn looping on for the new animation
-
-	var full_name = _full_anim_name(anim)
-	anim_player.get_animation(full_name).set_loop(true)
-
-	# if the last animation requested is blocking, turn looping off for it, so
-	# that it will eventually transition to the new animation; if it is not
-	# blocking, the new animation will replace it
-
 	if anim_queue.size() > 0:
-		var last_req: AnimRequest = anim_queue.back()
-		if last_req.block:
-			_set_anim_loop(last_req.name, false)
-		else:
-			anim_queue.pop_back()
+		var req = anim_queue.front()
+		if req.name == anim and req.block == block:
+			return
+
+	# if the last animation requested is not blocking, the new animation will
+	# replace it
+
+	if anim_queue.size() > 0 and not anim_queue.back().block:
+		anim_queue.pop_back()
 
 	# if one or more animations must finish before the new one begins, just
 	# queue it up; otherwise, start the new animation playing immediately in
 	# place of the current animation, at the same position
+
+	var full_name = _full_anim_name(anim)
 
 	if anim_queue.size() > 0:
 		anim_player.queue(full_name)
@@ -115,22 +115,8 @@ func stop():
 	anim_player.clear_queue()
 	anim_queue.clear()
 
-#
-# Returns the name of the animation cycle currently playing, or an empty string
-# if there is none. Note that the returned string does NOT contain the prefix
-# indicating the direction, e.g. it returns "Idle" and not "90G_Idle".
-#
-func get_current_animation() -> String:
-	if anim_queue.empty():
-		return ""
-	else:
-		return anim_queue.front().name
-
 func _full_anim_name(anim: String) -> String:
 	return "%s_%s" % [ prefix[current_direction], anim ]
-
-func _set_anim_loop(anim: String, loop: bool):
-	anim_player.get_animation(_full_anim_name(anim)).set_loop(loop)
 
 #
 # Specifies the direction the character is facing as a Vector2. The vector need
@@ -176,16 +162,14 @@ func set_direction(dir: int):
 	if not anim_player.is_playing():
 		return
 
-	var full_name = _full_anim_name(anim_queue.front().name)
-	var t = anim_player.current_animation_position
-	anim_player.get_animation(full_name).set_loop(anim_queue.size() == 1)
-	anim_player.play(full_name)
-	anim_player.seek(t)
+	if anim_queue.size() > 0:
+		var full_name = _full_anim_name(anim_queue.front().name)
+		var t = anim_player.current_animation_position
+		anim_player.play(full_name)
+		anim_player.seek(t)
 
 	for i in range(1, anim_queue.size()):
-		full_name = _full_anim_name(anim_queue[i].name)
-		anim_player.get_animation(full_name).set_loop(
-			i == anim_queue.size() - 1)
+		var full_name = _full_anim_name(anim_queue[i].name)
 		anim_player.queue(full_name)
 
 #
@@ -197,10 +181,14 @@ func set_speed(speed: float):
 	anim_player.playback_speed = speed
 
 #
-# Method invoked whenever a queued animation replaces the current animation.
-# This allows us to keep our animation queue in sync with the AnimationPlayer's,
-# popping the current animation off the front of the queue.
+# When the AnimationPlayer starts a queued animation, pop the corresponding
+# animation off the front of our queue.
 #
 func _on_animation_changed(_old_name, _new_name):
 	anim_queue.pop_front()
-	assert(anim_queue.size() == anim_player.get_queue().size() + 1)
+
+#
+# When the AnimationPlayer finishes the requested animation, tell it to loop.
+#
+func _on_animation_finished(anim_name):
+	anim_player.play(anim_name)
