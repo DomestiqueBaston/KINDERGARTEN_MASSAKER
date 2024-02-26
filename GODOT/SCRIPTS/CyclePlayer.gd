@@ -77,14 +77,11 @@ func play(anim: String, block := false):
 	# if we're already playing that animation, do nothing, or maybe just change
 	# its blocking status, if possible
 
-	if anim_queue.size() > 0:
+	if anim_queue.size() == 1:
 		var req = anim_queue.front()
 		if req.name == anim:
-			if req.block == block:
-				return
-			elif block or anim_queue.size() == 1:
-				req.block = block
-				return
+			req.block = block
+			return
 
 	# if the last animation requested is not blocking, the new animation
 	# replaces it
