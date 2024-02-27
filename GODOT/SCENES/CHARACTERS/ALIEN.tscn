@@ -7250,7 +7250,8 @@ bus = "FX"
 
 [node name="PLOP" type="AudioStreamPlayer2D" parent="Talent/Mirror_Images"]
 stream = ExtResource( 41 )
-volume_db = 5.0
+max_distance = 500.0
+attenuation = 0.5
 bus = "FX"
 __meta__ = {
 "_editor_description_": "Play PLOP when mirror image disappears."

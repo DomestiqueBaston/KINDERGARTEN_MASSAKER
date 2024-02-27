@@ -438,10 +438,11 @@ __meta__ = {
 
 [node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Mirror_Images"]
 stream = ExtResource( 16 )
-volume_db = 10.0
+volume_db = 5.0
 bus = "FX"
 
 [node name="ColorRect" type="ColorRect" parent="Talent_Overlays/Mirror_Images"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 margin_right = 1440.0
 margin_bottom = 810.0
