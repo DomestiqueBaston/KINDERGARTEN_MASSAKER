@@ -1,3 +1,4 @@
+tool
 extends KinematicBody2D
 
 class_name Alien
@@ -7,6 +8,15 @@ export var speed := Vector2(125, 62.5)
 
 # likelihood the alien will scratch after a second
 export var scratch_chances := 0.25
+
+#
+# This fake property can be animated by an AnimationPlayer Property track,
+# rather than having a Call Method track call play_step(). The advantage of the
+# property is that Call Method tracks are not executed in the Godot editor,
+# whereas property tracks are, IF you include the "tool" keyword at the top of
+# this script...
+#
+export var step_hack := false setget set_step_hack, get_step_hack
 
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
@@ -80,6 +90,13 @@ func is_scratching() -> bool:
 	return state == State.SCRATCH
 
 func _physics_process(_delta):
+
+	# if we're in the Godot editor, we don't want any of this to be done, but
+	# since the "tool" keyword appears at the top of the script, this method is
+	# called anyway...
+
+	if Engine.editor_hint:
+		return
 
 	# a mirror image alien just moves automatically
 
@@ -305,6 +322,13 @@ func play_step(left: bool):
 		$Footsteps.stream = dry_step[index]
 	#yield(get_tree().create_timer(delay), "timeout")
 	$Footsteps.play()
+
+func set_step_hack(left: bool):
+	play_step(left)
+	step_hack = left
+
+func get_step_hack() -> bool:
+	return step_hack
 
 func _on_Hit_Collider_area_entered(_area: Area2D):
 	is_ground_wet = true
