@@ -438,7 +438,7 @@ func stop_game():
 			$Talent_Overlays/Time_Stop.stop()
 			$Enemy_Timer.set_paused(false)
 		Globals.Talent.MIRROR_IMAGE:
-			get_tree().call_group("mirror_images", "free")
+			stop_mirror_images()
 		Globals.Talent.SHIELD:
 			alien.stop_shield()
 		Globals.Talent.TECHNICIAN:
@@ -510,6 +510,7 @@ func _on_time_stop_done():
 
 func start_mirror_images():
 	alien.start_cooldown(MIRROR_IMAGE_cooldown)
+	$Talent_Overlays/Mirror_Images/AnimationPlayer.play("mirror_images")
 	for dir in [ Vector2(-1,-1), Vector2(1,-1), Vector2(0,1) ]:
 		var offset = dir.normalized() * 10
 		var mirror = alien_scene.instance()
@@ -517,6 +518,10 @@ func start_mirror_images():
 		mirror.add_to_group("mirror_images");
 		mirror.start_mirror(MIRROR_IMAGE_duration, alien.position + offset, dir)
 		mirror.show()
+
+func stop_mirror_images():
+	$Talent_Overlays/Mirror_Images/AnimationPlayer.play("RESET")
+	get_tree().call_group("mirror_images", "free")
 
 func start_invisible():
 	alien.start_cooldown(INVISIBLE_cooldown)

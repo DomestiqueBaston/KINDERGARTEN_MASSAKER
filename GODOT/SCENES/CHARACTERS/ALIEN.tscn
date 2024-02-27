@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=2]
+[gd_scene load_steps=170 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -40,6 +40,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_ON.wav" type="AudioStream" id=38]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_OFF.wav" type="AudioStream" id=39]
 [ext_resource path="res://SCRIPTS/CyclePlayer.gd" type="Script" id=40]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror_Image_Plop.wav" type="AudioStream" id=41]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -6972,6 +6973,16 @@ bus = "FX"
 [node name="FX" type="AudioStreamPlayer" parent="Talent/Force_Field"]
 stream = ExtResource( 35 )
 bus = "FX"
+
+[node name="Mirror_Images" type="Node" parent="Talent"]
+
+[node name="PLOP" type="AudioStreamPlayer2D" parent="Talent/Mirror_Images"]
+stream = ExtResource( 41 )
+volume_db = 5.0
+bus = "FX"
+__meta__ = {
+"_editor_description_": "Play PLOP when mirror image disappears."
+}
 
 [node name="Invisible" type="Node2D" parent="Talent"]
 script = ExtResource( 23 )

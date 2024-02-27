@@ -223,6 +223,7 @@ func start_mirror(duration: float, pos: Vector2, dir: Vector2):
 
 func _stop_mirror():
 	flash()
+	$Talent/Mirror_Images/PLOP.play()
 	yield($Flash, "animation_finished")
 	queue_free()
 

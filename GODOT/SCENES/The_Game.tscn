@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://SCENES/OVERLAYS/Transition_Overlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/OVERLAYS/CRT_Overlay.tscn" type="PackedScene" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://SCRIPTS/DASH.gd" type="Script" id=12]
 [ext_resource path="res://SCRIPTS/BULLET_TIME.gd" type="Script" id=13]
 [ext_resource path="res://SCRIPTS/TIME_STOP.gd" type="Script" id=14]
-[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror_Image_Plop.wav" type="AudioStream" id=15]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror.wav" type="AudioStream" id=16]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_B.wav" type="AudioStream" id=17]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_C.wav" type="AudioStream" id=18]
@@ -442,20 +441,10 @@ stream = ExtResource( 16 )
 volume_db = 10.0
 bus = "FX"
 
-[node name="PLOP" type="AudioStreamPlayer" parent="Talent_Overlays/Mirror_Images"]
-stream = ExtResource( 15 )
-volume_db = 5.0
-bus = "FX"
-__meta__ = {
-"_editor_description_": "Play PLOP when mirror image disappears."
-}
-
 [node name="ColorRect" type="ColorRect" parent="Talent_Overlays/Mirror_Images"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -265.0
-margin_top = -160.0
-margin_right = 265.0
-margin_bottom = 160.0
+margin_right = 1440.0
+margin_bottom = 810.0
 __meta__ = {
 "_edit_lock_": true
 }
