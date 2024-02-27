@@ -799,7 +799,7 @@ texture = ExtResource( 20 )
 anims/Beam_blink = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
-[node name="Ready_to_beam_down" type="AudioStreamPlayer2D" parent="."]
+[node name="Ready_to_beam_down" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
 volume_db = -5.0
 bus = "FX"

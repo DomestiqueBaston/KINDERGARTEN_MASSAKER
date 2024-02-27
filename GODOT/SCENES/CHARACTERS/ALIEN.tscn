@@ -6883,7 +6883,7 @@ anims/Teleport_BEGINNING = SubResource( 4 )
 anims/Teleport_END = SubResource( 5 )
 anims/Teleport_FULL = SubResource( 6 )
 
-[node name="FX" type="AudioStreamPlayer2D" parent="Talent/Teleport"]
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Teleport"]
 stream = ExtResource( 25 )
 bus = "FX"
 
@@ -6906,11 +6906,11 @@ __meta__ = {
 anims/RESET = SubResource( 3 )
 anims/explosion = SubResource( 145 )
 
-[node name="FX_1" type="AudioStreamPlayer2D" parent="Talent/Explosion"]
+[node name="FX_1" type="AudioStreamPlayer" parent="Talent/Explosion"]
 stream = ExtResource( 16 )
 bus = "FX"
 
-[node name="FX_2" type="AudioStreamPlayer2D" parent="Talent/Explosion"]
+[node name="FX_2" type="AudioStreamPlayer" parent="Talent/Explosion"]
 stream = ExtResource( 17 )
 volume_db = -7.5
 bus = "FX"
@@ -6930,7 +6930,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FX" type="AudioStreamPlayer2D" parent="Talent/Freezing_Shockwave"]
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Freezing_Shockwave"]
 stream = ExtResource( 19 )
 bus = "FX"
 
@@ -6961,15 +6961,15 @@ __meta__ = {
 anims/RESET = SubResource( 146 )
 anims/force_field = SubResource( 147 )
 
-[node name="FX_ON" type="AudioStreamPlayer2D" parent="Talent/Force_Field"]
+[node name="FX_ON" type="AudioStreamPlayer" parent="Talent/Force_Field"]
 stream = ExtResource( 34 )
 bus = "FX"
 
-[node name="FX_OFF" type="AudioStreamPlayer2D" parent="Talent/Force_Field"]
+[node name="FX_OFF" type="AudioStreamPlayer" parent="Talent/Force_Field"]
 stream = ExtResource( 32 )
 bus = "FX"
 
-[node name="FX" type="AudioStreamPlayer2D" parent="Talent/Force_Field"]
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Force_Field"]
 stream = ExtResource( 35 )
 bus = "FX"
 
@@ -6983,12 +6983,12 @@ __meta__ = {
 wait_time = 4.0
 one_shot = true
 
-[node name="FX_ON" type="AudioStreamPlayer2D" parent="Talent/Invisible"]
+[node name="FX_ON" type="AudioStreamPlayer" parent="Talent/Invisible"]
 stream = ExtResource( 38 )
 volume_db = 1.5
 bus = "FX"
 
-[node name="FX_OFF" type="AudioStreamPlayer2D" parent="Talent/Invisible"]
+[node name="FX_OFF" type="AudioStreamPlayer" parent="Talent/Invisible"]
 stream = ExtResource( 39 )
 volume_db = 1.5
 bus = "FX"
@@ -7020,15 +7020,15 @@ __meta__ = {
 anims/RESET = SubResource( 151 )
 anims/shield = SubResource( 152 )
 
-[node name="FX_OFF" type="AudioStreamPlayer2D" parent="Talent/Shield"]
+[node name="FX_OFF" type="AudioStreamPlayer" parent="Talent/Shield"]
 stream = ExtResource( 30 )
 bus = "FX"
 
-[node name="FX_ON" type="AudioStreamPlayer2D" parent="Talent/Shield"]
+[node name="FX_ON" type="AudioStreamPlayer" parent="Talent/Shield"]
 stream = ExtResource( 31 )
 bus = "FX"
 
-[node name="FX" type="AudioStreamPlayer2D" parent="Talent/Shield"]
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Shield"]
 stream = ExtResource( 27 )
 volume_db = -2.5
 bus = "FX"
@@ -7039,7 +7039,7 @@ script = ExtResource( 22 )
 [node name="Ghost_Timer" type="Timer" parent="Talent/Ghost"]
 one_shot = true
 
-[node name="FX" type="AudioStreamPlayer2D" parent="Talent/Ghost"]
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Ghost"]
 stream = ExtResource( 20 )
 volume_db = -5.0
 
@@ -7133,17 +7133,17 @@ parameters/Run/Blend/blend_position = Vector2( 0, 0 )
 parameters/Run/TimeScale/scale = 1.0
 parameters/Scratching/blend_position = Vector2( 0, 0 )
 
-[node name="Hit_1" type="AudioStreamPlayer2D" parent="."]
+[node name="Hit_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -10.0
 pitch_scale = 1.67
 bus = "FX"
 
-[node name="Hit_2" type="AudioStreamPlayer2D" parent="."]
+[node name="Hit_2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 bus = "FX"
 
-[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = 2.5
 bus = "FX"
@@ -7151,7 +7151,7 @@ __meta__ = {
 "_editor_description_": "When running in the vomit puddles, use the second track in the Animation player in order to have wet footsteps!"
 }
 
-[node name="Death" type="AudioStreamPlayer2D" parent="."]
+[node name="Death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 volume_db = -10.0
 bus = "FX"
@@ -7159,7 +7159,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Scratching" type="AudioStreamPlayer2D" parent="."]
+[node name="Scratching" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
 volume_db = -5.0
 bus = "FX"
@@ -7167,7 +7167,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Talent_ON_OFF" type="AudioStreamPlayer2D" parent="."]
+[node name="Talent_ON_OFF" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
 volume_db = 2.5
 bus = "FX"
