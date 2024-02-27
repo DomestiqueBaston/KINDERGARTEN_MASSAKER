@@ -6971,7 +6971,6 @@ bus = "FX"
 
 [node name="FX" type="AudioStreamPlayer2D" parent="Talent/Force_Field"]
 stream = ExtResource( 35 )
-volume_db = -10.0
 bus = "FX"
 
 [node name="Invisible" type="Node2D" parent="Talent"]
@@ -6986,12 +6985,12 @@ one_shot = true
 
 [node name="FX_ON" type="AudioStreamPlayer2D" parent="Talent/Invisible"]
 stream = ExtResource( 38 )
-volume_db = -1.5
+volume_db = 1.5
 bus = "FX"
 
 [node name="FX_OFF" type="AudioStreamPlayer2D" parent="Talent/Invisible"]
 stream = ExtResource( 39 )
-volume_db = -1.5
+volume_db = 1.5
 bus = "FX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Invisible"]
@@ -7023,17 +7022,15 @@ anims/shield = SubResource( 152 )
 
 [node name="FX_OFF" type="AudioStreamPlayer2D" parent="Talent/Shield"]
 stream = ExtResource( 30 )
-volume_db = -1.5
 bus = "FX"
 
 [node name="FX_ON" type="AudioStreamPlayer2D" parent="Talent/Shield"]
 stream = ExtResource( 31 )
-volume_db = -1.5
 bus = "FX"
 
 [node name="FX" type="AudioStreamPlayer2D" parent="Talent/Shield"]
 stream = ExtResource( 27 )
-volume_db = -1.5
+volume_db = -2.5
 bus = "FX"
 
 [node name="Ghost" type="Node2D" parent="Talent"]

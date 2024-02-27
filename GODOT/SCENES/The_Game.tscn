@@ -410,6 +410,7 @@ anims/time_stop = SubResource( 4 )
 
 [node name="FX" type="AudioStreamPlayer2D" parent="Talent_Overlays/Time_Stop"]
 stream = ExtResource( 21 )
+volume_db = 5.0
 bus = "FX"
 
 [node name="ColorRect" type="ColorRect" parent="Talent_Overlays/Time_Stop"]
@@ -435,11 +436,12 @@ __meta__ = {
 
 [node name="FX" type="AudioStreamPlayer2D" parent="Talent_Overlays/Mirror_Images"]
 stream = ExtResource( 16 )
+volume_db = 10.0
 bus = "FX"
 
 [node name="PLOP" type="AudioStreamPlayer2D" parent="Talent_Overlays/Mirror_Images"]
 stream = ExtResource( 15 )
-volume_db = -5.0
+volume_db = 5.0
 bus = "FX"
 __meta__ = {
 "_editor_description_": "Play PLOP when mirror image disappears."
