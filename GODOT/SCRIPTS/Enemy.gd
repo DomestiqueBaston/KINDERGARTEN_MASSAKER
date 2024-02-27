@@ -34,7 +34,7 @@ func _ready():
 # each character subclass.
 #
 func init_timer():
-	timer.start(2 + 3 * randf())
+	timer.start((2 + 3 * randf()) / $CyclePlayer.get_speed())
 
 #
 # Called when the animation timer times out, to update the character's animation
@@ -53,11 +53,11 @@ func on_timer_timeout():
 		$CyclePlayer.play(run_anim)
 
 	is_running = not is_running
-	timer.start(2 + 3 * randf())
+	timer.start((2 + 3 * randf()) / $CyclePlayer.get_speed())
 
 func _physics_process(_delta):
 	if run_anim in $AnimationPlayer.current_animation:
-		var time_scale = $AnimationPlayer.playback_speed
+		var time_scale = $CyclePlayer.get_speed()
 		if time_scale != 0:
 			var dir = move_and_slide(direction * speed * time_scale)
 			if get_slide_count() > 0:
@@ -66,6 +66,15 @@ func _physics_process(_delta):
 				$CyclePlayer.set_direction_vector(direction)
 
 func set_time_scale(scale = 1.0):
+	var prev_scale = $CyclePlayer.get_speed()
+	if scale == prev_scale:
+		return
+	if scale == 0:
+		timer.set_paused(true)
+	elif prev_scale == 0:
+		timer.set_paused(false)
+	else:
+		timer.start(timer.time_left * (prev_scale / scale))
 	$CyclePlayer.set_speed(scale)
 
 func freeze(flash=true):

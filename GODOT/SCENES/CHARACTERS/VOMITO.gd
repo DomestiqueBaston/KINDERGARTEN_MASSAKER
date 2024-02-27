@@ -12,13 +12,13 @@ func on_timer_timeout():
 
 		if randf() < 0.33:
 			$CyclePlayer.play("Vomit", true)
-			timer.start(vomit_length * 0.5)
+			timer.start(vomit_length * 0.5 / $CyclePlayer.get_speed())
 
 		# idle 1-3 seconds
 
 		else:
 			$CyclePlayer.play(default_anim)
-			timer.start(1 + 2 * randf())
+			timer.start((1 + 2 * randf()) / $CyclePlayer.get_speed())
 
 	# not running => start running for 2-5 seconds
 
@@ -35,6 +35,6 @@ func on_timer_timeout():
 			time_to_wait += (
 				vomit_length - $AnimationPlayer.current_animation_position)
 
-		timer.start(time_to_wait)
+		timer.start(time_to_wait / $CyclePlayer.get_speed())
 
 	is_running = not is_running

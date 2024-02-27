@@ -179,6 +179,12 @@ func set_speed(speed: float):
 	anim_player.playback_speed = speed
 
 #
+# Returns the speed of playback for all animations.
+#
+func get_speed() -> float:
+	return anim_player.playback_speed
+
+#
 # When the AnimationPlayer starts a queued animation, pop the corresponding
 # animation off the front of our queue.
 #
