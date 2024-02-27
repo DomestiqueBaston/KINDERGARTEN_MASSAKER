@@ -17,10 +17,21 @@ signal teleport
 # signal emitted when the ghost effect wears off
 signal ghost_done
 
+# sounds of footsteps (dry and wet, right and left)
+var dry_step = [
+	preload("res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav"),
+	preload("res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_B.wav")
+]
+var wet_step = [
+	preload("res://ASSETS/SOUND/FX/ALIEN/Mud_steps_C.wav"),
+	preload("res://ASSETS/SOUND/FX/ALIEN/Mud_steps_E.wav")
+]
+
 var direction := Vector2.DOWN
 var scratch_interval := 0.0
 var accelerate := 1.0
 var mirror := false
+var is_ground_wet := false
 
 enum State {
 	FIRST_IDLE,
@@ -281,3 +292,22 @@ func flash():
 func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 	if state == State.SCRATCH and "Scratching" in old_name:
 		state = State.IDLE
+
+#
+# Called by AnimationPlayer when the alien takes a step to play an appropriate
+# sound.
+#
+func play_step(left: bool):
+	var index = 1 if left else 0
+	if is_ground_wet:
+		$Footsteps.stream = wet_step[index]
+	else:
+		$Footsteps.stream = dry_step[index]
+	#yield(get_tree().create_timer(delay), "timeout")
+	$Footsteps.play()
+
+func _on_Hit_Collider_area_entered(_area: Area2D):
+	is_ground_wet = true
+
+func _on_Hit_Collider_area_exited(_area: Area2D):
+	is_ground_wet = false
