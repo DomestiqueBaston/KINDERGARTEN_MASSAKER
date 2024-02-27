@@ -1,5 +1,7 @@
 extends Enemy
 
+signal vomit
+
 onready var vomit_length = $AnimationPlayer.get_animation("00_Vomit").length
 
 func on_timer_timeout():
@@ -12,6 +14,8 @@ func on_timer_timeout():
 
 		if randf() < 0.33:
 			$CyclePlayer.play("Vomit", true)
+			$AnimationPlayer.advance(0)  # to update Point_of_Vomit_Spawn
+			emit_signal("vomit", $Point_of_Vomit_Spawn.global_position)
 			timer.start(vomit_length * 0.5 / $CyclePlayer.get_speed())
 
 		# idle 1-3 seconds

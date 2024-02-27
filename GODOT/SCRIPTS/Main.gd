@@ -57,6 +57,7 @@ var vomiting_kid_scene := preload("res://SCENES/CHARACTERS/VOMITO.tscn")
 var booger_kid_scene := preload("res://SCENES/CHARACTERS/BOOGIRL.tscn")
 var stick_kid_scene := preload("res://SCENES/CHARACTERS/BLONDINET.tscn")
 var spitting_kid_scene := preload("res://SCENES/CHARACTERS/CRACHEUSE.tscn")
+var vomit_scene := preload("res://SCENES/FX/Vomit.tscn")
 
 var credits_seen := false
 var dialogue_seen := false
@@ -302,6 +303,8 @@ func instance_character_at(scene: PackedScene, pos: Vector2) -> Node:
 	inst.position = pos
 	$Characters.add_child(inst)
 	inst.add_to_group("enemies")
+	if scene == vomiting_kid_scene:
+		inst.connect("vomit", self, "_on_vomit")
 	return inst
 
 func get_random_kid() -> PackedScene:
@@ -551,3 +554,8 @@ func start_ghost():
 
 func _on_ghost_done():
 	get_tree().call_group("enemies", "remove_collision_exception_with", alien)
+
+func _on_vomit(pos: Vector2):
+	var puddle = vomit_scene.instance()
+	puddle.position = pos
+	background.add_child(puddle)
