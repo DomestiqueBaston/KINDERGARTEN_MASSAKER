@@ -423,6 +423,7 @@ func stop_game():
 	$Background_Sound.stop()
 	$Intro_Music.stop()
 	$Game_Music.stop()
+	$Talents/Talent_Timer.stop()
 	$Enemy_Timer.stop()
 	$Shutdown_Timer.stop()
 	$Shutdown_Overlay.hide()
@@ -485,9 +486,9 @@ func start_freeze():
 		var dist2 = enemy.position.distance_squared_to(alien.position)
 		if dist2 < FREEZE_radius * FREEZE_radius:
 			enemy.freeze()
-			$Talent_Timer.connect(
+			$Talents/Talent_Timer.connect(
 				"timeout", enemy, "unfreeze", [], CONNECT_ONESHOT)
-	$Talent_Timer.start(FREEZE_duration)
+	$Talents/Talent_Timer.start(FREEZE_duration)
 
 func start_shield():
 	alien.start_cooldown(SHIELD_cooldown)

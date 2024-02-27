@@ -368,6 +368,9 @@ DASH_run_speed = 6
 
 [node name="Talents" type="Node2D" parent="."]
 
+[node name="Talent_Timer" type="Timer" parent="Talents"]
+one_shot = true
+
 [node name="Dash" type="Node" parent="Talents"]
 script = ExtResource( 12 )
 
@@ -551,9 +554,6 @@ one_shot = true
 
 [node name="Shutdown_Timer" type="Timer" parent="."]
 wait_time = 60.0
-one_shot = true
-
-[node name="Talent_Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="ScoreTracker" parent="." instance=ExtResource( 11 )]
