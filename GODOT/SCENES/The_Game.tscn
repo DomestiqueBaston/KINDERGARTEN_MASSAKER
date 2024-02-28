@@ -533,6 +533,7 @@ bus = "MUSIC"
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 240, 136 )
 current = true
+zoom = Vector2( 2, 2 )
 
 [node name="Camera_Shake" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Camera")
