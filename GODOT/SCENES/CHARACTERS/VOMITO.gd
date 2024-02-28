@@ -15,6 +15,7 @@ func on_timer_timeout():
 	if not is_running:
 		$CyclePlayer.play(run_anim)
 		timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
+		is_running = true
 
 	# finished running, no obstacle, and lucky roll of the dice => vomit, then
 	# start running again at the end of the vomit animation
@@ -26,14 +27,15 @@ func on_timer_timeout():
 		emit_signal("vomit", $Point_of_Vomit_Spawn.global_position)
 		timer.start(
 			(vomit_length + rand_range(2, 5)) / $CyclePlayer.get_speed())
+		# when the timer goes off, he will be running...
+		is_running = true
 
 	# otherwise => idle 1-3 seconds
 
 	else:
 		$CyclePlayer.play(default_anim)
 		timer.start(rand_range(1, 3) / $CyclePlayer.get_speed())
-
-	is_running = not is_running
+		is_running = false
 
 func _on_Bg_Collider_for_Vomit_Spill_body_entered(body: Node):
 	if body.is_class("StaticBody2D"):
