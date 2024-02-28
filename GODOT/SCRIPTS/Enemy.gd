@@ -34,7 +34,7 @@ func _ready():
 # each character subclass.
 #
 func init_timer():
-	timer.start((2 + 3 * randf()) / $CyclePlayer.get_speed())
+	timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
 
 #
 # Called when the animation timer times out, to update the character's animation
@@ -53,7 +53,7 @@ func on_timer_timeout():
 		$CyclePlayer.play(run_anim)
 
 	is_running = not is_running
-	timer.start((2 + 3 * randf()) / $CyclePlayer.get_speed())
+	timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
 
 func _physics_process(_delta):
 	if run_anim in $AnimationPlayer.current_animation:
