@@ -14,28 +14,18 @@ func on_timer_timeout():
 
 	if not is_running:
 		$CyclePlayer.play(run_anim)
-		var time_to_wait = 2 + 3 * randf()
-
-		# When vomiting, we set the timer above to go off during the Vomit
-		# cycle, to ensure that play("Run") is called before the cycle ends.
-		# The transition to Run won't happen until the end of the Vomit cycle,
-		# so we have to add to the timer however much time is remaining in the
-		# cycle.
-
-		if "Vomit" in $AnimationPlayer.current_animation:
-			time_to_wait += (
-				vomit_length - $AnimationPlayer.current_animation_position)
-
-		timer.start(time_to_wait / $CyclePlayer.get_speed())
+		timer.start((2 + 3 * randf()) / $CyclePlayer.get_speed())
 
 	# finished running, no obstacle, and lucky roll of the dice => vomit, then
 	# start running again at the end of the vomit animation
 
 	elif vomit_obstacle_count == 0 and randf() < vomit_chances:
 		$CyclePlayer.play("Vomit", true)
+		$CyclePlayer.play(run_anim)
 		$AnimationPlayer.advance(0)  # to update Point_of_Vomit_Spawn
 		emit_signal("vomit", $Point_of_Vomit_Spawn.global_position)
-		timer.start(vomit_length * 0.5 / $CyclePlayer.get_speed())
+		timer.start(
+			(vomit_length + 2 + 3 * randf()) / $CyclePlayer.get_speed())
 
 	# otherwise => idle 1-3 seconds
 
