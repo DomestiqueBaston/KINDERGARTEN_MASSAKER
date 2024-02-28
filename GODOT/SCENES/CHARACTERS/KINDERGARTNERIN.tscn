@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://SCENES/CHARACTERS/KINDERGARTNERIN.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=2]
@@ -15,6 +15,10 @@ radius = 16.0
 [sub_resource type="CapsuleShape2D" id=88]
 radius = 56.09
 height = 39.4709
+
+[sub_resource type="CapsuleShape2D" id=144]
+radius = 16.0
+height = 20.0001
 
 [sub_resource type="ShaderMaterial" id=141]
 resource_local_to_scene = true
@@ -99,6 +103,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -214,6 +230,18 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "00_OMG"
@@ -291,6 +319,18 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -375,6 +415,18 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.170022, 0.473481 )
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "135D_Check"
@@ -451,6 +503,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -566,6 +630,18 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=17]
 resource_name = "135D_OMG"
@@ -643,6 +719,18 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -727,6 +815,18 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.171175, 0.473481 )
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "135G_Check"
@@ -803,6 +903,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -918,6 +1030,18 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=25]
 resource_name = "135G_OMG"
@@ -995,6 +1119,18 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -1079,6 +1215,18 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.170022, 0.472017 )
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=19]
 resource_name = "180_Check"
@@ -1155,6 +1303,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -1270,6 +1430,18 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=22]
 resource_name = "180_OMG"
@@ -1347,6 +1519,18 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -1431,6 +1615,18 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.171175, 0.474634 )
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "45D_Check"
@@ -1507,6 +1703,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1622,6 +1830,18 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "45D_OMG"
@@ -1699,6 +1919,18 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -1783,6 +2015,18 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.172328, 0.471175 )
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=31]
 resource_name = "45G_Check"
@@ -1859,6 +2103,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -1974,6 +2230,18 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=34]
 resource_name = "45G_OMG"
@@ -2051,6 +2319,18 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=33]
@@ -2135,6 +2415,18 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.171175, 0.473481 )
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "90D_Check"
@@ -2211,6 +2503,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -2326,6 +2630,18 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=14]
 resource_name = "90D_OMG"
@@ -2403,6 +2719,18 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -2487,6 +2815,18 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.171175, 0.473481 )
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=27]
 resource_name = "90G_Check"
@@ -2563,6 +2903,18 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 134, -98 ), Vector2( 134, -98 ), Vector2( 153, -56 ), Vector2( 191, 6 ), Vector2( 164, 100 ), Vector2( 34, 161 ), Vector2( -31, 171 ), Vector2( -31, 171 ), Vector2( 29, 160 ), Vector2( 169, 83 ), Vector2( 186, -39 ), Vector2( 134, -98 ), Vector2( 134, -98 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -2678,6 +3030,18 @@ tracks/8/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=30]
 resource_name = "90G_OMG"
@@ -2755,6 +3119,18 @@ tracks/5/keys = {
 "stream": ExtResource( 4 )
 } ],
 "times": PoolRealArray( 0.1 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=29]
@@ -2838,6 +3214,18 @@ tracks/5/keys = {
 "stream": ExtResource( 5 )
 } ],
 "times": PoolRealArray( 0.170022, 0.473481 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -2938,253 +3326,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
-
-[sub_resource type="AnimationNodeAnimation" id=89]
-animation = "00_Check"
-
-[sub_resource type="AnimationNodeAnimation" id=90]
-animation = "45D_Check"
-
-[sub_resource type="AnimationNodeAnimation" id=91]
-animation = "90D_Check"
-
-[sub_resource type="AnimationNodeAnimation" id=92]
-animation = "135D_Check"
-
-[sub_resource type="AnimationNodeAnimation" id=93]
-animation = "180_Check"
-
-[sub_resource type="AnimationNodeAnimation" id=94]
-animation = "135G_Check"
-
-[sub_resource type="AnimationNodeAnimation" id=95]
-animation = "90G_Check"
-
-[sub_resource type="AnimationNodeAnimation" id=96]
-animation = "45G_Check"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=97]
-blend_point_0/node = SubResource( 89 )
-blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 90 )
-blend_point_1/pos = Vector2( -1, 1 )
-blend_point_2/node = SubResource( 91 )
-blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 92 )
-blend_point_3/pos = Vector2( -1, -1 )
-blend_point_4/node = SubResource( 93 )
-blend_point_4/pos = Vector2( 0, -1 )
-blend_point_5/node = SubResource( 94 )
-blend_point_5/pos = Vector2( 1, -1 )
-blend_point_6/node = SubResource( 95 )
-blend_point_6/pos = Vector2( 1, 0 )
-blend_point_7/node = SubResource( 96 )
-blend_point_7/pos = Vector2( 1, 1 )
-blend_mode = 1
-
-[sub_resource type="AnimationNodeTimeScale" id=98]
-
-[sub_resource type="AnimationNodeBlendTree" id=99]
-nodes/BlendSpace2D/node = SubResource( 97 )
-nodes/BlendSpace2D/position = Vector2( 380, 160 )
-nodes/TimeScale/node = SubResource( 98 )
-nodes/TimeScale/position = Vector2( 640, 200 )
-nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
-
-[sub_resource type="AnimationNodeAnimation" id=100]
-animation = "00_No"
-
-[sub_resource type="AnimationNodeAnimation" id=101]
-animation = "45D_No"
-
-[sub_resource type="AnimationNodeAnimation" id=102]
-animation = "90D_No"
-
-[sub_resource type="AnimationNodeAnimation" id=103]
-animation = "135D_No"
-
-[sub_resource type="AnimationNodeAnimation" id=104]
-animation = "180_No"
-
-[sub_resource type="AnimationNodeAnimation" id=105]
-animation = "135G_No"
-
-[sub_resource type="AnimationNodeAnimation" id=106]
-animation = "90G_No"
-
-[sub_resource type="AnimationNodeAnimation" id=107]
-animation = "45G_No"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=108]
-blend_point_0/node = SubResource( 100 )
-blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 101 )
-blend_point_1/pos = Vector2( -1, 1 )
-blend_point_2/node = SubResource( 102 )
-blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 103 )
-blend_point_3/pos = Vector2( -1, -1 )
-blend_point_4/node = SubResource( 104 )
-blend_point_4/pos = Vector2( 0, -1 )
-blend_point_5/node = SubResource( 105 )
-blend_point_5/pos = Vector2( 1, -1 )
-blend_point_6/node = SubResource( 106 )
-blend_point_6/pos = Vector2( 1, 0 )
-blend_point_7/node = SubResource( 107 )
-blend_point_7/pos = Vector2( 1, 1 )
-blend_mode = 1
-
-[sub_resource type="AnimationNodeTimeScale" id=109]
-
-[sub_resource type="AnimationNodeBlendTree" id=110]
-nodes/BlendSpace2D/node = SubResource( 108 )
-nodes/BlendSpace2D/position = Vector2( 430, 148 )
-nodes/TimeScale/node = SubResource( 109 )
-nodes/TimeScale/position = Vector2( 640, 220 )
-nodes/output/position = Vector2( 840, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
-
-[sub_resource type="AnimationNodeAnimation" id=111]
-animation = "00_OMG"
-
-[sub_resource type="AnimationNodeAnimation" id=112]
-animation = "45D_OMG"
-
-[sub_resource type="AnimationNodeAnimation" id=113]
-animation = "90D_OMG"
-
-[sub_resource type="AnimationNodeAnimation" id=114]
-animation = "135D_OMG"
-
-[sub_resource type="AnimationNodeAnimation" id=115]
-animation = "180_OMG"
-
-[sub_resource type="AnimationNodeAnimation" id=116]
-animation = "135G_OMG"
-
-[sub_resource type="AnimationNodeAnimation" id=117]
-animation = "90G_OMG"
-
-[sub_resource type="AnimationNodeAnimation" id=118]
-animation = "45G_OMG"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=119]
-blend_point_0/node = SubResource( 111 )
-blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 112 )
-blend_point_1/pos = Vector2( -1, 1 )
-blend_point_2/node = SubResource( 113 )
-blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 114 )
-blend_point_3/pos = Vector2( -1, -1 )
-blend_point_4/node = SubResource( 115 )
-blend_point_4/pos = Vector2( 0, -1 )
-blend_point_5/node = SubResource( 116 )
-blend_point_5/pos = Vector2( 1, -1 )
-blend_point_6/node = SubResource( 117 )
-blend_point_6/pos = Vector2( 1, 0 )
-blend_point_7/node = SubResource( 118 )
-blend_point_7/pos = Vector2( 1, 1 )
-blend_mode = 1
-
-[sub_resource type="AnimationNodeTimeScale" id=120]
-
-[sub_resource type="AnimationNodeBlendTree" id=121]
-nodes/BlendSpace2D/node = SubResource( 119 )
-nodes/BlendSpace2D/position = Vector2( 380, 160 )
-nodes/TimeScale/node = SubResource( 120 )
-nodes/TimeScale/position = Vector2( 660, 220 )
-nodes/output/position = Vector2( 900, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
-
-[sub_resource type="AnimationNodeAnimation" id=122]
-animation = "00_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=123]
-animation = "45D_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=124]
-animation = "90D_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=125]
-animation = "135D_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=126]
-animation = "180_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=127]
-animation = "135G_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=128]
-animation = "90G_Run"
-
-[sub_resource type="AnimationNodeAnimation" id=129]
-animation = "45G_Run"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=130]
-blend_point_0/node = SubResource( 122 )
-blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 123 )
-blend_point_1/pos = Vector2( -1, 1 )
-blend_point_2/node = SubResource( 124 )
-blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 125 )
-blend_point_3/pos = Vector2( -1, -1 )
-blend_point_4/node = SubResource( 126 )
-blend_point_4/pos = Vector2( 0, -1 )
-blend_point_5/node = SubResource( 127 )
-blend_point_5/pos = Vector2( 1, -1 )
-blend_point_6/node = SubResource( 128 )
-blend_point_6/pos = Vector2( 1, 0 )
-blend_point_7/node = SubResource( 129 )
-blend_point_7/pos = Vector2( 1, 1 )
-blend_mode = 1
-
-[sub_resource type="AnimationNodeTimeScale" id=131]
-
-[sub_resource type="AnimationNodeBlendTree" id=132]
-nodes/BlendSpace2D/node = SubResource( 130 )
-nodes/BlendSpace2D/position = Vector2( 326, 168 )
-nodes/TimeScale/node = SubResource( 131 )
-nodes/TimeScale/position = Vector2( 620, 220 )
-nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=133]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=134]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=135]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=136]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=137]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=138]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=139]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=140]
-
-[sub_resource type="AnimationNodeStateMachine" id=46]
-states/Check/node = SubResource( 99 )
-states/Check/position = Vector2( 440, 250.56 )
-states/No/node = SubResource( 110 )
-states/No/position = Vector2( 675, 369.56 )
-states/Omg/node = SubResource( 121 )
-states/Omg/position = Vector2( 435, 379.56 )
-states/Run/node = SubResource( 132 )
-states/Run/position = Vector2( 672, 259.56 )
-transitions = [ "Check", "Run", SubResource( 133 ), "Run", "Check", SubResource( 134 ), "Check", "Omg", SubResource( 135 ), "Omg", "Run", SubResource( 136 ), "Omg", "No", SubResource( 137 ), "No", "Run", SubResource( 138 ), "No", "Check", SubResource( 139 ), "Run", "No", SubResource( 140 ) ]
-start_node = "Check"
-graph_offset = Vector2( 11, 170.56 )
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=47]
+tracks/8/type = "value"
+tracks/8/path = NodePath("Vomit_Detector/VDetector:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=142]
 length = 0.001
@@ -3253,6 +3406,23 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Vomit_Detector" type="Area2D" parent="."]
+visible = false
+collision_layer = 8192
+collision_mask = 512
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VDetector" type="CollisionShape2D" parent="Vomit_Detector"]
+position = Vector2( 0, 31 )
+rotation = 1.5708
+shape = SubResource( 144 )
+disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Shadow" type="Polygon2D" parent="."]
 position = Vector2( -6, 17 )
 scale = Vector2( 1, 0.4 )
@@ -3313,19 +3483,6 @@ anims/RESET = SubResource( 4 )
 [node name="CyclePlayer" type="Node" parent="."]
 script = ExtResource( 8 )
 anim_player_path = NodePath("../AnimationPlayer")
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 46 )
-anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 47 )
-parameters/Check/BlendSpace2D/blend_position = Vector2( 0, 0 )
-parameters/Check/TimeScale/scale = 1.0
-parameters/No/BlendSpace2D/blend_position = Vector2( 0, 0 )
-parameters/No/TimeScale/scale = 1.0
-parameters/Omg/BlendSpace2D/blend_position = Vector2( 0, 0 )
-parameters/Omg/TimeScale/scale = 1.0
-parameters/Run/BlendSpace2D/blend_position = Vector2( 0, 0 )
-parameters/Run/TimeScale/scale = 1.0
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 1, 4 )

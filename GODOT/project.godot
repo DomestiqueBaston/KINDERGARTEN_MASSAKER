@@ -232,6 +232,7 @@ ui_up_left={
 2d_render/layer_11="VOMIT (useless?)"
 2d_render/layer_12="ATTACK"
 2d_render/layer_13="PATHFINDING"
+2d_render/layer_14="MECHANTS_vomit_detector"
 2d_physics/layer_1="BACKGROUND_obstacle"
 2d_physics/layer_2="ALIEN_movement"
 2d_physics/layer_3="ALIEN_as_target (useless?)"
@@ -245,6 +246,7 @@ ui_up_left={
 2d_physics/layer_11="VOMIT (useless?)"
 2d_physics/layer_12="ATTACK"
 2d_physics/layer_13="PATHFINDING"
+2d_physics/layer_14="MECHANTS_vomit_detector"
 2d_navigation/layer_1="BACKGROUND_obstacle"
 2d_navigation/layer_2="ALIEN_movement"
 2d_navigation/layer_3="ALIEN_as_target (useless?)"
@@ -258,6 +260,7 @@ ui_up_left={
 2d_navigation/layer_11="VOMIT (useless?)"
 2d_navigation/layer_12="ATTACK"
 2d_navigation/layer_13="PATHFINDING"
+2d_navigation/layer_14="MECHANTS_vomit_detector"
 
 [physics]
 
