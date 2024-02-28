@@ -53,7 +53,8 @@ enum State {
 var state = State.MOVE
 
 func _ready():
-	reset()
+	if not Engine.editor_hint:
+		reset()
 
 #
 # Returns the alien to its initial state: facing forward, no animation, no
