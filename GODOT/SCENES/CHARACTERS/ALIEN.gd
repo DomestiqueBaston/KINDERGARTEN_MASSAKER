@@ -61,8 +61,9 @@ func _ready():
 # physics processing (movement), and no cooldown.
 #
 func reset():
+	var cycle_length = $AnimationPlayer.get_animation("00_Idle").length
+	scratch_interval = cycle_length - 1.0 / Globals.FPS
 	direction = Vector2.DOWN
-	scratch_interval = $AnimationPlayer.get_animation("00_Idle").length - 0.1
 	$CyclePlayer.set_direction_vector(direction)
 	$CyclePlayer.stop()
 	set_physics_process(false)

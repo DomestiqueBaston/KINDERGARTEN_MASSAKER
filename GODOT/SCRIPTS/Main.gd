@@ -556,6 +556,7 @@ func _on_ghost_done():
 	get_tree().call_group("enemies", "remove_collision_exception_with", alien)
 
 func _on_vomit(pos: Vector2):
+	yield(get_tree().create_timer(2.0 / Globals.FPS), "timeout")
 	var puddle = vomit_scene.instance()
 	puddle.position = pos
 	background.add_child(puddle)

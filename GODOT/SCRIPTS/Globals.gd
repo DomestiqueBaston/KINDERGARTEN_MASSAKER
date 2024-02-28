@@ -1,5 +1,8 @@
 extends Node
 
+# sprite animations are at 10 frames per second
+const FPS = 10
+
 #
 # alien talents
 #
