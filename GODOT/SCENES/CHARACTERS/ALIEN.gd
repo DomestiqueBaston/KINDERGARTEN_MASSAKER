@@ -41,7 +41,7 @@ var direction := Vector2.DOWN
 var scratch_interval := 0.0
 var accelerate := 1.0
 var mirror := false
-var is_ground_wet := false
+var puddle_count := 0
 
 enum State {
 	FIRST_IDLE,
@@ -68,6 +68,11 @@ func reset():
 	set_physics_process(false)
 	stop_cooldown()
 	state = State.MOVE
+	if $Vomit_Detector.is_connected("body_entered", self, "_on_vomit_entered"):
+		$Vomit_Detector.disconnect("body_entered", self, "_on_vomit_entered")
+	if $Vomit_Detector.is_connected("body_exited", self, "_on_vomit_exited"):
+		$Vomit_Detector.disconnect("body_exited", self, "_on_vomit_exited")
+	puddle_count = 0
 
 #
 # Starts the alien's "idle" animation cycle and beams him down. Once the "beam
@@ -76,6 +81,8 @@ func reset():
 #
 func beam_down():
 	$CyclePlayer.play("Idle")
+	$Vomit_Detector.connect("body_entered", self, "_on_vomit_entered")
+	$Vomit_Detector.connect("body_exited", self, "_on_vomit_exited")
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
 	# to ensure alien is invisible, in particular...
 	$Beam_Down_Rear/AnimationPlayer.advance(0)
@@ -242,6 +249,8 @@ func start_mirror(duration: float, pos: Vector2, dir: Vector2):
 	direction = dir.normalized()
 	$CyclePlayer.set_direction_vector(dir)
 	$CyclePlayer.play("Run")
+	$Vomit_Detector.connect("body_entered", self, "_on_vomit_entered")
+	$Vomit_Detector.connect("body_exited", self, "_on_vomit_exited")
 	set_physics_process(true)
 	var flash_time = $Flash.get_animation("flash").length
 	var timer = Timer.new()
@@ -317,22 +326,22 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 #
 func play_step(left: bool):
 	var index = 1 if left else 0
-	if is_ground_wet:
+	if puddle_count > 0:
 		$Footsteps.stream = wet_step[index]
 	else:
 		$Footsteps.stream = dry_step[index]
-	#yield(get_tree().create_timer(delay), "timeout")
 	$Footsteps.play()
 
 func set_step_hack(left: bool):
-	play_step(left)
+	if $AnimationPlayer.is_playing():
+		play_step(left)
 	step_hack = left
 
 func get_step_hack() -> bool:
 	return step_hack
 
-func _on_Hit_Collider_area_entered(_area: Area2D):
-	is_ground_wet = true
+func _on_vomit_entered(_body: Node):
+	puddle_count += 1
 
-func _on_Hit_Collider_area_exited(_area: Area2D):
-	is_ground_wet = false
+func _on_vomit_exited(_body: Node):
+	puddle_count -= 1
