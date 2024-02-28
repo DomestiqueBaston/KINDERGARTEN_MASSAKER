@@ -3169,7 +3169,7 @@ nodes/BlendSpace2D/position = Vector2( 420, 140 )
 nodes/TimeScale/node = SubResource( 97 )
 nodes/TimeScale/position = Vector2( 680, 200 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=99]
 animation = "00_Run"
@@ -3222,7 +3222,7 @@ nodes/BlendSpace2D/position = Vector2( 360, 140 )
 nodes/TimeScale/node = SubResource( 108 )
 nodes/TimeScale/position = Vector2( 660, 240 )
 nodes/output/position = Vector2( 880, 140 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=110]
 animation = "00_Vomit"
@@ -3275,7 +3275,7 @@ nodes/BlendSpace2D/position = Vector2( 380, 180 )
 nodes/TimeScale/node = SubResource( 119 )
 nodes/TimeScale/position = Vector2( 660, 240 )
 nodes/output/position = Vector2( 880, 160 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeAnimation" id=121]
 animation = "00_Waving"
@@ -3328,7 +3328,7 @@ nodes/BlendSpace2D/position = Vector2( 360, 160 )
 nodes/TimeScale/node = SubResource( 130 )
 nodes/TimeScale/position = Vector2( 640, 240 )
 nodes/output/position = Vector2( 840, 180 )
-node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "BlendSpace2D" ]
+node_connections = [ "TimeScale", 0, "BlendSpace2D", "output", 0, "TimeScale" ]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=132]
 
@@ -3542,3 +3542,6 @@ navigation_layers = 4096
 [node name="Flasher" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 143 )
 anims/flash = SubResource( 144 )
+
+[connection signal="body_entered" from="Bg_Collider_for_Vomit_Spill" to="." method="_on_Bg_Collider_for_Vomit_Spill_body_entered"]
+[connection signal="body_exited" from="Bg_Collider_for_Vomit_Spill" to="." method="_on_Bg_Collider_for_Vomit_Spill_body_exited"]
