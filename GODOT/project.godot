@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
+"base": "Runner",
 "class": "Alien",
 "language": "GDScript",
 "path": "res://SCENES/CHARACTERS/ALIEN.gd"
@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://SCRIPTS/Enemy.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Runner",
+"language": "GDScript",
+"path": "res://SCRIPTS/Runner.gd"
 } ]
 _global_script_class_icons={
 "Alien": "",
 "Background": "",
 "CyclePlayer": "",
-"Enemy": ""
+"Enemy": "",
+"Runner": ""
 }
 
 [application]

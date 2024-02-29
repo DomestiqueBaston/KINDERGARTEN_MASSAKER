@@ -1,22 +1,16 @@
 tool
-extends KinematicBody2D
-
+extends Runner
 class_name Alien
+
+# If the "tool" keyword is not present at the start of the script, the Runner
+# class will not be able to play footstep sounds in the Godot editor. It will
+# still work in the game, though.
 
 # speed of movement in pixels/second
 export var speed := Vector2(125, 62.5)
 
 # likelihood the alien will scratch after a second
 export var scratch_chances := 0.25
-
-#
-# This fake property can be animated by an AnimationPlayer Property track,
-# rather than having a Call Method track call play_step(). The advantage of the
-# property is that Call Method tracks are not executed in the Godot editor,
-# whereas property tracks are, IF you include the "tool" keyword at the top of
-# this script...
-#
-export var step_hack := false setget set_step_hack, get_step_hack
 
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
@@ -27,21 +21,10 @@ signal teleport
 # signal emitted when the ghost effect wears off
 signal ghost_done
 
-# sounds of footsteps (dry and wet, right and left)
-var dry_step = [
-	preload("res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav"),
-	preload("res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_B.wav")
-]
-var wet_step = [
-	preload("res://ASSETS/SOUND/FX/ALIEN/Mud_steps_C.wav"),
-	preload("res://ASSETS/SOUND/FX/ALIEN/Mud_steps_E.wav")
-]
-
 var direction := Vector2.DOWN
 var scratch_interval := 0.0
 var accelerate := 1.0
 var mirror := false
-var puddle_count := 0
 
 enum State {
 	FIRST_IDLE,
@@ -69,11 +52,7 @@ func reset():
 	set_physics_process(false)
 	stop_cooldown()
 	state = State.MOVE
-	if $Vomit_Detector.is_connected("body_entered", self, "_on_vomit_entered"):
-		$Vomit_Detector.disconnect("body_entered", self, "_on_vomit_entered")
-	if $Vomit_Detector.is_connected("body_exited", self, "_on_vomit_exited"):
-		$Vomit_Detector.disconnect("body_exited", self, "_on_vomit_exited")
-	puddle_count = 0
+	stop_runner()
 
 #
 # Starts the alien's "idle" animation cycle and beams him down. Once the "beam
@@ -82,8 +61,7 @@ func reset():
 #
 func beam_down():
 	$CyclePlayer.play("Idle")
-	$Vomit_Detector.connect("body_entered", self, "_on_vomit_entered")
-	$Vomit_Detector.connect("body_exited", self, "_on_vomit_exited")
+	start_runner()
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
 	# to ensure alien is invisible, in particular...
 	$Beam_Down_Rear/AnimationPlayer.advance(0)
@@ -256,8 +234,7 @@ func start_mirror(duration: float, pos: Vector2, dir: Vector2):
 	direction = dir.normalized()
 	$CyclePlayer.set_direction_vector(dir)
 	$CyclePlayer.play("Run")
-	$Vomit_Detector.connect("body_entered", self, "_on_vomit_entered")
-	$Vomit_Detector.connect("body_exited", self, "_on_vomit_exited")
+	start_runner()
 	set_physics_process(true)
 	var flash_time = $Flash.get_animation("flash").length
 	var timer = Timer.new()
@@ -326,29 +303,3 @@ func flash():
 func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 	if state == State.SCRATCH and "Scratching" in old_name:
 		state = State.IDLE
-
-#
-# Called by AnimationPlayer when the alien takes a step to play an appropriate
-# sound.
-#
-func play_step(left: bool):
-	var index = 1 if left else 0
-	if puddle_count > 0:
-		$Footsteps.stream = wet_step[index]
-	else:
-		$Footsteps.stream = dry_step[index]
-	$Footsteps.play()
-
-func set_step_hack(left: bool):
-	if $AnimationPlayer.is_playing():
-		play_step(left)
-	step_hack = left
-
-func get_step_hack() -> bool:
-	return step_hack
-
-func _on_vomit_entered(_body: Node):
-	puddle_count += 1
-
-func _on_vomit_exited(_body: Node):
-	puddle_count -= 1
