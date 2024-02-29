@@ -52,7 +52,7 @@ func reset():
 	set_physics_process(false)
 	stop_cooldown()
 	state = State.MOVE
-	stop_runner()
+	stop_checking_for_puddles()
 
 #
 # Starts the alien's "idle" animation cycle and beams him down. Once the "beam
@@ -61,7 +61,7 @@ func reset():
 #
 func beam_down():
 	$CyclePlayer.play("Idle")
-	start_runner()
+	start_checking_for_puddles()
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
 	# to ensure alien is invisible, in particular...
 	$Beam_Down_Rear/AnimationPlayer.advance(0)
@@ -234,7 +234,7 @@ func start_mirror(duration: float, pos: Vector2, dir: Vector2):
 	direction = dir.normalized()
 	$CyclePlayer.set_direction_vector(dir)
 	$CyclePlayer.play("Run")
-	start_runner()
+	start_checking_for_puddles()
 	set_physics_process(true)
 	var flash_time = $Flash.get_animation("flash").length
 	var timer = Timer.new()

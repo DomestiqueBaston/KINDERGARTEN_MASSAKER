@@ -3649,7 +3649,7 @@ tracks/0/keys = {
 
 [node name="VOMITO" type="KinematicBody2D"]
 collision_layer = 64
-collision_mask = 595
+collision_mask = 83
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true

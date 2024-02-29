@@ -14,6 +14,10 @@ func _ready():
 	if Engine.editor_hint:
 		return
 
+	# detect when walking through puddles to update footstep sounds
+
+	start_checking_for_puddles()
+
 	# all characters start out in their default animation, facing in a random
 	# direction
 

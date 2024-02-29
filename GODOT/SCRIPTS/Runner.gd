@@ -54,7 +54,7 @@ func _ready():
 # Connects the vomit detector to start detecting puddles, if it has not already
 # been done.
 #
-func start_runner():
+func start_checking_for_puddles():
 	if not is_connected:
 		puddle_count = 0
 		vomit_detector.connect("body_entered", self, "_on_vomit_entered")
@@ -64,7 +64,7 @@ func start_runner():
 #
 # Disconnects the vomit detector and resets the puddle count.
 #
-func stop_runner():
+func stop_checking_for_puddles():
 	if is_connected:
 		vomit_detector.disconnect("body_entered", self, "_on_vomit_entered")
 		vomit_detector.disconnect("body_exited", self, "_on_vomit_exited")

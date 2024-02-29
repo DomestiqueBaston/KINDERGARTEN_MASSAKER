@@ -3470,7 +3470,7 @@ tracks/0/keys = {
 
 [node name="KINDERGARTNERIN" type="KinematicBody2D"]
 collision_layer = 16
-collision_mask = 579
+collision_mask = 67
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
