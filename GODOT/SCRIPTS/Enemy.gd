@@ -1,5 +1,5 @@
-extends KinematicBody2D
-
+tool
+extends Runner
 class_name Enemy
 
 export var speed := Vector2(100, 50)
@@ -11,6 +11,8 @@ var is_running: bool
 var direction: Vector2
 
 func _ready():
+	if Engine.editor_hint:
+		return
 
 	# all characters start out in their default animation, facing in a random
 	# direction
@@ -56,6 +58,8 @@ func on_timer_timeout():
 	timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
 
 func _physics_process(_delta):
+	if Engine.editor_hint:
+		return
 	if run_anim in $AnimationPlayer.current_animation:
 		var time_scale = $CyclePlayer.get_speed()
 		if time_scale != 0:

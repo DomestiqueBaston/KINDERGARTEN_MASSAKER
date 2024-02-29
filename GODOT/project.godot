@@ -24,7 +24,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SCRIPTS/CyclePlayer.gd"
 }, {
-"base": "KinematicBody2D",
+"base": "Runner",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://SCRIPTS/Enemy.gd"

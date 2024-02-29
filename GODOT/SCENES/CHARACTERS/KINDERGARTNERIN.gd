@@ -1,3 +1,4 @@
+tool
 extends Enemy
 
 # length in seconds of her Check (default) animation

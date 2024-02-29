@@ -9,16 +9,16 @@ class_name Runner
 # the Godot editor (hence the "tool" keyword at the start of the script).
 
 # AudioStreamSample: right step on dry ground
-export var dry_step_1: Resource
+export var dry_step_1: AudioStream
 
 # AudioStreamSample: left step on dry ground
-export var dry_step_2: Resource
+export var dry_step_2: AudioStream
 
 # AudioStreamSample: right step on wet ground
-export var wet_step_1: Resource
+export var wet_step_1: AudioStream
 
 # AudioStreamSample: left step on wet ground
-export var wet_step_2: Resource
+export var wet_step_2: AudioStream
 
 # Area2D for detecting vomit on the ground
 export var vomit_detector_path: NodePath
@@ -57,8 +57,8 @@ func _ready():
 func start_runner():
 	if not is_connected:
 		puddle_count = 0
-		vomit_detector.connect("body_entered", self, "on_vomit_entered")
-		vomit_detector.connect("body_exited", self, "on_vomit_exited")
+		vomit_detector.connect("body_entered", self, "_on_vomit_entered")
+		vomit_detector.connect("body_exited", self, "_on_vomit_exited")
 		is_connected = true
 
 #
@@ -66,8 +66,8 @@ func start_runner():
 #
 func stop_runner():
 	if is_connected:
-		vomit_detector.disconnect("body_entered", self, "on_vomit_entered")
-		vomit_detector.disconnect("body_exited", self, "on_vomit_exited")
+		vomit_detector.disconnect("body_entered", self, "_on_vomit_entered")
+		vomit_detector.disconnect("body_exited", self, "_on_vomit_exited")
 		puddle_count = 0
 		is_connected = false
 
@@ -93,8 +93,8 @@ func set_step_hack(left: bool):
 func get_step_hack() -> bool:
 	return step_hack
 
-func on_vomit_entered(_body: Node):
+func _on_vomit_entered(_body: Node):
 	puddle_count += 1
 
-func on_vomit_exited(_body: Node):
+func _on_vomit_exited(_body: Node):
 	puddle_count -= 1

@@ -1,3 +1,4 @@
+tool
 extends Enemy
 
 # probability of vomiting when done running, if there is no obstacle

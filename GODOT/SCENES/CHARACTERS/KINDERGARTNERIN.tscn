@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://SCENES/CHARACTERS/KINDERGARTNERIN.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://ASSETS/SOUND/FX/KINDERGARTNERIN/Cri_C.wav" type="AudioStream" id=6]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=7]
 [ext_resource path="res://SCRIPTS/CyclePlayer.gd" type="Script" id=8]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Wet_Steps_Educ_A.wav" type="AudioStream" id=9]
+[ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Wet_Steps_Educ_B.wav" type="AudioStream" id=10]
 
 [sub_resource type="CapsuleShape2D" id=85]
 radius = 16.0
@@ -402,7 +404,7 @@ tracks/5/path = NodePath("Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -426,6 +428,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:step_hack")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.14, 0.44 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -802,7 +816,7 @@ tracks/5/path = NodePath("Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -826,6 +840,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:step_hack")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.14, 0.44 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -1202,7 +1228,7 @@ tracks/5/path = NodePath("Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -1226,6 +1252,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:step_hack")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.14, 0.44 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -1602,7 +1640,7 @@ tracks/5/path = NodePath("Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -1626,6 +1664,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:step_hack")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.14, 0.44 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -2002,7 +2052,7 @@ tracks/5/path = NodePath("Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -2026,6 +2076,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:step_hack")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.14, 0.44 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=31]
@@ -2402,7 +2464,7 @@ tracks/5/path = NodePath("Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -2426,6 +2488,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:step_hack")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.14, 0.44 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -2802,7 +2876,7 @@ tracks/5/path = NodePath("Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -2826,6 +2900,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:step_hack")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.14, 0.44 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=27]
@@ -3202,7 +3288,7 @@ tracks/5/path = NodePath("Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/keys = {
 "clips": [ {
 "end_offset": 0.0,
@@ -3226,6 +3312,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:step_hack")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.14, 0.44 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -3377,6 +3475,13 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+dry_step_1 = ExtResource( 2 )
+dry_step_2 = ExtResource( 5 )
+wet_step_1 = ExtResource( 9 )
+wet_step_2 = ExtResource( 10 )
+vomit_detector_path = NodePath("Vomit_Detector")
+audio_stream_player_path = NodePath("Footsteps")
+animation_player_path = NodePath("AnimationPlayer")
 speed = Vector2( 200, 100 )
 default_anim = "Check"
 
@@ -3486,7 +3591,7 @@ anim_player_path = NodePath("../AnimationPlayer")
 
 [node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 1, 4 )
-stream = ExtResource( 5 )
+stream = ExtResource( 2 )
 volume_db = 7.5
 pitch_scale = 0.5
 max_distance = 250.0
