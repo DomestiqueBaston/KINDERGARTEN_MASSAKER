@@ -202,6 +202,12 @@ func start_invisible(duration: float):
 	$Talent/Invisible.start(duration)
 
 #
+# Interrupts the "invisible" animation in progress.
+#
+func stop_invisible():
+	$Talent/Invisible.stop()
+
+#
 # Plays the explosion animation.
 #
 func start_explosion():

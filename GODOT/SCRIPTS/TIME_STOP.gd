@@ -18,7 +18,7 @@ func start(duration: float):
 # Restarts time, if it has been stopped. Does nothing otherwise.
 #
 func stop():
-	$AnimationPlayer.stop()
+	$AnimationPlayer.play("RESET")
 	$Time_Stop_Timer.stop()
 	running = false
 

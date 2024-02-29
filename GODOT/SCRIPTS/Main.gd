@@ -1,5 +1,8 @@
 extends Node2D
 
+# unlock all talents immediately
+export var unlock_all_talents := false
+
 # determines how quickly the camera follows the alien's movements
 export var camera_speed := 5.0
 
@@ -237,8 +240,11 @@ func change_state(next_state):
 			child.connect("dialogue_finished", self, "on_dialogue_finished")
 		GameState.TALENT:
 			child = talent_scene.instance()
-			child.set_talent_level(
-				dialogue_seen, $ScoreTracker.get_best_score())
+			if unlock_all_talents:
+				child.set_talent_level(true, 100)
+			else:
+				child.set_talent_level(
+					dialogue_seen, $ScoreTracker.get_best_score())
 			child.connect("talent_aborted", self, "on_talent_aborted")
 			child.connect("talent_chosen", self, "on_talent_chosen")
 		GameState.PLAY:
@@ -434,20 +440,21 @@ func stop_game():
 	
 	match talent:
 		Globals.Talent.DASH:
-			$Talents/Dash.stop()
+			stop_dash()
 		Globals.Talent.FORCE_FIELD:
 			alien.stop_force_field()
 		Globals.Talent.TIME_STOP:
-			$Talent_Overlays/Time_Stop.stop()
-			$Enemy_Timer.set_paused(false)
+			stop_time_stop()
 		Globals.Talent.MIRROR_IMAGE:
 			stop_mirror_images()
+		Globals.Talent.INVISIBLE:
+			stop_invisible()
 		Globals.Talent.SHIELD:
 			alien.stop_shield()
 		Globals.Talent.TECHNICIAN:
 			techniker_used = false
 		Globals.Talent.BULLET_TIME:
-			$Talent_Overlays/Bullet_Time.stop()
+			stop_bullet_time()
 		Globals.Talent.GHOST:
 			alien.stop_ghost()
 	
@@ -476,6 +483,9 @@ func update_dash_trail():
 func _on_dash_done():
 	alien.set_run_cycle_speed(1)
 	alien.set_run_speed(1)
+
+func stop_dash():
+	$Talents/Dash.stop()
 
 func start_explosion():
 	alien.start_cooldown(EXPLOSION_cooldown)
@@ -511,6 +521,10 @@ func _on_time_stop_done():
 	$Enemy_Timer.set_paused(false)
 	get_tree().call_group("enemies", "unfreeze", false)
 
+func stop_time_stop():
+	$Talent_Overlays/Time_Stop.stop()
+	$Enemy_Timer.set_paused(false)
+
 func start_mirror_images():
 	alien.start_cooldown(MIRROR_IMAGE_cooldown)
 	$Talent_Overlays/Mirror_Images/AnimationPlayer.play("mirror_images")
@@ -530,6 +544,9 @@ func start_invisible():
 	alien.start_cooldown(INVISIBLE_cooldown)
 	alien.start_invisible(INVISIBLE_duration)
 
+func stop_invisible():
+	alien.stop_invisible()
+
 func start_techniker():
 	if techniker_used or $Shutdown_Overlay.visible:
 		return
@@ -546,6 +563,9 @@ func start_bullet_time():
 
 func _on_bullet_time_done():
 	get_tree().call_group("enemies", "set_time_scale", 1)
+
+func stop_bullet_time():
+	$Talent_Overlays/Bullet_Time.stop()
 
 func start_ghost():
 	alien.start_cooldown(GHOST_cooldown)

@@ -7,3 +7,7 @@ func start(duration):
 
 func _on_Invisible_Timer_timeout():
 	$AnimationPlayer.play("invisible_off")
+
+func stop():
+	$Invisible_Timer.stop()
+	$AnimationPlayer.play("RESET")

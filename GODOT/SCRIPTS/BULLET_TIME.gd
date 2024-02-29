@@ -18,7 +18,7 @@ func start(duration: float):
 # Interrupts bullet time, if it is running. Does nothing otherwise.
 #
 func stop():
-	$AnimationPlayer.stop()
+	$AnimationPlayer.play("RESET")
 	$Bullet_Timer.stop()
 	running = false
 
