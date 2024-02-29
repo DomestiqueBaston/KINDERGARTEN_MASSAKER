@@ -8,16 +8,16 @@ class_name Runner
 # property "step_hack" that can be triggered from an AnimationPlayer, even in
 # the Godot editor (hence the "tool" keyword at the start of the script).
 
-# AudioStreamSample: right step on dry ground
+# audio stream: right step on dry ground
 export var dry_step_1: AudioStream
 
-# AudioStreamSample: left step on dry ground
+# audio stream: left step on dry ground
 export var dry_step_2: AudioStream
 
-# AudioStreamSample: right step on wet ground
+# audio stream: right step on wet ground
 export var wet_step_1: AudioStream
 
-# AudioStreamSample: left step on wet ground
+# audio stream: left step on wet ground
 export var wet_step_2: AudioStream
 
 # Area2D for detecting vomit on the ground
@@ -36,7 +36,7 @@ export var animation_player_path: NodePath
 # whereas property tracks are, IF you include the "tool" keyword at the top of
 # the script...
 #
-export var step_hack := false setget set_step_hack, get_step_hack
+var step_hack := false setget set_step_hack, get_step_hack
 
 var vomit_detector: Area2D
 var audio_player: Node
