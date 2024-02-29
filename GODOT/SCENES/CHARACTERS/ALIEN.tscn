@@ -1341,31 +1341,14 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0.0, 0.0 ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath("..")
+tracks/13/type = "value"
+tracks/13/path = NodePath("..:step_hack")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
-tracks/13/enabled = false
+tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ false ],
-"method": "play_step"
-}, {
-"args": [ true ],
-"method": "play_step"
-} ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("..:step_hack")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
+"times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
@@ -2055,31 +2038,14 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0.0, 0.0 ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath("..")
+tracks/13/type = "value"
+tracks/13/path = NodePath("..:step_hack")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
-tracks/13/enabled = false
+tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ false ],
-"method": "play_step"
-}, {
-"args": [ true ],
-"method": "play_step"
-} ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("..:step_hack")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
+"times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
@@ -2772,31 +2738,14 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0.0, 0.0 ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath("..")
+tracks/13/type = "value"
+tracks/13/path = NodePath("..:step_hack")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
-tracks/13/enabled = false
+tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ false ],
-"method": "play_step"
-}, {
-"args": [ true ],
-"method": "play_step"
-} ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("..:step_hack")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
+"times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
@@ -3489,31 +3438,14 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0.0, 0.0 ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath("..")
+tracks/13/type = "value"
+tracks/13/path = NodePath("..:step_hack")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
-tracks/13/enabled = false
+tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ false ],
-"method": "play_step"
-}, {
-"args": [ true ],
-"method": "play_step"
-} ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("..:step_hack")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
+"times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
@@ -4206,31 +4138,14 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0.0, 0.0 ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath("..")
+tracks/13/type = "value"
+tracks/13/path = NodePath("..:step_hack")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
-tracks/13/enabled = false
+tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ false ],
-"method": "play_step"
-}, {
-"args": [ true ],
-"method": "play_step"
-} ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("..:step_hack")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
+"times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
@@ -4923,31 +4838,14 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0.0, 0.0 ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath("..")
+tracks/13/type = "value"
+tracks/13/path = NodePath("..:step_hack")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
-tracks/13/enabled = false
+tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ false ],
-"method": "play_step"
-}, {
-"args": [ true ],
-"method": "play_step"
-} ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("..:step_hack")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
+"times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
@@ -5640,31 +5538,14 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0.0, 0.0 ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath("..")
+tracks/13/type = "value"
+tracks/13/path = NodePath("..:step_hack")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
-tracks/13/enabled = false
+tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ false ],
-"method": "play_step"
-}, {
-"args": [ true ],
-"method": "play_step"
-} ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("..:step_hack")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
+"times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
@@ -6357,31 +6238,14 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0.0, 0.0 ]
 }
-tracks/13/type = "method"
-tracks/13/path = NodePath("..")
+tracks/13/type = "value"
+tracks/13/path = NodePath("..:step_hack")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
-tracks/13/enabled = false
+tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
-"values": [ {
-"args": [ false ],
-"method": "play_step"
-}, {
-"args": [ true ],
-"method": "play_step"
-} ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("..:step_hack")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0.2, 0.6 ),
+"times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
@@ -6778,6 +6642,7 @@ wet_step_2 = ExtResource( 5 )
 vomit_detector_path = NodePath("Vomit_Detector")
 audio_stream_player_path = NodePath("Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
+step_hack = true
 speed = Vector2( 150, 75 )
 scratch_chances = 0.33
 
@@ -7145,7 +7010,7 @@ stream = ExtResource( 8 )
 bus = "FX"
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource( 3 )
 volume_db = 2.5
 bus = "FX"
 __meta__ = {
