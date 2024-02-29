@@ -10,16 +10,22 @@ class_name Runner
 
 # AudioStreamSample: right step on dry ground
 export var dry_step_1: Resource
+
 # AudioStreamSample: left step on dry ground
 export var dry_step_2: Resource
+
 # AudioStreamSample: right step on wet ground
 export var wet_step_1: Resource
+
 # AudioStreamSample: left step on wet ground
 export var wet_step_2: Resource
+
 # Area2D for detecting vomit on the ground
 export var vomit_detector_path: NodePath
+
 # AudioStreamPlayer that plays the footsteps
 export var audio_stream_player_path: NodePath
+
 # AnimationPlayer that triggers the footsteps
 export var animation_player_path: NodePath
 
@@ -28,7 +34,7 @@ export var animation_player_path: NodePath
 # rather than having a Call Method track call play_step(). The advantage of the
 # property is that Call Method tracks are not executed in the Godot editor,
 # whereas property tracks are, IF you include the "tool" keyword at the top of
-# this script...
+# the script...
 #
 export var step_hack := false setget set_step_hack, get_step_hack
 
@@ -44,6 +50,10 @@ func _ready():
 	audio_player = get_node(audio_stream_player_path)
 	anim_player = get_node(animation_player_path)
 
+#
+# Connects the vomit detector to start detecting puddles, if it has not already
+# been done.
+#
 func start_runner():
 	if not is_connected:
 		puddle_count = 0
@@ -51,6 +61,9 @@ func start_runner():
 		vomit_detector.connect("body_exited", self, "on_vomit_exited")
 		is_connected = true
 
+#
+# Disconnects the vomit detector and resets the puddle count.
+#
 func stop_runner():
 	if is_connected:
 		vomit_detector.disconnect("body_entered", self, "on_vomit_entered")
