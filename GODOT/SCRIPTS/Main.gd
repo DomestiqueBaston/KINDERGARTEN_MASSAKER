@@ -577,6 +577,8 @@ func _on_ghost_done():
 
 func _on_vomit(pos: Vector2):
 	yield(get_tree().create_timer(2.0 / Globals.FPS), "timeout")
-	var puddle = vomit_scene.instance()
-	puddle.position = pos
-	background.add_child(puddle)
+	# in case the game ends just after the kid vomits...
+	if is_instance_valid(background):
+		var puddle = vomit_scene.instance()
+		puddle.position = pos
+		background.add_child(puddle)
