@@ -43,28 +43,30 @@ func init_timer():
 	timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
 
 #
-# Called when the animation timer times out, to update the character's animation
-# state. May be overridden by each character subclass.
+# Called when the animation timer times out to update the character's animation
+# state. By default, the character alternates its default and run animations,
+# for 2-5 seconds at a time. But the method may be overridden by each character
+# subclass.
 #
 func on_timer_timeout():
-
-	# running => stop and idle for 2-5 seconds
-
 	if is_running:
 		$CyclePlayer.play(default_anim)
-
-	# not running => start running for 2-5 seconds
-
 	else:
 		$CyclePlayer.play(run_anim)
-
 	is_running = not is_running
 	timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
 
-func _physics_process(_delta):
-	if Engine.editor_hint:
-		return
-	if run_anim in $AnimationPlayer.current_animation:
+func _physics_process(delta):
+	if not Engine.editor_hint:
+		tick(delta)
+
+#
+# Called by _physics_process(). If the character's run cycle is playing, the
+# character runs in "direction" and tries to avoid obstacles. May be overridden
+# by each character subclass.
+#
+func tick(_delta):
+	if $AnimationPlayer.current_animation.ends_with(run_anim):
 		var time_scale = $CyclePlayer.get_speed()
 		if time_scale != 0:
 			var dir = move_and_slide(direction * speed * time_scale)

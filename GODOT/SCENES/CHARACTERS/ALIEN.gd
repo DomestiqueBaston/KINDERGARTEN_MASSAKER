@@ -53,6 +53,8 @@ func reset():
 	stop_cooldown()
 	state = State.MOVE
 	stop_checking_for_puddles()
+	# alien can't be seen until he beams down
+	$Move_Collider.set_deferred("disabled", true)
 
 #
 # Starts the alien's "idle" animation cycle and beams him down. Once the "beam
@@ -67,6 +69,7 @@ func beam_down():
 	$Beam_Down_Rear/AnimationPlayer.advance(0)
 
 func _on_beam_down_finished(_anim_name):
+	$Move_Collider.set_deferred("disabled", false)
 	set_physics_process(true)
 	emit_signal("beam_down_finished")
 
