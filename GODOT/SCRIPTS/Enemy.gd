@@ -96,16 +96,18 @@ func tick(_delta):
 				$CyclePlayer.set_direction_vector(direction)
 
 func set_time_scale(scale = 1.0):
-	var prev_scale = $CyclePlayer.get_speed()
+	var prev_scale = 0 if $CyclePlayer.is_paused() else $CyclePlayer.get_speed()
 	if scale == prev_scale:
 		return
 	if scale == 0:
 		timer.set_paused(true)
+		$CyclePlayer.pause()
 	elif prev_scale == 0:
 		timer.set_paused(false)
+		$CyclePlayer.resume()
 	else:
 		timer.start(timer.time_left * (prev_scale / scale))
-	$CyclePlayer.set_speed(scale)
+		$CyclePlayer.set_speed(scale)
 
 func freeze(flash=true):
 	set_time_scale(0)

@@ -2,6 +2,8 @@ extends Node
 
 class_name CyclePlayer
 
+var paused := false
+
 #
 # The "cardinal" directions a character may face.
 #
@@ -196,3 +198,25 @@ func _on_animation_changed(_old_name, _new_name):
 #
 func _on_animation_finished(anim_name):
 	anim_player.play(anim_name)
+
+#
+# Pauses the animation.
+#
+func pause():
+	if not paused:
+		anim_player.stop(false)
+		paused = true
+
+#
+# Resumes the animation after a call to pause().
+#
+func resume():
+	if paused:
+		anim_player.play()
+		paused = false
+
+#
+# Returns true if the animation has been paused.
+#
+func is_paused() -> bool:
+	return paused
