@@ -3617,5 +3617,5 @@ navigation_layers = 4096
 anims/RESET = SubResource( 142 )
 anims/flash = SubResource( 143 )
 
-[connection signal="body_entered" from="Alien_Detection_Collider" to="." method="_on_Alien_Detection_Collider_body_entered"]
-[connection signal="body_exited" from="Alien_Detection_Collider" to="." method="_on_Alien_Detection_Collider_body_exited"]
+[connection signal="body_entered" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_entered"]
+[connection signal="body_exited" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_exited"]

@@ -2,13 +2,29 @@ tool
 extends Runner
 class_name Enemy
 
+# running speed
 export var speed := Vector2(100, 50)
+
+# distance from the alien where the enemy can attack
+export var attack_distance := 50.0
+
+# enemy's default animation
 export var default_anim := "Idle"
+
+# enemy's run animation
 export var run_anim := "Run"
 
-var timer: Timer
-var is_running: bool
+# the alien, if he can be seen
+var alien: Node2D
+
+# direction the enemy is running or facing
 var direction: Vector2
+
+# true if the enemy is moving (running)
+var is_running: bool
+
+# timer used to regulate the enemy's behavior
+var timer: Timer
 
 func _ready():
 	if Engine.editor_hint:
@@ -100,3 +116,42 @@ func unfreeze(flash=true):
 	set_time_scale(1)
 	if flash:
 		$Flasher.play("flash")
+
+#
+# Turns the character to face the alien.
+#
+func face_alien():
+	if alien:
+		var dir = alien.position - position
+		dir = Globals.get_nearest_direction(dir)
+		direction = dir.normalized()
+		$CyclePlayer.set_direction_vector(direction)
+
+#
+# Called when the alien has been spotted. The default implementation does
+# nothing.
+#
+func alien_seen():
+	pass
+
+#
+# Called when the alien can no longer be seen. The default implementation does
+# nothing.
+#
+func alien_gone():
+	pass
+
+#
+# Connect the alien detector's "body_entered" signal to this method.
+#
+func on_Alien_Detection_Collider_body_entered(body: Node):
+	alien = body
+	alien_seen()
+
+#
+# Connect the alien detector's "body_exited" signal to this method.
+#
+func on_Alien_Detection_Collider_body_exited(_body: Node):
+	if not $Alien_Detection_Collider/ADCollider.disabled:
+		alien = null
+		alien_gone()

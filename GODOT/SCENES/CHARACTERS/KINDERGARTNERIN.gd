@@ -1,9 +1,6 @@
 tool
 extends Enemy
 
-# distance from alien where teacher starts yelling at him
-export var close_enough_to_alien := 50.0
-
 # length in seconds of her Check (default) animation
 var idle_length: float
 
@@ -12,9 +9,6 @@ var OMG_length: float
 
 # length in seconds of her No animation
 var no_length: float
-
-# the alien, if he can be seen
-var alien: Node2D
 
 func init_timer():
 	idle_length = $AnimationPlayer.get_animation("00_Check").length
@@ -45,16 +39,6 @@ func _start_running(extra_wait := 0.0):
 	is_running = true
 
 #
-# Turns the teacher to face the alien.
-#
-func _face_alien():
-	if alien:
-		var dir = alien.position - position
-		dir = Globals.get_nearest_direction(dir)
-		direction = dir.normalized()
-		$CyclePlayer.set_direction_vector(direction)
-
-#
 # Called by _physics_process().
 #
 func tick(delta):
@@ -69,9 +53,9 @@ func tick(delta):
 	# run towards the alien and stop to yell at him when close enough
 
 	elif $AnimationPlayer.current_animation.ends_with("_Run"):
-		_face_alien()
+		face_alien()
 		var dist2 = (alien.position - position).length_squared()
-		if dist2 < close_enough_to_alien * close_enough_to_alien:
+		if dist2 < attack_distance * attack_distance:
 			$CyclePlayer.play("No", true)
 			_start_running(no_length)
 		else:
@@ -80,14 +64,13 @@ func tick(delta):
 	# No or OMG => turn to face alien without moving
 
 	elif not $AnimationPlayer.current_animation.ends_with("_Check"):
-		_face_alien()
+		face_alien()
 
 #
 # If the alien becomes visible while in the Check animation cycle, play the
 # OMG animation, then start running toward him.
 #
-func _on_Alien_Detection_Collider_body_entered(body: Node):
-	alien = body
+func alien_seen():
 	if $AnimationPlayer.current_animation.ends_with("_Check"):
 		$CyclePlayer.play("OMG", true)
 		_start_running(OMG_length)
@@ -96,14 +79,12 @@ func _on_Alien_Detection_Collider_body_entered(body: Node):
 # If the alien leaves the teacher's field of vision while she is yelling at
 # him, interrupt the No animation and start running again.
 #
-func _on_Alien_Detection_Collider_body_exited(_body: Node):
-	if not $Alien_Detection_Collider/ADCollider.disabled:
-		alien = null
-		if $AnimationPlayer.current_animation.ends_with("_No"):
-			$CyclePlayer.stop()
-			# This inside_tree() test prevents a warning message when the
-			# "body_exited" signal is triggered at the end of the game, when
-			# the Enemy parent class and its Timer have exited the tree but
-			# the subclass has not yet...
-			if timer.is_inside_tree():
-				_start_running()
+func alien_gone():
+	if $AnimationPlayer.current_animation.ends_with("_No"):
+		$CyclePlayer.stop()
+		# This inside_tree() test prevents a warning message when the
+		# "body_exited" signal is triggered at the end of the game, when the
+		# Enemy parent class and its Timer have exited the tree but the
+		# subclass has not yet...
+		if timer.is_inside_tree():
+			_start_running()
