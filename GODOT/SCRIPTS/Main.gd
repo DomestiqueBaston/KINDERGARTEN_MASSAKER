@@ -3,6 +3,9 @@ extends Node2D
 # unlock all talents immediately
 export var unlock_all_talents := false
 
+# true => turn off overlay animation
+export var block_overlay_animation := false
+
 # determines how quickly the camera follows the alien's movements
 export var camera_speed := 5.0
 
@@ -389,7 +392,8 @@ func start_game():
 	# enemies and counting down
 
 	yield(alien, "beam_down_finished")
-	overlay.start_animation()
+	if not block_overlay_animation:
+		overlay.start_animation()
 	$Enemy_Timer.start(spawn_first_time)
 	$Shutdown_Timer.start()
 	$ScoreTracker.start_game()
