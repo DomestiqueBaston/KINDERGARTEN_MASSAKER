@@ -2,7 +2,7 @@ tool
 extends Enemy
 
 # distance from alien where teacher starts yelling at him
-export var close_enough_to_alien := 100.0
+export var close_enough_to_alien := 50.0
 
 # length in seconds of her Check (default) animation
 var idle_length: float
@@ -10,12 +10,16 @@ var idle_length: float
 # length in seconds of her OMG animation
 var OMG_length: float
 
+# length in seconds of her No animation
+var no_length: float
+
 # the alien, if he can be seen
 var alien: Node2D
 
 func init_timer():
 	idle_length = $AnimationPlayer.get_animation("00_Check").length
 	OMG_length = $AnimationPlayer.get_animation("00_OMG").length
+	no_length = $AnimationPlayer.get_animation("00_No").length
 	_start_checking()
 
 func on_timer_timeout():
@@ -68,9 +72,8 @@ func tick(delta):
 		_face_alien()
 		var dist2 = (alien.position - position).length_squared()
 		if dist2 < close_enough_to_alien * close_enough_to_alien:
-			$CyclePlayer.play("No")
-			# continue until the No animation finishes or is interrupted
-			timer.stop()
+			$CyclePlayer.play("No", true)
+			_start_running(no_length)
 		else:
 			.tick(delta)
 
@@ -91,17 +94,16 @@ func _on_Alien_Detection_Collider_body_entered(body: Node):
 
 #
 # If the alien leaves the teacher's field of vision while she is yelling at
-# him, stop the No animation and start running again.
+# him, interrupt the No animation and start running again.
 #
 func _on_Alien_Detection_Collider_body_exited(_body: Node):
 	if not $Alien_Detection_Collider/ADCollider.disabled:
 		alien = null
 		if $AnimationPlayer.current_animation.ends_with("_No"):
-			_start_running()
-
-#
-# If the No animation finishes, start running again.
-#
-func _on_AnimationPlayer_animation_finished(anim_name: String):
-	if anim_name.ends_with("_No"):
-		_start_running()
+			$CyclePlayer.stop()
+			# This inside_tree() test prevents a warning message when the
+			# "body_exited" signal is triggered at the end of the game, when
+			# the Enemy parent class and its Timer have exited the tree but
+			# the subclass has not yet...
+			if timer.is_inside_tree():
+				_start_running()

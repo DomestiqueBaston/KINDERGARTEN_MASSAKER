@@ -3619,4 +3619,3 @@ anims/flash = SubResource( 143 )
 
 [connection signal="body_entered" from="Alien_Detection_Collider" to="." method="_on_Alien_Detection_Collider_body_entered"]
 [connection signal="body_exited" from="Alien_Detection_Collider" to="." method="_on_Alien_Detection_Collider_body_exited"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
