@@ -238,6 +238,7 @@ func start_mirror(duration: float, pos: Vector2, dir: Vector2):
 	$CyclePlayer.set_direction_vector(dir)
 	$CyclePlayer.play("Run")
 	start_checking_for_puddles()
+	$Move_Collider.set_deferred("disabled", false)
 	set_physics_process(true)
 	var flash_time = $Flash.get_animation("flash").length
 	var timer = Timer.new()
