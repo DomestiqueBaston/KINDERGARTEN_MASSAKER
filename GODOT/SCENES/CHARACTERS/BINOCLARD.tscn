@@ -26,7 +26,7 @@ radius = 44.0
 height = 30.0
 
 [sub_resource type="CircleShape2D" id=81]
-radius = 9.48683
+radius = 15.0333
 
 [sub_resource type="CapsuleShape2D" id=154]
 radius = 11.0
@@ -275,7 +275,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 1, 39 ), Vector2( 1, 39 ), Vector2( 1, 38 ), Vector2( 1, 35 ) ]
+"values": [ Vector2( 1, 39 ), Vector2( 1, 39 ), Vector2( 1, 40 ), Vector2( 1, 35 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -1988,7 +1988,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 1, 20 ), Vector2( 1, 20 ), Vector2( 1, 19 ), Vector2( 1, 19.5 ) ]
+"values": [ Vector2( 1, 20 ), Vector2( 1, 18 ), Vector2( 1, 15 ), Vector2( 1, 17 ) ]
 }
 tracks/9/type = "audio"
 tracks/9/path = NodePath("../Kick")
@@ -4773,7 +4773,7 @@ wet_step_2 = ExtResource( 11 )
 vomit_detector_path = NodePath("Vomit_Detector")
 audio_stream_player_path = NodePath("Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
-attack_distance = 30.0
+attack_distance = 25.0
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
@@ -4817,7 +4817,6 @@ __meta__ = {
 }
 
 [node name="Attack_Collider" type="Area2D" parent="."]
-visible = false
 collision_layer = 2048
 collision_mask = 8
 __meta__ = {
@@ -4827,9 +4826,6 @@ __meta__ = {
 [node name="ACollider" type="CollisionShape2D" parent="Attack_Collider"]
 position = Vector2( -6, 21 )
 shape = SubResource( 81 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Vomit_Detector" type="Area2D" parent="."]
 visible = false

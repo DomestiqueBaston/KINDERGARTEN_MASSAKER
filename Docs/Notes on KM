@@ -44,7 +44,7 @@ The Alien has 1000 hit points (HP).
 	- Quick runner (runs 20% faster – permanent). Uses NO fx.
 	- Force field (repulsive effect for 6 seconds on ranged attacks – cooldown: 10 seconds). Uses FORCE_FIELD fx.
 	- Time stop (affects everything (except the Alien) for 3 seconds – cooldown: 20 seconds).  Uses TIME_STOP fx.
-	- Mirror images (3 invulnerable copies of the Alien appear (“flashing” white for 3 frames) and start running in random directions (movement collisions apply) from the player attracting close enough kids for 3 seconds then disappear (“flashing” white for 3 frames) – cooldown: 15 seconds). If hit by an attack, the mirror image disappears instantly (“flashing” white for 3 frames). Uses MIRROR_IMAGES fx.
+	- Mirror images (3 invulnerable copies of the Alien appear (“flashing” white for 3 frames) and start running in random directions from the player (movement collisions apply) attracting close enough kids for 3 seconds then disappear (“flashing” white for 3 frames) – cooldown: 15 seconds). If hit by an attack, the mirror image disappears instantly (“flashing” white for 3 frames). Uses MIRROR_IMAGES fx.
 	- Dodger (hit box size reduced by 20% – permanent). Uses NO fx.
 	- Invisible (makes enemies go away as if the Alien wasn’t here for 4 seconds but can take damages and movement collisions apply)– cooldown: 20 seconds). Uses INVISIBLE fx.
 	- Shield (invulnerable to hand-to-hand attacks for 3 seconds – cooldown: 10 seconds). Uses SHIELD fx.
