@@ -43,5 +43,5 @@ func tick(delta):
 		else:
 			.tick(delta)
 
-func _on_successful_kick(_body):
+func _on_successful_kick(_area: Area2D):
 	print("kicked!")
