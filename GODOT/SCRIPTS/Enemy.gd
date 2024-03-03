@@ -82,18 +82,18 @@ func _physics_process(delta):
 # by each character subclass.
 #
 func tick(_delta):
-	if $AnimationPlayer.current_animation.ends_with(run_anim):
-		var time_scale = $CyclePlayer.get_speed()
-		if time_scale != 0:
-			var dir = move_and_slide(direction * speed * time_scale)
-			if get_slide_count() > 0:
-				# turn at random when stuck
-				if dir.length_squared() < 1.0:
-					dir = direction.rotated(rand_range(PI/-4.0, PI/4.0))
-				# we can only move in one of the 8 "cardinal" directions
-				dir = Globals.get_nearest_direction(dir)
-				direction = dir.normalized()
-				$CyclePlayer.set_direction_vector(direction)
+	if (not $AnimationPlayer.current_animation.ends_with(run_anim)
+		or $CyclePlayer.is_paused()):
+		return
+	var dir = move_and_slide(direction * speed * $CyclePlayer.get_speed())
+	if get_slide_count() > 0:
+		# turn at random when stuck
+		if dir.length_squared() < 1.0:
+			dir = direction.rotated(rand_range(PI/-4.0, PI/4.0))
+		# we can only move in one of the 8 "cardinal" directions
+		dir = Globals.get_nearest_direction(dir)
+		direction = dir.normalized()
+		$CyclePlayer.set_direction_vector(direction)
 
 func set_time_scale(scale = 1.0):
 	var prev_scale = 0 if $CyclePlayer.is_paused() else $CyclePlayer.get_speed()
