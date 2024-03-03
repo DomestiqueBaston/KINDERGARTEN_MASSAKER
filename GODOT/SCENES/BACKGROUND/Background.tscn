@@ -41,6 +41,7 @@ __meta__ = {
 }
 
 [node name="Left_island" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 0, 1 )
 polygon = PoolVector2Array( 431, 239, 414, 227, 394.751, 217.58, 377.766, 214.103, 353, 215, 330, 219, 313.606, 225.353, 293, 238, 273, 253, 249, 282, 231.525, 310.704, 226, 326, 219, 370, 215.86, 409.888, 217, 423, 226, 438, 237, 447, 249.344, 454.099, 262, 455, 278, 451, 295.628, 443.517, 311, 429, 324, 400, 344, 366, 367, 346, 390, 331, 415, 307, 432, 286, 437, 276, 437, 260, 435, 245 )
 __meta__ = {
@@ -48,6 +49,7 @@ __meta__ = {
 }
 
 [node name="Right_Island" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 1092, 403, 1077, 398, 1061, 396, 1038, 395, 1019, 396, 1012, 399, 1001, 409, 989, 425, 972, 437, 953, 446, 933, 459, 916, 474, 911, 483, 907, 502, 907, 531, 910, 542, 925, 555, 940.946, 563.988, 957.298, 570.067, 982, 574, 1009, 576, 1041.24, 575.194, 1056.94, 571.882, 1103, 557, 1127, 548, 1148.77, 535.839, 1155, 526, 1160, 505, 1162, 489, 1160.27, 475.168, 1150, 460, 1136, 444, 1116, 423, 1104, 412 )
 __meta__ = {
@@ -55,6 +57,7 @@ __meta__ = {
 }
 
 [node name="Top_Right_Boundary" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 676, -275, 669, 38, 710, 55, 738.073, 69.0363, 759, 81, 772, 101, 778, 123, 779.473, 153.524, 778, 180, 780, 192, 796, 212, 820, 231, 839, 241, 874, 246, 909, 248, 925, 245, 941, 236, 957, 225, 988.332, 193.804, 1024, 154, 1040.67, 133.796, 1064, 110, 1093.08, 86.1647, 1109.95, 73.1556, 1129, 61, 1151.2, 55.2542, 1179, 51, 1223, 52, 1263, 58, 1294.51, 71.5036, 1323, 88, 1348, 109, 1366, 134, 1757, 137, 1760, -260, 1319, -264, 990, -266 )
 __meta__ = {
@@ -62,6 +65,7 @@ __meta__ = {
 }
 
 [node name="Right_Boundary" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 1756, 108, 1350, 105, 1369, 147, 1385.49, 162.962, 1398, 184, 1404, 217, 1404, 250, 1401, 284, 1406, 319, 1409, 354, 1408, 407, 1404, 436, 1403, 465, 1406.25, 492.119, 1407, 516, 1402.95, 540.73, 1397, 566, 1389, 602, 1383, 642, 1378, 669, 1369, 693, 1763, 702, 1759, 419, 1757, 222 )
 __meta__ = {
@@ -69,6 +73,7 @@ __meta__ = {
 }
 
 [node name="Bottom_Boundary" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 1765, 680, 1377, 674, 1363, 704, 1339, 729, 1297, 747, 1249, 763, 1196.29, 770.096, 1146, 772, 1121, 770, 1098, 769, 1078, 772, 1055, 774, 1019, 773, 980, 766, 840, 739, 765, 718, 733, 706, 710, 693, 698.568, 683.568, 684, 670, 664, 662, 642, 651, 630, 639, 619, 631, 591, 626, 563, 628, 456, 631, 436, 634, 429.85, 637.299, 420, 650, 398, 670, 369, 694, 301, 731, 264, 751, 218, 764, 234, 1086, 327, 1087, 530, 1087, 763, 1083, 1043, 1083, 1241, 1082, 1419, 1085, 1770, 1087 )
 __meta__ = {
@@ -76,6 +81,7 @@ __meta__ = {
 }
 
 [node name="Left_Boundary" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 1, 2 )
 polygon = PoolVector2Array( 247, 1090, 244, 764, 193, 761, 149, 753, 123, 743, 99, 724, 73, 703, 58.6097, 679.496, 47, 652, 39.0293, 617.668, 35, 583, 33, 529, 34, 497, 34, 465, 32, 427, 30, 387, 33.0289, 336.208, 38, 286, 42, 232, -316, 208, -316, 321, -319, 482, -321, 545, -321, 744, -321, 1097, 84, 1092 )
 __meta__ = {
@@ -83,6 +89,7 @@ __meta__ = {
 }
 
 [node name="Top_Left_Boundary" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 1, 2 )
 polygon = PoolVector2Array( -315, 261, 37, 265, 48, 230, 63, 199, 74.1633, 166.525, 90, 136, 119, 111, 139, 98, 158, 80, 197, 60, 240, 46, 298, 36, 321, 32, 370, 24, 413, 26, 449, 23, 514, 28, 598, 30, 665, 38, 688, 44, 687, -276, 597, -276, 437, -276, 305, -275, 171, -274, -311, -270, -314, -63, -316, 116 )
 __meta__ = {
@@ -93,6 +100,7 @@ __meta__ = {
 navigation_layers = 4096
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+visible = false
 navpoly = SubResource( 1 )
 navigation_layers = 4096
 __meta__ = {
@@ -100,6 +108,7 @@ __meta__ = {
 }
 
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+visible = false
 navpoly = SubResource( 2 )
 navigation_layers = 4096
 __meta__ = {
@@ -107,6 +116,7 @@ __meta__ = {
 }
 
 [node name="NavigationPolygonInstance3" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+visible = false
 navpoly = SubResource( 3 )
 navigation_layers = 4096
 __meta__ = {
@@ -114,6 +124,7 @@ __meta__ = {
 }
 
 [node name="NavigationPolygonInstance4" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+visible = false
 navpoly = SubResource( 4 )
 navigation_layers = 4096
 __meta__ = {
@@ -121,6 +132,7 @@ __meta__ = {
 }
 
 [node name="NavigationPolygonInstance5" type="NavigationPolygonInstance" parent="NavigationAgent2D"]
+visible = false
 navpoly = SubResource( 5 )
 navigation_layers = 4096
 __meta__ = {
@@ -128,6 +140,7 @@ __meta__ = {
 }
 
 [node name="Alien_Starting_Points" type="Node2D" parent="."]
+visible = false
 __meta__ = {
 "_edit_lock_": true
 }
@@ -163,6 +176,7 @@ __meta__ = {
 }
 
 [node name="Alien_Teleportation_Points" type="Node2D" parent="."]
+visible = false
 __meta__ = {
 "_edit_lock_": true
 }
@@ -258,6 +272,7 @@ __meta__ = {
 }
 
 [node name="Kids_Spawning_Points" type="Node2D" parent="."]
+visible = false
 __meta__ = {
 "_edit_lock_": true
 }

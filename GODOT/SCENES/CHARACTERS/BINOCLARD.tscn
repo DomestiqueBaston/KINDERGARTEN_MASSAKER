@@ -26,7 +26,7 @@ radius = 44.0
 height = 30.0
 
 [sub_resource type="CircleShape2D" id=81]
-radius = 15.0
+radius = 12.0
 
 [sub_resource type="CapsuleShape2D" id=154]
 radius = 11.0
@@ -4785,6 +4785,7 @@ __meta__ = {
 }
 
 [node name="Alien_Detection_Collider" type="Area2D" parent="."]
+visible = false
 collision_layer = 128
 collision_mask = 2
 __meta__ = {
@@ -4813,7 +4814,6 @@ __meta__ = {
 }
 
 [node name="Attack_Collider" type="Area2D" parent="."]
-visible = false
 collision_layer = 2048
 collision_mask = 8
 __meta__ = {
@@ -4823,6 +4823,9 @@ __meta__ = {
 [node name="ACollider" type="CollisionShape2D" parent="Attack_Collider"]
 position = Vector2( -6, 21 )
 shape = SubResource( 81 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Vomit_Detector" type="Area2D" parent="."]
 visible = false
