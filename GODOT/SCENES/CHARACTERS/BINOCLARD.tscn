@@ -26,7 +26,7 @@ radius = 44.0
 height = 30.0
 
 [sub_resource type="CircleShape2D" id=81]
-radius = 15.0333
+radius = 15.0
 
 [sub_resource type="CapsuleShape2D" id=154]
 radius = 11.0
@@ -275,7 +275,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 1, 39 ), Vector2( 1, 39 ), Vector2( 1, 40 ), Vector2( 1, 35 ) ]
+"values": [ Vector2( 1, 39 ), Vector2( 1, 37 ), Vector2( 1, 40 ), Vector2( 1, 35 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -4773,7 +4773,7 @@ wet_step_2 = ExtResource( 11 )
 vomit_detector_path = NodePath("Vomit_Detector")
 audio_stream_player_path = NodePath("Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
-attack_distance = 25.0
+attack_distance = 30.0
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
