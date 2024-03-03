@@ -113,7 +113,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 114 ) ]
+"values": [ Vector2( 0, 81 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -684,7 +684,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, -27 ) ]
+"values": [ Vector2( -48, -7 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -1255,7 +1255,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, -27 ) ]
+"values": [ Vector2( 50, -8 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -1802,7 +1802,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -48 ) ]
+"values": [ Vector2( 0, -16 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("../Alien_Detection_Collider/ADCollider:disabled")
@@ -2385,7 +2385,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, 93 ) ]
+"values": [ Vector2( -40, 72 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -2956,7 +2956,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, 93 ) ]
+"values": [ Vector2( 44, 68 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -3513,7 +3513,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -109, 34 ) ]
+"values": [ Vector2( -68, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -4084,7 +4084,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 109, 34 ) ]
+"values": [ Vector2( 68, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -4785,7 +4785,6 @@ __meta__ = {
 }
 
 [node name="Alien_Detection_Collider" type="Area2D" parent="."]
-visible = false
 collision_layer = 128
 collision_mask = 2
 __meta__ = {
@@ -4796,9 +4795,6 @@ __meta__ = {
 position = Vector2( 0, 114 )
 rotation = 1.5708
 shape = SubResource( 95 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Kid_Waving_Detection_Collider" type="Area2D" parent="."]
 visible = false
@@ -4817,6 +4813,7 @@ __meta__ = {
 }
 
 [node name="Attack_Collider" type="Area2D" parent="."]
+visible = false
 collision_layer = 2048
 collision_mask = 8
 __meta__ = {
