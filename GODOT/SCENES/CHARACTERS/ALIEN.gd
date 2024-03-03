@@ -21,10 +21,14 @@ signal teleport
 # signal emitted when the ghost effect wears off
 signal ghost_done
 
+# signal emitted when the alien becomes visible or invisible
+signal invisible
+
 var direction := Vector2.DOWN
 var scratch_interval := 0.0
 var accelerate := 1.0
 var mirror := false
+var invisible_flag := false
 
 enum State {
 	FIRST_IDLE,
@@ -51,6 +55,8 @@ func reset():
 	$CyclePlayer.stop()
 	set_physics_process(false)
 	stop_cooldown()
+	mirror = false
+	invisible_flag = false
 	state = State.MOVE
 	stop_checking_for_puddles()
 	# alien can't be seen until he beams down
@@ -181,12 +187,26 @@ func start_teleport():
 #
 func start_invisible(duration: float):
 	$Talent/Invisible.start(duration)
+	invisible_flag = true
+	emit_signal("invisible", invisible_flag)
+
+func _on_invisible_done():
+	invisible_flag = false
+	emit_signal("invisible", invisible_flag)
 
 #
 # Interrupts the "invisible" animation in progress.
 #
 func stop_invisible():
 	$Talent/Invisible.stop()
+	invisible_flag = false
+	emit_signal("invisible", invisible_flag)
+
+#
+# Returns true if the alien is invisible (start_invisible() has been called).
+#
+func is_invisible() -> bool:
+	return invisible_flag
 
 #
 # Plays the explosion animation.

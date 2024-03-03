@@ -14,8 +14,14 @@ export var default_anim := "Idle"
 # enemy's run animation
 export var run_anim := "Run"
 
-# the alien, if he can be seen
-var alien: Node2D
+# the alien, if he has been spotted
+var alien: Alien
+
+# is the alien in the enemy's field of vision?
+var _alien_visible_flag := false
+
+# is the alien invisible (wherever he is)?
+var _alien_invisible_flag := false
 
 # direction the enemy is running or facing
 var direction: Vector2
@@ -123,7 +129,7 @@ func unfreeze(flash=true):
 # Turns the character to face the alien.
 #
 func face_alien():
-	if alien:
+	if is_alien_visible():
 		var dir = alien.position - position
 		dir = Globals.get_nearest_direction(dir)
 		direction = dir.normalized()
@@ -147,13 +153,35 @@ func alien_gone():
 # Connect the alien detector's "body_entered" signal to this method.
 #
 func on_Alien_Detection_Collider_body_entered(body: Node):
-	alien = body
-	alien_seen()
+	if alien == null:
+		alien = body
+		_alien_invisible_flag = alien.is_invisible()
+		alien.connect("invisible", self, "_on_alien_invisible")
+	_alien_visible_flag = true
+	if not _alien_invisible_flag:
+		alien_seen()
 
 #
 # Connect the alien detector's "body_exited" signal to this method.
 #
 func on_Alien_Detection_Collider_body_exited(_body: Node):
 	if not $Alien_Detection_Collider/ADCollider.disabled:
-		alien = null
-		alien_gone()
+		_alien_visible_flag = false
+		if not _alien_invisible_flag:
+			alien_gone()
+
+func _on_alien_invisible(var invisible: bool):
+	if _alien_invisible_flag != invisible:
+		_alien_invisible_flag = invisible
+		if _alien_visible_flag:
+			if invisible:
+				alien_gone()
+			else:
+				alien_seen()
+
+#
+# Returns true if the alien is in the enemy's field of vision and is not
+# invisible.
+#
+func is_alien_visible() -> bool:
+	return _alien_visible_flag and not _alien_invisible_flag

@@ -28,7 +28,7 @@ func tick(delta):
 
 	# can't see the alien => run at random like any other character
 
-	if alien == null:
+	if not is_alien_visible():
 		.tick(delta)
 
 	# run towards the alien and stop to kick him when close enough
