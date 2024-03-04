@@ -6671,8 +6671,8 @@ __meta__ = {
 
 [node name="Hit_Collider_Dodger" type="Area2D" parent="."]
 visible = false
-collision_layer = 8
-collision_mask = 2560
+collision_layer = 0
+collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
 }

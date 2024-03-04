@@ -334,7 +334,7 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 		state = State.IDLE
 
 func _on_Hit_Collider_area_entered(area: Area2D):
-	print("hit by ", area.get_owner().name)
+	state = State.HIT
 	$CyclePlayer.stop()
 	$CyclePlayer.play("Hit", true)
 	$CyclePlayer.play("Idle")
