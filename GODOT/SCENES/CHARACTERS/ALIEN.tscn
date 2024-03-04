@@ -7047,6 +7047,7 @@ anims/cooldown_on = SubResource( 142 )
 [node name="Cooldown_Timer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="area_entered" from="Hit_Collider" to="." method="_on_Hit_Collider_area_entered"]
 [connection signal="animation_finished" from="Beam_Down_Rear/AnimationPlayer" to="." method="_on_beam_down_finished"]
 [connection signal="timeout" from="Talent/Force_Field/Force_Field_Timer" to="Talent/Force_Field" method="_on_Force_Field_Timer_timeout"]
 [connection signal="done" from="Talent/Invisible" to="." method="_on_invisible_done"]

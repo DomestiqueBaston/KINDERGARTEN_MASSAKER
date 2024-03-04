@@ -118,7 +118,7 @@ func _unhandled_input(event: InputEvent):
 			pass
 		elif (event.is_action_pressed("ui_accept", false, true)
 			  and not alien.is_cooldown_active()
-			  and not alien.is_scratching()):
+			  and not alien.is_busy()):
 			match talent:
 				Globals.Talent.TELEPORT:
 					start_teleport()
@@ -310,7 +310,7 @@ func on_exit_game():
 func instance_character_at(scene: PackedScene, pos: Vector2) -> Node:
 	var inst = scene.instance()
 	inst.position = pos
-	$Characters.add_child(inst)
+	$Characters.add_child(inst, true)
 	inst.add_to_group("enemies")
 	if scene == vomiting_kid_scene:
 		inst.connect("vomit", self, "_on_vomit")

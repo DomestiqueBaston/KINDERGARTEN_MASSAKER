@@ -34,7 +34,8 @@ enum State {
 	FIRST_IDLE,
 	SCRATCH,
 	IDLE,
-	MOVE
+	MOVE,
+	HIT
 }
 
 var state = State.MOVE
@@ -80,10 +81,12 @@ func _on_beam_down_finished(_anim_name):
 	emit_signal("beam_down_finished")
 
 #
-# Returns true if the alien is busy scratching himself.
+# Returns true if the alien is busy scratching himself or getting hit.
 #
-func is_scratching() -> bool:
-	return state == State.SCRATCH
+func is_busy() -> bool:
+	# NB. The SCRATCH state begins a bit BEFORE the Scratching animation
+	return (state == State.SCRATCH or
+			$AnimationPlayer.current_animation.ends_with("_Hit"))
 
 func _physics_process(_delta):
 
@@ -103,9 +106,9 @@ func _physics_process(_delta):
 			$CyclePlayer.set_direction_vector(direction)
 		return
 
-	# can't do anything else while scratching
+	# can't do anything else while scratching or being hit
 
-	if is_scratching():
+	if is_busy():
 		return
 
 	# check for movement inputs
@@ -142,6 +145,8 @@ func _physics_process(_delta):
 				next_state = State.SCRATCH
 			else:
 				next_state = State.IDLE
+		elif state == State.HIT:
+			next_state = State.IDLE
 
 		if state != next_state:
 			if next_state == State.SCRATCH:
@@ -325,5 +330,11 @@ func flash():
 	$Flash.play("flash")
 
 func _on_AnimationPlayer_animation_changed(old_name, _new_name):
-	if state == State.SCRATCH and "Scratching" in old_name:
+	if state == State.SCRATCH and old_name.ends_with("_Scratching"):
 		state = State.IDLE
+
+func _on_Hit_Collider_area_entered(area: Area2D):
+	print("hit by ", area.get_owner().name)
+	$CyclePlayer.stop()
+	$CyclePlayer.play("Hit", true)
+	$CyclePlayer.play("Idle")

@@ -4943,6 +4943,15 @@ navigation_layers = 4096
 anims/RESET = SubResource( 152 )
 anims/flash = SubResource( 153 )
 
+[node name="Kick_Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+__meta__ = {
+"_editor_description_": "How long he has to wait before he can start kicking again."
+}
+
 [connection signal="body_entered" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_entered"]
 [connection signal="body_exited" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_exited"]
 [connection signal="area_entered" from="Attack_Collider" to="." method="_on_successful_kick"]
+[connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_animation_changed"]
+[connection signal="timeout" from="Kick_Timer" to="." method="_on_Kick_Timer_timeout"]

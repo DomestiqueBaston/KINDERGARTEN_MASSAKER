@@ -148,7 +148,7 @@ __meta__ = {
 [node name="Poison_Collider" type="Area2D" parent="."]
 visible = false
 collision_layer = 512
-collision_mask = 8
+collision_mask = 0
 __meta__ = {
 "_edit_lock_": true
 }

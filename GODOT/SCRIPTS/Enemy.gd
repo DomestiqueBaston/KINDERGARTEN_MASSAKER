@@ -164,6 +164,13 @@ func face_alien():
 		$CyclePlayer.set_direction_vector(direction)
 
 #
+# Turns the enemy so he faces/moves in the opposition direction.
+#
+func turn_around():
+	direction *= -1
+	$CyclePlayer.set_direction_vector(direction)
+
+#
 # Called when the alien has been seen. The default implementation does nothing.
 #
 func alien_seen():
