@@ -333,7 +333,7 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 	if state == State.SCRATCH and old_name.ends_with("_Scratching"):
 		state = State.IDLE
 
-func _on_Hit_Collider_area_entered(area: Area2D):
+func _on_Hit_Collider_area_entered(_area: Area2D):
 	state = State.HIT
 	$CyclePlayer.stop()
 	$CyclePlayer.play("Hit", true)
