@@ -14,8 +14,8 @@
 height = 12.0
 
 [sub_resource type="CapsuleShape2D" id=86]
-radius = 58.9999
-height = 30.0
+radius = 41.9999
+height = 64.0001
 
 [sub_resource type="CapsuleShape2D" id=87]
 radius = 44.0
@@ -2849,7 +2849,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -109, 34 ) ]
+"values": [ Vector2( -128, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -2962,7 +2962,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -109, 34 ) ]
+"values": [ Vector2( -128, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -3308,7 +3308,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 109, 34 ) ]
+"values": [ Vector2( 128, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -3421,7 +3421,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 109, 34 ) ]
+"values": [ Vector2( 128, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -3872,7 +3872,6 @@ __meta__ = {
 }
 
 [node name="Alien_Detection_Collider" type="Area2D" parent="."]
-visible = false
 collision_layer = 128
 collision_mask = 2
 __meta__ = {
@@ -3883,9 +3882,6 @@ __meta__ = {
 position = Vector2( 0, 114 )
 rotation = 1.5708
 shape = SubResource( 86 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Kid_Waving_Detection_Collider" type="Area2D" parent="."]
 visible = false

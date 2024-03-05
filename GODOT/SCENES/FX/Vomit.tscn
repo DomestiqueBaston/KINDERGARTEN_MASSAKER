@@ -4,12 +4,12 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Vomit_spill.wav" type="AudioStream" id=2]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 31.0
-height = 54.0
+radius = 21.9999
+height = 56.0002
 
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 31.0
-height = 54.0
+radius = 21.9999
+height = 56.0002
 
 [sub_resource type="Animation" id=1]
 length = 0.001
