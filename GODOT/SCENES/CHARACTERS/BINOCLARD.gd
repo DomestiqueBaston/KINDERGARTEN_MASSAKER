@@ -36,7 +36,7 @@ func _stop_kicking():
 # Called by _physics_process().
 #
 func tick(delta):
-	if Engine.editor_hint or $CyclePlayer.get_speed() == 0:
+	if Engine.editor_hint or $CyclePlayer.is_paused():
 		return
 
 	# can't see the alien => run at random like any other character
