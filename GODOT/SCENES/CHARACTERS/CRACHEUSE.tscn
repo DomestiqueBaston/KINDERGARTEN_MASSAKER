@@ -4,7 +4,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Spitting_A.wav" type="AudioStream" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_C.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_D.wav" type="AudioStream" id=4]
-[ext_resource path="res://SCRIPTS/Enemy.gd" type="Script" id=5]
+[ext_resource path="res://SCENES/CHARACTERS/CRACHEUSE.gd" type="Script" id=5]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=6]
 [ext_resource path="res://SCRIPTS/CyclePlayer.gd" type="Script" id=7]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Wet_Steps_Kid_C.wav" type="AudioStream" id=8]
@@ -3872,6 +3872,7 @@ __meta__ = {
 }
 
 [node name="Alien_Detection_Collider" type="Area2D" parent="."]
+visible = false
 collision_layer = 128
 collision_mask = 2
 __meta__ = {
@@ -4004,3 +4005,15 @@ navigation_layers = 4096
 [node name="Flasher" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 143 )
 anims/flash = SubResource( 144 )
+
+[node name="Projectile_Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+__meta__ = {
+"_editor_description_": "Time between the act of spitting and the appearance of the projectile."
+}
+
+[connection signal="body_entered" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_entered"]
+[connection signal="body_exited" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_exited"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_started"]
+[connection signal="timeout" from="Projectile_Timer" to="." method="_create_projectile"]
