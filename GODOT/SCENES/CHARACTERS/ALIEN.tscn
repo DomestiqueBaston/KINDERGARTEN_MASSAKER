@@ -969,6 +969,20 @@ tracks/7/keys = {
 "update": 1,
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Hit_1")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0165848,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
 
 [sub_resource type="Animation" id=154]
 length = 0.8
@@ -1485,6 +1499,20 @@ tracks/7/keys = {
 "stream": ExtResource( 8 )
 } ],
 "times": PoolRealArray( 0 )
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Hit_1")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0160129,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.1 )
 }
 
 [sub_resource type="Animation" id=121]
@@ -2003,6 +2031,20 @@ tracks/7/keys = {
 "stream": ExtResource( 8 )
 } ],
 "times": PoolRealArray( 0 )
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Hit_1")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0165848,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.1 )
 }
 
 [sub_resource type="Animation" id=9]
@@ -2524,6 +2566,20 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Hit_1")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0165848,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
 
 [sub_resource type="Animation" id=13]
 resource_name = "180_Idle"
@@ -3043,6 +3099,20 @@ tracks/7/keys = {
 "stream": ExtResource( 8 )
 } ],
 "times": PoolRealArray( 0 )
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Hit_1")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0165848,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.1 )
 }
 
 [sub_resource type="Animation" id=17]
@@ -3564,6 +3634,20 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Hit_1")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0165848,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
 
 [sub_resource type="Animation" id=21]
 resource_name = "45G_Idle"
@@ -4084,6 +4168,20 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Hit_1")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0171567,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
 
 [sub_resource type="Animation" id=25]
 resource_name = "90D_Idle"
@@ -4603,6 +4701,20 @@ tracks/7/keys = {
 "stream": ExtResource( 8 )
 } ],
 "times": PoolRealArray( 0 )
+}
+tracks/8/type = "audio"
+tracks/8/path = NodePath("../Hit_1")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"clips": [ {
+"end_offset": 0.0177286,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.1 )
 }
 
 [sub_resource type="Animation" id=29]
@@ -5222,6 +5334,9 @@ texture = ExtResource( 10 )
 centered = false
 offset = Vector2( -48, -96 )
 hframes = 32
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Beam_Down_Rear"]
 reset_on_save = false
@@ -5435,6 +5550,7 @@ anims/ghost_off = SubResource( 156 )
 anims/ghost_on = SubResource( 144 )
 
 [node name="Alien" type="Sprite" parent="."]
+visible = false
 material = SubResource( 94 )
 texture = ExtResource( 2 )
 offset = Vector2( 0.5, 0.5 )
@@ -5451,6 +5567,9 @@ There is a Cooldown shader for the outline on that sprite!"
 [node name="Beam_Down_Front" type="Node2D" parent="."]
 visible = false
 position = Vector2( 0, -31 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Beam Down Front" type="Sprite" parent="Beam_Down_Front"]
 position = Vector2( 0, -12 )
@@ -5459,6 +5578,9 @@ centered = false
 offset = Vector2( -48, -96 )
 hframes = 32
 frame = 31
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Alien")
@@ -5510,7 +5632,6 @@ anim_player_path = NodePath("../AnimationPlayer")
 
 [node name="Hit_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
 pitch_scale = 1.67
 bus = "FX"
 

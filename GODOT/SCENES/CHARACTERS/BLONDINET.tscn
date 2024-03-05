@@ -14,7 +14,7 @@
 height = 10.0
 
 [sub_resource type="CapsuleShape2D" id=95]
-radius = 44.0
+radius = 62.0
 height = 30.0
 
 [sub_resource type="CapsuleShape2D" id=96]
@@ -111,7 +111,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 114 ) ]
+"values": [ Vector2( 0, 98 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -236,7 +236,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 114 ) ]
+"values": [ Vector2( 0, 98 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -630,7 +630,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, -27 ) ]
+"values": [ Vector2( -62, -14 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -755,7 +755,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, -27 ) ]
+"values": [ Vector2( -62, -14 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -1150,7 +1150,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, -27 ) ]
+"values": [ Vector2( 62, -16 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -1275,7 +1275,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, -27 ) ]
+"values": [ Vector2( 58, -17 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -1646,7 +1646,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -48 ) ]
+"values": [ Vector2( 0, -33 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("../Alien_Detection_Collider/ADCollider:disabled")
@@ -1783,7 +1783,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -48 ) ]
+"values": [ Vector2( 0, -32 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -2178,7 +2178,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, 93 ) ]
+"values": [ Vector2( -60, 81 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -2303,7 +2303,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -72, 93 ) ]
+"values": [ Vector2( -61, 81 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -2698,7 +2698,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, 93 ) ]
+"values": [ Vector2( 60, 81 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -2823,7 +2823,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 72, 93 ) ]
+"values": [ Vector2( 61, 78 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -3218,7 +3218,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -109, 34 ) ]
+"values": [ Vector2( -81, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -3343,7 +3343,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -109, 34 ) ]
+"values": [ Vector2( -81, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -3738,7 +3738,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 109, 34 ) ]
+"values": [ Vector2( 79, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
@@ -3863,7 +3863,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 109, 34 ) ]
+"values": [ Vector2( 81, 34 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Kid_Waving_Detection_Collider/WDCollider:disabled")
