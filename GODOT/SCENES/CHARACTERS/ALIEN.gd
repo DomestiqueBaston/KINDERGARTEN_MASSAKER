@@ -324,10 +324,11 @@ func is_cooldown_active() -> bool:
 	return not $Cooldown_Timer.is_stopped()
 
 #
-# Causes the alien to flash on and off briefly.
+# Causes the alien to flash on and off. If brief is true, he only flashes on
+# and off once, very quickly.
 #
-func flash():
-	$Flash.play("flash")
+func flash(var brief := false):
+	$Flash.play("flash_brief" if brief else "flash")
 
 func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 	if state == State.SCRATCH and old_name.ends_with("_Scratching"):
@@ -335,6 +336,7 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 
 func _on_Hit_Collider_area_entered(_area: Area2D):
 	state = State.HIT
+	flash(true)
 	$CyclePlayer.stop()
 	$CyclePlayer.play("Hit", true)
 	$CyclePlayer.play("Idle")
