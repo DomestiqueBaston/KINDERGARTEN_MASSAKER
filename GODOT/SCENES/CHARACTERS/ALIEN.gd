@@ -341,6 +341,10 @@ func _on_Hit_Collider_area_entered(_area: Area2D):
 	$CyclePlayer.play("Hit", true)
 	$CyclePlayer.play("Idle")
 
+#
+# Sets the size of the alien's hit collider, making it smaller and harder to
+# hit if small=true.
+#
 func set_hit_collider_size(small: bool):
 	var capsule: CapsuleShape2D = $Hit_Collider/HCollider.shape
 	if small:
