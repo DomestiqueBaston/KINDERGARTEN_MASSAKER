@@ -21,14 +21,6 @@ height = 30.0
 radius = 45.0
 height = 28.0
 
-[sub_resource type="CapsuleShape2D" id=97]
-radius = 17.0
-height = 14.0
-
-[sub_resource type="CapsuleShape2D" id=155]
-radius = 9.99997
-height = 10.0001
-
 [sub_resource type="ShaderMaterial" id=152]
 resource_local_to_scene = true
 shader = ExtResource( 6 )
@@ -36,6 +28,14 @@ shader_param/outline = Color( 0, 0, 0, 1 )
 shader_param/cooldown = Color( 0, 0, 0, 1 )
 shader_param/mask = 1.0
 shader_param/flash = false
+
+[sub_resource type="CapsuleShape2D" id=97]
+radius = 18.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id=155]
+radius = 9.99997
+height = 10.0001
 
 [sub_resource type="Animation" id=1]
 resource_name = "00_Idle"
@@ -399,10 +399,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( -9, 25 ) ]
+"values": [ Vector2( -9, 25 ), Vector2( -9, 25 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -437,10 +437,10 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 90.0 ]
+"values": [ 90.0, 90.0 ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -931,10 +931,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 60.6 ]
+"values": [ 60.6, 60.6 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:position")
@@ -943,10 +943,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( 2, 17 ) ]
+"values": [ Vector2( 2, 17 ), Vector2( 2, 17 ) ]
 }
 tracks/9/type = "audio"
 tracks/9/path = NodePath("../Slash")
@@ -1451,10 +1451,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( 17, 23 ) ]
+"values": [ Vector2( 15, 23 ), Vector2( 15, 23 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:rotation_degrees")
@@ -1463,10 +1463,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 85.1 ]
+"values": [ 85.1, 85.1 ]
 }
 tracks/9/type = "audio"
 tracks/9/path = NodePath("../Slash")
@@ -1959,10 +1959,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 75.3 ]
+"values": [ 74.9999, 74.9999 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:position")
@@ -1971,10 +1971,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( 10, 17 ) ]
+"values": [ Vector2( 9, 19 ), Vector2( 9, 19 ) ]
 }
 tracks/9/type = "audio"
 tracks/9/path = NodePath("../Slash")
@@ -2479,10 +2479,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0.0 ]
+"values": [ 0.0, 0.0 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:position")
@@ -2491,10 +2491,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( -14, 20 ) ]
+"values": [ Vector2( -14, 20 ), Vector2( -14, 20 ) ]
 }
 tracks/9/type = "audio"
 tracks/9/path = NodePath("../Slash")
@@ -2999,10 +2999,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( 1, 25 ) ]
+"values": [ Vector2( 3, 26 ), Vector2( 3, 26 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:rotation_degrees")
@@ -3011,10 +3011,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 124.3 ]
+"values": [ 124.3, 124.3 ]
 }
 tracks/9/type = "audio"
 tracks/9/path = NodePath("../Slash")
@@ -3519,10 +3519,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 90.0 ]
+"values": [ 90.0, 90.0 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:position")
@@ -3531,10 +3531,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( -8, 17 ) ]
+"values": [ Vector2( -8, 15 ), Vector2( -8, 15 ) ]
 }
 tracks/9/type = "audio"
 tracks/9/path = NodePath("../Slash")
@@ -4039,10 +4039,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 104.7 ]
+"values": [ 104.7, 104.7 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:position")
@@ -4051,10 +4051,10 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ Vector2( 9, 25 ) ]
+"values": [ Vector2( 11, 25 ), Vector2( 11, 25 ) ]
 }
 tracks/9/type = "audio"
 tracks/9/path = NodePath("../Slash")
@@ -4431,8 +4431,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Blondinet" type="Sprite" parent="."]
+material = SubResource( 152 )
+texture = ExtResource( 1 )
+offset = Vector2( 0.5, 0.5 )
+hframes = 14
+vframes = 14
+__meta__ = {
+"_edit_lock_": true,
+"_editor_description_": "Keep Transform X=0.5
+Keep Transform Y=0.5"
+}
+
 [node name="Attack_Collider" type="Area2D" parent="."]
-visible = false
 collision_layer = 2048
 collision_mask = 8
 __meta__ = {
@@ -4443,9 +4454,6 @@ __meta__ = {
 position = Vector2( -6, 21 )
 scale = Vector2( 1, 0.7 )
 shape = SubResource( 97 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Vomit_Detector" type="Area2D" parent="."]
 visible = false
@@ -4471,18 +4479,6 @@ color = Color( 0, 0.101961, 0, 0.392157 )
 polygon = PoolVector2Array( -14, 45, -12.2222, 36, -9, 30, -2.22222, 26, 6, 25, 14.4444, 26, 22, 30, 25.5556, 36, 27, 45, 25.5556, 54, 22, 60, 14.4444, 64, 6, 65, -2.22222, 64, -9, 60, -12.2222, 54 )
 __meta__ = {
 "_edit_lock_": true
-}
-
-[node name="Blondinet" type="Sprite" parent="."]
-material = SubResource( 152 )
-texture = ExtResource( 1 )
-offset = Vector2( 0.5, 0.5 )
-hframes = 14
-vframes = 14
-__meta__ = {
-"_edit_lock_": true,
-"_editor_description_": "Keep Transform X=0.5
-Keep Transform Y=0.5"
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
