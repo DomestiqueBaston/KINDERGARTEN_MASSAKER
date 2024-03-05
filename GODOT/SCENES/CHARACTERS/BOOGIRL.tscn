@@ -3864,6 +3864,7 @@ __meta__ = {
 }
 
 [node name="Alien_Detection_Collider" type="Area2D" parent="."]
+visible = false
 collision_layer = 128
 collision_mask = 2
 __meta__ = {
@@ -3874,6 +3875,9 @@ __meta__ = {
 position = Vector2( 0, 114 )
 rotation = 1.5708
 shape = SubResource( 94 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Kid_Waving_Detection_Collider" type="Area2D" parent="."]
 visible = false
