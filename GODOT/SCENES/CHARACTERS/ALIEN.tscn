@@ -5550,7 +5550,6 @@ anims/ghost_off = SubResource( 156 )
 anims/ghost_on = SubResource( 144 )
 
 [node name="Alien" type="Sprite" parent="."]
-visible = false
 material = SubResource( 94 )
 texture = ExtResource( 2 )
 offset = Vector2( 0.5, 0.5 )
