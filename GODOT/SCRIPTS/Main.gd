@@ -302,6 +302,7 @@ func on_talent_aborted():
 func on_talent_chosen(talent_index):
 	talent = talent_index
 	print("chose talent: ", Globals.talent_name[talent_index])
+	alien.set_hit_collider_size(talent == Globals.Talent.DODGE)
 	change_state(GameState.PLAY)
 
 func on_exit_game():

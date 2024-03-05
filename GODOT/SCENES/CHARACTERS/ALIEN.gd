@@ -340,3 +340,12 @@ func _on_Hit_Collider_area_entered(_area: Area2D):
 	$CyclePlayer.stop()
 	$CyclePlayer.play("Hit", true)
 	$CyclePlayer.play("Idle")
+
+func set_hit_collider_size(small: bool):
+	var capsule: CapsuleShape2D = $Hit_Collider/HCollider.shape
+	if small:
+		capsule.radius = 11
+		capsule.height = 4
+	else:
+		capsule.radius = 14
+		capsule.height = 4.05

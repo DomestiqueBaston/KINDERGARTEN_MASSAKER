@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=2]
+[gd_scene load_steps=113 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -49,10 +49,6 @@ height = 14.0
 [sub_resource type="CapsuleShape2D" id=118]
 radius = 14.0
 height = 4.05406
-
-[sub_resource type="CapsuleShape2D" id=157]
-radius = 11.0
-height = 4.0
 
 [sub_resource type="CapsuleShape2D" id=158]
 radius = 11.0
@@ -872,42 +868,6 @@ tracks/5/keys = {
 } ],
 "times": PoolRealArray( 0.151097 )
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=153]
 length = 0.4
@@ -1009,42 +969,6 @@ tracks/7/keys = {
 "update": 1,
 "values": [ Vector2( 0.5, 0.4 ) ]
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=154]
 length = 0.8
@@ -1132,42 +1056,6 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 1, 0.4 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=155]
@@ -1306,48 +1194,12 @@ tracks/9/keys = {
 "values": [ 2.5 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
+tracks/10/path = NodePath("..:step_hack")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 10, 22 ), Vector2( 8, 7 ), Vector2( 0, 3 ), Vector2( -5, 3 ), Vector2( -9, 20 ), Vector2( -6, 7 ), Vector2( 1, 2 ), Vector2( 7, 7 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("..:step_hack")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
@@ -1455,42 +1307,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0.4 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 1, 1.1, 1.2, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ), Vector2( 0.5, 23 ), Vector2( 1, 23 ), Vector2( 1.5, 23 ), Vector2( 2, 23 ), Vector2( 2, 23 ), Vector2( 1.33333, 23 ), Vector2( 0.666667, 23 ), Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.4, 1, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=8]
 resource_name = "135D_Dead"
@@ -1568,42 +1384,6 @@ tracks/5/keys = {
 "stream": ExtResource( 7 )
 } ],
 "times": PoolRealArray( 0.149217 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=120]
@@ -1706,42 +1486,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=121]
 length = 0.8
@@ -1825,42 +1569,6 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 20 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -2003,48 +1711,12 @@ tracks/9/keys = {
 "values": [ 2.5 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
+tracks/10/path = NodePath("..:step_hack")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -10, 20 ), Vector2( -7, 8 ), Vector2( -2, 1 ), Vector2( 2, 0 ), Vector2( 5, 13 ), Vector2( 3, 4 ), Vector2( -3, 2 ), Vector2( -6, 2 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("..:step_hack")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
@@ -2152,42 +1824,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0.4 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 1, 1.1, 1.2, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1, 20 ), Vector2( 1, 20 ), Vector2( -1, 19 ), Vector2( -2, 21 ), Vector2( -2, 21 ), Vector2( -1, 22 ), Vector2( -0.5, 21 ), Vector2( 0, 20 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.3, 1, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=12]
 resource_name = "135G_Dead"
@@ -2265,42 +1901,6 @@ tracks/5/keys = {
 "stream": ExtResource( 7 )
 } ],
 "times": PoolRealArray( 0.147179 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -2404,42 +2004,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=9]
 resource_name = "135G_Idle"
@@ -2528,42 +2092,6 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 4, 22 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 4, 22 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -2703,48 +2231,12 @@ tracks/9/keys = {
 "values": [ 2.5 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
+tracks/10/path = NodePath("..:step_hack")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -3, 13 ), Vector2( 0, 4 ), Vector2( 3, 0 ), Vector2( 8, 5 ), Vector2( 10, 19 ), Vector2( 7, 7 ), Vector2( 4, 2 ), Vector2( -1, 2 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("..:step_hack")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
@@ -2852,42 +2344,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0.4 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 1, 1.1, 1.2, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 4, 22 ), Vector2( 3.25, 21.5 ), Vector2( 2.5, 21 ), Vector2( 1.75, 20.5 ), Vector2( 1, 20 ), Vector2( 1, 20 ), Vector2( 2, 20.6667 ), Vector2( 3, 21.3333 ), Vector2( 4, 22 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.4, 1, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=16]
 resource_name = "180_Dead"
@@ -2965,42 +2421,6 @@ tracks/5/keys = {
 "stream": ExtResource( 7 )
 } ],
 "times": PoolRealArray( 0.14906 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -3104,42 +2524,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=13]
 resource_name = "180_Idle"
@@ -3224,42 +2608,6 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 1, 22 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -3403,48 +2751,12 @@ tracks/9/keys = {
 "values": [ 2.5 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
+tracks/10/path = NodePath("..:step_hack")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -9, 15 ), Vector2( -6, 6 ), Vector2( 0, 1 ), Vector2( 7, 3 ), Vector2( 11, 16 ), Vector2( 7, 5 ), Vector2( 0, 1 ), Vector2( -6, 3 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("..:step_hack")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
@@ -3552,42 +2864,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0.4 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 1, 1.1, 1.2, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1, 22 ), Vector2( 0.25, 22 ), Vector2( -0.5, 22 ), Vector2( -1.25, 22 ), Vector2( -2, 22 ), Vector2( -2, 22 ), Vector2( -1, 22 ), Vector2( 0, 22 ), Vector2( 1, 22 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.4, 1, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=20]
 resource_name = "45D_Dead"
@@ -3665,42 +2941,6 @@ tracks/5/keys = {
 "stream": ExtResource( 7 )
 } ],
 "times": PoolRealArray( 0.143104 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:scale")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -3804,42 +3044,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=17]
 resource_name = "45D_Idle"
@@ -3924,42 +3128,6 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 22 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -4103,48 +3271,12 @@ tracks/9/keys = {
 "values": [ 2.5 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
+tracks/10/path = NodePath("..:step_hack")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 6, 21 ), Vector2( 2, 8 ), Vector2( -2, 2 ), Vector2( -6, 3 ), Vector2( -8, 15 ), Vector2( -7, 4 ), Vector2( -2, 2 ), Vector2( 3, 9 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("..:step_hack")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
@@ -4252,42 +3384,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0.4 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 1, 1.1, 1.2, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 0, 22 ), Vector2( 0.25, 22.75 ), Vector2( 0.5, 23.5 ), Vector2( 0.75, 24.25 ), Vector2( 1, 25 ), Vector2( 1, 25 ), Vector2( 0.666667, 24 ), Vector2( 0.333333, 23 ), Vector2( 0, 22 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.4, 1, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=24]
 resource_name = "45G_Dead"
@@ -4365,42 +3461,6 @@ tracks/5/keys = {
 "stream": ExtResource( 7 )
 } ],
 "times": PoolRealArray( 0.147022 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -4504,42 +3564,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=21]
 resource_name = "45G_Idle"
@@ -4624,42 +3648,6 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( -1, 21 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -4803,48 +3791,12 @@ tracks/9/keys = {
 "values": [ 2.5 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
+tracks/10/path = NodePath("..:step_hack")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 9, 15 ), Vector2( 8, 5 ), Vector2( 3, 2 ), Vector2( -1, 8 ), Vector2( -5, 20 ), Vector2( -2, 10 ), Vector2( 2, 3 ), Vector2( 5, 3 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("..:step_hack")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
@@ -4952,42 +3904,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0.4 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 1, 1.1, 1.2, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -1, 22 ), Vector2( -1, 23 ), Vector2( 1, 20 ), Vector2( 2, 21 ), Vector2( 2, 21 ), Vector2( 1, 21 ), Vector2( 0, 21 ), Vector2( -1, 21 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.4, 1, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=28]
 resource_name = "90D_Dead"
@@ -5065,42 +3981,6 @@ tracks/5/keys = {
 "stream": ExtResource( 7 )
 } ],
 "times": PoolRealArray( 0.147022 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=27]
@@ -5204,42 +4084,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=25]
 resource_name = "90D_Idle"
@@ -5324,42 +4168,6 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( -1, 20 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -5503,48 +4311,12 @@ tracks/9/keys = {
 "values": [ 2.5 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
+tracks/10/path = NodePath("..:step_hack")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -2, 23 ), Vector2( -2, 12 ), Vector2( -3, 0 ), Vector2( -3, 0 ), Vector2( -3, 15 ), Vector2( -3, 1 ), Vector2( -3, -1 ), Vector2( -3, 4 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("..:step_hack")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
@@ -5652,42 +4424,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0.4 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 1, 1.1, 1.2, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -1, 21 ), Vector2( -1, 21.75 ), Vector2( -1, 22.5 ), Vector2( -1, 23.25 ), Vector2( -1, 24 ), Vector2( -1, 24 ), Vector2( -1, 22.6667 ), Vector2( -1, 21.3333 ), Vector2( -1, 20 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.4, 1, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=32]
 resource_name = "90G_Dead"
@@ -5765,42 +4501,6 @@ tracks/5/keys = {
 "stream": ExtResource( 7 )
 } ],
 "times": PoolRealArray( 0.145142 )
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:scale")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=31]
@@ -5904,42 +4604,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=29]
 resource_name = "90G_Idle"
@@ -6024,42 +4688,6 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0.0 ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( 1, 22 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -6203,48 +4831,12 @@ tracks/9/keys = {
 "values": [ 2.5 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
+tracks/10/path = NodePath("..:step_hack")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 3, 12 ), Vector2( 5, 2 ), Vector2( 4, 1 ), Vector2( 4, 4 ), Vector2( 4, 20 ), Vector2( 4, 6 ), Vector2( 4, 0 ), Vector2( 3, 1 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0 ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("..:step_hack")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
 "times": PoolRealArray( 0.27, 0.67 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
@@ -6352,42 +4944,6 @@ tracks/7/keys = {
 } ],
 "times": PoolRealArray( 0.4 )
 }
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 1, 1.1, 1.2, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 1, 22 ), Vector2( 1, 21.25 ), Vector2( 1, 20.5 ), Vector2( 1, 19.75 ), Vector2( 1, 19 ), Vector2( 1, 19 ), Vector2( 1, 20 ), Vector2( 1, 21 ), Vector2( 1, 22 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.4, 1, 1.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0.0, 0.0, 0.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=33]
 length = 0.001
@@ -6486,54 +5042,6 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 2.5 ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 23 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:rotation_degrees")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../Hit_Collider_Dodger/H_Collider_Dodger:scale")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=138]
@@ -6684,18 +5192,6 @@ shape = SubResource( 118 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Hit_Collider_Dodger" type="Area2D" parent="."]
-visible = false
-collision_layer = 0
-collision_mask = 0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="H_Collider_Dodger" type="CollisionShape2D" parent="Hit_Collider_Dodger"]
-position = Vector2( 0, 23 )
-shape = SubResource( 157 )
 
 [node name="Vomit_Detector" type="Area2D" parent="."]
 visible = false
