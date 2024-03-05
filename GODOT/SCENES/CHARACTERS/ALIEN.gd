@@ -342,6 +342,12 @@ func _on_Hit_Collider_area_entered(_area: Area2D):
 	$CyclePlayer.play("Idle")
 
 #
+# Returns the location of the alien's hit collider.
+#
+func get_hit_target() -> Vector2:
+	return $Hit_Collider/HCollider.global_position
+
+#
 # Sets the size of the alien's hit collider, making it smaller and harder to
 # hit if small=true.
 #
