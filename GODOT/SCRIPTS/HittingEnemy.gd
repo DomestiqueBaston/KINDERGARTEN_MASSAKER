@@ -2,16 +2,20 @@ tool
 extends Enemy
 class_name HittingEnemy
 
-# Enemy subclass for kids who strike the alien (Binoclard and Blondinet). The
-# only ways they differ is in the attacking animation cycle (Kick or Slash) and
-# perhaps the number of hits before they get bored, as well as a few variables
-# from the Enemy class (speed, attack_distance).
+# Enemy subclass for kids who strike the alien (Binoclard and Blondinet), then
+# get bored and go away after hitting him a certain number of times.
 
 # name of the attack animation cycle
 export var attack_animation: String
 
 # number of successful hits before we get bored and go away
 export var max_hit_count := 3
+
+# minimum amount of time spent in the default animation cycle before moving
+export var min_idle_time := 2.0
+
+# maximum amount of time spent in the default animation cycle before moving
+export var max_idle_time := 5.0
 
 # length in seconds of the attack animation
 var attack_length: float
@@ -31,7 +35,7 @@ func _ready():
 func on_timer_timeout():
 	if $AnimationPlayer.current_animation.ends_with("_Run"):
 		$CyclePlayer.play(default_anim)
-		start_timer(rand_range(2, 4))
+		start_timer(rand_range(min_idle_time, max_idle_time))
 	else:
 		_start_running()
 		attack_allowed = true
