@@ -33,6 +33,8 @@ func _on_animation_started(anim_name):
 # moved independently.
 #
 func _create_projectile():
+	if not attack_allowed:
+		return
 	var pos = $Point_of_Spit_Spawn.global_position
 	var target = alien.get_hit_target()
 	var inst = projectile_scene.instance()
