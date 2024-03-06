@@ -6,8 +6,12 @@ export var vomit_chances := 0.667
 
 signal vomit
 
-onready var vomit_length = $AnimationPlayer.get_animation("00_Vomit").length
+var vomit_length: float
 var vomit_obstacle_count := 0
+
+func _ready():
+	if not Engine.editor_hint:
+		vomit_length = $AnimationPlayer.get_animation("00_Vomit").length
 
 func on_timer_timeout():
 

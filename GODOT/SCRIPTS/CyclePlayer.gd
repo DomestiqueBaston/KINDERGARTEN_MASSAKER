@@ -118,6 +118,10 @@ func stop():
 func _full_anim_name(anim: String) -> String:
 	return "%s_%s" % [ prefix[current_direction], anim ]
 
+func _partial_anim_name(anim: String) -> String:
+	var underscore = anim.find("_")
+	return anim.right(underscore + 1)
+
 #
 # Specifies the direction the character is facing as a Vector2. The vector need
 # not be normalized. CyclePlayer will actually use the "cardinal" direction that
@@ -158,19 +162,20 @@ func set_direction(dir: int):
 
 	current_direction = dir
 
-	anim_player.clear_queue()
 	if not anim_player.is_playing():
 		return
 
-	if anim_queue.size() > 0:
-		var full_name = _full_anim_name(anim_queue.front().name)
-		var t = anim_player.current_animation_position
-		anim_player.play(full_name)
-		anim_player.seek(t)
+	var partial_name = _partial_anim_name(anim_player.current_animation)
+	var t = anim_player.current_animation_position
+	anim_player.play(_full_anim_name(partial_name))
+	anim_player.seek(t)
 
-	for i in range(1, anim_queue.size()):
-		var full_name = _full_anim_name(anim_queue[i].name)
-		anim_player.queue(full_name)
+	var queue = anim_player.get_queue()
+	anim_player.clear_queue()
+
+	for anim in queue:
+		partial_name = _partial_anim_name(anim)
+		anim_player.queue(_full_anim_name(partial_name))
 
 #
 # Sets the speed of playback for all animations: 1 for normal speed, larger

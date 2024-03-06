@@ -1,9 +1,9 @@
 tool
 extends Enemy
-class_name HittingEnemy
+class_name Attacker
 
-# Enemy subclass for kids who strike the alien (Binoclard and Blondinet), then
-# get bored and go away after hitting him a certain number of times.
+# Enemy subclass for kids who attack the alien, then get bored and go away after
+# hitting him a certain number of times.
 
 # name of the attack animation cycle
 export var attack_animation: String
@@ -96,7 +96,9 @@ func tick(delta):
 				_stop_attacking(hit_count >= max_hit_count)
 
 #
-# Called when an attack hits the alien.
+# Called when an attack hits the alien. A subclass that strikes the alien
+# directly, rather than with projectiles, will connect its attack collider's
+# area_entered() signal to this.
 #
 func _on_hit(_area: Area2D):
 	hit_count += 1

@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SCENES/CHARACTERS/ALIEN.gd"
 }, {
+"base": "Enemy",
+"class": "Attacker",
+"language": "GDScript",
+"path": "res://SCRIPTS/Attacker.gd"
+}, {
 "base": "StaticBody2D",
 "class": "Background",
 "language": "GDScript",
@@ -29,11 +34,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://SCRIPTS/Enemy.gd"
 }, {
-"base": "Enemy",
-"class": "HittingEnemy",
-"language": "GDScript",
-"path": "res://SCRIPTS/HittingEnemy.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Runner",
 "language": "GDScript",
@@ -41,10 +41,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Alien": "",
+"Attacker": "",
 "Background": "",
 "CyclePlayer": "",
 "Enemy": "",
-"HittingEnemy": "",
 "Runner": ""
 }
 
