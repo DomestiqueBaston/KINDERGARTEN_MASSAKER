@@ -40,7 +40,7 @@ func _start_running(extra_wait := 0.0):
 # Called by _physics_process().
 #
 func tick(delta):
-	if Engine.editor_hint or $CyclePlayer.is_paused():
+	if $CyclePlayer.is_paused():
 		return
 
 	# can't see the alien => run at random like any other character
