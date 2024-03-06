@@ -5631,8 +5631,8 @@ anim_player_path = NodePath("../AnimationPlayer")
 
 [node name="Hit_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -5.0
-pitch_scale = 1.67
+volume_db = -7.5
+pitch_scale = 1.5
 bus = "FX"
 
 [node name="Hit_2" type="AudioStreamPlayer" parent="."]
