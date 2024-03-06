@@ -31,7 +31,7 @@ func on_timer_timeout():
 	if $AnimationPlayer.current_animation.ends_with("_Run"):
 		spit_allowed = true
 		$CyclePlayer.play(default_anim)
-		timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
+		start_timer(rand_range(2, 5))
 	else:
 		_start_running()
 
@@ -40,7 +40,7 @@ func on_timer_timeout():
 #
 func _start_running(extra_wait := 0.0):
 	$CyclePlayer.play("Run")
-	timer.start(extra_wait + rand_range(2, 5) / $CyclePlayer.get_speed())
+	start_timer(extra_wait + rand_range(2, 5))
 
 #
 # Stops attacking (at the end of the Spit animation cycle), turns around and
@@ -72,11 +72,10 @@ func tick(delta):
 		var attack = false
 		if spit_allowed:
 			face_alien()
-			var dist2 = (alien.position - position).length_squared()
-			if dist2 < attack_distance * attack_distance:
+			if is_alien_in_range():
 				attack = true
 		if attack:
-			timer.stop()
+			stop_timer()
 			hit_count = 0
 			$CyclePlayer.play("Spit", true)
 		else:
@@ -102,7 +101,7 @@ func _on_animation_started(anim_name):
 # moved independently.
 #
 func _create_projectile():
-	var pos = to_global($Point_of_Spit_Spawn.position)
+	var pos = $Point_of_Spit_Spawn.global_position
 	var target = alien.get_hit_target()
 	var inst = projectile_scene.instance()
 	inst.velocity = (target - pos).normalized() * spit_speed

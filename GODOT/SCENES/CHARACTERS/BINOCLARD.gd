@@ -9,7 +9,7 @@ var kick_count: int
 func on_timer_timeout():
 	if $AnimationPlayer.current_animation.ends_with("_Run"):
 		$CyclePlayer.play(default_anim)
-		timer.start(rand_range(2, 4) / $CyclePlayer.get_speed())
+		start_timer(rand_range(2, 4))
 	else:
 		_start_running()
 
@@ -18,7 +18,7 @@ func on_timer_timeout():
 #
 func _start_running(extra_wait := 0.0):
 	$CyclePlayer.play("Run")
-	timer.start(extra_wait + rand_range(2, 5) / $CyclePlayer.get_speed())
+	start_timer(extra_wait + rand_range(2, 5))
 
 #
 # Stops kicking (at the end of the Kick animation cycle), turns around and
@@ -52,8 +52,7 @@ func tick(delta):
 		var kick_him = false
 		if kick_allowed:
 			face_alien()
-			var dist2 = (alien.position - position).length_squared()
-			if dist2 < attack_distance * attack_distance:
+			if is_alien_in_range():
 				kick_him = true
 		if kick_him:
 			kick_count = 0

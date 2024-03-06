@@ -6,7 +6,7 @@ onready var slash_length = $AnimationPlayer.get_animation("00_Slash").length
 func on_timer_timeout():
 	if $AnimationPlayer.current_animation.ends_with("_Run"):
 		$CyclePlayer.play(default_anim)
-		timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
+		start_timer(rand_range(2, 5))
 	else:
 		_start_running()
 
@@ -15,7 +15,7 @@ func on_timer_timeout():
 #
 func _start_running(extra_wait := 0.0):
 	$CyclePlayer.play("Run")
-	timer.start(extra_wait + rand_range(2, 5) / $CyclePlayer.get_speed())
+	start_timer(extra_wait + rand_range(2, 5))
 
 #
 # Stops attacking (at the end of the Slash animation cycle) and starts running
@@ -45,8 +45,7 @@ func tick(delta):
 
 	elif $AnimationPlayer.current_animation.ends_with("_Run"):
 		face_alien()
-		var dist2 = (alien.position - position).length_squared()
-		if dist2 < attack_distance * attack_distance:
+		if is_alien_in_range():
 			$CyclePlayer.play("Slash", true)
 		else:
 			.tick(delta)
