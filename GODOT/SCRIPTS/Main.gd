@@ -520,11 +520,11 @@ func start_time_stop():
 	alien.start_cooldown(TIME_STOP_cooldown)
 	$Talent_Overlays/Time_Stop.start(TIME_STOP_duration)
 	$Enemy_Timer.set_paused(true)
-	get_tree().call_group("enemies", "freeze", false)
+	get_tree().call_group("enemies", "stop_time")
 
 func _on_time_stop_done():
 	$Enemy_Timer.set_paused(false)
-	get_tree().call_group("enemies", "unfreeze", false)
+	get_tree().call_group("enemies", "restart_time")
 
 func stop_time_stop():
 	$Talent_Overlays/Time_Stop.stop()

@@ -134,42 +134,43 @@ func tick(_delta):
 		$CyclePlayer.set_direction_vector(direction)
 
 #
-# Sets the time scale for playing back animation cycles (higher values to go
-# faster, smaller values to go slower, negative values to go backwards). If
-# speed is 0, the playback speed is not actually set; the animation is paused
-# instead, until the time scale is reset to a non-zero value.
+# Sets the time scale for playing back animation cycles: higher values to go
+# faster, smaller values to go slower, negative values to go backwards.
 #
-func set_time_scale(scale = 1.0):
-	var prev_scale = 0 if $CyclePlayer.is_paused() else $CyclePlayer.get_speed()
-	if scale == prev_scale:
-		return
-	if scale == 0:
-		_timer.set_paused(true)
-		$CyclePlayer.pause()
-	elif prev_scale == 0:
-		_timer.set_paused(false)
-		$CyclePlayer.resume()
-	else:
-		_timer.start(_timer.time_left * (prev_scale / scale))
-		$CyclePlayer.set_speed(scale)
+func set_time_scale(scale: float):
+	var prev_scale = $CyclePlayer.get_speed()
+	_timer.start(_timer.time_left * (prev_scale / scale))
+	$CyclePlayer.set_speed(scale)
 
 #
-# Freezes the enemy in time and space until unfreeze() is called. The enemy
-# flashes briefly, too, unless flash=false.
+# Freezes the enemy in time and space until unfreeze() is called.
 #
-func freeze(flash=true):
-	set_time_scale(0)
-	if flash:
-		$Flasher.play("flash")
+func freeze():
+	_timer.set_paused(true)
+	$CyclePlayer.pause()
+	$Flasher.play("flash")
 
 #
-# Unfreezes the enemy after a call to freeze(). The enemy flashes briefly, too,
-# unless flash=false.
+# Unfreezes the enemy after a call to freeze().
 #
-func unfreeze(flash=true):
-	set_time_scale(1)
-	if flash:
-		$Flasher.play("flash")
+func unfreeze():
+	_timer.set_paused(false)
+	$CyclePlayer.resume()
+	$Flasher.play("flash")
+
+#
+# Stops time until restart_time() is called.
+#
+func stop_time():
+	_timer.set_paused(true)
+	$CyclePlayer.pause()
+
+#
+# Restarts time after a call to stop_time().
+#
+func restart_time():
+	_timer.set_paused(false)
+	$CyclePlayer.resume()
 
 #
 # Turns the enemy to face the alien, if the alien is visible.

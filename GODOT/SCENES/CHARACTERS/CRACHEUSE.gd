@@ -18,6 +18,7 @@ var projectiles: Array
 func _exit_tree():
 	for projectile in projectiles:
 		projectile.queue_free()
+	projectiles.clear()
 
 #
 # When the Spit animation cycle begins, wait a couple frames before creating a
@@ -40,6 +41,7 @@ func _create_projectile():
 	var inst = projectile_scene.instance()
 	inst.velocity = (target - pos).normalized() * projectile_speed
 	inst.position = pos
+	inst.time_scale = $CyclePlayer.get_speed()
 	inst.connect("hit", self, "_on_projectile_hit", [inst])
 	get_parent().add_child(inst)
 	projectiles.append(inst)
@@ -64,3 +66,36 @@ func _on_projectile_hit(projectile: Node2D):
 	hit_count += 1
 	projectiles.erase(projectile)
 	projectile.queue_free()
+
+#
+# Overrides the method from Enemy to change the time scale for projectiles as
+# well.
+#
+func set_time_scale(scale: float):
+	if $Projectile_Timer.time_left > 0:
+		var prev_scale = $CyclePlayer.get_speed()
+		$Projectile_Timer.start(
+			$Projectile_Timer.time_left * (prev_scale / scale))
+	for spit in projectiles:
+		spit.set_time_scale(scale)
+	.set_time_scale(scale)
+
+#
+# Overrides the method from Enemy to pause the animation and displacement of
+# projectiles as well.
+#
+func stop_time():
+	$Projectile_Timer.set_paused(true)
+	for spit in projectiles:
+		spit.pause()
+	.stop_time()
+
+#
+# Overrides the method from Enemy to resume the animation and displacement of
+# projectiles as well.
+#
+func restart_time():
+	$Projectile_Timer.set_paused(false)
+	for spit in projectiles:
+		spit.resume()
+	.restart_time()
