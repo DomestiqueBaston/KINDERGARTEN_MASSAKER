@@ -19,9 +19,6 @@ export var attack_distance := 50.0
 # enemy's default animation
 export var default_anim := "Idle"
 
-# enemy's run animation
-export var run_anim := "Run"
-
 # the alien, if he has been spotted
 var alien: Alien
 
@@ -31,14 +28,14 @@ var _alien_visible_flag := false
 # is the alien invisible (wherever he is)?
 var _alien_invisible_flag := false
 
+# square of distance to alien, if known
+var _alien_dist2 := 0.0
+
 # direction the enemy is running or facing
 var direction: Vector2
 
-# true if the enemy is moving (running)
-var is_running: bool
-
 # timer used to regulate the enemy's behavior
-var timer: Timer
+var _timer: Timer
 
 func _ready():
 	if Engine.editor_hint:
@@ -55,36 +52,55 @@ func _ready():
 	direction = dir.normalized()
 	$CyclePlayer.set_direction_vector(direction)
 	$CyclePlayer.play(default_anim)
-	is_running = false
 
 	# set up the timer for updating movements
 
-	timer = Timer.new()
-	add_child(timer)
-	timer.one_shot = true
-	timer.connect("timeout", self, "on_timer_timeout")
+	_timer = Timer.new()
+	add_child(_timer)
+	_timer.one_shot = true
+	_timer.connect("timeout", self, "on_timer_timeout")
 	init_timer()
 
 #
-# Called once to set the animation timer the first time. May be overridden by
+# Returns true if the Enemy instance is being deleted. It seems that the Timer
+# is deleted first, so it sometimes happens that the Enemy subclass instance
+# is still around but the Timer is not...
+#
+func is_being_deleted() -> bool:
+	return not _timer.is_inside_tree()
+
+#
+# Called once to set the internal timer the first time. May be overridden by
 # each enemy subclass.
 #
 func init_timer():
-	timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
+	start_timer(rand_range(2, 5))
 
 #
-# Called when the animation timer times out to update the enemy's animation
+# Called when the internal timer times out to update the enemy's animation
 # state. By default, the enemy alternates its default and run animations, for
 # 2-5 seconds at a time. But the method may be overridden by each enemy
 # subclass.
 #
 func on_timer_timeout():
-	if is_running:
+	if $AnimationPlayer.current_animation.ends_with("_Run"):
 		$CyclePlayer.play(default_anim)
 	else:
-		$CyclePlayer.play(run_anim)
-	is_running = not is_running
-	timer.start(rand_range(2, 5) / $CyclePlayer.get_speed())
+		$CyclePlayer.play("Run")
+	start_timer(rand_range(2, 5))
+
+#
+# (Re)starts the internal timer used to regulate the enemy's behavior,
+# compensating if the animation playback speed has been modified.
+#
+func start_timer(t: float):
+	_timer.start(t / $CyclePlayer.get_speed())
+
+#
+# Stops the internal timer used to regulate the enemy's behavior.
+#
+func stop_timer():
+	_timer.stop()
 
 #
 # Calls the tick() method whenever a physics process signal is received.
@@ -94,6 +110,8 @@ func on_timer_timeout():
 #
 func _physics_process(delta):
 	if not Engine.editor_hint:
+		if alien:
+			_alien_dist2 = alien.position.distance_squared_to(position)
 		tick(delta)
 
 #
@@ -102,7 +120,7 @@ func _physics_process(delta):
 # enemy subclass.
 #
 func tick(_delta):
-	if (not $AnimationPlayer.current_animation.ends_with(run_anim)
+	if (not $AnimationPlayer.current_animation.ends_with("_Run")
 		or $CyclePlayer.is_paused()):
 		return
 	var dir = move_and_slide(direction * speed * $CyclePlayer.get_speed())
@@ -126,13 +144,13 @@ func set_time_scale(scale = 1.0):
 	if scale == prev_scale:
 		return
 	if scale == 0:
-		timer.set_paused(true)
+		_timer.set_paused(true)
 		$CyclePlayer.pause()
 	elif prev_scale == 0:
-		timer.set_paused(false)
+		_timer.set_paused(false)
 		$CyclePlayer.resume()
 	else:
-		timer.start(timer.time_left * (prev_scale / scale))
+		_timer.start(_timer.time_left * (prev_scale / scale))
 		$CyclePlayer.set_speed(scale)
 
 #
@@ -227,3 +245,17 @@ func _on_alien_invisible(var invisible: bool):
 #
 func is_alien_visible() -> bool:
 	return _alien_visible_flag and not _alien_invisible_flag
+
+#
+# Returns the square of the distance between the enemy and the alien, or zero
+# if the alien has not been spotted yet.
+#
+func get_alien_distance_squared() -> float:
+	return _alien_dist2
+
+#
+# Returns true if the alien has been spotted at least once and if he is within
+# attack range.
+#
+func is_alien_in_range() -> bool:
+	return _alien_dist2 > 0 and _alien_dist2 < attack_distance * attack_distance

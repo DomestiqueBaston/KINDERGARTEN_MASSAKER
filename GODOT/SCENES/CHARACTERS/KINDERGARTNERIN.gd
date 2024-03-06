@@ -17,7 +17,7 @@ func init_timer():
 	_start_checking()
 
 func on_timer_timeout():
-	if is_running:
+	if $AnimationPlayer.current_animation.ends_with("_Run"):
 		_start_checking()
 	else:
 		_start_running()
@@ -27,16 +27,14 @@ func on_timer_timeout():
 #
 func _start_checking():
 	$CyclePlayer.play("Check")
-	timer.start(idle_length * (2 + randi() % 3) / $CyclePlayer.get_speed())
-	is_running = false
+	start_timer(idle_length * (2 + randi() % 3))
 
 #
 # Plays the Run animation cycle 2-4 seconds plus any extra_wait time.
 #
 func _start_running(extra_wait := 0.0):
 	$CyclePlayer.play("Run")
-	timer.start(extra_wait + rand_range(2, 4) / $CyclePlayer.get_speed())
-	is_running = true
+	start_timer(extra_wait + rand_range(2, 4))
 
 #
 # Called by _physics_process().
@@ -54,8 +52,7 @@ func tick(delta):
 
 	elif $AnimationPlayer.current_animation.ends_with("_Run"):
 		face_alien()
-		var dist2 = (alien.position - position).length_squared()
-		if dist2 < attack_distance * attack_distance:
+		if is_alien_in_range():
 			$CyclePlayer.play("No", true)
 			_start_running(no_length)
 		else:
@@ -82,9 +79,8 @@ func alien_seen():
 func alien_gone():
 	if $AnimationPlayer.current_animation.ends_with("_No"):
 		$CyclePlayer.stop()
-		# This inside_tree() test prevents a warning message when the
-		# "body_exited" signal is triggered at the end of the game, when the
-		# Enemy parent class and its Timer have exited the tree but the
-		# subclass has not yet...
-		if timer.is_inside_tree():
+		# This test prevents a warning message when the # "body_exited" signal
+		# is triggered at the end of the game, when the Enemy parent class has
+		# exited the tree but the subclass has not yet...
+		if not is_being_deleted():
 			_start_running()

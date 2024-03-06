@@ -342,7 +342,7 @@ func _on_Hit_Collider_area_entered(_area: Area2D):
 	$CyclePlayer.play("Idle")
 
 #
-# Returns the location of the alien's hit collider.
+# Returns the location of the alien's hit collider in global coordinates.
 #
 func get_hit_target() -> Vector2:
 	return $Hit_Collider/HCollider.global_position
