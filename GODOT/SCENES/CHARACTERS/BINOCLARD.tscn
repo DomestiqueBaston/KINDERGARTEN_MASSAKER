@@ -5,7 +5,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_B.wav" type="AudioStream" id=3]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_A.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/BINOCLARD/BINOCLARD.png" type="Texture" id=5]
-[ext_resource path="res://SCENES/CHARACTERS/BINOCLARD.gd" type="Script" id=6]
+[ext_resource path="res://SCRIPTS/HittingEnemy.gd" type="Script" id=6]
 [ext_resource path="res://SHADERS/Outline.shader" type="Shader" id=7]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Cries_D.wav" type="AudioStream" id=8]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Finish_crying_run.wav" type="AudioStream" id=9]
@@ -4774,6 +4774,8 @@ vomit_detector_path = NodePath("Vomit_Detector")
 audio_stream_player_path = NodePath("Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
 attack_distance = 30.0
+attack_animation = "Kick"
+max_hit_count = 2
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
@@ -4943,15 +4945,6 @@ navigation_layers = 4096
 anims/RESET = SubResource( 152 )
 anims/flash = SubResource( 153 )
 
-[node name="Kick_Timer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-__meta__ = {
-"_editor_description_": "How long he has to wait before he can start kicking again."
-}
-
 [connection signal="body_entered" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_entered"]
 [connection signal="body_exited" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_exited"]
-[connection signal="area_entered" from="Attack_Collider" to="." method="_on_successful_kick"]
-[connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_animation_changed"]
-[connection signal="timeout" from="Kick_Timer" to="." method="_on_Kick_Timer_timeout"]
+[connection signal="area_entered" from="Attack_Collider" to="." method="_on_hit"]
