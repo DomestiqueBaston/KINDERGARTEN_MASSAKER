@@ -165,13 +165,13 @@ func set_direction(dir: int):
 	if not anim_player.is_playing():
 		return
 
+	var queue = anim_player.get_queue()
+	anim_player.clear_queue()
+
 	var partial_name = _partial_anim_name(anim_player.current_animation)
 	var t = anim_player.current_animation_position
 	anim_player.play(_full_anim_name(partial_name))
 	anim_player.seek(t)
-
-	var queue = anim_player.get_queue()
-	anim_player.clear_queue()
 
 	for anim in queue:
 		partial_name = _partial_anim_name(anim)
