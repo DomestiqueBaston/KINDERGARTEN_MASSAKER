@@ -185,9 +185,7 @@ tracks/6/keys = {
 "values": [ Color( 0, 0.101961, 0, 0.392157 ), Color( 0, 0.101961, 0, 0.372549 ), Color( 0, 0.101961, 0, 0.352941 ), Color( 0, 0.101961, 0, 0.305882 ), Color( 0, 0.101961, 0, 0.258824 ), Color( 0, 0.101961, 0, 0.185621 ), Color( 0, 0.101961, 0, 0.112418 ), Color( 0, 0.101961, 0, 0.0392157 ) ]
 }
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
-collision_layer = 2048
-collision_mask = 8
+[node name="KinematicBody2D" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -199,6 +197,7 @@ polygon = PoolVector2Array( 0, 26, 11, 27, 20, 30, 22, 33, 20, 37, 10, 41, -1, 4
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 8
+frame = 7
 __meta__ = {
 "_edit_lock_": true
 }
