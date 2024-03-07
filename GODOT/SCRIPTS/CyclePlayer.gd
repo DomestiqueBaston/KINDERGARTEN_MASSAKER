@@ -172,6 +172,7 @@ func set_direction(dir: int):
 	var t = anim_player.current_animation_position
 	anim_player.play(_full_anim_name(partial_name))
 	anim_player.seek(t)
+	anim_player.advance(0)
 
 	for anim in queue:
 		partial_name = _partial_anim_name(anim)
