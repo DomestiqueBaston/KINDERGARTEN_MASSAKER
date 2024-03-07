@@ -32,6 +32,42 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 29 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.25, 0.15 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Shadow:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.101961, 0, 0.392157 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Spit"
@@ -60,12 +96,54 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Shadow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -1, 33 ), Vector2( -1, 30.5 ), Vector2( -1, 28 ), Vector2( -1, 27.9 ), Vector2( -1, 27.8 ), Vector2( -1, 27.7 ), Vector2( -1, 27.6 ), Vector2( -1, 27.5 ), Vector2( -0.625, 29.875 ), Vector2( -0.25, 32.25 ), Vector2( 0.125, 34.625 ), Vector2( 0.5, 37 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Shadow:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.2, 0.125 ), Vector2( 0.255, 0.1675 ), Vector2( 0.31, 0.21 ), Vector2( 0.313, 0.212 ), Vector2( 0.316, 0.214 ), Vector2( 0.319, 0.216 ), Vector2( 0.322, 0.218 ), Vector2( 0.325, 0.22 ), Vector2( 0.26875, 0.18375 ), Vector2( 0.2125, 0.1475 ), Vector2( 0.15625, 0.11125 ), Vector2( 0.1, 0.075 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Shadow:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 0, 0.101961, 0, 0.0392157 ), Color( 0, 0.101961, 0, 0.215686 ), Color( 0, 0.101961, 0, 0.392157 ), Color( 0, 0.101961, 0, 0.392157 ), Color( 0, 0.101961, 0, 0.392157 ), Color( 0, 0.101961, 0, 0.392157 ), Color( 0, 0.101961, 0, 0.392157 ), Color( 0, 0.101961, 0, 0.392157 ), Color( 0, 0.101961, 0, 0.303922 ), Color( 0, 0.101961, 0, 0.215686 ), Color( 0, 0.101961, 0, 0.127451 ), Color( 0, 0.101961, 0, 0.0392157 ) ]
+}
 
 [node name="Spit" type="Node2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Shadow" type="Polygon2D" parent="."]
+position = Vector2( 0.5, 29 )
+scale = Vector2( 0.25, 0.15 )
+color = Color( 0, 0.101961, 0, 0.392157 )
+polygon = PoolVector2Array( -14, 45, -12.2222, 36, -9, 30, -2.22222, 26, 6, 25, 14.4444, 26, 22, 30, 25.5556, 36, 27, 45, 25.5556, 54, 22, 60, 14.4444, 64, 6, 65, -2.22222, 64, -9, 60, -12.2222, 54 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -78,6 +156,9 @@ __meta__ = {
 visible = false
 collision_layer = 2048
 collision_mask = 8
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Spit_Collider_Shape" type="CollisionShape2D" parent="Spit_Collilder"]
 shape = SubResource( 3 )
