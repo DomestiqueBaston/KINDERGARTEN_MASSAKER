@@ -3861,6 +3861,7 @@ wet_step_2 = ExtResource( 8 )
 vomit_detector_path = NodePath("Vomit_Detector")
 audio_stream_player_path = NodePath("Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
+attack_distance = 125.0
 attack_animation = "Spit"
 max_hit_count = 2
 

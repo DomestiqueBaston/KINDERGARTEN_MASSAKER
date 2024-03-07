@@ -3855,6 +3855,8 @@ audio_stream_player_path = NodePath("Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
 attack_distance = 280.0
 attack_animation = "Booger"
+max_hit_count = 5
+projectile_speed = 300.0
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
