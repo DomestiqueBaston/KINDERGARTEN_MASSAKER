@@ -13,10 +13,17 @@ signal hit
 signal done
 
 # the projectile's direction and speed
-var velocity: Vector2
+var velocity := Vector2.ZERO
 
 # time scale for displacement
 var time_scale := 1.0
+
+#
+# The velocity must be set before adding the projectile to the scene tree. If
+# it is ZERO (the default), then physics processing is disabled.
+#
+func _ready():
+	set_physics_process(velocity != Vector2.ZERO)
 
 func _physics_process(delta):
 	position += velocity * delta * time_scale

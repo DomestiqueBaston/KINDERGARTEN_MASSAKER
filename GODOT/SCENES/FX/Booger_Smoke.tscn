@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/FX/SMOKE/Smoke.png" type="Texture" id=1]
-[ext_resource path="res://SCENES/FX/Booger_Smoke.gd" type="Script" id=2]
+[ext_resource path="res://SCRIPTS/Projectile.gd" type="Script" id=2]
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Explosion_B.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=3]
@@ -231,5 +231,5 @@ max_distance = 250.0
 attenuation = 0.5
 bus = "FX"
 
-[connection signal="area_entered" from="Booger_Collider" to="." method="_on_Booger_Collider_area_entered"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="area_entered" from="Booger_Collider" to="." method="on_hit_collider_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="on_animation_finished"]
