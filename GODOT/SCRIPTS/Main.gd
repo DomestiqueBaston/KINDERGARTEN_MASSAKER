@@ -195,8 +195,8 @@ func _get_window_size() -> Vector2:
 func update_camera(delta):
 	var limits = background.get_limits()
 	var size = _get_window_size()
-	var w = size.x / 2.0
-	var h = size.y / 2.0
+	var w = $Camera.zoom.x * size.x / 2.0
+	var h = $Camera.zoom.y * size.y / 2.0
 	var x = clamp(alien.position.x, limits.position.x + w, limits.end.x - w)
 	var y = clamp(alien.position.y, limits.position.y + h, limits.end.y - h)
 	var lerp_weight = clamp(camera_speed * delta, 0.0, 1.0)
