@@ -211,6 +211,7 @@ func on_Alien_Detection_Collider_body_entered(body: Node):
 		alien = body
 		_alien_invisible_flag = alien.is_invisible()
 		alien.connect("invisible", self, "_on_alien_invisible")
+		alien.connect("tree_exiting", self, "_on_alien_dying")
 	_alien_visible_flag = true
 	if not _alien_invisible_flag:
 		alien_seen()
@@ -239,6 +240,13 @@ func _on_alien_invisible(var invisible: bool):
 				alien_gone()
 			else:
 				alien_seen()
+
+#
+# Called when the alien spotted previously is removed from the scene tree.
+# This can happen when the alien was actually a mirror image.
+#
+func _on_alien_dying():
+	alien = null
 
 #
 # Returns true if the alien is in the enemy's field of vision and is not
