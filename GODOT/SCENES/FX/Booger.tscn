@@ -4,7 +4,7 @@
 [ext_resource path="res://SCRIPTS/Projectile.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 5.0
+radius = 4.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "Booger"
@@ -183,7 +183,7 @@ polygon = PoolVector2Array( -14, 45, -12.2222, 36, -9, 30, -2.22222, 26, 6, 25, 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 22
-frame = 21
+frame = 14
 __meta__ = {
 "_edit_lock_": true
 }
