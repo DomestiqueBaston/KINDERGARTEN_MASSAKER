@@ -30,7 +30,7 @@ func _ready():
 			AnimationPlayer.ANIMATION_PROCESS_PHYSICS)
 
 func _physics_process(delta):
-	position += velocity * delta * time_scale
+	position += Globals.get_persp_adjusted_dir(velocity) * delta * time_scale
 
 func on_hit_collider_area_entered(_area: Area2D):
 	emit_signal("hit")

@@ -100,7 +100,9 @@ func _physics_process(_delta):
 	# a mirror image alien just moves automatically
 
 	if mirror:
-		var dir = move_and_slide(direction * speed * accelerate)
+		var dir = Globals.get_persp_adjusted_dir(direction).normalized()
+		dir = move_and_slide(dir * speed * accelerate)
+		dir = Globals.get_persp_unadjusted_dir(dir)
 		if get_slide_count() > 0:
 			direction = dir.normalized()
 			$CyclePlayer.set_direction_vector(direction)
@@ -159,10 +161,10 @@ func _physics_process(_delta):
 
 	else:
 		state = State.MOVE
-		direction = dir.normalized()
-		$CyclePlayer.set_direction_vector(direction)
+		$CyclePlayer.set_direction_vector(dir)
 		$CyclePlayer.play("Run")
-		move_and_slide(direction * speed * accelerate)
+		dir = Globals.get_persp_adjusted_dir(dir).normalized()
+		move_and_slide(dir * speed * accelerate)
 
 #
 # Sets a multiplier for the speed of the alien's Run animation cycle (1 by

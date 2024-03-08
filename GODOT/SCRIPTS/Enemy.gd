@@ -111,7 +111,8 @@ func stop_timer():
 func _physics_process(delta):
 	if not Engine.editor_hint:
 		if alien:
-			_alien_dist2 = alien.position.distance_squared_to(position)
+			_alien_dist2 = Globals.get_persp_dist_squared(
+				alien.position, position)
 		tick(delta)
 
 #
@@ -123,7 +124,11 @@ func tick(_delta):
 	if (not $AnimationPlayer.current_animation.ends_with("_Run")
 		or $CyclePlayer.is_paused()):
 		return
-	var dir = move_and_slide(direction * speed * $CyclePlayer.get_speed())
+
+	var dir = Globals.get_persp_adjusted_dir(direction).normalized()
+	dir = move_and_slide(dir * speed * $CyclePlayer.get_speed())
+	dir = Globals.get_persp_unadjusted_dir(dir)
+
 	if get_slide_count() > 0:
 		# turn at random when stuck
 		var stuck = (dir.length_squared() < 1.0)

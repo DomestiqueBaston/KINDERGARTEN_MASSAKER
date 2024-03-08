@@ -501,7 +501,8 @@ func start_freeze():
 	alien.start_cooldown(FREEZE_cooldown)
 	alien.start_freeze()
 	for enemy in get_tree().get_nodes_in_group("enemies"):
-		var dist2 = enemy.position.distance_squared_to(alien.position)
+		var dist2 = Globals.get_persp_dist_squared(
+			enemy.position, alien.position)
 		if dist2 < FREEZE_radius * FREEZE_radius:
 			enemy.freeze()
 			$Talents/Talent_Timer.connect(

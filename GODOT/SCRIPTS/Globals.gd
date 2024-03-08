@@ -111,3 +111,26 @@ func get_nearest_direction(dir: Vector2) -> Vector2:
 		return Vector2(-1, 0)
 	else:
 		return Vector2(-1, 1)
+
+#
+# Returns the square of the distance between two points, adjusting for the
+# game's weird perspective: neighboring pixels are considered to be twice as far
+# away from each other in Y as in X.
+#
+func get_persp_dist_squared(p1: Vector2, p2: Vector2) -> float:
+	var dx = 0.667 * (p2.x - p1.x)
+	var dy = 1.333 * (p2.y - p1.y)
+	return dx*dx + dy*dy
+
+#
+# Adjusts a direction or velocity vector before using it to move a character or
+# a projectile.
+#
+func get_persp_adjusted_dir(dir: Vector2) -> Vector2:
+	return Vector2(1.333 * dir.x, 0.667 * dir.y)
+
+#
+# "Unadjusts" a direction or velocity vector returned by move_and_slide().
+#
+func get_persp_unadjusted_dir(dir: Vector2) -> Vector2:
+	return Vector2(0.667 * dir.x, 1.333 * dir.y)
