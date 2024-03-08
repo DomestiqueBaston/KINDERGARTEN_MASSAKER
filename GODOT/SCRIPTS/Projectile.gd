@@ -23,7 +23,11 @@ var time_scale := 1.0
 # it is ZERO (the default), then physics processing is disabled.
 #
 func _ready():
-	set_physics_process(velocity != Vector2.ZERO)
+	if velocity == Vector2.ZERO:
+		set_physics_process(false)
+	else:
+		$AnimationPlayer.set_animation_process_mode(
+			AnimationPlayer.ANIMATION_PROCESS_PHYSICS)
 
 func _physics_process(delta):
 	position += velocity * delta * time_scale

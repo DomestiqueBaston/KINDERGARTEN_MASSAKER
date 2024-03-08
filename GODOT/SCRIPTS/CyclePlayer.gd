@@ -56,6 +56,8 @@ var anim_queue: Array
 
 func _ready():
 	anim_player = get_node(anim_player_path)
+	anim_player.set_animation_process_mode(
+		AnimationPlayer.ANIMATION_PROCESS_PHYSICS)
 	for anim in anim_player.get_animation_list():
 		anim_player.get_animation(anim).loop = false
 	anim_player.connect("animation_changed", self, "_on_animation_changed")
