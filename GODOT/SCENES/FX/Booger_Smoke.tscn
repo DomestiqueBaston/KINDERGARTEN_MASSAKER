@@ -194,7 +194,10 @@ __meta__ = {
 
 [node name="Shadow" type="Polygon2D" parent="."]
 color = Color( 0, 0.101961, 0, 0.258824 )
-polygon = PoolVector2Array( 0, 26, 11, 27, 20, 30, 22, 33, 20, 37, 10, 41, -1, 42, -1, 37, 9, 37, 14, 34, 10, 31, 0, 30, -10, 30, -14, 33, -10, 36, -1, 37, -1, 42, -13, 41, -19, 37, -21, 33, -17, 28, -9, 26 )
+polygon = PoolVector2Array( 0, 26.6667, 11.1111, 27.8788, 17.7778, 30.303, 21.1111, 32.7273, 18.8889, 36.3636, 10, 40, -1.11111, 41.2121, -1.11111, 38.1818, 10, 36.9697, 15.5556, 33.3333, 11.1111, 30.303, 0, 29.0909, -11.1111, 29.697, -15.5556, 32.7273, -11.1111, 36.9697, -1.11111, 38.1818, -1.11111, 41.2121, -12.2222, 40, -17.7778, 36.9697, -20, 32.7273, -15.5556, 28.4848, -8.88889, 27.2727 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -219,6 +222,9 @@ rotation = 1.5708
 scale = Vector2( 0.571429, 1 )
 shape = SubResource( 3 )
 disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Smoke"
