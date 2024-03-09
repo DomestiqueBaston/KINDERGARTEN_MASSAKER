@@ -118,8 +118,8 @@ func get_nearest_direction(dir: Vector2) -> Vector2:
 # away from each other in Y as in X.
 #
 func get_persp_dist_squared(p1: Vector2, p2: Vector2) -> float:
-	var dx = 0.667 * (p2.x - p1.x)
-	var dy = 1.333 * (p2.y - p1.y)
+	var dx = p2.x - p1.x
+	var dy = (p2.y - p1.y) * 2
 	return dx*dx + dy*dy
 
 #
@@ -129,6 +129,6 @@ func get_persp_dist_squared(p1: Vector2, p2: Vector2) -> float:
 #
 func get_persp_velocity(from: Vector2, to: Vector2, speed: float) -> Vector2:
 	var vec = from.direction_to(to)
-	var dx = 1.333 * vec.x
-	var dy = 0.667 * vec.y
+	var dx = vec.x
+	var dy = vec.y * 0.5
 	return vec * (speed * sqrt(dx*dx + dy*dy))
