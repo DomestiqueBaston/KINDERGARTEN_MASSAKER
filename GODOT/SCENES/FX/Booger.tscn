@@ -8,7 +8,7 @@ radius = 4.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "Booger"
-length = 0.8
+length = 0.9
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -40,10 +40,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ false, false, true ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Shadow:position")
@@ -80,6 +80,30 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Color( 0, 0.101961, 0, 0 ), Color( 0, 0.101961, 0, 0.196078 ), Color( 0, 0.101961, 0, 0.392157 ), Color( 0, 0.101961, 0, 0.392157 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Shadow:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
 }
 
 [sub_resource type="Animation" id=1]
@@ -156,6 +180,30 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Color( 0, 0.101961, 0, 0.0392157 ) ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Shadow:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
 [node name="Booger" type="Node2D"]
 script = ExtResource( 2 )
@@ -183,7 +231,7 @@ polygon = PoolVector2Array( -14, 45, -12.2222, 36, -9, 30, -2.22222, 26, 6, 25, 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 22
-frame = 14
+frame = 21
 __meta__ = {
 "_edit_lock_": true
 }

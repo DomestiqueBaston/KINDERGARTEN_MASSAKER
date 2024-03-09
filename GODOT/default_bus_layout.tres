@@ -15,7 +15,7 @@ resource_name = "Reverb"
 room_size = 0.7
 damping = 0.33
 hipass = 0.75
-wet = 0.33
+wet = 0.25
 
 [resource]
 bus/1/name = "MUSIC"
