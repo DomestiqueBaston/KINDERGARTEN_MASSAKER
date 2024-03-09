@@ -42,7 +42,7 @@ func _create_projectile():
 	var pos = $Point_of_Booger_Spawn.global_position
 	var target = alien.get_hit_target()
 	var inst = projectile_scene.instance()
-	inst.velocity = (target - pos).normalized() * projectile_speed
+	inst.velocity = Globals.get_persp_velocity(pos, target, projectile_speed)
 	inst.position = pos
 	inst.time_scale = $CyclePlayer.get_speed()
 	inst.connect("hit", self, "_destroy_booger", [inst])

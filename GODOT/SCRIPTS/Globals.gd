@@ -123,14 +123,12 @@ func get_persp_dist_squared(p1: Vector2, p2: Vector2) -> float:
 	return dx*dx + dy*dy
 
 #
-# Adjusts a direction or velocity vector before using it to move a character or
-# a projectile.
+# Returns a velocity vector to go from one point to another at a given speed,
+# but adjusting the speed to the game's weird perspective: characters and
+# projectiles can move twice as fast in X as in Y.
 #
-func get_persp_adjusted_dir(dir: Vector2) -> Vector2:
-	return Vector2(1.333 * dir.x, 0.667 * dir.y)
-
-#
-# "Unadjusts" a direction or velocity vector returned by move_and_slide().
-#
-func get_persp_unadjusted_dir(dir: Vector2) -> Vector2:
-	return Vector2(0.667 * dir.x, 1.333 * dir.y)
+func get_persp_velocity(from: Vector2, to: Vector2, speed: float) -> Vector2:
+	var vec = from.direction_to(to)
+	var dx = 1.333 * vec.x
+	var dy = 0.667 * vec.y
+	return vec * (speed * sqrt(dx*dx + dy*dy))
