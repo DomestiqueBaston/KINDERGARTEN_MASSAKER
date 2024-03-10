@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://SCENES/CHARACTERS/KINDERGARTNERIN.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Steps_G.wav" type="AudioStream" id=2]
@@ -16,10 +16,6 @@ radius = 16.0
 
 [sub_resource type="CapsuleShape2D" id=88]
 radius = 124.0
-height = 0.0
-
-[sub_resource type="CapsuleShape2D" id=145]
-radius = 173.0
 height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=144]
@@ -3500,6 +3496,7 @@ __meta__ = {
 }
 
 [node name="Alien_Detection_Collider" type="Area2D" parent="."]
+visible = false
 collision_layer = 32
 collision_mask = 2
 __meta__ = {
@@ -3511,14 +3508,6 @@ position = Vector2( 0, -55 )
 scale = Vector2( 3, 2.22 )
 shape = SubResource( 88 )
 disabled = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Alien_Detection_Collider"]
-position = Vector2( 210, 75 )
-shape = SubResource( 145 )
-disabled = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Vomit_Detector" type="Area2D" parent="."]
 visible = false
