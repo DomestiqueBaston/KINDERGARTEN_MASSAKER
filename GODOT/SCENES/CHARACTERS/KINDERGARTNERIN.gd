@@ -64,6 +64,12 @@ func tick(delta):
 		face_alien()
 
 #
+# Don't try to get around the alien; just stop when he is reached.
+#
+func want_to_avoid_collider(collider: Object) -> bool:
+	return collider.name != "ALIEN"
+
+#
 # If the alien becomes visible while in the Check animation cycle, play the
 # OMG animation, then start running toward him.
 #

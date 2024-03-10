@@ -96,6 +96,12 @@ func tick(delta):
 				_stop_attacking(hit_count >= max_hit_count)
 
 #
+# Don't try to get around the alien; just stop when he is reached.
+#
+func want_to_avoid_collider(collider: Object) -> bool:
+	return collider.name != "ALIEN"
+
+#
 # Called when an attack hits the alien. A subclass that strikes the alien
 # directly, rather than with projectiles, will connect its attack collider's
 # area_entered() signal to this.

@@ -120,21 +120,32 @@ func _physics_process(delta):
 # runs in "direction" and tries to avoid obstacles. May be overridden by each
 # enemy subclass.
 #
-func tick(_delta):
+func tick(delta):
 	if (not $AnimationPlayer.current_animation.ends_with("_Run")
 		or $CyclePlayer.is_paused()):
 		return
-	var dir = move_and_slide(direction * speed * $CyclePlayer.get_speed())
-	if get_slide_count() > 0:
-		# turn at random when stuck
-		var stuck = (dir.length_squared() < 1.0)
-		if stuck:
-			dir = direction.rotated(rand_range(PI/-4.0, PI/4.0))
-		# we can only move in one of the 8 "cardinal" directions
-		dir = Globals.get_nearest_direction(dir)
-		direction = dir.normalized()
-		if not stuck:
-			$CyclePlayer.set_direction_vector(direction)
+
+	var vec = direction * speed * (delta * $CyclePlayer.get_speed())
+	var turned = false
+
+	for _i in range(4):
+		var collision = move_and_collide(vec)
+		if collision == null or not want_to_avoid_collider(collision.collider):
+			break
+		vec = collision.remainder.slide(collision.normal)
+		turned = true
+
+	if turned:
+		direction = Globals.get_nearest_direction(vec).normalized()
+		$CyclePlayer.set_direction_vector(direction)
+
+#
+# Returns true if the enemy wants to get around the given collider object. The
+# default implementation always returns true, but Enemy subclasses can override
+# the method.
+#
+func want_to_avoid_collider(_collider: Object) -> bool:
+	return true
 
 #
 # Sets the time scale for playing back animation cycles: higher values to go
@@ -181,9 +192,10 @@ func restart_time():
 func face_alien():
 	if is_alien_visible():
 		var dir = alien.position - position
-		dir = Globals.get_nearest_direction(dir)
-		direction = dir.normalized()
-		$CyclePlayer.set_direction_vector(direction)
+		if dir.length_squared() > 1.0:
+			dir = Globals.get_nearest_direction(dir)
+			direction = dir.normalized()
+			$CyclePlayer.set_direction_vector(direction)
 
 #
 # Turns the enemy so he faces/moves in the opposition direction.
