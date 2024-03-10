@@ -118,6 +118,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "00_No"
@@ -220,6 +232,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "00_OMG"
@@ -321,6 +345,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( -1, 94 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -441,6 +477,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ Vector2( -1, 94 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "135D_Check"
@@ -529,6 +577,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -632,6 +692,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=17]
 resource_name = "135D_OMG"
@@ -733,6 +805,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( -66, -10 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -853,6 +937,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ Vector2( -66, -10 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=23]
 resource_name = "135G_Check"
@@ -941,6 +1037,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -1044,6 +1152,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=25]
 resource_name = "135G_OMG"
@@ -1145,6 +1265,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 67, -8 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -1265,6 +1397,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ Vector2( 67, -8 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=19]
 resource_name = "180_Check"
@@ -1353,6 +1497,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -1456,6 +1612,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=22]
 resource_name = "180_OMG"
@@ -1557,6 +1725,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 0, -29 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -1677,6 +1857,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ Vector2( 0, -29 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "45D_Check"
@@ -1765,6 +1957,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1868,6 +2072,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "45D_OMG"
@@ -1969,6 +2185,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( -62, 73 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -2089,6 +2317,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ Vector2( -62, 73 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=31]
 resource_name = "45G_Check"
@@ -2177,6 +2417,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -2280,6 +2532,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=34]
 resource_name = "45G_OMG"
@@ -2381,6 +2645,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 65, 73 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=33]
@@ -2501,6 +2777,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ Vector2( 65, 73 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "90D_Check"
@@ -2589,6 +2877,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -2692,6 +2992,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=14]
 resource_name = "90D_OMG"
@@ -2793,6 +3105,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( -89, 29 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -2913,6 +3237,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ Vector2( -89, 29 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=27]
 resource_name = "90G_Check"
@@ -3001,6 +3337,18 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=28]
@@ -3104,6 +3452,18 @@ tracks/7/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=30]
 resource_name = "90G_OMG"
@@ -3205,6 +3565,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 86, 29 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=29]
@@ -3325,6 +3697,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ Vector2( 86, 29 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 31 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -3401,7 +3785,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Alien_Detection_Collider/ADCollider:scale")
+tracks/6/path = NodePath("Vomit_Detector/VDetector:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -3410,10 +3794,10 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 3, 2.22 ) ]
+"values": [ true ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Alien_Detection_Collider/ADCollider:rotation_degrees")
+tracks/7/path = NodePath("Move_Collider:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -3422,19 +3806,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Vomit_Detector/VDetector:disabled")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
+"values": [ Vector2( 0, 31 ) ]
 }
 
 [sub_resource type="Animation" id=142]
@@ -3505,7 +3877,6 @@ __meta__ = {
 
 [node name="ADCollider" type="CollisionShape2D" parent="Alien_Detection_Collider"]
 position = Vector2( 0, -55 )
-scale = Vector2( 3, 2.22 )
 shape = SubResource( 88 )
 disabled = true
 
