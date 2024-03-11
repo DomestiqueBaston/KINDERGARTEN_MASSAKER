@@ -59,7 +59,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -4, 15 ) ]
+"values": [ Vector2( -4, -5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -107,7 +107,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 7.62939e-06, 80 ) ]
+"values": [ Vector2( 0, 60 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -119,7 +119,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 67 ) ]
+"values": [ Vector2( 0, 47 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -132,6 +132,30 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -160,7 +184,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -3, 15 ), Vector2( -2, 15 ), Vector2( -2.25, 15 ), Vector2( -4, 15 ), Vector2( -3, 18 ), Vector2( -3, 15 ) ]
+"values": [ Vector2( -3, -5 ), Vector2( -2, -5 ), Vector2( -2.25, -5 ), Vector2( -4, -5 ), Vector2( -3, -2 ), Vector2( -3, -5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -208,7 +232,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 7.62939e-06, 80 ) ]
+"values": [ Vector2( 0, 60 ) ]
 }
 tracks/6/type = "audio"
 tracks/6/path = NodePath("../Footsteps")
@@ -238,7 +262,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 67 ) ]
+"values": [ Vector2( 0, 47 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -263,6 +287,30 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Move_Collider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -289,7 +337,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 63 ) ]
+"values": [ Vector2( 0, 43 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -301,7 +349,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -1, 62 ) ]
+"values": [ Vector2( 0, 47 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../Shadow:position")
@@ -313,7 +361,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -4, 15 ), Vector2( -4, 14 ), Vector2( -4, 6 ), Vector2( -4, 6 ), Vector2( -4, 14 ), Vector2( -4, 15 ) ]
+"values": [ Vector2( -4, -5 ), Vector2( -4, -6 ), Vector2( -4, -14 ), Vector2( -4, -14 ), Vector2( -4, -6 ), Vector2( -4, -5 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Shadow:rotation_degrees")
@@ -377,6 +425,54 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 60 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "00_Waving"
@@ -404,7 +500,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -3, 16 ) ]
+"values": [ Vector2( -3, -4 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -452,7 +548,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 67 ) ]
+"values": [ Vector2( 0, 47 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -465,6 +561,42 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 60 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -493,7 +625,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -6, 15 ) ]
+"values": [ Vector2( -6, -5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -541,7 +673,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -48, 5 ) ]
+"values": [ Vector2( -48, -15 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -553,7 +685,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -59, 12 ) ]
+"values": [ Vector2( -59, -8 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -566,6 +698,30 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -594,7 +750,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -6, 15 ), Vector2( 4, 16 ), Vector2( -1, 15.5 ), Vector2( -6, 15 ), Vector2( 4, 15 ), Vector2( -1, 15 ) ]
+"values": [ Vector2( -6, -5 ), Vector2( 4, -4 ), Vector2( -1, -4.5 ), Vector2( -6, -5 ), Vector2( 4, -5 ), Vector2( -1, -5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -642,7 +798,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -48, 5 ) ]
+"values": [ Vector2( -48, -15 ) ]
 }
 tracks/6/type = "audio"
 tracks/6/path = NodePath("../Footsteps")
@@ -672,7 +828,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -59, 12 ) ]
+"values": [ Vector2( -59, -8 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -697,6 +853,30 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Move_Collider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -723,7 +903,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -40, 25 ) ]
+"values": [ Vector2( -40, 5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -735,7 +915,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -59, 12 ) ]
+"values": [ Vector2( -59, -8 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../Shadow:position")
@@ -747,7 +927,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -6, 15 ), Vector2( -29, 13 ), Vector2( -33, 20 ), Vector2( -33, 20 ), Vector2( -29, 19 ), Vector2( -28, 19 ) ]
+"values": [ Vector2( -6, -5 ), Vector2( -29, -7 ), Vector2( -33, 0 ), Vector2( -33, 0 ), Vector2( -29, -1 ), Vector2( -28, -1 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Shadow:rotation_degrees")
@@ -811,6 +991,30 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -48, -15 ) ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "135D_Waving"
@@ -862,7 +1066,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -10, 17 ) ]
+"values": [ Vector2( -10, -3 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -886,7 +1090,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -59, 12 ) ]
+"values": [ Vector2( -59, -8 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -899,6 +1103,30 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -48, -15 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -927,7 +1155,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 9, 17 ) ]
+"values": [ Vector2( 9, -3 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -975,7 +1203,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 48, 5 ) ]
+"values": [ Vector2( 48, -15 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -987,7 +1215,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 32, 26 ) ]
+"values": [ Vector2( 59, -8 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1000,6 +1228,30 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -1028,7 +1280,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 9, 17 ), Vector2( -9, 18 ), Vector2( -9, 17 ), Vector2( 16, 19 ), Vector2( -11, 19 ), Vector2( -3, 17 ) ]
+"values": [ Vector2( 9, -3 ), Vector2( -9, -2 ), Vector2( -9, -3 ), Vector2( 16, -1 ), Vector2( -11, -1 ), Vector2( -3, -3 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -1076,7 +1328,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 48, 5 ) ]
+"values": [ Vector2( 48, -15 ) ]
 }
 tracks/6/type = "audio"
 tracks/6/path = NodePath("../Footsteps")
@@ -1106,7 +1358,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 32, 26 ) ]
+"values": [ Vector2( 59, -8 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1131,6 +1383,30 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Move_Collider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -1157,7 +1433,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 38, 30 ) ]
+"values": [ Vector2( 38, 10 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -1169,7 +1445,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 32, 26 ) ]
+"values": [ Vector2( 59, -8 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../Shadow:position")
@@ -1181,7 +1457,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 9, 17 ), Vector2( -8, 11 ), Vector2( -10, 12 ), Vector2( -10, 12 ), Vector2( -11, 13 ), Vector2( -11, 13 ) ]
+"values": [ Vector2( 9, -3 ), Vector2( -8, -9 ), Vector2( -10, -8 ), Vector2( -10, -8 ), Vector2( -11, -7 ), Vector2( -11, -7 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Shadow:rotation_degrees")
@@ -1245,6 +1521,42 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 48, -15 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "135G_Waving"
@@ -1272,7 +1584,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 11, 16 ) ]
+"values": [ Vector2( 11, -4 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -1320,7 +1632,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 32, 26 ) ]
+"values": [ Vector2( 59, -8 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1333,6 +1645,42 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 48, -15 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -1361,7 +1709,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -3, 15 ) ]
+"values": [ Vector2( -3, -5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -1409,7 +1757,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -12 ) ]
+"values": [ Vector2( 0, -32 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -1421,7 +1769,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -1, 11 ) ]
+"values": [ Vector2( 0, -15 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1434,6 +1782,30 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -1462,7 +1834,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -4, 15 ), Vector2( -2, 15 ), Vector2( -3, 15 ), Vector2( -4, 15 ), Vector2( -3.5, 15 ), Vector2( -3, 15 ) ]
+"values": [ Vector2( -4, -5 ), Vector2( -2, -5 ), Vector2( -3, -5 ), Vector2( -4, -5 ), Vector2( -3.5, -5 ), Vector2( -3, -5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -1510,7 +1882,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -12 ) ]
+"values": [ Vector2( 0, -32 ) ]
 }
 tracks/6/type = "audio"
 tracks/6/path = NodePath("../Footsteps")
@@ -1540,7 +1912,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -1, 11 ) ]
+"values": [ Vector2( 0, -15 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1565,6 +1937,30 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Move_Collider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -1591,7 +1987,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -1, 13 ) ]
+"values": [ Vector2( -1, -7 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -1603,7 +1999,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -1, 11 ) ]
+"values": [ Vector2( 0, -15 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../Shadow:position")
@@ -1615,7 +2011,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -4, 14 ), Vector2( -4, 15 ), Vector2( -4, 9 ), Vector2( -4, 9 ), Vector2( -4, 9.83333 ) ]
+"values": [ Vector2( -4, -6 ), Vector2( -4, -5 ), Vector2( -4, -11 ), Vector2( -4, -11 ), Vector2( -4, -10.167 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Shadow:rotation_degrees")
@@ -1679,6 +2075,42 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -32 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
 
 [sub_resource type="Animation" id=16]
 resource_name = "180_Waving"
@@ -1706,7 +2138,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -3, 15 ) ]
+"values": [ Vector2( -3, -5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -1754,7 +2186,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -1, 11 ) ]
+"values": [ Vector2( 0, -15 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1767,6 +2199,42 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -32 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -1795,7 +2263,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 2, 16 ) ]
+"values": [ Vector2( 2, -4 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -1843,7 +2311,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -38, 70 ) ]
+"values": [ Vector2( -38, 50 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -1855,7 +2323,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -32, 59 ) ]
+"values": [ Vector2( -59, 39 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1868,6 +2336,30 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -1896,7 +2388,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 2, 16 ), Vector2( 1, 17 ), Vector2( 1.5, 16.5 ), Vector2( 2, 16 ), Vector2( 13, 15 ), Vector2( 19, 23 ) ]
+"values": [ Vector2( 2, -4 ), Vector2( 1, -3 ), Vector2( 1.5, -3.5 ), Vector2( 2, -4 ), Vector2( 13, -5 ), Vector2( 19, 3 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -1944,7 +2436,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -38, 70 ) ]
+"values": [ Vector2( -38, 50 ) ]
 }
 tracks/6/type = "audio"
 tracks/6/path = NodePath("../Footsteps")
@@ -1974,7 +2466,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -32, 59 ) ]
+"values": [ Vector2( -59, 39 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1999,6 +2491,30 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Move_Collider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -2025,7 +2541,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -27, 56 ) ]
+"values": [ Vector2( -27, 36 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -2037,7 +2553,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -32, 59 ) ]
+"values": [ Vector2( -59, 39 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../Shadow:position")
@@ -2049,7 +2565,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 2, 16 ), Vector2( 7, 17.6667 ), Vector2( 17, 21 ), Vector2( 17, 21 ), Vector2( 16.7222, 20.9074 ), Vector2( 16.4444, 20.8148 ) ]
+"values": [ Vector2( 2, -4 ), Vector2( 7, -2.333 ), Vector2( 17, 1 ), Vector2( 17, 1 ), Vector2( 16.722, 0.907 ), Vector2( 16.444, 0.815 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Shadow:rotation_degrees")
@@ -2113,6 +2629,42 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -38, 50 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
 
 [sub_resource type="Animation" id=20]
 resource_name = "45D_Waving"
@@ -2140,7 +2692,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 1, 16 ) ]
+"values": [ Vector2( 1, -4 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -2188,7 +2740,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -32, 59 ) ]
+"values": [ Vector2( -59, 39 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -2201,6 +2753,42 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -38, 50 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -2229,7 +2817,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -7, 17 ) ]
+"values": [ Vector2( -7, -3 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -2277,7 +2865,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 38, 70 ) ]
+"values": [ Vector2( 38, 50 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -2289,7 +2877,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 37, 50 ) ]
+"values": [ Vector2( 59, 39 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -2302,6 +2890,30 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=22]
@@ -2330,7 +2942,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -7, 16 ), Vector2( -2, 18 ), Vector2( 2, 18 ), Vector2( 2, 18 ), Vector2( -2, 15 ), Vector2( -4.5, 15.5 ) ]
+"values": [ Vector2( -7, -4 ), Vector2( -2, -2 ), Vector2( 2, -2 ), Vector2( 2, -2 ), Vector2( -2, -5 ), Vector2( -4.5, -4.5 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -2378,7 +2990,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 38, 70 ) ]
+"values": [ Vector2( 38, 50 ) ]
 }
 tracks/6/type = "audio"
 tracks/6/path = NodePath("../Footsteps")
@@ -2408,7 +3020,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 37, 50 ) ]
+"values": [ Vector2( 59, 39 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -2433,6 +3045,30 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Move_Collider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -2459,7 +3095,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 38, 50 ) ]
+"values": [ Vector2( 38, 30 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -2471,7 +3107,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 37, 50 ) ]
+"values": [ Vector2( 59, 39 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../Shadow:position")
@@ -2483,7 +3119,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 2, 16 ), Vector2( 7, 18 ), Vector2( 8, 18 ), Vector2( 8, 18 ), Vector2( 7.5, 18 ), Vector2( 7, 18 ) ]
+"values": [ Vector2( 2, -4 ), Vector2( 7, -2 ), Vector2( 8, -2 ), Vector2( 8, -2 ), Vector2( 7.5, -2 ), Vector2( 7, -2 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Shadow:scale")
@@ -2547,6 +3183,42 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 38, 50 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
 
 [sub_resource type="Animation" id=24]
 resource_name = "45G_Waving"
@@ -2574,7 +3246,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -7, 18 ) ]
+"values": [ Vector2( -7, -2 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -2622,7 +3294,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 37, 50 ) ]
+"values": [ Vector2( 59, 39 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -2635,6 +3307,42 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 38, 50 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=25]
@@ -2687,7 +3395,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -4, 19 ) ]
+"values": [ Vector2( -4, -1 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -2711,7 +3419,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -62, 33 ) ]
+"values": [ Vector2( -62, 13 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -2723,7 +3431,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -46, 39 ) ]
+"values": [ Vector2( -65, 19 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -2736,6 +3444,30 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -2788,7 +3520,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -4, 19 ), Vector2( -3, 20 ), Vector2( -4, 21 ), Vector2( -4, 19 ), Vector2( -3.5, 20 ), Vector2( -3, 21 ) ]
+"values": [ Vector2( -4, -1 ), Vector2( -3, 0 ), Vector2( -4, 1 ), Vector2( -4, -1 ), Vector2( -3.5, 0 ), Vector2( -3, 1 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
@@ -2800,7 +3532,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -62, 33 ) ]
+"values": [ Vector2( -62, 13 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:disabled")
@@ -2842,7 +3574,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -46, 39 ) ]
+"values": [ Vector2( -65, 19 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -2867,6 +3599,30 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Move_Collider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=27]
@@ -2893,7 +3649,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -49, 38 ) ]
+"values": [ Vector2( -49, 18 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -2905,7 +3661,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -46, 39 ) ]
+"values": [ Vector2( -65, 19 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../Shadow:position")
@@ -2917,7 +3673,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -4, 19 ), Vector2( -9.5, 19 ), Vector2( -15, 19 ), Vector2( -15, 19 ), Vector2( -13.5, 19 ), Vector2( -12, 19 ) ]
+"values": [ Vector2( -4, -1 ), Vector2( -9.5, -1 ), Vector2( -15, -1 ), Vector2( -15, -1 ), Vector2( -13.5, -1 ), Vector2( -12, -1 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Shadow:rotation_degrees")
@@ -2981,6 +3737,42 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -62, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
 
 [sub_resource type="Animation" id=28]
 resource_name = "90D_Waving"
@@ -3008,7 +3800,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -4, 19 ) ]
+"values": [ Vector2( -4, -1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -3056,7 +3848,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -46, 39 ) ]
+"values": [ Vector2( -65, 19 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -3069,6 +3861,42 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -62, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=29]
@@ -3097,7 +3925,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -2, 19 ) ]
+"values": [ Vector2( -2, -1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -3145,7 +3973,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 62, 33 ) ]
+"values": [ Vector2( 62, 13 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -3157,7 +3985,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 37, 40 ) ]
+"values": [ Vector2( 65, 19 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -3170,6 +3998,30 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Move_Collider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=30]
@@ -3198,7 +4050,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -2, 21 ), Vector2( -2, 21 ), Vector2( -2, 21 ), Vector2( -1, 21 ), Vector2( -1.5, 21 ), Vector2( -2, 21 ) ]
+"values": [ Vector2( -2, 1 ), Vector2( -2, 1 ), Vector2( -2, 1 ), Vector2( -1, 1 ), Vector2( -1.5, 1 ), Vector2( -2, 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -3246,7 +4098,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 62, 33 ) ]
+"values": [ Vector2( 62, 13 ) ]
 }
 tracks/6/type = "audio"
 tracks/6/path = NodePath("../Footsteps")
@@ -3276,7 +4128,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 37, 40 ) ]
+"values": [ Vector2( 65, 19 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -3301,6 +4153,30 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 2,
 "values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Move_Collider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=31]
@@ -3327,7 +4203,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 33, 32 ) ]
+"values": [ Vector2( 33, 12 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -3339,7 +4215,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 37, 40 ) ]
+"values": [ Vector2( 65, 19 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../Shadow:position")
@@ -3351,7 +4227,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.7, 0.8, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -1, 19 ), Vector2( 3, 19 ), Vector2( 7, 19 ), Vector2( 7, 19 ), Vector2( 6.75, 19 ), Vector2( 6.65, 19 ) ]
+"values": [ Vector2( -1, -1 ), Vector2( 3, -1 ), Vector2( 7, -1 ), Vector2( 7, -1 ), Vector2( 6.75, -1 ), Vector2( 6.65, -1 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../Shadow:rotation_degrees")
@@ -3415,6 +4291,42 @@ tracks/8/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 62, 13 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
 
 [sub_resource type="Animation" id=32]
 resource_name = "90G_Waving"
@@ -3442,7 +4354,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -2, 19 ) ]
+"values": [ Vector2( -2, -1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -3490,7 +4402,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 37, 40 ) ]
+"values": [ Vector2( 65, 19 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -3503,6 +4415,42 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Move_Collider:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Kid_Waving_Detection_Collider/KWDCollider:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 62, 13 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, 13 ) ]
 }
 
 [sub_resource type="Animation" id=33]
@@ -3615,6 +4563,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Move_Collider:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 13 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Vomit_Detector/VDetector:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 13 ) ]
+}
 
 [sub_resource type="Animation" id=143]
 length = 0.001
@@ -3665,7 +4637,7 @@ vomit_chances = 0.5
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2( 0, 33 )
+position = Vector2( 0, 13 )
 rotation = 1.5708
 shape = SubResource( 82 )
 __meta__ = {
@@ -3713,7 +4685,7 @@ __meta__ = {
 }
 
 [node name="VDetector" type="CollisionShape2D" parent="Vomit_Detector"]
-position = Vector2( 0, 33 )
+position = Vector2( 0, 13 )
 rotation = 1.5708
 shape = SubResource( 145 )
 disabled = true
@@ -3722,6 +4694,7 @@ __meta__ = {
 }
 
 [node name="Point_of_Vomit_Spawn" type="Position2D" parent="."]
+visible = false
 position = Vector2( 0, 56 )
 __meta__ = {
 "_edit_lock_": true
@@ -3739,7 +4712,7 @@ __meta__ = {
 [node name="Vomito" type="Sprite" parent="."]
 material = SubResource( 142 )
 texture = ExtResource( 1 )
-offset = Vector2( 0.5, 0.5 )
+offset = Vector2( 0.5, -19.5 )
 hframes = 15
 vframes = 14
 __meta__ = {
