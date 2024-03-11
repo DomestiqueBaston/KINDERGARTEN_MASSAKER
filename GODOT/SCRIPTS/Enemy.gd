@@ -149,7 +149,7 @@ func tick(delta):
 		_stuck_time = Time.get_ticks_msec()
 	elif Time.get_ticks_msec() - _stuck_time > 1000:
 		_stuck_time = -1
-		vec = vec * -1
+		vec *= -1
 		turned = true
 
 	# if collisions made the enemy deviate from his path, update his
