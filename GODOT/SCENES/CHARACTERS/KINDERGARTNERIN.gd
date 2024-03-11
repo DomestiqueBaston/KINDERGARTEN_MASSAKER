@@ -10,6 +10,9 @@ var OMG_length: float
 # length in seconds of her No animation
 var no_length: float
 
+# the last time we played the OMG animation
+var _last_omg := -1
+
 func init_timer():
 	idle_length = $AnimationPlayer.get_animation("00_Check").length
 	OMG_length = $AnimationPlayer.get_animation("00_OMG").length
@@ -75,8 +78,11 @@ func want_to_avoid_collider(collider: Object) -> bool:
 #
 func alien_seen():
 	if $AnimationPlayer.current_animation.ends_with("_Check"):
-		$CyclePlayer.play("OMG", true)
-		_start_running(OMG_length)
+		var now = Time.get_ticks_msec()
+		if _last_omg < 0 or now - _last_omg > 5000:
+			_last_omg = now
+			$CyclePlayer.play("OMG", true)
+			_start_running(OMG_length)
 
 #
 # If the alien leaves the teacher's field of vision while she is yelling at
