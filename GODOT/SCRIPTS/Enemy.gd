@@ -37,6 +37,9 @@ var direction: Vector2
 # timer used to regulate the enemy's behavior
 var _timer: Timer
 
+# if non-negative, time enemy has been stuck in place (in msec)
+var _stuck_time := -1
+
 func _ready():
 	if Engine.editor_hint:
 		return
@@ -125,15 +128,32 @@ func tick(delta):
 		or $CyclePlayer.is_paused()):
 		return
 
+	# use move_and_collide() to move and avoid collisions
+
 	var vec = direction * speed * (delta * $CyclePlayer.get_speed())
 	var turned = false
+	var collision: KinematicCollision2D
 
 	for _i in range(4):
-		var collision = move_and_collide(vec)
+		collision = move_and_collide(vec)
 		if collision == null or not want_to_avoid_collider(collision.collider):
 			break
 		vec = collision.remainder.slide(collision.normal)
 		turned = true
+
+	# if the enemy gets stuck, try to free him by turning him around
+
+	if collision == null or collision.remainder == Vector2.ZERO:
+		_stuck_time = -1
+	elif _stuck_time < 0:
+		_stuck_time = Time.get_ticks_msec()
+	elif Time.get_ticks_msec() - _stuck_time > 1000:
+		_stuck_time = -1
+		vec = vec * -1
+		turned = true
+
+	# if collisions made the enemy deviate from his path, update his
+	# orientation
 
 	if turned:
 		direction = Globals.get_nearest_direction(vec).normalized()
