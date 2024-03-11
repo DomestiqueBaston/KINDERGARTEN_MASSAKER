@@ -395,8 +395,8 @@ func start_game():
 	yield(alien, "beam_down_finished")
 	if not block_overlay_animation:
 		overlay.start_animation()
+		$Shutdown_Timer.start()
 	$Enemy_Timer.start(spawn_first_time)
-	$Shutdown_Timer.start()
 	$ScoreTracker.start_game()
 
 func _on_Intro_Music_finished():
@@ -557,7 +557,8 @@ func start_techniker():
 	if techniker_used or $Shutdown_Overlay.visible:
 		return
 	techniker_used = true
-	$Shutdown_Timer.start()
+	if not block_overlay_animation:
+		$Shutdown_Timer.start()
 	$Talent_Overlays/Techniker/AnimationPlayer.play("techniker")
 	yield($Talent_Overlays/Techniker/AnimationPlayer, "animation_finished")
 	overlay.rewind_animation()
