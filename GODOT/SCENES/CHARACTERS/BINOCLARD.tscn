@@ -26,7 +26,7 @@ radius = 44.0
 height = 30.0
 
 [sub_resource type="CircleShape2D" id=81]
-radius = 12.0
+radius = 13.0
 
 [sub_resource type="CapsuleShape2D" id=154]
 radius = 11.0
@@ -287,7 +287,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5, 0.6, 0.7, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 1, 19 ), Vector2( 1, 19 ), Vector2( 1, 20 ), Vector2( 1, 21 ), Vector2( 1, 18 ), Vector2( 1, 19 ), Vector2( 1, 19 ) ]
+"values": [ Vector2( 1, 19 ), Vector2( 1, 19 ), Vector2( 1, 21 ), Vector2( 1, 24 ), Vector2( 1, 19 ), Vector2( 1, 19 ), Vector2( 1, 19 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -2372,7 +2372,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 0.4, 0.5, 0.6, 0.7, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, -2 ), Vector2( 1, -5 ), Vector2( 1, -3 ), Vector2( 1, 0 ), Vector2( 1, 0 ) ]
+"values": [ Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, -4 ), Vector2( 1, -7 ), Vector2( 1, -4 ), Vector2( 1, 0 ), Vector2( 1, 0 ) ]
 }
 tracks/8/type = "audio"
 tracks/8/path = NodePath("../Kick")
@@ -5746,7 +5746,6 @@ vomit_detector_path = NodePath("Vomit_Detector")
 audio_stream_player_path = NodePath("Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
 speed = Vector2( 130, 65 )
-attack_distance = 42.5
 attack_animation = "Kick"
 max_idle_time = 4.0
 spot_alien_on_idle_chances = 0.667
