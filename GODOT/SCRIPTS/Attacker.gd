@@ -17,6 +17,9 @@ export var min_idle_time := 2.0
 # maximum amount of time spent in the default animation cycle before moving
 export var max_idle_time := 5.0
 
+# chances the enemy will spot the alien and chase him even when idling
+export var spot_alien_on_idle_chances := 0.0
+
 # length in seconds of the attack animation
 var attack_length: float
 
@@ -94,6 +97,15 @@ func tick(delta):
 					and is_alien_visible()
 					and is_alien_in_range()):
 				_stop_attacking(hit_count >= max_hit_count)
+
+#
+# If the alien becomes visible while the enemy is idling, the enemy may wake up
+# and start chasing him.
+#
+func alien_seen():
+	if ($AnimationPlayer.current_animation.ends_with(default_anim)
+		and randf() < spot_alien_on_idle_chances):
+		_start_running()
 
 #
 # Don't try to get around the alien; just stop when he is reached.

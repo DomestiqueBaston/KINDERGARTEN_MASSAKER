@@ -5857,6 +5857,7 @@ speed = Vector2( 130, 65 )
 attack_distance = 42.5
 attack_animation = "Kick"
 max_idle_time = 4.0
+spot_alien_on_idle_chances = 0.667
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
