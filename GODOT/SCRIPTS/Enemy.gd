@@ -145,12 +145,14 @@ func tick(delta):
 
 	if collision == null or collision.remainder == Vector2.ZERO:
 		_stuck_time = -1
-	elif _stuck_time < 0:
-		_stuck_time = Time.get_ticks_msec()
-	elif Time.get_ticks_msec() - _stuck_time > 1000:
-		_stuck_time = -1
-		vec *= -1
-		turned = true
+	else:
+		var now = Time.get_ticks_msec()
+		if _stuck_time < 0:
+			_stuck_time = now
+		elif now - _stuck_time > 1000:
+			_stuck_time = now
+			vec = collision.normal
+			turned = true
 
 	# if collisions made the enemy deviate from his path, update his
 	# orientation
