@@ -14,8 +14,8 @@
 [ext_resource path="res://ASSETS/SOUND/FX/FOOT_STEPS/Wet_Steps_Kid_E.wav" type="AudioStream" id=12]
 
 [sub_resource type="CapsuleShape2D" id=91]
-radius = 11.0
-height = 16.0
+radius = 7.99996
+height = 14.0001
 
 [sub_resource type="CapsuleShape2D" id=95]
 radius = 66.9999
@@ -5577,7 +5577,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -4, 16 ) ]
+"values": [ Vector2( -4, -4 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Shadow:rotation_degrees")
@@ -5746,6 +5746,7 @@ vomit_detector_path = NodePath("Vomit_Detector")
 audio_stream_player_path = NodePath("Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
 speed = Vector2( 130, 65 )
+attack_distance = 37.5
 attack_animation = "Kick"
 max_idle_time = 4.0
 spot_alien_on_idle_chances = 0.667
@@ -5791,6 +5792,7 @@ __meta__ = {
 }
 
 [node name="Attack_Collider" type="Area2D" parent="."]
+visible = false
 collision_layer = 2048
 collision_mask = 8
 __meta__ = {
@@ -5819,7 +5821,7 @@ __meta__ = {
 }
 
 [node name="Shadow" type="Polygon2D" parent="."]
-position = Vector2( -4, 16 )
+position = Vector2( -4, -4 )
 scale = Vector2( 0.5, 0.4 )
 color = Color( 0, 0.101961, 0, 0.392157 )
 polygon = PoolVector2Array( -14, 45, -12.2222, 36, -9, 30, -2.22222, 26, 6, 25, 14.4444, 26, 22, 30, 25.5556, 36, 27, 45, 25.5556, 54, 22, 60, 14.4444, 64, 6, 65, -2.22222, 64, -9, 60, -12.2222, 54 )
