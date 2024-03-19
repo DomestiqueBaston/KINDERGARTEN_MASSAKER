@@ -22,7 +22,7 @@ radius = 66.9999
 height = 34.0
 
 [sub_resource type="CapsuleShape2D" id=96]
-radius = 44.0
+radius = 37.9999
 height = 30.0
 
 [sub_resource type="CircleShape2D" id=81]
@@ -5752,6 +5752,7 @@ max_idle_time = 4.0
 spot_alien_on_idle_chances = 0.667
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, 15 )
 rotation = 1.5708
 shape = SubResource( 91 )

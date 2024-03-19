@@ -18,7 +18,7 @@ radius = 39.0
 height = 74.0
 
 [sub_resource type="CapsuleShape2D" id=87]
-radius = 44.0
+radius = 37.9999
 height = 30.0
 
 [sub_resource type="CapsuleShape2D" id=145]
@@ -107,7 +107,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 60 ) ]
+"values": [ Vector2( 0, 58 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("../Bg_Collider_for_Vomit_Spill/VSCollider:position")
@@ -232,7 +232,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 60 ) ]
+"values": [ Vector2( 0, 58 ) ]
 }
 tracks/6/type = "audio"
 tracks/6/path = NodePath("../Footsteps")

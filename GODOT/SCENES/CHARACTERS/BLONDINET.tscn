@@ -19,7 +19,7 @@ radius = 62.0
 height = 30.0
 
 [sub_resource type="CapsuleShape2D" id=96]
-radius = 45.0
+radius = 37.9999
 height = 28.0
 
 [sub_resource type="ShaderMaterial" id=152]
