@@ -17,7 +17,16 @@ export var speed := Vector2(100, 50)
 export var attack_distance := 50.0
 
 # enemy's default animation
-export var default_anim := "Idle"
+export var default_animation := "Idle"
+
+# name of the attack animation cycle
+export var attack_animation: String
+
+# how long waving lasts
+export var wave_time := 2.4
+
+# how long before the enemy can wave again
+export var wave_pause_time := 5.0
 
 # the alien, if he has been spotted
 var alien: Alien
@@ -40,6 +49,9 @@ var _timer: Timer
 # if non-negative, time enemy has been stuck in place (in msec)
 var _stuck_time := -1
 
+# if non-negative, time when enemy last waved
+var _last_wave_time := -1
+
 func _ready():
 	if Engine.editor_hint:
 		return
@@ -54,7 +66,7 @@ func _ready():
 	var dir = Globals.get_random_direction()
 	direction = dir.normalized()
 	$CyclePlayer.set_direction_vector(direction)
-	$CyclePlayer.play(default_anim)
+	$CyclePlayer.play(default_animation)
 
 	# set up the timer for updating movements
 
@@ -87,7 +99,7 @@ func init_timer():
 #
 func on_timer_timeout():
 	if $AnimationPlayer.current_animation.ends_with("_Run"):
-		$CyclePlayer.play(default_anim)
+		$CyclePlayer.play(default_animation)
 	else:
 		$CyclePlayer.play("Run")
 	start_timer(rand_range(2, 5))
@@ -213,11 +225,17 @@ func restart_time():
 #
 func face_alien():
 	if is_alien_visible():
-		var dir = alien.position - position
-		if dir.length_squared() > 1.0:
-			dir = Globals.get_nearest_direction(dir)
-			direction = dir.normalized()
-			$CyclePlayer.set_direction_vector(direction)
+		face_somebody(alien)
+
+#
+# Turns the enemy to face any Node2D.
+#
+func face_somebody(who: Node2D):
+	var dir = who.position - position
+	if dir.length_squared() > 1.0:
+		dir = Globals.get_nearest_direction(dir)
+		direction = dir.normalized()
+		$CyclePlayer.set_direction_vector(direction)
 
 #
 # Turns the enemy so he faces/moves in the opposition direction.
@@ -305,3 +323,38 @@ func get_alien_distance_squared() -> float:
 #
 func is_alien_in_range() -> bool:
 	return _alien_dist2 > 0 and _alien_dist2 < attack_distance * attack_distance
+
+#
+# The enemy stops to wave at the given kid. Waving lasts for wave_time seconds.
+#
+func wave_at(kid: Node2D):
+	# These calls have to be deferred because wave_at() is called from a
+	# collision detection callback, and the calls may enable or disable
+	# colliders, triggering an error message from Godot. But we DON'T want to
+	# defer setting _last_wave_time, because setting it here prevents
+	# _is_ready_to_wave() from answering True before we have started.
+	call_deferred("face_somebody", kid)
+	$CyclePlayer.call_deferred("play", "Waving")
+	_timer.start(wave_time)
+	_last_wave_time = Time.get_ticks_msec()
+
+#
+# Returns true if the enemy is not attacking the alien, is not already waving
+# at somebody, and has not waved for wave_pause_time seconds.
+#
+func _is_ready_to_wave() -> bool:
+	if $AnimationPlayer.current_animation.ends_with(attack_animation):
+		return false
+	if _last_wave_time < 0:
+		return true
+	return Time.get_ticks_msec() - _last_wave_time > 1000 * wave_pause_time
+
+#
+# Connect a kid's waving detection collider's "body_entered" signal to this
+# method. If another kid is detected, and both kids are available to wave, they
+# do so.
+#
+func on_Kid_Waving_Detection_Collider_body_entered(body: Node):
+	if body != self and _is_ready_to_wave() and body._is_ready_to_wave():
+		wave_at(body as Node2D)
+		body.wave_at(self)

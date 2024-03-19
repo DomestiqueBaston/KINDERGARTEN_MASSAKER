@@ -34,7 +34,7 @@ func on_timer_timeout():
 	# otherwise => idle 1-3 seconds
 
 	else:
-		$CyclePlayer.play(default_anim)
+		$CyclePlayer.play(default_animation)
 		start_timer(rand_range(1, 3))
 
 func _on_Bg_Collider_for_Vomit_Spill_body_entered(body: Node):

@@ -5,9 +5,6 @@ class_name Attacker
 # Enemy subclass for kids who attack the alien, then get bored and go away after
 # hitting him a certain number of times.
 
-# name of the attack animation cycle
-export var attack_animation: String
-
 # number of successful hits before we get bored and go away
 export var max_hit_count := 3
 
@@ -37,7 +34,7 @@ func _ready():
 
 func on_timer_timeout():
 	if $AnimationPlayer.current_animation.ends_with("_Run"):
-		$CyclePlayer.play(default_anim)
+		$CyclePlayer.play(default_animation)
 		start_timer(rand_range(min_idle_time, max_idle_time))
 	else:
 		_start_running()
@@ -103,7 +100,7 @@ func tick(delta):
 # and start chasing him.
 #
 func alien_seen():
-	if ($AnimationPlayer.current_animation.ends_with(default_anim)
+	if ($AnimationPlayer.current_animation.ends_with(default_animation)
 		and randf() < spot_alien_on_idle_chances):
 		_start_running()
 

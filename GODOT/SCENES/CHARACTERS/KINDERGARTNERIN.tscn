@@ -3856,7 +3856,7 @@ audio_stream_player_path = NodePath("Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
 speed = Vector2( 200, 100 )
 attack_distance = 65.0
-default_anim = "Check"
+default_animation = "Check"
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
