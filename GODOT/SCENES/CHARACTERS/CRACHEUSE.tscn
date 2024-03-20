@@ -18,8 +18,8 @@ radius = 41.9999
 height = 64.0001
 
 [sub_resource type="CapsuleShape2D" id=87]
-radius = 37.9999
-height = 30.0
+radius = 20.0
+height = 18.0001
 
 [sub_resource type="CapsuleShape2D" id=145]
 radius = 9.99997
@@ -131,7 +131,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 7.62939e-06, 60 ) ]
+"values": [ Vector2( 7.62939e-06, 43 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -268,7 +268,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 60 ) ]
+"values": [ Vector2( 0, 43 ) ]
 }
 tracks/8/type = "audio"
 tracks/8/path = NodePath("../Footsteps")
@@ -710,7 +710,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -53, -17 ) ]
+"values": [ Vector2( -36, -6 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -847,7 +847,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -53, -17 ) ]
+"values": [ Vector2( -36, -6 ) ]
 }
 tracks/8/type = "audio"
 tracks/8/path = NodePath("../Footsteps")
@@ -1289,7 +1289,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 53, -17 ) ]
+"values": [ Vector2( 36, -6 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1426,7 +1426,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 53, -17 ) ]
+"values": [ Vector2( 36, -6 ) ]
 }
 tracks/8/type = "audio"
 tracks/8/path = NodePath("../Footsteps")
@@ -1856,7 +1856,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -32 ) ]
+"values": [ Vector2( 0, -17 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -1993,7 +1993,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -32 ) ]
+"values": [ Vector2( 0, -17 ) ]
 }
 tracks/8/type = "audio"
 tracks/8/path = NodePath("../Footsteps")
@@ -2435,7 +2435,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -46, 46 ) ]
+"values": [ Vector2( -36, 31 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -2572,7 +2572,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -46, 46 ) ]
+"values": [ Vector2( -36, 31 ) ]
 }
 tracks/8/type = "audio"
 tracks/8/path = NodePath("../Footsteps")
@@ -3014,7 +3014,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 46, 46 ) ]
+"values": [ Vector2( 36, 31 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -3151,7 +3151,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 46, 46 ) ]
+"values": [ Vector2( 36, 31 ) ]
 }
 tracks/8/type = "audio"
 tracks/8/path = NodePath("../Footsteps")
@@ -3593,7 +3593,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -62, 14 ) ]
+"values": [ Vector2( -42, 13 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -3730,7 +3730,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -62, 14 ) ]
+"values": [ Vector2( -42, 13 ) ]
 }
 tracks/8/type = "audio"
 tracks/8/path = NodePath("../Footsteps")
@@ -4172,7 +4172,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 62, 14 ) ]
+"values": [ Vector2( 42, 13 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Vomit_Detector/VDetector:disabled")
@@ -4309,7 +4309,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 62, 14 ) ]
+"values": [ Vector2( 42, 13 ) ]
 }
 tracks/8/type = "audio"
 tracks/8/path = NodePath("../Footsteps")

@@ -19,8 +19,8 @@ radius = 62.0
 height = 30.0
 
 [sub_resource type="CapsuleShape2D" id=96]
-radius = 37.9999
-height = 28.0
+radius = 20.0
+height = 18.0001
 
 [sub_resource type="ShaderMaterial" id=152]
 resource_local_to_scene = true
@@ -136,7 +136,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 60 ) ]
+"values": [ Vector2( 0, 42 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -297,7 +297,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, 60 ) ]
+"values": [ Vector2( 0, 42 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -811,7 +811,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -40, -21 ) ]
+"values": [ Vector2( -35, -6 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -972,7 +972,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -40, -21 ) ]
+"values": [ Vector2( -35, -6 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -1499,7 +1499,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 40, -21 ) ]
+"values": [ Vector2( 35, -6 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -1660,7 +1660,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 40, -21 ) ]
+"values": [ Vector2( 35, -6 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -2187,7 +2187,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -30 ) ]
+"values": [ Vector2( 0, -16 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -2348,7 +2348,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0, -30 ) ]
+"values": [ Vector2( 0, -16 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -2875,7 +2875,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -41, 48 ) ]
+"values": [ Vector2( -35, 32 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -3036,7 +3036,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -41, 48 ) ]
+"values": [ Vector2( -35, 32 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -3563,7 +3563,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 41, 48 ) ]
+"values": [ Vector2( 35, 32 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -3724,7 +3724,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 41, 48 ) ]
+"values": [ Vector2( 35, 32 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -4251,7 +4251,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -62, 16 ) ]
+"values": [ Vector2( -41, 13 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -4412,7 +4412,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( -62, 16 ) ]
+"values": [ Vector2( -41, 13 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -4939,7 +4939,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 62, 16 ) ]
+"values": [ Vector2( 41, 13 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
@@ -5100,7 +5100,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 62, 16 ) ]
+"values": [ Vector2( 41, 13 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("../Attack_Collider/ACollider:disabled")
