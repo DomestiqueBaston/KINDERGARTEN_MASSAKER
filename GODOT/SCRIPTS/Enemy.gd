@@ -232,10 +232,16 @@ func face_alien():
 #
 func face_somebody(who: Node2D):
 	var dir = who.position - position
-	if dir.length_squared() > 1.0:
-		dir = Globals.get_nearest_direction(dir)
-		direction = dir.normalized()
-		$CyclePlayer.set_direction_vector(direction)
+	if dir.length_squared() < 1.0:
+		return
+	# this test is to avoid the character jumping back and forth between two
+	# directions when he is trying to go somewhere inbetween
+	if ($AnimationPlayer.current_animation.ends_with("_Run")
+		and abs(direction.angle_to(dir)) < PI/4.0):
+		return
+	dir = Globals.get_nearest_direction(dir)
+	direction = dir.normalized()
+	$CyclePlayer.set_direction_vector(direction)
 
 #
 # Turns the enemy so he faces/moves in the opposition direction.
