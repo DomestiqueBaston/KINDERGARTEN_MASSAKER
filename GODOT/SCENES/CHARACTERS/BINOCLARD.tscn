@@ -5884,6 +5884,7 @@ anim_player_path = NodePath("../AnimationPlayer")
 
 [node name="Kick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
+volume_db = 2.5
 pitch_scale = 2.0
 max_distance = 250.0
 attenuation = 0.5
@@ -5905,6 +5906,7 @@ bus = "FX"
 
 [node name="Finishing_cries" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+volume_db = 2.5
 max_distance = 250.0
 attenuation = 0.5
 bus = "FX"

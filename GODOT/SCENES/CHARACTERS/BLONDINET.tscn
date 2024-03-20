@@ -5876,6 +5876,7 @@ anim_player_path = NodePath("../AnimationPlayer")
 
 [node name="Slash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+volume_db = 2.5
 pitch_scale = 4.0
 max_distance = 250.0
 attenuation = 0.5
