@@ -328,13 +328,8 @@ func is_alien_in_range() -> bool:
 # The enemy stops to wave at the given kid. Waving lasts for wave_time seconds.
 #
 func wave_at(kid: Node2D):
-	# These calls have to be deferred because wave_at() is called from a
-	# collision detection callback, and the calls may enable or disable
-	# colliders, triggering an error message from Godot. But we DON'T want to
-	# defer setting _last_wave_time, because setting it here prevents
-	# _is_ready_to_wave() from answering True before we have started.
-	call_deferred("face_somebody", kid)
-	$CyclePlayer.call_deferred("play", "Waving")
+	face_somebody(kid)
+	$CyclePlayer.play("Waving")
 	_timer.start(wave_time)
 	_last_wave_time = Time.get_ticks_msec()
 
@@ -353,6 +348,10 @@ func _is_ready_to_wave() -> bool:
 # Connect a kid's waving detection collider's "body_entered" signal to this
 # method. If another kid is detected, and both kids are available to wave, they
 # do so.
+#
+# Note that signals should be connected to this method in deferred mode,
+# because the animation cycles may enable or disable colliders, triggering an
+# error message from Godot if this is done while handling a callback.
 #
 func on_Kid_Waving_Detection_Collider_body_entered(body: Node):
 	if body != self and _is_ready_to_wave() and body._is_ready_to_wave():

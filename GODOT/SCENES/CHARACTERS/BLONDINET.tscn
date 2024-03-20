@@ -5896,5 +5896,5 @@ anims/flash = SubResource( 154 )
 
 [connection signal="body_entered" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_entered"]
 [connection signal="body_exited" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_exited"]
-[connection signal="body_entered" from="Kid_Waving_Detection_Collider" to="." method="on_Kid_Waving_Detection_Collider_body_entered"]
+[connection signal="body_entered" from="Kid_Waving_Detection_Collider" to="." method="on_Kid_Waving_Detection_Collider_body_entered" flags=3]
 [connection signal="area_entered" from="Attack_Collider" to="." method="_on_hit"]

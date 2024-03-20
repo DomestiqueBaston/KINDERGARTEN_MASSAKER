@@ -5006,6 +5006,6 @@ __meta__ = {
 
 [connection signal="body_entered" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_entered"]
 [connection signal="body_exited" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_exited"]
-[connection signal="body_entered" from="Kid_Waving_Detection_Collider" to="." method="on_Kid_Waving_Detection_Collider_body_entered"]
+[connection signal="body_entered" from="Kid_Waving_Detection_Collider" to="." method="on_Kid_Waving_Detection_Collider_body_entered" flags=3]
 [connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_started"]
 [connection signal="timeout" from="Projectile_Timer" to="." method="_create_projectile"]
