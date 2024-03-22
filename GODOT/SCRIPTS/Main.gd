@@ -307,6 +307,7 @@ func on_talent_chosen(talent_index):
 	change_state(GameState.PLAY)
 
 func on_exit_game():
+	Settings.save_settings()
 	get_tree().quit(0)
 
 func instance_character_at(scene: PackedScene, pos: Vector2) -> Node:

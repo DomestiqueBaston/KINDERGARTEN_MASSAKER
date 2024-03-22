@@ -1,8 +1,9 @@
 extends Node
 
-var ambient_volume = 5
-var music_volume = 5
-var effects_volume = 5
+var _ambient_volume := 5
+var _music_volume := 5
+var _effects_volume := 5
+var _best_score := 0.0
 
 const options_path = "user://settings.cfg"
 
@@ -15,39 +16,42 @@ func load_settings():
 		set_ambient_volume(config.get_value("settings", "ambient_volume", 5))
 		set_music_volume(config.get_value("settings", "music_volume", 5))
 		set_effects_volume(config.get_value("settings", "effects_volume", 5))
+		_best_score = config.get_value("history", "best_score", 0.0)
 	else:
 		set_ambient_volume(5)
 		set_music_volume(5)
 		set_effects_volume(5)
+		_best_score = 0.0
 
 func save_settings():
 	var config = ConfigFile.new()
-	config.set_value("settings", "ambient_volume", ambient_volume)
-	config.set_value("settings", "music_volume", music_volume)
-	config.set_value("settings", "effects_volume", effects_volume)
+	config.set_value("settings", "ambient_volume", _ambient_volume)
+	config.set_value("settings", "music_volume", _music_volume)
+	config.set_value("settings", "effects_volume", _effects_volume)
+	config.set_value("history", "best_score", _best_score)
 	config.save(options_path)
 
 func get_ambient_volume():
-	return ambient_volume
+	return _ambient_volume
 
 func set_ambient_volume(volume):
-	ambient_volume = volume
+	_ambient_volume = volume
 	var bus = AudioServer.get_bus_index("AMBIANCE")
 	AudioServer.set_bus_volume_db(bus, _volume_to_db(volume))
 
 func get_music_volume():
-	return music_volume
+	return _music_volume
 
 func set_music_volume(volume):
-	music_volume = volume
+	_music_volume = volume
 	var bus = AudioServer.get_bus_index("MUSIC")
 	AudioServer.set_bus_volume_db(bus, _volume_to_db(volume))
 
 func get_effects_volume():
-	return effects_volume
+	return _effects_volume
 
 func set_effects_volume(volume):
-	effects_volume = volume
+	_effects_volume = volume
 	var bus = AudioServer.get_bus_index("FX")
 	AudioServer.set_bus_volume_db(bus, _volume_to_db(volume))
 
@@ -58,3 +62,9 @@ func _volume_to_db(volume):
 		return -10
 	else:
 		return 0
+
+func get_best_score() -> float:
+	return _best_score
+
+func set_best_score(score: float):
+	_best_score = score
