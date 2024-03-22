@@ -5105,8 +5105,10 @@ __meta__ = {
 }
 
 [node name="Point_of_Booger_Spawn" type="Position2D" parent="."]
+visible = false
 position = Vector2( 0, 56 )
 __meta__ = {
+"_edit_lock_": true,
 "_editor_description_": "Booger appears at frame 7 of Booger animation."
 }
 

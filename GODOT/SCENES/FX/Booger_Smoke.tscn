@@ -220,6 +220,9 @@ position = Vector2( 1.5, 0 )
 rotation = 1.5708
 shape = SubResource( 3 )
 disabled = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Smoke"
