@@ -24,11 +24,11 @@ signal ghost_done
 # signal emitted when the alien becomes visible or invisible
 signal invisible
 
-var direction := Vector2.DOWN
-var scratch_interval := 0.0
-var accelerate := 1.0
-var mirror := false
-var invisible_flag := false
+var _direction := Vector2.DOWN
+var _scratch_interval := 0.0
+var _accelerate := 1.0
+var _mirror := false
+var _invisible_flag := false
 
 enum State {
 	FIRST_IDLE,
@@ -38,7 +38,7 @@ enum State {
 	HIT
 }
 
-var state = State.MOVE
+var _state = State.MOVE
 
 func _ready():
 	if not Engine.editor_hint:
@@ -50,15 +50,15 @@ func _ready():
 #
 func reset():
 	var cycle_length = $AnimationPlayer.get_animation("00_Idle").length
-	scratch_interval = cycle_length - 1.0 / Globals.FPS
-	direction = Vector2.DOWN
-	$CyclePlayer.set_direction_vector(direction)
+	_scratch_interval = cycle_length - 1.0 / Globals.FPS
+	_direction = Vector2.DOWN
+	$CyclePlayer.set_direction_vector(_direction)
 	$CyclePlayer.stop()
 	set_physics_process(false)
 	stop_cooldown()
-	mirror = false
-	invisible_flag = false
-	state = State.MOVE
+	_mirror = false
+	_invisible_flag = false
+	_state = State.MOVE
 	stop_checking_for_puddles()
 	# alien can't be seen until he beams down
 	$Move_Collider.set_deferred("disabled", true)
@@ -85,7 +85,7 @@ func _on_beam_down_finished(_anim_name):
 #
 func is_busy() -> bool:
 	# NB. The SCRATCH state begins a bit BEFORE the Scratching animation
-	return (state == State.SCRATCH or
+	return (_state == State.SCRATCH or
 			$AnimationPlayer.current_animation.ends_with("_Hit"))
 
 func _physics_process(_delta):
@@ -99,11 +99,11 @@ func _physics_process(_delta):
 
 	# a mirror image alien just moves automatically
 
-	if mirror:
-		var dir = move_and_slide(direction * speed * accelerate)
+	if _mirror:
+		var dir = move_and_slide(_direction * speed * _accelerate)
 		if get_slide_count() > 0:
-			direction = dir.normalized()
-			$CyclePlayer.set_direction_vector(direction)
+			_direction = dir.normalized()
+			$CyclePlayer.set_direction_vector(_direction)
 		return
 
 	# can't do anything else while scratching or being hit
@@ -134,35 +134,35 @@ func _physics_process(_delta):
 	# no movement inputs => idle or maybe scratch
 
 	if dir == Vector2.ZERO:
-		var next_state = state
+		var next_state = _state
 
-		if state == State.MOVE:
+		if _state == State.MOVE:
 			next_state = State.FIRST_IDLE
-		elif (state == State.FIRST_IDLE and
+		elif (_state == State.FIRST_IDLE and
 			  "Idle" in $AnimationPlayer.current_animation and
-			  $AnimationPlayer.current_animation_position >= scratch_interval):
+			  $AnimationPlayer.current_animation_position >= _scratch_interval):
 			if randf() < scratch_chances:
 				next_state = State.SCRATCH
 			else:
 				next_state = State.IDLE
-		elif state == State.HIT:
+		elif _state == State.HIT:
 			next_state = State.IDLE
 
-		if state != next_state:
+		if _state != next_state:
 			if next_state == State.SCRATCH:
 				$CyclePlayer.play("Idle", true)
 				$CyclePlayer.play("Scratching", true)
 			$CyclePlayer.play("Idle")
-			state = next_state
+			_state = next_state
 
 	# otherwise => run
 
 	else:
-		state = State.MOVE
-		direction = dir.normalized()
-		$CyclePlayer.set_direction_vector(direction)
+		_state = State.MOVE
+		_direction = dir.normalized()
+		$CyclePlayer.set_direction_vector(_direction)
 		$CyclePlayer.play("Run")
-		move_and_slide(direction * speed * accelerate)
+		move_and_slide(_direction * speed * _accelerate)
 
 #
 # Sets a multiplier for the speed of the alien's Run animation cycle (1 by
@@ -175,7 +175,7 @@ func set_run_cycle_speed(multiplier: float):
 # Sets a multiplier for the speed of the alien's movements (1 by default).
 #
 func set_run_speed(multiplier: float):
-	accelerate = multiplier
+	_accelerate = multiplier
 
 #
 # Starts the alien's teleport animation, emits a "teleport" signal, then
@@ -192,26 +192,26 @@ func start_teleport():
 #
 func start_invisible(duration: float):
 	$Talent/Invisible.start(duration)
-	invisible_flag = true
-	emit_signal("invisible", invisible_flag)
+	_invisible_flag = true
+	emit_signal("invisible", _invisible_flag)
 
 func _on_invisible_done():
-	invisible_flag = false
-	emit_signal("invisible", invisible_flag)
+	_invisible_flag = false
+	emit_signal("invisible", _invisible_flag)
 
 #
 # Interrupts the "invisible" animation in progress.
 #
 func stop_invisible():
 	$Talent/Invisible.stop()
-	invisible_flag = false
-	emit_signal("invisible", invisible_flag)
+	_invisible_flag = false
+	emit_signal("invisible", _invisible_flag)
 
 #
 # Returns true if the alien is invisible (start_invisible() has been called).
 #
 func is_invisible() -> bool:
-	return invisible_flag
+	return _invisible_flag
 
 #
 # Plays the explosion animation.
@@ -257,9 +257,9 @@ func stop_force_field():
 #
 func start_mirror(duration: float, pos: Vector2, dir: Vector2):
 	flash()
-	mirror = true
+	_mirror = true
 	position = pos
-	direction = dir.normalized()
+	_direction = dir.normalized()
 	$CyclePlayer.set_direction_vector(dir)
 	$CyclePlayer.play("Run")
 	start_checking_for_puddles()
@@ -331,11 +331,11 @@ func flash(var brief := false):
 	$Flash.play("flash_brief" if brief else "flash")
 
 func _on_AnimationPlayer_animation_changed(old_name, _new_name):
-	if state == State.SCRATCH and old_name.ends_with("_Scratching"):
-		state = State.IDLE
+	if _state == State.SCRATCH and old_name.ends_with("_Scratching"):
+		_state = State.IDLE
 
 func _on_Hit_Collider_area_entered(_area: Area2D):
-	state = State.HIT
+	_state = State.HIT
 	flash(true)
 	$CyclePlayer.stop()
 	$CyclePlayer.play("Hit", true)

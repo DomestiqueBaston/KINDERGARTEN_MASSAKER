@@ -41,7 +41,7 @@ var _alien_invisible_flag := false
 var _alien_dist2 := 0.0
 
 # direction the enemy is running or facing
-var direction: Vector2
+var _direction: Vector2
 
 # timer used to regulate the enemy's behavior
 var _timer: Timer
@@ -64,8 +64,8 @@ func _ready():
 	# direction
 
 	var dir = Globals.get_random_direction()
-	direction = dir.normalized()
-	$CyclePlayer.set_direction_vector(direction)
+	_direction = dir.normalized()
+	$CyclePlayer.set_direction_vector(_direction)
 	$CyclePlayer.play(default_animation)
 
 	# set up the timer for updating movements
@@ -142,7 +142,7 @@ func tick(delta):
 
 	# use move_and_collide() to move and avoid collisions
 
-	var vec = direction * speed * (delta * $CyclePlayer.get_speed())
+	var vec = _direction * speed * (delta * $CyclePlayer.get_speed())
 	var turned = false
 	var collision: KinematicCollision2D
 
@@ -170,8 +170,8 @@ func tick(delta):
 	# orientation
 
 	if turned:
-		direction = Globals.get_nearest_direction(vec).normalized()
-		$CyclePlayer.set_direction_vector(direction)
+		_direction = Globals.get_nearest_direction(vec).normalized()
+		$CyclePlayer.set_direction_vector(_direction)
 
 #
 # Returns true if the enemy wants to get around the given collider object. The
@@ -237,18 +237,18 @@ func face_somebody(who: Node2D):
 	# this test is to avoid the character jumping back and forth between two
 	# directions when he is trying to go somewhere inbetween
 	if ($AnimationPlayer.current_animation.ends_with("_Run")
-		and abs(direction.angle_to(dir)) < PI/4.0):
+		and abs(_direction.angle_to(dir)) < PI/4.0):
 		return
 	dir = Globals.get_nearest_direction(dir)
-	direction = dir.normalized()
-	$CyclePlayer.set_direction_vector(direction)
+	_direction = dir.normalized()
+	$CyclePlayer.set_direction_vector(_direction)
 
 #
 # Turns the enemy so he faces/moves in the opposition direction.
 #
 func turn_around():
-	direction *= -1
-	$CyclePlayer.set_direction_vector(direction)
+	_direction *= -1
+	$CyclePlayer.set_direction_vector(_direction)
 
 #
 # Called when the alien has been seen. The default implementation does nothing.
@@ -308,6 +308,7 @@ func _on_alien_invisible(var invisible: bool):
 #
 func _on_alien_dying():
 	alien = null
+	_alien_visible_flag = false
 
 #
 # Returns true if the alien is in the enemy's field of vision and is not
