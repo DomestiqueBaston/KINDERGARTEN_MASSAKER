@@ -154,6 +154,7 @@ func _unhandled_input(event: InputEvent):
 
 	elif (state == GameState.DEATH and
 			event.is_action_pressed("ui_accept", false, true)):
+		_set_game_overlay()
 		change_state(GameState.PLAY)
 		get_tree().set_input_as_handled()
 

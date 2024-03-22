@@ -355,8 +355,6 @@ tracks/0/keys = {
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
-unlock_all_talents = true
-block_overlay_animation = true
 kids_off_camera = 24
 DASH_duration = 0.275
 DASH_run_speed = 6
