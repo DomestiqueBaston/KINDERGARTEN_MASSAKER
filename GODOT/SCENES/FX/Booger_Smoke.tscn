@@ -5,7 +5,8 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Explosion_B.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=3]
-height = 6.0
+radius = 14.0
+height = 8.0
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -135,7 +136,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ Vector2( 0.6, 33 ) ]
+"values": [ Vector2( 0, 57 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Booger_Collider/Booger_Collider_Shape:disabled")
@@ -144,10 +145,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true, false, false ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Shadow:position")
@@ -207,9 +208,7 @@ __meta__ = {
 }
 
 [node name="Booger_Collider" type="Area2D" parent="."]
-visible = false
 position = Vector2( 0, -57 )
-scale = Vector2( 1, 1.75 )
 collision_layer = 2048
 collision_mask = 8
 __meta__ = {
@@ -219,12 +218,8 @@ __meta__ = {
 [node name="Booger_Collider_Shape" type="CollisionShape2D" parent="Booger_Collider"]
 position = Vector2( 1.5, 0 )
 rotation = 1.5708
-scale = Vector2( 0.571429, 1 )
 shape = SubResource( 3 )
 disabled = true
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Smoke"
