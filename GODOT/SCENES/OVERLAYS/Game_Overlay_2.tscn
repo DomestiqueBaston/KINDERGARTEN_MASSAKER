@@ -164,7 +164,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.04 ]
 }
@@ -176,7 +176,7 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 15.0 ]
 }
@@ -188,7 +188,7 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 5.0 ]
 }
@@ -200,7 +200,7 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 5.0 ]
 }
@@ -212,7 +212,7 @@ tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.25 ]
 }
@@ -224,7 +224,7 @@ tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 4, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.85 ]
 }
@@ -236,7 +236,7 @@ tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 10.0 ]
 }
@@ -248,7 +248,7 @@ tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 4.0, 100.0 ]
 }
@@ -260,7 +260,7 @@ tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.25, 1.25 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.03 ]
 }
