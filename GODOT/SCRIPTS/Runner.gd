@@ -94,7 +94,25 @@ func get_step_hack() -> bool:
 	return step_hack
 
 func _on_vomit_entered(_body: Node):
+	if _puddle_count == 0:
+		vomit_entered()
 	_puddle_count += 1
 
 func _on_vomit_exited(_body: Node):
 	_puddle_count -= 1
+	if _puddle_count == 0:
+		vomit_exited()
+
+#
+# Method invoked when the character steps into a puddle of vomit. The default
+# implementation does nothing.
+#
+func vomit_entered():
+	pass
+
+#
+# Method invoked when the character is no longer in a puddle of vomit. The
+# default implementation does nothing.
+#
+func vomit_exited():
+	pass

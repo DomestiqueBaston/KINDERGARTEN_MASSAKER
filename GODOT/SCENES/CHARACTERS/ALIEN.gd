@@ -27,6 +27,15 @@ export var spit_damage := 50
 # hit points lost when hit by a booger
 export var booger_damage := 100
 
+# hit points lost per second when walking in vomit
+export var vomit_damage_1 := 50
+
+# hit points lost one second after exiting vomit
+export var vomit_damage_2 := 35
+
+# hit points lost two seconds after exiting vomit
+export var vomit_damage_3 := 15
+
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
 
@@ -45,6 +54,7 @@ var _accelerate := 1.0
 var _mirror := false
 var _invisible_flag := false
 var _hit_points := 0
+var _vomit_exit_time := -1
 
 enum State {
 	FIRST_IDLE,
@@ -352,21 +362,45 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 		_state = State.IDLE
 
 func _on_Hit_Collider_area_entered(area: Area2D):
+	var damage = 0
 	match area.owner.weapon_type:
 		Globals.Weapon.STICK:
-			_hit_points -= stick_damage
+			damage = stick_damage
 		Globals.Weapon.KICK:
-			_hit_points -= kick_damage
+			damage = kick_damage
 		Globals.Weapon.BOOGER:
-			_hit_points -= booger_damage
+			damage = booger_damage
 		Globals.Weapon.SPIT:
-			_hit_points -= spit_damage
-	print("hit points: ", _hit_points)
+			damage = spit_damage
+	_take_hit_points(damage)
 	_state = State.HIT
 	flash(true)
 	$CyclePlayer.stop()
 	$CyclePlayer.play("Hit", true)
 	$CyclePlayer.play("Idle")
+
+func vomit_entered():
+	_take_hit_points(vomit_damage_1)
+	_vomit_exit_time = -1
+	$Vomit_Timer.start()
+
+func vomit_exited():
+	_vomit_exit_time = Time.get_ticks_msec()
+
+func _on_Vomit_Timer_timeout():
+	if _vomit_exit_time < 0:
+		_take_hit_points(vomit_damage_1)
+	else:
+		var dt = Time.get_ticks_msec() - _vomit_exit_time
+		if dt < 1000:
+			_take_hit_points(vomit_damage_2)
+		else:
+			_take_hit_points(vomit_damage_3)
+			$Vomit_Timer.stop()
+
+func _take_hit_points(damage: int):
+	_hit_points -= damage
+	print("hit points: ", _hit_points)
 
 #
 # Returns the location of the alien's hit collider in global coordinates.
