@@ -591,3 +591,7 @@ func _on_vomit(pos: Vector2):
 		var puddle = vomit_scene.instance()
 		puddle.position = pos
 		background.add_child(puddle)
+
+func _on_alien_dead():
+	stop_game()
+	change_state(GameState.DEATH)

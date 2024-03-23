@@ -48,6 +48,9 @@ signal ghost_done
 # signal emitted when the alien becomes visible or invisible
 signal invisible
 
+# signal emitted when the alien runs out of hit points
+signal dead
+
 var _direction := Vector2.DOWN
 var _scratch_interval := 0.0
 var _accelerate := 1.0
@@ -399,8 +402,12 @@ func _on_Vomit_Timer_timeout():
 			$Vomit_Timer.stop()
 
 func _take_hit_points(damage: int):
+	if _mirror:
+		return
 	_hit_points -= damage
 	print("hit points: ", _hit_points)
+	if _hit_points <= 0:
+		emit_signal("dead")
 
 #
 # Returns the location of the alien's hit collider in global coordinates.
