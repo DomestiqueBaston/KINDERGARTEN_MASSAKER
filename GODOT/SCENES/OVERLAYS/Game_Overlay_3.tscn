@@ -95,7 +95,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.5, 1.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 0.245, 0.75 ]
 }
@@ -107,7 +107,7 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.5, 1.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 0.005, 0.3 ]
 }
@@ -119,7 +119,7 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.5, 1.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 0.0, 0.5 ]
 }
@@ -131,7 +131,7 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 60 ),
-"transitions": PoolRealArray( 1.5, 1.5 ),
+"transitions": PoolRealArray( 1.25, 1.25 ),
 "update": 0,
 "values": [ 0.0, 0.5 ]
 }
