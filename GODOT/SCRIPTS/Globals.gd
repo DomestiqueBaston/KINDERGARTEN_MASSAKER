@@ -59,6 +59,18 @@ const talent_name = [
 	"ghost"
 ]
 
+#
+# "weapons" (anything that causes damage to the alien)
+#
+enum Weapon {
+	NONE,
+	STICK,
+	KICK,
+	BOOGER,
+	SPIT,
+	VOMIT
+}
+
 func _ready():
 	assert(Talent.size() == talent_name.size())
 	randomize()

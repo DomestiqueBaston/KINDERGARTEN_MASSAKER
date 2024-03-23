@@ -5736,6 +5736,7 @@ animation_player_path = NodePath("AnimationPlayer")
 speed = Vector2( 130, 65 )
 attack_distance = 40.0
 attack_animation = "Slash"
+weapon_type = 1
 max_idle_time = 4.0
 spot_alien_on_idle_chances = 0.667
 

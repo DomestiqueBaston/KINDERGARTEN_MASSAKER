@@ -5,6 +5,9 @@ class_name Attacker
 # Enemy subclass for kids who attack the alien, then get bored and go away after
 # hitting him a certain number of times.
 
+# what weapon the attacker attacks with
+export(Globals.Weapon) var weapon_type = Globals.Weapon.NONE
+
 # number of successful hits before we get bored and go away
 export var max_hit_count := 3
 

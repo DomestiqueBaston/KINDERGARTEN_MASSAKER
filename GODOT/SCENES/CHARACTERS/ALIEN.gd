@@ -12,6 +12,21 @@ export var speed := Vector2(125, 62.5)
 # likelihood the alien will scratch after a second
 export var scratch_chances := 0.25
 
+# how many hit points the alien starts out with
+export var initial_hit_points := 1000
+
+# hit points lost when hit by a stick
+export var stick_damage := 25
+
+# hit points lost when kicked
+export var kick_damage := 75
+
+# hit points lost when spit on
+export var spit_damage := 50
+
+# hit points lost when hit by a booger
+export var booger_damage := 100
+
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
 
@@ -29,6 +44,7 @@ var _scratch_interval := 0.0
 var _accelerate := 1.0
 var _mirror := false
 var _invisible_flag := false
+var _hit_points := 0
 
 enum State {
 	FIRST_IDLE,
@@ -76,6 +92,7 @@ func beam_down():
 	$Beam_Down_Rear/AnimationPlayer.advance(0)
 
 func _on_beam_down_finished(_anim_name):
+	_hit_points = initial_hit_points
 	$Move_Collider.set_deferred("disabled", false)
 	set_physics_process(true)
 	emit_signal("beam_down_finished")
@@ -334,7 +351,17 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 	if _state == State.SCRATCH and old_name.ends_with("_Scratching"):
 		_state = State.IDLE
 
-func _on_Hit_Collider_area_entered(_area: Area2D):
+func _on_Hit_Collider_area_entered(area: Area2D):
+	match area.owner.weapon_type:
+		Globals.Weapon.STICK:
+			_hit_points -= stick_damage
+		Globals.Weapon.KICK:
+			_hit_points -= kick_damage
+		Globals.Weapon.BOOGER:
+			_hit_points -= booger_damage
+		Globals.Weapon.SPIT:
+			_hit_points -= spit_damage
+	print("hit points: ", _hit_points)
 	_state = State.HIT
 	flash(true)
 	$CyclePlayer.stop()

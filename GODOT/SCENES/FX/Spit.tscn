@@ -186,6 +186,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
+weapon_type = 4
 
 [node name="Shadow" type="Polygon2D" parent="."]
 position = Vector2( 0.5, 29 )

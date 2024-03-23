@@ -6,6 +6,9 @@ extends Node2D
 # objects or Area2D's to the on_hit_collider_*_entered() methods to detect when
 # the projectile has hit something.
 
+# what weapon this projectile is
+export(Globals.Weapon) var weapon_type = Globals.Weapon.NONE
+
 # signal emitted when the projectile hits something
 signal hit
 

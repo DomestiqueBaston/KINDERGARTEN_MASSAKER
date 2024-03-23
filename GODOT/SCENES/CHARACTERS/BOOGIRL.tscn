@@ -5197,7 +5197,7 @@ anims/flash = SubResource( 152 )
 wait_time = 0.7
 one_shot = true
 __meta__ = {
-"_editor_description_": "Time between the act of spitting and the appearance of the projectile."
+"_editor_description_": "Time between the act of throwing and the appearance of the projectile."
 }
 
 [connection signal="body_entered" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_entered"]
