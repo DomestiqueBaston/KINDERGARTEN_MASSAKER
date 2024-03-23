@@ -4848,7 +4848,7 @@ animation_player_path = NodePath("AnimationPlayer")
 attack_distance = 125.0
 attack_animation = "Spit"
 max_hit_count = 2
-spot_alien_on_idle_chances = 0.333
+spot_alien_on_idle_chances = 0.5
 projectile_speed = 225.0
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
