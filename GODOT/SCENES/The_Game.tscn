@@ -359,8 +359,19 @@ spawn_first_time = 3.0
 spawn_cycle_time = 1.0
 kids_on_camera = 10
 kids_off_camera = 28
+TELEPORT_cooldown = 6
+DASH_cooldown = 9
 DASH_duration = 0.275
 DASH_run_speed = 6
+EXPLOSION_cooldown = 6
+FREEZE_cooldown = 9
+FORCE_FIELD_cooldown = 6
+TIME_STOP_cooldown = 12
+MIRROR_IMAGE_cooldown = 9
+INVISIBLE_cooldown = 12
+SHIELD_cooldown = 6
+BULLET_TIME_cooldown = 9
+GHOST_cooldown = 12
 
 [node name="Active_Scene" type="Node2D" parent="."]
 
