@@ -1,5 +1,8 @@
 extends Node2D
 
+func is_running():
+	return $Shield.visible
+
 func start(duration):
 	$Shield_Timer.start(duration - $FX_OFF.stream.get_length())
 	$AnimationPlayer.play("shield")

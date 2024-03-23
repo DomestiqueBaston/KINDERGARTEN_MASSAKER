@@ -5649,6 +5649,8 @@ anims/RESET = SubResource( 143 )
 anims/ghost_off = SubResource( 156 )
 anims/ghost_on = SubResource( 144 )
 
+[node name="Regen_Timer" type="Timer" parent="Talent"]
+
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )
 texture = ExtResource( 2 )
@@ -5792,6 +5794,7 @@ one_shot = true
 [connection signal="done" from="Talent/Ghost" to="." method="_on_ghost_done"]
 [connection signal="timeout" from="Talent/Ghost/Ghost_Timer" to="Talent/Ghost" method="_on_Ghost_Timer_timeout"]
 [connection signal="animation_finished" from="Talent/Ghost/AnimationPlayer" to="Talent/Ghost" method="_on_animation_finished"]
+[connection signal="timeout" from="Talent/Regen_Timer" to="." method="_on_Regen_Timer_timeout"]
 [connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_changed"]
 [connection signal="timeout" from="Cooldown_Timer" to="." method="_on_Cooldown_Timer_timeout"]
 [connection signal="timeout" from="Vomit_Timer" to="." method="_on_Vomit_Timer_timeout"]

@@ -376,7 +376,7 @@ func start_game():
 
 	# instantiate the alien and position him in front of the camera, initially
 
-	alien.beam_down()
+	alien.beam_down(talent)
 	alien.show()
 
 	# from now on, the camera follows the alien's movements
