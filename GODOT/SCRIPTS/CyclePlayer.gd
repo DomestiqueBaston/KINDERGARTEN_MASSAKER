@@ -125,6 +125,13 @@ func _partial_anim_name(anim: String) -> String:
 	return anim.right(underscore + 1)
 
 #
+# Returns the name of the current animation cycle, NOT including the prefix
+# for the direction, e.g. "Idle" and not "180_Idle".
+#
+func get_current_animation() -> String:
+	return _partial_anim_name(anim_player.current_animation)
+
+#
 # Specifies the direction the character is facing as a Vector2. The vector need
 # not be normalized. CyclePlayer will actually use the "cardinal" direction that
 # is nearest to the given vector (see Dir). The current animation and any queued

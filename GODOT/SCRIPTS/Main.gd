@@ -260,7 +260,7 @@ func change_state(next_state):
 			child.best_time = $ScoreTracker.get_best_score()
 			child.elapsed_time = $ScoreTracker.get_last_score()
 	
-	if child:
+	if child != null:
 		$Active_Scene.add_child(child)
 	
 	state = next_state

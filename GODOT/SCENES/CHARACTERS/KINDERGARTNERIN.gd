@@ -20,7 +20,7 @@ func init_timer():
 	_start_checking()
 
 func on_timer_timeout():
-	if $AnimationPlayer.current_animation.ends_with("_Run"):
+	if $CyclePlayer.get_current_animation() == "Run":
 		_start_checking()
 	else:
 		_start_running()
@@ -53,7 +53,7 @@ func tick(delta):
 
 	# run towards the alien and stop to yell at him when close enough
 
-	elif $AnimationPlayer.current_animation.ends_with("_Run"):
+	elif $CyclePlayer.get_current_animation() == "Run":
 		face_alien()
 		if is_alien_in_range():
 			$CyclePlayer.play("No", true)
@@ -63,7 +63,7 @@ func tick(delta):
 
 	# No or OMG => turn to face alien without moving
 
-	elif not $AnimationPlayer.current_animation.ends_with("_Check"):
+	elif $CyclePlayer.get_current_animation() != "Check":
 		face_alien()
 
 #
@@ -77,7 +77,7 @@ func want_to_avoid_collider(collider: Object) -> bool:
 # OMG animation, then start running toward him.
 #
 func alien_seen():
-	if $AnimationPlayer.current_animation.ends_with("_Check"):
+	if $CyclePlayer.get_current_animation() == "Check":
 		var now = Time.get_ticks_msec()
 		if _last_omg < 0 or now - _last_omg > 5000:
 			_last_omg = now
@@ -89,7 +89,7 @@ func alien_seen():
 # him, interrupt the No animation and start running again.
 #
 func alien_gone():
-	if $AnimationPlayer.current_animation.ends_with("_No"):
+	if $CyclePlayer.get_current_animation() == "No":
 		$CyclePlayer.stop()
 		# This test prevents a warning message when the # "body_exited" signal
 		# is triggered at the end of the game, when the Enemy parent class has

@@ -126,7 +126,7 @@ func _on_beam_down_finished(_anim_name):
 func is_busy() -> bool:
 	# NB. The SCRATCH state begins a bit BEFORE the Scratching animation
 	return (_state == State.SCRATCH or
-			$AnimationPlayer.current_animation.ends_with("_Hit"))
+			$CyclePlayer.get_current_animation() == "Hit")
 
 func _physics_process(_delta):
 
@@ -420,9 +420,8 @@ func _on_Hit_Collider_area_entered(area: Area2D):
 
 func _corrected_vomit_damage(damage: int) ->  int:
 	if _talent == Globals.Talent.VOMIT_PROOF:
-		return int(damage / 2.0)
-	else:
-		return damage
+		damage /= 2
+	return damage
 
 func vomit_entered():
 	_take_hit_points(_corrected_vomit_damage(vomit_damage_1))

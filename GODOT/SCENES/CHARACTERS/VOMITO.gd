@@ -17,7 +17,7 @@ func on_timer_timeout():
 
 	# not running => start running for 2-5 seconds
 
-	if not $AnimationPlayer.current_animation.ends_with("_Run"):
+	if $CyclePlayer.get_current_animation() != "Run":
 		$CyclePlayer.play("Run")
 		start_timer(rand_range(2, 5))
 

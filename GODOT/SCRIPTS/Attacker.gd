@@ -36,7 +36,7 @@ func _ready():
 	attack_length = $AnimationPlayer.get_animation(anim_name).length
 
 func on_timer_timeout():
-	if $AnimationPlayer.current_animation.ends_with("_Run"):
+	if $CyclePlayer.get_current_animation() == "Run":
 		$CyclePlayer.play(default_animation)
 		start_timer(rand_range(min_idle_time, max_idle_time))
 	else:
@@ -60,7 +60,7 @@ func _stop_attacking(and_go_away: bool):
 		turn_around()
 		attack_allowed = false
 	var extra_wait := 0.0
-	if $AnimationPlayer.current_animation.ends_with(attack_animation):
+	if $CyclePlayer.get_current_animation() == attack_animation:
 		extra_wait = attack_length - $AnimationPlayer.current_animation_position
 	_start_running(extra_wait)
 
@@ -73,7 +73,7 @@ func tick(delta):
 
 	# run towards the alien and stop to attack him when close enough
 
-	if $AnimationPlayer.current_animation.ends_with("_Run"):
+	if $CyclePlayer.get_current_animation() == "Run":
 		var attack_him = false
 		if attack_allowed:
 			face_alien()
@@ -90,7 +90,7 @@ func tick(delta):
 	# stop attacking after some number of hits, or if the alien is no no longer
 	# visible and in range
 
-	elif $AnimationPlayer.current_animation.ends_with(attack_animation):
+	elif $CyclePlayer.get_current_animation() == attack_animation:
 		if attack_allowed:
 			face_alien()
 			if not (hit_count < max_hit_count
@@ -103,7 +103,7 @@ func tick(delta):
 # and start chasing him.
 #
 func alien_seen():
-	if ($AnimationPlayer.current_animation.ends_with(default_animation)
+	if ($CyclePlayer.get_current_animation() == default_animation
 		and randf() < spot_alien_on_idle_chances):
 		_start_running()
 

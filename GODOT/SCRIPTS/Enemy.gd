@@ -98,7 +98,7 @@ func init_timer():
 # subclass.
 #
 func on_timer_timeout():
-	if $AnimationPlayer.current_animation.ends_with("_Run"):
+	if $CyclePlayer.get_current_animation() == "Run":
 		$CyclePlayer.play(default_animation)
 	else:
 		$CyclePlayer.play("Run")
@@ -136,7 +136,7 @@ func _physics_process(delta):
 # enemy subclass.
 #
 func tick(delta):
-	if (not $AnimationPlayer.current_animation.ends_with("_Run")
+	if ($CyclePlayer.get_current_animation() != "Run"
 		or $CyclePlayer.is_paused()):
 		return
 
@@ -236,7 +236,7 @@ func face_somebody(who: Node2D):
 		return
 	# this test is to avoid the character jumping back and forth between two
 	# directions when he is trying to go somewhere inbetween
-	if ($AnimationPlayer.current_animation.ends_with("_Run")
+	if ($CyclePlayer.get_current_animation() == "Run"
 		and abs(_direction.angle_to(dir)) < PI/4.0):
 		return
 	dir = Globals.get_nearest_direction(dir)
@@ -345,7 +345,7 @@ func wave_at(kid: Node2D):
 # at somebody, and has not waved for wave_pause_time seconds.
 #
 func _is_ready_to_wave() -> bool:
-	if $AnimationPlayer.current_animation.ends_with(attack_animation):
+	if $CyclePlayer.get_current_animation() == attack_animation:
 		return false
 	if _last_wave_time < 0:
 		return true
