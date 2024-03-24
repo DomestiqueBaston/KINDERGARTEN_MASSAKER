@@ -36,6 +36,9 @@ export var vomit_damage_2 := 35
 # hit points lost two seconds after exiting vomit
 export var vomit_damage_3 := 15
 
+# hit points recovered per second with REGENERATE talent
+export var regen_hit_points := 5
+
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
 
@@ -48,7 +51,11 @@ signal ghost_done
 # signal emitted when the alien becomes visible or invisible
 signal invisible
 
+# signal emitted when the alien runs out of hit points
+signal dead
+
 var _direction := Vector2.DOWN
+var _talent := -1
 var _scratch_interval := 0.0
 var _accelerate := 1.0
 var _mirror := false
@@ -78,8 +85,9 @@ func reset():
 	var cycle_length = $AnimationPlayer.get_animation("00_Idle").length
 	_scratch_interval = cycle_length - 1.0 / Globals.FPS
 	_direction = Vector2.DOWN
-	$CyclePlayer.set_direction_vector(_direction)
 	$CyclePlayer.stop()
+	$CyclePlayer.set_direction_vector(_direction)
+	$Talent/Regen_Timer.stop()
 	set_physics_process(false)
 	stop_cooldown()
 	_mirror = false
@@ -94,7 +102,8 @@ func reset():
 # down" animation has finished, physics processing is turned on (so he can move)
 # and a "beam_down_finished" signal is emitted.
 #
-func beam_down():
+func beam_down(talent: int):
+	_talent = talent
 	$CyclePlayer.play("Idle")
 	start_checking_for_puddles()
 	$Beam_Down_Rear/AnimationPlayer.play("Beam_Down")
@@ -103,6 +112,10 @@ func beam_down():
 
 func _on_beam_down_finished(_anim_name):
 	_hit_points = initial_hit_points
+	if _talent == Globals.Talent.HEALTH:
+		_hit_points += int(initial_hit_points * 0.2)
+	elif _talent == Globals.Talent.REGENERATE:
+		$Talent/Regen_Timer.start()
 	$Move_Collider.set_deferred("disabled", false)
 	set_physics_process(true)
 	emit_signal("beam_down_finished")
@@ -362,16 +375,42 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 		_state = State.IDLE
 
 func _on_Hit_Collider_area_entered(area: Area2D):
+	if _mirror:
+		_stop_mirror()
+		return
+
 	var damage = 0
+	var short_range: bool
+
 	match area.owner.weapon_type:
 		Globals.Weapon.STICK:
 			damage = stick_damage
+			short_range = true
 		Globals.Weapon.KICK:
 			damage = kick_damage
+			short_range = true
 		Globals.Weapon.BOOGER:
 			damage = booger_damage
+			short_range = false
 		Globals.Weapon.SPIT:
 			damage = spit_damage
+			short_range = false
+
+	match _talent:
+		Globals.Talent.SHIELD:
+			if short_range and $Talent/Shield.is_running():
+				damage = 0
+		Globals.Talent.HAND_TO_HAND:
+			if short_range:
+				damage /= 2
+			else:
+				damage *= 2
+		Globals.Talent.RANGED_COMBAT:
+			if short_range:
+				damage *= 2
+			else:
+				damage /= 2
+
 	_take_hit_points(damage)
 	_state = State.HIT
 	flash(true)
@@ -379,8 +418,14 @@ func _on_Hit_Collider_area_entered(area: Area2D):
 	$CyclePlayer.play("Hit", true)
 	$CyclePlayer.play("Idle")
 
+func _corrected_vomit_damage(damage: int) ->  int:
+	if _talent == Globals.Talent.VOMIT_PROOF:
+		return int(damage / 2.0)
+	else:
+		return damage
+
 func vomit_entered():
-	_take_hit_points(vomit_damage_1)
+	_take_hit_points(_corrected_vomit_damage(vomit_damage_1))
 	_vomit_exit_time = -1
 	$Vomit_Timer.start()
 
@@ -389,18 +434,25 @@ func vomit_exited():
 
 func _on_Vomit_Timer_timeout():
 	if _vomit_exit_time < 0:
-		_take_hit_points(vomit_damage_1)
+		_take_hit_points(_corrected_vomit_damage(vomit_damage_1))
 	else:
 		var dt = Time.get_ticks_msec() - _vomit_exit_time
 		if dt < 1000:
-			_take_hit_points(vomit_damage_2)
+			_take_hit_points(_corrected_vomit_damage(vomit_damage_2))
 		else:
-			_take_hit_points(vomit_damage_3)
+			_take_hit_points(_corrected_vomit_damage(vomit_damage_3))
 			$Vomit_Timer.stop()
 
 func _take_hit_points(damage: int):
+	if _mirror or damage == 0:
+		return
 	_hit_points -= damage
 	print("hit points: ", _hit_points)
+	if _hit_points <= 0:
+		emit_signal("dead")
+
+func _on_Regen_Timer_timeout():
+	_take_hit_points(-regen_hit_points)
 
 #
 # Returns the location of the alien's hit collider in global coordinates.

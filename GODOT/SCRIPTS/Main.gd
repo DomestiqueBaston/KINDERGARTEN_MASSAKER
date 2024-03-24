@@ -376,7 +376,7 @@ func start_game():
 
 	# instantiate the alien and position him in front of the camera, initially
 
-	alien.beam_down()
+	alien.beam_down(talent)
 	alien.show()
 
 	# from now on, the camera follows the alien's movements
@@ -591,3 +591,7 @@ func _on_vomit(pos: Vector2):
 		var puddle = vomit_scene.instance()
 		puddle.position = pos
 		background.add_child(puddle)
+
+func _on_alien_dead():
+	stop_game()
+	change_state(GameState.DEATH)

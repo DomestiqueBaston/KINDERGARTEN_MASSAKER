@@ -562,6 +562,7 @@ one_shot = true
 
 [connection signal="done" from="Talents/Dash" to="." method="_on_dash_done"]
 [connection signal="timeout" from="Talents/Dash/Dash_Timer" to="Talents/Dash" method="_on_Dash_Timer_timeout"]
+[connection signal="dead" from="Characters/ALIEN" to="." method="_on_alien_dead"]
 [connection signal="ghost_done" from="Characters/ALIEN" to="." method="_on_ghost_done"]
 [connection signal="teleport" from="Characters/ALIEN" to="." method="teleport"]
 [connection signal="done" from="Talent_Overlays/Time_Stop" to="." method="_on_time_stop_done"]
