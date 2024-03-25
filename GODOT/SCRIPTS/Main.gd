@@ -84,7 +84,8 @@ var previous_menu_item := -1
 var overlay: Node
 var background: Background
 var alien: Alien
-var talent := -1
+var chosen_talent := -1
+var actual_talent := -1
 var techniker_used := false
 
 func _ready():
@@ -117,7 +118,7 @@ func _unhandled_input(event: InputEvent):
 		elif (event.is_action_pressed("ui_accept", false, true)
 			  and not alien.is_cooldown_active()
 			  and not alien.is_busy()):
-			match talent:
+			match actual_talent:
 				Globals.Talent.TELEPORT:
 					start_teleport()
 				Globals.Talent.DASH:
@@ -177,7 +178,7 @@ func _unhandled_input(event: InputEvent):
 
 func _process(delta):
 	update_camera(delta)
-	if talent == Globals.Talent.DASH:
+	if actual_talent == Globals.Talent.DASH:
 		update_dash_trail()
 
 func _get_window_size() -> Vector2:
@@ -299,8 +300,8 @@ func on_talent_aborted():
 	change_state(GameState.MENU)
 
 func on_talent_chosen(talent_index):
-	talent = talent_index
-	print("chose talent: ", Globals.talent_name[talent_index])
+	chosen_talent = talent_index
+	print("chosen talent: ", Globals.talent_name[talent_index])
 	change_state(GameState.PLAY)
 
 func on_exit_game():
@@ -363,6 +364,18 @@ func prepare_game():
 #
 func start_game():
 
+	# choose a talent at random if the user chose RANDOM
+
+	if chosen_talent != Globals.Talent.RANDOM:
+		actual_talent = chosen_talent
+	elif unlock_all_talents:
+		actual_talent = Globals.get_random_talent(100)
+	else:
+		actual_talent = Globals.get_random_talent(Settings.get_best_score())
+
+	if chosen_talent == Globals.Talent.RANDOM:
+		print("random talent: ", Globals.talent_name[actual_talent])
+
 	# instance the alien and position him in front of the camera, initially
 
 	alien = alien_scene.instance()
@@ -370,7 +383,7 @@ func start_game():
 	alien.connect("dead", self, "_on_alien_dead", [], CONNECT_ONESHOT)
 	$Characters.add_child(alien)
 
-	match talent:
+	match actual_talent:
 		Globals.Talent.DODGE:
 			alien.set_hit_collider_size(true)
 		Globals.Talent.SPEED:
@@ -381,7 +394,7 @@ func start_game():
 		Globals.Talent.GHOST:
 			alien.connect("ghost_done", self, "_on_ghost_done")
 
-	alien.beam_down(talent)
+	alien.beam_down(actual_talent)
 
 	# from now on, the camera follows the alien's movements
 
@@ -449,7 +462,7 @@ func stop_game():
 	$Shutdown_Overlay.hide()
 	$Shutdown_Overlay.reset_animation()
 	
-	match talent:
+	match actual_talent:
 		Globals.Talent.DASH:
 			stop_dash()
 		Globals.Talent.FORCE_FIELD:

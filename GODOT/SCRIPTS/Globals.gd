@@ -24,11 +24,11 @@ enum Talent {
 	HAND_TO_HAND,
 	RANGED_COMBAT,
 	NONE,
-	TECHNICIAN,
-	RANDOM,
-	VOMIT_PROOF,
-	BULLET_TIME,
-	GHOST
+	RANDOM,			# if dialogued watched
+	VOMIT_PROOF,		# if best score >= 15
+	BULLET_TIME,		# if best score >= 30
+	GHOST,			# if best score >= 45
+	TECHNICIAN		# if best score >= 60
 }
 
 #
@@ -52,11 +52,11 @@ const talent_name = [
 	"hand to hand specialist",
 	"ranged fighting expert",
 	"none!",
-	"der Techniker",
 	"Zufällig",
 	"Kotzsicher",
 	"bullet time",
-	"ghost"
+	"ghost",
+	"der Techniker"
 ]
 
 #
@@ -74,6 +74,22 @@ enum Weapon {
 func _ready():
 	assert(Talent.size() == talent_name.size())
 	randomize()
+
+#
+# Returns a talent at random. Call this when the user has chosen the RANDOM
+# talent and you want an actual, usable talent. Locked talents (depending on
+# the user's best score) are ignored.
+#
+func get_random_talent(best_score) -> int:
+	# all talents except RANDOM and the four other locked talents
+	var count = Talent.size() - 5
+	# add 0-4 unlocked talents
+	count += max(4, int(best_score/15))
+	var talent = randi() % count
+	# never choose RANDOM
+	if talent >= Talent.RANDOM:
+		talent += 1
+	return talent
 
 #
 # Returns a random direction vector (NOT normalized) that can be fed to an
