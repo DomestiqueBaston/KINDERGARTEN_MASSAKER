@@ -379,6 +379,8 @@ func _on_Hit_Collider_area_entered(area: Area2D):
 	if _mirror:
 		_stop_mirror()
 		return
+	if $Talent/Ghost.is_running():
+		return
 
 	var damage = 0
 	var short_range: bool
