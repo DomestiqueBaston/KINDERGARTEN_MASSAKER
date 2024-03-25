@@ -66,7 +66,6 @@ var spitting_kid_scene := preload("res://SCENES/CHARACTERS/CRACHEUSE.tscn")
 var vomit_scene := preload("res://SCENES/FX/Vomit.tscn")
 
 var credits_seen := false
-var dialogue_seen := false
 
 enum GameState {
 	TITLE,
@@ -247,7 +246,7 @@ func change_state(next_state):
 				child.set_talent_level(true, 100)
 			else:
 				child.set_talent_level(
-					dialogue_seen, $ScoreTracker.get_best_score())
+					Settings.get_watched_dialogue(), Settings.get_best_score())
 			child.connect("talent_aborted", self, "on_talent_aborted")
 			child.connect("talent_chosen", self, "on_talent_chosen")
 		GameState.PLAY:
@@ -256,7 +255,7 @@ func change_state(next_state):
 			prepare_game()
 		GameState.DEATH:
 			child = death_scene.instance()
-			child.best_time = $ScoreTracker.get_best_score()
+			child.best_time = Settings.get_best_score()
 			child.elapsed_time = $ScoreTracker.get_last_score()
 	
 	if child != null:
@@ -278,7 +277,7 @@ func on_dialogue_finished():
 	# and then fades in as it should. Perhaps we should always pause for a
 	# frame before triggering a transition...?
 	yield(get_tree(), "idle_frame")
-	dialogue_seen = true
+	Settings.set_watched_dialogue(true)
 	change_state(GameState.MENU)
 
 func on_start_game():

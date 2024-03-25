@@ -18,14 +18,11 @@ func is_playing() -> bool:
 func get_current_score() -> float:
 	return (Time.get_ticks_msec() - start_time) / 1000.0
 
-func get_best_score() -> float:
-	return Settings.get_best_score()
-
 func get_last_score() -> float:
 	return last_score
 
 func _on_timeout():
 	var new_unlocked = int(get_current_score() / 15.0)
-	var old_unlocked = int(get_best_score() / 15.0)
+	var old_unlocked = int(Settings.get_best_score() / 15.0)
 	if new_unlocked > old_unlocked and new_unlocked <= 4:
 		$AudioStreamPlayer.play()
