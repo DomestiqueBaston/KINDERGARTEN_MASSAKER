@@ -91,7 +91,6 @@ var techniker_used := false
 func _ready():
 	set_process(false)
 	_set_game_overlay()
-	alien = $Characters/ALIEN
 
 #
 # Chooses a game overlay scene at random and adds it below PAPA_Game_Overlay.
@@ -303,7 +302,6 @@ func on_talent_aborted():
 func on_talent_chosen(talent_index):
 	talent = talent_index
 	print("chose talent: ", Globals.talent_name[talent_index])
-	alien.set_hit_collider_size(talent == Globals.Talent.DODGE)
 	change_state(GameState.PLAY)
 
 func on_exit_game():
@@ -339,18 +337,10 @@ func get_random_kid() -> PackedScene:
 #
 func prepare_game():
 
-	# position the camera and the alien
+	# position the camera where the alien will appear
 
 	var pos = background.get_alien_starting_point()
-	alien.position = pos
 	$Camera.position = pos
-
-	if talent == Globals.Talent.SPEED:
-		alien.set_run_cycle_speed(SPEED_run_cycle_speed)
-		alien.set_run_speed(SPEED_run_speed)
-	else:
-		alien.set_run_cycle_speed(1)
-		alien.set_run_speed(1)
 
 	# add teacher and some kids, on camera (or not far off camera...)
 
@@ -376,8 +366,23 @@ func start_game():
 
 	# instantiate the alien and position him in front of the camera, initially
 
+	alien = alien_scene.instance()
+	alien.position = $Camera.position
+	alien.connect("dead", self, "_on_alien_dead", [], CONNECT_ONESHOT)
+	$Characters.add_child(alien)
+
+	match talent:
+		Globals.Talent.DODGE:
+			alien.set_hit_collider_size(true)
+		Globals.Talent.SPEED:
+			alien.set_run_cycle_speed(SPEED_run_cycle_speed)
+			alien.set_run_speed(SPEED_run_speed)
+		Globals.Talent.TELEPORT:
+			alien.connect("teleport", self, "teleport")
+		Globals.Talent.GHOST:
+			alien.connect("ghost_done", self, "_on_ghost_done")
+
 	alien.beam_down(talent)
-	alien.show()
 
 	# from now on, the camera follows the alien's movements
 
@@ -467,8 +472,8 @@ func stop_game():
 	
 	overlay.reset_animation()
 	
-	alien.hide()
-	alien.reset()
+	alien.queue_free()
+	alien = null	
 	get_tree().call_group("enemies", "free")
 
 func start_teleport():
@@ -593,6 +598,5 @@ func _on_vomit(pos: Vector2):
 		background.add_child(puddle)
 
 func _on_alien_dead():
-	if state == GameState.PLAY:
-		stop_game()
-		change_state(GameState.DEATH)
+	stop_game()
+	change_state(GameState.DEATH)

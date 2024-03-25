@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://SCENES/OVERLAYS/Transition_Overlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/OVERLAYS/CRT_Overlay.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=7]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INTRO_INGAME.wav" type="AudioStream" id=8]
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=9]
-[ext_resource path="res://SCENES/CHARACTERS/ALIEN.tscn" type="PackedScene" id=10]
 [ext_resource path="res://SCENES/ScoreTracker.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SCRIPTS/DASH.gd" type="Script" id=12]
 [ext_resource path="res://SCRIPTS/BULLET_TIME.gd" type="Script" id=13]
@@ -403,9 +402,6 @@ bus = "FX"
 
 [node name="Characters" type="YSort" parent="."]
 
-[node name="ALIEN" parent="Characters" instance=ExtResource( 10 )]
-visible = false
-
 [node name="Talent_Overlays" type="Node2D" parent="."]
 
 [node name="Time_Stop" type="Node2D" parent="Talent_Overlays"]
@@ -562,9 +558,6 @@ one_shot = true
 
 [connection signal="done" from="Talents/Dash" to="." method="_on_dash_done"]
 [connection signal="timeout" from="Talents/Dash/Dash_Timer" to="Talents/Dash" method="_on_Dash_Timer_timeout"]
-[connection signal="dead" from="Characters/ALIEN" to="." method="_on_alien_dead" flags=3]
-[connection signal="ghost_done" from="Characters/ALIEN" to="." method="_on_ghost_done"]
-[connection signal="teleport" from="Characters/ALIEN" to="." method="teleport"]
 [connection signal="done" from="Talent_Overlays/Time_Stop" to="." method="_on_time_stop_done"]
 [connection signal="timeout" from="Talent_Overlays/Time_Stop/Time_Stop_Timer" to="Talent_Overlays/Time_Stop" method="_on_Time_Stop_Timer_timeout"]
 [connection signal="animation_finished" from="Talent_Overlays/Time_Stop/AnimationPlayer" to="Talent_Overlays/Time_Stop" method="_on_animation_finished"]
