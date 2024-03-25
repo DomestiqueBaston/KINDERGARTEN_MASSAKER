@@ -444,7 +444,7 @@ func _on_Vomit_Timer_timeout():
 			$Vomit_Timer.stop()
 
 func _take_hit_points(damage: int):
-	if _mirror or damage == 0:
+	if _mirror or damage == 0 or $Talent/Ghost.is_running():
 		return
 	_hit_points -= damage
 	print("hit points: ", _hit_points)
