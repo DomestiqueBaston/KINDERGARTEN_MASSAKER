@@ -401,6 +401,9 @@ stream = ExtResource( 22 )
 bus = "FX"
 
 [node name="Characters" type="YSort" parent="."]
+__meta__ = {
+"_editor_description_": "This is where the alien, kids and teachers go."
+}
 
 [node name="Talent_Overlays" type="Node2D" parent="."]
 

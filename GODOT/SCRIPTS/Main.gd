@@ -364,7 +364,7 @@ func prepare_game():
 #
 func start_game():
 
-	# instantiate the alien and position him in front of the camera, initially
+	# instance the alien and position him in front of the camera, initially
 
 	alien = alien_scene.instance()
 	alien.position = $Camera.position
