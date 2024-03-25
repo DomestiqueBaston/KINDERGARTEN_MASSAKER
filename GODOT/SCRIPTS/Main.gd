@@ -593,5 +593,6 @@ func _on_vomit(pos: Vector2):
 		background.add_child(puddle)
 
 func _on_alien_dead():
-	stop_game()
-	change_state(GameState.DEATH)
+	if state == GameState.PLAY:
+		stop_game()
+		change_state(GameState.DEATH)
