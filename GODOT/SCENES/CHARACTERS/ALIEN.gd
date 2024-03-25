@@ -88,6 +88,7 @@ func reset():
 	$CyclePlayer.stop()
 	$CyclePlayer.set_direction_vector(_direction)
 	$Talent/Regen_Timer.stop()
+	$Vomit_Timer.stop()
 	set_physics_process(false)
 	stop_cooldown()
 	_mirror = false
