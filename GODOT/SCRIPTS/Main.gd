@@ -65,8 +65,6 @@ var stick_kid_scene := preload("res://SCENES/CHARACTERS/BLONDINET.tscn")
 var spitting_kid_scene := preload("res://SCENES/CHARACTERS/CRACHEUSE.tscn")
 var vomit_scene := preload("res://SCENES/FX/Vomit.tscn")
 
-var credits_seen := false
-
 enum GameState {
 	TITLE,
 	MENU,
@@ -171,8 +169,6 @@ func _unhandled_input(event: InputEvent):
 			SoundFX.playCancel()
 			if state == GameState.DEATH:
 				_set_game_overlay()
-		if state == GameState.OPTIONS:
-			Settings.save_settings()
 		change_state(GameState.MENU)
 		get_tree().set_input_as_handled()
 
@@ -222,7 +218,7 @@ func change_state(next_state):
 	match next_state:
 		GameState.MENU:
 			child = menu_scene.instance()
-			child.set_dialogue_enabled(credits_seen)
+			child.set_dialogue_enabled(Settings.get_watched_credits())
 			child.connect("start_game", self, "on_start_game")
 			child.connect("show_tutorial", self, "on_show_tutorial")
 			child.connect("show_options", self, "on_show_options")
@@ -237,7 +233,7 @@ func change_state(next_state):
 			child = options_scene.instance()
 		GameState.CREDITS:
 			child = credits_scene.instance()
-			credits_seen = true
+			Settings.set_watched_credits(true)
 		GameState.DIALOGUE:
 			child = dialogue_scene.instance()
 			child.connect("dialogue_finished", self, "on_dialogue_finished")
