@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 # signal emitted when the ghost effect wears off (not when stop() is called)
 signal done
