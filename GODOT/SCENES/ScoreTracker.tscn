@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://SCENES/ScoreTracker.gd" type="Script" id=1]
-[ext_resource path="res://ASSETS/SOUND/FX/MISC/Talent_Unlocked.wav" type="AudioStream" id=2]
+[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Bell.wav" type="AudioStream" id=2]
 
 [node name="ScoreTracker" type="Node"]
 script = ExtResource( 1 )

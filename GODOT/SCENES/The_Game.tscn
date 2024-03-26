@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://SCENES/OVERLAYS/Transition_Overlay.tscn" type="PackedScene" id=1]
 [ext_resource path="res://SCENES/OVERLAYS/CRT_Overlay.tscn" type="PackedScene" id=2]
@@ -9,10 +9,12 @@
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INGAME.wav" type="AudioStream" id=7]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/INTRO_INGAME.wav" type="AudioStream" id=8]
 [ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Kindergarten.wav" type="AudioStream" id=9]
+[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Bell.wav" type="AudioStream" id=10]
 [ext_resource path="res://SCENES/ScoreTracker.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SCRIPTS/DASH.gd" type="Script" id=12]
 [ext_resource path="res://SCRIPTS/BULLET_TIME.gd" type="Script" id=13]
 [ext_resource path="res://SCRIPTS/TIME_STOP.gd" type="Script" id=14]
+[ext_resource path="res://ASSETS/SOUND/FX/AMBIANCE/Ambulance.wav" type="AudioStream" id=15]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror.wav" type="AudioStream" id=16]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_B.wav" type="AudioStream" id=17]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Bullet_time_C.wav" type="AudioStream" id=18]
@@ -525,26 +527,6 @@ visible = false
 
 [node name="CRT_Overlay" parent="." instance=ExtResource( 2 )]
 
-[node name="Menu_Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = 5.0
-autoplay = true
-bus = "MUSIC"
-
-[node name="Background_Sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
-volume_db = -5.0
-bus = "AMBIANCE"
-
-[node name="Intro_Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-volume_db = 5.0
-bus = "MUSIC"
-
-[node name="Game_Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-bus = "MUSIC"
-
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( 240, 136 )
 current = true
@@ -556,12 +538,55 @@ anims/shake = SubResource( 2 )
 
 [node name="Enemy_Timer" type="Timer" parent="."]
 one_shot = true
+__meta__ = {
+"_editor_description_": "A new enemy is spawned on timeout. Wait time is set in script."
+}
 
 [node name="Shutdown_Timer" type="Timer" parent="."]
 wait_time = 60.0
 one_shot = true
+__meta__ = {
+"_editor_description_": "Video shuts down on timeout. Wait time is determined by the timer itself."
+}
 
 [node name="ScoreTracker" parent="." instance=ExtResource( 11 )]
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Menu_Music" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 5 )
+volume_db = 5.0
+autoplay = true
+bus = "MUSIC"
+
+[node name="Background_Sound" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 9 )
+volume_db = -5.0
+bus = "AMBIANCE"
+
+[node name="Intro_Music" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+volume_db = 5.0
+bus = "MUSIC"
+
+[node name="Game_Music" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+bus = "MUSIC"
+
+[node name="Bell_Timer" type="Timer" parent="Audio"]
+one_shot = true
+
+[node name="Bell" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 10 )
+bus = "AMBIANCE"
+
+[node name="Ambulance_Timer" type="Timer" parent="Audio"]
+one_shot = true
+
+[node name="Ambulance" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 15 )
+volume_db = -7.5
+bus = "AMBIANCE"
 
 [connection signal="done" from="Talents/Dash" to="." method="_on_dash_done"]
 [connection signal="timeout" from="Talents/Dash/Dash_Timer" to="Talents/Dash" method="_on_Dash_Timer_timeout"]
@@ -572,6 +597,8 @@ one_shot = true
 [connection signal="timeout" from="Talent_Overlays/Bullet_Time/Bullet_Timer" to="Talent_Overlays/Bullet_Time" method="_on_Bullet_Timer_timeout"]
 [connection signal="animation_finished" from="Talent_Overlays/Bullet_Time/AnimationPlayer" to="Talent_Overlays/Bullet_Time" method="_on_animation_finished"]
 [connection signal="transition_finished" from="Transition_Overlay" to="." method="_on_Transition_Overlay_transition_finished"]
-[connection signal="finished" from="Intro_Music" to="." method="_on_Intro_Music_finished"]
 [connection signal="timeout" from="Enemy_Timer" to="." method="_on_Enemy_Timer_timeout"]
 [connection signal="timeout" from="Shutdown_Timer" to="." method="_on_Shutdown_Timer_timeout"]
+[connection signal="finished" from="Audio/Intro_Music" to="." method="_on_Intro_Music_finished"]
+[connection signal="timeout" from="Audio/Bell_Timer" to="." method="_on_Bell_Timer_timeout"]
+[connection signal="timeout" from="Audio/Ambulance_Timer" to="." method="_on_Ambulance_Timer_timeout"]

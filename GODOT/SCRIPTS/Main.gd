@@ -260,8 +260,9 @@ func change_state(next_state):
 	
 	state = next_state
 
-	if not state in [GameState.PLAY, GameState.DEATH] and !$Menu_Music.playing:
-		$Menu_Music.play()
+	if (not state in [GameState.PLAY, GameState.DEATH] and
+		not $Audio/Menu_Music.playing):
+		$Audio/Menu_Music.play()
 
 func _on_Transition_Overlay_transition_finished():
 	$Transition_Overlay.hide()
@@ -399,9 +400,9 @@ func start_game():
 	# stop menu music, start background noise and intro music (game music
 	# starts when intro music finishes)
 
-	$Menu_Music.stop()
-	$Background_Sound.play()
-	$Intro_Music.play()
+	$Audio/Menu_Music.stop()
+	$Audio/Background_Sound.play()
+	$Audio/Intro_Music.play()
 
 	# wait for the beam down animation to finish before starting the overlay
 	# animation, which will eventually make it impossible to see, spawning
@@ -414,9 +415,15 @@ func start_game():
 	$Enemy_Timer.start(spawn_first_time)
 	$ScoreTracker.start_game()
 
+	# other random sounds
+
+	if Settings.get_best_score() >= 60:
+		$Audio/Bell_Timer.start(rand_range(15, 25))
+	$Audio/Ambulance_Timer.start(rand_range(30, 50))
+
 func _on_Intro_Music_finished():
 	if state == GameState.PLAY:
-		$Game_Music.play()
+		$Audio/Game_Music.play()
 
 func _on_Enemy_Timer_timeout():
 	if state != GameState.PLAY:
@@ -449,9 +456,13 @@ func stop_game():
 	$Camera.position = _get_window_size() / 2.0
 	set_process(false)
 	
-	$Background_Sound.stop()
-	$Intro_Music.stop()
-	$Game_Music.stop()
+	$Audio/Background_Sound.stop()
+	$Audio/Intro_Music.stop()
+	$Audio/Game_Music.stop()
+	$Audio/Bell_Timer.stop()
+	$Audio/Bell.stop()
+	$Audio/Ambulance_Timer.stop()
+	$Audio/Ambulance.stop()
 	$Talents/Talent_Timer.stop()
 	$Enemy_Timer.stop()
 	$Shutdown_Timer.stop()
@@ -608,3 +619,10 @@ func _on_vomit(pos: Vector2):
 func _on_alien_dead():
 	stop_game()
 	change_state(GameState.DEATH)
+
+func _on_Bell_Timer_timeout():
+	$Audio/Bell.play()
+	$Audio/Bell_Timer.start(rand_range(15, 25))
+
+func _on_Ambulance_Timer_timeout():
+	$Audio/Ambulance.play()
