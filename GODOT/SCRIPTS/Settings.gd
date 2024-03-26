@@ -1,8 +1,10 @@
 extends Node
 
-var _ambient_volume := 5
-var _music_volume := 5
-var _effects_volume := 5
+const default_volume = 5
+
+var _ambient_volume := default_volume
+var _music_volume := default_volume
+var _effects_volume := default_volume
 var _best_score := 0.0
 var _watched_credits := false
 var _watched_dialogue := false
@@ -15,18 +17,21 @@ func _ready():
 func load_settings():
 	var config = ConfigFile.new()
 	if config.load(options_path) == OK:
-		set_ambient_volume(config.get_value("settings", "ambient_volume", 5))
-		set_music_volume(config.get_value("settings", "music_volume", 5))
-		set_effects_volume(config.get_value("settings", "effects_volume", 5))
+		set_ambient_volume(
+			config.get_value("settings", "ambient_volume", default_volume))
+		set_music_volume(
+			config.get_value("settings", "music_volume", default_volume))
+		set_effects_volume(
+			config.get_value("settings", "effects_volume", default_volume))
 		_best_score = config.get_value("history", "best_score", 0.0)
 		_watched_credits = config.get_value(
 			"history", "watched_credits", false)
 		_watched_dialogue = config.get_value(
 			"history", "watched_dialogue", false)
 	else:
-		set_ambient_volume(5)
-		set_music_volume(5)
-		set_effects_volume(5)
+		set_ambient_volume(default_volume)
+		set_music_volume(default_volume)
+		set_effects_volume(default_volume)
 		_best_score = 0.0
 		_watched_credits = false
 		_watched_dialogue = false
