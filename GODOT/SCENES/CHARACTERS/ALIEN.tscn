@@ -855,7 +855,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Death")
+tracks/5/path = NodePath("../Audio/Death")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -956,7 +956,7 @@ tracks/5/keys = {
 "values": [ true ]
 }
 tracks/6/type = "audio"
-tracks/6/path = NodePath("../Hit_2")
+tracks/6/path = NodePath("../Audio/Hit_2")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -982,7 +982,7 @@ tracks/7/keys = {
 "values": [ Vector2( 1, 0.4 ) ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit_1")
+tracks/8/path = NodePath("../Audio/Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1148,7 +1148,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
+tracks/5/path = NodePath("../Audio/Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1190,7 +1190,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Footsteps")
+tracks/8/path = NodePath("../Audio/Footsteps")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1208,7 +1208,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0.253135, 0.679624 )
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/path = NodePath("../Audio/Footsteps:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1320,7 +1320,7 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Scratching")
+tracks/7/path = NodePath("../Audio/Scratching")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1398,7 +1398,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Death")
+tracks/5/path = NodePath("../Audio/Death")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1511,7 +1511,7 @@ tracks/6/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Hit_2")
+tracks/7/path = NodePath("../Audio/Hit_2")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1525,7 +1525,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit_1")
+tracks/8/path = NodePath("../Audio/Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1691,7 +1691,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
+tracks/5/path = NodePath("../Audio/Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -1733,7 +1733,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Footsteps")
+tracks/8/path = NodePath("../Audio/Footsteps")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1751,7 +1751,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0.251254, 0.681819 )
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/path = NodePath("../Audio/Footsteps:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -1863,7 +1863,7 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Scratching")
+tracks/7/path = NodePath("../Audio/Scratching")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -1941,7 +1941,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Death")
+tracks/5/path = NodePath("../Audio/Death")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2055,7 +2055,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Hit_2")
+tracks/7/path = NodePath("../Audio/Hit_2")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -2069,7 +2069,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit_1")
+tracks/8/path = NodePath("../Audio/Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -2237,7 +2237,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
+tracks/5/path = NodePath("../Audio/Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2279,7 +2279,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Footsteps")
+tracks/8/path = NodePath("../Audio/Footsteps")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -2297,7 +2297,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0.253135, 0.677743 )
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/path = NodePath("../Audio/Footsteps:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -2409,7 +2409,7 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Scratching")
+tracks/7/path = NodePath("../Audio/Scratching")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -2487,7 +2487,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Death")
+tracks/5/path = NodePath("../Audio/Death")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2601,7 +2601,7 @@ tracks/6/keys = {
 "values": [ Vector2( 2, -2 ) ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Hit_2")
+tracks/7/path = NodePath("../Audio/Hit_2")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -2615,7 +2615,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit_1")
+tracks/8/path = NodePath("../Audio/Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -2783,7 +2783,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
+tracks/5/path = NodePath("../Audio/Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -2825,7 +2825,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Footsteps")
+tracks/8/path = NodePath("../Audio/Footsteps")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -2843,7 +2843,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0.253135, 0.673511 )
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/path = NodePath("../Audio/Footsteps:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -2955,7 +2955,7 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Scratching")
+tracks/7/path = NodePath("../Audio/Scratching")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -3033,7 +3033,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Death")
+tracks/5/path = NodePath("../Audio/Death")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -3147,7 +3147,7 @@ tracks/6/keys = {
 "values": [ Vector2( -1, 0 ) ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Hit_2")
+tracks/7/path = NodePath("../Audio/Hit_2")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -3161,7 +3161,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit_1")
+tracks/8/path = NodePath("../Audio/Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -3329,7 +3329,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
+tracks/5/path = NodePath("../Audio/Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -3371,7 +3371,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Footsteps")
+tracks/8/path = NodePath("../Audio/Footsteps")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -3389,7 +3389,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0.259248, 0.677586 )
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/path = NodePath("../Audio/Footsteps:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -3501,7 +3501,7 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Scratching")
+tracks/7/path = NodePath("../Audio/Scratching")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -3579,7 +3579,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Death")
+tracks/5/path = NodePath("../Audio/Death")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -3693,7 +3693,7 @@ tracks/6/keys = {
 "values": [ 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Hit_2")
+tracks/7/path = NodePath("../Audio/Hit_2")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -3707,7 +3707,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit_1")
+tracks/8/path = NodePath("../Audio/Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -3875,7 +3875,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
+tracks/5/path = NodePath("../Audio/Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -3917,7 +3917,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Footsteps")
+tracks/8/path = NodePath("../Audio/Footsteps")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -3935,7 +3935,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0.253135, 0.675549 )
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/path = NodePath("../Audio/Footsteps:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -4047,7 +4047,7 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Scratching")
+tracks/7/path = NodePath("../Audio/Scratching")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -4125,7 +4125,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Death")
+tracks/5/path = NodePath("../Audio/Death")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -4239,7 +4239,7 @@ tracks/6/keys = {
 "values": [ Vector2( -1, 0 ) ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Hit_2")
+tracks/7/path = NodePath("../Audio/Hit_2")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -4253,7 +4253,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit_1")
+tracks/8/path = NodePath("../Audio/Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -4421,7 +4421,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
+tracks/5/path = NodePath("../Audio/Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -4463,7 +4463,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Footsteps")
+tracks/8/path = NodePath("../Audio/Footsteps")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -4481,7 +4481,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0.251097, 0.681661 )
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/path = NodePath("../Audio/Footsteps:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -4593,7 +4593,7 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Scratching")
+tracks/7/path = NodePath("../Audio/Scratching")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -4671,7 +4671,7 @@ tracks/4/keys = {
 "values": [ true ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Death")
+tracks/5/path = NodePath("../Audio/Death")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -4785,7 +4785,7 @@ tracks/6/keys = {
 "values": [ Vector2( 1, 0 ) ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Hit_2")
+tracks/7/path = NodePath("../Audio/Hit_2")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -4799,7 +4799,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Hit_1")
+tracks/8/path = NodePath("../Audio/Hit_1")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -4967,7 +4967,7 @@ tracks/4/keys = {
 "values": [ false ]
 }
 tracks/5/type = "audio"
-tracks/5/path = NodePath("../Footsteps")
+tracks/5/path = NodePath("../Audio/Footsteps")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -5009,7 +5009,7 @@ tracks/7/keys = {
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/8/type = "audio"
-tracks/8/path = NodePath("../Footsteps")
+tracks/8/path = NodePath("../Audio/Footsteps")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -5027,7 +5027,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0.259248, 0.675549 )
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../Footsteps:volume_db")
+tracks/9/path = NodePath("../Audio/Footsteps:volume_db")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -5139,7 +5139,7 @@ tracks/6/keys = {
 "values": [ 0.0, 0.0 ]
 }
 tracks/7/type = "audio"
-tracks/7/path = NodePath("../Scratching")
+tracks/7/path = NodePath("../Audio/Scratching")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -5240,7 +5240,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("../Footsteps:volume_db")
+tracks/7/path = NodePath("../Audio/Footsteps:volume_db")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -5330,7 +5330,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0.717647, 0.219608, 0.278431, 1 ), Color( 0, 0, 0, 1 ), Color( 0.717647, 0.219608, 0.278431, 1 ), Color( 0, 0, 0, 1 ), Color( 0.717647, 0.219608, 0.278431, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/1/type = "audio"
-tracks/1/path = NodePath("Talent_ON_OFF")
+tracks/1/path = NodePath("Audio/Talent_ON_OFF")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -5372,7 +5372,7 @@ dry_step_2 = ExtResource( 3 )
 wet_step_1 = ExtResource( 6 )
 wet_step_2 = ExtResource( 5 )
 vomit_detector_path = NodePath("Vomit_Detector")
-audio_stream_player_path = NodePath("Footsteps")
+audio_stream_player_path = NodePath("Audio/Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
 speed = Vector2( 150, 75 )
 scratch_chances = 0.667
@@ -5461,10 +5461,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Teleport" type="Node2D" parent="Talent"]
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Teleport" type="Node" parent="Talent"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Talent/Teleport"]
 pause_mode = 1
@@ -5573,11 +5570,8 @@ __meta__ = {
 "_editor_description_": "Play PLOP when mirror image disappears."
 }
 
-[node name="Invisible" type="Node2D" parent="Talent"]
+[node name="Invisible" type="Node" parent="Talent"]
 script = ExtResource( 23 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Invisible_Timer" type="Timer" parent="Talent/Invisible"]
 wait_time = 4.0
@@ -5633,8 +5627,7 @@ stream = ExtResource( 27 )
 volume_db = -2.5
 bus = "FX"
 
-[node name="Ghost" type="Node2D" parent="Talent"]
-position = Vector2( 1, 34 )
+[node name="Ghost" type="Node" parent="Talent"]
 script = ExtResource( 22 )
 
 [node name="Ghost_Timer" type="Timer" parent="Talent/Ghost"]
@@ -5731,45 +5724,6 @@ anims/RESET = SubResource( 33 )
 script = ExtResource( 40 )
 anim_player_path = NodePath("../AnimationPlayer")
 
-[node name="Hit_1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-volume_db = -7.5
-pitch_scale = 1.5
-bus = "FX"
-
-[node name="Hit_2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
-bus = "FX"
-
-[node name="Footsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-volume_db = 2.5
-bus = "FX"
-__meta__ = {
-"_editor_description_": "When running in the vomit puddles, use the second track in the Animation player in order to have wet footsteps!"
-}
-
-[node name="Death" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -10.0
-bus = "FX"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Scratching" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
-volume_db = -5.0
-bus = "FX"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="Talent_ON_OFF" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 21 )
-volume_db = 2.5
-bus = "FX"
-
 [node name="Flash" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 138 )
 anims/flash = SubResource( 139 )
@@ -5784,6 +5738,47 @@ anims/cooldown_on = SubResource( 142 )
 one_shot = true
 
 [node name="Vomit_Timer" type="Timer" parent="."]
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Hit_1" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 4 )
+volume_db = -7.5
+pitch_scale = 1.5
+bus = "FX"
+
+[node name="Hit_2" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+bus = "FX"
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 3 )
+volume_db = 2.5
+bus = "FX"
+__meta__ = {
+"_editor_description_": "When running in the vomit puddles, use the second track in the Animation player in order to have wet footsteps!"
+}
+
+[node name="Death" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+volume_db = -10.0
+bus = "FX"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Scratching" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 13 )
+volume_db = -5.0
+bus = "FX"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Talent_ON_OFF" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 21 )
+volume_db = 2.5
+bus = "FX"
 
 [connection signal="area_entered" from="Hit_Collider" to="." method="_on_Hit_Collider_area_entered"]
 [connection signal="animation_finished" from="Beam_Down_Rear/AnimationPlayer" to="." method="_on_beam_down_finished"]
