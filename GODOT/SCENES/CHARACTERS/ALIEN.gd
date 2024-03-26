@@ -414,12 +414,13 @@ func _on_Hit_Collider_area_entered(area: Area2D):
 			else:
 				damage /= 2
 
-	_take_hit_points(damage)
-	_state = State.HIT
-	flash(true)
-	$CyclePlayer.stop()
-	$CyclePlayer.play("Hit", true)
-	$CyclePlayer.play("Idle")
+	if damage > 0:
+		_take_hit_points(damage)
+		_state = State.HIT
+		flash(true)
+		$CyclePlayer.stop()
+		$CyclePlayer.play("Hit", true)
+		$CyclePlayer.play("Idle")
 
 func _corrected_vomit_damage(damage: int) ->  int:
 	if _talent == Globals.Talent.VOMIT_PROOF:
@@ -446,7 +447,7 @@ func _on_Vomit_Timer_timeout():
 			$Vomit_Timer.stop()
 
 func _take_hit_points(damage: int):
-	if _mirror or damage == 0 or $Talent/Ghost.is_running():
+	if _mirror or $Talent/Ghost.is_running():
 		return
 	_hit_points -= damage
 	print("hit points: ", _hit_points)
