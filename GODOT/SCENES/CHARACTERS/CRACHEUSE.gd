@@ -16,6 +16,8 @@ var projectiles: Array
 # parented to the Cracheuse.
 #
 func _exit_tree():
+	if Engine.editor_hint:
+		return
 	for projectile in projectiles:
 		projectile.queue_free()
 	projectiles.clear()
