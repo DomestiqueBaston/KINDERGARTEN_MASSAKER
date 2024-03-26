@@ -52,6 +52,12 @@ var _stuck_time := -1
 # if non-negative, time when enemy last waved
 var _last_wave_time := -1
 
+# if non-negative, time when repulsion ends
+var _repulse_stop := -1
+
+# direction in which enemy is being repulsed
+var _repulse_dir: Vector2
+
 func _ready():
 	if Engine.editor_hint:
 		return
@@ -132,10 +138,19 @@ func _physics_process(delta):
 
 #
 # Called by _physics_process(). If the enemy's run cycle is playing, the enemy
-# runs in "direction" and tries to avoid obstacles. May be overridden by each
-# enemy subclass.
+# runs in "direction" and tries to avoid obstacles. Except that if repulse()
+# has been called, the enemy just slides away from the point of origin that was
+# given, for the amount of time that was given. May be overridden by each enemy
+# subclass.
 #
 func tick(delta):
+	if _repulse_stop >= 0:
+		if Time.get_ticks_msec() < _repulse_stop:
+			move_and_collide(_repulse_dir * delta)
+		else:
+			_repulse_stop = -1
+		return
+
 	if ($CyclePlayer.get_current_animation() != "Run"
 		or $CyclePlayer.is_paused()):
 		return
@@ -364,3 +379,18 @@ func on_Kid_Waving_Detection_Collider_body_entered(body: Node):
 	if body != self and _is_ready_to_wave() and body._is_ready_to_wave():
 		wave_at(body as Node2D)
 		body.wave_at(self)
+
+#
+# Starts repulsing the enemy: over the given amount of time (in seconds), the
+# enemy is pushed the given total distance away from origin.
+#
+func repulse(origin: Vector2, distance: float, duration: float):
+	_repulse_stop = Time.get_ticks_msec() + int(1000 * duration)
+	_repulse_dir = Globals.get_persp_velocity(
+		origin, position, distance / duration)
+
+#
+# Returns true if repulse() has been called and has not finished.
+#
+func is_repulsed() -> bool:
+	return _repulse_stop >= 0

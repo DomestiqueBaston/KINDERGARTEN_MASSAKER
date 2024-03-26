@@ -151,9 +151,9 @@ func get_persp_dist_squared(p1: Vector2, p2: Vector2) -> float:
 	return dx*dx + dy*dy
 
 #
-# Returns a velocity vector to go from one point to another at a given speed,
-# but adjusting the speed to the game's weird perspective: characters and
-# projectiles can move faster in X than in Y.
+# Returns a velocity vector to go from one point toward another at a given
+# speed, but adjusting the speed to the game's weird perspective: characters
+# and projectiles can move faster in X than in Y.
 #
 func get_persp_velocity(from: Vector2, to: Vector2, speed: float) -> Vector2:
 	var vec = from.direction_to(to)

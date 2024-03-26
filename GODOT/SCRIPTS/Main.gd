@@ -28,6 +28,9 @@ export var DASH_duration := 0.25
 export var DASH_run_speed := 5
 export var DASH_run_cycle_speed := 2
 export var EXPLOSION_cooldown := 10
+export var EXPLOSION_distance := 100
+export var EXPLOSION_duration := 0.5
+export var EXPLOSION_radius := 135
 export var FREEZE_cooldown := 15
 export var FREEZE_duration := 4
 export var FREEZE_radius := 135
@@ -82,6 +85,7 @@ var previous_menu_item := -1
 var overlay: Node
 var background: Background
 var alien: Alien
+var teacher: Enemy
 var chosen_talent := -1
 var actual_talent := -1
 var techniker_used := false
@@ -345,7 +349,7 @@ func prepare_game():
 	var bbox = Rect2(pos - window_size / 2.0, window_size)
 
 	var positions = background.get_spawning_points(1 + kids_on_camera, bbox)
-	instance_character_at(teacher_scene, positions[0])
+	teacher = instance_character_at(teacher_scene, positions[0])
 	for i in range(1, kids_on_camera + 1):
 		instance_character_at(get_random_kid(), positions[i])
 
@@ -493,6 +497,7 @@ func stop_game():
 	
 	alien.queue_free()
 	alien = null	
+	teacher = null
 	get_tree().call_group("enemies", "free")
 
 func start_teleport():
@@ -522,6 +527,14 @@ func start_explosion():
 	alien.start_cooldown(EXPLOSION_cooldown)
 	alien.start_explosion()
 	$Camera_Shake.play("shake")
+	for enemy in get_tree().get_nodes_in_group("enemies"):
+		if enemy == teacher:
+			continue
+		var dist2 = Globals.get_persp_dist_squared(
+			enemy.position, alien.position)
+		if dist2 < EXPLOSION_radius * EXPLOSION_radius:
+			enemy.repulse(
+				alien.position, EXPLOSION_distance, EXPLOSION_duration)
 
 func start_freeze():
 	alien.start_cooldown(FREEZE_cooldown)

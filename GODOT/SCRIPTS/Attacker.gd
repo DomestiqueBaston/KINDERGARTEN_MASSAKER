@@ -68,6 +68,10 @@ func _stop_attacking(and_go_away: bool):
 # Called by _physics_process().
 #
 func tick(delta):
+	if is_repulsed():
+		.tick(delta)
+		return
+
 	if $CyclePlayer.is_paused():
 		return
 
