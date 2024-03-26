@@ -364,7 +364,8 @@ TELEPORT_cooldown = 9
 DASH_cooldown = 6
 DASH_duration = 0.275
 DASH_run_speed = 6
-EXPLOSION_cooldown = 6
+EXPLOSION_cooldown = 8
+EXPLOSION_duration = 0.333
 FREEZE_cooldown = 9
 FREEZE_radius = 175
 FORCE_FIELD_duration = 4
@@ -585,7 +586,7 @@ one_shot = true
 
 [node name="Ambulance" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 15 )
-volume_db = -7.5
+volume_db = -5.0
 bus = "AMBIANCE"
 
 [connection signal="done" from="Talents/Dash" to="." method="_on_dash_done"]
