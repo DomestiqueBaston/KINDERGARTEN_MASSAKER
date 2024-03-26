@@ -1,5 +1,8 @@
 extends Node2D
 
+func is_running() -> bool:
+	return $Force_Field.visible
+
 func start(duration):
 	$Force_Field_Timer.start(duration - $FX_OFF.stream.get_length())
 	$AnimationPlayer.play("force_field")

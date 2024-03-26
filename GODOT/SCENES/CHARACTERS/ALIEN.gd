@@ -400,6 +400,9 @@ func _on_Hit_Collider_area_entered(area: Area2D):
 			short_range = false
 
 	match _talent:
+		Globals.Talent.FORCE_FIELD:
+			if not short_range and $Talent/Force_Field.is_running():
+				damage = 0
 		Globals.Talent.SHIELD:
 			if short_range and $Talent/Shield.is_running():
 				damage = 0
