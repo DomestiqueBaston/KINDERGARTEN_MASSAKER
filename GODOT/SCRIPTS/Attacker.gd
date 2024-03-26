@@ -70,14 +70,13 @@ func _stop_attacking(and_go_away: bool):
 func tick(delta):
 	if is_repulsed():
 		.tick(delta)
-		return
 
 	if $CyclePlayer.is_paused():
 		return
 
 	# run towards the alien and stop to attack him when close enough
 
-	if $CyclePlayer.get_current_animation() == "Run":
+	if $CyclePlayer.get_current_animation() == "Run" and not is_repulsed():
 		var attack_him = false
 		if attack_allowed:
 			face_alien()
