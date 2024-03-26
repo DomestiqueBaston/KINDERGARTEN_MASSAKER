@@ -205,8 +205,12 @@ func update_camera(delta):
 func change_state(next_state):
 	var child = $Active_Scene.get_child(0)
 	
+	# remember current menu item
+	
 	if state == GameState.MENU:
 		previous_menu_item = child.get_current_item()
+
+	# trigger a visual transition to the next screen (except when dying)
 
 	if next_state != GameState.DEATH:
 		# hide overlay before $Transition_Overlay takes a screenshot
@@ -215,6 +219,8 @@ func change_state(next_state):
 		$Transition_Overlay.start_transition()
 		# put overlay back after screenshot has been taken
 		$PAPA_Game_Overlay.show()
+	
+	# replace the current active scene with a new instance of the next one
 	
 	child.queue_free()
 	child = null
@@ -263,10 +269,19 @@ func change_state(next_state):
 		$Active_Scene.add_child(child)
 	
 	state = next_state
+	
+	# make sure the menu music is always playing (outside of the game)
 
 	if (not state in [GameState.PLAY, GameState.DEATH] and
 		not $Audio/Menu_Music.playing):
 		$Audio/Menu_Music.play()
+	
+	# don't allow the player to leave the death screen immediately
+	
+	if state == GameState.DEATH:
+		set_process_unhandled_input(false)
+		yield(get_tree().create_timer(1), "timeout")
+		set_process_unhandled_input(true)
 
 func _on_Transition_Overlay_transition_finished():
 	$Transition_Overlay.hide()
