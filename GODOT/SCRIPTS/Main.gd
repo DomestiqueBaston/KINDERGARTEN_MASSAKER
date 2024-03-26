@@ -315,13 +315,13 @@ func instance_character_at(scene: PackedScene, pos: Vector2) -> Node:
 
 func get_random_kid() -> PackedScene:
 	var rand = randf()
-	if rand < 0.25:
+	if rand < 0.20:
 		return spitting_kid_scene
-	elif rand < 0.55:
+	elif rand < 0.52:
 		return stick_kid_scene
-	elif rand < 0.76:
+	elif rand < 0.74:
 		return booger_kid_scene
-	elif rand < 0.9:
+	elif rand < 0.89:
 		return crying_kid_scene
 	else:
 		return vomiting_kid_scene
