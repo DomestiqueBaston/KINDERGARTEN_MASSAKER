@@ -425,13 +425,8 @@ func _on_Hit_Collider_area_entered(area: Area2D):
 		$CyclePlayer.play("Hit", true)
 		$CyclePlayer.play("Idle")
 
-func _corrected_vomit_damage(damage: int) ->  int:
-	if _talent == Globals.Talent.VOMIT_PROOF:
-		damage /= 2
-	return damage
-
 func vomit_entered():
-	_take_hit_points(_corrected_vomit_damage(vomit_damage_1))
+	_take_vomit_hit_points(vomit_damage_1)
 	_vomit_exit_time = -1
 	$Vomit_Timer.start()
 
@@ -440,14 +435,19 @@ func vomit_exited():
 
 func _on_Vomit_Timer_timeout():
 	if _vomit_exit_time < 0:
-		_take_hit_points(_corrected_vomit_damage(vomit_damage_1))
+		_take_vomit_hit_points(vomit_damage_1)
+	elif (Time.get_ticks_msec() - _vomit_exit_time) < 1000:
+		_take_vomit_hit_points(vomit_damage_2)
 	else:
-		var dt = Time.get_ticks_msec() - _vomit_exit_time
-		if dt < 1000:
-			_take_hit_points(_corrected_vomit_damage(vomit_damage_2))
-		else:
-			_take_hit_points(_corrected_vomit_damage(vomit_damage_3))
-			$Vomit_Timer.stop()
+		_take_vomit_hit_points(vomit_damage_3)
+		$Vomit_Timer.stop()
+
+func _take_vomit_hit_points(damage: int):
+	if _talent == Globals.Talent.VOMIT_PROOF:
+		damage /= 2
+	else:
+		flash(true)
+	_take_hit_points(damage)
 
 func _take_hit_points(damage: int):
 	if _mirror or $Talent/Ghost.is_running():
