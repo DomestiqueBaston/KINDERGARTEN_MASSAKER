@@ -407,6 +407,8 @@ func start_game():
 			alien.set_run_speed(SPEED_run_speed)
 		Globals.Talent.TELEPORT:
 			alien.connect("teleport", self, "teleport")
+		Globals.Talent.SECOND_LIFE:
+			alien.connect("second_life", self, "_on_second_life")
 		Globals.Talent.GHOST:
 			alien.connect("ghost_done", self, "_on_ghost_done")
 
@@ -501,6 +503,8 @@ func stop_game():
 			stop_invisible()
 		Globals.Talent.SHIELD:
 			alien.stop_shield()
+		Globals.Talent.SECOND_LIFE:
+			stop_second_life()
 		Globals.Talent.TECHNICIAN:
 			techniker_used = false
 		Globals.Talent.BULLET_TIME:
@@ -606,6 +610,12 @@ func start_invisible():
 
 func stop_invisible():
 	alien.stop_invisible()
+
+func _on_second_life():
+	$Talent_Overlays/Second_Life/AnimationPlayer.play("second_life")
+
+func stop_second_life():
+	$Talent_Overlays/Second_Life/AnimationPlayer.play("RESET")
 
 func start_techniker():
 	if techniker_used or $Shutdown_Overlay.visible:

@@ -54,6 +54,9 @@ signal ghost_done
 # signal emitted when the alien becomes visible or invisible
 signal invisible
 
+# signal emitted when the alien is reborn
+signal second_life
+
 # signal emitted when the alien runs out of hit points
 signal dead
 
@@ -368,10 +371,7 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name.ends_with("_Dead"):
-		if _talent == Globals.Talent.SECOND_LIFE and _death_count == 1:
-			_start_second_life()
-		else:
-			emit_signal("dead")
+		_start_second_life()
 
 func _on_Hit_Collider_area_entered(area: Area2D):
 	if _mirror:
@@ -452,31 +452,55 @@ func _take_vomit_hit_points(damage: int):
 	_take_hit_points(damage)
 
 func _take_hit_points(damage: int):
-	if _mirror or $Talent/Ghost.is_running():
+	if _mirror:
+		return
+	if damage > 0 and (_state == State.DEAD or $Talent/Ghost.is_running()):
 		return
 	_hit_points = int(max(0, _hit_points - damage))
 	print("hit points: ", _hit_points)
 	if _hit_points <= 0:
 		_state = State.DEAD
-		_death_count += 1
-		$CyclePlayer.stop()
-		$CyclePlayer.play("Dead", false, false)
-		_invisible_flag = true
-		emit_signal("invisible", _invisible_flag)
+		if _talent == Globals.Talent.SECOND_LIFE and _death_count == 0:
+			_end_first_life()
+		else:
+			emit_signal("dead")
+
+func _end_first_life():
+	_death_count += 1
+
+	# no more damage from vomit and attackers
+
+	_vomit_exit_time = -1
+	$Vomit_Timer.stop()
+	_invisible_flag = true
+	emit_signal("invisible", _invisible_flag)
+
+	# the end of the Dead animation triggers the second life
+
+	$CyclePlayer.stop()
+	$CyclePlayer.play("Dead", true, false)
 
 func _start_second_life():
-	$Talent/Second_Life/Second_Life_Timer.start()
-	yield($Talent/Second_Life/Second_Life_Timer, "timeout")
+
+	# flash flash flash and start Idle animation
+
+	$Talent/Second_Life_Timer.start()
+	yield($Talent/Second_Life_Timer, "timeout")
 	flash()
-	yield($Talent/Second_Life/Second_Life_Timer, "timeout")
-	$Talent/Second_Life/FX.play()
+	yield($Talent/Second_Life_Timer, "timeout")
+	flash()
+	emit_signal("second_life")
 	$CyclePlayer.play("Idle")
-	yield($Talent/Second_Life/Second_Life_Timer, "timeout")
-	$Talent/Second_Life/Second_Life_Timer.stop()
+	yield($Talent/Second_Life_Timer, "timeout")
+	$Talent/Second_Life_Timer.stop()
 	flash()
+
+	# restore hit points and start taking damage from vomit and attackers again
+
 	_take_hit_points(-second_life_hit_points)
 	_invisible_flag = false
 	emit_signal("invisible", _invisible_flag)
+
 	_state = State.IDLE
 
 func _on_Regen_Timer_timeout():
