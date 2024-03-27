@@ -5651,6 +5651,7 @@ anims/ghost_on = SubResource( 144 )
 
 [node name="FX" type="AudioStreamPlayer" parent="Talent/Second_Life"]
 stream = ExtResource( 42 )
+volume_db = -5.0
 
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )
@@ -5769,7 +5770,6 @@ __meta__ = {
 
 [node name="Death" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource( 7 )
-volume_db = -10.0
 bus = "FX"
 __meta__ = {
 "_editor_description_": ""
