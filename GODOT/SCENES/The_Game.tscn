@@ -542,7 +542,7 @@ __meta__ = {
 
 [node name="FX" type="AudioStreamPlayer" parent="Talent_Overlays/Second_Life"]
 stream = ExtResource( 25 )
-volume_db = -5.0
+volume_db = 5.0
 bus = "FX"
 
 [node name="ColorRect" type="ColorRect" parent="Talent_Overlays/Second_Life"]

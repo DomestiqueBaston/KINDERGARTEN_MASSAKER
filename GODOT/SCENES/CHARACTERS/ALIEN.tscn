@@ -5376,6 +5376,7 @@ audio_stream_player_path = NodePath("Audio/Footsteps")
 animation_player_path = NodePath("AnimationPlayer")
 speed = Vector2( 150, 75 )
 scratch_chances = 0.667
+second_life_hit_points = 500
 stick_damage = 100
 kick_damage = 150
 spit_damage = 100
