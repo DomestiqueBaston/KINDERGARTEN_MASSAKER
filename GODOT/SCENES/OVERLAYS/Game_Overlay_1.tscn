@@ -10,7 +10,7 @@ shader = ExtResource( 2 )
 shader_param/overlay = true
 shader_param/scanlines_opacity = 0.0
 shader_param/scanlines_width = 0.1
-shader_param/grille_opacity = 0.1
+shader_param/grille_opacity = 0.0
 shader_param/resolution = Vector2( 480, 270 )
 shader_param/roll = true
 shader_param/roll_speed = 0.4
@@ -216,7 +216,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 60.1 ),
+"times": PoolRealArray( 0, 60 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
