@@ -41,6 +41,7 @@ const prefix = [
 class AnimRequest:
 	var name: String
 	var block := false
+	var loop := true
 
 # path to the scene's AnimationPlayer node
 export var anim_player_path: NodePath
@@ -76,15 +77,20 @@ func _ready():
 # animation plays immediately, starting at the same position in time as the
 # current animation.
 #
-func play(anim: String, block := false):
+# By default, if there are no queued animations, the last remaining animation
+# cycle loops indefinitely. But if loop is set to false, it just stops when it
+# ends.
+#
+func play(anim: String, block := false, loop := true):
 
 	# if we're already playing that animation, do nothing, or maybe just change
-	# its blocking status, if possible
+	# its blocking and looping status
 
 	if anim_queue.size() == 1:
 		var req = anim_queue.front()
 		if req.name == anim:
 			req.block = block
+			req.loop = loop
 			return
 
 	# if the last animation requested is not blocking, the new animation
@@ -107,6 +113,7 @@ func play(anim: String, block := false):
 	var request = AnimRequest.new()
 	request.name = anim
 	request.block = block
+	request.loop = loop
 	anim_queue.push_back(request)
 
 #
@@ -209,10 +216,15 @@ func _on_animation_changed(_old_name, _new_name):
 	anim_queue.pop_front()
 
 #
-# When the AnimationPlayer finishes the requested animation, tell it to loop.
+# When the AnimationPlayer finishes the requested animation, tell it to loop
+# unless the play requested said not to.
 #
 func _on_animation_finished(anim_name):
-	anim_player.play(anim_name)
+	if anim_queue.size() == 1:
+		if anim_queue.front().loop:
+			anim_player.play(anim_name)
+		else:
+			anim_queue.pop_front()
 
 #
 # Pauses the animation.

@@ -15,6 +15,9 @@ export var scratch_chances := 0.25
 # how many hit points the alien starts out with
 export var initial_hit_points := 1000
 
+# how many hit points the alien receives for his second life
+export var second_life_hit_points := 300
+
 # hit points lost when hit by a stick
 export var stick_damage := 25
 
@@ -62,6 +65,7 @@ var _mirror := false
 var _invisible_flag := false
 var _hit_points := 0
 var _vomit_exit_time := -1
+var _death_count := 0
 
 enum State {
 	FIRST_IDLE,
@@ -111,9 +115,10 @@ func _on_beam_down_finished(_anim_name):
 # Returns true if the alien is busy: scratching himself, getting hit, or dead.
 #
 func is_busy() -> bool:
-	# NB. The SCRATCH state begins a bit BEFORE the Scratching animation
-	return (_state == State.SCRATCH or
-			$CyclePlayer.get_current_animation() in ["Hit", "Dead"])
+	# NB. The SCRATCH state begins a bit BEFORE the Scratching animation, and
+	# the DEAD state goes on after the Dead animation...
+	return (_state in [State.SCRATCH, State.DEAD] or
+			$CyclePlayer.get_current_animation() == "Hit")
 
 func _physics_process(_delta):
 
@@ -133,7 +138,7 @@ func _physics_process(_delta):
 			$CyclePlayer.set_direction_vector(_direction)
 		return
 
-	# can't do anything else while scratching or being hit
+	# can't do anything else while scratching or being hit, or if dead
 
 	if is_busy():
 		return
@@ -362,8 +367,11 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 		_state = State.IDLE
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name.ends_with("Dead"):
-		emit_signal("dead")
+	if anim_name.ends_with("_Dead"):
+		if _talent == Globals.Talent.SECOND_LIFE and _death_count == 1:
+			_start_second_life()
+		else:
+			emit_signal("dead")
 
 func _on_Hit_Collider_area_entered(area: Area2D):
 	if _mirror:
@@ -446,12 +454,25 @@ func _take_vomit_hit_points(damage: int):
 func _take_hit_points(damage: int):
 	if _mirror or $Talent/Ghost.is_running():
 		return
-	_hit_points -= damage
+	_hit_points = int(max(0, _hit_points - damage))
 	print("hit points: ", _hit_points)
 	if _hit_points <= 0:
 		_state = State.DEAD
+		_death_count += 1
 		$CyclePlayer.stop()
-		$CyclePlayer.play("Dead")
+		$CyclePlayer.play("Dead", false, false)
+		_invisible_flag = true
+		emit_signal("invisible", _invisible_flag)
+
+func _start_second_life():
+	yield(get_tree().create_timer(2), "timeout")
+	_take_hit_points(-second_life_hit_points)
+	flash(true)
+	$CyclePlayer.play("Idle")
+	yield(get_tree().create_timer(1), "timeout")
+	_invisible_flag = false
+	emit_signal("invisible", _invisible_flag)
+	_state = State.IDLE
 
 func _on_Regen_Timer_timeout():
 	_take_hit_points(-regen_hit_points)
