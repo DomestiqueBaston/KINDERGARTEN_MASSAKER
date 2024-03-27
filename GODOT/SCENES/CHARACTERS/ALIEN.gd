@@ -465,11 +465,16 @@ func _take_hit_points(damage: int):
 		emit_signal("invisible", _invisible_flag)
 
 func _start_second_life():
-	yield(get_tree().create_timer(2), "timeout")
-	_take_hit_points(-second_life_hit_points)
-	flash(true)
+	$Talent/Second_Life/Second_Life_Timer.start()
+	yield($Talent/Second_Life/Second_Life_Timer, "timeout")
+	flash()
+	yield($Talent/Second_Life/Second_Life_Timer, "timeout")
+	$Talent/Second_Life/FX.play()
 	$CyclePlayer.play("Idle")
-	yield(get_tree().create_timer(1), "timeout")
+	yield($Talent/Second_Life/Second_Life_Timer, "timeout")
+	$Talent/Second_Life/Second_Life_Timer.stop()
+	flash()
+	_take_hit_points(-second_life_hit_points)
 	_invisible_flag = false
 	emit_signal("invisible", _invisible_flag)
 	_state = State.IDLE

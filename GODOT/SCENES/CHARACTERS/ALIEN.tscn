@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=2]
+[gd_scene load_steps=114 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -41,6 +41,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Invisible_OFF.wav" type="AudioStream" id=39]
 [ext_resource path="res://SCRIPTS/CyclePlayer.gd" type="Script" id=40]
 [ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Mirror_Image_Plop.wav" type="AudioStream" id=41]
+[ext_resource path="res://ASSETS/SOUND/FX/TALENTS/Second_Life.wav" type="AudioStream" id=42]
 
 [sub_resource type="CapsuleShape2D" id=117]
 radius = 13.0
@@ -5643,6 +5644,13 @@ anims/ghost_off = SubResource( 156 )
 anims/ghost_on = SubResource( 144 )
 
 [node name="Regen_Timer" type="Timer" parent="Talent"]
+
+[node name="Second_Life" type="Node" parent="Talent"]
+
+[node name="Second_Life_Timer" type="Timer" parent="Talent/Second_Life"]
+
+[node name="FX" type="AudioStreamPlayer" parent="Talent/Second_Life"]
+stream = ExtResource( 42 )
 
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )
