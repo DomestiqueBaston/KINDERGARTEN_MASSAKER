@@ -216,8 +216,8 @@ func _on_animation_changed(_old_name, _new_name):
 	anim_queue.pop_front()
 
 #
-# When the AnimationPlayer finishes the requested animation, tell it to loop
-# unless the play requested said not to.
+# When the AnimationPlayer finishes the requested animation, tell it to loop,
+# unless the play request said not to.
 #
 func _on_animation_finished(anim_name):
 	if anim_queue.size() == 1:
