@@ -68,35 +68,21 @@ enum State {
 	SCRATCH,
 	IDLE,
 	MOVE,
-	HIT
+	HIT,
+	DEAD
 }
 
 var _state = State.MOVE
 
 func _ready():
-	if not Engine.editor_hint:
-		reset()
-
-#
-# Returns the alien to its initial state: facing forward, no animation, no
-# physics processing (movement), and no cooldown.
-#
-func reset():
+	if Engine.editor_hint:
+		return
 	var cycle_length = $AnimationPlayer.get_animation("00_Idle").length
 	_scratch_interval = cycle_length - 1.0 / Globals.FPS
-	_direction = Vector2.DOWN
-	$CyclePlayer.stop()
 	$CyclePlayer.set_direction_vector(_direction)
-	$Talent/Regen_Timer.stop()
-	$Vomit_Timer.stop()
 	set_physics_process(false)
-	stop_cooldown()
-	_mirror = false
-	_invisible_flag = false
-	_state = State.MOVE
-	stop_checking_for_puddles()
 	# alien can't be seen until he beams down
-	$Move_Collider.set_deferred("disabled", true)
+	$Move_Collider.disabled = true
 
 #
 # Starts the alien's "idle" animation cycle and beams him down. Once the "beam
@@ -122,12 +108,12 @@ func _on_beam_down_finished(_anim_name):
 	emit_signal("beam_down_finished")
 
 #
-# Returns true if the alien is busy scratching himself or getting hit.
+# Returns true if the alien is busy: scratching himself, getting hit, or dead.
 #
 func is_busy() -> bool:
 	# NB. The SCRATCH state begins a bit BEFORE the Scratching animation
 	return (_state == State.SCRATCH or
-			$CyclePlayer.get_current_animation() == "Hit")
+			$CyclePlayer.get_current_animation() in ["Hit", "Dead"])
 
 func _physics_process(_delta):
 
@@ -375,6 +361,10 @@ func _on_AnimationPlayer_animation_changed(old_name, _new_name):
 	if _state == State.SCRATCH and old_name.ends_with("_Scratching"):
 		_state = State.IDLE
 
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name.ends_with("Dead"):
+		emit_signal("dead")
+
 func _on_Hit_Collider_area_entered(area: Area2D):
 	if _mirror:
 		_stop_mirror()
@@ -416,14 +406,18 @@ func _on_Hit_Collider_area_entered(area: Area2D):
 				damage *= 2
 			else:
 				damage /= 2
+		Globals.Talent.GHOST:
+			if $Talent/Ghost.is_running():
+				damage = 0
 
 	if damage > 0:
 		_take_hit_points(damage)
-		_state = State.HIT
-		flash(true)
-		$CyclePlayer.stop()
-		$CyclePlayer.play("Hit", true)
-		$CyclePlayer.play("Idle")
+		if _hit_points > 0:
+			_state = State.HIT
+			flash(true)
+			$CyclePlayer.stop()
+			$CyclePlayer.play("Hit", true)
+			$CyclePlayer.play("Idle")
 
 func vomit_entered():
 	_take_vomit_hit_points(vomit_damage_1)
@@ -455,7 +449,9 @@ func _take_hit_points(damage: int):
 	_hit_points -= damage
 	print("hit points: ", _hit_points)
 	if _hit_points <= 0:
-		emit_signal("dead")
+		_state = State.DEAD
+		$CyclePlayer.stop()
+		$CyclePlayer.play("Dead")
 
 func _on_Regen_Timer_timeout():
 	_take_hit_points(-regen_hit_points)
