@@ -2992,7 +2992,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Move_Collider:position")
@@ -3153,7 +3153,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("../Move_Collider:position")
@@ -3314,7 +3314,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("../Move_Collider:position")
@@ -3469,7 +3469,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("..:step_hack")
@@ -3594,7 +3594,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("../Move_Collider:position")
@@ -3755,7 +3755,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("../Move_Collider:position")
@@ -3916,7 +3916,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("../Move_Collider:position")
@@ -4071,7 +4071,7 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("..:step_hack")
