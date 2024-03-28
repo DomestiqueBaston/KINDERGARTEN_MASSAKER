@@ -5382,6 +5382,8 @@ stick_damage = 100
 kick_damage = 150
 spit_damage = 100
 booger_damage = 200
+hand_to_hand_damage_factor = 1.5
+ranged_combat_damage_factor = 1.75
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false
