@@ -45,13 +45,17 @@ export var vomit_damage_3 := 15
 # hit points recovered per second with REGENERATE talent
 export var regen_hit_points := 5
 
-# HAND_TO_HAND: multiplier for long-range attack damage, divisor for
-# short-range attack damage
-export var hand_to_hand_damage_factor := 2.0
+# HAND_TO_HAND talent: multiplier for short-range attack damage
+export var hand_to_hand_short_range_damage_factor := 0.5
 
-# RANGED_COMBAT: multiplier for short-range attack damage, divisor for
-# long-range attack damage
-export var ranged_combat_damage_factor := 2.0
+# HAND_TO_HAND talent: multiplier for long-range attack damage
+export var hand_to_hand_long_range_damage_factor := 1.25
+
+# RANGED_COMBAT talent: multiplier for short-range attack damage
+export var ranged_combat_short_range_damage_factor := 1.5
+
+# RANGED_COMBAT talent: multiplier for long-range attack damage
+export var ranged_combat_long_range_damage_factor := 0.75
 
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
@@ -417,14 +421,14 @@ func _on_Hit_Collider_area_entered(area: Area2D):
 				damage = 0
 		Globals.Talent.HAND_TO_HAND:
 			if short_range:
-				damage = int(damage / hand_to_hand_damage_factor)
+				damage = int(damage * hand_to_hand_short_range_damage_factor)
 			else:
-				damage = int(damage * hand_to_hand_damage_factor)
+				damage = int(damage * hand_to_hand_long_range_damage_factor)
 		Globals.Talent.RANGED_COMBAT:
 			if short_range:
-				damage = int(damage * ranged_combat_damage_factor)
+				damage = int(damage * ranged_combat_short_range_damage_factor)
 			else:
-				damage = int(damage / ranged_combat_damage_factor)
+				damage = int(damage * ranged_combat_long_range_damage_factor)
 		Globals.Talent.GHOST:
 			if $Talent/Ghost.is_running():
 				damage = 0
@@ -515,7 +519,10 @@ func _start_second_life():
 	_state = State.IDLE
 
 func _on_Regen_Timer_timeout():
-	_take_hit_points(-regen_hit_points)
+	var added_points = int(
+		min(regen_hit_points, initial_hit_points - _hit_points))
+	if added_points > 0:
+		_take_hit_points(-added_points)
 
 #
 # Returns the location of the alien's hit collider in global coordinates.
