@@ -15,6 +15,9 @@ export var scratch_chances := 0.25
 # how many hit points the alien starts out with
 export var initial_hit_points := 1000
 
+# initial hit point muiltiplier for the HEALTH talent
+export var health_hit_point_factor := 1.2
+
 # how many hit points the alien receives for his second life
 export var second_life_hit_points := 300
 
@@ -107,7 +110,7 @@ func beam_down(talent: int):
 func _on_beam_down_finished(_anim_name):
 	_hit_points = initial_hit_points
 	if _talent == Globals.Talent.HEALTH:
-		_hit_points += int(initial_hit_points * 0.2)
+		_hit_points = int(_hit_points * health_hit_point_factor)
 	elif _talent == Globals.Talent.REGENERATE:
 		$Talent/Regen_Timer.start()
 	$Move_Collider.set_deferred("disabled", false)
