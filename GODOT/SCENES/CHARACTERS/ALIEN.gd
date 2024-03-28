@@ -45,6 +45,14 @@ export var vomit_damage_3 := 15
 # hit points recovered per second with REGENERATE talent
 export var regen_hit_points := 5
 
+# HAND_TO_HAND: multiplier for long-range attack damage, divisor for
+# short-range attack damage
+export var hand_to_hand_damage_factor := 2.0
+
+# RANGED_COMBAT: multiplier for short-range attack damage, divisor for
+# long-range attack damage
+export var ranged_combat_damage_factor := 2.0
+
 # signal emitted when the beam down animation has finished
 signal beam_down_finished
 
@@ -409,14 +417,14 @@ func _on_Hit_Collider_area_entered(area: Area2D):
 				damage = 0
 		Globals.Talent.HAND_TO_HAND:
 			if short_range:
-				damage /= 2
+				damage = int(damage / hand_to_hand_damage_factor)
 			else:
-				damage *= 2
+				damage = int(damage * hand_to_hand_damage_factor)
 		Globals.Talent.RANGED_COMBAT:
 			if short_range:
-				damage *= 2
+				damage = int(damage * ranged_combat_damage_factor)
 			else:
-				damage /= 2
+				damage = int(damage / ranged_combat_damage_factor)
 		Globals.Talent.GHOST:
 			if $Talent/Ghost.is_running():
 				damage = 0
