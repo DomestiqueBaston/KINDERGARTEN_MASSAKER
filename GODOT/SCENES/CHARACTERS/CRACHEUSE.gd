@@ -23,14 +23,6 @@ func _exit_tree():
 	projectiles.clear()
 
 #
-# When the Spit animation cycle begins, wait a couple frames before creating a
-# projectile.
-#
-func _on_animation_started(anim_name):
-	if attack_allowed and anim_name.ends_with("_Spit"):
-		$Projectile_Timer.start()
-
-#
 # Called a short time after spitting to create a projectile aimed at the
 # alien. The projectile is added to this node's PARENT, so that it can be
 # moved independently.
@@ -72,10 +64,6 @@ func _on_projectile_hit(projectile: Node2D):
 # well.
 #
 func set_time_scale(scale: float):
-	if $Projectile_Timer.time_left > 0:
-		var prev_scale = $CyclePlayer.get_speed()
-		$Projectile_Timer.start(
-			$Projectile_Timer.time_left * (prev_scale / scale))
 	for spit in projectiles:
 		spit.set_time_scale(scale)
 	.set_time_scale(scale)
@@ -85,7 +73,6 @@ func set_time_scale(scale: float):
 # projectiles as well.
 #
 func stop_time():
-	$Projectile_Timer.set_paused(true)
 	for spit in projectiles:
 		spit.pause()
 	.stop_time()
@@ -95,7 +82,6 @@ func stop_time():
 # projectiles as well.
 #
 func restart_time():
-	$Projectile_Timer.set_paused(false)
 	for spit in projectiles:
 		spit.resume()
 	.restart_time()

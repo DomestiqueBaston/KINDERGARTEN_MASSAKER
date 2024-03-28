@@ -193,6 +193,20 @@ tracks/12/keys = {
 "update": 1,
 "values": [ Vector2( 0, 13 ) ]
 }
+tracks/13/type = "method"
+tracks/13/path = NodePath("..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_create_projectile"
+} ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "00_Idle"
@@ -794,6 +808,20 @@ tracks/12/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 0, 13 ) ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_create_projectile"
+} ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -1397,6 +1425,20 @@ tracks/12/keys = {
 "update": 1,
 "values": [ Vector2( 0, 13 ) ]
 }
+tracks/13/type = "method"
+tracks/13/path = NodePath("..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_create_projectile"
+} ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "135G_Idle"
@@ -1998,6 +2040,20 @@ tracks/12/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 0, 13 ) ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_create_projectile"
+} ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -2601,6 +2657,20 @@ tracks/12/keys = {
 "update": 1,
 "values": [ Vector2( 0, 13 ) ]
 }
+tracks/13/type = "method"
+tracks/13/path = NodePath("..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_create_projectile"
+} ]
+}
 
 [sub_resource type="Animation" id=17]
 resource_name = "45D_Idle"
@@ -3202,6 +3272,20 @@ tracks/12/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 0, 13 ) ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_create_projectile"
+} ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -3805,6 +3889,20 @@ tracks/12/keys = {
 "update": 1,
 "values": [ Vector2( 0, 13 ) ]
 }
+tracks/13/type = "method"
+tracks/13/path = NodePath("..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_create_projectile"
+} ]
+}
 
 [sub_resource type="Animation" id=25]
 resource_name = "90D_Idle"
@@ -4406,6 +4504,20 @@ tracks/12/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ Vector2( 0, 13 ) ]
+}
+tracks/13/type = "method"
+tracks/13/path = NodePath("..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_create_projectile"
+} ]
 }
 
 [sub_resource type="Animation" id=29]
@@ -5193,15 +5305,6 @@ navigation_layers = 4096
 anims/RESET = SubResource( 151 )
 anims/flash = SubResource( 152 )
 
-[node name="Projectile_Timer" type="Timer" parent="."]
-wait_time = 0.7
-one_shot = true
-__meta__ = {
-"_editor_description_": "Time between the act of throwing and the appearance of the projectile."
-}
-
 [connection signal="body_entered" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_entered"]
 [connection signal="body_exited" from="Alien_Detection_Collider" to="." method="on_Alien_Detection_Collider_body_exited"]
 [connection signal="body_entered" from="Kid_Waving_Detection_Collider" to="." method="on_Kid_Waving_Detection_Collider_body_entered" flags=3]
-[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_animation_started"]
-[connection signal="timeout" from="Projectile_Timer" to="." method="_create_projectile"]

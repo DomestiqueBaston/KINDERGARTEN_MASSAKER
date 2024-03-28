@@ -51,6 +51,15 @@ func _start_running(extra_wait := 0.0):
 	start_timer(extra_wait + rand_range(2, 5))
 
 #
+# Play the attack animation cycle and stop the timer, because we will keep
+# attacking until we have a reason to stop (e.g. the alien is no longer visible
+# and in range, or we have hit him enough).
+#
+func _start_attacking():
+	$CyclePlayer.play(attack_animation, true)
+	stop_timer()
+
+#
 # Stop attacking (at the end of the animation cycle) and start running again. If
 # and_go_away is true, turn around and don't attack again until the next Run
 # cycle ends.
@@ -84,9 +93,7 @@ func tick(delta):
 				attack_him = true
 		if attack_him:
 			hit_count = 0
-			$CyclePlayer.play(attack_animation, true)
-			# keep attacking until we have a reason to stop (see below)
-			stop_timer()
+			_start_attacking()
 		else:
 			.tick(delta)
 
