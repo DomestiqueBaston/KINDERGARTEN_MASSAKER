@@ -5502,7 +5502,7 @@ __meta__ = {
 visible = false
 position = Vector2( 0, 23 )
 texture = ExtResource( 14 )
-offset = Vector2( 0, 15 )
+offset = Vector2( 0, -4 )
 hframes = 5
 __meta__ = {
 "_edit_lock_": true
@@ -5531,6 +5531,7 @@ visible = false
 position = Vector2( 0, 37 )
 z_index = -1
 texture = ExtResource( 18 )
+offset = Vector2( 2, -18 )
 hframes = 6
 __meta__ = {
 "_edit_lock_": true
@@ -5558,6 +5559,7 @@ one_shot = true
 visible = false
 position = Vector2( 0, 12 )
 texture = ExtResource( 33 )
+offset = Vector2( 0, -20 )
 hframes = 3
 __meta__ = {
 "_edit_lock_": true
@@ -5624,6 +5626,7 @@ one_shot = true
 visible = false
 position = Vector2( 0, 23 )
 texture = ExtResource( 29 )
+offset = Vector2( 0, -8 )
 hframes = 4
 __meta__ = {
 "_edit_lock_": true
