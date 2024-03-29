@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 # maximum number of points in the trail at any given time
 export var max_point_count = 100

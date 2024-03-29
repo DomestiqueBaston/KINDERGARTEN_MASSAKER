@@ -453,12 +453,12 @@ GHOST_cooldown = 12
 
 [node name="PAPA_Title" parent="Active_Scene" instance=ExtResource( 3 )]
 
-[node name="Talents" type="Node" parent="."]
+[node name="Talents" type="Node2D" parent="."]
 
 [node name="Talent_Timer" type="Timer" parent="Talents"]
 one_shot = true
 
-[node name="Dash" type="Node" parent="Talents"]
+[node name="Dash" type="Node2D" parent="Talents"]
 script = ExtResource( 12 )
 
 [node name="Dash_Timer" type="Timer" parent="Talents/Dash"]
