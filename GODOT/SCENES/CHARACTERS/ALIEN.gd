@@ -499,16 +499,16 @@ func _start_second_life():
 
 	# flash flash flash and start Idle animation
 
-	$Talent/Second_Life_Timer.start()
+	$Talent/Second_Life_Timer.start(1)
 	yield($Talent/Second_Life_Timer, "timeout")
-	flash()
+	$Flash.play("flash_loop")
+	$Talent/Second_Life_Timer.start(1)
 	yield($Talent/Second_Life_Timer, "timeout")
-	flash()
 	emit_signal("second_life")
 	$CyclePlayer.play("Idle")
+	$Talent/Second_Life_Timer.start(2)
 	yield($Talent/Second_Life_Timer, "timeout")
-	$Talent/Second_Life_Timer.stop()
-	flash()
+	$Flash.play("RESET")
 
 	# restore hit points and start taking damage from vomit and attackers again
 

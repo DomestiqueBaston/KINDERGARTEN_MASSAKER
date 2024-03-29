@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=2]
+[gd_scene load_steps=114 format=2]
 
 [ext_resource path="res://ASSETS/SOUND/FX/ALIEN/Barefoot_steps_A.wav" type="AudioStream" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/ANIMATIONS/ALIEN/ALIEN.png" type="Texture" id=2]
@@ -5299,6 +5299,23 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="Animation" id=160]
+resource_name = "flash_loop"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Alien:material:shader_param/flash")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
 [sub_resource type="Animation" id=140]
 length = 0.001
 tracks/0/type = "value"
@@ -5647,6 +5664,7 @@ anims/ghost_on = SubResource( 144 )
 [node name="Regen_Timer" type="Timer" parent="Talent"]
 
 [node name="Second_Life_Timer" type="Timer" parent="Talent"]
+one_shot = true
 
 [node name="Alien" type="Sprite" parent="."]
 material = SubResource( 94 )
@@ -5732,6 +5750,7 @@ anim_player_path = NodePath("../AnimationPlayer")
 anims/RESET = SubResource( 138 )
 anims/flash = SubResource( 139 )
 anims/flash_brief = SubResource( 159 )
+anims/flash_loop = SubResource( 160 )
 
 [node name="Cooldown" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 140 )
