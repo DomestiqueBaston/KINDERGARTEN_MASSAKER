@@ -24,40 +24,26 @@ enum Talent {
 	HAND_TO_HAND,
 	RANGED_COMBAT,
 	NONE,
-	RANDOM,			# if dialogued watched
-	VOMIT_PROOF,		# if best score >= 15
-	BULLET_TIME,		# if best score >= 30
-	GHOST,			# if best score >= 45
-	TECHNICIAN		# if best score >= 60
+	RANDOM,
+	VOMIT_PROOF,
+	BULLET_TIME,
+	GHOST,
+	TECHNICIAN
 }
 
-#
-# talent names
-#
-const talent_name = [
-	"random teleportation",
-	"dash",
-	"repulsive explosion",
-	"freezing shockwave",
-	"quick runner",
-	"force field",
-	"time stop",
-	"mirror images",
-	"dodger",
-	"invisible",
-	"shield",
-	"second life",
-	"healthy",
-	"regeneration",
-	"hand to hand specialist",
-	"ranged fighting expert",
-	"none!",
-	"Zufällig",
-	"Kotzsicher",
-	"bullet time",
-	"ghost",
-	"der Techniker"
-]
+class TalentDef:
+	var talent_name: String
+	var required_score: float
+	
+	func _init(name: String, score: float = -1):
+		talent_name = name
+		required_score = score
+
+	func is_enabled(dialogue_seen: bool, best_score: float) -> bool:
+		return (required_score < 0 or
+				(dialogue_seen and required_score <= best_score))
+
+var talents = []
 
 #
 # "weapons" (anything that causes damage to the alien)
@@ -72,24 +58,59 @@ enum Weapon {
 }
 
 func _ready():
-	assert(Talent.size() == talent_name.size())
+	talents.resize(Talent.size())
+	talents[Talent.TELEPORT] = TalentDef.new("random teleportation")
+	talents[Talent.DASH] = TalentDef.new("dash")
+	talents[Talent.EXPLOSION] = TalentDef.new("repulsive explosion")
+	talents[Talent.FREEZE] = TalentDef.new("freezing shockwave")
+	talents[Talent.SPEED] = TalentDef.new("quick runner")
+	talents[Talent.FORCE_FIELD] = TalentDef.new("force field")
+	talents[Talent.TIME_STOP] = TalentDef.new("time stop")
+	talents[Talent.MIRROR_IMAGE] = TalentDef.new("mirror images")
+	talents[Talent.DODGE] = TalentDef.new("dodger")
+	talents[Talent.INVISIBLE] = TalentDef.new("invisible")
+	talents[Talent.SHIELD] = TalentDef.new("shield")
+	talents[Talent.SECOND_LIFE] = TalentDef.new("second life")
+	talents[Talent.HEALTH] = TalentDef.new("healthy")
+	talents[Talent.REGENERATE] = TalentDef.new("regeneration")
+	talents[Talent.HAND_TO_HAND] = TalentDef.new("hand to hand specialist")
+	talents[Talent.RANGED_COMBAT] = TalentDef.new("ranged fighting expert")
+	talents[Talent.NONE] = TalentDef.new("none!")
+	talents[Talent.RANDOM] = TalentDef.new("Zufällig", 0)
+	talents[Talent.VOMIT_PROOF] = TalentDef.new("Kotzsicher", 20)
+	talents[Talent.BULLET_TIME] = TalentDef.new("bullet time", 35)
+	talents[Talent.GHOST] = TalentDef.new("ghost", 50)
+	talents[Talent.TECHNICIAN] = TalentDef.new("der Techniker", 63)
 	randomize()
+
+#
+# Returns a human-readable, English name for the given talent.
+#
+func get_talent_name(talent: int) -> String:
+	return talents[talent].talent_name
+
+#
+# Returns true if the given talent is enabled, false if it is locked, either
+# because it requires the user to watch the dialogue first, or because it
+# requires a higher best score.
+#
+func is_talent_enabled(
+	talent: int, dialogue_seen: bool, best_score: float) -> bool:
+	return talents[talent].is_enabled(dialogue_seen, best_score)
 
 #
 # Returns a talent at random. Call this when the user has chosen the RANDOM
 # talent and you want an actual, usable talent. Locked talents (depending on
-# the user's best score) are ignored.
+# the user's best score) are ignored. It is assumed that the user has seen the
+# dialogue, otherwise the RANDOM talent would not be unlocked.
 #
-func get_random_talent(best_score) -> int:
-	# all talents except RANDOM and the four other locked talents
-	var count = Talent.size() - 5
-	# add 0-4 unlocked talents
-	count += max(4, int(best_score/15))
-	var talent = randi() % count
-	# never choose RANDOM
-	if talent >= Talent.RANDOM:
-		talent += 1
-	return talent
+func get_random_talent(best_score: float) -> int:
+	var candidates = []
+	for talent in Talent.size():
+		if (talent != Talent.RANDOM
+			and talents[talent].is_enabled(true, best_score)):
+			candidates.append(talent)
+	return candidates[randi() % candidates.size()]
 
 #
 # Returns a random direction vector (NOT normalized) that can be fed to an

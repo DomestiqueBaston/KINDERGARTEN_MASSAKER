@@ -317,7 +317,7 @@ func on_talent_aborted():
 
 func on_talent_chosen(talent_index):
 	chosen_talent = talent_index
-	print("chosen talent: ", Globals.talent_name[talent_index])
+	print("chosen talent: ", Globals.get_talent_name(talent_index))
 	change_state(GameState.PLAY)
 
 func on_exit_game():
@@ -390,7 +390,7 @@ func start_game():
 		actual_talent = Globals.get_random_talent(Settings.get_best_score())
 
 	if chosen_talent == Globals.Talent.RANDOM:
-		print("random talent: ", Globals.talent_name[actual_talent])
+		print("random talent: ", Globals.get_talent_name(actual_talent))
 
 	# instance the alien and position him in front of the camera, initially
 

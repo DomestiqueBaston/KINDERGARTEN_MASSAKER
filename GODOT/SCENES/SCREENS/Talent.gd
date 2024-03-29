@@ -46,14 +46,13 @@ const ui_talent_map = [
 ]
 
 func _ready():
+	assert(ui_talent_map.size() == item_count)
 	item_visible.resize(item_count)
-	item_visible.fill(true)
-	item_visible[0] = false
-	item_visible[18] = dialogue_seen
-	item_visible[19] = dialogue_seen and survival_time >= 15
-	item_visible[20] = dialogue_seen and survival_time >= 30
-	item_visible[21] = dialogue_seen and survival_time >= 45
-	item_visible[22] = dialogue_seen and survival_time >= 60
+	for i in item_count:
+		item_visible[i] = (
+			ui_talent_map[i] >= 0 and
+			Globals.is_talent_enabled(
+				ui_talent_map[i], dialogue_seen, survival_time))
 	$Zufallig_Off.self_modulate.a = 1 if item_visible[18] else 0
 	$Kotzsicher_Off.self_modulate.a = 1 if item_visible[19] else 0
 	$Bullet_Time_Off.self_modulate.a = 1 if item_visible[20] else 0
