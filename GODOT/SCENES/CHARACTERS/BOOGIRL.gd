@@ -36,22 +36,21 @@ func _create_projectile():
 	var pos = $Point_of_Booger_Spawn.global_position
 	var target = alien.get_hit_target()
 	var inst = projectile_scene.instance()
-	inst.velocity = Globals.get_persp_velocity(
-		pos, target, projectile_speed * rand_range(0.9, 1.1))
+	inst.velocity = Globals.get_persp_velocity(pos, target, projectile_speed)
 	inst.position = pos
 	inst.time_scale = $CyclePlayer.get_speed()
 
 	# if the alien is closer than the distance a booger normally travels,
 	# speed up the booger animation cycle so that it ends sooner (that's what
-	# triggers the "done" signal)
+	# triggers the "done" signal), but also add some randomness so that the
+	# boogers miss sometimes
 
 	var anim_player = inst.get_node("AnimationPlayer")
-	if anim_player.autoplay:
-		var duration = anim_player.get_animation(anim_player.autoplay).length
-		var max_dist = projectile_speed * duration
-		var actual_dist = sqrt(Globals.get_persp_dist_squared(pos, target))
-		actual_dist = clamp(actual_dist, max_dist/2, max_dist)
-		inst.playback_speed = max_dist / actual_dist
+	var duration = anim_player.get_animation(anim_player.autoplay).length
+	var max_dist = projectile_speed * duration
+	var actual_dist = sqrt(Globals.get_persp_dist_squared(pos, target))
+	inst.playback_speed = \
+		clamp(max_dist / actual_dist, 1, 2) * rand_range(0.6, 1.5)
 
 	inst.connect("hit", self, "_destroy_booger", [inst])
 	get_parent().add_child(inst)
