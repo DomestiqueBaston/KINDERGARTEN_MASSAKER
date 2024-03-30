@@ -21,6 +21,9 @@ var velocity := Vector2.ZERO
 # time scale for displacement
 var time_scale := 1.0
 
+# time scale for animation
+var playback_speed := 1.0
+
 #
 # The velocity must be set before adding the projectile to the scene tree. If
 # it is ZERO (the default), then physics processing is disabled.
@@ -29,6 +32,7 @@ func _ready():
 	if velocity == Vector2.ZERO:
 		set_physics_process(false)
 	else:
+		$AnimationPlayer.playback_speed = playback_speed
 		$AnimationPlayer.set_animation_process_mode(
 			AnimationPlayer.ANIMATION_PROCESS_PHYSICS)
 
@@ -45,7 +49,7 @@ func on_animation_finished(_anim_name: String):
 	emit_signal("done")
 
 func set_time_scale(scale: float):
-	$AnimationPlayer.playback_speed = scale
+	$AnimationPlayer.playback_speed = playback_speed * scale
 	time_scale = scale
 
 func pause():
