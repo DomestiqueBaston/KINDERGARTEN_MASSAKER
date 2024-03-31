@@ -5397,8 +5397,8 @@ health_hit_point_factor = 1.25
 second_life_hit_points = 500
 stick_damage = 100
 kick_damage = 150
-spit_damage = 100
-booger_damage = 200
+spit_damage = 75
+booger_damage = 125
 
 [node name="Move_Collider" type="CollisionShape2D" parent="."]
 visible = false

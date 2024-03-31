@@ -5,7 +5,7 @@
 [ext_resource path="res://ASSETS/SOUND/FX/ATTACKS/Explosion_B.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 17.0
+radius = 12.0
 height = 8.0
 
 [sub_resource type="Animation" id=1]
@@ -204,7 +204,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 8
-frame = 1
+frame = 7
 __meta__ = {
 "_edit_lock_": true
 }
