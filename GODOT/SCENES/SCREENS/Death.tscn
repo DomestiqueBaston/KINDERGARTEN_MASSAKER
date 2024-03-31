@@ -4,7 +4,7 @@
 [ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE TEXTE.png" type="Texture" id=2]
 [ext_resource path="res://ASSETS/GRAPHICS/DEATH_SCREEN/TEXTURE DE FOND.png" type="Texture" id=3]
 [ext_resource path="res://ASSETS/SOUND/MUSIC/DEATH.wav" type="AudioStream" id=4]
-[ext_resource path="res://SHADERS/TMP/Textured_Text.shader" type="Shader" id=5]
+[ext_resource path="res://SHADERS/Textured_Text.shader" type="Shader" id=5]
 [ext_resource path="res://SCENES/SCREENS/Death.gd" type="Script" id=6]
 
 [sub_resource type="Animation" id=26]

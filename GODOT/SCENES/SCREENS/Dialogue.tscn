@@ -5,7 +5,7 @@
 [ext_resource path="res://SCENES/SCREENS/Dialogue.gd" type="Script" id=3]
 [ext_resource path="res://ASSETS/SOUND/INTERFACE/Dialogue.wav" type="AudioStream" id=4]
 [ext_resource path="res://ASSETS/FONTS/MonsteramaBoldItalic-l3aZ.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://SHADERS/TMP/Textured_Text.shader" type="Shader" id=6]
+[ext_resource path="res://SHADERS/Textured_Text.shader" type="Shader" id=6]
 
 [sub_resource type="Animation" id=28]
 length = 0.001

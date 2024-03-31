@@ -72,7 +72,7 @@ gdscript/warnings/return_value_discarded=false
 
 window/size/width=480
 window/size/height=270
-window/size/always_on_top=true
+window/size/fullscreen=true
 window/size/test_width=960
 window/size/test_height=540
 window/vsync/use_vsync=false

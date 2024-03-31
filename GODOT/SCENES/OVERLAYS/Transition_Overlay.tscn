@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://SCRIPTS/TMP/TRANSITION.gd" type="Script" id=1]
+[ext_resource path="res://SCRIPTS/TRANSITION.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/GRAPHICS/TRANSITION_SCREEN/Spiraling_qua.png" type="Texture" id=2]
 [ext_resource path="res://SHADERS/Transition.shader" type="Shader" id=3]
 [ext_resource path="res://SCENES/OVERLAYS/Transition_Overlay.gd" type="Script" id=4]
