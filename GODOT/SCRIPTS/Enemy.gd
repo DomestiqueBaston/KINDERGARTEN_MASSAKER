@@ -37,6 +37,9 @@ var _alien_visible_flag := false
 # is the alien invisible (wherever he is)?
 var _alien_invisible_flag := false
 
+# is the view of the alien obstructed by the background?
+var _alien_obstructed_flag := false
+
 # square of distance to alien, if known
 var _alien_dist2 := 0.0
 
@@ -132,8 +135,23 @@ func stop_timer():
 func _physics_process(delta):
 	if not Engine.editor_hint:
 		if alien:
+
+			# update distance to alien
+
 			_alien_dist2 = Globals.get_persp_dist_squared(
 				alien.position, position)
+
+			# check whether an obstacle blocks the view of the alien
+			# (NB. layer 0x01 is the decor, layer 0x02 is the alien)
+
+			var space_state = get_world_2d().direct_space_state
+			var raycast = space_state.intersect_ray(
+				global_position, alien.global_position, [], 0x03)
+			var obstructed = \
+				!raycast.empty() and raycast.collider.is_class("StaticBody2D")
+			if obstructed != _alien_obstructed_flag:
+				_on_alien_obstruction_changed(obstructed)
+
 		tick(delta)
 
 #
@@ -288,8 +306,10 @@ func on_Alien_Detection_Collider_body_entered(body: Node):
 		_alien_invisible_flag = alien.is_invisible()
 		alien.connect("invisible", self, "_on_alien_invisible")
 		alien.connect("tree_exiting", self, "_on_alien_dying")
+	var was_visible = is_alien_visible()
 	_alien_visible_flag = true
-	if not _alien_invisible_flag:
+	var is_visible = is_alien_visible()
+	if is_visible != was_visible:
 		alien_seen()
 
 #
@@ -298,10 +318,13 @@ func on_Alien_Detection_Collider_body_entered(body: Node):
 # alien is invisible, in which case it makes no difference).
 #
 func on_Alien_Detection_Collider_body_exited(_body: Node):
-	if not $Alien_Detection_Collider/ADCollider.disabled:
-		_alien_visible_flag = false
-		if not _alien_invisible_flag:
-			alien_gone()
+	if $Alien_Detection_Collider/ADCollider.disabled:
+		return
+	var was_visible = is_alien_visible()
+	_alien_visible_flag = false
+	var is_visible = is_alien_visible()
+	if is_visible != was_visible:
+		alien_gone()
 
 #
 # This is called when the alien has the invisible talent and makes himself
@@ -309,13 +332,29 @@ func on_Alien_Detection_Collider_body_exited(_body: Node):
 # alien_seen() or alien_gone() method is called.
 #
 func _on_alien_invisible(var invisible: bool):
-	if _alien_invisible_flag != invisible:
-		_alien_invisible_flag = invisible
-		if _alien_visible_flag:
-			if invisible:
-				alien_gone()
-			else:
-				alien_seen()
+	var was_visible = is_alien_visible()
+	_alien_invisible_flag = invisible
+	var is_visible = is_alien_visible()
+	if is_visible != was_visible:
+		if is_visible:
+			alien_seen()
+		else:
+			alien_gone()
+
+#
+# This is called when the view of the alien is obstructed by a piece of the
+# decor, or when the obstruction is removed. If it makes a difference, the
+# alien_seen() or alien_gone() method is called.
+#
+func _on_alien_obstruction_changed(obstructed: bool):
+	var was_visible = is_alien_visible()
+	_alien_obstructed_flag = obstructed
+	var is_visible = is_alien_visible()
+	if is_visible != was_visible:
+		if is_visible:
+			alien_seen()
+		else:
+			alien_gone()
 
 #
 # Called when the alien spotted previously is removed from the scene tree.
@@ -324,13 +363,16 @@ func _on_alien_invisible(var invisible: bool):
 func _on_alien_dying():
 	alien = null
 	_alien_visible_flag = false
+	_alien_invisible_flag = false
+	_alien_obstructed_flag = false
 
 #
 # Returns true if the alien is in the enemy's field of vision and is not
 # invisible.
 #
 func is_alien_visible() -> bool:
-	return _alien_visible_flag and not _alien_invisible_flag
+	return (_alien_visible_flag and not _alien_invisible_flag
+			and not _alien_obstructed_flag)
 
 #
 # Returns the square of the distance between the enemy and the alien, or zero
