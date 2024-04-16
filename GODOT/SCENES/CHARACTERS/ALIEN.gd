@@ -472,7 +472,8 @@ func _take_hit_points(damage: int):
 	if damage > 0 and (_state == State.DEAD or $Talent/Ghost.is_running()):
 		return
 	_hit_points = int(max(0, _hit_points - damage))
-	print("hit points: ", _hit_points)
+	if Globals.VERBOSE:
+		print("hit points: ", _hit_points)
 	if _hit_points <= 0:
 		_state = State.DEAD
 		if _talent == Globals.Talent.SECOND_LIFE and _death_count == 0:

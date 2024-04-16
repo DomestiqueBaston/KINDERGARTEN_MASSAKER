@@ -3,6 +3,9 @@ extends Node
 # sprite animations are at 10 frames per second
 const FPS = 10
 
+# true => allow messages to console
+const VERBOSE = false
+
 #
 # alien talents
 #

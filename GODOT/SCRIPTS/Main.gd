@@ -104,7 +104,8 @@ func _set_game_overlay():
 	if overlay:
 		overlay.queue_free()
 	overlay = overlay_scene.instance()
-	print("game overlay: " + overlay.name)
+	if Globals.VERBOSE:
+		print("game overlay: " + overlay.name)
 	$PAPA_Game_Overlay.add_child(overlay)
 
 func _unhandled_input(event: InputEvent):
@@ -317,7 +318,8 @@ func on_talent_aborted():
 
 func on_talent_chosen(talent_index):
 	chosen_talent = talent_index
-	print("chosen talent: ", Globals.get_talent_name(talent_index))
+	if Globals.VERBOSE:
+		print("chosen talent: ", Globals.get_talent_name(talent_index))
 	change_state(GameState.PLAY)
 
 func on_exit_game():
@@ -389,7 +391,7 @@ func start_game():
 	else:
 		actual_talent = Globals.get_random_talent(Settings.get_best_score())
 
-	if chosen_talent == Globals.Talent.RANDOM:
+	if chosen_talent == Globals.Talent.RANDOM and Globals.VERBOSE:
 		print("random talent: ", Globals.get_talent_name(actual_talent))
 
 	# instance the alien and position him in front of the camera, initially
