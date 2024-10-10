@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.itch.domestique_baston.kindergarten_massaker</id>
+  
+  <name>Kindergarten Massaker</name>
+  <summary>An alien lands in a kindergarten where the children quickly turn hostile</summary>
+  
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-fantasy">mild</content_attribute>
+  </content_rating>
+  <developer id="io.itch.domestique_baston">
+    <name>Domestique Baston</name>
+  </developer>
+  <url type="homepage">https://domestique-baston.itch.io/</url>
+  <releases>
+    <release version="1.0.0" date="2024-10-10"/>
+  </releases>
+  
+  <description>
+    <p>
+      A peaceful alien lands in a kindergarten. Kids are coming from everywhere. More and more. They surround the alien, and they want blood! The alien has to avoid kids in order to survive. Everything is seen through a surveillance cam that gets buggier and buggier until it shuts down completely. End of game?
+    </p>
+    <p>
+      This (non) shooter game is in German, as we all know that aliens only speak German. So, deal with it!
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">io.itch.domestique_baston.kindergarten_massaker.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>http://www.ferdiferdi.com/km/02.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://www.ferdiferdi.com/km/03.png</image>
+    </screenshot>
+    <screenshot>
+      <image>http://www.ferdiferdi.com/km/04.png</image>
+    </screenshot>
+  </screenshots>
+</component>
