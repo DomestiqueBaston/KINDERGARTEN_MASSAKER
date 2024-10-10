@@ -1,5 +1,5 @@
 [Desktop Entry]
-Version=1.0
+Version=1.0.1
 Type=Application
 
 Name=Kindergarten Massaker
@@ -7,5 +7,5 @@ Comment=An alien lands in a kindergarten where the children quickly turn hostile
 Categories=Game;ActionGame;
 
 Icon=io.itch.domestique_baston.kindergarten_massaker
-Exec=kindergarten_massaker
+Exec=godot-runner
 Terminal=false
