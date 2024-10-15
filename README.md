@@ -1,13 +1,12 @@
 # KINDERGARTEN MASSAKER
 
+**A	Peaceful Alien lands in a kindergarten.**
+Kids are coming from everywhere. More and more. They surround the alien and they want “blood”!
+The alien has to avoid kids in order to survive.
+Everything’s seen through a surveillance cam that gets buggier and buggier until it shuts down altogether.
+End of game?
 
-**A	Peaceful Alien lands in a Kindergarten.
-Kids are coming from everywhere. More and more. They tend to surround the Alien and they want “blood”!
-The Alien has to avoid kids in order to survive.
-Everything’s seen through a surveillance cam that gets buggier and buggier up to the point that it shuts down.
-End of game?**
-
-Download it from [itch.io](https://domestique-baston.itch.io/kindergarten-massaker) (all platforms)
+Download it from [itch.io](https://domestique-baston.itch.io/kindergarten-massaker) (all platforms).
 
 The DB team
 

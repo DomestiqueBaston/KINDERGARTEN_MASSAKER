@@ -18,6 +18,11 @@
   <releases>
     <release version="1.0.1" date="2024-10-10"/>
   </releases>
+  <launchable type="desktop-id">io.itch.domestique_baston.kindergarten_massaker.desktop</launchable>
+  <branding>
+    <color type="primary" scheme_preference="light">#f1caa7</color>
+    <color type="primary" scheme_preference="dark">#3f2238</color>
+  </branding>
   
   <description>
     <p>
