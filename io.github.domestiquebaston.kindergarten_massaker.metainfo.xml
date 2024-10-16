@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.domestiquebaston.kindergarten_massaker</id>
+  <provides>
+    <id>io.itch.domestique_baston.kindergarten_massaker</id>
+  </provides>
+  <replaces>
+    <id>io.itch.domestique_baston.kindergarten_massaker</id>
+  </replaces>
+  
+  <name>Kindergarten Massaker</name>
+  <summary>An alien lands in a kindergarten where the children quickly turn hostile</summary>
+  
+  <metadata_license>CC-BY-SA-4.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-fantasy">mild</content_attribute>
+  </content_rating>
+  <developer id="io.github.domestiquebaston">
+    <name>Domestique Baston</name>
+  </developer>
+  <url type="homepage">https://domestiquebaston.github.io/KINDERGARTEN_MASSAKER</url>
+  <releases>
+    <release version="1.0.1" date="2024-10-10"/>
+  </releases>
+  <launchable type="desktop-id">io.github.domestiquebaston.kindergarten_massaker.desktop</launchable>
+  <branding>
+    <color type="primary" scheme_preference="light">#f1caa7</color>
+    <color type="primary" scheme_preference="dark">#3f2238</color>
+  </branding>
+  
+  <description>
+    <p>
+      A peaceful alien lands in a kindergarten. Kids are coming from everywhere. More and more. They surround the alien, and they want blood! The alien has to avoid kids in order to survive. Everything is seen through a surveillance cam that gets buggier and buggier until it shuts down completely. End of game?
+    </p>
+    <p>
+      This (non) shooter game is in German, as we all know that aliens only speak German. So, deal with it!
+    </p>
+  </description>
+  
+  <screenshots>
+    <screenshot type="default">
+      <image type="source" width="1920" height="1080">http://domestiquebaston.github.io/KINDERGARTEN_MASSAKER/screenshots/02.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1920" height="1080">http://domestiquebaston.github.io/KINDERGARTEN_MASSAKER/screenshots/03.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1920" height="1080">http://domestiquebaston.github.io/KINDERGARTEN_MASSAKER/screenshots/04.png</image>
+    </screenshot>
+  </screenshots>
+</component>

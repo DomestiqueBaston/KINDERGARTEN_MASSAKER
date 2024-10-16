@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Kindergarten Massaker
+Comment=An alien lands in a kindergarten where the children quickly turn hostile
+Categories=Game;ActionGame;
+
+Icon=io.github.domestiquebaston.kindergarten_massaker
+Exec=godot-runner
+Terminal=false
